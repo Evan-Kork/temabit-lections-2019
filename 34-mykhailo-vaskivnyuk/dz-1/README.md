@@ -2,20 +2,64 @@
 
 ## most used git commands
 
-[`git help`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-help.html)\
-[`git init`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-init.html)\
-[`git config`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-config.html)\
-[`git clone`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-clone.html)\
-[`git checkout`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-checkout.html)\
-[`git branch`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-branch.html)\
-[`git status`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-status.html)\
-[`git add`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-add.html)\
-[`git commit`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-commit.html)\
-[`git push`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-push.html)\
-[`git fetch`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-fetch.html)\
-[`git pull`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-pull.html)\
-[`git merge`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-merge.html)\
+[`git help`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-help.html)
+display help information about git commands\
+`git help <command>`describes specific command
+
+[`git init`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-init.html)
+create an empty git repository or reinitialize an existing one
+
+[`git config`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-config.html)
+get and set repository or global options\
+`git config [--global] user.email <user email>`\
+`git config [--global] user.name <user name>`
+
+[`git clone`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-clone.html)
+clones a repository into a newly created directory\
+`git clone <repository>` the (possibly remote) repository to clone from
+
+[`git checkout`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-checkout.html)
+switches branches or restores working tree files\
+`git checkout -b <new_branch>` create a new branch 
+
+[`git branch`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-branch.html)
+list, create, or delete branches\
+`git branch -a` list both remote-tracking branches and local branches
+
+[`git status`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-status.html)
+displays paths in the working tree that are not tracked by git
+
+[`git add`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-add.html)
+updates the index to prepare the content staged for the next commit\
+`git add .` add all files from current directory and subdirectories\
+`git add *` add all files
+
+[`git commit`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-commit.html)
+record changes to the repository\
+`git commit -m <log message>` with log message describing the changes
+
+[`git push`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-push.html)
+updates remote refs using local refs\
+`git push origin HEAD` push the current branch to the same name on the remote
+
+[`git fetch`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-fetch.html)
+download objects and refs from another repository\
+`git fetch origin`download from remote repository
+
+[`git pull`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-pull.html)
+fetch from and integrate with a local branch\
+`git pull origin` merge into the current branch the remote branch
+
+[`git merge`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-merge.html)
+incorporates changes from the named commits into the current branch\
+`git merge <branch name>` join development history from named branch
+
 [`git tag`](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-tag.html)
+сreate, list, delete or verify a tag object
+
+## books
+
+- [https://git-scm.com/book/ru/v1/](https://git-scm.com/book/ru/v1/)
 
 ## user manuals
 
