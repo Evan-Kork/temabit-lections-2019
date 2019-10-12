@@ -94,7 +94,9 @@ git stash
 
 ```apply <name_stash>```
 Пременить выбраный stash
+
 ```pop```
 Пременить и удальть последний stash
+
 ```drop```
 Удальть последний stash
