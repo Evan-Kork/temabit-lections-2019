@@ -1,97 +1,142 @@
-# GIT Commands
+# Basisc GIT Commands
 
-# Базовые операции с репозиторием
+### Базовые операции с репозиторием
 
 ```bash
 git init
 ```
 Инициализировать репозиторий
 
-## git clone URL
+```bash
+git clone URL
+```
 Клонировать репозиторий с сервера
 
-# Статус
-
-## git status
+### Статус
+```bash
+git status
+```
 Просмотр статуса файлов. Показать какие файлы еще не были добавлены репозиторий, а какие были изменены
 
-# Добавляем и исключаем файлы
-
-## git add file.js
+### Добавляем и исключаем файлы
+```bash
+git add file.js
+```
 Добавить файл file.js
 
-## git add .
+```bash
+git add .
+```
 Добавляем все файлы
 
-## git reset file.js
+```bash
+git reset file.js
+```
 Отменить изменения файла file.js
 
-## git reset .
+```bash
+git reset .
+```
 Резет для всех файлов
 
-# Изменения
-
-## git diff
+### Изменения
+```bash
+git diff
+```
 Смотрим изменения
 
-## git diff file.js
+```bash
+git diff file.js
+```
 Смотрим изменения в file.js
 
-# Делаем коммиты
-
-## git commit -m 'commit message'
+### Делаем коммиты
+```bash
+git commit -m 'commit message'
+```
 Делаем коммит
 
-## git commit -a -m 'commit message'
+```bash
+git commit -a -m 'commit message'
+```
 Делаем коммит, сразу добавив все файлы
 
-## git commit --amend -m 'new commit message'
+```bash
+git commit --amend -m 'new commit message'
+```
 Перезаписываем последний коммит
 
-## git reset --soft HEAD^
+```bash
+git reset --soft HEAD^
+```
 Ресет последнего коммита
 
-## git reset --hard d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
+```bash
+git reset --hard d8578edf8458ce06fbc5bb76a58c5ca4a58c5ca4
+```
 Откатиться к конкретному коммиту (хэш смотрим в «git log»):
 
-# Управляем ветками
-
-## git branch
+### Управляем ветками
+```bash
+git branch
+```
 Смотрим локальные ветки
 
-## git branch -a
+```bash
+git branch -a
+```
 Смотрим локальные и удаленные ветки
 
-## git checkout master
+```bash
+git checkout master
+```
 Переключаемся на мастер
 
-## git checkout -b new_branch
+```bash
+git checkout -b new_branch
+```
 Создаем новую ветку и переключаемся на нее
 
-## git checkout -b new_branch origin/new_branch
+```bash
+git checkout -b new_branch origin/new_branch
+```
 Создаем локальную ветку как копию с удаленного сервера
 
-## git branch -d new_branch
+```bash
+git branch -d new_branch
+```
 Удаляем локальную ветку (пустую или влитую в мастер)
 
-## git branch -D new branch
+```bash
+git branch -D new branch
+```
 Просто удаляем локальную ветку
 
-## git push origin :new_branch
+```bash
+git push origin :new_branch
+```
 Удаляем ветку с сервера
 
-## git pull --rebase origin master
+```bash 
+git pull --rebase origin master
+```
 Подтягиваем изменения ветки мастер
 
-# Подтягиваем изменения с сервера
+### Подтягиваем изменения с сервера
 
-## git fetch
+```bash 
+git fetch
+```
 Подтягиваем все изменения с сервера, не вливая их
 
-## git push origin new_branch
+```bash 
+git push origin new_branch
+```
 Пушим ветку
 
-## git push -f origin new_branch
+```bash 
+git push -f origin new_branch
+```
 Пушим ветку с перезаписью истории коммитов (только когда хорошо понимаете, что делаете)
 
 
