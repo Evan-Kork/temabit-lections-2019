@@ -6,7 +6,7 @@
 <br>**git add** - додаэ вміст робочої дерикторії в індекс
 <br>**git commit -m 'coment'** - локально зберігає файли
 <br>**git push origin master** - відправляє файли на сервер orign, гілку master
-<br>**git pull** - стягує зміни з онлайн репозиторію
+<br><div style="background-color:powderblue;">**git pull** - стягує зміни з онлайн репозиторію</div>
 
 <br>**git fetch origin master** - індексує зміни на сервері origin, гілці master
 <br>**git merge origin master** - мержить(об'єднує) індексовані зміни з онлайн репозиторієм
