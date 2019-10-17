@@ -1,12 +1,10 @@
-# Basisc GIT Commands
+# Основные комманды GIT
 
 ### Базовые операции с репозиторием
-
 ```bash
 git init
 ```
 Инициализировать репозиторий
-
 ```bash
 git clone URL
 ```
