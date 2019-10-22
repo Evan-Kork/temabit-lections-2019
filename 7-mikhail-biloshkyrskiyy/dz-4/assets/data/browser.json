@@ -1,0 +1,200 @@
+{
+    "browser": [
+        {
+            "IE": [
+                {
+                    "number": "6-8",
+                    "support": 0
+                },
+                {
+                    "number": 9,
+                    "support": 2
+                },
+                {
+                    "number": 10,
+                    "support": 2
+                },
+                {
+                    "current": 11,
+                    "support": 3
+                }
+            ]
+        },
+        {
+            "Edge": [
+                {
+                    "number": "12-16",
+                    "support": 2
+                },
+                {
+                    "number": 17,
+                    "support": 2
+                },
+                {
+                    "current": 18,
+                    "support": 3
+                },
+                {
+                    "number": 76,
+                    "support": 2
+                }
+            ]
+        },
+        {
+            "Firefox": [
+                {
+                    "number": "2-3",
+                    "support": 0
+                },
+                {
+                    "number": "3.5-15",
+                    "support": 2
+                },
+                {
+                    "number": "16-68",
+                    "support": 2
+                },
+                {
+                    "current": 69,
+                    "support": 3
+                },
+                {
+                    "number": "70-71",
+                    "support": 2
+                }
+            ]
+        },
+        {
+            "Chrome": [
+                {
+                    "number": "4 - 35",
+                    "support": 2
+                },
+                {
+                    "number": "36 - 76",
+                    "support": 2
+                },
+                {
+                    "current": 77,
+                    "support": 3
+                },
+                {
+                    "number": "78-80",
+                    "support": 2
+                }
+            ]
+        },
+        {
+            "Safari": [
+                {
+                    "number": "3.1 - 8",
+                    "support": 2
+                },
+                {
+                    "number": "9 - 12.1",
+                    "support": 2
+                },
+                {
+                    "current": 13,
+                    "support": 3
+                },
+                {
+                    "number": "TP",
+                    "support": 2
+                }
+            ]
+        },
+        {
+            "Opera": [
+                {
+                    "number": 10.1,
+                    "support": 0
+                },
+                {
+                    "number": 11.5,
+                    "support": 2
+                },
+                {
+                    "number": 12.1,
+                    "support": 2
+                },
+                {
+                    "number": "15-22",
+                    "support": 2
+                },
+                {
+                    "number": "23-60",
+                    "support": 2
+                },
+                {
+                    "current": 62,
+                    "support": 3
+                }
+            ]
+        },
+        {
+            "iOSSafari": [
+                {
+                    "number": "3.2-8.4",
+                    "support": 2
+                },
+                {
+                    "number": "9 - 12.4",
+                    "support": 2
+                },
+                {
+                    "current": 13.1,
+                    "support": 3
+                }
+            ]
+        },
+        {
+            "OperaMini": [
+                {
+                    "current": "all",
+                    "support": 4
+                }
+            ]
+        },
+        {
+            "AndroidBrowser": [
+                {
+                    "number": "2.1-4.4.4",
+                    "support": 2
+                },
+                {
+                    "current": 76,
+                    "support": 3
+                }
+            ]
+        },
+        {
+            "OperaMobile": [
+                {
+                    "number": "12-12.1",
+                    "support": 2
+                },
+                {
+                    "current": 46,
+                    "support": 3
+                }
+            ]
+        },
+        {
+            "ChromeForAndroid": [
+                {
+                    "current": 76,
+                    "support": 3
+                }
+            ]
+        },
+        {
+            "FirefoxForAndroid": [
+                {
+                    "current": 68,
+                    "support": 3
+                }
+            ]
+        }
+    ]
+}
