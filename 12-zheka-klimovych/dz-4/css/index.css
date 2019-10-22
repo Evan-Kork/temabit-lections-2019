@@ -1,9 +1,88 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;;
+}
+
+.menu li {
+display: inline-block;
+font-family: monospace;
+font-size: 32px;
+font-weight: 600;
+margin-right: 50px;
+}
+
 li {
   color: red;
+  list-style-type: square;
 }
+
+ol li {
+  list-style-type: decimal;
+}
+
 table {
   border: solid black 2px;
 }
+
 th, td {
   padding: 2px; 
   border: 1px solid black;
+  width: 100px;
+  min-width: 100px;
+  height: 25px;
+  text-align: center;
+  empty-cells: hide;
+}
+
+.not-supported {
+  background-color: red;
+}
+
+.partial-support {
+  background-color: greenyellow;
+}
+
+.supported {
+  background-color: green;
+}
+
+.row6 {
+  opacity: 0.75;
+}
+
+.legend {
+border: 2px solid black;
+width: 210px;
+margin-top: 5px;
+padding: 10px;
+}
+
+.legend-sup, 
+.legend-nosup, 
+.legend-partial {
+  display: inline-block;
+  width: 35px;
+}
+
+.legend-sup {
+  background-color: green;
+}
+
+.legend-nosup {
+  background-color: red;
+}
+
+.legend-partial {
+  background-color: greenyellow;
+}
+
+dt {
+  margin:10px;
+  font-weight: 600;
+}
+
+a:visited {
+  color: rgb(17, 48, 224);
+}
+a:hover {
+  color: green;
+}
