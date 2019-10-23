@@ -1,0 +1,46 @@
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    color: white;
+    text-align: center;
+	border-spacing: 3px;
+	border: 3px
+}
+td {
+    background: #C6C5C5;
+    width: 5.5%;
+    height: 4em;
+    border-radius: 6%;
+}
+th {
+    background: #868686;
+    width: 5.5%;
+    height: 60px;
+    border-radius: 6%;
+}
+.tdNotsupported {
+    background: rgb(197, 60, 60);
+}
+.tdPartialsupported {
+    background: rgb(164, 202, 83);
+}
+.tr1 {
+    border: 5px solid #4C4E4A
+}
+.tdPartialsupported1 {
+    background: rgb(174, 199, 122);
+}
+.tdNotsupported1 {
+    background: rgb(204, 95, 95); 
+}
+.legend{
+    width: 30px;
+    height: 15px;
+    display:inline-block ;
+}
+.legend1{
+    text-align: start ;
+}
+body {
+    background: rgb(238, 223, 154);
+    font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif ;
+}
