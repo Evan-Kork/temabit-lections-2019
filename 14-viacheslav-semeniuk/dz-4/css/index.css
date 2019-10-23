@@ -34,27 +34,16 @@ body {
 th {
   border-bottom: 4px solid rgb(6, 26, 116);
   font-weight: 400;
-<<<<<<< HEAD
   padding: 0;
 }
 td {
   color: #fff;
   padding: 10px 0;
-=======
-}
-td {
-  color: #fff;
->>>>>>> a5d8ef27dc37f6e0e31427b375ba20cc0e94c294
 }
 th,
 td {
   cursor: pointer;
-<<<<<<< HEAD
   min-width: 72px;
-=======
-  min-width: 100px;
-  padding: 10px 0;
->>>>>>> a5d8ef27dc37f6e0e31427b375ba20cc0e94c294
   text-align: center;
 }
 
