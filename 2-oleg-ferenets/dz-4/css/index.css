@@ -1,0 +1,55 @@
+/* #table{
+    color:blue;
+}
+.table{
+    color: green!important;
+} */
+
+body{
+background-color:lightyellow;
+}
+
+.UpLine{
+ background-color: gainsboro;
+ color: gray;
+}
+td.tab{
+    background-color:burlywood;
+    color: cornsilk;
+}
+.noTab{
+    
+    background-color: lightyellow;
+}
+
+.table2 td th{
+    color: white;
+   
+    text-align: center;
+}
+
+th{
+    width: 75px;
+}
+.line5{
+    background-color: green;
+}
+.table2 td{
+    height: 35px;
+}
+.line2{
+    height: 5px!important;
+    background-color: navy;
+}
+.tablehead{
+    color:black;
+}
+.red{
+    background-color: red;
+}
+.greenyellow{
+    background-color: greenyellow;
+}
+.green{
+    background-color: green;
+}
