@@ -44,3 +44,13 @@ td{
 .supportedA{
     background-color: rgba(57, 181, 74, 0.44);
 }
+.lega{
+    width: 2em;
+    height: 1em;
+    display:inline-block ;
+}
+.bot{
+    text-align: start ;
+    margin-left: 45%;
+
+}
