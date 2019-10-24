@@ -3,7 +3,7 @@ table{
     color: rgb(247, 240, 240);
     text-align: center;
     border-spacing: 3px;
-    border: 3px
+    border: 0.15em
 }
 td{
     background: rgb(198, 197, 197);
@@ -14,7 +14,7 @@ td{
 th{
     background: rgb(134, 134, 134);
     width: 5.5%;
-    height: 60px;
+    height: 4em;
     border-radius: 6%;
 }
 .tdNotsupported{
@@ -33,12 +33,9 @@ th{
     background: rgb(204, 95, 95); 
 }
 .legend{
-    width: 30px;
-    height: 15px;
+    width: 2.5em;
+    height: 1.5em;
     display: inline-block ;
-}
-.legend1{
-    text-align: start ;
 }
 body{
     background: rgb(238, 223, 154);
