@@ -1,0 +1,106 @@
+body {
+	font-family: 'Courier New';
+}
+
+.title {
+	padding-left: 50px;
+	font-family: Verdana;
+	font-weight: 900;
+	border-top: 5px solid #555555;
+}
+
+.title a {
+	text-decoration: none;
+	color: #39b54a;
+}
+
+.discription {
+	padding-top: 20px;
+	padding-left: 50px;
+	padding-bottom: 20px;
+	max-width: 500px;
+	font-weight: 600;
+	border-left: 5px solid #555555;
+}
+
+table {
+	table-layout: fixed;
+	border-spacing: 3px;
+	width: 100%;
+	font-family: 'Arial';
+	font-size: 0.9em;
+	color: white;
+}
+
+caption {
+	padding-top: 15px;
+	padding-left: 55px;
+	text-align: left;
+}
+
+caption span {
+	display: inline-block;
+	background: #444444;
+	padding: 3px;
+}
+
+th {
+	width: 62px;
+	border-bottom: 5px solid #555555;
+	color: #555555;
+	font-weight: 400;
+}
+
+td {
+	height: 35px;
+	background: #e0e0e0;
+	text-align: center;
+	font-weight: bold;
+}
+
+.current td {
+	border: 5px solid #444444;
+	width: 52px;
+	height: 30px;
+}
+
+.legend {
+	margin: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 83px;
+	list-style: none;
+	font-weight: bold;
+	border-bottom: 5px solid #555555;
+}
+
+.legend span {
+	display: inline-block;
+	vertical-align: middle;
+	width: 50px;
+	height: 20px;
+}
+
+.legend li {
+	padding: 1px;
+}
+
+.legend h4 {
+	margin: 2px;
+}
+
+.mark_supported {
+	background: #39b54a;
+}
+
+.mark_not_supported {
+	background: #c44230;
+}
+
+.mark_partial_support {
+	background: #584E3B;
+}
+
+.mark_support_unknown {
+	background: #A8BD04;	
+}
