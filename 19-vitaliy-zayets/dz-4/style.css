@@ -1,0 +1,50 @@
+body{
+  font-family: Georgia, 'Times New Roman', Times, sans-serif;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+  font-family: Verdana, sans-serif;
+}
+
+table{
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td{
+  min-width: 100px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+footer{
+  margin-top: 20px;
+}
+
+.tip{
+  display: inline-block;
+  width: 40px;
+  height: 15px;
+}
+
+.grey{
+  background-color: #838383;
+}
+
+.green{
+  background-color: #39b54a;
+}
+
+.yellow{
+  background-color: #A8BD04;
+}
+
+.red{
+  background-color: #c44230;
+}
+
+ul{
+  list-style-type: none;
+}
