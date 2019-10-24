@@ -9,13 +9,13 @@ td{
     background: rgb(198, 197, 197);
     width: 5.5%;
     height: 4em;
-    border-radius: 6%;
+    border-radius: 10px;
 }
 th{
     background: rgb(134, 134, 134);
     width: 5.5%;
     height: 4em;
-    border-radius: 6%;
+    border-radius: 10px;
 }
 .tdNotsupported{
     background: rgb(197, 60, 60);
@@ -23,13 +23,13 @@ th{
 .tdPartialsupported{
     background: rgb(164, 202, 83);
 }
-.tr1 {
+.trDarkBorder {
     border: 5px solid rgb(76, 78, 74)
 }
-.tdPartialsupported1{
+.tdPartialsupportedLight{
     background: rgb(174, 199, 122);
 }
-.tdNotsupported1{
+.tdNotsupportedLight{
     background: rgb(204, 95, 95); 
 }
 .legend{
