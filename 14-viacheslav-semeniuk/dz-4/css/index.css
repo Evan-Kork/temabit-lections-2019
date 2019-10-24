@@ -27,9 +27,11 @@ body {
 }
 .table {
   width: 100%;
+  border-collapse: separate;
+  border-spacing: 4px 0;
 }
 .table .row-5 td {
-  border: 5px solid #584e3b;
+  outline: 5px solid #584e3b;
 }
 th {
   border-bottom: 4px solid rgb(6, 26, 116);
@@ -38,7 +40,7 @@ th {
 }
 td {
   color: #fff;
-  padding: 10px 0;
+  padding: 6px 0;
 }
 th,
 td {
