@@ -134,7 +134,7 @@ h2 {
 }
 
 .support-container-wrap {
-	verflow-x: auto;
+	overflow-x: auto;
 }
 
 /* table */
