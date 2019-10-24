@@ -33,7 +33,6 @@ td {
 	border: 5px;
 	border-style: solid;
 	border-color: rgb(88,78,59);
-	border-collapse: collapse;
 }
 .legend {
 	width: 3em;
