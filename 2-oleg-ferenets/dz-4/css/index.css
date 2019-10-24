@@ -1,36 +1,42 @@
-body{
-background-color:lightgrey;
+body {
+    background-color: lightgrey;
 }
 
-
-.table{
+.table {
     color: white;
-   background-color: lightyellow;
+    background-color: lightyellow;
     text-align: center;
 }
 
-th{
+th {
     width: 75px;
 }
-.line5{
-    background-color: green;
-}
-.table td{
+
+.table td {
     height: 35px;
 }
-.line2{
-    height: 5px!important;
+
+.line td {
+    height: 3px;
     background-color: navy;
 }
-.tablehead{
-    color:black;
+
+.tableHead {
+    color: black;
 }
-.NotSupported{
+
+.notSupported {
     background-color: red;
 }
-.Partial{
+
+.partial {
     background-color: greenyellow;
 }
-.Supported{
+
+.supported {
     background-color: green;
+}
+
+.unknown {
+    background-color: white;
 }
