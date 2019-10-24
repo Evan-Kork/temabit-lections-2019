@@ -8,15 +8,15 @@ body {
 	background-image: url(../img/caniuse-bg.png);
 	font: 100%/1 "Open Sans", Helvetica, Arial, sans-serif;
 	font-weight: 300;
-    background-size: 400px 400px, 10px 10px;
-    padding: 0 3% 1.875em;
-    min-width: 20em;
-    max-width: 81.25em;
-    margin: 0 auto;
+	background-size: 400px 400px, 10px 10px;
+	padding: 0 3% 1.875em;
+	min-width: 20em;
+	max-width: 81.25em;
+	margin: 0 auto;
 }
 
 body.is-home {
-    min-height: 900px;
+	min-height: 900px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -79,19 +79,19 @@ h2 {
 }
 
 .browser--op_mini, .browser--op_mob {
-	border-color: #992626;
+	order-color: #992626;
 }
 
 .browser--android {
-	border-color: #7ba13b;
+	rder-color: #7ba13b;
 }
 
 .browser--samsung {
-	border-color: #9753ff;
+	order-color: #9753ff;
 }
 
 .browser--kaios {
-	border-color: #6f02b5;
+	order-color: #6f02b5;
 }
 
 .ciu-main-wrap {
@@ -134,7 +134,7 @@ h2 {
 }
 
 .support-container-wrap {
-	overflow-x: auto;
+	verflow-x: auto;
 }
 
 /* table */
@@ -171,9 +171,9 @@ h2 {
 	justify-content: center;
 	align-items: center;
 	border-bottom-width: 4px;
-    border-bottom-style: solid;
-    padding-bottom: 2px;
-    vertical-align: middle;
+	border-bottom-style: solid;
+	padding-bottom: 2px;
+	vertical-align: middle;
 }
 
 .cell-filler {
@@ -242,8 +242,8 @@ h2 {
 
 .ciu-legend__color {
 	display: inline-block;
-    width: 25px;
-    height: 1em;
-    text-indent: -9999px;
-    text-align: left;
+	width: 25px;
+	height: 1em;
+	text-indent: -9999px;
+	text-align: left;
 }
