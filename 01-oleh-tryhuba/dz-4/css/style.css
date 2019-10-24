@@ -74,6 +74,7 @@ a {
     color: #000;
     transition: all 1s;
 }
+
 #tables a:hover {
     color: #39b54a;
 }
@@ -134,18 +135,21 @@ a {
     font-size: 40px;
 }
 
-table {
-    border: solid black 2px;
-}
-
 th, td {
     padding: 2px;
     border: 1px solid black;
     width: 80px;
     min-width: 80px;
-    height: 25px;
+    height: 30px;
     text-align: center;
     empty-cells: hide;
+}
+
+thead th {
+    border: none;
+    border-bottom: 3px solid;
+    vertical-align: bottom;
+    padding-bottom: 5px;
 }
 
 .width_3 td {
