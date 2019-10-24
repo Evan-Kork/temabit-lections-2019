@@ -26,7 +26,7 @@ td{
     background-color: #EAE1CE;
 	border-radius: 5%;
 }
-.Notsupported{
+.notsupported{
 	background-color: #C44230;
 }
 .trthree{
@@ -39,17 +39,17 @@ td{
     display:inline-block;
     font-size:1.3em;
     font-weight:normal;    
-    color: black
+    color: black;
 }
-.supportedA{
+.supporteda{
     background-color: rgba(57, 181, 74, 0.44);
 }
-.lega{
+.legenda{
     width: 2em;
     height: 1em;
     display:inline-block ;
 }
-.bot{
+.bottom{
     text-align: start ;
     margin-left: 45%;
 
