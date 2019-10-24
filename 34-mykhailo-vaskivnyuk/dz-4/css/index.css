@@ -61,7 +61,7 @@ td {
 .current td {
 	border: 5px solid #444444;
 	width: 52px;
-	height: 30px;
+	height: 25px;
 }
 
 .legend {
@@ -103,4 +103,8 @@ td {
 
 .mark_support_unknown {
 	background: #A8BD04;	
+}
+
+.mark_opacity {
+	opacity: 0.8;
 }
