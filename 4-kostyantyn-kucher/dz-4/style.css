@@ -1,0 +1,52 @@
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+
+table{
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td{
+  min-width: 100px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+footer{
+  margin-top: 20px;
+}
+
+.marker{
+  display: inline-block;
+  width: 30px;
+  height: 10px;
+}
+
+.green{
+  background-color: green;
+}
+
+.red{
+  background-color: red;
+}
+
+.yellow{
+  background-color: yellow;
+}
+
+.blue{
+  background-color: blue;
+}
+
+.gray{
+  background-color: gray;
+}
+
+ul{
+  list-style-type: none;
+}
