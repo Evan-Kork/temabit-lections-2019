@@ -1,9 +1,12 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2e8d5;
 }
 
 table {
   border: solid black 2px;
+  border-collapse: separate;
+  border-spacing: 7px 5px;
 }
 
 caption {
@@ -66,6 +69,10 @@ th {
 
 .supported {
   background-color: green;
+}
+
+.row-5 td {
+  outline: 4px solid #583e3b;
 }
 
 .row-6 {
