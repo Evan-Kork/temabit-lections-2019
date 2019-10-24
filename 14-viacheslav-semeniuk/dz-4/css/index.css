@@ -28,7 +28,7 @@ body {
 .table {
   width: 100%;
 }
-.table tr:nth-of-type(5) td {
+.table .row-5 td {
   border: 5px solid #584e3b;
 }
 th {
