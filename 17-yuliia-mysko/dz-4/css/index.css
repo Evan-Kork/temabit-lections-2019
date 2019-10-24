@@ -21,14 +21,14 @@ body{
     background-color: #838383;
 }
 
-table {
+.Table-1 {
     text-align: center;
     color: white;
     width: 1360px;
     margin-top: 30px;
 }
 
-.table-1 tbody td{
+.Table-1 tbody td{
     width: 80px;
     height: 30px;
     border-right: 2px solid #f2e8d5;
@@ -41,7 +41,7 @@ table thead{
     font-size: 90%;
 }
 
-.table-1 .Borders td{
+.Table-1 .Borders td{
     border: 3px solid #584E3B;
 }
 
@@ -51,13 +51,13 @@ p{
     max-width: 50%;
 }
 
-.table2 thead {
+.Table-2 thead {
     color: white; 
     text-align: center; 
     font-size: 1.7em; 
 }
 
-.table2{
+.Table-2{
     text-align: left;
     background-color: rgba(88, 78, 59, 0.5);
     color: #f2e8d5;
@@ -67,26 +67,100 @@ p{
     margin-right: 15px;
 }
 
-.table2 td{
+.Table-2 td{
     border: none;
 }
 
-.column-1{
+.Column-1{
     width: 81.2px;
     height: 30px;
 }
 
-.column-2{
+.Column-2{
     width: 140px;
 }
 
-.merging{
+.Merging{
     background-color: rgba(0,0,0,0.06);
 }
 
-.container{
+.Container{
     width: 1000px;
     overflow-x: auto;
     overflow-y: hidden;
     margin: auto;
+}
+
+.IE, .Edge, .Firefox, .Chrome, .Safari, .Opera, .SafariiOS, 
+.OperaMini, .AndroidBrowser, .OperaMobile, .ChromeAndroid, 
+.FirefoxAndroid, .UCAndroid, .SamsungInternet, .QQ, .Baidu, .KaiOS{
+    border-bottom: 3px solid;
+}
+
+.IE{
+    border-color: #385884;
+}
+
+.Edge{
+    border-color: #385884;
+}
+
+.Firefox{
+    border-color: #a36223;
+}
+
+.Chrome{
+    border-color: #3f77bb;
+}
+
+.Safari{
+    border-color: #666;
+}
+
+.Opera{
+    border-color: #812323;
+}
+
+.SafariiOS{
+    border-color: #333;
+}
+
+.OperaMini{
+    border-color: #992626;
+}
+
+.AndroidBrowser{
+    border-color: #7ba13b;
+}
+
+.OperaMobile{
+    border-color: #992626;
+}
+
+.ChromeAndroid{
+    border-color: #3f77bb;
+}
+
+.FirefoxAndroid{
+    border-color: #a36223;
+}
+
+.UCAndroid{
+border-color: black;
+}
+
+.SamsungInternet{
+    border-color: #9753ff;
+}
+
+.QQ{
+    border-color: black;
+}
+
+.Baidu{
+    border-color: black;
+}
+
+.KaiOS{
+    border-color: #6f02b5;
 }
