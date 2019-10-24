@@ -86,7 +86,6 @@ p{
 
 .container{
     width: 1000px;
-    overflow: scroll;
     overflow-x: auto;
     overflow-y: hidden;
     margin: auto;
