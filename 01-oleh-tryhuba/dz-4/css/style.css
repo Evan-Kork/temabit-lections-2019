@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3D3527;
+    background-image: url("https://caniuse.com/img/caniuse-bg.png");
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.ciu-search {
+    font: 100%/1 "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    display: block;
+    margin-top: 1rem;
+    position: relative;
+    padding: .6em 0;
+    font-size: 2.5em;
+    background: #DB5600;
+    color: #fff;
+    text-align: center;
+}
+
+.ciu-search__inner {
+    font: 100%/1 "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    color: #fff;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+
+.ciu-search__input {
+    position: relative;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    font: inherit;
+    color: #fff;
+    width: 40%;
+    padding: 0 4px;
+    border-radius: 0;
+    text-align: center;
+}
+
+.options-toggle {
+    border: none;
+    padding: 0 0 5px 10px;
+    white-space: nowrap;
+    vertical-align: 0.1em;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.4);
+    background: transparent;
+    cursor: pointer;
+}
+
+#tables {
+    margin-top: 20px;
+    background: #f2e8d5;
+    overflow: auto;
+    padding: 20px 10px;
+}
+
+#tables a {
+    padding: 5px;
+    color: #000;
+    transition: all 1s;
+}
+
+#tables a:hover {
+    color: #39b54a;
+}
+
+.main__title {
+    font-size: 45px;
+}
+
+.main__description {
+    font-size: 25px;
+}
+
+.footer ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.footer li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #CFB78B;
+    font-size: 20px;
+}
+
+.footer span {
+    display: inline-block;
+    width: 5em;
+    height: 3em;
+    text-indent: -9999px;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.y {
+    background-color: #39b54a;
+}
+
+.n {
+    background-color: #c44230;
+}
+
+.a {
+    background-color: #A8BD04;
+}
+
+.u {
+    background-color: #838383;
+    color: white;
+}
+
+.footer h2 {
+    color: #fff;
+    font-size: 40px;
+}
+
+th, td {
+    padding: 2px;
+    border: 1px solid black;
+    width: 80px;
+    min-width: 80px;
+    height: 30px;
+    text-align: center;
+    empty-cells: hide;
+}
+
+thead th {
+    border: none;
+    border-bottom: 3px solid;
+    vertical-align: bottom;
+    padding-bottom: 5px;
+}
+
+.width_3 td {
+    border: 5px solid black;
+}
