@@ -25,6 +25,7 @@ td {
 }
 .supported {
 	background-color: rgb(57,181,74);
+	empty-cells: hide;
 }
 .not-supported {
 	background-color: rgb(196,66,48);
