@@ -7,7 +7,7 @@ code{
     background-color:rgba(255,255,255,0.2)
 }
 table{
-	border: 0.1em solid #000000;
+    border: 0.1em solid #000000;
     text-align:center;
     margin-top: 3em;
 }
@@ -21,10 +21,10 @@ tbody{
 }
 td{
     width: 5.5%;
-	height: 2em;
+    height: 2em;
     margin: .5em;
     background-color: #EAE1CE;
-	border-radius: 5%;
+    border-radius: 5%;
 }
 .notsupported{
 	background-color: #C44230;
