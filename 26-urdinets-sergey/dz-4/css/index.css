@@ -31,9 +31,7 @@ td {
 	background-color: rgb(196,66,48);
 }
 .border-gray {
-	border: 5px;
-	border-style: solid;
-	border-color: rgb(88,78,59);
+	border: 5px solid rgb(88,78,59);
 }
 .legend {
 	width: 3em;
