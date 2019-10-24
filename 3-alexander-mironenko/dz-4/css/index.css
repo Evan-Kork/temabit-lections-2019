@@ -1,9 +1,6 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-
-
 table {
   border: solid black 2px;
 }
@@ -17,40 +14,35 @@ th, td {
   text-align: center;
   empty-cells: hide;
 }
-
-
+.header {
+  font-size: 25px;
+}
+.description {
+  width: 45%;
+  font-size: 20px;
+}
 .supported {
   background-color: limegreen;
 }
-
 .not-supported {
   background-color: red;
 }
-
 .partial-support {
   background-color: #a8bd04;
 }
-
 .support-unknown {
   background-color: #838383;
 }
-
-
 .legend {
-border: 2px solid black;
-width: 210px;
-margin-top: 5px;
-padding: 10px;
+  border: 2px solid black;
+  width: 210px;
+  margin-top: 5px;
+  padding: 10px;
 }
-
-
-
-
 .legend-supported, 
 .legend-not-supported, 
 .legend-partial-support,
-.legend-support-unknown
- {
+.legend-support-unknown {
   display: inline-block;
   width: 40px;
   height: 1em;
@@ -58,19 +50,15 @@ padding: 10px;
   text-align: left;
   color: #cfb78b;
 }
-
 .legend-supported {
   background-color: limegreen;
 }
-
 .legend-not-supported {
   background-color: red;
 }
-
 .legend-partial-support {
   background-color: #a8bd04;
 }
-
 .legend-support-unknown {
   background-color: #838383;
 }
