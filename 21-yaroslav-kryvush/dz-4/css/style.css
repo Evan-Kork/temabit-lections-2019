@@ -31,17 +31,17 @@ td {
 	background-color: #39b54a;
 }
 
-.bg-green_border {
+.bg-green__border {
 	background-color: #39b54a;
 	border: 5px solid #584e3b;
 }
 
-.bg-green_borderLeft {
+.bg-green__borderLeft {
 	background-color: #39b54a;
 	border: 5px solid #584e3b;
 	border-left: 3px solid #584e3b;
 }
-.bg-green_borderRight {
+.bg-green__borderRight {
 	background-color: #39b54a;
 	border: 5px solid #584e3b;
 	border-right: 3px solid #584e3b;
@@ -55,7 +55,7 @@ td {
 	background-color: #a8bd04;
 }
 
-.bg-mustard_border {
+.bg-mustard__border {
 	background-color: #a8bd04;
 	border: 5px solid #584e3b;
 }
@@ -68,15 +68,11 @@ td {
 	border-bottom: 5px solid #385884;
 }
 
-.Edge {
-
-}
-
-.Firefox__Firefox_for_Android {
+.Firefox__Firefox-for-Android {
 	border-bottom: 5px solid #a36223;
 }
 
-.Chrome__Chrome_for_Android {
+.Chrome__Chrome-for-Android {
 	border-bottom: 5px solid #3f77bb;
 }
 
@@ -88,27 +84,27 @@ td {
 	border-bottom: 5px solid #812323;
 }
 
-.iOS_Safari {
+.iOS-Safari {
 	border-bottom: 5px solid #333333;
 }
 
-.Opera_Mini__Opera_Mobile {
+.Opera-Mini__Opera-Mobile {
 	border-bottom: 5px solid #992626;
 }
 
-.Android_Browser {
+.Android-Browser {
 	border-bottom: 5px solid #7ba13b;
 }
 
-.UC_Browser_for_Android__QQ_Browser__Baidu_Browser {
+.UC-Browser-for-Android__QQ-Browser__Baidu-Browser {
 	border-bottom: 5px solid #000000;
 }
 
-.Samsung_Internet {
+.Samsung-Internet {
 	border-bottom: 5px solid #9753ff;
 }
 
-.KaiOS_Browser {
+.KaiOS-Browser {
 	border-bottom: 5px solid #6f02b5;
 }
 
@@ -118,45 +114,45 @@ td {
 	width: 15%; 
 }
 
-.legend__topic {
+.legend-topic {
 	text-align: center;
 	margin-bottom: 10px;
 	font-size: 25px;
 	font-weight: 700;
 }
 
-.legend__body {
+.legend-body {
 	display: flex;
 	align-items: center;
 	margin-bottom: 10px;
 }
 
-.legend__text {
+.legend-text {
 	font-size: 20px;
 }
 
-.rectangle__green {
+.rectangle-green {
 	width: 50px;
 	height: 25px;
 	background-color: #39b54a;
 	margin-right: 6px;
 }
 
-.rectangle__red {
+.rectangle-red {
 	width: 50px;
 	height: 25px;
 	background-color: #c44230;
 	margin-right: 6px;
 }
 
-.rectangle__mustard {
+.rectangle-mustard {
 	width: 50px;
 	height: 25px;
 	background-color: #a8bd04;
 	margin-right: 6px;
 }
 
-.rectangle__violet {
+.rectangle-violet {
 	width: 50px;
 	height: 25px;
 	background-color: #838383;
