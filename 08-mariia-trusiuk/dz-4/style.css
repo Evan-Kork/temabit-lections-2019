@@ -1,0 +1,43 @@
+table{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    color: rgb(247, 240, 240);
+    text-align: center;
+    border-spacing: 3px;
+    border: 0.15em
+}
+td{
+    background: rgb(198, 197, 197);
+    width: 5.5%;
+    height: 4em;
+    border-radius: 10px;
+}
+th{
+    background: rgb(134, 134, 134);
+    width: 5.5%;
+    height: 4em;
+    border-radius: 10px;
+}
+.tdNotsupported{
+    background: rgb(197, 60, 60);
+}
+.tdPartialsupported{
+    background: rgb(164, 202, 83);
+}
+.trDarkBorder {
+    border: 5px solid rgb(76, 78, 74)
+}
+.tdPartialsupportedLight{
+    background: rgb(174, 199, 122);
+}
+.tdNotsupportedLight{
+    background: rgb(204, 95, 95); 
+}
+.legend{
+    width: 2.5em;
+    height: 1.5em;
+    display: inline-block ;
+}
+body{
+    background: rgb(238, 223, 154);
+    font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif ;
+}
