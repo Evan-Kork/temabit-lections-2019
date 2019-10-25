@@ -45,6 +45,22 @@ footer{
   background-color: #c44230;
 }
 
+.supported{
+  background-color: #39b54a; 
+}
+
+.not_supported{
+   background-color: #c44230;
+}
+
+.part_support{
+  background-color: #A8BD04;
+}
+
+.unknown{
+  background-color: #39b54a;
+}
+
 ul{
   list-style-type: none;
 }
