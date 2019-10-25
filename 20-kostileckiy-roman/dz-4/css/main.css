@@ -6,7 +6,6 @@ body{
     display: block;
     margin:0 auto;
 }
-
 article h1{
     font-size: 26px;
 }
@@ -20,7 +19,6 @@ article table td{
     width: 76px;
     height: 30px;
 }
-
 .support-unknown{
     background-color: gray;
 }
