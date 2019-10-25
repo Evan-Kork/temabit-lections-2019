@@ -27,23 +27,23 @@ footer{
   height: 10px;
 }
 
-.green{
+.supported{
   background-color: green;
 }
 
-.red{
+.notSupported{
   background-color: red;
 }
 
-.yellow{
+.partSupport{
   background-color: yellow;
 }
 
-.blue{
+.unknown{
   background-color: blue;
 }
 
-.gray{
+.emptyField{
   background-color: gray;
 }
 
