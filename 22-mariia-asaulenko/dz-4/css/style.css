@@ -44,6 +44,39 @@ th {
     height: 30px;
     border-bottom: 4px solid #000000;
 }
+.border-ie{
+    border-bottom-color: #385884;
+}
+.border-fierfox{
+    border-bottom-color: #a36223;
+}
+.border-chrome{
+    border-bottom-color: #3f77bb;
+}
+.border-safari{
+    border-bottom-color: #666;
+}
+.border-opera{
+    border-bottom-color: #812323; 
+}
+.border-ios{
+    border-bottom-color: #333;
+}
+.border-minopera{
+    border-bottom-color: #9926;
+}
+.border-android{
+    border-bottom-color: #7ba13b;
+}
+.border-mopera{
+    border-bottom-color: #992626;
+}
+.border-sumsung{
+    border-bottom-color: #9753ff;
+}
+.border-kaios{
+    border-bottom-color: #6f02b5;
+}
 td.rhead {
     width: 72px;
     height: 28px;
