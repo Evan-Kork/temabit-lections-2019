@@ -1,0 +1,46 @@
+body {
+    background-color: #ffeee3;
+}
+
+table {
+    text-align: center;
+    color: white;
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 6px 2px;
+    background-color: #ffeee3;
+}
+
+thead {
+    color: black;
+}
+
+td {
+    width: 5.5%;
+    height: 2em;
+}
+
+.row-border {
+    border: 3px solid grey;
+}
+
+.supported {
+    background-color: #50DD6B;
+}
+
+.notsupported {
+    background-color: #B43104;
+}
+
+.supportedalfa {
+    background-color: rgba(80, 221, 107, 0.5);
+}
+
+.notsupportedalfa {
+    background-color: rgba(180, 49, 4, 0.5);
+}
+
+.supportunknown {
+    background-color: #e6e1df;
+}
+

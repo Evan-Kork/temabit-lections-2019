@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head> <meta charset="utf-8">
+    <head>
+        <meta charset="UTF-8">
         <title>gap property for Flexbox</title>
-        <style>
-        table {
-            table-layout: fixed;
-            width: 100%;
-        }
-        </style>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
     </head>
     <body>
-        <a href="https://caniuse.com/#feat=flexbox-gap" target="_blank"><h2>gap property for Flexbox</h1></a>
-        <P><h3>gap for flexbox containers to create gaps/gutters between flex items</h2></P>
+        <h2>
+        <a href="https://caniuse.com/#feat=flexbox-gap" target="_blank" >gap property for Flexbox</a>
+        </h2>
 
-        <table border="1px">
+        <h3>
+            <p>gap for flexbox containers to create gaps/gutters between flex items</p>
+        </h3>
+
+        <table>
             <thead>
                 <tr>
                     <th>IE</th>
@@ -35,70 +36,63 @@
                     <th>KaiOS Browser</th>
                 </tr>
             </thead>
-            <tbody align="center" style="color: cornsilk">
+            <tbody>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td style="background-color: #B43104">2-62</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="supportunknown"></td>
+                    <td class="supportunknown"></td>
+                    <td class="notsupported">2-62</td>
+                    <td class="supportunknown"></td>
+                    <td class="supportunknown"></td>
+                    <td class="supportunknown"></td>
+                    <td class="supportunknown"></td>
+                    <td class="supportunknown" rowspan="2"></td>
+                    <td class="supportunknown"></td>
+                    <td class="supportunknown"></td>
+                    <td class="supportunknown" rowspan="2"></td>
+                    <td class="supportunknown" rowspan="2"></td>
+                    <td class="supportunknown" rowspan="2"></td>
+                    <td class="supportunknown"></td>
+                    <td class="supportunknown" rowspan="2"></td>
+                    <td class="supportunknown" rowspan="2"></td>
+                    <td class="supportunknown" rowspan="2"></td>
                 </tr>
                 <tr>
-                    <td style="background-color: #B43104">6-10</td>
-                    <td style="background-color: #B43104">12-17</td>
-                    <td style="background-color: #50DD6B">63-68</td>
-                    <td style="background-color: #B43104">4-76</td>
-                    <td style="background-color: #B43104">3.1-12.1</td>
-                    <td style="background-color: #B43104">10-60</td>
-                    <td style="background-color: #B43104">3.2-12.4</td>
-                    <td></td>
-                    <td style="background-color: #B43104">2.1-4.4.4</td>
-                    <td style="background-color: #B43104">12-12.1</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td style="background-color: #B43104">4-9.2</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="notsupported">6-10</td>
+                    <td class="notsupported">12-17</td>
+                    <td class="supported">63-68</td>
+                    <td class="notsupported">4-76</td>
+                    <td class="notsupported">3.1-12.1</td>
+                    <td class="notsupported">10-60</td>
+                    <td class="notsupported">3.2-12.4</td>
+                    <td class="notsupported">2.1-4.4.4</td>
+                    <td class="notsupported">12-12.1</td>
+                    <td class="notsupported">4-9.2</td>
                 </tr>
                 <tr>
-                    <td style="background-color: #B43104">11</td>
-                    <td style="background-color: #B43104">18</td>
-                    <td style="background-color: #50DD6B">69</td>
-                    <td style="background-color: #B43104">77</td>
-                    <td style="background-color: #B43104">13</td>
-                    <td style="background-color: #B43104">62</td>
-                    <td style="background-color: #B43104">13.1</td>
-                    <td style="background-color: #B43104">all</td>
-                    <td style="background-color: #B43104">76</td>
-                    <td style="background-color: #B43104">46</td>
-                    <td style="background-color: #B43104">76</td>
-                    <td style="background-color: #50DD6B">68</td>
-                    <td style="background-color: #B43104">12.12</td>
-                    <td style="background-color: #B43104">10.1</td>
-                    <td style="background-color: #B43104">1.2</td>
-                    <td style="background-color: #B43104">7.12</td>
-                    <td style="background-color: #B43104">2.5</td>
+                    <td class="notsupported row-border">11</td>
+                    <td class="notsupported row-border">18</td>
+                    <td class="supported row-border">69</td>
+                    <td class="notsupported row-border">77</td>
+                    <td class="notsupported row-border">13</td>
+                    <td class="notsupported row-border">62</td>
+                    <td class="notsupported row-border">13.1</td>
+                    <td class="notsupported row-border">all</td>
+                    <td class="notsupported row-border">76</td>
+                    <td class="notsupported row-border">46</td>
+                    <td class="notsupported row-border">76</td>
+                    <td class="supported row-border">68</td>
+                    <td class="notsupported row-border">12.1</td>
+                    <td class="notsupported row-border">10.1</td>
+                    <td class="notsupported row-border">1.2</td>
+                    <td class="notsupported row-border">7.12</td>
+                    <td class="notsupported row-border">2.5</td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td style="background-color:rgba(180, 49, 4, 0.5)">76</td>
-                    <td style="background-color:rgba(80, 221, 107, 0.5)">70-71</td>
-                    <td style="background-color:rgba(180, 49, 4, 0.5)">78-80</td>
-                    <td style="background-color:rgba(180, 49, 4, 0.5)">TP</td>
+                    <td class="notsupportedalfa">76</td>
+                    <td class="supportedalfa">70-71</td>
+                    <td class="notsupportedalfa">78-80</td>
+                    <td class="notsupportedalfa">TP</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -113,18 +107,18 @@
                     <td></td>
                 </tr>
             </tbody>
-        </table>
-        <table>
+        <table style="color: black; text-align: left;">
             <tr>
-                <p><td style="background-color: #50DD6B; width: 50px;"></td></p>
-                <td>=Supported</td>
+                <td>Legend</td>
+            </tr>
+            <tr>
+                <td class="supported"></td>
+                <td> = Supported</td>
+            </tr>
+            <tr>
+                <td class="notsupported"></td>
+                <td> = Not supported</td>
             </tr>
         </table>
-        <table>
-                <tr>
-                    <td style="background-color: #B43104; width: 50px;"></td>
-                    <td>=Not supported</td>
-                </tr>
-            </table>
     </body>
 </html>
