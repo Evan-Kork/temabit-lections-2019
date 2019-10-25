@@ -89,22 +89,30 @@ td {
 	margin: 2px;
 }
 
-.mark_supported {
+/*supported*/
+.mark_srt {
 	background: #39b54a;
 }
 
-.mark_not_supported {
+/*not supported*/
+.mark_nsrt {
 	background: #c44230;
 }
 
-.mark_partial_support {
+/*partial support*/
+.mark_psrt {
 	background: #584E3B;
 }
 
-.mark_support_unknown {
+/*support unknown*/
+.mark_usrt {
 	background: #A8BD04;	
 }
 
-.mark_opacity {
+.mark_blur {
 	opacity: 0.8;
+}
+
+.empty {
+	background: white;
 }
