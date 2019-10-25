@@ -55,14 +55,20 @@ td {
     border-top: 0.5px; 
     text-align: center;
 }
-.red {
+.unsupported {
     background-color: red ;
 }
-.green {
+.supported {
     background-color: #39b54a; 
 }
-.grey{
+.missing-data{
     background-color: rgba(0,0,0,0.03);
+}
+.partial-support{
+    background-color: #A8BD04;
+}
+.support-unknown{
+    background-color: #838383;
 }
 tr.gray-border td {
     border: 4px solid #333;
