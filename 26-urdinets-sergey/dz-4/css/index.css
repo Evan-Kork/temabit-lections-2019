@@ -20,6 +20,9 @@ td {
 	height: 2em;
 	color: white;
 }
+tr[class~="border"] td {
+	border: 5px solid rgb(88,78,59);
+}
 .empty {
 	background-color: rgb(234,225,206);
 }
@@ -29,9 +32,6 @@ td {
 }
 .not-supported {
 	background-color: rgb(196,66,48);
-}
-.border-gray {
-	border: 5px solid rgb(88,78,59);
 }
 .legend {
 	width: 3em;
