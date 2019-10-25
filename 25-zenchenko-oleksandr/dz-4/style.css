@@ -44,8 +44,6 @@ p {
 ul {
     text-align: justify;
     list-style-type: none;
-
-
 }
 li {
     padding: 3px;
@@ -70,7 +68,7 @@ li:nth-last-child(2)::before {
     color: #a8bd04;
     background-color: #a8bd04;
 }
-.bordered {
+.bordered td {
     border-width: 5px;
     border-color: #584e3b;
 }
