@@ -69,39 +69,39 @@ article table td{
     border-bottom: 4px solid #992626;
 }
 .android-browser{
-border: none;
+    border: none;
     border-bottom: 4px solid #7ba13b;
 }
 .opera-mobile{
-border: none;
+    border: none;
     border-bottom: 4px solid #992626;
 }
 .chrome-android{
-border: none;
+    border: none;
     border-bottom: 4px solid #3f77bb;
 }
 .firefox-android{
-border: none;
+    border: none;
     border-bottom: 4px solid aliceblue;
 }
 .uc-android{
-border: none;
+    border: none;
     border-bottom: 4px solid #000000;
 }
 .samsung{
-border: none;
+    border: none;
     border-bottom: 4px solid #9753ff;
 }
 .qq{
-border: none;
+    border: none;
     border-bottom: 4px solid #000;    
 }
 .baidu{
-border: none;
+    border: none;
     border-bottom: 4px solid #000;
 }
 .kaios{
-border: none;
+    border: none;
     border-bottom: 4px solid #6f02b5;
 }
 ul{
