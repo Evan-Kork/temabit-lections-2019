@@ -1,0 +1,7 @@
+.form-group {
+	margin-bottom: 15px;
+}
+.form-group label {
+	width: 100px;
+	display: inline-block;
+}
