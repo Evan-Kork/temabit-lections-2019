@@ -1,0 +1,57 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+fieldset {
+	border: none;
+}
+.search-group {
+	display: inline-block;
+	position: relative;
+	bottom: 20px;
+}
+input[type="search"] {
+	width: 35em;
+	height: 2em;
+}
+.spacer {
+	height: 5em;
+}
+.form-questionary {
+	margin: 0 auto;
+	width: 50%;
+}
+h2 {
+	text-align: center;
+}
+h4 {
+	margin-top: 40px;
+}
+.form-group {
+	margin-bottom: 10px;
+}
+h5 {
+	margin: 0; 
+	margin-top: 30px;
+}
+input[type="text"],[type="date"],[type="tel"],[type="email"],[type="url"] {
+	border:none;
+	border-bottom: 1px solid black;
+	width: 49%;
+	height: 2em;
+	font-size: large;
+}
+input[type="date"] {
+	position: relative;
+	top: 3px;
+}
+input[type="url"] {
+	width: 98%;
+}
+.label-spacer {
+	margin-left: 35%;
+}
+button {
+	width: 30%;
+	height: 2em;
+	font-size: large
+}
