@@ -8,85 +8,131 @@
 		<link rel = 'stylesheet' type = 'text/css' href = 'css/index.css'>
 	</head>
 	<body>
-		<form action = 'https://www.google.com/search' method = 'POST'>
+		<form action = 'https://www.google.com/search' method = 'get'>
 			<fieldset>
 				<legend>SEARCH</legend>
 				<img src = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png'>
 				<div class = 'formgroup'>
-					<label for = 'as_q'>Phrase</label>
-					<input	type = 'text'
+					<label for = 'as_q_id'>What do you search?</label>
+					<input	type = 'search'
 							name = 'as_q'
 							value = ''
-							placeholder = ''
-							id = 'id_as_q'
+							placeholder = 'my search words'
+							id = 'as_q_id'
 							minlength = ''
 							maxlength = ''>
 				</div>
 				<div class = 'formgroup'>
-					<input	type='text'
-							name='as_apq'
-							value=''
-							placeholder='Enter what would you find'
-							id='id_q'
-							minlength=''
-							maxlength=''>
+					<label for = 'as_epq_id'>Match entire phrase</label>
+					<input	type = 'search'
+							name = 'as_epq'
+							value = ''
+							placeholder = '"my search phrase"'
+							id = 'as_epq_id'
+							minlength = ''
+							maxlength = ''>
 				</div>
 				<div class = 'formgroup'>
-					<input	type='submit'
-							name='q'
-							value=''
-							placeholder='Enter what would you find'
-							id='id_q'
-							minlength='2'
-							maxlength='10'>
+					<label></label>
+					<button	type = 'submit'>--GO--</button>
 				</div>
 			</fieldset>
 			<fieldset>
-				<legend></legend>
+				<legend>CONTENT TYPE</legend>
+				<div class = 'radio'>
+					<label for = 'tbm_id'>All</label>
+					<input	type = 'radio'
+							name = 'tbm'
+							value = ''
+							id = 'tbm_id'>
+				</div>				
+				<div class = 'radio'>
+					<label for = 'tbm_id'>Books</label>
+					<input	type = 'radio'
+							name = 'tbm'
+							value = 'bks'
+							id = 'tbm_id'>
+				</div>
+				<div class = 'radio'>
+					<label for = 'tbm_id'>Finance</label>
+					<input	type = 'radio'
+							name = 'tbm'
+							value = 'fin'
+							id = 'tbm_id'>
+				</div>	
+				<div class = 'radio'>
+					<label for = 'tbm_id'>Images</label>
+					<input	type = 'radio'
+							name = 'tbm'
+							value = 'isch'
+							id = 'tbm_id'>
+				</div>	
+				<div class = 'radio'>
+					<label for = 'tbm_id'>News</label>
+					<input	type = 'radio'
+							name = 'tbm'
+							value = 'nws'
+							id = 'tbm_id'>
+				</div>	
+				<div class = 'radio'>
+					<label for = 'tbm_id'>Videos</label>
+					<input	type = 'radio'
+							name = 'tbm'
+							value = 'vid'
+							id = 'tbm_id'>
+				</div>	
+				<div class = 'radio'>
+					<label for = 'tbm_id'>Tickets</label>
+					<input	type = 'radio'
+							name = 'tbm'
+							value = 'flm'
+							id = 'tbm_id'>
+				</div>
+				<div class = 'radio'>
+					<label for = 'tbm_id'>Personal info</label>
+					<input	type = 'radio'
+							name = 'tbm'
+							value = 'flm'
+							id = 'tbm_id'>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>SEARCH OPTIONS</legend>
 				<div class = 'formgroup'>
-					<input	type='text'
-							name='q'
-							value=''
-							placeholder='Enter what would you find'
-							id='id_q'
-							minlength=''
-							maxlength=''>
+					<label for = 'lr_id'>Lenguage</label>
+					<select	name = 'lr'
+							value = ''
+							id = 'lr_id'>
+						<option value = ''>choose the lenguage</option>
+						<option value = 'lang_en'>Англійська</option>
+						<option value = 'lang_ar'>Арабська</option>
+						<option value = 'lang_el'>Грецька</option>
+						<option value = 'lang_it'>Італійська</option>
+						<option value = 'lang_zh-TW'>Китайська</option>
+						<option value = 'lang_de'>Німецька</option>
+						<option value = 'lang_pl'>Польська</option>
+						<option value = 'lang_ru'>Російська</option>
+						<option value = 'lang_uk'>Українська</option>
+						<option value = 'lang_fr'>Французька</option>	 
+					<select>
 				</div>
 				<div class = 'formgroup'>
-					<input	type='text'
-							name='q'
-							value=''
-							placeholder='Enter what would you find'
-							id='id_q'
-							minlength=''
-							maxlength=''>
-				</div>
-				<div class = 'formgroup'>
-					<input	type='text'
-							name='q'
-							value=''
-							placeholder='Enter what would you find'
-							id='id_q'
-							minlength=''
-							maxlength=''>
-				</div>
-				<div class = 'formgroup'>
-					<input	type='text'
-							name='q'
-							value=''
-							placeholder='Enter what would you find'
-							id='id_q'
-							minlength=''
-							maxlength=''>
-				</div>
-				<div class = 'formgroup'>
-					<input	type='text'
-							name='q'
-							value=''
-							placeholder='Enter what would you find'
-							id='id_q'
-							minlength=''
-							maxlength=''>
+					<label for = 'cr_id'>Country</label>
+					<select	name = 'cr'
+							value = ''
+							id = 'cr_id'>
+						<option value = ''>choose the country</option>
+						<option value = 'countryAU'>Австралія</option>
+						<option value = 'countryBE'>Бельґія</option>
+						<option value = 'countryBR'>Бразілія</option>
+						<option value = 'countryGB'>Велика Британія</option>
+						<option value = 'countryGE'>Грузія</option>
+						<option value = 'countryDK'>Данія</option>
+						<option value = 'countryEG'>Єгипет</option>
+						<option value = 'countryES'>Іспанія</option>
+						<option value = 'countryUS'>Сполучені Штати</option>
+						<option value = 'countryUA'>Україна</option>
+					<select>
 				</div>
 			</fieldset>
 	</body>
@@ -107,7 +153,7 @@ https://www.google.com.ua/search
 						as_nlo=
 						as_nhi=
 - мова					lr=lang_en
-- краъна				cr=
+- країна				cr=
 						as_qdr=all
 						as_sitesearch=
 						as_occt=any
