@@ -2,64 +2,95 @@
 <html>
 	<head>
 		<title>FORMS</title>
-		<meta charset = "utf-8">
-		<meta>
-		<meta>
-		<link rel = 'stylesheet' type = 'text/css' href = 'css/index.css'>
+		<meta	charset = 'utf-8'>
+		<meta	name = 'viewport'
+				content = 'width=device-width, initial-scale=1.0'>
+		<meta	http-equiv = 'X-UA-Compatible'
+				content = 'ie=edge'>
+		<link	rel = 'stylesheet'
+				type = 'text/css'
+				href = 'css/index.css'>
+		<link 	rel = 'stylesheet'
+				type = 'text/css'
+				href = 'https://fonts.googleapis.com/css?family=Century+ Gothic'>
+		</link>
 	</head>
 	<body>
 		<form class = 'silpo'>
 			<fieldset class = 'form_title'>
 				<img src = 'https://silpo.ua/images/logo.svg'>
-				<h3>Заголовок анкети</h3>
+				<h3>Приєднуйтеся до нашої команди — заповніть анкету</h3>
 			</fieldset>
 			<fieldset>
 				<legend>Основна інформація</legend>
 				<div class = 'formgroup'>
-					<label for = ''>Ім'я</label>
+					<label	for = 'first_name_id'>Ім'я</label>
 					<input	type = 'text'
+							name = 'first_name'
+							id = 'first_name_id'
+							placeholder = "Введіть ім'я"
 							required>
 				</div>
 				<div class = 'formgroup'>
-					<label for = ''>Прізвище</label>
+					<label	for = 'last_name_id'>Прізвище</label>
 					<input	type = 'text'
+							name = 'last_name'
+							id = 'last_name_id'
+							placeholder = 'Введіть прізвище'
 							required>
 				</div>
 				<div class = 'formgroup'>
-					<label for = ''>Дата народження</label>
-					<input type = 'date'
+					<label	for = 'birthday_id'>Дата народження</label>
+					<input	type = 'date'
+							name = 'birthday'
+							id = 'birthday_id'
+							value = '2000-01-01'
 							required>
 				</div>
 				<div class = 'formgroup'>
-					<label for = ''>Населений пункт</label>
-					<input type = 'text'
+					<label	for = 'city_id'>Населений пункт</label>
+					<input	type = 'text'
+							name = 'city'
+							id = 'city_id'
+							placeholder = 'Введіть місто проживання'
 							required>
 				</div>
 				<div class = 'formgroup'>
-					<label for = ''>Електронна адреса</label>
-					<input type = 'email'
+					<label for = 'email_id'>Електронна адреса</label>
+					<input	type = 'email'
+							name = 'email'
+							id = 'email_id'
+							placeholder = 'Введіть адресу поштової скриньки'
 							required>
 				</div>
 				<div class = 'formgroup'>
-					<label for = ''>Телефон</label>
-					<input type = 'tel'
+					<label	for = 'tel_id'>Телефон</label>
+					<input	type = 'tel'
+							name = 'tel'
+							id = 'tel_id'
+							placeholder = 'Введіть контактний номер телефону'
 							required>
 				</div>
 				<div class = 'formgroup'>
-					<label for = ''>Резюме</label>
-					<input type = 'file'>
+					<label	for = 'resume_id'>Резюме у файлі</label>
+					<input	type = 'file'
+							name = 'resume'
+							id = 'resume_id'>
 				</div>
 				<div class = 'formgroup'>
-					<label for = ''>Посилання на резюме</label>
-					<input type = 'text'>
+					<label	for = 'link'>Посилання на резюме</label>
+					<input	type = 'text'
+							name = 'link'
+							id = 'link_id'
+							placeholder = 'Або введіть посилання на резюме'>
 				</div>
 			</fieldset>
 			<fieldset>
 				<legend>Додаткова інформація</legend>
 				<div class = 'formgroup'>
 					<label for = ''>Бажане місто</label>
-					<select required="">
-						<option value = ''></option>
+					<select name = 'market_city' id = 'market_city_id' required>
+						<option value = ''>-В якому місті Ви хочете працювати?-</option>
 						<option value = 'cityVN'>Вінниця</option>
 						<option value = 'cityKR'>Кропивницький</option>
 						<option value = 'cityKH'>Хмельницький</option>	
@@ -67,27 +98,28 @@
 				</div>
 				<div class = 'formgroup'>
 					<label for = ''>Зручний супермаркет</label>
-					<select>
-						<option value = ''></option>
+					<select name = 'market_adr' id = 'market_adr_id'>
+						<option value = ''>-В якому саме із супермаркетів?-</option>
 						<option value = 'near'>Ближче до дому</option>
 						<option value = 'far'>Далі від дому</option>
 					</select>
 				</div>
 				<div class = 'formgroup'>
 					<label for = ''>Бажана посада</label>
-					<select>
-						<option value = ''></option>
+					<select name = 'market_pos' id = 'market_pos_id'>
+						<option value = ''>-Ким Ви хочете працювати?-</option>
 						<option value = 'vacAR'>Адміністратор ресторану</option>
 						<option value = 'vacVN'>Вантажник</option>
-						<option value = 'vacVN'>Кондитер</option>
+						<option value = 'vacKR'>Кондитер</option>
 					</select>
 				</div>
 				<div class = 'formgroup'>
-					<label for = ''>Неповний робочий день</label>
+					<label for = ''>Підходить неповний робочий день</label>
 					<input type = 'checkbox'>
 				</div>
 			</fieldset>
 			<fieldset>
+				<span>Обовязково заповніть червоні поля, щоб ми могли підібрати для вас найкраще місце в компанії</span>
 				<button>Відправити</button>
 			</fieldset>
 		</form>

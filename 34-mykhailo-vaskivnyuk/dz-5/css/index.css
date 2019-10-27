@@ -53,6 +53,15 @@ select {
 
 .silpo h3 {
 	display: inline-block;
+	width: 350px;
+	text-align: center;
+	padding-left: 20px;
 	vertical-align: top;
 	color: white;
+}
+
+span {
+	display: inline-block;
+	width: 80%;
+	vertical-align: middle;
 }
