@@ -27,40 +27,40 @@ td {
 	background-color: #eae1ce;
 }
 
-.bg-green {
+.bg-supported {
 	background-color: #39b54a;
 }
 
-.bg-green__border {
+.bg-supported__border {
 	background-color: #39b54a;
 	border: 5px solid #584e3b;
 }
 
-.bg-green__borderLeft {
+.bg-supported__border-left {
 	background-color: #39b54a;
 	border: 5px solid #584e3b;
 	border-left: 3px solid #584e3b;
 }
-.bg-green__borderRight {
+.bg-supported__border-right {
 	background-color: #39b54a;
 	border: 5px solid #584e3b;
 	border-right: 3px solid #584e3b;
 }
 
-.bg-red {
+.bg-not-supported {
 	background-color: #c44230;
 }
 
-.bg-mustard {
+.bg-partial-support {
 	background-color: #a8bd04;
 }
 
-.bg-mustard__border {
+.bg-partial-support__border {
 	background-color: #a8bd04;
 	border: 5px solid #584e3b;
 }
 
-.bg-violet {
+.bg-support-unknown {
 	background-color: #838383;
 }
 
