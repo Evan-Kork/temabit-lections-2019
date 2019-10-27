@@ -13,6 +13,9 @@ input[type="search"] {
 	width: 35em;
 	height: 2em;
 }
+.submit-search {
+	height: 2em;
+}
 .spacer {
 	height: 5em;
 }
@@ -50,7 +53,7 @@ input[type="url"] {
 .label-spacer {
 	margin-left: 35%;
 }
-button {
+.submit-questionary {
 	width: 30%;
 	height: 2em;
 	font-size: large
