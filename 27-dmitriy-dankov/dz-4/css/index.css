@@ -7,7 +7,7 @@ table {
     color: white;
     table-layout: fixed;
     width: 100%;
-    border-spacing: 6px;;
+    border-spacing: 6px 2px;
     background-color: #ffeee3;
 }
 
@@ -20,8 +20,8 @@ td {
     height: 2em;
 }
 
-.row-border {
-    border: 3px solid grey;
+tr[class~="row-border"] td {
+    border: 5px solid rgb(128,128,128)
 }
 
 .supported {
@@ -42,5 +42,10 @@ td {
 
 .back {
     background-color: #e6e1df;
+}
+
+.legend {
+    color: black;
+    text-align: left;
 }
 
