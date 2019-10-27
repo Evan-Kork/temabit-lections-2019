@@ -6,7 +6,6 @@ body {
 form {
 	max-width: 600px;
 	margin-left: 100px;
-	//padding: 20px;
 }
 
 fieldset {
@@ -29,7 +28,11 @@ label {
 	vertical-align: middle;
 }
 
-input[type='search'],
+input[type = 'search'],
+input[type = 'text'],
+input[type = 'date'],
+input[type = 'tel'],
+input[type = 'email'],
 select {
 	width: 300px;
 	height: 30px;
@@ -42,4 +45,14 @@ select {
 .radio label {
 	vertical-align: top;
 	text-align: right;
+}
+
+.silpo fieldset.form_title {
+	background: rgb(92, 49, 131);
+}
+
+.silpo h3 {
+	display: inline-block;
+	vertical-align: top;
+	color: white;
 }

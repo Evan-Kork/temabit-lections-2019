@@ -8,7 +8,104 @@
 		<link rel = 'stylesheet' type = 'text/css' href = 'css/index.css'>
 	</head>
 	<body>
-		<form action = 'https://www.google.com/search' method = 'get'>
+		<form class = 'silpo'>
+			<fieldset class = 'form_title'>
+				<img src = 'https://silpo.ua/images/logo.svg'>
+				<h3>Заголовок анкети</h3>
+			</fieldset>
+			<fieldset>
+				<legend>Основна інформація</legend>
+				<div class = 'formgroup'>
+					<label for = ''>Ім'я</label>
+					<input	type = 'text'
+							required>
+				</div>
+				<div class = 'formgroup'>
+					<label for = ''>Прізвище</label>
+					<input	type = 'text'
+							required>
+				</div>
+				<div class = 'formgroup'>
+					<label for = ''>Дата народження</label>
+					<input type = 'date'
+							required>
+				</div>
+				<div class = 'formgroup'>
+					<label for = ''>Населений пункт</label>
+					<input type = 'text'
+							required>
+				</div>
+				<div class = 'formgroup'>
+					<label for = ''>Електронна адреса</label>
+					<input type = 'email'
+							required>
+				</div>
+				<div class = 'formgroup'>
+					<label for = ''>Телефон</label>
+					<input type = 'tel'
+							required>
+				</div>
+				<div class = 'formgroup'>
+					<label for = ''>Резюме</label>
+					<input type = 'file'>
+				</div>
+				<div class = 'formgroup'>
+					<label for = ''>Посилання на резюме</label>
+					<input type = 'text'>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Додаткова інформація</legend>
+				<div class = 'formgroup'>
+					<label for = ''>Бажане місто</label>
+					<select required="">
+						<option value = ''></option>
+						<option value = 'cityVN'>Вінниця</option>
+						<option value = 'cityKR'>Кропивницький</option>
+						<option value = 'cityKH'>Хмельницький</option>	
+					</select>
+				</div>
+				<div class = 'formgroup'>
+					<label for = ''>Зручний супермаркет</label>
+					<select>
+						<option value = ''></option>
+						<option value = 'near'>Ближче до дому</option>
+						<option value = 'far'>Далі від дому</option>
+					</select>
+				</div>
+				<div class = 'formgroup'>
+					<label for = ''>Бажана посада</label>
+					<select>
+						<option value = ''></option>
+						<option value = 'vacAR'>Адміністратор ресторану</option>
+						<option value = 'vacVN'>Вантажник</option>
+						<option value = 'vacVN'>Кондитер</option>
+					</select>
+				</div>
+				<div class = 'formgroup'>
+					<label for = ''>Неповний робочий день</label>
+					<input type = 'checkbox'>
+				</div>
+			</fieldset>
+			<fieldset>
+				<button>Відправити</button>
+			</fieldset>
+		</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<form action = 'https://www.google.com/search' method = 'get' target = '_blank'>
 			<fieldset>
 				<legend>SEARCH</legend>
 				<img src = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png'>
@@ -44,7 +141,8 @@
 					<input	type = 'radio'
 							name = 'tbm'
 							value = ''
-							id = 'tbm_id'>
+							id = 'tbm_id'
+							checked>
 				</div>				
 				<div class = 'radio'>
 					<label for = 'tbm_id'>Books</label>
