@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<fieldset>	
+	<fieldset class="fieldset-search">	
 		<legend>Search</legend>
 		<center>
 		     <form target="_blank" action="https://www.google.com/search" method="get">
@@ -22,6 +22,11 @@
 		     		<input type="radio" name="tbm" value="nws"> Новости
 		     		<br/>
 		     		<input type="radio" name="tbm" value="bks"> Книги
+		     		<br/>
+		     		<hr/>
+		     		<input type="radio" name="lr" value="lang_uk"> Шукати тільки українською
+		     		<br/>
+		     		<input type="radio" name="lr" value=""> шукати всіма мовами
 		     		<br/>
 		     		<input class="button" type="submit">
 		     		
@@ -52,8 +57,31 @@
 		     	</div>
 		     </form>
         </center>
-
-	</fieldset>
-
+    </fieldset>
+   <center>
+    <div class="silpo-osn-div">
+       	<fieldset>	
+           	<form class="form-silpo-anketa" method="get" action="#">
+	           	<legend >Анкета для роботи в «Сільпо»</legend>
+	           	<div class="inform">Основна інформація</div>
+	           	<div class="form-block">
+	       	   		<div class="div-anketa">
+	       	       		<input class="anketa" id="anketname" type="text" name="name" placeholder="Ім'я">
+	       	       		<input class="anketa two" id="sname" type="text" name="sname" placeholder="Прізвище">
+	     	       	</div>
+	       	       	<div class="div-anketa">
+		   	    		<input class="anketa" id="data" type="date" name="data">
+           	    		<input class="anketa two" id="location" type="text" name="location" placeholder="Місце проживання" value="Вінниця">
+           	    	</div class="div-anketa">
+           	    		<input class="anketa" id="mail" type="email" name="mail" placeholder="EMAIL">
+           	    		<input class="anketa two" id="phone" type="tel" name="phone" placeholder="Телефон +380670000000">
+           	    	</div>
+           	    	<center><input class="button" type="submit"></center>
+	       	   		
+           	   </div>
+           	</form>
+        </fieldset>	
+    </div>
+</center>
 </body>
 </html>
