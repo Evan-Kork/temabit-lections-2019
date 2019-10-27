@@ -1,0 +1,47 @@
+body{
+    background-color: beige;
+    width: 99%;
+    height: 99%;
+}
+label{
+    font-style: oblique;
+    font-family: inherit;
+    text-align:right;
+}
+fieldset{
+    text-align: start;
+    margin-left: 2em;
+    display: inline-block;
+    
+}
+.form-group {
+	margin-bottom: 1em;
+    padding-top: 1em;
+}
+input{
+    color: #5f0606
+}
+.form-group label{
+	width: 15%;
+    display: inline-block;
+}
+legend{
+    font-size: 200%;
+    color: #0000c7;
+    font-style: italic;
+    font-family:cursive;
+}
+fieldset{
+    margin-left: 40%;
+    margin-right: 40%;
+    background-color: antiquewhite;
+}
+.button{
+    border-radius:30%;
+    background-color: aqua;
+}
+.search{
+    border-radius: 10%;  
+    border: 11% solid red;
+    color:#0e2424;
+}
