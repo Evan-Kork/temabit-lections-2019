@@ -34,6 +34,20 @@ table, tr, td, th {
     border: 0px;
     padding: 0 px;
 }
-
-
-
+.green {
+    background: #67C26D;
+}
+.text {
+    color: black;
+}
+.cell1 {
+    background: #C44230;
+}
+.cell2 {
+    background: #A8BD04;
+}
+div {
+    color: black;
+    width: 140px;
+    text-align: center;
+}
