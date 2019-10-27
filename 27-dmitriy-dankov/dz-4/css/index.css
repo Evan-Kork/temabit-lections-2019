@@ -7,7 +7,7 @@ table {
     color: white;
     table-layout: fixed;
     width: 100%;
-    border-spacing: 6px 2px;
+    border-spacing: 6px;;
     background-color: #ffeee3;
 }
 
@@ -28,19 +28,19 @@ td {
     background-color: #50DD6B;
 }
 
-.notsupported {
+.not-supported {
     background-color: #B43104;
 }
 
-.supportedalfa {
+.supported-alfa {
     background-color: rgba(80, 221, 107, 0.5);
 }
 
-.notsupportedalfa {
+.not-supported-alfa {
     background-color: rgba(180, 49, 4, 0.5);
 }
 
-.supportunknown {
+.back {
     background-color: #e6e1df;
 }
 
