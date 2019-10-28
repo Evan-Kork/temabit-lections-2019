@@ -16,7 +16,7 @@ body {
     margin-right: auto;
 }
 
-#search {
+.google-search {
     display: block;
     margin: 20px auto;
     width: 35%;
