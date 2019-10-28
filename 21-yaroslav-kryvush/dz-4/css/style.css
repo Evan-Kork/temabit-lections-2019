@@ -131,30 +131,30 @@ td {
 	font-size: 20px;
 }
 
-.rectangle-green {
+.rectangle-supported {
 	width: 50px;
 	height: 25px;
 	background-color: #39b54a;
 	margin-right: 6px;
 }
 
-.rectangle-red {
+.rectangle-not-supported {
 	width: 50px;
 	height: 25px;
 	background-color: #c44230;
 	margin-right: 6px;
 }
 
-.rectangle-mustard {
+.rectangle-partial-support {
 	width: 50px;
 	height: 25px;
 	background-color: #a8bd04;
 	margin-right: 6px;
 }
 
-.rectangle-violet {
+.rectangle-support-unknown {
 	width: 50px;
 	height: 25px;
 	background-color: #838383;
 	margin-right: 6px;
-}
+} 
