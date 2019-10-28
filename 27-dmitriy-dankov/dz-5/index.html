@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Search</title>
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <form
+        action="https://www.google.com/search"
+        method="GET"
+        target="_blank"
+        >
+            <fieldset>
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+                     alt="Google logo"
+                >
+            <div class="google-search">
+                <input     
+                        class="search" 
+                        type="search"
+                        name="q"
+                >
+                <button>Search</button>
+            </div>
+            <div>    
+                <input 
+                            type="radio"
+                            id="all"
+                            name="tbm"
+                            value=""
+                >
+                <label for="all">All</label>
+                <input 
+                        type="radio"
+                        id="picture"
+                        name="tbm"
+                        value="isch"
+                >
+                <label for="picture">Picture</label>
+                <input 
+                        type="radio"
+                        id="video"
+                        name="tbm"
+                        value="vid"
+                >
+                <label for="video">Video</label>
+                <input 
+                        type="radio"
+                        id="news"
+                        name="tbm"
+                        value="nws"
+                >
+                <label for="news">News</label>
+            </div>
+            </fieldset>
+        </form>
+    <div class="form-anket">
+        <h3>Анкета для роботи в «Сільпо»</h3>
+            <form action="#" 
+                  method="POST"
+            >
+                <fieldset>
+                    <div class="form-group">
+                        <legend><h4>Основна інформація</h4></legend>
+                        <input type="text"
+                               id="name"
+                               name="name"
+                               placeholder="Ім'я"
+                               required
+                        >
+                        <input type="text"
+                               id="surname"
+                               name="surname"
+                               placeholder="Прізвище"
+                               required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input type="date"
+                               id="birthday"
+                               name="Birthday"
+                               placeholder="Прізвище"
+                               required
+                        >
+                        <input type="text"
+                               id="home"
+                               name="Home"
+                               placeholder="Населений пункт"
+                               required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input type="text"
+                               id="email"
+                               name="mail"
+                               placeholder="Електронна адреса"
+                               required
+                        >
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               placeholder="Телефон"
+                               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                               required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <h5>Резюме</h5>
+                        <input type="file"
+                               id="doc"
+                               name="doc"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input type="url"
+                               id="url"
+                               name="url"
+                               placeholder="або додайте сюди посилання на резюме"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <h4>Вкажіть більше інформації, щоб отримати справді цікаву вакансію<h4>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" 
+                               name="city"
+                               id="city"
+                               placeholder="Оберіть бажаний населений пункт"
+                        >
+                        <input type="text"
+                               name="work"
+                               id="work"
+                               placeholder="Оберіть бажану посаду"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input type="text"
+                               name="shop"
+                               id="shop"
+                               placeholder="Оберіть зручний супермаркет"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox"
+                               id="workday"
+                               name="workday"
+                        >
+                        <label for="workday">Хочу працювати неповний робочий день</label>
+                    </div>
+                    <div class="form-group">
+                        <button class="button">Відправити</button>
+                    </div>
+                </fieldset>
+
+            </form>
+        </div>
+    </div>
+    </body>
+</html>
