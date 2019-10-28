@@ -102,7 +102,7 @@ div[class^="google-search-form-menu-item-settings"] h5 {
 	background-color: #f1f1f1;
 }
 
-.cv-panel {
+.cv-header-intro {
 	text-align: center;
 	padding: 10px 15px;
 	background: #9e9e9e0f;
@@ -116,6 +116,99 @@ div[class^="google-search-form-menu-item-settings"] h5 {
 
 .cv-intro-btn:hover {
 	cursor: pointer;
+}
+
+/* cv-form */
+.form {
+	padding: 20px;
+}
+.cv-form__heading {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.cv-form__subtitle {
+	margin-bottom: 15px;
+}
+
+.form-row {
+	margin-bottom: 20px;
+}
+
+.form__label-value {
+	display: block;
+	color: gray;
+}
+
+.form__field {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.form__field input[type="text"],
+.form__field input[type="tel"],
+.form__field input[type="email"],
+.form__field select {
+	border: none;
+	border-bottom: 1px solid grey;
+	outline: none;
+	width: 100%;
+	height: 2rem;
+}
+
+.box__input {
+	height: 200px;
+	margin: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.checkbox-label__body { color: gray; }
+
+.box__file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.box__file + label {
+	font-size: 1.25em;
+	font-weight: 700;
+	color: white;
+	display: inline-block;
+	cursor: pointer;
+	padding: 5px 20px
+}
+
+.box__file:focus + label,
+.box__file + label:hover {
+	background-color: grey;
+}
+
+.subForm {
+	margin-top: 50px;
+}
+
+.form-hint {
+	margin: 10px auto;
+	text-align: center;
+	max-width: 220px;
+	color: grey;
+	font-size: 12px;
+}
+
+.login {
+	padding-top: 15px;
+}
+
+.login input {
+	outline: none;
+	width: 90%;
 }
 
 @media only screen and (min-width: 540px) {
@@ -137,8 +230,27 @@ div[class^="google-search-form-menu-item-settings"] h5 {
 		border-top: none;
 	}
 
-	.cv-panel {
+	.cv-header-intro {
 		width: 50%;
 		padding: 35px;
 	}
+
+	.form-row {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.form-row .form__field {
+		width: 50%;
+	}
+
+	.main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+@media only screen and (min-width: 961px) {
+	.cv-form { width: 70%; }
 }
