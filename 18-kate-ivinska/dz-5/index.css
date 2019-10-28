@@ -1,0 +1,85 @@
+.form-group label {
+	width: 175px;
+  display: inline-block;
+}
+
+#container{
+  width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  font-family: "Times New Roman";
+  letter-spacing: 1px;
+  font-size: 30px;
+  color: DarkBlue;
+  font-weight: bold;
+  position: relative;
+}
+
+#container_1{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+}
+
+.form_submit{
+  position: relative;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  font-family: "Times New Roman";
+  font-size: 16px;
+  background-color: DarkBlue;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form_submit:focus,
+.form_submit:hover{
+  background-color:lightblue;
+}
+
+.form{
+width: 500px;
+padding: 32px;
+border-radius: 10px;
+box-shadow: 0 4px 16px #ccc;
+font-family: "Times New Roman";
+letter-spacing: 1px;
+}
+
+.form-group{
+  font-family: "Times New Roman";
+  letter-spacing: 1px;
+  font-size: 16px;
+  position: relative;
+  margin-bottom: 15px;
+}
+.form-title{
+  text-align: center;
+  margin: 0 0 32px 0;
+  font-weight: normal;
+  color: brown;
+}
+h3, h5{
+  text-align: center;
+  margin: 0 0 15px 0;
+  font-weight: normal;
+}
+
+.form-button{
+  position: relative;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  color: white;
+  font-family: "Times New Roman";
+  font-size: 16px;
+  background-color: brown;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-button:focus,
+.form-button:hover{
+  background-color: purple;
+}

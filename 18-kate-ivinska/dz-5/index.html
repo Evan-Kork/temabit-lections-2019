@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+<div id="container">
+
+    <form
+    action="https://www.google.com.ua/search"
+    method="get"
+    target="_blank">
+
+    <label for="name">Google</label>
+
+    <input
+      type="search"
+      name="q"
+      placeholder="Введите запрос">
+
+    <input
+      type="hidden"
+      name="searchid">
+
+    <input class="form_submit"
+    type="submit"
+    name="text"
+    formaction="https://www.google.com.ua/search"
+    value="Search">
+
+    </form>
+</div>
+<div id="container_1">
+
+    <form class="form" action="#" method="post">
+    <fieldset>
+			<h1 class="form-title"> Анкета для роботи в "Сільпо"</h1>
+    <p><h3>Основна інформація</h3></p>
+
+			<div class="form-group">
+				<label for="name">Ім'я</label>
+				<input
+					id="name"
+					type="text"
+					name="name"
+					placeholder="Введіть ім'я">
+          </div>
+
+        <div class="form-group">
+        <label for="surname">Прізвище</label>
+        <input
+          id="surname"
+          type="text"
+          name="surname"
+          placeholder="Введіть прізвище">
+          </div>
+
+
+      <div class="form-group">
+				<label for="birthday">Дата народження</label>
+				<input
+					id="birthday"
+					type="date"
+					name="birthday"
+					placeholder="Введіть дату народження">
+          </div>
+
+        <div class="form-group">
+        <label for="town">Населений пункт</label>
+        <input
+          id="town"
+          type="text"
+          name="town"
+          placeholder="Введіть місто проживання">
+			</div>
+
+      <div class="form-group">
+        <label for="file">Резюме</label>
+        <input type="file"
+        name="f">
+      </div>
+
+      <div class="form-group">
+        <label for="text">Чи додайте посилання на резюме</label>
+        <textarea name="name"></textarea>
+
+      </div>
+
+      <p><h3>Вкажіть більше інформації, щоб отримати справді цікаву вакансію</h3></p>
+
+      <div class="form-group">
+      				<label for="town">Місце роботи</label>
+      				<select
+      					name="town"
+      					id="town">
+
+      					<optgroup>
+      						<option value="">Оберіть бажаний населений пункт</option>
+      						<option value="vinnytsa">Вінниця</option>
+      					</optgroup>
+      				</select>
+      			</div>
+
+        <div class="form-group">
+            				<label for="position">Бажана посада</label>
+            				<select
+            					name="position"
+            					id="position">
+
+            					<optgroup>
+            						<option value="position">Оберіть бажану посаду</option>
+            						<option value="position1">Адміністратор ресторану</option>
+                        <option value="position2">Вантажник</option>
+                        <option value="position3">Завідуючий виробництвом</option>
+                        <option value="position4">Завідуючий відділом</option>
+                        <option value="position5">Завідуючий відділом "Каса"</option>
+                        <option value="position6">Завідуючий відділом товарного обліку</option>
+                        <option value="position7">Завідуючий господарством</option>
+                        <option value="position8">Заступник керуючого</option>
+                        <option value="position9">Касир</option>
+                        <option value="position10">Керуючий рестораном</option>
+                        <option value="position11">Керуючий супермаркетом</option>
+            						<option value="position12">Кондитер</option>
+                        <option value="position13">Кондитер-оформлювач</option>
+                        <option value="position14">Кухар(супермаркет)</option>
+                        <option value="position15">Начальник відділу "Охорона"</option>
+                        <option value="position16">Обвалювальник м'яса</option>
+                        <option value="position17">Оброблювач риби</option>
+                        <option value="position18">Охоронник</option>
+                        <option value="position19">Пекар</option>
+                        <option value="position20">Прибиральниця</option>
+                        <option value="position21">Продавець</option>
+                        <option value="position22">Робота в офісі</option>
+                        <option value="position23">Старший кондитер</option>
+                        <option value="position24">Старший кухар(супермаркет)</option>
+                        <option value="position25">Старший пекар</option>
+                        <option value="position26">Су-шеф</option>
+                        <option value="position27">Фахівець з приймання та обліку товарів</option>
+                        <option value="position28">Шеф-кухар</option>
+
+            					</optgroup>
+            				</select>
+        	</div>
+
+          <div class="form-group">
+                      <label for="market">Супермаркети</label>
+                      <select
+                        name="market"
+                        id="market">
+
+                        <optgroup>
+                          <option value="market">Оберіть зручний супермаркет</option>
+                          <option value="market1">вул. 600-річчя, 17е </option>
+                          <option value="market2">пл. Гагаріна, 2</option>
+                          <option value="market3">вул. Зодчих, 2</option>
+                          <option value="market4">вул. Келецька, 105</option>
+                          <option value="market5">вул. Миколи Оводова, 51</option>
+
+                        </optgroup>
+                      </select>
+            </div>
+            <div class="form-group1">
+				<label for="work">Хочу працювати неповний робочий день</label>
+				<input
+					type="checkbox"
+					name="work"
+					id="work"
+					checked
+				/>
+			</div>
+      <div>
+
+      <button class="form-button">Відправити</button>
+
+      </div>
+            <p><h5>Заповніть всю анкету, щоб ми обрали для вас цікаву вакансію</h5></p>
+      </fieldset>
+
+    </form>
+    </div>
+
+  </body>
+</html>
