@@ -126,14 +126,10 @@ section{
                     border-bottom: 3px solid $white;
                     svg,img{
                         margin-right: 5px;
-                    }
-                    svg{
                         width: 20px;
                         height: 20px;
                     }
                     img{
-                        width: 20px;
-                        height: 20px;
                         display: none;
                     }
                     &:hover{
@@ -147,15 +143,15 @@ section{
                     left: 0;
                     top: 0;
                     margin: 0;
-                }
-                input[type=radio]:checked + label{
-                    color: $blue;
-                    border-bottom: 3px solid $blue;
-                    svg{
-                        display: none;
-                    }
-                    img{
-                        display: block;
+                    &:checked + label{
+                        color: $blue;
+                        border-bottom: 3px solid $blue;
+                        svg{
+                            display: none;
+                        }
+                        img{
+                            display: block;
+                        }
                     }
                 }
             }
@@ -202,15 +198,15 @@ section{
                     margin-right: 20px;
                 }
             }
+            &.single-item{
+                .wrapp-item{
+                    flex-basis: calc(50% - 10px);
+                }
+            }
         }
         .line{
             .wrapp-item{
                 flex-basis: 100%;
-            }
-        }
-        .single-item{
-            .wrapp-item{
-                flex-basis: calc(50% - 10px);
             }
         }
         .wrapp-item{
@@ -236,11 +232,6 @@ section{
             input:focus ~ .pseudo-border,select:focus ~ .pseudo-border{
                 width: 100%;
             }
-            // input:invalid ~ label{
-            //     opacity: 1;
-            //     top: 0;
-            //     color: red;
-            // }
             label{
                 font-size: 12px;
                 position: absolute;

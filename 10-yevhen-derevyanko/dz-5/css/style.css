@@ -135,13 +135,10 @@ main {
           padding-bottom: 10px;
           border-bottom: 3px solid #fff; }
           .wrapp-google-form form .box-filters .item label svg, .wrapp-google-form form .box-filters .item label img {
-            margin-right: 5px; }
-          .wrapp-google-form form .box-filters .item label svg {
+            margin-right: 5px;
             width: 20px;
             height: 20px; }
           .wrapp-google-form form .box-filters .item label img {
-            width: 20px;
-            height: 20px;
             display: none; }
           .wrapp-google-form form .box-filters .item label:hover {
             color: #4285f4;
@@ -152,13 +149,13 @@ main {
           left: 0;
           top: 0;
           margin: 0; }
-        .wrapp-google-form form .box-filters .item input[type=radio]:checked + label {
-          color: #4285f4;
-          border-bottom: 3px solid #4285f4; }
-          .wrapp-google-form form .box-filters .item input[type=radio]:checked + label svg {
-            display: none; }
-          .wrapp-google-form form .box-filters .item input[type=radio]:checked + label img {
-            display: block; }
+          .wrapp-google-form form .box-filters .item input[type=radio]:checked + label {
+            color: #4285f4;
+            border-bottom: 3px solid #4285f4; }
+            .wrapp-google-form form .box-filters .item input[type=radio]:checked + label svg {
+              display: none; }
+            .wrapp-google-form form .box-filters .item input[type=radio]:checked + label img {
+              display: block; }
 
 .silpo-work-form {
   padding: 40px 0; }
@@ -196,12 +193,12 @@ main {
         flex-basis: 50%; }
         .wrapp-silpo-form form .line-half .wrapp-item:first-child {
           margin-right: 20px; }
+      .wrapp-silpo-form form .line-half.single-item .wrapp-item {
+        -ms-flex-preferred-size: calc(50% - 10px);
+        flex-basis: calc(50% - 10px); }
     .wrapp-silpo-form form .line .wrapp-item {
       -ms-flex-preferred-size: 100%;
       flex-basis: 100%; }
-    .wrapp-silpo-form form .single-item .wrapp-item {
-      -ms-flex-preferred-size: calc(50% - 10px);
-      flex-basis: calc(50% - 10px); }
     .wrapp-silpo-form form .wrapp-item {
       position: relative;
       padding-top: 18px; }
