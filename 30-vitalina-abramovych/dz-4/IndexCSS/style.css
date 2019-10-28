@@ -1,0 +1,20 @@
+table{
+	border-collapse: separate;
+	border-spacing: 3px;
+	text-align: center;
+	background-color: lightyellow;
+}
+
+
+table tbody tr td.dog{
+	background-color: red;
+}
+table tbody tr td.kitty{
+	background-color: green;
+}
+table tbody tr td.owl{
+	background-color: lightgreen;
+}
+table tbody tr td.fox{
+	background-color: grey;
+}
