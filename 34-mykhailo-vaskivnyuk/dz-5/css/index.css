@@ -1,31 +1,84 @@
 
+html {
+	box-sizing: border-box;
+}
+
+*, *::after, *::before {
+	box-sizing: inherit;
+}
+
 body {
   	font-family: 'Century Gothic';
+  	font-size: 0.9em;
 }
 
 form {
-	max-width: 600px;
-	margin-left: 100px;
+	width: 600px;
+	margin-left: 30px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+form.silpo {
+	margin-top: 8px;
 }
 
 fieldset {
-	margin-top: 10px;
-	padding: 20px;
+	margin-bottom: 10px;
+	padding: 25px;
+	background: rgba(150, 200, 0, 0.1);
+}
+
+fieldset.form_title {
+	background: rgb(92, 49, 131);
 }
 
 legend {
 	font-weight: bold;
-	color: green;
+	color: rgb(0, 180, 0);
 }
 
-.formgroup {
-	margin-bottom: 20px;
+.form_title h3 {
+	display: inline-block;
+	width: 350px;
+	text-align: center;
+	padding-left: 20px;
+	vertical-align: top;
+	color: white;
+}
+
+.form_foot label {
+	width: 400px;
+}
+
+.form_group {
+	margin-bottom: 12px;
+	width: 504px;
+}
+
+.radio_group {
+	margin-bottom: 10px;
+	margin-top: -10px;
+	display: inline-block;
+	width: 63px;
+	text-align: center;
+}
+
+.radio_group label {
+	width: 100%;
+	height: 40px;
+	border-top: 3px solid rgb(234, 67, 53);
+	border-bottom: 3px solid rgb(251, 188, 5);
+	color: rgb(66, 133, 244);
+	text-align: center;
 }
 
 label {
 	display: inline-block;
 	width: 200px;
 	vertical-align: middle;
+	color: rgb(20, 20, 150);
+	font-weight: 500;
 }
 
 input[type = 'search'],
@@ -36,32 +89,18 @@ input[type = 'email'],
 select {
 	width: 300px;
 	height: 30px;
+	color: rgb(180, 20, 0);
 }
 
-.radio {
-	margin-bottom: 10px;
+input[type = 'radio'] {
+	margin-top: 10px;
 }
 
-.radio label {
-	vertical-align: top;
+button {
+	min-width: 100px;
+	height: 25px;
+}
+
+.text_by_right {
 	text-align: right;
-}
-
-.silpo fieldset.form_title {
-	background: rgb(92, 49, 131);
-}
-
-.silpo h3 {
-	display: inline-block;
-	width: 350px;
-	text-align: center;
-	padding-left: 20px;
-	vertical-align: top;
-	color: white;
-}
-
-span {
-	display: inline-block;
-	width: 80%;
-	vertical-align: middle;
 }
