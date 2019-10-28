@@ -1,0 +1,26 @@
+.form-group {
+	margin-bottom: 10px;
+}
+label {
+	width: 200px;
+	display: inline-block;
+}
+.form-group {
+	margin-bottom: 15px;
+}
+.form-group label {
+	width: 200px;
+	display: inline-block;
+}
+.google {
+	text-align: right;
+}
+.form-group {
+	text-align: left;
+}
+.headline{
+	text-align: center;
+}
+button {
+	float: right;
+}
