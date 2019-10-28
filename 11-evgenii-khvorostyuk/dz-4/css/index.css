@@ -1,0 +1,206 @@
+html, body {
+  height: 100%; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  background-color: #3D3527;
+  background-image: url("../img/caniuse-bg.png"); }
+  body .wrapper {
+    min-height: 100%;
+    max-width: 1300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 40px; }
+    body .wrapper main {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin: 20px 0; }
+      body .wrapper main p {
+        margin: 0; }
+      body .wrapper main .content {
+        padding: 20px;
+        background: #f2e8d5; }
+        body .wrapper main .content h1 {
+          font-weight: 100;
+          margin: 0;
+          margin-bottom: 20px; }
+          body .wrapper main .content h1 a {
+            color: #000000;
+            text-decoration: none; }
+            body .wrapper main .content h1 a:hover {
+              color: #ab2a18;
+              text-decoration: none; }
+        body .wrapper main .content .description {
+          font-size: 20px;
+          max-width: 576px;
+          line-height: 1.5;
+          margin-bottom: 30px; }
+          body .wrapper main .content .description code {
+            background-color: rgba(255, 255, 255, 0.2); }
+        body .wrapper main .content .table-wrapper {
+          overflow-x: auto;
+          padding-bottom: 50px; }
+          body .wrapper main .content .table-wrapper table thead tr td {
+            border-bottom: 3px solid #000000;
+            border-left: 3px solid #f2e8d5;
+            border-right: 3px solid #f2e8d5;
+            max-width: 76px;
+            min-width: 76px;
+            position: relative;
+            font-size: 12px;
+            font-weight: normal;
+            padding: 5px 2px;
+            text-align: center; }
+            body .wrapper main .content .table-wrapper table thead tr td:first-child {
+              border-left: 0; }
+            body .wrapper main .content .table-wrapper table thead tr td:last-child {
+              border-right: 0; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-ie {
+              border-bottom-color: #385884; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-edge {
+              border-bottom-color: #385884; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-firefox {
+              border-bottom-color: #a36223; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-chrome {
+              border-bottom-color: #3f77bb; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-safari {
+              border-bottom-color: #666; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-opera {
+              border-bottom-color: #812323; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-ios-safari {
+              border-bottom-color: #333; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-opera-mini {
+              border-bottom-color: #992626; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-android {
+              border-bottom-color: #7ba13b; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-opera-mob {
+              border-bottom-color: #992626; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-chrom-andr {
+              border-bottom-color: #3f77bb; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-firefox-andr {
+              border-bottom-color: #a36223; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-us-andr {
+              border-bottom-color: #000000; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-samsung-internet {
+              border-bottom-color: #9753ff; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-qq {
+              border-bottom-color: #000000; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-baidu {
+              border-bottom-color: #000000; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-kaios {
+              border-bottom-color: #6f02b5; }
+            body .wrapper main .content .table-wrapper table thead tr td.browser-note:before {
+              content: '*';
+              position: absolute;
+              top: 5px;
+              right: 0;
+              color: #ba2f00; }
+          body .wrapper main .content .table-wrapper table tbody tr td, body .wrapper main .content .table-wrapper table tfoot tr td {
+            background: rgba(0, 0, 0, 0.06);
+            border-left: 3px solid #f2e8d5;
+            border-right: 3px solid #f2e8d5;
+            color: #ffffff;
+            position: relative;
+            text-align: center; }
+            body .wrapper main .content .table-wrapper table tbody tr td.supported, body .wrapper main .content .table-wrapper table tfoot tr td.supported {
+              background: #139424; }
+              body .wrapper main .content .table-wrapper table tbody tr td.supported:hover, body .wrapper main .content .table-wrapper table tfoot tr td.supported:hover {
+                background: #0d6719; }
+            body .wrapper main .content .table-wrapper table tbody tr td.supported-light, body .wrapper main .content .table-wrapper table tfoot tr td.supported-light {
+              opacity: 0.7; }
+              body .wrapper main .content .table-wrapper table tbody tr td.supported-light:hover, body .wrapper main .content .table-wrapper table tfoot tr td.supported-light:hover {
+                opacity: 0.5; }
+            body .wrapper main .content .table-wrapper table tbody tr td.partial-support, body .wrapper main .content .table-wrapper table tfoot tr td.partial-support {
+              background: #899a00; }
+              body .wrapper main .content .table-wrapper table tbody tr td.partial-support:hover, body .wrapper main .content .table-wrapper table tfoot tr td.partial-support:hover {
+                background: #5c6700; }
+            body .wrapper main .content .table-wrapper table tbody tr td.not-supported, body .wrapper main .content .table-wrapper table tfoot tr td.not-supported {
+              background: #ab2a18; }
+              body .wrapper main .content .table-wrapper table tbody tr td.not-supported:hover, body .wrapper main .content .table-wrapper table tfoot tr td.not-supported:hover {
+                background: #7e1f12; }
+            body .wrapper main .content .table-wrapper table tbody tr td p, body .wrapper main .content .table-wrapper table tfoot tr td p {
+              padding: 5px 2px;
+              border-top: 1px solid #f2e8d5;
+              border-bottom: 1px solid #f2e8d5; }
+          body .wrapper main .content .table-wrapper table tbody tr.current td, body .wrapper main .content .table-wrapper table tfoot tr.current td {
+            border-top: 4px solid #584E3B;
+            border-right-color: #584E3B;
+            border-bottom: 4px solid #584E3B;
+            border-left-color: #584E3B; }
+            body .wrapper main .content .table-wrapper table tbody tr.current td p, body .wrapper main .content .table-wrapper table tfoot tr.current td p {
+              border-top-color: #584E3B;
+              border-bottom-color: #584E3B; }
+          body .wrapper main .content .table-wrapper table tfoot tr td {
+            background: #f2e8d5; }
+    body .wrapper footer {
+      margin-top: 15px;
+      margin-bottom: 0;
+      padding: 5px;
+      padding-top: 35px;
+      border-top: 2px solid #645d51; }
+      body .wrapper footer .blocks {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end; }
+        body .wrapper footer .blocks .legend__heading {
+          font-size: 18px;
+          color: #ffffff;
+          margin-bottom: 10px;
+          font-weight: 500; }
+        body .wrapper footer .blocks .legend__list {
+          list-style: none;
+          padding: 0;
+          margin: 0; }
+          body .wrapper footer .blocks .legend__list__item {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            color: #CFB78B;
+            font-size: 14px;
+            margin-bottom: 6px; }
+            body .wrapper footer .blocks .legend__list__item:last-child {
+              margin-bottom: 0; }
+            body .wrapper footer .blocks .legend__list__item-label {
+              display: block;
+              width: 25px;
+              height: 13px;
+              position: relative;
+              margin-right: 16px; }
+              body .wrapper footer .blocks .legend__list__item-label:after {
+                content: '=';
+                position: absolute;
+                display: block;
+                right: -12px;
+                top: 50%;
+                -webkit-transform: translate(0, -50%);
+                -ms-transform: translate(0, -50%);
+                transform: translate(0, -50%); }
+              body .wrapper footer .blocks .legend__list__item-label.supported {
+                background-color: #139424; }
+              body .wrapper footer .blocks .legend__list__item-label.not-supported {
+                background-color: #899a00; }
+              body .wrapper footer .blocks .legend__list__item-label.partial-support {
+                background-color: #ab2a18; }
+              body .wrapper footer .blocks .legend__list__item-label.support-unknown {
+                background-color: #838383; }

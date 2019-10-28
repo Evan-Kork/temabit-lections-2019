@@ -1,0 +1,254 @@
+html, body {
+  height: 100%; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  background-color: #3D3527;
+  background-image: url("../image/caniuse-bg.png"); }
+
+.site-global-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px; }
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  background: #f2e8d5;
+  margin: 20px 0; }
+
+p {
+  margin: 0; }
+
+.wrapp-main-content {
+  padding: 20px; }
+  .wrapp-main-content h1 {
+    font-weight: 100;
+    margin: 0;
+    margin-bottom: 20px; }
+    .wrapp-main-content h1 a {
+      color: #000;
+      text-decoration: none;
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+      .wrapp-main-content h1 a:hover {
+        color: #ab2a18;
+        text-decoration: none; }
+  .wrapp-main-content .description-element {
+    max-width: 500px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 1.5; }
+    .wrapp-main-content .description-element code {
+      background-color: rgba(255, 255, 255, 0.2); }
+
+.content-tab {
+  background: #e0c89b;
+  padding: 20px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+  .content-tab .box-legend .title-box {
+    font-size: 18px;
+    color: #3D3527;
+    margin-bottom: 10px;
+    font-weight: 500; }
+  .content-tab .box-legend ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .content-tab .box-legend ul li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 14px;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      color: #000; }
+      .content-tab .box-legend ul li .label-legend {
+        display: block;
+        width: 25px;
+        height: 13px;
+        position: relative;
+        margin-right: 16px; }
+        .content-tab .box-legend ul li .label-legend:after {
+          content: '=';
+          position: absolute;
+          display: block;
+          right: -12px;
+          top: 50%;
+          -webkit-transform: translate(0, -50%);
+          -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%); }
+        .content-tab .box-legend ul li .label-legend.supported {
+          background-color: #139424; }
+        .content-tab .box-legend ul li .label-legend.not-supported {
+          background-color: #899a00; }
+        .content-tab .box-legend ul li .label-legend.partial-support {
+          background-color: #ab2a18; }
+        .content-tab .box-legend ul li .label-legend.support-unknown {
+          background-color: #838383; }
+
+.wrapp-table-can-i-use {
+  overflow-x: auto;
+  padding-bottom: 50px; }
+  .wrapp-table-can-i-use table thead tr td {
+    position: relative;
+    font-size: 12px;
+    border-bottom: 3px solid #000;
+    border-left: 2px solid #f2e8d5;
+    border-right: 2px solid #f2e8d5;
+    padding: 5px 2px;
+    text-align: center;
+    max-width: 76px;
+    min-width: 76px; }
+    .wrapp-table-can-i-use table thead tr td:first-child {
+      border-left: 0; }
+    .wrapp-table-can-i-use table thead tr td:last-child {
+      border-right: 0; }
+    .wrapp-table-can-i-use table thead tr td.brow-ie {
+      border-bottom-color: #385884; }
+    .wrapp-table-can-i-use table thead tr td.brow-edge {
+      border-bottom-color: #385884; }
+    .wrapp-table-can-i-use table thead tr td.brow-firefox {
+      border-bottom-color: #a36223; }
+    .wrapp-table-can-i-use table thead tr td.brow-chrome {
+      border-bottom-color: #3f77bb; }
+    .wrapp-table-can-i-use table thead tr td.brow-safari {
+      border-bottom-color: #666; }
+    .wrapp-table-can-i-use table thead tr td.brow-opera {
+      border-bottom-color: #812323; }
+    .wrapp-table-can-i-use table thead tr td.brow-ios-safari {
+      border-bottom-color: #333; }
+    .wrapp-table-can-i-use table thead tr td.brow-opera-mini {
+      border-bottom-color: #992626; }
+    .wrapp-table-can-i-use table thead tr td.brow-android {
+      border-bottom-color: #7ba13b; }
+    .wrapp-table-can-i-use table thead tr td.brow-opera-mob {
+      border-bottom-color: #992626; }
+    .wrapp-table-can-i-use table thead tr td.brow-chrom-andr {
+      border-bottom-color: #3f77bb; }
+    .wrapp-table-can-i-use table thead tr td.brow-firefox-andr {
+      border-bottom-color: #a36223; }
+    .wrapp-table-can-i-use table thead tr td.brow-us-andr {
+      border-bottom-color: #000; }
+    .wrapp-table-can-i-use table thead tr td.brow-samsung-internet {
+      border-bottom-color: #9753ff; }
+    .wrapp-table-can-i-use table thead tr td.brow-qq {
+      border-bottom-color: #000; }
+    .wrapp-table-can-i-use table thead tr td.brow-baidu {
+      border-bottom-color: #000; }
+    .wrapp-table-can-i-use table thead tr td.brow-kaios {
+      border-bottom-color: #6f02b5; }
+    .wrapp-table-can-i-use table thead tr td.icon-star:before {
+      content: '*';
+      position: absolute;
+      top: 5px;
+      right: 0;
+      color: #ba2f00; }
+  .wrapp-table-can-i-use table tbody tr.row-active td, .wrapp-table-can-i-use table tfoot tr.row-active td {
+    border-left-color: #584E3B;
+    border-right-color: #584E3B;
+    border-top: 4px solid #584E3B;
+    border-bottom: 4px solid #584E3B; }
+    .wrapp-table-can-i-use table tbody tr.row-active td p, .wrapp-table-can-i-use table tfoot tr.row-active td p {
+      border-top-color: #584E3B;
+      border-bottom-color: #584E3B; }
+  .wrapp-table-can-i-use table tbody tr td, .wrapp-table-can-i-use table tfoot tr td {
+    position: relative;
+    text-align: center;
+    border-left: 3px solid #f2e8d5;
+    border-right: 3px solid #f2e8d5;
+    background: rgba(0, 0, 0, 0.06);
+    color: #fff;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .wrapp-table-can-i-use table tbody tr td.supported, .wrapp-table-can-i-use table tfoot tr td.supported {
+      background: #139424; }
+      .wrapp-table-can-i-use table tbody tr td.supported:hover, .wrapp-table-can-i-use table tfoot tr td.supported:hover {
+        background: #0d6719; }
+    .wrapp-table-can-i-use table tbody tr td.supported-light, .wrapp-table-can-i-use table tfoot tr td.supported-light {
+      opacity: 0.7; }
+      .wrapp-table-can-i-use table tbody tr td.supported-light:hover, .wrapp-table-can-i-use table tfoot tr td.supported-light:hover {
+        opacity: 0.5; }
+    .wrapp-table-can-i-use table tbody tr td.partial-support, .wrapp-table-can-i-use table tfoot tr td.partial-support {
+      background: #899a00; }
+      .wrapp-table-can-i-use table tbody tr td.partial-support:hover, .wrapp-table-can-i-use table tfoot tr td.partial-support:hover {
+        background: #5c6700; }
+    .wrapp-table-can-i-use table tbody tr td.not-supported, .wrapp-table-can-i-use table tfoot tr td.not-supported {
+      background: #ab2a18; }
+      .wrapp-table-can-i-use table tbody tr td.not-supported:hover, .wrapp-table-can-i-use table tfoot tr td.not-supported:hover {
+        background: #7e1f12; }
+    .wrapp-table-can-i-use table tbody tr td.prefix, .wrapp-table-can-i-use table tfoot tr td.prefix {
+      background-image: url("../image/prefix.svg");
+      background-size: 10px;
+      background-repeat: no-repeat;
+      background-position: 97% 3px; }
+    .wrapp-table-can-i-use table tbody tr td p, .wrapp-table-can-i-use table tfoot tr td p {
+      padding: 5px 2px;
+      border-top: 1px solid #f2e8d5;
+      border-bottom: 1px solid #f2e8d5; }
+    .wrapp-table-can-i-use table tbody tr td .sub-list-left, .wrapp-table-can-i-use table tfoot tr td .sub-list-left {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      position: absolute;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      left: 2px;
+      top: 3px;
+      max-width: 20px; }
+      .wrapp-table-can-i-use table tbody tr td .sub-list-left li, .wrapp-table-can-i-use table tfoot tr td .sub-list-left li {
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        color: #000;
+        font-size: 9px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; }
+        .wrapp-table-can-i-use table tbody tr td .sub-list-left li:nth-child(even), .wrapp-table-can-i-use table tfoot tr td .sub-list-left li:nth-child(even) {
+          background-color: #e6e6e6; }
+  .wrapp-table-can-i-use table tfoot tr td {
+    background: #f2e8d5; }

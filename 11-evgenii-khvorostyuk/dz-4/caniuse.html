@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Table can i use array includes method</title>
+  <link rel="icon" href="./img/favicon-128.png" sizes="16x16 32x32 64x64 128x128" type="image/png"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header></header>
+    <main>
+      <div class="content">
+        <h1>
+          <a href="https://caniuse.com/#feat=array-includes" target="_blank">Array.prototype.includes</a>
+        </h1>
+        <p class="description">
+          Determines whether or not an array includes the given value, returning a boolean value (unlike <code>indexOf</code>).
+        </p>
+        <div class="table-wrapper">
+          <table cellspacing="0" cellpadding="0">
+            <thead>
+              <tr>
+                <td class="browser-ie">IE</td>
+                <td class="browser-edge browser-note">Edge</td>
+                <td class="browser-firefox">Firefox</td>
+                <td class="browser-chrome">Chrome</td>
+                <td class="browser-safari">Safari</td>
+                <td class="browser-opera">Opera</td>
+                <td class="browser-ios-safari browser-note">iOS Safari</td>
+                <td class="browser-opera-mini browser-note">Opera Mini</td>
+                <td class="browser-android browser-note">Android Browser</td>
+                <td class="browser-opera-mob browser-note">Opera Mobile</td>
+                <td class="browser-chrom-android">Chrome for Android</td>
+                <td class="browser-firefox-android">Firefox for Android</td>
+                <td class="browser-us-android">UC Browser for Android</td>
+                <td class="browser-samsung-internet">Samsung Internet</td>
+                <td class="browser-qq">QQ Browser</td>
+                <td class="browser-baidu">Baidu Browser</td>
+                <td class="browser-kaios">KaiOS Browser</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td class="not-supported"><p>12-13</p></td>
+                <td class="not-supported"><p>2-42</p></td>
+                <td class="not-supported"><p>4-46</p></td>
+                <td class="not-supported"><p>3.1-8</p></td>
+                <td class="not-supported"><p>10-33</p></td>
+                <td class="not-supported"><p>3.2-8.4</p></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="not-supported"><p>4</p></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="not-supported"><p>6-10</p></td>
+                <td class="supported"><p>14-17</p></td>
+                <td class="supported"><p>43-69</p></td>
+                <td class="supported"><p>47-77</p></td>
+                <td class="supported"><p>9-12.1</p></td>
+                <td class="supported"><p>34-60</p></td>
+                <td class="supported"><p>9-12.4</p></td>
+                <td></td>
+                <td class="not-supported"><p>2.1-4.4.4</p></td>
+                <td class="not-supported"><p>12-12.1</p></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="supported"><p>5-9.2</p></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="current">
+                <td class="not-supported"><p>11</p></td>
+                <td class="supported"><p>18</p></td>
+                <td class="supported"><p>70</p></td>
+                <td class="supported"><p>78</p></td>
+                <td class="supported"><p>13</p></td>
+                <td class="supported"><p>62</p></td>
+                <td class="supported"><p>13.1</p></td>
+                <td class="not-supported"><p>all</p></td>
+                <td class="supported"><p>76</p></td>
+                <td class="supported"><p>46</p></td>
+                <td class="supported"><p>76</p></td>
+                <td class="supported"><p>68</p></td>
+                <td class="supported"><p>12.12</p></td>
+                <td class="supported"><p>10.1</p></td>
+                <td class="supported"><p>1.2</p></td>
+                <td class="supported"><p>7.12</p></td>
+                <td class="supported"><p>2.5</p></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td class="supported supported-light"><p>76</p></td>
+                <td class="supported supported-light"><p>71-72</p></td>
+                <td class="supported supported-light"><p>79-81</p></td>
+                <td class="supported supported-light"><p>TP</p></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="blocks">
+        <div class="legend">
+          <div class="legend__heading">Legend</div>
+          <ul class="legend__list">
+            <li class="legend__list__item">
+              <span class="legend__list__item-label supported"></span>
+              Supported
+            </li>
+            <li class="legend__list__item">
+              <span class="legend__list__item-label not-supported"></span>
+              Not supported
+            </li>
+            <li class="legend__list__item">
+              <span class="legend__list__item-label partial-support"></span>
+              Partial support
+            </li>
+            <li class="legend__list__item">
+              <span class="legend__list__item-label support-unknown"></span>
+              Support unknown
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

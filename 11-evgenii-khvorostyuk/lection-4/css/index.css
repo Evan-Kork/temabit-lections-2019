@@ -1,0 +1,16 @@
+#google_link {
+  border: 2px solid green;
+}
+
+table thead {
+  color: red;
+}
+table tbody tr td {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+table tbody tr:last-child td {
+  color: blue;
+}
