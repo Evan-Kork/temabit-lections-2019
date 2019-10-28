@@ -1,0 +1,82 @@
+.search {
+	padding-bottom: 10px;
+}
+
+.search label {
+	font-size: 20px;
+}
+
+.search input {
+	font-size: 16px;
+}
+
+.button-search {
+	width: 150px;
+	height: 25px;
+	border-radius: 15px;
+	font-weight: 700;
+}
+
+.filter {
+	display: flex;
+}
+
+.lang, .search-type, .date {
+	margin-right: 30px;
+	padding: 5px;
+	border: 2px solid red;
+}
+.form-row {
+	margin-left: 30px;
+}
+
+.form-row label {
+	font-size: 18px; 
+}
+.form-row input {
+	margin: 15px;
+	font-size: 15px;
+	padding-left: 10px; 
+}
+
+select {
+	border: none;
+}
+
+h2 {
+	padding-top: 20px;
+	margin-left: 5%;
+}
+.form-silpo {
+	background-image: url(https://images.wallpaperscraft.ru/image/siniy_fon_sploshnoy_svetlyy_65833_2048x1152.jpg);
+}
+
+legend {
+	font-size: 24px;
+	font-weight: 700;
+	padding-top: 30px;
+}
+
+.additional-info {
+	margin: 30px;
+	font-size: 18px;
+}
+
+.additional-info select {
+	font-size: 16px;
+	margin-left: 15px;
+}
+
+.button-send {
+	width: 200px;
+	height: 30px;
+	border-radius: 20px;
+	margin-left: 6%;
+	margin-bottom: 15px;
+	font-weight: 700;
+}
+
+input {
+	margin: 15px;
+}
+
