@@ -55,22 +55,7 @@ fieldset label{
     width: 200px;
 	display: inline-block;
 }
-.group input[type=text]{
-    border:none;
-    border-radius: 5px;
-    height: 20px;
-}
-.group input[type=email]{
-    border:none;
-    border-radius: 5px;
-    height: 20px;
-}
-.group input[type=url]{
-    border:none;
-    border-radius: 5px;
-    height: 20px;
-}
-.group input[type=tel]{
+.group input{
     border:none;
     border-radius: 5px;
     height: 20px;
