@@ -1,0 +1,14 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+fieldset {
+	border: 5px solid yellow
+}
+.input {
+	display: inline-block;
+	margin-bottom: 15px;
+}
+button {
+	width: 40%;
+	height: 2.5em
+} 
