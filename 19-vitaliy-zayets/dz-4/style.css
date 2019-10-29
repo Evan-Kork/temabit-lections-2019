@@ -29,19 +29,19 @@ footer{
   height: 15px;
 }
 
-.grey{
+.un_sup{
   background-color: #838383;
 }
 
-.green{
+.sup{
   background-color: #39b54a;
 }
 
-.yellow{
+.part_sup{
   background-color: #A8BD04;
 }
 
-.red{
+.not_sup{
   background-color: #c44230;
 }
 
@@ -58,7 +58,7 @@ footer{
 }
 
 .unknown{
-  background-color: #39b54a;
+  background-color: #838383;
 }
 
 ul{
