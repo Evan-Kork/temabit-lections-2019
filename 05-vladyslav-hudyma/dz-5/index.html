@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="img">
+		<img src="https://static.espreso.tv/uploads/article/2465665/images/im578x383-google.jpg" alt="Image" title="Google"/>
+	</div>
+    <div class="search">
+		<form class="form" action="https://www.google.com/search" method="get" target="_blank">
+			<fieldset>
+				<div>
+					<div>
+						<div>
+							<input class="pen" type="search" name="q"/>
+							<input class="pen1" type="submit" value="Search"/>
+						</div>
+					</div>
+					<div>
+						<input type="radio" name="tbm" id="all" value=""/> 
+						<label for="all">All</label>
+						<input type="radio" name="tbm" id="picture" value="isch"/>
+						<label for="picture">Pictures</label>
+						<input type="radio" name="tbm" id="video" value="vid"/>
+						<label for="video">Videos</label>	
+						<input type="radio" name="tbm" id="news" value="nws"/>
+						<label for="news">News</label>
+						<input type="radio" name="tbm" id="books" value="bks"/>
+						<label for="books">Books</label>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<hr>
+	<div class="blank">
+		<div><h2>Анкета для роботи в "Сiльпо"</h2></div>
+		<form action="#" method="post">
+		<fieldset>
+			<legend><h4>Основна iнформацiя</h4></legend>
+			<div>
+				<input id="name" type="text" name="name" placeholder="Iм'я" required/>
+				<input id="surname" type="text" name="surname" placeholder="Прiзвище" required/>
+			</div>
+			<div>
+				<input id="birthday" type="date" name="birthday" required/>
+				<input id="city" type="text" name="city" placeholder="Населений пункт" required/>
+			</div>
+			<div>
+				<input id="email" type="email" name="email" placeholder="Електронна адреса" required/>
+				<input id="phone" type="tel" name="phone" placeholder="Телефон (формат 000-000-0000)" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
+			</div>
+			<div>
+				<label><h5>Резюме</h5></label><br>
+				<input id="file" type="file" name="file"/>
+			</div>
+			<div>
+				<input id="resume" type="URL" name="resume" placeholder="або додайте сюди посилання на резюме"/>
+			</div>
+			<div>
+				<h4>Вкажіть більше інформації, щоб отримати справді цікаву вакансію</h4>
+			</div>
+			<div>
+				<input id="city" type="text" name="city" placeholder="Оберiть бажаний населений пункт"/>
+				<input id="position" type="text" name="position" placeholder="Оберiть бажану посаду"/>
+			</div>
+			<div>
+				<input id="place" type="text" name="place" placeholder="Оберiть зручний супермаркет"/>
+			</div>
+			<div>
+				<input id="day" type="checkbox" name="day"/>
+				<label for="not-full-day">Хочу працювати неповний робочий день</label>
+			</div>
+			<div>
+				<label></label>
+				<button>Вiдправити</button>
+			</div>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
