@@ -43,7 +43,7 @@ select {
     margin-bottom: 20px;
     display: block;
 }
-#part_time {
+.part_time {
     width: 20px;
     height: 20px;
 }
