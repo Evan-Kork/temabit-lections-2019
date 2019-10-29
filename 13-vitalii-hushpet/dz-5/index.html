@@ -7,58 +7,51 @@
 </head>
 <body>
 	<fieldset class="fieldset-search">	
-		<legend>Search</legend>
-		<center>
-		     <form target="_blank" action="https://www.google.com/search" method="get">
-		     	<div class="form-group" >	
-		     		<label for="name">Google</label>
-		     		<br/>
-		     		<input class="search" id="name" type="text" name="q" value="" placeholder="Search">
-		     		<br/>
-		     		<input type="radio" name="tbm" value="isch"> Картинки
-		     		<br/>
-		     		<input type="radio" name="tbm" value="vid"> Видео
-		     		<br/>
-		     		<input type="radio" name="tbm" value="nws"> Новости
-		     		<br/>
-		     		<input type="radio" name="tbm" value="bks"> Книги
-		     		<br/>
-		     		<hr/>
-		     		<input type="radio" name="lr" value="lang_uk"> Шукати тільки українською
-		     		<br/>
-		     		<input type="radio" name="lr" value=""> шукати всіма мовами
-		     		<br/>
-		     		<input class="button" type="submit">
-		     		
-		     	</div>
-		     </form>
-		     <form target="_blank" action="https://www.bing.com/search" method="get">
-		     	<div class="form-group" >	
-		     		<label for="name">Bing</label>
-		     		<br/>
-		     		<input class="search" id="name" type="text" name="q" value="" placeholder="Search">
-		     		<input class="button" type="submit">
-		     	</div>
-		     </form>
-		     <form target="_blank" action="https://search.yahoo.com/search" method="get">
-		     	<div class="form-group" >	
-		     		<label for="name">Yahoo</label>
-		     		<br/>
-		     		<input class="search" id="name" type="text" name="p" value="" placeholder="Search">
-		     		<input class="button" type="submit">
-		     	</div>
-		     </form>
-		     <form target="_blank" action="https://www.duckduckgo.com/" method="get">
-		     	<div class="form-group" >	
-		     		<label for="name">Duckduckgo</label>
-		     		<br/>
-		     		<input class="search" id="name" type="text" name="q" value="" placeholder="Search">
-		     		<input class="button" type="submit">
-		     	</div>
-		     </form>
-        </center>
+	<legend>Search</legend>
+	    <form target="_blank" action="https://www.google.com/search" method="get">
+	    	<div class="form-group" >
+	    		<div><label class="googlelabel" for="google">Google</label></div>	
+	     		
+	     		<input class="search" id="google" type="text" name="q" value="" placeholder="Search">
+	     		<ul>
+	     			<li><input type="radio" name="tbm" value="isch"> Картинки</li>
+	     			<li><input type="radio" name="tbm" value="vid"> Видео</li>
+	     			<li><input type="radio" name="tbm" value="nws"> Новости</li>
+	     			<li><input type="radio" name="tbm" value="bks"> Книги</li>
+	     			<hr/>
+	     			<li><input type="radio" name="lr" value="lang_uk"> Шукати тільки українською</li>
+	     			<li><input type="radio" name="lr" value=""> шукати всіма мовами</li>
+	     		</ul>
+	     		<hr/>		     		
+	     		<input class="button" type="submit">
+	     		
+	     	</div>
+	    </form>
+	    <form target="_blank" action="https://www.bing.com/search" method="get">
+	    	<div class="form-group" >	
+	     		<label for="bing">Bing</label>
+	     		<br/>
+	     		<input class="search" id="bing" type="text" name="q" value="" placeholder="Search">
+	     		<input class="button" type="submit">
+	     	</div>
+	    </form>
+	    <form target="_blank" action="https://search.yahoo.com/search" method="get">
+	     	<div class="form-group" >	
+	     		<label for="yahoo">Yahoo</label>
+	     		<br/>
+	     		<input class="search" id="yahoo" type="text" name="p" value="" placeholder="Search">
+	     		<input class="button" type="submit">
+	     	</div>
+	    </form>
+	    <form target="_blank" action="https://www.duckduckgo.com/" method="get">
+	    	<div class="form-group" >	
+	     		<label for="duckduckgo">Duckduckgo</label>
+	     		<br/>
+	     		<input class="search" id="duckduckgo" type="text" name="q" value="" placeholder="Search">
+	     		<input class="button" type="submit">
+	     	</div>
+	    </form>
     </fieldset>
-   <center>
     <div class="silpo-osn-div">
        	<fieldset>	
            	<form class="form-silpo-anketa" method="get" action="#">
@@ -70,7 +63,7 @@
 	       	       		<input class="anketa two" id="sname" type="text" name="sname" placeholder="Прізвище">
 	     	       	</div>
 	       	       	<div class="div-anketa">
-		   	    		<input class="anketa" id="data" type="date" name="data">
+		   	    		<input class="anketa data" id="data" type="date" name="data">
            	    		<input class="anketa two" id="location" type="text" name="location" placeholder="Місце проживання" value="Вінниця">
            	    	</div>
            	    	<div class="div-anketa">
@@ -114,6 +107,5 @@
            	</form>
         </fieldset>	
     </div>
-</center>
 </body>
 </html>

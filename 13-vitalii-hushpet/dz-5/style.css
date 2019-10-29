@@ -4,6 +4,9 @@ body{
     width: 99%;
     height: 99%;
 }
+li{
+    list-style-type: none;
+}
 label{
     font-style: oblique;
     font-family: inherit;
@@ -11,7 +14,7 @@ label{
 }
 fieldset{
     text-align: start;
-    margin-left: 2em;
+    margin-left: 25px;
     display: inline-block;
     
 }
@@ -50,23 +53,26 @@ legend{
     overflow: center;
     font-family: "Courier New", Courier, monospace;
 }
-
-.anketa{
-    margin-bottom: 1em;
-    border: 0.09em solid black;
-    margin-left: 1%;
-    margin-right: 1%;
+.googlelabel{
+    display:inline-block;
 }
-#data{
+.anketa{
+    margin-bottom: 5px;
+    border: 0.09em solid black;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.data{
     height: 120%;
     margin-right: 5.7%;
 }
 .inform{
     border-bottom: 3px solid red;
-    margin-bottom: 1em;
+    margin-bottom: 10px;
 }
 .silpo-osn-div{
-    padding-top: 2em;
+    margin-left: 300px;
+    padding-top: 25px;
     background-color: antiquewhite;
 }
 .form-block{
