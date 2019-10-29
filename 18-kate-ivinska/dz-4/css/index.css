@@ -36,72 +36,72 @@ td {
   border: 1px solid white;
 }
 
-th:nth-child(1) {
-  border-bottom: 1.5px solid blue;
+.IE {
+  border-bottom: 2px solid blue;
 }
 
-th:nth-child(2) {
-  border-bottom: 1.5px solid blue;
+.Edge {
+  border-bottom: 2px solid blue;
 }
 
-th:nth-child(3) {
-  border-bottom: 1.5px solid olive;
+.Firefox {
+  border-bottom: 2px solid olive;
 }
 
-th:nth-child(4) {
-  border-bottom: 1.5px solid skyblue;
+.Chrome {
+  border-bottom: 2px solid skyblue;
 }
 
-th:nth-child(5) {
-  border-bottom: 1.5px solid grey;
+.Safari {
+  border-bottom: 2px solid grey;
 }
 
-th:nth-child(6) {
-  border-bottom: 1.5px solid darkred;
+.Opera {
+  border-bottom: 2px solid darkred;
 }
 
-th:nth-child(7) {
-  border-bottom: 1.5px solid midnightblue;
+.iOS_Safari {
+  border-bottom: 2px solid midnightblue;
 }
 
-th:nth-child(8) {
-  border-bottom: 1.5px solid darkred;
+.Opera_Mini {
+  border-bottom: 2px solid darkred;
 }
 
-th:nth-child(9) {
-  border-bottom: 1.5px solid greenyellow;
+.Android_Browser {
+  border-bottom: 2px solid greenyellow;
 }
 
-th:nth-child(10) {
-  border-bottom: 1.5px solid darkred;
+.Opera_Mobile {
+  border-bottom: 2px solid darkred;
 }
 
-th:nth-child(11) {
-  border-bottom: 1.5px solid skyblue;
+.Chrome_for_Android {
+  border-bottom: 2px solid skyblue;
 }
 
-th:nth-child(12) {
-  border-bottom: 1.5px solid olive;
+.Firefox_for_Android {
+  border-bottom: 2px solid olive;
 }
 
-th:nth-child(13) {
-  border-bottom: 1.5px solid black;
+.US_Browser_for_Android {
+  border-bottom: 2px solid black;
 }
 
-th:nth-child(14) {
-  border-bottom: 1.5px solid violet;
+.Samsung_Internet {
+  border-bottom: 2px solid violet;
 }
 
-th:nth-child(15) {
-  border-bottom: 1.5px solid black;
+.QQ_Browser {
+  border-bottom: 2px solid black;
 }
 
-th:nth-child(16) {
-  border-bottom: 1.5px solid black;
+.Baidu_Browser {
+  border-bottom: 2px solid black;
 }
 
-th:nth-child(17) {
-  border-bottom: 1.5px solid purple;
+.KaiOS {
+  border-bottom: 2px solid purple;
 }
 
 .redcolor {
