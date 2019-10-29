@@ -22,7 +22,7 @@ body{
     border-radius: 10px;
     font-size: 16px;
 }
-.radioBtn label{
+.radioBtn{
     cursor: pointer;
 }
 .serchfilter-lable{
