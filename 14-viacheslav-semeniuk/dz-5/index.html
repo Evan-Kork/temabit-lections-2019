@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Search Google</title>
+    <!-- <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://meyerweb.com/eric/tools/css/reset/reset.css"
+    /> -->
+    <link rel="stylesheet" href="./css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <form
+      class="form"
+      action="https://www.google.com/search"
+      method="get"
+      target="_blank"
+    >
+      <fieldset>
+        <img
+          src="http://pngimg.com/uploads/google/google_PNG19644.png"
+          alt="google"
+          width="300px"
+        />
+        <div class="form-group">
+          <input
+            class="form-input"
+            maxlength="2048"
+            name="q"
+            type="text"
+            aria-autocomplete="both"
+            aria-haspopup="false"
+            title="Поиск"
+            value=""
+            aria-label="Найти"
+            placeholder="Найти в Google"
+          />
+          <button
+            class="search-button"
+            jsname="Tg7LZd"
+            aria-label="Поиск в Google"
+            type="submit"
+            data-ved="0ahUKEwiYlbr-tLflAhVdAxAIHeE0BeAQ4dUDCAs"
+          >
+            <div class="search-icon_wrapper">
+              <span class="search-icon"
+                ><svg
+                  focusable="false"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </button>
+        </div>
+        <ul class="form-options">
+          <li>
+            <span>
+              <img
+                class="icon"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgyNHYyNEgweiIvPjxwYXRoIGZpbGw9IiMzNEE4NTMiIGQ9Ik0xMCAydjJhNiA2IDAgMCAxIDYgNmgyYTggOCAwIDAgMC04LTh6Ii8+PHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTEwIDRWMmE4IDggMCAwIDAtOCA4aDJjMC0zLjMgMi43LTYgNi02eiIvPjxwYXRoIGZpbGw9IiNGQkJDMDQiIGQ9Ik00IDEwSDJhOCA4IDAgMCAwIDggOHYtMmMtMy4zIDAtNi0yLjY5LTYtNnoiLz48cGF0aCBmaWxsPSIjNDI4NUY0IiBkPSJNMjIgMjAuNTlsLTUuNjktNS42OUE3Ljk2IDcuOTYgMCAwIDAgMTggMTBoLTJhNiA2IDAgMCAxLTYgNnYyYzEuODUgMCAzLjUyLS42NCA0Ljg4LTEuNjhsNS42OSA1LjY5TDIyIDIwLjU5eiIvPjwvc3ZnPgo="
+                alt=""
+                data-atf="1"
+              />
+            </span>
+            <input id="all" type="radio" name="tbm" value="" checked />
+            <label for="all">Все</label>
+          </li>
+          <li>
+            <span>
+              <img
+                class="icon"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0xOSAyMmgtN3YtMmg3Yy41NSAwIDEtLjQ2IDEtMVY1YTEgMSAwIDAgMC0xLS45OUwxMiA0VjJoN2MxLjY2IDAgMyAxLjM2IDMgM3YxNGMwIDEuNjUtMS4zNSAzLTMgMyIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRUE0MzM1IiBkPSJNMTIgMjJINWMtMS42NCAwLTMtMS4zNi0zLTNWNWMwLTEuNjQgMS4zNi0zIDMtM2g3djJINWMtLjU1IDAtLjk5LjQ1LS45OSAxTDQgMTljMCAuNTUuNDUgMSAxIDFoN3YyeiIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMzRBODUzIiBkPSJNMTQgMTNsLTIuMjUgMi43NUwxMCAxNGwtNCA0aDEyeiIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkJCQzA0IiBkPSJNMTAgOGMwIDEuMS0uOSAyLTIgMnMtMi0uOS0yLTJjMC0xLjA5LjktMiAyLTJzMiAuOSAyIDIiLz48L3N2Zz4K"
+                alt=""
+                data-atf="1"
+              />
+            </span>
+            <input id="isch" type="radio" name="tbm" value="isch" />
+            <label for="isch">Картинки</label>
+            <select class="select" name="tbs" id="size">
+              <option value="">Любого размера</option>
+              <option value="isz:l">Большие</option>
+              <option value="isz:m">Средние</option>
+              <option value="isz:i">Значки</option>
+            </select>
+            <!-- <select class="select" name="tbs" id="color">
+              <option value="">Любого цвета</option>
+              <option value="ic:gray">Чёрно-белые</option>
+              <option value="ic:trans">Прозрачные</option>
+              <option value="ic:specific,isc:red">red</option>
+              <option value="ic:specific,isc:orange">orange</option>
+              <option value="ic:specific,isc:yellow">yellow</option>
+              <option value="ic:specific,isc:blue">blue</option>
+              <option value="ic:specific,isc:green">green</option>
+            </select> -->
+            <!-- <select class="select" name="tbs" id="type">
+              <option value="">Любого типа</option>
+              <option value="itp:clipart">Клип-арт</option>
+              <option value="itp:lineart">Рисунки</option>
+              <option value="itp:animated">GIF</option>
+            </select> -->
+          </li>
+          <li>
+            <span>
+              <img
+                class="icon"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgyNHYyNEgweiIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNDI4NUY0IiBkPSJNMTAgMTYuNWw2LTQuNS02LTQuNXoiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0VBNDMzNSIgZD0iTTIwIDEyaDJ2Ny41YTIuNSAyLjUgMCAwIDEtMi41IDIuNUgxMnYtMmg3YTEgMSAwIDAgMCAxLTF2LTd6Ii8+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGQkJDMDQiIGQ9Ik0yMCAxMlY1YTEgMSAwIDAgMC0xLTFoLTdWMmg3LjZBMi40IDIuNCAwIDAgMSAyMiA0LjRWMTJoLTJ6Ii8+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMzNEE4NTMiIGQ9Ik0xMiAyMHYySDVhMyAzIDAgMCAxLTMtM1Y0LjRBMi40IDIuNCAwIDAgMSA0LjQgMkgxMnYySDVhMSAxIDAgMCAwLTEgMXYxNGExIDEgMCAwIDAgMSAxaDd6Ii8+PC9zdmc+Cg=="
+                alt=""
+                data-atf="1"
+              />
+            </span>
+            <input id="vid" type="radio" name="tbm" value="vid" />
+            <label for="vid">Видео</label>
+          </li>
+          <li>
+            <span>
+              <img
+                class="icon"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgyNHYyNEgwVjB6Ii8+PHBhdGggZmlsbD0iIzM0QTg1MyIgZD0iTTIyIDEyaC0ydjYuMjJjLS4wNy40OC0uNTEuODItMSAuNzhoLTd2Mmg3YzEuNTkuMDUgMi45Mi0xLjE3IDMtMi43NlYxMiIvPjxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0xOSAzaC03djJoN2MuNDktLjA0LjkyLjMgMSAuNzhWMTJoMlY1Ljc2QTIuOTMgMi45MyAwIDAgMCAxOSAzIi8+PHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTEyIDNINWEyLjkzIDIuOTMgMCAwIDAtMyAyLjc2VjEyaDJWNS43OEEuOTQuOTQgMCAwIDEgNSA1aDdWMyIvPjxwYXRoIGZpbGw9IiNGQkJDMDQiIGQ9Ik00IDEySDJ2Ni4yNEEyLjkxNiAyLjkxNiAwIDAgMCA1IDIxaDd2LTJINWMtLjQ5LjA0LS45Mi0uMy0xLS43OEw0LjAxIDEyIi8+PHBhdGggZmlsbD0iIzQyODVGNCIgZD0iTTEwIDdINnY2aDRWN204IDRoLTZ2Mmg2di0ybTAgNEg2djJoMTJ2LTJtMC04aC02djJoNlY3Ii8+PC9zdmc+Cg=="
+                alt=""
+                data-atf="1"
+              />
+            </span>
+            <input id="nws" type="radio" name="tbm" value="nws" />
+            <label for="nws">Новости</label>
+          </li>
+          <li>
+            <span>
+              <img
+                class="icon"
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgyNHYyNEgweiIvPjxwYXRoIGZpbGw9IiNFQTQzMzUiIGQ9Ik04LjY1IDguMDRsLTEuNC0xLjQxIDMuNzQtMy43NGMuNTgtLjU4IDEuMzUtLjg5IDIuMTYtLjg5aDUuOGMuODIgMCAxLjU4LjMxIDIuMTYuODlMMTkuNjkgNC4zYy0uMi0uMi0uNDctLjMxLS43NC0uMzFsLTUuOC4wMWMtLjI4IDAtLjU0LjEtLjc0LjNMOC42NSA4LjA0eiIvPjxwYXRoIGZpbGw9IiNGQkJDMDQiIGQ9Ik01LjggMTguMmwtMi45LTIuOWMtMS4xOS0xLjE5LTEuMTktMy4xMiAwLTQuMzJsNC4zNi00LjM2IDEuNCAxLjQxLTQuMzUgNC4zN2MtLjQxLjQxLS40MSAxLjA4IDAgMS40OWwyLjkgMi45TDUuOCAxOC4yeiIvPjxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0yMS4xMSAyLjg5TDE5LjY5IDQuM2MuMjEuMjEuMzEuNDguMzEuNzV2NS44YzAgLjI4LS4xMi41NC0uMzIuNzRsLTMuNzMgMy43NC00LjM2IDQuMzZjLS40MS40MS0xLjA4LjQxLTEuNDkgMGwtMi44OS0yLjlMNS44IDE4LjJsMi44OSAyLjljLjYuNiAxLjM4LjkgMi4xNi45Ljc4IDAgMS41Ni0uMjkgMi4xNi0uODlsNC4zNi00LjM2IDMuNzMtMy43NGMuNTgtLjU4LjktMS4zNC45LTIuMTZ2LTUuOGMwLS44MS0uMzItMS41OS0uODktMi4xNnoiLz48Y2lyY2xlIGZpbGw9IiMzNEE4NTMiIGN4PSIxNiIgY3k9IjgiIHI9IjIiLz48L3N2Zz4K"
+                alt=""
+                data-atf="1"
+              />
+            </span>
+            <input id="bks" type="radio" name="tbm" value="bks" />
+            <label for="bks">Книги</label>
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+    <div class="wrapper">
+      <div class="questionnaire-wrapper">
+        <h2 id="silpo"><a href="#silpo">#Анкета для роботи в «Сільпо»</a></h2>
+        <h4 class="subheader">Основна інформація</h4>
+        <form action="#" class="questionnaire-form">
+          <div class="main-info">
+            <input
+              class="questionnaire-input"
+              required
+              type="text"
+              placeholder="Ім'я"
+            />
+            <input
+              class="questionnaire-input"
+              required
+              type="text"
+              placeholder="Прізвище"
+            />
+            <input class="questionnaire-input" required type="date" />
+            <input
+              class="questionnaire-input"
+              required
+              type="text"
+              placeholder="Населений пункт"
+            />
+            <input
+              class="questionnaire-input"
+              required
+              type="url"
+              placeholder="Електронна адреса"
+            />
+            <input
+              class="questionnaire-input"
+              required
+              type="text"
+              placeholder="Телефон"
+            />
+          </div>
+          <div class="file-wrapper">
+            <div class="file">
+              <div class="form-group">
+                <label class="label">
+                  <i class="material-icons">file</i>
+                  <span class="title">Перетягніть сюди резюме</span>
+                  <input type="file" />
+                </label>
+              </div>
+            </div>
+            <div class="url-wrapper">
+              <label for="url">Чи додайте сюди посилання на резюме</label>
+              <input
+                class="questionnaire-input"
+                id="url"
+                type="url"
+                placeholder="Посилання на резюме URL..."
+              />
+            </div>
+          </div>
+          <div>
+            <label class="checkbox-container">
+              Хочу працювати неповний робочий день
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <button class="questionnaire-button" type="submit">
+            <span>ВІДПРАВИТИ</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
