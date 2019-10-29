@@ -11,7 +11,6 @@ body{
     width: 100%;
     display: flex;
     justify-content: center;
-
 }
 .img-google {
     width: 200px;
@@ -76,7 +75,6 @@ select{
     display: inline-block;
     width: 300px;
     justify-content: space-between;
-
 }
 .sendBtn{
     display: flex;
