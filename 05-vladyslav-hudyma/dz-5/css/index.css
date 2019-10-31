@@ -48,10 +48,10 @@ fieldset{
     padding: 10px;
     margin: 5px;
 }
-#day{
+input[type="checkbox"]{
     width: 10px;
 }
-#file{
+input[type="file"]{
     border-bottom: none;
 }
 h2,h4{
