@@ -73,7 +73,7 @@ select{
     width: 300px;
     justify-content: space-between;
 }
-.sendBtn{
+.send-btn{
     display: flex;
     justify-content: center;
 }
