@@ -7,7 +7,7 @@ table {
     color: white;
     table-layout: fixed;
     width: 100%;
-    border-spacing: 6px 2px;
+    border-spacing: 6px 8px;
     background-color: #ffeee3;
 }
 
@@ -47,5 +47,19 @@ tr[class~="row-border"] td {
 .legend {
     color: black;
     text-align: left;
+}
+
+.td-text {
+    text-align: center;
+    padding-top: 0.8em;
+    height: calc(100% + 12px);
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    border-left: 5px solid grey;
+    border-right: 5px solid grey;
+    border-top: 5px solid grey;
+    border-bottom: 5px solid grey;
 }
 

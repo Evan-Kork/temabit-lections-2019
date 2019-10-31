@@ -1,5 +1,5 @@
 fieldset {
-	border: none;
+    border: none;
 }
 
 .google-search {
@@ -27,7 +27,7 @@ h3 {
 input[type="text"],[type="date"],[type="email"],[type="tel"],[type="url"] {
     border: none;
     border-bottom: 1px solid black;
-    width: 350px;
+    width: 40%;
 }
 
 .form-group {
