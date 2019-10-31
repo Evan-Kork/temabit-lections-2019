@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<form class="search" action="https://www.google.com/search" method="GET" target="_blank">
+    <div>
+        <img src="https://searchengineland.com/figz/wp-content/seloads/2017/11/thanksgiving-2017-doodle-gif.gif" alt="Google-search" width="500px">
+        <div>
+            <div class="search-field">
+                <input 
+                type="text"
+                id="name"
+                name="q"
+                placeholder="Enter your request"
+            />
+            </div> 
+
+            <div class="search-group">
+                <button type="submit">
+                    <img src="https://icon-library.net/images/google-search-icon-png/google-search-icon-png-8.jpg" alt="Go!" width="13px">
+                </button>
+
+                <button 
+                    type="submit" 
+                    id="image"
+                    name="tbm"
+                    value="isch">
+                    Image
+                </button>
+
+                <button 
+                    type="submit" 
+                    id="video"
+                    name="tbm"
+                    value="vid">
+                    Video
+                </button>
+
+                <button 
+                    type="submit" 
+                    id="news"
+                    name="tbm"
+                    value="nws">
+                    News
+                </button>
+
+                <button
+                    type="submit" 
+                    formaction="https://www.google.com/maps/place"
+                    id="maps"
+                    name="q"
+                    value="mps">
+                    Maps
+                </button>
+            </div>
+        </div>
+    </div>  
+</form>
+
+<div class="cv-form-wr">
+    <form name="CVForm">
+        <h2 class="cv-form-title">Анкета для роботи в «Сільпо»</h2>
+        <h3 class="cv-form-subtitle">Основна інформація</h4>
+
+        <div class="cv-input-block">
+            <input class="cv-input-field"
+                type="text"
+                name="FirstName"
+                placeholder="Ім'я"
+            >
+            <input class="cv-input-field"
+                type="text"
+                name="LastName"
+                placeholder="Прізвище"
+            >
+        </div>
+
+        <div class="cv-input-block">
+            <input class="cv-input-field"
+                type="date"
+                name="BirthDate"
+                placeholder="дд/мм/рррр"
+            >
+            <input class="cv-input-field"
+                type="text"
+                name="City"
+                placeholder="Населений пункт"
+            >
+        </div>
+
+        <div class="cv-input-block">
+            <input class="cv-input-field"
+                type="email"
+                name="Email"
+                placeholder="Електронна адреса"
+            >
+            <input class="cv-input-field"
+                type="tel"
+                name="Phone"
+                placeholder="Телефон"
+            >
+        </div>
+
+        <div class="cv-file-block">
+            <label for="file-block">
+                Перетягніть сюди документ <br>
+                або завантажте з комп’ютера <br>
+                (png/jpg/doc/pdf до 7 Мб)
+            </label>
+            <input type="file" id="file-block" name="file">
+        </div>
+
+        <div class="cv-input-block">
+            <input class="cv-input-field cv-full-input-field"
+                type="text"
+                name="link"
+                placeholder="чи додайте сюди посилання на резюме"
+            >
+        </div>
+
+        <h3 class="cv-form-subtitle">Вкажіть більше інформації, щоб отримати справді цікаву вакансію</h3>
+
+        <div class="cv-input-block">
+            <div class="cv-input-field">
+                <select name="favcity">
+                    <option>Оберіть бажаний населений пункт</option>
+                    <option value="vn">м. Вінниця</option>
+                    <option value="dn">м. Дніпро</option>
+                    <option value="zp">м. Запоріжжя</option>
+                    <option value="if">м. Івано-Франківськ</option>
+                    <option value="kp">м. Кам'янець-Подільський</option>
+                </select>
+            </div>
+
+            <div class="cv-input-field">
+                <select name="favjob">
+                    <option>Оберіть бажану посаду</option>
+                    <option value="vant">Вантажник</option>
+                    <option value="kas">Касир</option>
+                    <option value="kond">Кондитер</option>
+                    <option value="ohor">Охоронник</option>
+                    <option value="prybyr">Прибиральниця</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="cv-input-block">
+            <div class="cv-input-field">
+                <select name="favmarket">
+                    <option>Оберіть зручний супермаркет</option>
+                    <option value="vn_600rich">вул. 600-річчя, 17е</option>
+                    <option value="vn_kelet">вул. Келецька, 105</option>
+                    <option value="dn_vokz">пл. Вокзальна, 13</option>
+                    <option value="dn_gagar">просп. Гагаріна, 3</option>
+                    <option value="zp_vinter">бул. Вінтера, 30</option>
+                    <option value="zp_ivanov">вул. Іванова, 1а</option>
+                    <option value="if_dnistr">вул. Дністровська, 3</option>
+                    <option value="if_mazep">вул. Мазепи, 168а</option>
+                    <option value="kp_nigyn">шосе Нігинське, 41/1</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="cv-input-block">
+            <div class="cv-input-field cv-check">
+                <input 
+                    name="check"
+                    type="checkbox"
+                    id="check-block"
+                >
+                <label for="check-block">Хочу працювати неповний робочий день</label>
+            </div>
+        </div>
+
+        <div class="cv-submit-button">
+            <input
+                type="submit"
+                value="Відправити"
+            >
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
