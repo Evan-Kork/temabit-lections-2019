@@ -5,54 +5,175 @@
 	<title>Form</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-	<form 
-		action="https://www.google.com/search"
-		method="get" 
-		target="_blank"
+    <body>
+		<form 
+		    action="https://www.google.com/search"
+		    method="get" 
+			target="_blank"
 		>
-		<fieldset>
-            <legend>Поиск</legend>
-			<div>
-				<div>
-					<img 
-						src="http://android.com.ua/wp-content/uploads/2017/04/Google-300x145.png" 
-						alt="Image"
-		 			/>
-					<div class="input">
-						<input 
-							type="search" 
-							name="q"
-						/>
-						<input 
-							type="submit" 
-							value="Поиск"
-						/>
+			<fieldset>
+				<legend>Поиск</legend>
+			    <div>
+				    <div>
+						<img 
+						    src="http://android.com.ua/wp-content/uploads/2017/04/Google-300x145.png" 
+						    alt="Image"
+		 			    />
+					    <div class="input-google">
+						    <input 
+							   type="search" 
+							   name="q"
+						    />
+						    <input 
+							    type="submit" 
+								value="Поиск"
+						    />
+					    </div>
+				    </div>
+				    <div>
+					    <input 
+						    type="radio" 
+						    name="tbm"
+						    id="all" 
+						    value="" 
+					    /> 
+					    <label for="all">Все</label>
+					    <input 
+						    type="radio" 
+						    name="tbm"
+						    id="picture" 
+						    value="isch" 
+					    />
+					    <label for="picture">Изображения</label>
+					    <input 
+						    type="radio" 
+						    name="tbm"
+						    id="video" 
+						    value="vid" 
+					    />
+					    <label for="news">Новости</label>
+				    </div>
+			    </div>
+		    </fieldset>
+		</form>
+		<hr>
+		<div class="form">
+			<form action="#" method="POST">
+				<h3>Анкета для роботи в Сільпо</h3>
+				<fieldset>
+					<h3>Основна інформація</h3>
+					<div class="form-group">
+						<div class="form">
+							<label for="name">Ім'я</label>
+							<input 
+								name="name"
+								id="name"
+								type="text"
+								value=""
+								placeholder="Введіть ім'я"
+							/>   
+						</div>
+						<div class="form">
+							<label for="surname">Прізвище</label>
+							<input 
+								name="surname"
+								id="surname"
+								type="text"
+								value=""
+								placeholder="Введіть прізвище"
+							/>   
+						</div>
 					</div>
-				</div>
-				<div>
-					<input 
-						type="radio" 
-						name="tbm"
-						id="all" 
-						value="" 
-					/> 
-					<label for="all">Все</label>
-					<input 
-						type="radio" 
-						name="tbm"
-						id="picture" 
-						value="isch" 
-					/>
-					<label for="picture">Изображения</label>
-					<input 
-						type="radio" 
-						name="tbm"
-						id="video" 
-						value="vid" 
-					/>
-					<label for="news">Новости</label>
-				</div>
-			</div>
-		</fieldset>
-	</form>
+					<div class="form-group">
+						<div class="form">
+							<label for="date">Дата народження</label>
+							<input 
+								name="date"
+								id="date"
+								type="text"
+								value=""
+								placeholder="Введіть дату народження"
+								/>
+						</div>     
+						<div class="form">
+							<label for="town">Населений пункт</label>
+							<input 
+								name="town"
+								id="town"
+								type="text"
+								value=""
+								placeholder="Введіть населений пункт"
+							/>
+						</div>  
+					</div>
+
+
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input 
+							name="email"
+							id="email"
+							type="email"
+							placeholder="Введіть email"
+						/>  
+					</div> 
+					<div class="form-group">
+						<label for="number">Номер телефону</label>
+						<input
+							name="number"
+							id="number"
+							type="text"
+							placeholder="Введіть номер телефону"
+						/>  
+					</div>    
+					<div class="form-group">
+					<label for="file">Резюме</label>
+						<input
+							name="profile"
+							id="file"
+							type="file"
+							placeholder="Виберіть файл"
+						/>  
+					</div>
+					<div class="form-group url-wrapper">
+						<label for="url">Посилання</label>
+						<input
+							name="url"
+							required
+							id="url"
+							type="url"
+							placeholder="Додайте посилання"
+						/>  
+					</div>
+					<div>
+						<h3>Вкажіть більше інформації, щоб отримати справді цікаву вакансію</h3>
+						<select name="position" id="position">
+							<option value="">Виберіть вакансію</option>
+							<option value="position:a">Адміністратор</option>
+							<option value="position:sl">Продавець</option>
+							<option value="position:с">Касир</option>
+							<option value="position:s">Охоронець</option>
+						</select>
+						<select name="city" id="city">
+							<option value="">Виберіть місто</option>
+							<option value="city:v">Вінниця</option>
+							<option value="city:k">Київ</option>
+							<option value="city:o">Одеса</option>
+							<option value="city:l">Львів</option>
+							<option value="city:kh">Харків</option>
+							<option value="city:ch">Чернігів</option>
+						</select>
+					</div> 
+					<div class="">
+						<label>Хочу працювати неповний робочий день
+							<input type="checkbox"/>
+						</label>
+					</div>
+					<button class="" type="submit">
+						<span>Відправити</span>
+					</button>
+				</fieldset>
+			</form>
+		</div>
+    </body>
+</html>
