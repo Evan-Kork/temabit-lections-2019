@@ -3,20 +3,57 @@ html, body {
 }
 .container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: stretch;
 	min-height: calc(100vh - 20px);
-	padding: 10px;
 	box-sizing: border-box;
-	margin: 10px;
+	/*padding: 10px;
+	margin: 10px;*/
+}
+header {
+	background-color: blue;
+	background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(18,18,88,1) 35%, rgba(0,212,255,1) 100%);
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+.main {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: row;
+	/*flex-direction: row-reverse;*/
+	height: calc(100vh - 200px);
 }
 .menu {
 	width: 200px;
 	min-width: 200px;
 	background-color: green;
+	overflow: auto;
+	/*order: 1;*/
 }
-.main {
+.menu ul li {
+}
+.menu ul li span {
+	transition: all 1s ease;
+}
+.menu ul li:hover span {
+	display: inline-block;
+	transform: scale(2) translate(20px, 0);
+	color: red;
+	/*font-size: 20px;*/
+	cursor: pointer;
+}
+.article {
 	background-color: red;
 	flex: 1 1 auto;
-	min-width: 200px
+	min-width: 200px;
+	overflow: auto;
+	/*order: 0;*/
+}
+footer {
+	background-color: yellow;
+	height: 100px;
 }
