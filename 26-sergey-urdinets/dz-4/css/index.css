@@ -19,7 +19,7 @@ td {
 	height: 2em;
 	color: white;
 }
-tr[class~="border"] td {
+.last-version td {
 	border: 5px solid rgb(88,78,59);
 }
 .empty {
