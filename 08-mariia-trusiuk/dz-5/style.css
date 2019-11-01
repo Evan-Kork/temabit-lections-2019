@@ -1,6 +1,9 @@
 body {
 	font-family: 'Roboto', sans-serif;
 }
+img {
+	display: block;
+}
 .input-google {
 	display: inline-block;
 	margin-bottom: 15px;
