@@ -1,91 +1,106 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	box-sizing: border-box;
-	text-align: center;
+    font-family: Arial, sans-serif;
 }
 
-.container {
-	width: 1200px;
-	height: 100vh;
-	margin: 0 auto;
+.header {
+    background: url(http://www.velgol.ru/wp-content/uploads/2016/06/ar-nuvo-house-02.jpg) no-repeat center;
+    background-size: cover;
+    height: 200px;
+}
+
+.main {
+    display: flex;
+}
+
+.main__menu {
+    width: 300px;
+    min-width: 300px;
+    background-color: #a5f0ea;
+    padding: 30px;
+    color: #C44230;
+}
+
+.main__menu h4 {
+    margin: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 80%;
+}
+
+.main__article {
+    padding: 20px;
+    width: 100%;
+}
+
+.boxes {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 47%;
+    text-align: center;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+.box img {
+    width: 250px;
+}
+
+.box p {
+    margin: 10px auto;
+}
+
+.characteristics {
+    background-color: #dce3e3;
+    padding: 10px;
+    width: 100%;
 }
 
 
-.header__left {
-	width: 50%;
-	background-color: orange;
-	float: left;
-	height: 150px;
+@media screen and (max-width: 768px) {
+    .boxes {
+        flex-direction: column;
+    }
 
+    .box {
+        width: 100%;
+    }
 }
 
-.header__right {
-	float: left;
-	width: 50%;
-	background-color: orangered;
-	height: 150px;
+@media screen and (max-width: 640px) {
+    .box {
+        width: 100%;
+    }
 
-}
+    .main {
+        flex-direction: column;
+    }
 
-.main__left {
-	width: 20%;
-	height: 600px;
-	float: left;
-	background: #39b54a;
-}
-
-.main__center {
-	width: 60%;
-	height: 600px;
-	float: left;
-	background: #1a73e8;
-}
-
-.main__right {
-	width: 20%;
-	height: 600px;
-	float: right;
-	background: #0d6719;
-}
-
-.main__left-all {
-	width: 150px;
-	height: 60px;
-	background: yellow;
-	margin: 20px auto;
-	text-align: center;
-}
-
-.footer {
-	height: 10%;
-}
-
-.footer__left {
-	width: 400px;
-	background: #7e1f12;
-	float: left;
-	height: 70px;
-}
-
-.footer__center {
-	width: 400px;
-	background: red;
-	float: left;
-	height: 70px;
-}
-
-.footer__right {
-	background: #C44230;
-	width: 400px;
-	height: 70px;
-	float: right;
-}
-
-.clear {
-	clear: both;
+    .main__menu {
+        width: 100%;
+    }
 }
