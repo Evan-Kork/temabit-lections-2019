@@ -1,59 +1,91 @@
-.form-group label {
-	width: 175px;
-  display: inline-block;
+/*Form 1*/
+
+.search{
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
-#container{
-  width: 500px;
-  margin: 0 auto;
-  padding: 40px;
-  font-family: "Times New Roman";
-  letter-spacing: 1px;
-  font-size: 30px;
-  color: DarkBlue;
-  font-weight: bold;
+.search_for{
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+.search_for input{
+  border: 1px solid MidnightBlue;
+  padding: 5px 10px;
+  width: 100%;
+  text-align: center;
+  outline: none;
+}
+
+.form_submit{
   position: relative;
+	padding: 5px 10px;
+  border-radius: 2px;
+  color: lightgrey;
+  font-size: 16px;
+  background-color: MidnightBlue;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-#container_1{
-  display:flex;
+.form_but{
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+.form_but button{
+	color: MidnightBlue;
+	font-size: 15px;
+	padding: 5px 10px;
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.form_submit:focus,
+.form_submit:hover{
+  background-color:Indigo;
+}
+
+.form_but button:focus,
+.form_but button:hover{
+  color:Indigo;
+}
+
+
+/*Form 2*/
+
+.container{
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 120vh;
 }
 
-.form_submit{
-  position: relative;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: white;
-  font-family: "Times New Roman";
-  font-size: 16px;
-  background-color: DarkBlue;
-  cursor: pointer;
-  transition: 0.3s;
-}
-form_submit:focus,
-.form_submit:hover{
-  background-color:lightblue;
-}
-
 .form{
-width: 500px;
+width: 600px;
 padding: 32px;
 border-radius: 10px;
 box-shadow: 0 4px 16px #ccc;
-font-family: "Times New Roman";
 letter-spacing: 1px;
 }
 
 .form-group{
   font-family: "Times New Roman";
   letter-spacing: 1px;
-  font-size: 16px;
+  font-size: 18px;
   position: relative;
   margin-bottom: 15px;
 }
+.form-group label{
+	width: 250px;
+	display: inline-block;
+}
+
 .form-title{
   text-align: center;
   margin: 0 0 32px 0;
@@ -73,7 +105,7 @@ h3, h5{
   border-radius: 5px;
   color: white;
   font-family: "Times New Roman";
-  font-size: 16px;
+  font-size: 18px;
   background-color: brown;
   cursor: pointer;
   transition: 0.3s;
