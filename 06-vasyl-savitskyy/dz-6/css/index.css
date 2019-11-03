@@ -79,12 +79,8 @@
 	background: #ffffff;
 }
 
-.item_block__img {
-	padding: 0 50px;
-}
-
-.item_block__img img {
-	width: 100%;
+.item_block img {
+	width: 80%;
 }
 
 .item_block__header {
