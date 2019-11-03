@@ -1,0 +1,86 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+	height: 500px;
+	padding: 0 15px;
+}
+header {
+	position: relative;
+	height: 200px;
+	width: 100%;
+	background-image:  url(/home/bohdan/DZ/temabit-lections-2019/37-musienko-bohdan/dz-6/images/fon-header.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.main {
+	position: relative;
+	display: flex;
+}
+.main aside {
+	width: 370px;
+	background: #cdffff;
+}
+.main aside .sidebar {
+	padding: 15px;
+}
+.sidebar .logo {
+	height: 120px;
+	margin-bottom: 15px;
+}
+.sidebar .logo img {
+	max-width: 100%;
+	max-height: 100%;
+}
+.sidebar h4 {
+	margin: 15px 0;
+}
+.sidebar ol {
+	margin-left: 20px;
+}
+.sidebar ul {
+	margin-left: 20px;
+}
+.content {
+	padding: 0 15px;
+	width: 740px;
+}
+.content .block-products {
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+}
+.content .product {
+ 	width: 49%;
+ 	text-align: center;
+ 	margin: 15px 0;
+}
+.content .product:nth-child(2n+1) {
+	margin-right: 5px;
+}
+.product h4 {
+ 	margin-top: 10px;
+ }
+.product p {
+ 	margin-bottom: 15px;
+ }
+.product .characteristics {
+	padding: 15px;
+	background: #e5e6fa;
+}
+.product .characteristics p {
+	margin-bottom: 5px;
+}
+.product .img {
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.product .img img {
+	max-height: 100%;
+	max-width: 100%;
+}
