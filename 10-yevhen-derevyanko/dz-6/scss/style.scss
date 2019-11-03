@@ -31,7 +31,7 @@ body{
 .page-content{
     display: flex;
     flex-direction: column;
-    flex: 1 1;
+    flex: 1 1 auto;
 
 }
 
@@ -67,7 +67,7 @@ aside{
             max-width: 56px;
             width: 100%;
             display: block;
-            margin-right: 10px;
+            margin-right: 6px;
         }
         .name-site{
             color: orange;
@@ -97,17 +97,19 @@ aside{
         margin-bottom: 5px;
         font-weight: 600;
     }
-    ul,ol{
-        margin: 0;
+    nav{
         margin-bottom: 15px;
-        padding: 0;
-        padding-left: 20px;
-        li{
-            a{
-                color: $red;
-                text-decoration: none;
-                &:hover{
-                    text-decoration: underline;
+        ul,ol{
+            margin: 0;
+            padding: 0;
+            padding-left: 20px;
+            li{
+                a{
+                    color: $red;
+                    text-decoration: none;
+                    &:hover{
+                        text-decoration: underline;
+                    }
                 }
             }
         }
@@ -137,6 +139,9 @@ main{
         display: flex;
         flex-direction: column;
         padding: 10px 5px;
+
+        // for ie
+        max-width: 50%;
         &:hover{
             .wrapp-img{
                 img{
@@ -162,7 +167,7 @@ main{
             font-size: 18px;
         }
         .description{
-            flex: 1 1;
+            flex: 1 1 auto;
             margin-bottom: 15px;
             padding: 0 10px;
         }
@@ -192,6 +197,9 @@ main{
     .list-project{
         .item{
             flex-basis: 100%;
+
+            // for ie
+            max-width: 100%;
         }
     }
 }
