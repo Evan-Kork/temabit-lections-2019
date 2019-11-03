@@ -28,7 +28,7 @@ body{
 .page-content{
     display: flex;
     flex-direction: column;
-    flex: 1 1;
+    flex: 1 1 auto;
 
 }
 
@@ -128,7 +128,7 @@ aside{
 
 
 main{
-    flex: 1 1;
+    flex: 1 1 auto;
     padding: 15px;
     >h1{
         margin: 0;

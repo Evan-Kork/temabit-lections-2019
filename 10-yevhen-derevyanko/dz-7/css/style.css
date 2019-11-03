@@ -28,8 +28,8 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-flex: 1;
-  -ms-flex: 1 1;
-  flex: 1 1; }
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto; }
 
 aside {
   background-color: #272727;
@@ -115,8 +115,8 @@ aside {
 
 main {
   -webkit-box-flex: 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   padding: 15px; }
   main > h1 {
     margin: 0;
