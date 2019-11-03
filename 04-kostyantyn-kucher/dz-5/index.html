@@ -14,65 +14,63 @@
   </header>
   <form action="https://www.google.com/search"
         method="GET"
-  >
-  
-  <div class="form-group">
-    <input
-      id="search"
-      type="text"
-      name="q"
-      placeholder="Enter searching word"
-    />
-  </div>
-  <div class="form-group">
-    <input
-      id="news"
-      type="radio"
-      name="tbm"
-      value="nws"
-    /><label for="news">News</label>
-    <input
-      id="video"
-      type="radio"
-      name="tbm"
-      value="vid"
-    /><label for="video">Video</label>
-    <input
-      id="allParams"
-      type="radio"
-      name="tbm"
-      value=""
-    /><label for="allParams">All</label>
-  </div>
-  <div class="form-group">
-    <input
-      id="24h"
-      type="radio"
-      name="tbs"
-      value="qdr:d"
-    /><label for="24h">For the last 24 hours</label>
-    <input
-      id="1h"
-      type="radio"
-      name="tbs"
-      value="qdr:h"
-    /><label for="1h">For the last hour</label>
-    <input
-      id="allTime"
-      type="radio"
-      name="tbs"
-      value=""
-    /><label for="allTime">All</label>
-  </div>
-  <input type="submit" value="Let's search!" class="submitButton">
+        class="searchForm">
+    <div class="formGroup">
+      <input
+        id="search"
+        type="text"
+        name="q"
+        placeholder="Enter searching word"
+        class="search"
+      />
+    </div>
+    <div class="formGroup">
+      <input
+        id="news"
+        type="radio"
+        name="tbm"
+        value="nws"
+      /><label for="news">News</label>
+      <input
+        id="video"
+        type="radio"
+        name="tbm"
+        value="vid"
+      /><label for="video">Video</label>
+      <input
+        id="allParams"
+        type="radio"
+        name="tbm"
+        value=""
+      /><label for="allParams">All</label>
+    </div>
+    <div class="formGroup">
+      <input
+        id="24h"
+        type="radio"
+        name="tbs"
+        value="qdr:d"
+      /><label for="24h">For the last 24 hours</label>
+      <input
+        id="1h"
+        type="radio"
+        name="tbs"
+        value="qdr:h"
+      /><label for="1h">For the last hour</label>
+      <input
+        id="allTime"
+        type="radio"
+        name="tbs"
+        value=""
+      /><label for="allTime">All</label>
+    </div>
+    <input type="submit" value="Let's search!" class="submitButton">
   </form>
   <h2>Анкета для роботи в "Сільпо"</h2>
-
   <form action="#" class="silpoForm">
     <fieldset>
       <legend>Основна інформація</legend>
-      
-      <div class="form-group">
+      <div class="formGroup">
         <label for="name">Введіть ім'я</label>
         <input
           id="name"
@@ -83,8 +81,7 @@
           class="silpoInput"
         />
       </div>
-
-      <div class="form-group">
+      <div class="formGroup">
         <label for="lastName">Введіть прізвище</label>
         <input
           id="lastName"
@@ -94,8 +91,7 @@
           class="silpoInput"
         />
       </div>
-
-      <div class="form-group">
+      <div class="formGroup">
         <label for="dateOfBirth">Введіть дату народження</label>
         <input
           id="dateOfBirth"
@@ -105,8 +101,7 @@
           class="silpoInput"
         />
       </div>
-
-      <div class="form-group">
+      <div class="formGroup">
         <label for="city">Введіть населений пункт</label>
         <input
           id="city"
@@ -116,8 +111,7 @@
           class="silpoInput"
         />
       </div>
-
-      <div class="form-group">
+      <div class="formGroup">
         <label for="email">Введіть електронну адресу</label>
         <input
           id="email"
@@ -127,8 +121,7 @@
           class="silpoInput"
         />
       </div>
-
-      <div class="form-group">
+      <div class="formGroup">
         <label for="phone">Введіть 10 цифр. Почніть із коду вашого мобільного оператора</label>
         <input
           id="phone"
@@ -140,8 +133,7 @@
           class="silpoInput"
         />
       </div>
-
-      <div class="form-group">
+      <div class="formGroup">
         <label for="cv">Резюме</label>
         <input
           id="cv"
@@ -150,7 +142,7 @@
           class="silpoCvFile"
         />
       </div>
-      <div class="form-group form-group-cv">
+      <div class="formGroup formGroupCv">
         <input
           id="cvUrl"
           type="text"
@@ -162,7 +154,7 @@
     </fieldset>
     <fieldset>
       <legend>Вкажіть більше інформації, щоб отримати справді цікаву вакансію</legend>
-      <div class="form-group">
+      <div class="formGroup">
         <label for="marketCity">Оберіть бажаний населений пункт</label>
         <select name="marketCity" id="marketCity">
           <option>Київ</option>
@@ -170,7 +162,7 @@
           <option>Львів</option>
         </select>
       </div>
-      <div class="form-group">
+      <div class="formGroup">
         <label for="marketVacancy">Оберіть бажану посаду</label>
         <select name="marketVacancy" id="marketVacancy">
           <option>Вантажник</option>
@@ -178,7 +170,7 @@
           <option>Завідуючий відділом</option>
         </select>
       </div>
-      <div class="form-group">
+      <div class="formGroup">
         <label for="marketExample">Оберіть зручний супермаркет</label>
         <select name="marketExample" id="marketExample">
           <option>вул.Шевченка</option>
@@ -186,7 +178,7 @@
           <option>вул.Стельмаха</option>
         </select>
       </div>
-      <div class="form-group halfDay">
+      <div class="formGroup halfDay">
         <input
           id="halfDay"
           type="checkbox"

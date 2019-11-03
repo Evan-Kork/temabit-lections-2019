@@ -5,10 +5,10 @@ body{
 header{
   margin-bottom: 20px;
 }
-form{
+.searchForm{
   margin-bottom: 30px;
 }
-#search{
+.search{
   font-size: 20px;
   height: 40px;
   width: 500px;
@@ -16,7 +16,7 @@ form{
   border: 1px solid gray;
   border-radius: 25px;
 }
-.form-group{
+.formGroup{
   margin-bottom: 20px;
 }
 .submitButton{
@@ -48,7 +48,7 @@ form{
   padding: 20px;
 }
 
-.silpoForm .form-group{
+.silpoForm .formGroup{
   display: inline-block;
   width: 350px;
 }
@@ -65,7 +65,7 @@ form{
   padding: 5px;
   background-color: #fff;
 }
-.silpoForm .form-group-cv, .silpoForm .halfDay{
+.silpoForm .formGroupCv, .silpoForm .halfDay{
   padding: 0;
   width: 100%;
 }
@@ -73,12 +73,12 @@ form{
   display: inline;
 }
 
-.silpoForm .form-group-cv input{
+.silpoForm .formGroupCv input{
   display: block;
   width: 98%;
 }
 
-.form-group select{
+.formGroup select{
   width: 150px;
 }
 
