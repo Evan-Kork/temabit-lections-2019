@@ -1,0 +1,168 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.container {
+    margin: 0 auto;
+    height: 100%;
+    width: 50%;
+    min-width: 900px;
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+    height: 200px;
+    background: url(/img/header.jpg)no-repeat;
+}
+
+.logo {
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(252, 74, 30);
+}
+
+.logo img {
+    float: left;
+    height: 75px;
+    width: 75px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-weight: 900;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.logo>p {
+    font-size: 14px;
+}
+
+.navbar {
+    color: rgb(139, 18, 18);
+}
+
+.navbar li {
+    margin-left: -20px;
+}
+
+.main {
+    /* height: 100%; */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.nav {
+    background-color: rgb(202, 239, 248);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    min-width: 250px;
+    /* height: 100%; */
+    padding-left: 15px;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav a:visited {
+    color: blue;
+}
+
+.content {
+    justify-content: flex-start;
+    padding: 0 40px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.content-description {
+    color: blue;
+}
+
+.content-item {
+    flex-grow: 1;
+    flex-basis: 49%;
+}
+
+.item-description {
+    width: 25%;
+    min-width: 250px;
+    text-align: center;
+}
+
+.item-info {
+    display: block;
+    width: 25%;
+    min-width: 250px;
+    background-color: rgb(201, 192, 192);
+    padding: 10px 0;
+}
+
+.content img {
+    width: 250px;
+    height: 140px;
+    padding-bottom: 5px;
+}
+
+/* Для планшета */
+@media screen and (max-width: 768px) {
+
+    .content-description {
+        width: 60%;
+        text-align: start;
+    }
+
+    .content {
+        flex-direction: column;
+      }
+
+    .content-item {  
+        flex-basis: 10%;
+    }
+}
+
+/* Для мобильных */
+@media screen and (max-width: 320px) {
+
+   .main {
+       flex-direction: column;
+   }
+
+   .content {
+       padding-left: 20px;
+   }
+   
+   .content-description {
+       width: 30%;
+   }
+
+   .nav {
+       width: 30%;
+       margin-left: 20px;
+   }
+}
+
+
+
+
+
+
+
+
+
