@@ -97,23 +97,28 @@
 	padding: 20px 0;
 }
 
-@media only screen and (min-width: 640px){
+@media only screen and (min-width: 641px){
 	.main_block {
 		display: flex;
 	}
 
+	.nav_left,
+	.main {
+		overflow: auto;
+	}
+
 	.nav_left {
 		width: 250px;
+		height: calc(100vh - 210px);
 	}
 
 	.main {
 		width: calc(100% - 250px);
 		height: calc(100vh - 190px);
-		overflow: auto;
 	}
 }
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 769px){
 	.section {
 		display: flex;
 		flex-wrap: wrap;
