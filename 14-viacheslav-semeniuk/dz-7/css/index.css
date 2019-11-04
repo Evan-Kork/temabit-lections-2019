@@ -1,0 +1,150 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  display: flex;
+}
+
+/* side */
+.side {
+  flex-grow: 1;
+  background-color: grey;
+  padding: 2em;
+}
+.menu {
+  list-style-type: none;
+  padding: 0;
+}
+.menu li {
+  cursor: pointer;
+  margin: 0.5em;
+  margin-left: 0;
+}
+.menu li a {
+  width: 100%;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+.menu li:hover a {
+  color: rgb(255, 217, 0);
+}
+
+/* burger */
+/* menu icon */
+.menu {
+  clear: none;
+  float: right;
+  max-height: none;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: none;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.menu-icon .navicon {
+  background: #fff;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+.menu-icon .navicon:before,
+.menu-icon .navicon:after {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.menu-icon .navicon:before {
+  top: 5px;
+}
+
+.menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+.menu-btn {
+  display: none;
+}
+
+.menu-btn:checked ~ .side .menu-icon .navicon {
+  background: transparent;
+}
+
+.menu-btn:checked ~ .side .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .side .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .side .menu-icon:not(.steps) .navicon:before,
+.menu-btn:checked ~ .side .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* main */
+.main {
+  flex-grow: 100;
+  color: rgb(87, 98, 134);
+}
+.content {
+  padding: 2em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid grey;
+}
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer h4 a {
+  color: rgb(87, 98, 134);
+}
+
+/* tablet vertical */
+@media screen and (max-width: 768px) {
+  .side {
+    background-color: rgb(68, 71, 62);
+  }
+  .menu {
+    display: none;
+  }
+  .menu li p {
+    color: rgb(13, 253, 5);
+  }
+  .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: absolute;
+    left: 4px;
+    user-select: none;
+  }
+  .menu-btn:checked ~ .side {
+    width: 100%;
+    height: 100vh;
+    padding: 2em 0 0 3em;
+  }
+  .menu-btn:checked ~ .main {
+    display: none;
+  }
+  .menu-btn:checked ~ .side .menu {
+    width: 100%;
+    display: block;
+  }
+}
