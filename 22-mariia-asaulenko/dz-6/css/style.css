@@ -9,7 +9,7 @@ body{
     background-color: #58b749;
     color: #f7f7f7;
 }
-h1 {
+h2 {
     display: none;
 }
 ul {
@@ -37,6 +37,7 @@ img {
 }
 button{
     font-size: 14px;
+    cursor: pointer;
 }
 @media(min-width: 768px){
     body{
@@ -47,7 +48,7 @@ button{
         flex-direction: row;
         flex-grow: 1;
     }
-    h1 {
+    h2 {
         display: block;
         text-align: center;
     }
