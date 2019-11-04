@@ -33,10 +33,11 @@
 .left-side{
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: 278px;
     width: 200px;
     align-items: center;
     justify-content: center;
-    background: cornflowerblue;flex-wrap: wrap;
 }
 .side-menu{
     position: relative;
@@ -80,7 +81,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 780px;
-    background: cyan;
     justify-content: space-around;
 }
 .content-head{
