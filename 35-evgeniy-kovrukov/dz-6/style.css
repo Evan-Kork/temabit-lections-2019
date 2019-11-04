@@ -1,0 +1,128 @@
+body{
+    width: 1280px;
+    margin: 0 auto;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.header{
+    height: 300px;
+    width: 100%;
+    background-image: url(images/bg.jpg) ;
+    background-repeat: no-repeat;
+}
+.side{
+    width: 27%;
+    background-color:#cdfffe;
+}
+.side-top{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+.side-top-logo{
+    width: 128px;
+    height: 95px;
+    margin: 15px 0;
+}
+.side-top-title{
+    flex-flow: wrap;
+    text-align: center;
+}
+.side-top-title_head{
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+.side-top-title_sub{
+    margin-top: 10px;
+}
+.side-top-order{
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.side-content{
+    padding-left: 50px;
+}
+.side-content>ul{
+    list-style-type: square;
+}
+.main{
+    background-color: cornsilk;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 75%; 
+}
+.main-description{
+    margin: 0 15px;
+}
+.th{
+    padding:2px;
+    margin: 2px;
+    width: 48%;
+    text-align: center;
+}
+.th-img img{
+    width: 400px;
+}
+.th-size{
+    background-color: lightgray;
+}
+
+@media (max-width: 768px) 
+{
+    .main{
+        display: flex;
+        flex-flow: column; 
+        text-align: center;
+    }
+    .th{
+        width: 90%;
+        margin: auto;
+    }
+    .th-img img{
+        width: 600px;
+    }
+}
+
+@media (max-width: 360px)
+{
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .main{
+        width: 100%;
+        font-size: 28px;
+    }
+
+    .th-img img{
+        width: 100%;
+    }
+    .side{
+        width: 100%;
+        display: flex;
+    }
+    .side-content{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 28px;
+        padding: 0 25px;
+    }
+    .side-top{
+        justify-content: center;
+    }
+    .side-top-logo{
+        width: 200px;
+        height: 150px;
+        margin: 0;
+    }
+    .side-top-order{ 
+        justify-content: center;
+    }
+}
