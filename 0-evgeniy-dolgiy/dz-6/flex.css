@@ -37,7 +37,8 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(18,18,88,1) 35%, rgba
 .menu ul li {
 }
 .menu ul li span {
-	transition: all 1s ease;
+	transition: all 1s;
+	transform: scale(1) translate(0);
 }
 .menu ul li:hover span {
 	display: inline-block;
