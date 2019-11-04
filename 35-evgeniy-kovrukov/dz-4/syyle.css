@@ -21,19 +21,19 @@ td{
     font-size: 16px;
     color: white;
 }
-td, .grayCell{
+td, .support-unknown{
     background-color: rgba(0,0,0,0.07);
 }
-.oliveCell{
+.partial-support{
     background-color: #A8BD04;
 }
-.greenCell{
+.supported{
     background-color: #39b54a;
 }
-.redCell{
+.not-supported{
     background-color: #c44230;
 }
-.brownBorder{
+.main-line{
     border: 3px solid #584E3B;
 }
 .legendItem{
