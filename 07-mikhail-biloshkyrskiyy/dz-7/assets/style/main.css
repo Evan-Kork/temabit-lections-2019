@@ -21,6 +21,8 @@ body, p {
   color: white;
 
   position: relative;
+
+  transition: width 0.5s ease-in-out;
 }
 
 .nav-title {
@@ -69,6 +71,8 @@ body, p {
   width: 20px;
   height: 2px;
   background: white;
+
+  transition: background .5s ease-in-out;
 }
 
 .nav-toggle__item::after,
@@ -81,6 +85,8 @@ body, p {
   background: white;
 
   position: absolute;
+
+  transition: transform .5s ease-in-out;
 }
 
 .nav-toggle__item::after {
@@ -137,6 +143,23 @@ body, p {
 
   .nav-toggle:checked ~ .nav .nav-item {
     display: block;
+  }
+
+  .nav-toggle:checked ~ .nav-toggle__item {
+    background: transparent;
+  }
+
+  .nav-toggle:checked ~ .nav-toggle__item::after {
+    transform: rotate(45deg);
+  }
+
+  .nav-toggle:checked ~ .nav-toggle__item::before {
+    transform: rotate(135deg);
+  }
+
+  .nav-toggle:checked ~ .nav-toggle__item::after,
+  .nav-toggle:checked ~ .nav-toggle__item::before {
+    top: 10px;
   }
 }
 
