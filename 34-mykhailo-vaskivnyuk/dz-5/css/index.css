@@ -85,12 +85,10 @@ label {
 	justify-content: center;
 }
 
-.radio_group label:hover
- {
+.radio_group label:hover {
 	color: red;
 	font-weight: bold;
 }
-
 
 input[type = 'search'],
 input[type = 'text'],
