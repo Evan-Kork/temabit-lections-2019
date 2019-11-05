@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+   <link rel="stylesheet" href="./css/style.css">
+   <title>Dz-5</title>
+</head>
+<body>
+   <div class="container">
+      <div class="search-container">
+         <form action="https://www.google.com/search" class="search" method="GET" target="_blank">
+            <div class="image-google">
+               <img src="https://www.poglyad.tv/wp-content/uploads/2019/04/0417_GUGL.png" alt="google-image">
+            </div>
+            <input 
+               class="google-search"
+               type="text" 
+               id="search"
+               name="q"
+               placeholder="Пошук в Google"
+            />
+            <div class="search-panel">
+               <button type="submit">Найти</button>
+               <button type="submit" name="tbm" value="isch">Картинки</button>
+               <button type="submit" name="tbm" value="nws">Новини</button>
+               <button type="submit" name="tbm" value="bks">Книги</button>
+            </div>
+         </form>
+      </div>
+      <div class="wrapper">
+         <div class="profile">
+            <form action="#">
+               <header>
+                  <h1>Анкета для роботи в "Сільпо"</h1>
+               </header>
+               <fieldset>
+               <legend>Основна інформація</legend>
+                  <div class="form-group">
+                     <label for="name">Ім'я</label>
+                     <input 
+                        name="name"
+                        id="name"
+                        type="text"
+                        value=""
+                        placeholder="Введіть ім'я"
+                        required
+                     />   
+                  </div>
+                  <div class="form-group">
+                     <label for="surname">Прізвище</label>
+                     <input 
+                        name="surname"
+                        id="surname"
+                        type="text"
+                        value=""
+                        placeholder="Введіть прізвище"
+                        required
+                     />   
+                  </div>
+                  <div class="form-group">
+                     <label for="date">Дата народження</label>
+                     <input 
+                        name="date"
+                        id="date"
+                        type="text"
+                        value=""
+                        placeholder="Введіть дату народження"
+                        required
+                     />   
+                  </div>     
+                  <div class="form-group">
+                     <label for="town">Населений пункт</label>
+                     <input 
+                        name="town"
+                        id="town"
+                        type="text"
+                        value=""
+                        placeholder="Введіть населений пункт"
+                        required
+                     />   
+                  </div>  
+                  <div class="form-group">
+                     <label for="email">Email</label>
+                     <input 
+                        name="email"
+                        id="email"
+                        type="email"
+                        placeholder="Введіть email"
+                        required
+                     />  
+                  </div> 
+                  <div class="form-group">
+                     <label for="number">Номер телефону</label>
+                     <input
+                        name="number"
+                        required
+                        id="number"
+                        type="text"
+                        placeholder="Введіть номер телефону"
+                     />  
+                  </div>    
+                  <div class="form-group">
+                     <label for="file">Резюме</label>
+                     <input
+                        name="profile"
+                        required
+                        id="file"
+                        type="file"
+                        placeholder="Виберіть файл"
+                     />  
+                  </div>
+                  <div class="form-group url-wrapper">
+                     <label for="url">Посилання</label>
+                     <input
+                        name="url"
+                        required
+                        id="url"
+                        type="url"
+                        placeholder="Додайте посилання"
+                     />  
+                  </div>  
+                  <div class="select-wrapper"> 
+                     <h3>Вкажіть більше інформації, щоб отримати справді цікаву вакансію</h3>
+                     <select name="pstn" id="position">
+                        <option value="">Виберіть вакансію</option>
+                        <option value="pstn:a">Адміністратор</option>
+                        <option value="pstn:sl">Продавець</option>
+                        <option value="pstn:с">Касир</option>
+                        <option value="pstn:s">Охоронець</option>
+                     </select>
+                     <select name="ct" id="city">
+                        <option value="">Виберіть місто</option>
+                        <option value="ct:v">Вінниця</option>
+                        <option value="ct:k">Київ</option>
+                        <option value="ct:o">Одеса</option>
+                        <option value="ct:l">Львів</option>
+                        <option value="ct:kh">Харків</option>
+                        <option value="ct:ch">Чернігів</option>
+                     </select>
+                  </div> 
+                  <div class="checkbox-wrapper">
+                     <label>Хочу працювати неповний робочий день
+                        <input type="checkbox"/>
+                     </label>
+                  </div>
+                  <button class="profile-button" type="submit">
+                     <span>Відправити</span>
+                  </button>
+               </fieldset>
+            </form>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
