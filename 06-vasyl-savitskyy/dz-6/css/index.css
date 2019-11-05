@@ -4,14 +4,6 @@
 	font-size: 100%;
 }
 
-._l { background: #ccfffe; }
-
-._d { background: #e7e5fa; }
-
-._y { background: #fffff2; }
-
-._b { color: #84171b; }
-
 .header {
 	background: url(../img/dz-6-header.jpg) center;
 	background-size: cover;
@@ -21,6 +13,7 @@
 /* nav */
 .nav_left {
 	padding: 10px;
+	background: #ccfffe;
 }
 
 .links_block,
@@ -35,6 +28,10 @@
 .links_block a {
 	text-decoration: none;
 	color: blue;
+}
+
+.menu {
+	color: #84171b;
 }
 
 .menu_block h3 {
@@ -54,6 +51,10 @@
 }
 
 /* main */
+.main {
+	background: #fffff2;
+}
+
 .article {
 	padding: 0 10px;
 }
@@ -95,6 +96,7 @@
 
 .item_block__params {
 	padding: 20px 0;
+	background: #e7e5fa;
 }
 
 @media only screen and (min-width: 641px){
