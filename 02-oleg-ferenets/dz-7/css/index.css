@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    color: gray;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkbox {
+    width: 99%;
+}
+
+.checkbox__label {
+    display: flex;
+    flex-direction: row;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.mainText {
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 22%;
+    padding: 10px 10px 10px 20px;
+    background-color: darkgrey;
+}
+
+.mainText {
+    padding: 15px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    width: 99%;
+    align-content: center;
+    padding-top: 25px;
+    border-color: gray;
+    border-width: 1px;
+    border-top-style: solid;
+}
+
+.checkbox__input {
+    display: none;
+}
+
+@media only all and (max-width: 768px) and (max-height: 1024px) {
+    .menu {
+        display: none;
+    }
+    .menuHide {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        width: 55px;
+    }
+    .menuHide div {
+        align-self: center;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 6px 0 0 6px;
+    }
+    .checkbox__input:checked+.checkbox__label>.menuHide {
+        display: none;
+    }
+    .checkbox__input:checked+.checkbox__label>.menu {
+        display: block;
+        height: 95vh;
+    }
+    .checkbox__input:checked+.checkbox__label>.main {
+        display: none;
+    }
+}
+
+
+/* 
+источники
+Шпаргалка по Flexbox
+https://habr.com/ru/post/313938/
+
+Как скрыть/показать div при помощи checkbox без js
+https://webcache.googleusercontent.com/search?q=cache:bn5VMpzFWgMJ:https://toster.ru/q/238211+&cd=7&hl=ru&ct=clnk&gl=ua
+
+Псевдокласс :checked
+http://htmlbook.ru/css/checked
+
+
+ checkbox +  label
+https://jsfiddle.net/vqn83y5f/3/
+
+ */
