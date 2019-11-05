@@ -1,0 +1,17 @@
+* { margin: 0; padding: 0;}
+body { font-family: Arial, Helvetica, sans-serif; color: #000}
+a { color: seagreen; text-decoration: underline}
+a:hover { text-decoration: none}
+h1 { font-size: 28px; margin: 0 0 20px }
+p { font-size: 18px; padding: 0 0 20px; width: 50%}
+ul { list-style-type: none;}
+ul li { padding: 10px 0;}
+table { margin:20px 0; font-size: 14px;}
+th { border-bottom: 2px solid #000}
+table td { text-align: center; padding: 5px; }
+.wrap { padding: 30px;}
+.legend span { display: inline-block; width: 30px; height: 15px;}
+.support { background: seagreen}
+.not_support { background: crimson}
+.partial_support { background: yellowgreen}
+.unknown_support { background: slategray}
