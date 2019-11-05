@@ -20,10 +20,6 @@ td {
     height: 2em;
 }
 
-tr[class~="row-border"] td {
-    border: 5px solid grey;
-}
-
 .supported {
     background-color: #50DD6B;
 }
@@ -44,7 +40,7 @@ tr[class~="row-border"] td {
     background-color: #e6e1df;
 }
 
-.legend {
+.legnd {
     color: black;
     text-align: left;
 }
