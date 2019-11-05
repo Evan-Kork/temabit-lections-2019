@@ -22,14 +22,12 @@ body {
 	border: 2px solid green;
 	min-height: 100%;
 	display: flex;
-	//align-items: stretch;
 }
 
 .page {
 	border: 2px solid red;
 	margin: 2px;
 	margin-left: 204px;
-	//min-height: calc(100% - 4px);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -37,7 +35,7 @@ body {
 }
 
 .content {
-	//flex: 1;
+	flex: 1;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
@@ -48,17 +46,14 @@ body {
 
 .content_block {
 	height: 100px;
-	width: 300px;
 	min-width: 300px;
 	border: 2px solid brown;
 	background: rgba(100, 50, 20, 0.3);
 	margin: 10px;
-	flex: 1 auto;
+	flex: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	//transition: margin-left 2s;
-	//transition-delay: 0.5s;
 }
 
 .header {
@@ -107,7 +102,6 @@ body {
 	width: 50px;
 	margin: 2px;
 	border: 2px solid blue;
-	//display: none;
 	margin-left: -52px;
 	background-color: rgba(30, 30, 200, 0.3);
 	transition: margin-left 1s;
@@ -138,28 +132,21 @@ body {
 }
 
 .menu:hover .menu_big{
-	//display: block;
 	margin-left: 2px;
-	//transition: margin-left 2s;
 }
 
 .menu:hover .menu_small {
-	//display: none;
 	margin-left: -52px;
-	//transition: margin-left 1s;
-	//transition-delay: 1s;
 }
 
 @media (max-width: 700px) {
 
 	.menu_big {
-		//display: none;
 		margin-left: -202px;
 		transition: margin-left 2s;
 	}
 
 	.menu_small {
-		//display: block;
 		margin-left: 2px;
 		transition: margin-left 1s;
 		transition-delay: 0.7s;
