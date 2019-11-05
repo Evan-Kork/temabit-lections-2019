@@ -8,8 +8,6 @@ html, body {
 	align-items: stretch;
 	min-height: calc(222vh);
 	box-sizing: border-box;
-	/*padding: 10px;
-	margin: 10px;*/
 }
 header {
 	background-image: url(img/hed.jpg);
@@ -20,12 +18,10 @@ header {
 	align-items: center;
 	color: white;
 }
-
 .main {
 	flex: 1 1 auto;
 	display: flex;
 	flex-direction: row;
-	/*flex-direction: row-reverse;*/
 	height: calc(100vh - 200px);
 }
 .menu {
@@ -33,14 +29,11 @@ header {
 	min-width: 300px;
 	background-color: #2ef0f0;
 	overflow: auto;
-	/*order: 1;*/
 }
-
 .menu ul li:hover span {
 	display: inline-block;
 	transform: scale(2) translate(20px, 0);
 	color: red;
-	/*font-size: 20px;*/
 	cursor: pointer;
 }
 .article {
@@ -48,7 +41,6 @@ header {
 	min-width: 200px;
 	overflow: auto;
 }
-
 .container2 {
   display: flex;
   padding: 10px;
@@ -58,11 +50,9 @@ header {
   align-content: center;
   flex-wrap: wrap;
 }
-
 img{
   width: 85%;
 }
-
 .box{
   width: 45%;
   height: 55%;
