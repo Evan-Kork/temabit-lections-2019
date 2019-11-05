@@ -9,18 +9,9 @@ body {
     font-size: 14px;
 }
 
-.container {
-    margin: 0 auto;
-    height: 100%;
-    width: 50%;
-    min-width: 900px;
-	display: flex;
-	flex-direction: column;
-}
-
-.header {
-    height: 200px;
-    background: url(/img/header.jpg)no-repeat;
+header img {
+    width: 100%;
+    height: calc(100vh - 50%);
 }
 
 .logo {
@@ -44,7 +35,7 @@ body {
     display: inline-block;
 }
 
-.logo>p {
+.logo > p {
     font-size: 14px;
 }
 
@@ -57,21 +48,18 @@ body {
 }
 
 .main {
-    /* height: 100%; */
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
+    width: 100%;
 }
 
 .nav {
+    display: flex;
     background-color: rgb(202, 239, 248);
     box-sizing: border-box;
-    display: flex;
+    flex: 0 0 300px;
     flex-direction: column;
-    width: 25%;
-    min-width: 250px;
-    /* height: 100%; */
     padding-left: 15px;
+    padding-right: 20px;
 }
 
 .nav a {
@@ -83,21 +71,22 @@ body {
 }
 
 .content {
-    justify-content: flex-start;
-    padding: 0 40px;
-    display: flex;
-    box-sizing: border-box;
-    flex-direction: row;
-    flex-wrap: wrap;
+    width: 75%;;
+    margin-left: 20px;
 }
 
 .content-description {
     color: blue;
 }
 
+.houses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .content-item {
-    flex-grow: 1;
-    flex-basis: 49%;
+    width: 40%;
 }
 
 .item-description {
@@ -121,40 +110,54 @@ body {
 }
 
 /* Для планшета */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
 
     .content-description {
-        width: 60%;
+        width: 100%;
         text-align: start;
     }
 
     .content {
+        margin-left: 0;
+    }
+
+    .content-description {
+        margin-left: 20px;
+        justify-content: center;
+        display: flex;
         flex-direction: column;
+        
+    }
+
+    .houses {
+        flex-direction: column;
+        align-items: center;
       }
 
-    .content-item {  
-        flex-basis: 10%;
+    .nav {
+        width: 300px;
+        min-width: 300px;
     }
 }
 
 /* Для мобильных */
 @media screen and (max-width: 320px) {
 
-   .main {
+    .main {
        flex-direction: column;
    }
 
    .content {
-       padding-left: 20px;
+       margin-left: 0;
    }
    
-   .content-description {
-       width: 30%;
+   .houses {
+       justify-content: space-between;
    }
 
-   .nav {
-       width: 30%;
-       margin-left: 20px;
+   .content-item {
+       width: 100%;
+       margin-left: 15px;
    }
 }
 
