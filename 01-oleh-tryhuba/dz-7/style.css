@@ -18,7 +18,7 @@ html, body {
     width: inherit;
 }
 
-#sidebar__checkbox {
+.sidebar__checkbox {
     display: none;
 }
 
@@ -113,17 +113,17 @@ h1, p {
         background-color: #2f2f2f;
     }
 
-    #sidebar__checkbox:checked ~ .sidebar {
+    .sidebar__checkbox:checked ~ .sidebar {
         width: 100%;
     }
 
     h2, ul,
-    #sidebar__checkbox:checked ~ .main {
+    .sidebar__checkbox:checked ~ .main {
         display: none;
     }
 
-    #sidebar__checkbox:checked ~ .sidebar h2,
-    #sidebar__checkbox:checked ~ .sidebar ul,
+    .sidebar__checkbox:checked ~ .sidebar h2,
+    .sidebar__checkbox:checked ~ .sidebar ul,
     .sidebar__menu {
         display: block;
     }
