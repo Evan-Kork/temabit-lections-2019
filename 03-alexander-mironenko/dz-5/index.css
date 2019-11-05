@@ -1,0 +1,43 @@
+.google{
+    text-align: center;
+}
+.google-search{
+    text-align: center;
+}
+.google-search input[type=search]{
+    border: 2px solid #14a3fa;
+    border-radius: 25px;
+    width: 500px;
+    height: 50px;
+    box-shadow: none;
+    line-height: 35px;
+    height: 35px;
+}
+button {
+    border: 1px solid #f2f2f2;
+    border-radius: 10px;
+    color: #5F6368;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    cursor: pointer;
+}
+input{
+    background-color: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    color: #222;
+}
+label {
+    margin-bottom: 15px;
+    width: 200px;
+    display: inline-block;
+    border: 1px solid #f2f2f2;
+}
+fieldset{
+    position: absolute;
+    top: 225px;
+    left: 30%;
+    right: 30%;
+}

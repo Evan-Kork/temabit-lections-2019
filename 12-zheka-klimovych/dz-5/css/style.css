@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+}
+
+.search {
+    display: block;
+    width: 100%;
+}
+
+.image-google img {
+    display: block;
+    width: 350px;
+    height: 140px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.google-search {
+    display: block;
+    margin: 20px auto;
+    width: 35%;
+    border: 2px solid #324b4e;
+    border-radius: 45px;
+    padding: 10px;
+    padding-left: 15px;
+    outline: none;
+}
+
+.search-panel  {
+    display: flex;
+    justify-content: center;
+    margin: 0 -5px;
+}
+
+button {
+    background: rgb(196, 248, 248);
+    padding: 10px 25px;
+    border-radius: 25px;
+    outline: none;
+    margin: 0 5px;
+    border: 2px solid #324b4e;
+}
+
+.wrapper {
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 18px;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    border: 1px solid rgb(140, 177, 247);;
+    background-color: rgb(140, 177, 247);
+}
+
+.profile {
+    width: 50%;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+}
+
+header {
+    padding-top: 50px;
+    height: 100px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+fieldset {
+    background-color: rgb(194, 253, 239);
+    border: 3px solid black;
+    margin: 10px 0px;
+    clear: both;
+}
+
+.form-group {
+    margin: 5px;
+}
+
+.form-group label {
+    display: block;
+    width: 200px;
+    float: left;
+}
+
+.form-group input {
+    display: inline-block;
+    width: 250px;
+    font-size: 13px;
+    padding: 6px 0 4px 10px;
+    border: 1px solid #cecece;
+    background: #F6F6f6;
+    border-radius: 8px;
+    clear: both;
+    outline: none;
+}
+
+.select-wrapper {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.select-wrapper h3 {
+    text-align: center;
+    margin-top: 3px;
+}
+
+.select-wrapper select {
+    display: inline-block;
+    margin-left: 20%;
+    margin-bottom: 5px;
+    font-size: 13px;
+    padding: 6px 0 4px 10px;
+    border: 1px solid #cecece;
+    background: #F6F6f6;
+    border-radius: 8px;
+    clear: both;
+    outline: none;
+}
+
+.url-wrapper input {
+    width: 100%;
+    outline: none;
+}
+
+.checkbox-wrapper {
+    display: inline-block;
+}
+
+.profile-button  {
+    width: 100px;
+    text-align: center;
+    background-color: rgb(175, 231, 231);
+    margin-top: 5px;
+    font-size: 13px;
+    padding: 4px;
+    border: 1px solid #cecece;
+    background: #F6F6f6;
+}
+

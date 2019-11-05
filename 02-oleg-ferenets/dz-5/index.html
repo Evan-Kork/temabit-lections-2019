@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css">
+    <title>DZ-5</title>
+</head>
+
+<body>
+    <div class="formGoogle">
+        <form action="https://www.google.com/search" method="GET" target="_blank">
+            <fieldset>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png" height="50px" alt="">
+                <div>
+                    <div class="inputDiv">
+                        <input class="input" type="text" name="q" />
+                    </div>
+                    <div>
+                        <input class="buttonSearch" type="submit" value="Искать">
+                    </div>
+                </div>
+                <br><br><br>
+                <div>
+                    <select name="tbm" id="">
+                        <option value="">поиск по всему</option>
+                        <option value="nws">новости</option>
+                        <option value="vid">видео</option>
+                        <option value="app">приложения</option>
+                        <option value="bks">книги</option>
+                        <option value="isch">изображения</option>                           
+                    </select>
+
+                    <select name="lr" id="">
+                        <option value="">поиск по всем языкам</option>
+                        <option value="lang_ru">поиск на русском</option>
+                        <option value="lang_uk">поиск на украинском</option>
+                        <option value="lang_en">поиск на английском</option>
+                        <option value="lang_zh-CN">поиск на китайском</option>                            
+                    </select>
+                    <select name="tbs" id="">
+                        <option value="">поиск по всем датам</option>
+                        <option value="qdr:h">за час</option>
+                        <option value="qdr:d">за день</option>
+                        <option value="qdr:w">за неделю</option>
+                        <option value="qdr:m">за месяц</option>
+                        <option value="qdr:y">за год</option>
+                    </select>
+                </div>
+            </fieldset>
+        </form>
+        <hr>
+
+        <h2>Анкета для роботи в «Сільпо»</h2>
+
+        <form class="formSilpo" action="#" method="POST">
+            <fieldset>
+                <legend>Основна інформація</legend>
+                <div class="profile">
+                    <label for="name">Ім’я</label>
+                    <label for="surname">Прізвище</label><br>
+                    <input type="text" name="name" value="" placeholder="Введіть Ім’я" />
+                    <input type="text" name="surname" value="" placeholder="Введіть Прізвище" />
+                </div>
+
+                <div class="profile ">
+                    <label for="date">Дата народження</label>
+                    <label for="city">Населений пункт</label><br>
+                    <input type="date" name="date" />
+                    <input type="text" name="city" value="" placeholder="Введіть Населений пункт" />
+                </div>
+
+                <div class="profile">
+                    <label for="email">Електронна адреса</label>
+                    <label for="phone">Телефон</label><br>
+                    <input type="email" name="email" value="" placeholder="Введіть email" />
+                    <input type="text" name="phone" value="+38" placeholder="Введіть Телефон" pattern="^\+38\d{10}$" length="13" />
+                </div>
+                <div class="profile">
+                    <label for="file">Резюме</label><br>
+                    <input class="left" type="file" name="file" placeholder="Виберіть файл резюме">
+                </div>
+                <div class="profile">
+                    <label for="link">чи додайте посилання на резюме</label><br>
+                    <input type="text" name="link" placeholder="посилання на резюме">
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Вкажіть більше інформації, щоб отримати справді цікаву вакансію</legend>
+
+                <div class="profile">
+                    <label for="city">Оберіть бажаний населений пункт</label>
+                    <select name="city" id="">
+                        <option value="" disabled selected style='display:none;'>оберіть зі списку</option>
+                        <option value="vin">Вінниця</option>
+                        <option value="kyiv">Київ</option>
+                        <option value="od">Oдеса</option>  
+                    </select>
+                </div>
+
+                <div class="profile">
+                    <label for="profession">Оберіть бажану посаду</label>
+                    <select name="profession" id="">
+                        <option value="" disabled selected style='display:none;'>оберіть зі списку</option>
+                        <option value="admin">Адміністратор</option>
+                        <option value="kasir">Касир</option>
+                        <option value="securyti">Oхоронець</option>  
+                    </select>
+                </div>
+
+                <div class="profile">
+                    <label for="shop">Оберіть зручний супермаркет</label>
+                    <select name="shop" id="">
+                        <option value="" disabled selected style='display:none;'>оберіть зі списку</option>
+                        <option value="s1">#1</option>
+                        <option value="s2">#2</option>
+                        <option value="s3">#3</option>
+                    </select>
+                </div>
+
+                <div class="profile">
+                    <input id="checkbox" type="checkbox" name="workTime" />
+                    <label for="checkbox">Хочу працювати неповний робочий день</label>
+                </div>
+
+            </fieldset>
+            <div>
+                <input class="buttonProfileSend" type="submit" value="Відправити">
+            </div>
+            Заповніть всю анкету, щоб ми обрали для вас цікаву вакансію
+        </form>
+    </div>
+
+</body>
+<!-- источники:
+    https://html5book.ru/html5-forms/
+    https://metanit.com/web/html5/3.11.php
+    
+    <option value=" " disabled selected style='display:none;'>оберіть зі списку</option>
+    http://www.cyberforum.ru/html/thread1314877.html
+
+    pattern for phone
+    https://punbb.info/t-371.html
+
+    При поиске книг и приложений ключ  tbs не работает. Гугл использует другой формат запроса .  
+ -->
+
+</html>

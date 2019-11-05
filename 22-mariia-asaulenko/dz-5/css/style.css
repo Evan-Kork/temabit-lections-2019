@@ -1,0 +1,83 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #e5e5e5;
+    margin: 25px;
+}
+.gap{
+    background-color: #e5e5e5;
+    margin: 25px;
+}
+.form-google{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.img-google {
+    width: 200px;
+    align-items: center;
+}
+.serch{
+    display: inline-block;
+    width: 760px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.serchfilter-lable{
+    visibility:hidden;
+}
+.serchfilter-lable:checked+label{
+    color: blue;
+}
+.form-silpo{
+    display: flex;
+    justify-content: center;
+}
+form{
+    background-color: #ffffff;
+    padding: 15px 15px;
+}
+h1{
+    text-align: center;
+}
+.form-group{
+    display: flex;
+    margin: 25px 0;
+    justify-content: space-between;
+}
+.file{
+    cursor: pointer;
+}
+.form-checkbox{
+    margin: 25px 0;
+}
+.form-checkbox input, label{
+    cursor: pointer;
+}
+.undrline{
+    border-bottom: 1px solid lightslategray;
+}
+.personal-info{
+    border: none;
+    border-bottom: 1px solid lightslategray;
+    display: inline-block;
+    width: 300px;
+}
+.form-resume{
+    width: 100%;
+    margin-bottom: 15px;
+}
+select{
+    border: none;
+    border-bottom: 1px solid lightslategray;
+    display: inline-block;
+    width: 300px;
+    justify-content: space-between;
+}
+.send-btn{
+    display: flex;
+    justify-content: center;
+}
+button {
+    border-radius: 10px;
+    cursor: pointer;
+}
