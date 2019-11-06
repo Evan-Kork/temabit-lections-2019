@@ -21,6 +21,7 @@ body {
 .conteiner {
 	border: 2px solid green;
 	min-height: 100%;
+	/*inner*/
 	display: flex;
 }
 
@@ -28,68 +29,75 @@ body {
 	border: 2px solid red;
 	margin: 2px;
 	margin-left: 204px;
+	transition: margin-left 2s;
+	/*inner*/
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	transition: margin-left 2s;
 }
 
 .content {
+	border: 2px solid green;
+	margin: 2px;	
+	background: rgba(100, 200, 10, 0.1);
+	/*outer*/
 	flex: 1;
+	/*inner*/
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
-	border: 2px solid green;
-	background: rgba(100, 200, 10, 0.1);
-	margin: 2px;
+
 }
 
 .content_block {
+	border: 2px solid brown;
 	height: 100px;
 	min-width: 300px;
-	border: 2px solid brown;
 	background: rgba(100, 50, 20, 0.3);
 	margin: 10px;
+	/*outer*/
 	flex: 1;
+	/*inner*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .header {
-	height: 100px;
 	border: 2px solid orange;
+	height: 100px;
 	background: rgba(200, 50, 10, 0.1);
 	margin: 2px;
+	/*inner*/	
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .footer {
-	height: 100px;
 	border: 2px solid orange;
+	height: 100px;
 	background: rgba(150, 150, 10, 0.1);
 	margin: 2px;
+	/*inner*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .menu {
-
+	position: fixed;
+	border: 2px solid blue;
+	height: calc(100% - 8px);
+	background-color: rgba(30, 30, 200, 0.3);
+	margin: 2px;
 }
 
 .menu_big {
-	position: fixed;
-	height: calc(100% - 8px);
 	width: 200px;
-	margin: 2px;
+	transition: margin-left 2s;	
 	padding: 20px;
 	padding-top: 50px;
-	border: 2px solid blue;
-	background-color: rgba(30, 30, 200, 0.3);
-	transition: margin-left 2s;
 }
 
 .menu_big ul {
@@ -97,21 +105,16 @@ body {
 }
 
 .menu_small {
-	position: fixed;
-	height: calc(100% - 8px);
 	width: 50px;
-	margin: 2px;
-	border: 2px solid blue;
 	margin-left: -52px;
-	background-color: rgba(30, 30, 200, 0.3);
 	transition: margin-left 1s;
 	transition-delay: 0.7s;
 }
 
 .menu_item {
+	border-bottom: 2px dotted rgba(0, 0, 0, 0.2);
 	padding: 15px;
 	padding-left: 20px;
-	border-bottom: 2px dotted rgba(0, 0, 0, 0.2);
 }
 
 .menu_item:last-of-type{
@@ -124,11 +127,11 @@ body {
 }
 
 .menu_small .menu_item {
+	background: rgba(30, 30, 200, 1);	
+	height: 3px;
 	margin: 5px;
 	margin-top: 15px;
 	padding: 0px;
-	height: 3px;
-	background: rgba(30, 30, 200, 1);
 }
 
 .menu:hover .menu_big{
@@ -139,7 +142,7 @@ body {
 	margin-left: -52px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
 	.menu_big {
 		margin-left: -202px;
