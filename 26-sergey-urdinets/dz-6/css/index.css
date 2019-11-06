@@ -4,10 +4,11 @@
 	padding: 0;
 	border: 0;
 	font-family: 'Open Sans', sans-serif;
+	box-sizing: border-box;
 }
 html, body {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 }
 .flex-container {
 	width: 100%;
@@ -141,6 +142,7 @@ img {
 		width: 100%;
 		height: auto;
 		overflow: inherit;
+		flex-direction: column;
 	}
 	.body-content-element {
 		margin-bottom: 15px;
