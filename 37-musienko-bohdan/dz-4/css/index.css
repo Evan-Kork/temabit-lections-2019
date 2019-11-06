@@ -7,21 +7,21 @@ tbody {
 	text-align: center;
 	color: #fff;
 }
-.red {
+.not-support {
 	background: #c44230;
 }
-.green {
+.support {
 	background: #39b54a;
 }
-.silver {
-	background: #eae1ce;	
+.empty {
+	background: #eae1ce;
 }
 tr:nth-child(4) {
 	background: #584e3b;
 }
 .list-legend {
 	list-style-type: none;
-	padding-left: 0; 
+	padding-left: 0;
 }
 
 .list-legend li {
@@ -36,15 +36,9 @@ tr:nth-child(4) {
 .list-legend li span:first-child {
 	margin: 0 5px;
 }
-.list-legend li:nth-child(1) .block {
-	background: #39b54a;
-}
-.list-legend li:nth-child(2) .block {
-	background: #c44230;
-}
-.list-legend li:nth-child(3) .block {
+.partial-support{
 	background: #a8bd04;
 }
-.list-legend li:nth-child(4) .block {
+.support-unknown {
 	background: #838383;
 }
