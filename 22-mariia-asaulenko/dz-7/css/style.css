@@ -24,7 +24,7 @@ a {
     font-size: 16px;
     color: white
 }
-#check-menu {
+.check-menu {
     position: absolute;
     display: none;
 }
@@ -84,19 +84,19 @@ ul {
     .nav-menu:hover {
         color: white;
     }
-    #check-menu {
+    .check-menu {
         position: absolute;
         display: none;
     }
-    #check-menu:checked ~ .menu > .nav-menu {
+    .check-menu:checked ~ .menu > .nav-menu {
         left: auto;
         right: 2px;
     }
-    #check-menu:checked ~ .menu {
+    .check-menu:checked ~ .menu {
         left: 0;
         overflow-y: auto;
     }
-    #check-menu:checked ~ .menu > .nav-menu:after {
+    .check-menu:checked ~ .menu > .nav-menu:after {
         content: '\2715';
     }
     .main {
