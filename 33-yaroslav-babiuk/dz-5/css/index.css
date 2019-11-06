@@ -3,48 +3,48 @@
 	margin: 40px 5px 40px 70px; 
 }
 body {
-  font-size: 20px;
+    font-size: 20px;
 }
 .top {
-   margin-top: 130px;
+    margin-top: 130px;
 }
 table {
 	width: 100%
 }
 .top10px button {
-   margin-left: 10px;
-   margin-top: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 .top300px {
    margin-top: 300px;
 }
 .anketa input {
-  width: 300px;
-  padding: 15px 10px 5px 10px;
-  margin: 15px 0 40px 70px;
+    width: 300px;
+    padding: 15px 10px 5px 10px;
+    margin: 15px 0 40px 70px;
 
-  border: none;
-  border-bottom: 2px solid rgb(168,167,167);
+    border: none;
+    border-bottom: 2px solid rgb(168,167,167);
 }
 .anketa select {
-  width: 300px;
-  margin: 12px 0 0 70px;
-  padding: 16px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: #f1f1f1;
+    width: 300px;
+    margin: 12px 0 0 70px;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
 }
 .anketa input:focus {
 	background-color: rgb(134,181,235);
 }
 .center {
-text-align: center;
+    text-align: center;
 }
 .butt_anketa {
-  background-color: rgb(255,133,34);
-  border: none;
-  color: white;
-  padding: 10px 32px;
-  text-decoration: none;
-  border-radius: 15px;
+    background-color: rgb(255,133,34);
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-decoration: none;
+    border-radius: 15px;
 }
