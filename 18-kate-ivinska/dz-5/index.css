@@ -22,7 +22,7 @@
 
 .form_submit{
   position: relative;
-	padding: 5px 10px;
+  padding: 5px 10px;
   border-radius: 2px;
   color: lightgrey;
   font-size: 16px;
@@ -38,9 +38,9 @@
 }
 
 .form_but button{
-	color: MidnightBlue;
-	font-size: 15px;
-	padding: 5px 10px;
+  color: MidnightBlue;
+  font-size: 15px;
+  padding: 5px 10px;
   background-color: white;
   border: 0;
   cursor: pointer;
@@ -67,26 +67,35 @@
 }
 
 .form{
-width: 600px;
-padding: 32px;
-border-radius: 10px;
-box-shadow: 0 4px 16px #ccc;
-letter-spacing: 1px;
+  width: 600px;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px #ccc;
+  letter-spacing: 1px;
 }
 
-.form-group{
+.form_group{
   font-family: "Times New Roman";
   letter-spacing: 1px;
   font-size: 18px;
   position: relative;
   margin-bottom: 15px;
 }
-.form-group label{
-	width: 250px;
-	display: inline-block;
+
+.form_group label{
+  width: 250px;
+  display: inline-block;
 }
 
-.form-title{
+.form_group_1{
+  letter-spacing: 1px;
+  font-family: "Times New Roman";
+  font-size: 18px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.form_title{
   text-align: center;
   margin: 0 0 32px 0;
   font-weight: normal;
@@ -98,7 +107,7 @@ h3, h5{
   font-weight: normal;
 }
 
-.form-button{
+.form_button{
   position: relative;
   padding: 5px 10px;
   margin: 5px;
@@ -111,7 +120,7 @@ h3, h5{
   transition: 0.3s;
 }
 
-.form-button:focus,
-.form-button:hover{
+.form_button:focus,
+.form_button:hover{
   background-color: purple;
 }
