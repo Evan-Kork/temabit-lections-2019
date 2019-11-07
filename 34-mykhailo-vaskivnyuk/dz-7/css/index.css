@@ -86,15 +86,16 @@ body {
 }
 
 .menu {
-	position: fixed;
-	border: 2px solid blue;
-	height: calc(100% - 8px);
-	background-color: rgba(30, 30, 200, 0.3);
-	margin: 2px;
+
 }
 
 .menu_big {
-	width: 200px;
+	position: fixed;
+	border: 2px solid blue;
+	height: calc(100% - 8px);
+	width: 200px;	
+	background-color: rgba(30, 30, 200, 0.3);
+	margin: 2px;
 	transition: margin-left 2s;	
 	padding: 20px;
 	padding-top: 50px;
@@ -105,7 +106,12 @@ body {
 }
 
 .menu_small {
-	width: 50px;
+	position: fixed;
+	border: 2px solid blue;
+	height: calc(100% - 8px);
+	width: 50px;	
+	background-color: rgba(30, 30, 200, 0.3);
+	margin: 2px;
 	margin-left: -52px;
 	transition: margin-left 1s;
 	transition-delay: 0.7s;
