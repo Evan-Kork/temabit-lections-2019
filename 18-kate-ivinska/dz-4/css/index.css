@@ -9,114 +9,114 @@ font-family: "Open Sans", Helvetica, Arial, sans-serif;
 font-size: 1.2em;
 font-weight: 300;
 }
-table {
+table{
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   background-color: white;
   text-align: center;
   border-spacing: 0 2px;
 }
 
-tbody, tfoot {
+tbody, tfoot{
   color: white;
 }
 
-th {
+th{
   font-weight: normal;
   font-size: 0.75em;
 }
 
-tr {
+tr{
   font-size: 1rem;
   font-weight: 300;
   margin: 0 2px;
 }
 
-td {
+td{
   padding: 0;
   border: 1px solid white;
 }
 
-.IE {
+.ie{
   border-bottom: 2px solid blue;
 }
 
-.Edge {
+.edge{
   border-bottom: 2px solid blue;
 }
 
-.Firefox {
+.firefox{
   border-bottom: 2px solid olive;
 }
 
-.Chrome {
+.chrome{
   border-bottom: 2px solid skyblue;
 }
 
-.Safari {
+.safari{
   border-bottom: 2px solid grey;
 }
 
-.Opera {
+.opera{
   border-bottom: 2px solid darkred;
 }
 
-.iOS_Safari {
+.iossafari{
   border-bottom: 2px solid midnightblue;
 }
 
-.Opera_Mini {
+.operamini{
   border-bottom: 2px solid darkred;
 }
 
-.Android_Browser {
+.androidbrowser{
   border-bottom: 2px solid greenyellow;
 }
 
-.Opera_Mobile {
+.operamobile{
   border-bottom: 2px solid darkred;
 }
 
-.Chrome_for_Android {
+.chromeforandroid{
   border-bottom: 2px solid skyblue;
 }
 
-.Firefox_for_Android {
+.firefoxforandroid{
   border-bottom: 2px solid olive;
 }
 
-.US_Browser_for_Android {
+.usbrowserforandroid{
   border-bottom: 2px solid black;
 }
 
-.Samsung_Internet {
+.samsunginternet{
   border-bottom: 2px solid violet;
 }
 
-.QQ_Browser {
+.qqbrowser{
   border-bottom: 2px solid black;
 }
 
-.Baidu_Browser {
+.baidubrowser{
   border-bottom: 2px solid black;
 }
 
-.KaiOS {
+.kaios{
   border-bottom: 2px solid purple;
 }
 
-.not_supported {
+.notsupported{
   background-color: red;
 }
 
-.lightsup {
+.lightsup{
   background-color: lightgrey;
 }
 
-.supported {
+.supported{
   background-color: green;
 }
 
-.blackborder td {
+.supportkborder td{
   border: 3px solid black;
 }
 
@@ -129,7 +129,7 @@ td {
   color: black;
 }
 
-.supblock {
+.supblock{
   display: block;
   height: 20px;
   width: 20px;
