@@ -41,7 +41,7 @@ header, footer {
 header p, footer p {
 	padding: 15px;
 }
-#logo {
+.logo {
 	padding: 10px;
 }
 button {
