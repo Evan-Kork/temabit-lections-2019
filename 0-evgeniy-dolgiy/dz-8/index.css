@@ -1,0 +1,21 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+header {
+	background-color: red;
+	height: 100px;
+}
+.main {
+	height: calc(100vh - 200px);
+}
+aside {
+	background-color: green;
+}
+article {
+	background-color: yellow;
+}
+footer {
+	height: 100px;
+	background-color: blue;
+}
