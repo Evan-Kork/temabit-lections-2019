@@ -1,3 +1,8 @@
+html, body{
+  height: 100%;
+  width: 100%;
+}
+
 /*Form 1*/
 
 .search{
@@ -63,7 +68,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 120vh;
 }
 
 .form{
