@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form</title>
+	<link rel="stylesheet" href="index2.css">
+</head>
+<body>
+	<form
+		action="#"
+		method="post"
+	>
+		<fieldset>
+			<legend>Personal Info</legend>
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input
+					id="name"
+					type="text"
+					name="name"
+					minlength="2"
+					placeholder="Enter name"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="surname">Surname</label>
+				<input
+					id="surname"
+					type="text"
+					name="surname"
+					value="Surname"
+					disabled
+					placeholder="Enter surname"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input
+					id="email"
+					type="email"
+					name="email"
+					placeholder="Enter email"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input
+					id="password"
+					type="password"
+					name="password"
+					placeholder="Enter password"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="age">Age</label>
+				<input
+					id="age"
+					type="number"
+					name="age"
+					max="99"
+					min="0"
+					step="2"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="birthday">Birthday</label>
+				<input
+					id="birthday"
+					type="date"
+					name="birthday"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="file">File</label>
+				<input
+					id="file"
+					type="file"
+					name="file"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="country">Country</label>
+				<select
+					id="country"
+					name="country"
+				>
+					<option value="">Select country</option>
+					<option value="uk">Ukraine</option>
+					<option value="gb">Great Britain</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="animals">Animals</label>
+				<input
+					type="checkbox"
+					name="animals"
+					id="animals"
+					checked
+				/>
+			</div>
+			<div class="form-group">
+				<label>Sex</label>
+				<input
+					type="radio"
+					name="sex"
+					id="male"
+					value="male"
+				/><label for="male">Male</label>
+				<input
+					type="radio"
+					name="sex"
+					id="female"
+					value="female"
+				/><label for="female">Female</label>
+			</div>
+			<div class="form-group">
+				<label for="about">About</label>
+				<textarea
+					name="about"
+					id="about"
+					readonly
+					cols="30"
+					rows="5"
+				>Text</textarea>
+			</div>
+			<div class="form-group">
+				<label for=""></label>
+				<input
+					type="button"
+					value="Input button"
+					disabled
+				/>
+			</div>
+			<div class="form-group">
+				<label for=""></label>
+				<input type="submit" value="Input submit"/>
+			</div>
+			<div class="form-group">
+				<label for=""></label>
+				<button>Button</button>
+			</div>
+			<div class="form-group">
+				<label for=""></label>
+				<button type="submit">Button submit</button>
+			</div>
+			<input
+				type="hidden"
+				name="notempty"
+				value="yes"
+			/>
+		</fieldset>
+	</form>
+</body>
+</html>
