@@ -1,0 +1,158 @@
+h1{
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 1.6em;
+  font-weight: 300;
+}
+
+p{
+font-family: "Open Sans", Helvetica, Arial, sans-serif;
+font-size: 1.2em;
+font-weight: 300;
+}
+table{
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  background-color: white;
+  text-align: center;
+  border-spacing: 0 2px;
+}
+
+tbody, tfoot{
+  color: white;
+}
+
+th{
+  font-weight: normal;
+  font-size: 0.75em;
+}
+
+tr{
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0 2px;
+}
+
+td{
+  padding: 0;
+  border: 1px solid white;
+}
+
+.ie{
+  border-bottom: 2px solid blue;
+}
+
+.edge{
+  border-bottom: 2px solid blue;
+}
+
+.firefox{
+  border-bottom: 2px solid olive;
+}
+
+.chrome{
+  border-bottom: 2px solid skyblue;
+}
+
+.safari{
+  border-bottom: 2px solid grey;
+}
+
+.opera{
+  border-bottom: 2px solid darkred;
+}
+
+.iossafari{
+  border-bottom: 2px solid midnightblue;
+}
+
+.operamini{
+  border-bottom: 2px solid darkred;
+}
+
+.androidbrowser{
+  border-bottom: 2px solid greenyellow;
+}
+
+.operamobile{
+  border-bottom: 2px solid darkred;
+}
+
+.chromeforandroid{
+  border-bottom: 2px solid skyblue;
+}
+
+.firefoxforandroid{
+  border-bottom: 2px solid olive;
+}
+
+.usbrowserforandroid{
+  border-bottom: 2px solid black;
+}
+
+.samsunginternet{
+  border-bottom: 2px solid violet;
+}
+
+.qqbrowser{
+  border-bottom: 2px solid black;
+}
+
+.baidubrowser{
+  border-bottom: 2px solid black;
+}
+
+.kaios{
+  border-bottom: 2px solid purple;
+}
+
+.notsupported{
+  background-color: red;
+}
+
+.lightsup{
+  background-color: lightgrey;
+}
+
+.supported{
+  background-color: green;
+}
+
+.supportkborder td{
+  border: 3px solid black;
+}
+
+.legend{
+  border: 3px solid lightgreen;
+  text-align: left;
+}
+
+.sup{
+  color: black;
+}
+
+.supblock{
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-color: green;
+}
+
+.notsupblock{
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-color: red;
+}
+
+.partsupblock{
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-color: greenyellow;
+}
+
+.unksupblock{
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-color: violet;
+}
