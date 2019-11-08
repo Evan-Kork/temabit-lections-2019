@@ -1,0 +1,53 @@
+body{
+    background-color: #f2e8d5;  
+}
+p{
+    font: 100%/1 "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+/* table, th, td, tr{
+    border: 1px solid black;
+} */
+th{
+    border-bottom: 1px solid #000;
+}
+td{
+    width: 5%;
+    padding: 10px;
+    text-align: center;
+    font: 100%/1 "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: white;
+}
+td, .support-unknown{
+    background-color: rgba(0,0,0,0.07);
+}
+.partial-support{
+    background-color: #A8BD04;
+}
+.supported{
+    background-color: #39b54a;
+}
+.not-supported{
+    background-color: #c44230;
+}
+.main-line{
+    border: 3px solid #584E3B;
+}
+.legendItem{
+    display: inline-block;
+    width: 25px;
+    height: 1em;
+    text-indent: -9999px;
+    text-align: left;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li{
+    padding: 5px;
+}
