@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Forms</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+	<form action="#" method="post">
+		<fieldset>
+			<legend>Registration</legend>
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input
+					id="name"
+					type="text"
+					name="name"
+					value="Name"
+					placeholder="Enter name"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="surname">Surname</label>
+				<input
+					id="surname"
+					type="text"
+					name="surname"
+					value="Surname"
+					placeholder="Enter surname"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="age">Age</label>
+				<input
+					id="age"
+					type="number"
+					name="age"
+					min="0"
+					max="99"
+					step="2"
+				>
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input
+					id="email"
+					type="email"
+					name="email"
+					placeholder="Enter email"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input
+					id="password"
+					type="password"
+					name="password"
+					placeholder="Enter password"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="car">Cars</label>
+				<select
+					name="car"
+					id="car"
+				>
+					<optgroup label="Car">
+						<option value="">Виберіть автомобіль</option>
+						<option value="mersedes">Mersedes</option>
+						<option value="volvo">Volvo</option>
+					</optgroup>
+					<option value="vs">VW</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<input
+					type="checkbox"
+					name="smoked"
+					checked
+				>
+				<label for="smoked">Smoked</label>
+			</div>
+			<div class="form-group">
+				<input
+					id="male"
+					type="radio"
+					name="sex"
+					value="male"
+				>
+				<label for="male">Male</label>
+			</div>
+			<div class="form-group">
+				<input
+					id="female"
+					type="radio"
+					name="sex"
+					value="female"
+				>
+				<label for="female">Female</label>
+			</div>
+			<div class="form-group">
+				<label for="date">Date</label>
+				<input
+					id="date"
+					type="date"
+					name="date"
+					placeholder="Enter date"
+				/>
+			</div>
+			<div class="form-group"></div>
+			<div class="form-group"></div>
+			<div class="form-group"></div>
+			<div class="form-group"></div>
+			<div class="form-group"></div>
+			<input type="button" value="Input button"/>
+			<button>Button</button>
+			<input type="submit" value="Input submit">
+			<button type="submit">Button submit</button>
+			<input type="hidden" name="empty" value="true">
+		</fieldset>
+	</form>
+</body>
+</html>

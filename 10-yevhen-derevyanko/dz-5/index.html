@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DZ-5</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="site-global-wrapper">
+        <header>
+
+        </header>
+        <main>
+            <section class="google-search-form">
+                <div class="container">
+                    <div class="wrapp-google-form">
+                        <form action="https://www.google.com/search" method="GET" target="_blank">
+                            <img src="image/google-logo.svg" alt="logo-google">
+                            <div class="line-search">
+                                <input id="name" type="text" name="q" class="input-search"
+                                    placeholder="Шукайте в Google">
+                                <button type="submit" class="run-search">
+                                    <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path
+                                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="box-filters">
+                                <div class="item">
+                                    <input type="radio" id="google-all" name="tbm" value="" checked>
+                                    <label for="google-all">
+                                        <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                            <path
+                                                d="M16.32 14.88a8.04 8.04 0 1 0-1.44 1.44l5.76 5.76 1.44-1.44-5.76-5.76zm-6.36 1.08c-3.36 0-6-2.64-6-6s2.64-6 6-6 6 2.64 6 6-2.64 6-6 6z">
+                                            </path>
+                                        </svg>
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgyNHYyNEgweiIvPjxwYXRoIGZpbGw9IiMzNEE4NTMiIGQ9Ik0xMCAydjJhNiA2IDAgMCAxIDYgNmgyYTggOCAwIDAgMC04LTh6Ii8+PHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTEwIDRWMmE4IDggMCAwIDAtOCA4aDJjMC0zLjMgMi43LTYgNi02eiIvPjxwYXRoIGZpbGw9IiNGQkJDMDQiIGQ9Ik00IDEwSDJhOCA4IDAgMCAwIDggOHYtMmMtMy4zIDAtNi0yLjY5LTYtNnoiLz48cGF0aCBmaWxsPSIjNDI4NUY0IiBkPSJNMjIgMjAuNTlsLTUuNjktNS42OUE3Ljk2IDcuOTYgMCAwIDAgMTggMTBoLTJhNiA2IDAgMCAxLTYgNnYyYzEuODUgMCAzLjUyLS42NCA0Ljg4LTEuNjhsNS42OSA1LjY5TDIyIDIwLjU5eiIvPjwvc3ZnPgo="
+                                            class="" alt="">
+                                        Все
+                                    </label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="google-video" name="tbm" value="vid">
+                                    <label for="google-video">
+                                        <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path clip-rule="evenodd" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path clip-rule="evenodd"
+                                                d="M10 16.5l6-4.5-6-4.5v9zM5 20h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1zm14.5 2H5a3 3 0 0 1-3-3V4.4A2.4 2.4 0 0 1 4.4 2h15.2A2.4 2.4 0 0 1 22 4.4v15.1a2.5 2.5 0 0 1-2.5 2.5z"
+                                                fill-rule="evenodd"></path>
+                                        </svg>
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgyNHYyNEgweiIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNDI4NUY0IiBkPSJNMTAgMTYuNWw2LTQuNS02LTQuNXoiLz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI0VBNDMzNSIgZD0iTTIwIDEyaDJ2Ny41YTIuNSAyLjUgMCAwIDEtMi41IDIuNUgxMnYtMmg3YTEgMSAwIDAgMCAxLTF2LTd6Ii8+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGQkJDMDQiIGQ9Ik0yMCAxMlY1YTEgMSAwIDAgMC0xLTFoLTdWMmg3LjZBMi40IDIuNCAwIDAgMSAyMiA0LjRWMTJoLTJ6Ii8+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMzNEE4NTMiIGQ9Ik0xMiAyMHYySDVhMyAzIDAgMCAxLTMtM1Y0LjRBMi40IDIuNCAwIDAgMSA0LjQgMkgxMnYySDVhMSAxIDAgMCAwLTEgMXYxNGExIDEgMCAwIDAgMSAxaDd6Ii8+PC9zdmc+Cg=="
+                                            class="" alt="">
+                                        Видео
+                                    </label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="google-image" name="tbm" value="isch">
+                                    <label for="google-image"><svg focusable="false" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                            <path
+                                                d="M14 13l4 5H6l4-4 1.79 1.78L14 13zm-6.01-2.99A2 2 0 0 0 8 6a2 2 0 0 0-.01 4.01zM22 5v14a3 3 0 0 1-3 2.99H5c-1.64 0-3-1.36-3-3V5c0-1.64 1.36-3 3-3h14c1.65 0 3 1.36 3 3zm-2.01 0a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h7v-.01h7a1 1 0 0 0 1-1V5z">
+                                            </path>
+                                        </svg>
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0xOSAyMmgtN3YtMmg3Yy41NSAwIDEtLjQ2IDEtMVY1YTEgMSAwIDAgMC0xLS45OUwxMiA0VjJoN2MxLjY2IDAgMyAxLjM2IDMgM3YxNGMwIDEuNjUtMS4zNSAzLTMgMyIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRUE0MzM1IiBkPSJNMTIgMjJINWMtMS42NCAwLTMtMS4zNi0zLTNWNWMwLTEuNjQgMS4zNi0zIDMtM2g3djJINWMtLjU1IDAtLjk5LjQ1LS45OSAxTDQgMTljMCAuNTUuNDUgMSAxIDFoN3YyeiIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMzRBODUzIiBkPSJNMTQgMTNsLTIuMjUgMi43NUwxMCAxNGwtNCA0aDEyeiIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjRkJCQzA0IiBkPSJNMTAgOGMwIDEuMS0uOSAyLTIgMnMtMi0uOS0yLTJjMC0xLjA5LjktMiAyLTJzMiAuOSAyIDIiLz48L3N2Zz4K"
+                                            class="" alt="">
+                                        Картинки
+                                    </label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="google-news" name="tbm" value="nws">
+                                    <label for="google-news"><svg focusable="false" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                            <path
+                                                d="M12 11h6v2h-6v-2zm-6 6h12v-2H6v2zm0-4h4V7H6v6zm16-7.22v12.44c0 1.54-1.34 2.78-3 2.78H5c-1.64 0-3-1.25-3-2.78V5.78C2 4.26 3.36 3 5 3h14c1.64 0 3 1.25 3 2.78zM19.99 12V5.78c0-.42-.46-.78-1-.78H5c-.54 0-1 .36-1 .78v12.44c0 .42.46.78 1 .78h14c.54 0 1-.36 1-.78V12zM12 9h6V7h-6v2z">
+                                            </path>
+                                        </svg>
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgyNHYyNEgwVjB6Ii8+PHBhdGggZmlsbD0iIzM0QTg1MyIgZD0iTTIyIDEyaC0ydjYuMjJjLS4wNy40OC0uNTEuODItMSAuNzhoLTd2Mmg3YzEuNTkuMDUgMi45Mi0xLjE3IDMtMi43NlYxMiIvPjxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0xOSAzaC03djJoN2MuNDktLjA0LjkyLjMgMSAuNzhWMTJoMlY1Ljc2QTIuOTMgMi45MyAwIDAgMCAxOSAzIi8+PHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTEyIDNINWEyLjkzIDIuOTMgMCAwIDAtMyAyLjc2VjEyaDJWNS43OEEuOTQuOTQgMCAwIDEgNSA1aDdWMyIvPjxwYXRoIGZpbGw9IiNGQkJDMDQiIGQ9Ik00IDEySDJ2Ni4yNEEyLjkxNiAyLjkxNiAwIDAgMCA1IDIxaDd2LTJINWMtLjQ5LjA0LS45Mi0uMy0xLS43OEw0LjAxIDEyIi8+PHBhdGggZmlsbD0iIzQyODVGNCIgZD0iTTEwIDdINnY2aDRWN204IDRoLTZ2Mmg2di0ybTAgNEg2djJoMTJ2LTJtMC04aC02djJoNlY3Ii8+PC9zdmc+Cg=="
+                                            alt="">
+                                        Новости
+                                    </label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="google-shop" name="tbm" value="shop">
+                                    <label for="google-shop"><svg focusable="false" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                            <path
+                                                d="M21.11 2.89A3.02 3.02 0 0 0 18.95 2h-5.8c-.81 0-1.58.31-2.16.89L7.25 6.63 2.9 10.98a3.06 3.06 0 0 0 0 4.32l5.79 5.8a3.05 3.05 0 0 0 4.32.01l8.09-8.1c.58-.58.9-1.34.9-2.16v-5.8c0-.81-.32-1.59-.89-2.16zM20 10.85c0 .28-.12.54-.32.74l-3.73 3.74-4.36 4.36c-.41.41-1.08.41-1.49 0l-2.89-2.9-2.9-2.9a1.06 1.06 0 0 1 0-1.49l8.1-8.1c.2-.2.46-.3.74-.3l5.8-.01A1.05 1.05 0 0 1 20 5.05v5.8zM16 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z">
+                                            </path>
+                                        </svg>
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgyNHYyNEgweiIvPjxwYXRoIGZpbGw9IiNFQTQzMzUiIGQ9Ik04LjY1IDguMDRsLTEuNC0xLjQxIDMuNzQtMy43NGMuNTgtLjU4IDEuMzUtLjg5IDIuMTYtLjg5aDUuOGMuODIgMCAxLjU4LjMxIDIuMTYuODlMMTkuNjkgNC4zYy0uMi0uMi0uNDctLjMxLS43NC0uMzFsLTUuOC4wMWMtLjI4IDAtLjU0LjEtLjc0LjNMOC42NSA4LjA0eiIvPjxwYXRoIGZpbGw9IiNGQkJDMDQiIGQ9Ik01LjggMTguMmwtMi45LTIuOWMtMS4xOS0xLjE5LTEuMTktMy4xMiAwLTQuMzJsNC4zNi00LjM2IDEuNCAxLjQxLTQuMzUgNC4zN2MtLjQxLjQxLS40MSAxLjA4IDAgMS40OWwyLjkgMi45TDUuOCAxOC4yeiIvPjxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0yMS4xMSAyLjg5TDE5LjY5IDQuM2MuMjEuMjEuMzEuNDguMzEuNzV2NS44YzAgLjI4LS4xMi41NC0uMzIuNzRsLTMuNzMgMy43NC00LjM2IDQuMzZjLS40MS40MS0xLjA4LjQxLTEuNDkgMGwtMi44OS0yLjlMNS44IDE4LjJsMi44OSAyLjljLjYuNiAxLjM4LjkgMi4xNi45Ljc4IDAgMS41Ni0uMjkgMi4xNi0uODlsNC4zNi00LjM2IDMuNzMtMy43NGMuNTgtLjU4LjktMS4zNC45LTIuMTZ2LTUuOGMwLS44MS0uMzItMS41OS0uODktMi4xNnoiLz48Y2lyY2xlIGZpbGw9IiMzNEE4NTMiIGN4PSIxNiIgY3k9IjgiIHI9IjIiLz48L3N2Zz4K"
+                                            alt="">
+                                        Покупки
+                                    </label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="google-bks" name="tbm" value="bks">
+                                    <label for="google-bks"><svg focusable="false" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                            <path
+                                                d="M18 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm0 18H6V4h2v8l2.5-1.5L13 12V4h5v16z">
+                                            </path>
+                                        </svg>
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgyNHYyNEgweiIvPjxwYXRoIGZpbGw9IiNGQkJDMDQiIGQ9Ik02IDIwdi04SDR2OGMwIDEuMS45IDIgMiAyaDZ2LTJINnoiLz48cGF0aCBmaWxsPSIjMzRBODUzIiBkPSJNMTggMjBoLTZ2Mmg2YTIgMiAwIDAgMCAyLTJ2LThoLTJ2OHoiLz48cGF0aCBmaWxsPSIjRUE0MzM1IiBkPSJNMTggMmgtNXYyaDV2OGgyVjRhMiAyIDAgMCAwLTItMnoiLz48cGF0aCBmaWxsPSIjNDI4NUY0IiBkPSJNNiAyYTIgMiAwIDAgMC0yIDJ2OGgyVjRoMnY4bDIuNS0xLjVMMTMgMTJWMkg2eiIvPjwvc3ZnPgo="
+                                            alt="">
+                                        Книги
+                                    </label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" id="google-fin" name="tbm" value="fin">
+                                    <label for="google-fin"><svg focusable="false" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                            <path clip-rule="evenodd"
+                                                d="M6 15.5l-3 2.94V10h3v5.5zm5-1.84l-1.57-1.34L8 13.64V6h3v7.66zM16 12l-3 3V2h3v10zm2.81-.19L17 10h5v5l-1.79-1.79L13 20.36l-3.47-3.02L5.75 21H3l6.47-6.34L13 17.64l5.81-5.83z"
+                                                fill-rule="evenodd"></path>
+                                        </svg>
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgyNHYyNEgwVjB6Ii8+PGcgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiNFQTQzMzUiIGQ9Ik02IDE1LjVsLTMgMi45NFYxMGgzdjUuNXoiLz48cGF0aCBmaWxsPSIjRkJCQzA0IiBkPSJNMTEgMTMuNjZsLTEuNTctMS4zNEw4IDEzLjY0VjZoM3Y3LjY2eiIvPjxwYXRoIGZpbGw9IiMzNEE4NTMiIGQ9Ik0xNiAxMmwtMyAzVjJoM3YxMHoiLz48cGF0aCBmaWxsPSIjNDI4NUY0IiBkPSJNMTguODEgMTEuODFMMTcgMTBoNXY1bC0xLjc5LTEuNzlMMTMgMjAuMzZsLTMuNDctMy4wMkw1Ljc1IDIxSDNsNi40Ny02LjM0TDEzIDE3LjY0bDUuODEtNS44M3oiLz48L2c+PC9zdmc+Cg=="
+                                            alt="">
+                                        Финансы
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="silpo-work-form">
+                <div class="container">
+                    <div class="wrapp-silpo-form">
+                        <h2 class="title-form">Анкета для роботи в «Сільпо»</h2>
+                        <form action="#" method="POST">
+                            <h3>Основна інформація</h3>
+                            <div class="line-half">
+                                <div class="wrapp-item">
+                                    <input type="text" name="user-name" id="user-name" placeholder="Ім’я" required> 
+                                    <label for="user-name">Ім’я</label>
+                                    <div class="pseudo-border"></div>      
+                                </div>
+                                <div class="wrapp-item">
+                                    <input type="text" name="user-surname" id="user-surname" placeholder="Прізвище" required>
+                                    <label for="user-surname">Прізвище</label>
+                                    <div class="pseudo-border"></div>  
+                                </div>
+                            </div>
+                            <div class="line-half">
+                                <div class="wrapp-item">
+                                    <input type="date" name="user-data" id="user-data" required>
+                                    <label for="user-data">Дата народження</label>
+                                    <div class="pseudo-border"></div>  
+                                </div>
+                                <div class="wrapp-item">
+                                    <input type="text" name="user-location" id="user-location" placeholder="Населений пункт" required>
+                                    <label for="user-location">Населений пункт</label>
+                                    <div class="pseudo-border"></div>  
+                                </div>
+                            </div>
+                            <div class="line-half">
+                                <div class="wrapp-item">
+                                    <input type="email" name="user-email" id="user-email" placeholder="Електронна адреса" required>
+                                    <label for="user-email">Електронна адреса</label>
+                                    <div class="pseudo-border"></div> 
+                                </div>
+                                <div class="wrapp-item">
+                                    <input type="tel" name="user-tel" id="user-tel" placeholder="Телефон" required>
+                                    <label for="user-tel">Телефон</label>
+                                    <div class="pseudo-border"></div>  
+                                </div>
+                            </div>
+                            <div class="line">
+                                <div class="wrapp-item">
+                                    <div class="pseodu-label">Резюме</div>
+                                    <input type="file" name="user-resume" id="user-resume" placeholder="Резюме">
+                                    <label for="user-resume">Перетягніть сюди документ <br>або завантажте з комп’ютера</label>
+                                </div>
+                            </div>
+                            <div class="line">
+                                <div class="wrapp-item">
+                                    <input type="text" name="user-link-resume" id="user-link-resume" placeholder="чи додайте сюди посилання на резюме" >
+                                    <label for="user-link-resume">чи додайте сюди посилання на резюме</label>
+                                </div>
+                            </div>
+                            <div class="separator"></div>
+                            <h3>Вкажіть більше інформації, щоб отримати справді цікаву вакансію</h3>
+                            <div class="line-half">
+                                <div class="wrapp-item">
+                                    <select id="desirable-city" name="desirable-city">
+                                        <option selected disabled>Оберіть бажаний населений пункт</option>
+                                        <option value="">Value 1</option>
+                                        <option value="">Value 2</option>
+                                    </select>
+                                    <label for="desirable-city">Оберіть бажаний населений пункт</label>
+                                    <div class="pseudo-border"></div> 
+                                </div>
+                                <div class="wrapp-item">
+                                    <select id="desirable-position" name="desirable-position">
+                                        <option selected disabled>Оберіть бажану посаду</option>
+                                        <option value="">Value 1</option>
+                                        <option value="">Value 2</option>
+                                    </select>
+                                    <label for="desirable-position">Оберіть бажану посаду</label>
+                                    <div class="pseudo-border"></div>  
+                                </div>
+                            </div>
+                            <div class="line-half single-item">
+                                <div class="wrapp-item">
+                                    <select id="desirable-supermarket" name="desirable-supermarket">
+                                        <option selected disabled>Оберіть зручний супермаркет</option>
+                                        <option value="">Value 1</option>
+                                        <option value="">Value 2</option>
+                                    </select>
+                                    <label for="desirable-supermarket">Оберіть зручний супермаркет</label>
+                                    <div class="pseudo-border"></div> 
+                                </div>
+                            </div>
+                            <div class="line">
+                                <div class="wrapp-item wrapp-item-fulltime">
+                                    <input type="checkbox" name="not-fulltime" id="not-fulltime">
+                                    <label for="not-fulltime">Хочу працювати неповний робочий день</label>
+                                </div>
+                            </div>
+                            <div class="line">
+                                <div class="wrapp-item wrapp-item-submit">
+                                    <input type="submit" value="Відправити" class="btn-submit">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+</html>

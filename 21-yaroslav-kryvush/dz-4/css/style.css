@@ -1,0 +1,160 @@
+table {
+	border-collapse: separate;
+	border-spacing: 3px;
+	text-align: center;
+	background-color: #f2e8d5;
+
+}
+caption {
+	font-size: 40px;
+	font-weight: 700;
+}
+
+caption p{
+	font-size: 25px;
+}
+a{
+	text-decoration: none;
+}
+
+tr {
+	font-size: 16px;
+	height: 40px
+}
+td {
+	width: 100px;
+	font-size: 16px;
+	background-color: #eae1ce;
+}
+
+.bg-supported {
+	background-color: #39b54a;
+}
+
+.bg-supported__border {
+	background-color: #39b54a;
+	border: 5px solid #584e3b;
+}
+
+.bg-supported__border-left {
+	background-color: #39b54a;
+	border: 5px solid #584e3b;
+	border-left: 3px solid #584e3b;
+}
+.bg-supported__border-right {
+	background-color: #39b54a;
+	border: 5px solid #584e3b;
+	border-right: 3px solid #584e3b;
+}
+
+.bg-not-supported {
+	background-color: #c44230;
+}
+
+.bg-partial-support {
+	background-color: #a8bd04;
+}
+
+.bg-partial-support__border {
+	background-color: #a8bd04;
+	border: 5px solid #584e3b;
+}
+
+.bg-support-unknown {
+	background-color: #838383;
+}
+
+.ie__edge {
+	border-bottom: 5px solid #385884;
+}
+
+.firefox__firefox-for-android {
+	border-bottom: 5px solid #a36223;
+}
+
+.chrome__chrome-for-android {
+	border-bottom: 5px solid #3f77bb;
+}
+
+.safari {
+	border-bottom: 5px solid #666666;
+}
+
+.opera {
+	border-bottom: 5px solid #812323;
+}
+
+.ios-safari {
+	border-bottom: 5px solid #333333;
+}
+
+.opera-mini__opera-mobile {
+	border-bottom: 5px solid #992626;
+}
+
+.android-browser {
+	border-bottom: 5px solid #7ba13b;
+}
+
+.uc-browser-for-android__qq-browser__baidu-browser {
+	border-bottom: 5px solid #000000;
+}
+
+.samsung-internet {
+	border-bottom: 5px solid #9753ff;
+}
+
+.kaios-browser {
+	border-bottom: 5px solid #6f02b5;
+}
+
+
+.legend {
+	margin-top: 20px;
+	width: 15%; 
+}
+
+.legend-topic {
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 25px;
+	font-weight: 700;
+}
+
+.legend-body {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.legend-text {
+	font-size: 20px;
+}
+
+.rectangle-supported {
+	width: 50px;
+	height: 25px;
+	background-color: #39b54a;
+	margin-right: 6px;
+}
+
+.rectangle-not-supported {
+	width: 50px;
+	height: 25px;
+	background-color: #c44230;
+	margin-right: 6px;
+}
+
+.rectangle-partial-support {
+	width: 50px;
+	height: 25px;
+	background-color: #a8bd04;
+	margin-right: 6px;
+}
+
+.rectangle-support-unknown {
+	width: 50px;
+	height: 25px;
+	background-color: #838383;
+	margin-right: 6px;
+} 
