@@ -1,14 +1,37 @@
-$danger_color: red;
+// variables
+$color_ringoo: green;
 
-.my_class {
-	color: $danger_color;
-	&:hover {
-		width: 100px;
-	}
-	+.another_class {
-		height: 50px;
-	}
-	> span {
-		text-align: left;
-	}
+// test classes
+.t_brd_a {
+	border: 2px dotted purple;
 }
+
+.t_brd_b {
+	border: 2px dotted lime;
+}
+
+.t_alg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+// reset
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *::after, *::before {
+	box-sizing: inherit;
+}
+
+html, body {
+	height: 100%;
+}
+
+// structure
