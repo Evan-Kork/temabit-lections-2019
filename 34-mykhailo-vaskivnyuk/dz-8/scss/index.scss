@@ -1,13 +1,24 @@
 // variables
 $color_ringoo: green;
 
+// fonts
+
+
 // test classes
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
+
 .t_brd_a {
 	border: 2px dotted purple;
 }
 
 .t_brd_b {
 	border: 2px dotted lime;
+}
+
+.t_font {
+	font-family: Lato;
+	font-weight: bold;
+	font-size: 0.9em;	
 }
 
 .t_alg {
@@ -24,6 +35,7 @@ $color_ringoo: green;
 
 html {
 	box-sizing: border-box;
+	font-size: 50px;
 }
 
 *, *::after, *::before {
