@@ -1,0 +1,14 @@
+$danger_color: red;
+
+.my_class {
+	color: $danger_color;
+	&:hover {
+		width: 100px;
+	}
+	+.another_class {
+		height: 50px;
+	}
+	> span {
+		text-align: left;
+	}
+}

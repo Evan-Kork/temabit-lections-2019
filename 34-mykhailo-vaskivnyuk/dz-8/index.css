@@ -1,0 +1,14 @@
+.my_class {
+  color: red;
+}
+.my_class:hover {
+  width: 100px;
+}
+.my_class + .another_class {
+  height: 50px;
+}
+.my_class > span {
+  text-align: left;
+}
+
+/*# sourceMappingURL=index.css.map */
