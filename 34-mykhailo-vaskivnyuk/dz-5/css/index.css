@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  	font-family: 'Century Gothic';
+  	font-family: "Century Gothic";
   	font-size: 0.9em;
 }
 
@@ -19,7 +19,7 @@ form {
 	vertical-align: top;
 }
 
-form.silpo {
+.silpo {
 	margin-top: 8px;
 }
 
@@ -31,11 +31,11 @@ fieldset {
 	border: 1px solid rgb(150, 200, 0);
 }
 
-fieldset.form_title {
+.form_title {
 	background: rgb(92, 49, 131);
 }
 
-legend {
+fieldset legend {
 	font-weight: bold;
 	color: rgb(0, 180, 0);
 }
@@ -90,18 +90,18 @@ label {
 	font-weight: bold;
 }
 
-input[type = 'search'],
-input[type = 'text'],
-input[type = 'date'],
-input[type = 'tel'],
-input[type = 'email'],
+input[type = "search"],
+input[type = "text"],
+input[type = "date"],
+input[type = "tel"],
+input[type = "email"],
 select {
 	width: 300px;
 	height: 30px;
 	color: rgb(180, 20, 0);
 }
 
-input[type = 'radio'] {
+input[type = "radio"] {
 	margin-top: 10px;
 }
 
