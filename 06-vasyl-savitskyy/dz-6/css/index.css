@@ -1,0 +1,133 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+
+.header {
+	background: url(../img/dz-6-header.jpg) center;
+	background-size: cover;
+	height: 190px;
+}
+
+/* nav */
+.nav_left {
+	padding: 10px;
+	background: #ccfffe;
+}
+
+.links_block,
+.menu_block {
+	margin-bottom: 20px;
+}
+
+.links_block img {
+	width: 100%;
+}
+
+.links_block a {
+	text-decoration: none;
+	color: blue;
+}
+
+.menu {
+	color: #84171b;
+}
+
+.menu_block h3 {
+	font-size: 1.2rem;
+}
+
+.menu .menu_block ul {
+	margin-left: 25px;
+}
+
+.menu .menu_block:nth-child(1) ul {
+	list-style-type: decimal;
+}
+
+.menu li {
+	margin-bottom: 5px;
+}
+
+/* main */
+.main {
+	background: #fffff2;
+}
+
+.article {
+	padding: 0 10px;
+}
+
+.article h1,
+.article__info,
+.item_block__header,
+.item_block__info {
+	margin-bottom: 20px;
+}
+
+.article h1 {
+	font-size: 2rem;
+}
+
+.article__info {
+	text-align: left;
+}
+
+.item_block {
+	text-align: center;
+	margin-bottom: 40px;
+	background: #ffffff;
+}
+
+.item_block img {
+	width: 80%;
+}
+
+.item_block__header {
+	font-size: 1.5rem;
+}
+
+.item_block__info {
+	padding: 0 20px;
+	height: 50px;
+	overflow: hidden;
+}
+
+.item_block__params {
+	padding: 20px 0;
+	background: #e7e5fa;
+}
+
+@media only screen and (min-width: 641px){
+	.main_block {
+		display: flex;
+	}
+
+	.nav_left,
+	.main {
+		overflow: auto;
+	}
+
+	.nav_left {
+		width: 250px;
+		height: calc(100vh - 210px);
+	}
+
+	.main {
+		width: calc(100% - 250px);
+		height: calc(100vh - 190px);
+	}
+}
+
+@media only screen and (min-width: 769px){
+	.section {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.item_block {
+		width: calc(50% - 20px);
+		margin: 0 10px 20px;
+	}
+}
