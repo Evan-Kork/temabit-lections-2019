@@ -1,0 +1,153 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.app {
+	display: flex;
+	position: relative;
+}
+
+/* menu_btn */
+.menu_btn {
+	display: inline-block;
+	width: 50px;
+	height: 100vh;
+	background: #607d8b;
+	position: relative;
+}
+
+.menu_btn span,
+.menu_btn span::before,
+.menu_btn span::after {
+	position: absolute;
+	left: 50%; margin-left: -10px;
+	width: 20px;
+	height: 2px;
+	background-color: #fff;
+}
+
+.menu_btn span {
+	top: 25px;
+}
+
+.menu_btn span::before,
+.menu_btn span::after {
+	content: '';
+}
+
+.menu_btn span::before {
+	transform: translateY(-5px);
+}
+
+.menu_btn span::after {
+	transform: translateY(5px);
+}
+
+
+.menu_btn:hover ~ .nav_left {
+	display: flex;
+}
+
+/* nav_left */
+.nav_left {
+	display: none;
+	position: absolute;
+	margin-left: 50px;
+	width: calc(100% - 50px);
+}
+
+.main_menu {
+	box-sizing: border-box;
+	width: 300px;
+	height: 100vh;
+	background-color: darkgray;
+	padding: 0 40px;
+}
+
+.main_menu h1 {
+	font-size: 1.3rem;
+	padding-top: 20px;
+	margin-bottom: 50px;
+}
+
+.main_menu ul {
+	list-style-type:none;
+}
+
+.main_menu li {
+	padding: 5px;
+}
+
+.main_menu a {
+	color: #fff;
+	font-size: 1.3rem;
+	text-decoration: none;
+}
+
+.menu_fog {
+	flex: 1;
+	background-color: #a9a9a95c;
+}
+
+/* section_content */
+.section_content {
+	width: calc(100% - 50px);
+	height: 100vh;
+	overflow: auto;
+}
+
+.main {
+	padding: 40px 20px 20px;
+}
+
+.main h1 {
+	margin-bottom: 50px;
+}
+
+.main p {
+	margin-bottom: 30px;
+}
+.footer {
+	border-top: 1px solid grey;
+}
+
+.footer_item {
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media only screen and (min-width: 769px) {
+	.menu_btn,
+	.menu_fog {
+		display: none;
+	}
+
+	.nav_left {
+		display: block;
+		width: 300px;
+		position: relative;
+		margin-left: 0;
+	}
+
+	.section_content {
+		width: calc(100% - 300px);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.main {
+		flex: 1 1 auto;
+	}
+
+	.footer {
+		display: flex;
+	}
+
+	.footer_item {
+		width: 33.33333%;
+	}
+}

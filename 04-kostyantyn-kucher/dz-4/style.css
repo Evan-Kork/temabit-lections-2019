@@ -1,0 +1,52 @@
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+
+table{
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td{
+  min-width: 100px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+footer{
+  margin-top: 20px;
+}
+
+.marker{
+  display: inline-block;
+  width: 30px;
+  height: 10px;
+}
+
+.supported{
+  background-color: green;
+}
+
+.notSupported{
+  background-color: red;
+}
+
+.partSupport{
+  background-color: yellow;
+}
+
+.unknown{
+  background-color: blue;
+}
+
+.emptyField{
+  background-color: gray;
+}
+
+ul{
+  list-style-type: none;
+}

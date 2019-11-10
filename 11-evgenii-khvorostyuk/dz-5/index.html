@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dz-5</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <div class="search-content">
+      <form class="search-content__form" action="https://www.google.com/search" id="tsf" method="GET" role="search" target="_blank">
+        <div class="search-content__form-group">
+          <div class="search-content__form-group-logo">
+            <img
+              src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+              alt="Google"
+              height="30"
+              width="92"
+              data-atf="1"
+            >
+          </div>
+          <div class="search-content__form-group__input-wrapper">
+            <input
+              maxlength="2048"
+              name="q"
+              type="text"
+              aria-autocomplete="both"
+              aria-haspopup="false"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              role="combobox"
+              spellcheck="false"
+              title="Поиск"
+              aria-label="Найти"
+              required
+            >
+          </div>
+          <select class="search-content__form-group__select" name="hl">
+            <option value="ru" selected>Русский</option>
+            <option value="ua">Українська</option>
+            <option value="en">Еnglish</option>
+          </select>
+          </span>
+        </div>
+        <div class="search-content__form-tabs">
+          <div class="search-content__form-tabs__item">
+            Все
+            <input type="submit" name="" value="">
+          </div>
+          <div class="search-content__form-tabs__item">
+            Картинки
+            <input type="submit" name="tbm" value="isch">
+          </div>
+          <div class="search-content__form-tabs__item">
+            Видео
+            <input type="submit" name="tbm" value="vid">
+          </div>
+          <div class="search-content__form-tabs__item">
+            Новости
+            <input type="submit" name="tbm" value="nws">
+          </div>
+          <div class="search-content__form-tabs__item">
+            Покупки
+            <input type="submit" name="tbm" value="shop">
+          </div>
+          <div class="search-content__form-tabs__item">
+            Книги
+            <input type="submit" name="tbm" value="bks">
+          </div>
+          <div class="search-content__form-tabs__item">
+            Финансы
+            <input type="submit" name="tbm" value="fin">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="silpo-form">
+      <div class="silpo-form__title"><h5>Form for the job in «Сільпо»</h5></div>
+      <div class="silpo-form__sub-title"><h3>Main information</h3></div>
+      <form action="#" method="post" enctype="multipart/form-data">
+        <div class="silpo-form-group">
+          <div class="silpo-form__input-group">
+            <label for="name">Name</label>
+            <input class="form-control" type="text" name="name" id="name" placeholder="Name" required>
+          </div>
+          <div class="silpo-form__input-group">
+            <label for="surname">Surname</label>
+            <input class="form-control" type="text" name="surname" id="surname" placeholder="Surname" required>
+          </div>
+        </div>
+        <div class="silpo-form-group">
+          <div class="silpo-form__input-group">
+            <label for="date">Birthdate</label>
+            <input class="form-control" type="text" name="date" id="date" placeholder="dd/mm/yyyy" required>
+          </div>
+          <div class="silpo-form__input-group">
+            <label for="city">City</label>
+            <input class="form-control" type="text" name="city" id="city" placeholder="City" required>
+          </div>
+        </div>
+        <div class="silpo-form-group">
+          <div class="silpo-form__input-group">
+            <label for="email">Email</label>
+            <input class="form-control" type="email" name="email" id="email" placeholder="Email" required>
+          </div>
+          <div class="silpo-form__input-group">
+            <label for="phone">Phone</label>
+            <input class="form-control" type="text" name="phone" id="phone" placeholder="Phone" required>
+          </div>
+        </div>
+        <div class="silpo-form-group cv-container">
+          <label>Cv</label>
+          
+          <div style="width: 100%">
+            <label class="cv-form" for="cvFile">
+              <div class="cv-form__body">
+                <div class="cv-form__label"><i class="icon icon-upload"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21px" height="16px" viewBox="0 0 21 16" enable-background="new 0 0 21 16" xml:space="preserve"><path d="M18.3,5.1c-0.3-1.3-1-2.6-2-3.5c-1.1-1-2.6-1.6-4.1-1.6c-1.8,0-3.5,0.8-4.7,2.3c-0.2,0-0.3,0-0.5,0c-1.6,0-3,1-3.7,2.6 C1.4,5.5,0,7.5,0,9.7C0,12.6,2.3,15,5.1,15h1.5c0.4,0,0.8-0.4,0.8-0.8S7,13.4,6.6,13.4H5.1c-1.9,0-3.5-1.6-3.5-3.6 c0-1.6,1.1-3.1,2.6-3.5C4.5,6.2,4.7,6,4.8,5.7C5.1,4.6,6,3.9,7,3.9c0.2,0,0.4,0,0.6,0.1C8,4,8.3,3.9,8.5,3.6c0.9-1.3,2.2-2,3.7-2 c2.3,0,4.2,1.8,4.5,4.1c0,0.3,0.2,0.5,0.5,0.6c1.3,0.6,2.2,1.9,2.2,3.4c0,2-1.6,3.6-3.5,3.6h-2.1c-0.4,0-0.8,0.4-0.8,0.8 s0.4,0.8,0.8,0.8h2.1c2.8,0,5.1-2.4,5.1-5.3C21,7.8,19.9,6,18.3,5.1z"></path><path d="M13.4,10.8c0.2,0.2,0.4,0.2,0.6,0.2c0.2,0,0.4-0.1,0.6-0.2c0.3-0.3,0.3-0.8,0-1.2L11,6c-0.3-0.3-0.8-0.3-1.1,0L6.4,9.6 c-0.3,0.3-0.3,0.8,0,1.2C6.5,10.9,6.8,11,7,11s0.4-0.1,0.6-0.2l2.2-2.3v6.7c0,0.5,0.4,0.8,0.8,0.8s0.8-0.4,0.8-0.8V8.6L13.4,10.8z"></path></svg></i><div class="cv-form__label-text"><span>Choose file from your computer<span><br>(png/jpg/doc/pdf до 7 Мб)</span></span></div></div>
+              </div>
+            </label>
+            <input type="file" name="cvFile" id="cvFile" hidden>
+          </div>
+          
+          <div class="silpo-form__input-group">
+            <input class="form-control" type="text" name="cv_link" placeholder="Cv link" required>
+          </div>
+        </div>
+        <div class="silpo-form__sub-title"><h3>Enter more information, to get really interesting position</h3></div>
+        <div class="silpo-form-group">
+          <div class="silpo-form__input-group">
+            <label for="wanted_city">Wanted city</label>
+            <select class="form-control" name="wanted_city" id="wanted_city" required>
+              <option value="Vinnytsia">Vinnytsia</option>
+            </select>
+          </div>
+          <div class="silpo-form__input-group">
+            <label for="wanted_position">Wanted Posiition</label>
+            <select class="form-control" name="wanted_position" id="wanted_position" required>
+              <option value="ceo">CEO</option>
+              <option value="cashier">Cashier</option>
+              <option value="cleaner">Ceaner</option>
+              <option value="mover">Mover</option>
+              <option value="seller">Seller</option>
+            </select>
+          </div>
+        </div>
+        <div class="silpo-form-group">
+          <div class="silpo-form__input-group">
+            <label for="wanted_mall">Wanted Mall</label>
+            <select class="form-control" name="wanted_mall" id="wanted_mall" required>
+              <option value="skypark">Skypark</option>
+              <option value="megamall">MegaMall</option>
+            </select>
+          </div>
+        </div>
+        <div class="silpo-form-group">
+          <div class="silpo-form__input-group checkbox">
+            <input class="form-control" type="checkbox" name="partime" id="partime" required>
+            <label for="partime">Partitme</label>
+          </div>
+        </div>
+        <div class="silpo-form-group">
+          <div class="silpo-form__input-group btn">
+            <button class="btn" type="submit">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

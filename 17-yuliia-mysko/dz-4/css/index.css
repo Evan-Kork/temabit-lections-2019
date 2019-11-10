@@ -1,0 +1,166 @@
+body{
+    font: 100%/1 "Open Sans", sans-serif;
+    font-weight: 300;
+    word-spacing: -2px;
+    background-color: #f2e8d5;
+}
+
+.NotSupported{
+   background-color: #c44230; 
+}
+
+.Supported{
+    background-color: #39b54a;
+}
+
+.PartialSupport{
+    background-color: #A8BD04;
+}
+
+.SupportUnknown{
+    background-color: #838383;
+}
+
+.Table-1 {
+    text-align: center;
+    color: white;
+    width: 1360px;
+    margin-top: 30px;
+}
+
+.Table-1 tbody td{
+    width: 80px;
+    height: 30px;
+    border-right: 2px solid #f2e8d5;
+    border-left: 2px solid #f2e8d5; 
+
+}
+
+table thead{
+    color: black;
+    font-size: 90%;
+}
+
+.Table-1 .Borders td{
+    border: 3px solid #584E3B;
+}
+
+p{
+    font-size: 1.2em;
+    line-height: 1.5;
+    max-width: 50%;
+}
+
+.Table-2 thead {
+    color: white; 
+    text-align: center; 
+    font-size: 1.7em; 
+}
+
+.Table-2{
+    text-align: left;
+    background-color: rgba(88, 78, 59, 0.5);
+    color: #f2e8d5;
+    font-size: 13px;
+    width: 221.2px;
+    margin-top: 50px;
+    margin-right: 15px;
+}
+
+.Table-2 td{
+    border: none;
+}
+
+.Column-1{
+    width: 81.2px;
+    height: 30px;
+}
+
+.Column-2{
+    width: 140px;
+}
+
+.Merging{
+    background-color: rgba(0,0,0,0.06);
+}
+
+.Container{
+    width: 1000px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: auto;
+}
+
+.IE, .Edge, .Firefox, .Chrome, .Safari, .Opera, .SafariiOS, 
+.OperaMini, .AndroidBrowser, .OperaMobile, .ChromeAndroid, 
+.FirefoxAndroid, .UCAndroid, .SamsungInternet, .QQ, .Baidu, .KaiOS{
+    border-bottom: 3px solid;
+}
+
+.IE{
+    border-color: #385884;
+}
+
+.Edge{
+    border-color: #385884;
+}
+
+.Firefox{
+    border-color: #a36223;
+}
+
+.Chrome{
+    border-color: #3f77bb;
+}
+
+.Safari{
+    border-color: #666;
+}
+
+.Opera{
+    border-color: #812323;
+}
+
+.SafariiOS{
+    border-color: #333;
+}
+
+.OperaMini{
+    border-color: #992626;
+}
+
+.AndroidBrowser{
+    border-color: #7ba13b;
+}
+
+.OperaMobile{
+    border-color: #992626;
+}
+
+.ChromeAndroid{
+    border-color: #3f77bb;
+}
+
+.FirefoxAndroid{
+    border-color: #a36223;
+}
+
+.UCAndroid{
+border-color: black;
+}
+
+.SamsungInternet{
+    border-color: #9753ff;
+}
+
+.QQ{
+    border-color: black;
+}
+
+.Baidu{
+    border-color: black;
+}
+
+.KaiOS{
+    border-color: #6f02b5;
+}
