@@ -58,14 +58,19 @@ header{
   color: blue;
 }
 
+.MainContWrapper{
+  background-color: rgb(68, 68, 88);
+}
+
 aside, .center{
-  height: 1000px;
+  height: 100%;
+  vertical-align: top;
 }
 aside{
   background-color: rgb(68, 68, 88);
   color: #fff;
-  width: 30%;
-  float: left;
+  width: 300px;
+  display: inline-block;
 }
 aside h2{
   margin: 0 0 20px 0;
@@ -87,13 +92,11 @@ aside h2{
   cursor: pointer;
 }
 .center{
-  /*background-image: url('images/smile.jpg');*/
-  /*background-color: gray;*/
+  background-color: white;
   background-size: cover;
   background-position-y: -70px;
-  width: 70%;
-  float: right;
-  overflow-y: scroll;
+  width: calc(100% - 306px);
+  display: inline-block;
 }
 .center h1{
   margin: 30px auto;
