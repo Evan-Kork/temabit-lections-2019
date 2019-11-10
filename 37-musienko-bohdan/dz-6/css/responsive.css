@@ -1,6 +1,7 @@
 @media (max-width: 1024px) {
     .container {
         max-width: 920px;
+        padding: 0;
     }
     .content .product {
         width: 100%;
