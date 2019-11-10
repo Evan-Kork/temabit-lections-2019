@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ДЗ №5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form action="https://www.google.com/search" method="GET" target="_blank" class="form-inline">
+    <div class="form-group">
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google"
+             height="30" width="92" class="logo">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" id="name" name="q">
+            <div class="input-group-append">
+                <button class="btn" type="submit" name="tbm" value="">All</button>
+                <button class="btn" type="submit" name="tbm" value="isch">Image</button>
+                <button class="btn" type="submit" name="tbm" value="vid">Video</button>
+                <button class="btn" type="submit" name="tbm" value="nws">News</button>
+                <button class="btn" type="submit" value="Maps" formaction="https://maps.google.com/maps">Maps</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<form class="form">
+    <fieldset>
+    <legend>Анкета для роботи в «Сільпо»</legend>
+    <h3>Основна інформація</h3>
+    <div class="form-group">
+        <label for="firstName">Ім’я</label>
+        <input type="text" class="form-control" id="firstName" placeholder="Ім’я">
+    </div>
+    <div class="form-group">
+        <label for="lastName">Прізвище</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Прізвище">
+    </div>
+    <div class="form-group">
+        <label for="birthday">Дата народження</label>
+        <input type="text" class="form-control" id="birthday" placeholder="дд/мм/рррр">
+    </div>
+    <div class="form-group">
+        <label for="settlement">Населений пункт</label>
+        <input type="text" class="form-control" id="settlement" placeholder="Населений пункт">
+    </div>
+    <div class="form-group">
+        <label for="email">Електронна адреса</label>
+        <input type="email" class="form-control" id="email" placeholder="Електронна адреса">
+    </div>
+    <div class="form-group">
+        <label for="phone">Телефон</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Телефон">
+    </div>
+    <div class="form-group">
+        <label for="file">Резюме</label>
+        <input type="file" class="form-control-file" id="file">
+    </div>
+    <h3>
+        Вкажіть більше інформації, щоб отримати справді цікаву вакансію
+    </h3>
+    <div class="form-group">
+        <label>Оберіть бажаний населений пункт</label>
+        <select class="form-control">
+            <option>Default select</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Оберіть бажану посаду</label>
+        <select class="form-control">
+            <option>Default select</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Оберіть зручний супермаркет</label>
+        <select class="form-control">
+            <option>Default select</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Хочу працювати неповний робочий день</label>
+    </div>
+
+    <button type="submit" class="btn">Відправити</button>
+    </fieldset>
+</form>
+
+</body>
+</html>
