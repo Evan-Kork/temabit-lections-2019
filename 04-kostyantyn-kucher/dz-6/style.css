@@ -12,16 +12,13 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
   list-style-type: none;
 }
-
-
-
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   max-width: 1200px;
@@ -57,11 +54,9 @@ header{
   font-weight: bold;
   color: blue;
 }
-
 .MainContWrapper{
   background-color: rgb(68, 68, 88);
 }
-
 aside, .center{
   height: 100%;
   vertical-align: top;
@@ -138,7 +133,6 @@ aside h2{
   padding-bottom: 5px;
   border-bottom: 1px solid black;
 }
-
 @media only screen and (max-width: 1024px){
   .newsContainer{
     width: auto;
@@ -149,7 +143,6 @@ aside h2{
   }
 
 }
-
 @media only screen and (max-width: 768px){
   .newsContainer{
     display: block;
@@ -160,7 +153,6 @@ aside h2{
     height: 400px;
   }
 }
-
 @media only screen and (max-width: 640px){
   aside, .center{
     float: none;
