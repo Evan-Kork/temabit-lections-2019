@@ -16,9 +16,6 @@ tbody {
 .empty {
 	background: #eae1ce;
 }
-tr:nth-child(4) {
-	background: #584e3b;
-}
 .list-legend {
 	list-style-type: none;
 	padding-left: 0;
