@@ -1,0 +1,110 @@
+body{
+   background-color: #f2e8d5; 
+   font-family: Arial, Helvetica, sans-serif;
+}
+#wrapper{
+    display: block;
+    margin:0 auto;
+}
+article h1{
+    font-size: 26px;
+}
+article p{
+    font-size: 16px;
+}
+article table td{
+    width: 76px;
+    height: 30px;
+}
+.support-unknown{
+    background-color: gray;
+}
+.not-supported{
+    background-color: #c44230;
+}
+.partial-support{
+    background-color: #A8BD04;
+}
+.supported{
+    background-color: #39b54a;
+}
+.empty{
+    border:none;
+}
+.ie{
+    border: none;
+    border-bottom: 4px solid #385884;
+}
+.edge{
+    border: none;
+    border-bottom: 4px solid #385884;
+}
+.firefox{
+    border: none;
+    border-bottom: 4px solid #a36223;
+}
+.chrome{
+    border: none;
+    border-bottom: 4px solid #3f77bb;
+}
+.safari{
+    border: none;
+    border-bottom: 4px solid #666;
+}
+.opera{
+    border: none;
+    border-bottom: 4px solid #812323;
+}
+.ios-safari{
+    border: none;
+    border-bottom: 4px solid #333;
+}
+.opera-mini{
+    border: none;
+    border-bottom: 4px solid #992626;
+}
+.android-browser{
+    border: none;
+    border-bottom: 4px solid #7ba13b;
+}
+.opera-mobile{
+    border: none;
+    border-bottom: 4px solid #992626;
+}
+.chrome-android{
+    border: none;
+    border-bottom: 4px solid #3f77bb;
+}
+.firefox-android{
+    border: none;
+    border-bottom: 4px solid aliceblue;
+}
+.uc-android{
+    border: none;
+    border-bottom: 4px solid #000000;
+}
+.samsung{
+    border: none;
+    border-bottom: 4px solid #9753ff;
+}
+.qq{
+    border: none;
+    border-bottom: 4px solid #000;    
+}
+.baidu{
+    border: none;
+    border-bottom: 4px solid #000;
+}
+.kaios{
+    border: none;
+    border-bottom: 4px solid #6f02b5;
+}
+ul{
+    list-style: none;
+
+}
+.legend-list li{
+    width: 150px;
+    margin: 5px 0;
+    text-align: center;
+}

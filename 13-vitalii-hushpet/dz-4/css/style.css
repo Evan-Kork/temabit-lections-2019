@@ -1,0 +1,56 @@
+body{
+    background-color: #F2E8D5;
+    font:100% "Open Sans", Helvetica, Arial, sans-serif;
+}
+code{
+    font-family:Inconsolata, monospace;
+    background-color:rgba(255,255,255,0.2)
+}
+table{
+    border: 0.1em solid #000000;
+    text-align:center;
+    margin-top: 3em;
+}
+th{
+    border-bottom:4px solid red;
+    
+}
+tbody{
+    white-space:nowrap;
+    border-radius: 10%;
+}
+td{
+    width: 5.5%;
+    height: 2em;
+    margin: .5em;
+    background-color: #EAE1CE;
+    border-radius: 5%;
+}
+.notsupported{
+	background-color: #C44230;
+}
+.trthree{
+    border:0.23em solid #584E3B;
+}
+.supported{
+    background-color: #39B54A;
+}
+.head{
+    display:inline-block;
+    font-size:1.3em;
+    font-weight:normal;    
+    color: black;
+}
+.supporteda{
+    background-color: rgba(57, 181, 74, 0.44);
+}
+.legenda{
+    width: 2em;
+    height: 1em;
+    display:inline-block ;
+}
+.bottom{
+    text-align: start ;
+    margin-left: 45%;
+
+}

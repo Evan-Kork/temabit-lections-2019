@@ -1,0 +1,42 @@
+body {
+    background-color: lightgrey;
+}
+
+.table {
+    color: white;
+    background-color: lightyellow;
+    text-align: center;
+}
+
+th {
+    width: 75px;
+}
+
+.table td {
+    height: 35px;
+}
+
+.line td {
+    height: 3px;
+    background-color: navy;
+}
+
+.tableHead {
+    color: black;
+}
+
+.notSupported {
+    background-color: red;
+}
+
+.partial {
+    background-color: greenyellow;
+}
+
+.supported {
+    background-color: green;
+}
+
+.unknown {
+    background-color: white;
+}

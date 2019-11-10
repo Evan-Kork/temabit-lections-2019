@@ -1,0 +1,330 @@
+$main-color: #f2e8d5;
+$black: #000;
+$white:#fff;
+$brown: #584E3B;
+
+$bg-body:#3D3527;
+$bg-col:rgba(0,0,0,0.06);
+
+$supported:#139424;
+$partial-support:#899a00;
+$not-supported:#ab2a18;
+$unknown:#838383;
+
+
+$ie-color:#385884;
+$edge-color: #385884;
+$firefox-color:#a36223;
+$chrome-color:#3f77bb;
+$safari-color:#666;
+$opera-color:#812323;
+$ios-safari-color:#333;
+$opera-mini-color:#992626;
+$andr-br-color:#7ba13b;
+$opera-mobile-color:#992626;
+$chrome-andr-color:#3f77bb;
+$firefox-andr-color:#a36223;
+$uc-browser-andr:#000;
+$samsung-internet-color:#9753ff;
+$qq-brow-color: #000;
+$baidu-brow-color:#000;
+$kaios-color:#6f02b5;
+
+$transition: all 0.3s ease-in-out;
+
+html,body{
+    height: 100%;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    background-color: $bg-body;
+    background-image: url('../image/caniuse-bg.png');
+}
+.site-global-wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    background: $main-color;
+    margin: 20px 0;
+
+}
+// header,footer{
+//     padding: 40px 20px;
+// }
+p{
+    margin: 0;
+}
+.wrapp-main-content{
+    padding: 20px;
+    h1{
+        font-weight: 100;
+        margin: 0;
+        margin-bottom: 20px;
+        a{
+            color: $black;
+            text-decoration: none;
+            transition: $transition;
+            &:hover{
+                color: $not-supported;
+                text-decoration: none;
+            }
+        }
+    }
+    .description-element{
+        max-width: 500px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        line-height: 1.5;
+        code{
+            background-color: rgba(255,255,255,0.2);
+        }
+    }
+}
+.content-tab{
+    background: #e0c89b;
+    padding: 20px;
+    flex: 1 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    .box-legend{
+        .title-box{
+            font-size: 18px;
+            color: $bg-body;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;;
+            li{
+                display: flex;
+                font-size: 14px;
+                align-items: center;
+                color: $black;
+                .label-legend{
+                    display: block;
+                    width: 25px;
+                    height: 13px;
+                    position: relative;
+                    margin-right: 16px;
+                    &:after{
+                        content:'=';
+                        position: absolute;
+                        display: block;
+                        right: -12px;
+                        top:50%;
+                        transform: translate(0 ,-50%);
+                    }
+                    &.supported{
+                        background-color: $supported;
+                    }
+                    &.not-supported{
+                        background-color: $partial-support;
+                    }
+                    &.partial-support{
+                        background-color: $not-supported;
+                    }
+                    &.support-unknown{
+                        background-color: $unknown;
+                    }
+                }
+            }
+        }
+    }
+}
+.wrapp-table-can-i-use{
+    overflow-x: auto;
+    padding-bottom: 50px;
+    table{
+        thead{
+            tr{
+                td{
+                    position: relative;
+                    font-size: 12px;
+                    border-bottom: 3px solid $black;
+                    border-left: 2px solid $main-color;
+                    border-right: 2px solid $main-color;
+                    padding: 5px 2px;
+                    text-align: center;
+                    max-width: 76px;
+                    min-width: 76px;
+                    // width: 100%;
+                    &:first-child{
+                        border-left: 0;                 
+                    }
+                    &:last-child{
+                        border-right:0;
+                    }
+
+                    &.brow-ie{
+                        border-bottom-color: $ie-color;
+                    }
+                    &.brow-edge{
+                        border-bottom-color: $edge-color;
+                    }
+                    &.brow-firefox{
+                        border-bottom-color: $firefox-color;
+                    }
+                    &.brow-chrome{
+                        border-bottom-color: $chrome-color;
+                    }
+                    &.brow-safari{
+                        border-bottom-color: $safari-color;
+                    }
+                    &.brow-opera{
+                        border-bottom-color: $opera-color;
+                    }
+                    &.brow-ios-safari{
+                        border-bottom-color: $ios-safari-color;
+                    }
+                    &.brow-opera-mini{
+                        border-bottom-color: $opera-mini-color;
+                    }
+                    &.brow-android{
+                        border-bottom-color: $andr-br-color;
+                    }
+                    &.brow-opera-mob{
+                        border-bottom-color: $opera-mobile-color;
+                    }
+                    &.brow-chrom-andr{
+                        border-bottom-color: $chrome-andr-color;
+                    }
+                    &.brow-firefox-andr{
+                        border-bottom-color: $firefox-andr-color;
+                    }
+                    &.brow-us-andr{
+                        border-bottom-color: $uc-browser-andr;
+                    }
+                    &.brow-samsung-internet{
+                        border-bottom-color: $samsung-internet-color;
+                    }
+                    &.brow-qq{
+                        border-bottom-color: $qq-brow-color;
+                    }
+                    &.brow-baidu{
+                        border-bottom-color: $baidu-brow-color;
+                    }
+                    &.brow-kaios{
+                        border-bottom-color: $kaios-color;
+                    }
+                    &.icon-star{
+                        &:before{
+                            content:'*';
+                            position: absolute;
+                            top: 5px;
+                            right: 0;
+                            color: #ba2f00;
+                        }
+                    }
+                }
+            }
+        }
+        tbody,tfoot{
+            tr{
+                &.row-active{
+                    td{
+                        border-left-color:$brown; 
+                        border-right-color:$brown; 
+                        border-top: 4px solid $brown; 
+                        border-bottom: 4px solid $brown; 
+                        p{
+                            border-top-color: $brown; 
+                            border-bottom-color: $brown; 
+                        }
+                    }
+                }
+
+                td{
+                    position: relative;
+                    text-align: center;
+                    border-left: 3px solid $main-color;
+                    border-right: 3px solid $main-color;
+                    background: $bg-col;
+                    color: $white;
+                    transition: $transition;
+                    &.supported{
+                        background:$supported;
+                        &:hover{
+                            background: darken($supported, 10%);
+                        }
+                    }
+                    &.supported-light{
+                        opacity: 0.7;
+                        &:hover{
+                            opacity: 0.5;
+                        }
+                    }
+                    &.partial-support{
+                        background: $partial-support;
+                        &:hover{
+                            background: darken($partial-support, 10%);
+                        }
+                    }
+                    &.not-supported{
+                        background: $not-supported;
+                        &:hover{
+                            background: darken($not-supported, 10%);
+                        }
+                    }
+                    &.prefix{
+                        background-image: url('../image/prefix.svg');
+                        background-size: 10px;
+                        background-repeat: no-repeat;
+                        background-position: 97% 3px;
+
+                    }
+                    p{
+                        padding: 5px 2px;
+                        border-top: 1px solid $main-color;
+                        border-bottom: 1px solid $main-color;
+                    }
+                    .sub-list-left{
+                        display: flex;
+                        flex-wrap: wrap;
+                        position: absolute;
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        left: 2px;
+                        top: 3px;
+                        max-width: 20px;
+                        li{
+                            width: 10px;
+                            height: 10px;
+                            background-color: $white;
+                            color: $black;
+                            font-size: 9px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            &:nth-child(even){
+                                background-color: darken($white,10%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        tfoot{
+            tr{
+                td{
+                    background: $main-color;
+                }
+            }
+        }
+    }
+}
