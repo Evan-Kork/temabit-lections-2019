@@ -1,0 +1,180 @@
+.d-flex {
+  display: flex;
+}
+
+body, p {
+  margin: 0;
+}
+
+/* Content */
+.content {
+  width: 100%;
+}
+
+/* Nav */
+.nav {
+  width: 300px;
+  height: calc(100vh - 40px);
+  padding: 20px;
+  background: #424242;
+
+  color: white;
+
+  position: relative;
+
+  transition: width 0.5s ease-in-out;
+}
+
+.nav-title {
+  padding: 30px 20px;
+}
+
+.nav-item {
+  padding: 7.5px 5px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: slategray;
+}
+
+/* NavToggle */
+.toggle-position {
+  top: 20px;
+  left: 12.5px;
+
+  position: absolute;
+}
+
+.nav-toggle {
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+
+  z-index: 900;
+}
+
+.nav-toggle__item {
+  opacity: 0;
+  z-index: 100;
+
+  cursor: pointer;
+  font-size: 0;
+
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: white;
+
+  transition: background .5s ease-in-out;
+}
+
+.nav-toggle__item::after,
+.nav-toggle__item::before {
+  content: " ";
+
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: white;
+
+  position: absolute;
+
+  transition: transform .5s ease-in-out;
+}
+
+.nav-toggle__item::after {
+  top: 6px;
+}
+
+.nav-toggle__item::before {
+  top: 12px;
+}
+
+/* Aside */
+.aside {
+  padding: 20px;
+}
+
+.aside p{
+  padding: 10px 0;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer a {
+  color: black;
+}
+
+@media (max-width: 770px) {
+  /* Nav */
+  .nav {
+    width: 10px;
+  }
+
+  .nav-title {
+    padding: 30px 0px;
+  }
+
+  .nav-item {
+    display: none;
+  }
+
+  .nav-toggle__item {
+    opacity: 1;
+  }
+
+  .nav-toggle:checked ~ .nav {
+    width: 250px;
+  }
+
+  .nav-toggle:checked ~ .nav .nav-item {
+    display: block;
+  }
+
+  .nav-toggle:checked ~ .nav-toggle__item {
+    background: transparent;
+  }
+
+  .nav-toggle:checked ~ .nav-toggle__item::after {
+    transform: rotate(45deg);
+  }
+
+  .nav-toggle:checked ~ .nav-toggle__item::before {
+    transform: rotate(135deg);
+  }
+
+  .nav-toggle:checked ~ .nav-toggle__item::after,
+  .nav-toggle:checked ~ .nav-toggle__item::before {
+    top: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  /* Footer */
+  .footer a {
+    padding: 10px;
+  }
+
+  /* Aside */
+  .aside p{
+    padding: 0;
+  }
+
+  .aside h1 {
+    font-size: 1.2rem;
+  }
+}
