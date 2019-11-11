@@ -1,0 +1,124 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	color: rgb(80, 82, 82);
+	font-size: 18px;
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+.left-menu {
+	color: black;
+	background-color: rgb(124, 124, 124);
+	padding: 20px 20px;
+	width: 15%;
+	min-width: 150px;
+	max-width: 150px;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 2;
+	padding: 20px 20px;
+}
+
+.footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	min-width: 600px;
+	overflow-x: hidden;
+}
+
+.navbar a {
+	text-decoration: none;
+	list-style-type: none;
+	color: rgb(124, 124, 124);
+}
+
+.footer a:visited {
+	color: rgb(124, 124, 124);
+}
+
+a {
+	color: rgb(124, 124, 124);
+}
+
+.navbar li>a {
+	color: white;
+}
+
+li {
+	list-style-type: none;
+	padding-bottom: 5px;
+}
+
+ul {
+	margin-top: 40px;
+	margin-left: -40px;
+}
+
+.menu-control {
+	display: none;
+}
+
+.control {
+	color: white;
+	display: none;
+	font-size: 40px;
+	margin: 10px;
+}
+
+.flex-container [type="checkbox"] {
+	display: none;
+}
+
+@media screen and (max-width:800px) {
+
+	.left-menu {
+		min-width: 50px;
+		width: 50px;
+		background-color: rgb(63, 63, 63);
+		padding: 0;
+	}
+
+	.menu-control, .control{
+		display: block;
+	}
+
+	h4,
+	ul {
+		display: none;
+	}
+
+	.footer {
+		min-width: 600px;
+	}
+
+	.menu-control:checked ~ .left-menu {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	.menu-control:checked ~ .left-menu h4, ul {
+		display: block;
+		margin-left: 40px;
+	}
+
+	.menu-control:checked ~ .main {
+		display: none;
+	}
+}
