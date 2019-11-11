@@ -22,6 +22,16 @@ body {
     background-color: #fff;
 }
 
+a {
+    text-decoration: none;
+}
+
+.a:hover,
+.a:focus,
+.a:active {
+    text-decoration: underline;
+}
+
 p {
     margin-top: 0;
 }
@@ -38,7 +48,6 @@ p {
     max-width: 680px;
     margin: 0 auto;
 }
-
 
 .main {
     display: flex;
@@ -86,22 +95,6 @@ p {
     max-width: 100%;
 }
 
-@media (min-width: 768px) {
-    .menu {
-        width: 200px;
-        min-width: 200px;
-    }
-    .main {
-        flex-direction: row;
-    }
-}
-
-@media (min-width: 992px) {
-    .card {
-        width: 50%;
-    }
-}
-
 .card img {
     display: block;
     padding: 0 15px;
@@ -134,12 +127,19 @@ p {
     display: block;
 }
 
-a {
-    text-decoration: none;
+
+@media (min-width: 768px) {
+    .menu {
+        width: 200px;
+        min-width: 200px;
+    }
+    .main {
+        flex-direction: row;
+    }
 }
 
-.a:hover,
-.a:focus,
-.a:active {
-    text-decoration: underline;
+@media (min-width: 992px) {
+    .card {
+        width: 50%;
+    }
 }
