@@ -1,0 +1,172 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+header img {
+    width: 100%;
+    height: calc(100vh - 50%);
+}
+
+.logo {
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(252, 74, 30);
+}
+
+.logo img {
+    float: left;
+    height: 75px;
+    width: 75px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-weight: 900;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.logo > p {
+    font-size: 14px;
+}
+
+.navbar {
+    color: rgb(139, 18, 18);
+}
+
+.navbar li {
+    margin-left: -20px;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    background-color: rgb(202, 239, 248);
+    box-sizing: border-box;
+    flex: 0 0 300px;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav a:visited {
+    color: blue;
+}
+
+.content {
+    width: 75%;;
+    margin-left: 20px;
+}
+
+.content-description {
+    color: blue;
+}
+
+.houses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.content-item {
+    width: 40%;
+}
+
+.item-description {
+    width: 25%;
+    min-width: 250px;
+    text-align: center;
+}
+
+.item-info {
+    display: block;
+    width: 25%;
+    min-width: 250px;
+    background-color: rgb(201, 192, 192);
+    padding: 10px 0;
+}
+
+.content img {
+    width: 250px;
+    height: 140px;
+    padding-bottom: 5px;
+}
+
+/* Для планшета */
+@media screen and (max-width: 850px) {
+
+    .content-description {
+        width: 100%;
+        text-align: start;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .content-description {
+        margin-left: 20px;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .houses {
+        flex-direction: column;
+        align-items: center;
+      }
+
+    .nav {
+        width: 300px;
+        min-width: 300px;
+    }
+}
+
+/* Для мобильных */
+@media screen and (max-width: 320px) {
+
+    .main {
+       flex-direction: column;
+   }
+
+   .content {
+       margin-left: 0;
+   }
+   
+   .houses {
+       justify-content: space-between;
+   }
+
+   .content-item {
+       width: 100%;
+       margin-left: 15px;
+   }
+}
+
+
+
+
+
+
+
+
+
