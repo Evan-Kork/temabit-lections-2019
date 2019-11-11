@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Almost like Google</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <H1>Almost like</H1>
+    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="google logo">
+  </header>
+  <form action="https://www.google.com/search"
+        method="GET"
+        class="searchForm">
+    <div class="formGroup">
+      <input
+        id="search"
+        type="text"
+        name="q"
+        placeholder="Enter searching word"
+        class="search"
+      />
+    </div>
+    <div class="formGroup">
+      <input
+        id="news"
+        type="radio"
+        name="tbm"
+        value="nws"
+      /><label for="news">News</label>
+      <input
+        id="video"
+        type="radio"
+        name="tbm"
+        value="vid"
+      /><label for="video">Video</label>
+      <input
+        id="allParams"
+        type="radio"
+        name="tbm"
+        value=""
+      /><label for="allParams">All</label>
+    </div>
+    <div class="formGroup">
+      <input
+        id="24h"
+        type="radio"
+        name="tbs"
+        value="qdr:d"
+      /><label for="24h">For the last 24 hours</label>
+      <input
+        id="1h"
+        type="radio"
+        name="tbs"
+        value="qdr:h"
+      /><label for="1h">For the last hour</label>
+      <input
+        id="allTime"
+        type="radio"
+        name="tbs"
+        value=""
+      /><label for="allTime">All</label>
+    </div>
+    <input type="submit" value="Let's search!" class="submitButton">
+  </form>
+  <h2>Анкета для роботи в "Сільпо"</h2>
+  <form action="#" class="silpoForm">
+    <fieldset>
+      <legend>Основна інформація</legend>
+      <div class="formGroup">
+        <label for="name">Введіть ім'я</label>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          placeholder="Ім'я"
+          minlength="2"
+          class="silpoInput"
+        />
+      </div>
+      <div class="formGroup">
+        <label for="lastName">Введіть прізвище</label>
+        <input
+          id="lastName"
+          type="text"
+          name="lastName"
+          placeholder="Прізвище"
+          class="silpoInput"
+        />
+      </div>
+      <div class="formGroup">
+        <label for="dateOfBirth">Введіть дату народження</label>
+        <input
+          id="dateOfBirth"
+          type="date"
+          name="dateOfBirth"
+          placeholder="дд/мм/рррр"
+          class="silpoInput"
+        />
+      </div>
+      <div class="formGroup">
+        <label for="city">Введіть населений пункт</label>
+        <input
+          id="city"
+          type="text"
+          name="city"
+          placeholder="Населений пункт"
+          class="silpoInput"
+        />
+      </div>
+      <div class="formGroup">
+        <label for="email">Введіть електронну адресу</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="Електронна адреса"
+          class="silpoInput"
+        />
+      </div>
+      <div class="formGroup">
+        <label for="phone">Введіть 10 цифр. Почніть із коду вашого мобільного оператора</label>
+        <input
+          id="phone"
+          type="number"
+          name="phone"
+          placeholder="Телефон"
+          minlength="10"
+          maxlength="10"
+          class="silpoInput"
+        />
+      </div>
+      <div class="formGroup">
+        <label for="cv">Резюме</label>
+        <input
+          id="cv"
+          type="file"
+          name="cv"
+          class="silpoCvFile"
+        />
+      </div>
+      <div class="formGroup formGroupCv">
+        <input
+          id="cvUrl"
+          type="text"
+          name="cvUrl"
+          placeholder="чи додайте сюди посилання на резюме"
+          class="silpoInput"
+        />
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Вкажіть більше інформації, щоб отримати справді цікаву вакансію</legend>
+      <div class="formGroup">
+        <label for="marketCity">Оберіть бажаний населений пункт</label>
+        <select name="marketCity" id="marketCity">
+          <option>Київ</option>
+          <option>Вінниця</option>
+          <option>Львів</option>
+        </select>
+      </div>
+      <div class="formGroup">
+        <label for="marketVacancy">Оберіть бажану посаду</label>
+        <select name="marketVacancy" id="marketVacancy">
+          <option>Вантажник</option>
+          <option>Адміністратор</option>
+          <option>Завідуючий відділом</option>
+        </select>
+      </div>
+      <div class="formGroup">
+        <label for="marketExample">Оберіть зручний супермаркет</label>
+        <select name="marketExample" id="marketExample">
+          <option>вул.Шевченка</option>
+          <option>вул.Київський Шлях</option>
+          <option>вул.Стельмаха</option>
+        </select>
+      </div>
+      <div class="formGroup halfDay">
+        <input
+          id="halfDay"
+          type="checkbox"
+          name="halfDay"
+          class="silpoInput"
+        /><label for="halfDay">Хочу працювати неповний робочий день</label>
+      </div>
+    </fieldset>
+    <input type="submit" value="ВІДПРАВИТИ" class="submitButton">
+  </form>
+</body>
+</html>
