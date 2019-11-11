@@ -3,6 +3,7 @@ body {
   padding: 0;
   margin: 0;
   height: 100%;
+  overflow: hidden;
 }
 .container {
   display: flex;
@@ -115,7 +116,7 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-.footer h4 a {
+.footer h5 a {
   color: rgb(87, 98, 134);
 }
 
