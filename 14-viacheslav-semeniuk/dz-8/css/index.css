@@ -1,0 +1,18 @@
+.promo {
+  width: 100%;
+  height: auto;
+  background-color: #000;
+}
+.promo img {
+  margin: 0 auto;
+  display: block;
+}
+
+#myTabContent {
+  position: absolute;
+  left: 15px;
+  top: 70px;
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=index.css.map */
