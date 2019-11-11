@@ -13,7 +13,6 @@ body {
       margin: 0 auto;
       width: 100%;
       height: 100%;
-
 }
  
 .header {
@@ -64,13 +63,14 @@ body {
       border: 1px solid black;
       display: flex;
       flex-direction: row;
+
 }
 
 
 .cel {
       width: 35%;
-      min-width: 150px;
-      min-height: 200px;
+      min-width: 15%;
+      min-height: 20%;
       margin: 15px;
       padding: 15px;
       text-align: center;
@@ -78,13 +78,23 @@ body {
       border: 1px solid black;
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
       .cel {
             width: 70%;
       }
+      .content {
+            height: 100%;
+            overflow: hidden;
+            overflow: scroll;
+      }
+      .menu {
+            height: 900px;
+            overflow: hidden;
+            overflow: scroll;
+      }
 }
 
-@media screen and (max-width: 360px) {
+@media only screen and (max-width: 360px) {
       body {
             min-width: 250px;
       }
@@ -97,12 +107,18 @@ body {
       }
       .content {
             clear: both;
+            overflow: hidden;
+            overflow: scroll;
+
       }
       .header {
             font-size: 15px;
       }
       .flex-row {
             display: block;
+      }
+      .cel {
+            
       }
 }
 
