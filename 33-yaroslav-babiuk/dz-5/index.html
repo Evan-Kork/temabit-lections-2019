@@ -6,110 +6,61 @@
         <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
-        <div align="center"
-            class="top">
+        <div class="top">
             <img src="images/nedogoogle.png">
             <form
                 action="http://google.com/search"
                 method="get"
                 target="_blank">
-                <input
-                name="q"
-                type="text"
-                placeholder="Введите запрос">
-                <input
-                type="submit"
-                name="search"
-                value="Поиск">
+                <input name="q" type="text" placeholder="Введите запрос">
+                <input type="submit" name="search" value="Поиск">
                 <!-- НАЛАШТУВАННЯ ГУГЛ -->
                 <div class="top10px">
-                    <button
-                    type="submit"
-                    id="image"
-                    name="tbm"
-                    value="isch">
-                    Картинки
+                    <button type="submit" id="image" name="tbm" value="isch">
+                        Картинки
                     </button>
-                    <button
-                    type="submit"
-                    name="tbm"
-                    id="video"
-                    value="vid">
-                    Видео
+                    <button type="submit" name="tbm" id="video" value="vid">
+                        Видео
                     </button>
-                    <button
-                    type="submit"
-                    name="tbm"
-                    value="bks">
-                    Книги
+                    <button type="submit" name="tbm" value="bks">
+                        Книги
                     </button>
-                    <button
-                    type="submit"
-                    name="tbm"
-                    id="news"
-                    value="nws">
-                    Новости
+                    <button type="submit" name="tbm" id="news" value="nws">
+                        Новости
                     </button>
                 </div>
             </form>
         </div>
         <!-- Анкета -->
-        <div
-            class="top300px anketa">
+        <div class="top300px anketa">
             <form action="#">
                 <fieldset>
                     <legend>Анкета для роботи в «Сільпо»</legend>
                     <table>
                         <tr>
                             <td>
-                                <input
-                                type="text"
-                                name="firstname"
-                                placeholder="Ім'я"
-                                required>
+                                <input type="text" name="firstname" placeholder="Ім'я" required>
                             </td>
                             <td>
-                                <input
-                                type="text"
-                                name="lastname"
-                                placeholder="Прізвище"
-                                required>
+                                <input type="text" name="lastname" placeholder="Прізвище" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input
-                                id="birthday"
-                                type="date"
-                                name="birthday"
-                                required
+                                <input id="birthday" type="date" name="birthday" required
                                 title="Дата народженя">
                             </td>
                             <td>
-                                <input
-                                type="text"
-                                name="city"
-                                placeholder="Населений пункт"
-                                required>
+                                <input type="text" name="city" placeholder="Населений пункт" required>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input
-                                id="email"
-                                type="email"
-                                name="email"
-                                placeholder="Введіть електрону адресу"
-                                required>
+                                <input id="email" ype="email" name="email" placeholder="Введіть електрону адресу" required>
                             </td>
                             <td>
-                                <input
-                                id="telephone"
-                                type="tel"
-                                value="+380"
-                                name="telephone"
-                                maxlength="10"
-                            required></td>
+                                <input id="telephone" type="tel" value="+380" name="telephone" maxlength="10" required>
+                            </td>
                         </tr>
                         <tr>
                             <td colspan="2" class="center">
