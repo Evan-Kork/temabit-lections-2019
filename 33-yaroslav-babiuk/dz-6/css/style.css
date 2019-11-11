@@ -9,13 +9,14 @@ body {
       font-size: 12px;
 }
  
-#container {
+.container {
       margin: 0 auto;
       width: 100%;
       height: 100%;
+
 }
  
-#header {
+.header {
       background-color: rgba(109,106,255, 0.6);
       height: 140px;
       width: 100%;
@@ -28,17 +29,18 @@ body {
       border: 1px solid black;
 }
  
- .padding {
-      padding-top: 20px;
+.padding {
+      padding: 20px;
  }
-
-#menu {
-      background: -webkit-linear-gradient(-45deg, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 34%,rgba(32,124,202,1) 71%,rgba(32,124,202,1) 71%,rgba(125,185,232,1) 100%);;
-      float: left;
+.flex-row {
+      display: flex;
+      flex-direction: row;
+}
+.menu {
+      background: -webkit-linear-gradient(-45deg, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 34%,rgba(32,124,202,1) 71%,rgba(32,124,202,1) 71%,rgba(125,185,232,1) 100%);
       width: 20%;
       min-width: 150px;
       height: 900px;
-      display: block;
       position: relative;
       border: 1px solid black;
 }
@@ -52,18 +54,22 @@ body {
       font-size: 20px;
 }
  
-#content {
-      display: flex;
+.content {
       min-height: 900px;
+      width: calc(80%-4px);
       flex-wrap: wrap;
       align-content: space-between;
       background-color: rgb(204, 255, 254);
       justify-content: space-around;
       border: 1px solid black;
+      display: flex;
+      flex-direction: row;
 }
+
 
 .cel {
       width: 35%;
+      min-width: 150px;
       min-height: 200px;
       margin: 15px;
       padding: 15px;
@@ -82,18 +88,21 @@ body {
       body {
             min-width: 250px;
       }
-      #menu {
+      .menu {
             width: 100%;
             height: 25%;
       }
       .row-menu {
             font-size: 10px;
       }
-      #content {
+      .content {
             clear: both;
       }
-      #header {
+      .header {
             font-size: 15px;
+      }
+      .flex-row {
+            display: block;
       }
 }
 
