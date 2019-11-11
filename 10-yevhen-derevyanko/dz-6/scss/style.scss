@@ -1,0 +1,214 @@
+
+$black: #000;
+$red:#7c2548;
+$orange:#f86a2a;
+$grey:#e8e6fb;
+$blue:#09046a;
+$light-blue:#cdfffe;
+
+
+$transition: all 0.3s ease-in-out;
+
+*{
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    color: $black;
+}
+.site-global-wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.page-content{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+
+}
+
+.container{
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+.header-content{
+    .image-bg{
+        display: block;
+        width: 100%;
+    }
+}
+
+.container-page-content{
+    display: flex;
+}
+aside{
+    max-width: 250px;
+    min-width: 250px;
+    background-color: $light-blue;
+    color: $red;
+    padding: 10px 15px;
+    .line-logo{
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        img{
+            max-width: 56px;
+            width: 100%;
+            display: block;
+            margin-right: 6px;
+        }
+        .name-site{
+            color: orange;
+            font-size: 26px;
+            line-height: 26px;
+            font-weight: 700;
+            >div{
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 18px;
+            }
+        }
+    }
+    .buy-project{
+        display: block;
+        margin-bottom: 15px;
+        text-decoration: none;
+        font-weight: 600;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    h3{
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+    nav{
+        margin-bottom: 15px;
+        ul,ol{
+            margin: 0;
+            padding: 0;
+            padding-left: 20px;
+            li{
+                a{
+                    color: $red;
+                    text-decoration: none;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+main{
+    flex: 1 1 auto;
+    padding: 15px 10px;
+    >h1{
+        margin: 0;
+        margin-bottom: 15px;
+        font-size: 26px;
+        color: $blue;
+    }
+    >.description{
+        color: $blue;
+        margin-bottom: 10px;
+    }
+}
+.list-project{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+    .item{
+        flex-basis: 50%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 5px;
+
+        // for ie
+        max-width: 50%;
+        &:hover{
+            .wrapp-img{
+                img{
+                    transform: scale(1.2);
+                }
+            }
+        }
+        .wrapp-img{
+            overflow: hidden;
+            max-width: 350px;
+            width: 100%;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            img{
+                display: block;
+                width: 100%;
+                transition: $transition;
+            }
+        }
+
+        h2{
+            margin: 0;
+            font-size: 18px;
+        }
+        .description{
+            flex: 1 1 auto;
+            margin-bottom: 15px;
+            padding: 0 10px;
+        }
+        .characteristics{
+            padding: 5px;
+            margin: 0;
+            list-style: none;
+            background-color: $grey;
+            li{
+                margin-bottom: 3px;
+                span{
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 992px){
+    main{
+        >h1{
+            font-size: 24px;
+        }
+    }
+    .list-project{
+        .item{
+            flex-basis: 100%;
+
+            // for ie
+            max-width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 540px){
+    .container-page-content{
+        flex-direction: column;
+    }
+    aside{
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
