@@ -1,25 +1,31 @@
 // variables
-$color_ringoo: green;
+$color_ringoo: #98c93c;
+$color_ringoo_bg: #262724;
+$color_search_bg: #424242;
+$color_search_br: rgba(255, 255, 255, 0.1);
+$color_light: #fff;
+$color_menu_active_bg: #ff0000;
+$color_cart_bg: #f6851f;
 
 // fonts
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
 
 
 // test classes
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
 
 .t_bdr_a {
-	border: 2px dotted purple;
+	border: 1px solid red;
 }
 
 .t_bdr_b {
-	border: 2px dotted lime;
+	border: 1px solid lime;
 }
 
 .t_font {
 	font-family: Lato;
 }
 
-.t_alg {
+.t_aln {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -33,7 +39,7 @@ $color_ringoo: green;
 
 html {
 	box-sizing: border-box;
-	font-size: 20px;
+	font-size: 15px;
 }
 
 *, *::after, *::before {
@@ -45,3 +51,68 @@ html, body {
 }
 
 // structure
+
+.header {
+
+	.top_menu {
+		background-color: $color_ringoo;
+	}
+
+	.ringoo {
+		background-color: $color_ringoo_bg;
+		color: $color_ringoo;
+		.col {
+		min-height: 50px;
+		}
+	}
+}
+
+.main {
+
+	.slider {
+
+	}
+
+	.brands {
+
+	}
+
+	.promos {
+
+	}
+
+	.hot_offering {
+
+	}
+
+	.last_supply {
+
+	}
+
+	.stock {
+
+	}
+
+	.videos {
+
+	}
+
+	.advantages {
+
+	}
+}
+
+.footer {
+
+	.email_sub {
+
+	}
+
+	.bottom_contacts {
+
+	}
+
+	.rights_reserved {
+
+	}
+}
