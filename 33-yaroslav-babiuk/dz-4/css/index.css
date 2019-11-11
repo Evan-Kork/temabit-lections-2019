@@ -16,7 +16,7 @@ a {
 .Support_unknown{
 	background-color: rgb(131,131,131);
 }
-.table{
+.Table{
 	border-spacing: 3px;
 	table-layout: fixed;
 	text-align: center;
@@ -30,7 +30,7 @@ td{
   padding: 7px;
 }
 
-.brown_line td {
+.Brown_line td {
 	border: 4px solid #444444;
 	width: 52px;
 	height: 30px;
