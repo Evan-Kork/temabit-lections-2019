@@ -1,0 +1,128 @@
+html, body{
+    margin: 0;
+}
+
+.menu{
+    width: 400px;
+    background-color: rgba(51, 103, 105, 0.575);
+    margin: 10px;
+}
+
+.logo img{
+    width: 90px;
+}
+
+.logo p{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: azure;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header img{
+    width: 100%;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
+.article{
+    width: 100%;
+    margin: 10px;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.project{
+    display: flex;
+    flex-direction: column;
+}
+
+.project img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.project-description{
+    margin-bottom: 10px;
+}
+
+.bl p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.bold{
+    font-weight: bold;
+    margin-right: 3px;
+    margin-bottom: 0;
+}
+
+.bl{
+    display: flex;
+    align-items: baseline;
+}
+
+.item{
+    height: 130px;
+}
+
+.item-info, .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.item-info {
+    background-color: rgba(51, 103, 105, 0.247);
+}
+
+/*Для мобільного*/
+@media (max-width: 360px){
+
+    .main{
+        flex-direction: column;
+    }
+
+    .menu{
+        width: auto;
+        margin: unset;
+    }
+    .article{
+        margin: 0;
+    }
+
+    .main-info, .menu{
+        padding: 0 5px;
+    }
+
+}
+
+@media (max-width: 1024px){
+    .project img {
+        width: 65%;
+        margin: 0 auto;
+    }
+}
