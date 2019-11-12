@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FORMS</title>
+		<meta	charset = "utf-8">
+		<meta	name = "viewport" content = "width=device-width, initial-scale=1.0">
+		<meta	http-equiv = "X-UA-Compatible" content = "ie=edge">
+		<link	rel = "stylesheet" type = "text/css" href = "css/index.css">
+		<link 	rel = "stylesheet" type = "text/css" href = "https://fonts.googleapis.com/css?family=Century+ Gothic">
+	</head>
+	<body>
+		<form action = "#" method = "get" target = "_blank" class = "silpo">
+			<fieldset class = "form_title">
+				<img src = "https://silpo.ua/images/logo.svg">
+				<h3>Приєднуйтеся до нашої команди — заповніть анкету</h3>
+			</fieldset>
+			<fieldset>
+				<legend>Основна інформація</legend>
+				<div class = "form_group">
+					<label	for = "first_name_id">Ім"я</label>
+					<input	type = "text"
+							name = "first_name"
+							id = "first_name_id"
+							placeholder = "Введіть ім'я"
+							required>
+				</div>
+				<div class = "form_group">
+					<label	for = "last_name_id">Прізвище</label>
+					<input	type = "text"
+							name = "last_name"
+							id = "last_name_id"
+							placeholder = "Введіть прізвище"
+							required>
+				</div>
+				<div class = "form_group">
+					<label	for = "birthday_id">Дата народження</label>
+					<input	type = "date"
+							name = "birthday"
+							id = "birthday_id"
+							value = "2000-01-01"
+							required>
+				</div>
+				<div class = "form_group">
+					<label	for = "city_id">Населений пункт</label>
+					<input	type = "text"
+							name = "city"
+							id = "city_id"
+							placeholder = "Введіть місто проживання"
+							required>
+				</div>
+				<div class = "form_group">
+					<label	for = "email_id">Електронна адреса</label>
+					<input	type = "email"
+							name = "email"
+							id = "email_id"
+							placeholder = "Введіть адресу поштової скриньки"
+							required>
+				</div>
+				<div class = "form_group">
+					<label	for = "tel_id">Телефон</label>
+					<input	type = "tel"
+							name = "tel"
+							id = "tel_id"
+							placeholder = "Введіть контактний номер телефону"
+							required>
+				</div>
+				<div class = "form_group">
+					<label	for = "resume_id">Резюме з файлу</label>
+					<input	class = "input_initial"
+							type = "file"
+							name = "resume"
+							id = "resume_id">
+				</div>
+				<div class = "form_group">
+					<label	for = "link">Посилання на резюме</label>
+					<input	type = "text"
+							name = "link"
+							id = "link_id"
+							placeholder = "Або введіть посилання на резюме">
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Додаткова інформація</legend>
+				<div class = "form_group">
+					<label for = "market_city_id">Бажане місто</label>
+					<select name = "market_city" id = "market_city_id" required>
+						<option value = "">-В якому місті Ви хочете працювати?-</option>
+						<option value = "cityVN">Вінниця</option>
+						<option value = "cityKR">Кропивницький</option>
+						<option value = "cityKH">Хмельницький</option>	
+					</select>
+				</div>
+				<div class = "form_group">
+					<label for = "market_adr_id">Зручний супермаркет</label>
+					<select name = "market_adr" id = "market_adr_id">
+						<option value = "">-В якому саме із супермаркетів?-</option>
+						<option value = "near">Ближче до дому</option>
+						<option value = "far">Далі від дому</option>
+					</select>
+				</div>
+				<div class = "form_group">
+					<label for = "market_pos_id">Бажана посада</label>
+					<select name = "market_pos" id = "market_pos_id">
+						<option value = "">-Ким Ви хочете працювати?-</option>
+						<option value = "vacAR">Адміністратор ресторану</option>
+						<option value = "vacVN">Вантажник</option>
+						<option value = "vacKR">Кондитер</option>
+					</select>
+				</div>
+				<div class = "form_group">
+					<label	for = "job_time_id">Підходить неповний робочий день</label>
+					<input	class = "input_initial"
+							type = "checkbox"
+							name = "job_time"
+							id = "job_time_id">
+				</div>
+			</fieldset>
+			<fieldset class = "form_foot">
+				<label>Обовязково заповніть червоні поля, щоб ми могли підібрати для вас найкраще місце в компанії</label>
+				<button type = "submit">НАДІСЛАТИ</button>
+			</fieldset>
+		</form>
+
+		<form action = "https://www.google.com/search" method = "get" target = "_blank">
+			<fieldset>
+				<legend>SEARCH</legend>
+				<img src = "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png">
+				<div class = "form_group">
+					<label	for = "as_q_id">What do you search?</label>
+					<input	type = "search"
+							name = "as_q"
+							placeholder = "my search words"
+							id = "as_q_id">
+				</div>
+				<div class = "form_group">
+					<label	for = "as_epq_id">Match entire phrase</label>
+					<input	type = "search"
+							name = "as_epq"
+							placeholder = '"my search phrase"'
+							id = "as_epq_id">
+				</div>
+				<div class = "form_group text_by_right">
+					<button	type = "submit">GO</button>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>CONTENT TYPE</legend>
+				<div class = "radio_group">
+					<label	for = "tbm_0_id">All</label>
+					<input	type = "radio"
+							name = "tbm"
+							value = ""
+							id = "tbm_0_id"
+							checked>
+				</div>				
+				<div class = "radio_group">
+					<label	for = "tbm_1_id">Books</label>
+					<input	type = "radio"
+							name = "tbm"
+							value = "bks"
+							id = "tbm_1_id">
+				</div>
+				<div class = "radio_group">
+					<label	for = "tbm_2_id">Finance</label>
+					<input	type = "radio"
+							name = "tbm"
+							value = "fin"
+							id = "tbm_2_id">
+				</div>	
+				<div class = "radio_group">
+					<label	for = "tbm_3_id">Images</label>
+					<input	type = "radio"
+							name = "tbm"
+							value = "isch"
+							id = "tbm_3_id">
+				</div>	
+				<div class = "radio_group">
+					<label	for = "tbm_4_id">News</label>
+					<input	type = "radio"
+							name = "tbm"
+							value = "nws"
+							id = "tbm_4_id">
+				</div>	
+				<div class = "radio_group">
+					<label	for = "tbm_5_id">Videos</label>
+					<input	type = "radio"
+							name = "tbm"
+							value = "vid"
+							id = "tbm_5_id">
+				</div>	
+				<div class = "radio_group">
+					<label	for = "tbm_6_id">Tickets</label>
+					<input	type = "radio"
+							name = "tbm"
+							value = "flm"
+							id = "tbm_6_id">
+				</div>
+				<div class = "radio_group">
+					<label	for = "tbm_7_id">Personal info</label>
+					<input	type = "radio"
+							name = "tbm"
+							value = "flm"
+							id = "tbm_7_id">
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>SEARCH OPTIONS</legend>
+				<div class = "form_group">
+					<label	for = "lr_id">Lenguage</label>
+					<select	name = "lr" value = "" id = "lr_id">
+						<option value = "">-choose the lenguage-</option>
+						<option value = "lang_en">Англійська</option>
+						<option value = "lang_ar">Арабська</option>
+						<option value = "lang_el">Грецька</option>
+						<option value = "lang_it">Італійська</option>
+						<option value = "lang_zh-TW">Китайська</option>
+						<option value = "lang_de">Німецька</option>
+						<option value = "lang_pl">Польська</option>
+						<option value = "lang_ru">Російська</option>
+						<option value = "lang_uk">Українська</option>
+						<option value = "lang_fr">Французька</option>	 
+					<select>
+				</div>
+				<div class = "form_group">
+					<label for = "cr_id">Country</label>
+					<select	name = "cr" value = "" id = "cr_id">
+						<option value = "">-choose the country-</option>
+						<option value = "countryAU">Австралія</option>
+						<option value = "countryBE">Бельґія</option>
+						<option value = "countryBR">Бразілія</option>
+						<option value = "countryGB">Велика Британія</option>
+						<option value = "countryGE">Грузія</option>
+						<option value = "countryDK">Данія</option>
+						<option value = "countryEG">Єгипет</option>
+						<option value = "countryES">Іспанія</option>
+						<option value = "countryUS">Сполучені Штати</option>
+						<option value = "countryUA">Україна</option>
+					<select>
+				</div>
+			</fieldset>
+		</form>
+	</body>
+<!-- https://www.google.com.ua/search
+-----------------------------------------------
+						hl=uk
+- пошуковий рядок:		as_q=get+request
+- пошуковий рядок точно:as_epq=get+request
+						as_oq=
+						as_eq=
+						as_nlo=
+						as_nhi=
+- мова					lr=lang_en
+- краъна				cr=countryAU
+						as_qdr=all
+						as_sitesearch=
+						as_occt=any
+						safe=images
+						as_filetype=
+						as_rights=
+- книги:				tbm=bks
+- фінанси:				tbm=fin
+-----------------------------------------------
+- країна				cr=countryUA
+						biw=1366
+						bih=625
+						tbs=ctr%3AcountryUA //%3A => :
+						ei=aRK0XdCvIOf2qwGx-J6ICQ
+- пошуковий рядок:		q=get+request
+						oq=get+request
+						gs_l=psy-ab.3..0i71l3.0.0..9762...0.2..0.0.0.......0......gws-wiz.ssbCpPGlm8k&ved=0ahUKEwiQiMvvzrnlAhVn-yoKHTG8B5EQ4dUDCAs
+						uact=5
+-->
+</html>
