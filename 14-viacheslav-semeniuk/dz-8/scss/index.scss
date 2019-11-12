@@ -33,3 +33,56 @@
   top: 80px;
   background-color: #fff;
 }
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #fff;
+  background-color: transparent;
+}
+.drop-down-container {
+  display: flex;
+}
+
+.btn-danger {
+  background-color: transparent;
+  border-color: transparent;
+  &:hover,
+  &:not(:disabled):not(.disabled).active:focus,
+  &:not(:disabled):not(.disabled):active:focus,
+  .show > &.dropdown-toggle:focus,
+  .show > &.dropdown-toggle {
+    background-color: #fff;
+    border-color: #fff;
+    color: green;
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.dropdown-menu.menu-1 {
+  min-width: 37rem;
+}
+.dropdown-menu.menu-2 {
+  min-width: 37rem;
+  left: -6.352rem;
+}
+.dropdown-menu.menu-3 {
+  min-width: 37rem;
+  left: -13.6rem;
+}
+.dropdown-menu.menu-4 {
+  min-width: 37rem;
+  left: -19.05rem;
+}
+.dropdown-menu.menu-5 {
+  min-width: 37rem;
+  left: -25.5rem;
+}
+.dropdown-menu.menu-6 {
+  min-width: 37rem;
+  left: -29.7rem;
+}
