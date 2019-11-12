@@ -1,0 +1,130 @@
+html, body{
+  height: 100%;
+  width: 100%;
+}
+
+/*Form 1*/
+
+.search{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.search_for{
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+.search_for input{
+  border: 1px solid MidnightBlue;
+  padding: 5px 10px;
+  width: 100%;
+  text-align: center;
+  outline: none;
+}
+
+.form_submit{
+  position: relative;
+  padding: 5px 10px;
+  border-radius: 2px;
+  color: lightgrey;
+  font-size: 16px;
+  background-color: MidnightBlue;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form_but{
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+.form_but button{
+  color: MidnightBlue;
+  font-size: 15px;
+  padding: 5px 10px;
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.form_submit:focus,
+.form_submit:hover{
+  background-color:Indigo;
+}
+
+.form_but button:focus,
+.form_but button:hover{
+  color:Indigo;
+}
+
+
+/*Form 2*/
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form{
+  width: 600px;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px #ccc;
+  letter-spacing: 1px;
+}
+
+.form_group{
+  font-family: "Times New Roman";
+  letter-spacing: 1px;
+  font-size: 18px;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.form_group label{
+  width: 250px;
+  display: inline-block;
+}
+
+.form_group_1{
+  letter-spacing: 1px;
+  font-family: "Times New Roman";
+  font-size: 18px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.form_title{
+  text-align: center;
+  margin: 0 0 32px 0;
+  font-weight: normal;
+  color: brown;
+}
+h3, h5{
+  text-align: center;
+  margin: 0 0 15px 0;
+  font-weight: normal;
+}
+
+.form_button{
+  position: relative;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  color: white;
+  font-family: "Times New Roman";
+  font-size: 18px;
+  background-color: brown;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form_button:focus,
+.form_button:hover{
+  background-color: purple;
+}
