@@ -1,31 +1,34 @@
-#st_time {
-	width: auto;
-	margin: 40px 5px 40px 70px; 
-}
 body {
     font-size: 20px;
 }
-.top {
-    margin-top: 130px;
-    text-align: center;
-}
+
 table {
 	width: 100%
 }
-.top10px button {
-    margin-left: 10px;
-    margin-top: 10px;
+.conteiner {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
 }
-.top300px {
-   margin-top: 300px;
+.tools {
+
 }
 .anketa input {
     width: 300px;
     padding: 15px 10px 5px 10px;
     margin: 15px 0 40px 70px;
-
     border: none;
     border-bottom: 2px solid rgb(168,167,167);
+}
+input[type = checkbox] {
+	width: auto;
+	margin: 40px 5px 40px 70px; 
+}
+button {
+    margin-left: 10px;
+    margin-top: 10px;
 }
 .anketa select {
     width: 300px;
