@@ -9,18 +9,18 @@
   <script src="https://kit.fontawesome.com/d7215bd6c3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="sidebar">
-    <div class="wrapper">
-      <div class="burger"><i class="fas fa-bars fa-2x"></i></div>
-      <h2>Блог про веб розробку</h2>     
-      <ul class="chapters">
-        <li>Головна</li>
-        <li>Верстка</li>
-        <li>Інше</li>
-        <li>Контакти</li>
-      </ul>
-    </div>
-  </div>
+  <input type="checkbox" id="burger" class="burger" hidden>
+  <nav class="sidebar">
+    <label for="burger" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></label>
+    <h2>Блог про веб розробку</h2>     
+    <ul class="chapters">
+      <li>Головна</li>
+      <li>Верстка</li>
+      <li>Інше</li>
+      <li>Контакти</li>
+      <li><label for="burger"><i class="fas fa-times fa-1x"></i></label></li>
+    </ul>
+  </nav>
   <div class="mainContent">
     <h1>ЗАГОЛОВОК 1</h1>
     <p class="paragraph">АБЗАЦ 1</p>
