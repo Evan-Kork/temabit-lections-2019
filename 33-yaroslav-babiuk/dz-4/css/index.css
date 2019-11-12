@@ -1,0 +1,37 @@
+body {
+	background-color: rgba(252, 247, 238, 1)
+}
+a {
+  text-decoration: none;
+}
+.Supported {
+	background-color: rgb(57,181,74);
+}
+.Not_supported{
+	background-color: rgb(196, 66, 48);
+}
+.Partial_support{
+	background-color: rgb(168,189,4);
+}
+.Support_unknown{
+	background-color: rgb(131,131,131);
+}
+.Table{
+	border-spacing: 3px;
+	table-layout: fixed;
+	text-align: center;
+	border: 0px solid black;
+}
+th{
+    border-bottom:3px solid black;
+    background-color: rgba(100, 130, 132, 0.8)
+}
+td{
+  padding: 7px;
+}
+
+.Brown_line td {
+	border: 4px solid #444444;
+	width: 52px;
+	height: 30px;
+}
