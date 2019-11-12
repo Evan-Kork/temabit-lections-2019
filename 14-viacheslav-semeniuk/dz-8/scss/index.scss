@@ -46,6 +46,9 @@
 .btn-danger {
   background-color: transparent;
   border-color: transparent;
+  &:focus {
+    box-shadow: none;
+  }
   &:hover,
   &:not(:disabled):not(.disabled).active:focus,
   &:not(:disabled):not(.disabled):active:focus,
@@ -56,6 +59,7 @@
     color: green;
     box-shadow: none;
     outline: none;
+    border-radius: 0;
   }
 }
 

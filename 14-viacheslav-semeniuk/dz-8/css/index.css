@@ -46,12 +46,16 @@
   background-color: transparent;
   border-color: transparent;
 }
+.btn-danger:focus {
+  box-shadow: none;
+}
 .btn-danger:hover, .btn-danger:not(:disabled):not(.disabled).active:focus, .btn-danger:not(:disabled):not(.disabled):active:focus, .show > .btn-danger.dropdown-toggle:focus, .show > .btn-danger.dropdown-toggle {
   background-color: #fff;
   border-color: #fff;
   color: green;
   box-shadow: none;
   outline: none;
+  border-radius: 0;
 }
 
 .dropdown-toggle::after {
