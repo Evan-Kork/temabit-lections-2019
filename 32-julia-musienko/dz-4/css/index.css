@@ -1,0 +1,35 @@
+table th {
+	width: 76px;
+	height: 32px;
+	font-size: 14px;
+}
+tbody {
+	text-align: center;
+	color: #fff;
+}
+.not-support {
+	background: #c44230;
+}
+.support {
+	background: #39b54a;
+}
+.not-support-unknown {
+	background: #eae1ce;	
+}
+.partial-not-support {
+	background: #a8bd04;
+}
+.list-legend {
+	list-style-type: none;
+	padding-left: 0; 
+}
+
+.list-legend li {
+	display: flex;
+	align-items: center;
+}
+.list-legend li .block {
+	width: 20px;
+	height: 10px;
+	margin-right: 5px;
+}
