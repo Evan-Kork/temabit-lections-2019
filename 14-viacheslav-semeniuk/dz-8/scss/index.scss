@@ -8,9 +8,28 @@
   }
 }
 
+.nav-tabs {
+  .nav-item {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    &:last-of-type {
+      border: none;
+    }
+    &:hover {
+      background-color: #fff;
+      .nav-link {
+        color: green;
+      }
+    }
+    .nav-link {
+      color: #fff;
+      border: none;
+    }
+  }
+}
+
 #myTabContent {
   position: absolute;
   left: 15px;
-  top: 70px;
+  top: 80px;
   background-color: #fff;
 }

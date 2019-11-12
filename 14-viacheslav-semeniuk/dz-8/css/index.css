@@ -8,10 +8,27 @@
   display: block;
 }
 
+.nav-tabs .nav-item {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.nav-tabs .nav-item:last-of-type {
+  border: none;
+}
+.nav-tabs .nav-item:hover {
+  background-color: #fff;
+}
+.nav-tabs .nav-item:hover .nav-link {
+  color: green;
+}
+.nav-tabs .nav-item .nav-link {
+  color: #fff;
+  border: none;
+}
+
 #myTabContent {
   position: absolute;
   left: 15px;
-  top: 70px;
+  top: 80px;
   background-color: #fff;
 }
 

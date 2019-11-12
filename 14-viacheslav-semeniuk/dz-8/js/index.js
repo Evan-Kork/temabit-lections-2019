@@ -5,12 +5,12 @@ $('ul.navbar-nav li.dropdown').hover(function() {
 });
 
 // Tabs
-$('#home-tab').hover(function() {
-  $('#home').addClass( "active show" )
+$('#phone-tab').hover(function() {
+  $('#phone').addClass( "active show" )
 }, function() {
-  $('#home').removeClass( "active show" )
+  $('#phone').removeClass( "active show" )
 });
-$('#home').hover(function() {
+$('#phone').hover(function() {
   $(this).addClass( "active show" )
 }, function() {
   $(this).removeClass( "active show" )
