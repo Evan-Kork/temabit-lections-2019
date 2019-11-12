@@ -3,9 +3,6 @@
         max-width: 920px;
         padding: 0;
     }
-    .content .product {
-        width: 100%;
-    }
     .main aside {
         width: 40%;
     }
@@ -13,11 +10,14 @@
         width: 70%;
     }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .main aside {
         width: 100%;
     }
     .content {
+        width: 100%;
+    }
+    .content .product {
         width: 100%;
     }
     .main {
