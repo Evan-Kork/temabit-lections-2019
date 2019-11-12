@@ -1,252 +1,252 @@
 *{
-    margin: 0 auto;    
+	margin: 0 auto;
 }
 .container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 .title{
-    width: 272px;
-    height: 92px;
-    position: relative;
-    padding: 25px;
+	width: 272px;
+	height: 92px;
+	position: relative;
+	padding: 25px;
 }
 .input-group{
-    position: relative;
-    text-align: center;
+	position: relative;
+	text-align: center;
 }
 .fa-search {
-    position: absolute;
-    left: 20px;
-    top: 25%;
-    color: #cecece;
+	position: absolute;
+	left: 20px;
+	top: 25%;
+	color: #cecece;
 }
 .search input[type="text"]{
-    background-color: transparent;
-    width: 600px;
-    font-size: 16px;
-    padding: 15px 50px;
-    margin-bottom: 20px;
-    border: 1px solid #cecece;
-    border-radius: 25px;
-    cursor: text;
+	background-color: transparent;
+	width: 600px;
+	font-size: 16px;
+	padding: 15px 50px;
+	margin-bottom: 20px;
+	border: 1px solid #cecece;
+	border-radius: 25px;
+	cursor: text;
 }
 .search button[type="submit"]{
-    border: 1px solid #f2f2f2;
-    border-radius: 4px;
-    color: #5F6368;
-    font-family: arial,sans-serif;
-    font-size: 14px;
-    margin: 11px 4px;
-    padding: 0 16px;
-    line-height: 27px;
-    height: 36px;
-    text-align: center;
-    cursor: pointer;
+	border: 1px solid #f2f2f2;
+	border-radius: 4px;
+	color: #5F6368;
+	font-family: arial,sans-serif;
+	font-size: 14px;
+	margin: 11px 4px;
+	padding: 0 16px;
+	line-height: 27px;
+	height: 36px;
+	text-align: center;
+	cursor: pointer;
 }
 .search input[type="text"]:hover,
 .search button[type="submit"]:hover{
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Параметры тени */
+	box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Параметры тени */
 }
 .lang{
-    margin: 25px;
-    font-family: arial,sans-serif;
-    font-size: 12px;
+	margin: 25px;
+	font-family: arial,sans-serif;
+	font-size: 12px;
 }
 
 /* intro  */
 
 .intro{
-    background-color: rgb(92, 49, 131);
-    color: white;
-    padding: 50px;
-    margin-top: 25px;
-    text-align: center;
+	background-color: rgb(92, 49, 131);
+	color: white;
+	padding: 50px;
+	margin-top: 25px;
+	text-align: center;
 }
 .intro-hr{
-    width: 28px;
-    height: 2px;
-    margin: 25px auto;
+	width: 28px;
+	height: 2px;
+	margin: 25px auto;
 }
 .intro hr:before {
-    content: '';
-    height: 100%;
-    width: 28px;
-    display: inline-block;
-    vertical-align: top;
-    background: currentColor;
+	content: '';
+	height: 100%;
+	width: 28px;
+	display: inline-block;
+	vertical-align: top;
+	background: currentColor;
 }
 .intro_title{
-    line-height: 1;
-    text-transform: uppercase;
-    font-family: 'Pangolin', cursive;
-    font-size: 48px;
+	line-height: 1;
+	text-transform: uppercase;
+	font-family: 'Pangolin', cursive;
+	font-size: 48px;
 }
 .fa-graduation-cap{
-    position: absolute;
-    right: 0;
-    padding-right: 50px;
-    margin-top: -50px;
-    color: rgba(0,0,0,0.3);
+	position: absolute;
+	right: 0;
+	padding-right: 50px;
+	margin-top: -50px;
+	color: rgba(0,0,0,0.3);
 }
 .intro-description{
-    font-size: 18px;
+	font-size: 18px;
 }
 .intro-description span{
-    display: inline-block;
-    width: 500px;
+	display: inline-block;
+	width: 500px;
 }  
 .message-block{
-    display: flex;
-    flex-direction: column;
-    height: 200px;
-    margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+	margin-top: 50px;
 }
 .message-block_title{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 24px;
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 24px;
 }
 .message-block_link{
-    color: #fff;
-    background: #ff8522;
-    border-radius: 40px;
-    border: 1px solid transparent;
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    padding: 9px 19px 9px;
-    margin-top: 25px;
-    text-decoration: none;
+	color: #fff;
+	background: #ff8522;
+	border-radius: 40px;
+	border: 1px solid transparent;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 9px 19px 9px;
+	margin-top: 25px;
+	text-decoration: none;
 }
 .message-block a:hover{
-    background: #ff943d;;
-    transition: 0.25s linear;
+	background: #ff943d;;
+	transition: 0.25s linear;
 }
 
 /* blank */
 
 .blank{
-    display: flex;
-    flex-direction: column;
-    height: 900px;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	height: 900px;
+	justify-content: center;
 }
 .blank-title{
-    margin-bottom: 50px;
+	margin-bottom: 50px;
 }
 .form-blank_title, 
 .form-submit_title{
-    margin-left: 50px;
+	margin-left: 50px;
 }
 .input-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    margin: 30px;
-    width: 800px;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	margin: 30px;
+	width: 800px;
 }
 .input-unit{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 .input-unit input:hover{
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .input-unit label{
-    margin: 0;
+	margin: 0;
 }
 .input-unit input[type="text"],
 .input-unit input[type="tel"],
 .input-unit input[type="email"]{
-    width: 350px; 
-    line-height: 27px;
-    position: relative;
-    left: 0;
-    right: 0;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
-    border-radius: 0;
+	width: 350px; 
+	line-height: 27px;
+	position: relative;
+	left: 0;
+	right: 0;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid #9e9e9e;
+	border-radius: 0;
 }
 
 .form-dnd, 
 .form-title{
-    width: 97%;
+	width: 97%;
 }
 
 .form-title .form-btn{
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px dashed #9e9e9e;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 2px dashed #9e9e9e;
 }
 .form-title input[type=file] {
-    position: relative;
-    display: inline-block;
-    height: 100%;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    margin-top: -100px;
-    padding: 0;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0;
+	position: relative;
+	display: inline-block;
+	height: 100%;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	margin-top: -100px;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
 }
 input#link {
-    width: 750px;
-    font-size: 16px;
-    margin: 0 0 8px 0;
-    padding: 0;
+	width: 750px;
+	font-size: 16px;
+	margin: 0 0 8px 0;
+	padding: 0;
 }
 .select-unit{
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 .select-item{
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #9e9e9e;
-    border-radius: 0;
-    width: 230px;
-    height: 30px;
-    font-size: 12px; 
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid #9e9e9e;
+	border-radius: 0;
+	width: 230px;
+	height: 30px;
+	font-size: 12px; 
 }
 .checkbox-unit{
-    margin-left: 50px;
+	margin-left: 50px;
 }
 .submit-unit{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 .submit-btn{
-    background-color: #4CAF50; 
-    border: none;
-    border-radius: 25px;
-    color: white;
-    padding: 12px 42px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 30px 0 10px;
+	background-color: #4CAF50; 
+	border: none;
+	border-radius: 25px;
+	color: white;
+	padding: 12px 42px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 30px 0 10px;
 }
 .submit-btn:hover{
-    background: #11b82a;;
-    transition: 0.1s linear;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	background: #11b82a;;
+	transition: 0.1s linear;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .submit-unit_description{
-    text-align: center;
-    color: #9e9e9e;
-    font-size: 14px; 
-    height: 25px;
+	text-align: center;
+	color: #9e9e9e;
+	font-size: 14px; 
+	height: 25px;
 }
