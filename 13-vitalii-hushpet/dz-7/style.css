@@ -1,74 +1,73 @@
 body{
 	margin: 0;
 }
-.contaiter{
-	overflow:  hidden;
-	margin: 1 auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: stretch;
-	text-align: center;
-}
-.main{
-
-	flex: 1 1 auto;
-	margin: 0 auto;
+.box{
 	display: flex;
 	flex-direction: row;
-	width: 100%;
+	width: 100%;	
 	height: 100%;
+	flex-wrap: wrap;
 }
 .menu{
 	display: flex;
 	flex-direction: column;
-	background-color: #030406;
+	align-items: center;
+	width: 20%;
+	background-color: #808080;
+}
+.menutext{
+	margin:  50px 0 70px 0;
+}
+.menulink{
 	color: #FFFFFF;
-	flex: 0.5;
+	text-decoration:none;
+	margin-top: 10px;
 }
-input{
-	display: none;
-}
-label{
-	background-color: black;
-	display: none;
+.aside{
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	padding-left: 60px;
 }
 footer{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	background-color:#FFE009; 	
+	border-top: 3px solid black;
+	display: flex;	
+	justify-content: center;
+	width: 100%;
+}
+.footerh{
+	margin-left: 5%;
+}
+#check{
+	display: none;
+}
+.hide-menu{
+	position: fixed;
+	display: none;
+	justify-content: center;
+	background-color: #808080;
+	width: 10%;
 	height: 100%;
 }
-.btn{
-	width: 35px;
-	height: 5px;
-	background-color:#FFFFFF ;
-	margin: 6px 0;
+.hide-menu img{
+	height: auto;
 }
-.asite{
-	display: flex;
-	flex: auto;
-	background-color: #CDFFFE;
-	flex-direction: column;
-}
-
-@media only screen and (max-width: 768px){
-	label{
-		display: block;
+@media only screen and (max-width: 630px){
+	.aside{
+		width: 90%;
 	}
 	.menu{
 		display: none;
+		width: 100%;
+		height: 640px;		
 	}
-	.asite{
+	.hide-menu{
 		display: flex;
-	}
-	#check:checked ~ .asite{
-		display: none;
 	}
 	#check:checked ~ .menu{
 		display: flex;
-		flex:auto;	
 	}
-
+	#check:checked ~ .aside{
+		display: none;	
+	}
 }
