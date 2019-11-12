@@ -1,0 +1,112 @@
+@import "bootstrap.css";
+
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+.top-links{
+    display: flex;
+    justify-content: space-around;
+    background-color: #98c93c;
+}
+.top-links a{
+    color: #000;
+    font-size: 12px;
+}
+.top-links-menu{
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    height: 10px;
+}
+.top-links-menu li{
+    padding-left: 80px;
+}
+.top-links-menu li:first-child{
+    padding-left: 0px;
+}
+.row-class{
+    width: 1140px;
+    margin: 0 auto;
+}
+.top-main-bar{
+    background-color: #262724;
+    color: white;
+}
+.top-main-bar-logo a{
+    position: relative;
+    top: 10px;
+}
+.top-main-bar-search-input{
+    background-color: #424242;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    width: 100%;
+    background: url("../img/search_gray.svg") no-repeat 10px 7px;
+    padding:4px 15px 4px 33px;
+    margin-top: 5px;
+    position: relative;
+    top: 10px;
+    left: 40px;
+}
+.top-main-bar-search-input:focus{
+    outline: none;
+    background-color: #fff;
+    color: #000;
+}
+.top-main-bar-menu{
+    display: flex;
+    justify-content: space-around;
+}
+.top-main-bar-menu ul{
+    list-style: none;
+    display: flex;
+}
+.top-main-bar-menu ul li a{
+    padding: 12px 19px 18px 19px;
+    border-left: 1px solid #fff;
+    border-collapse: collapse;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+.top-main-bar-menu ul li a:hover{
+    color: #000;
+    background-color: #fff;
+}
+.stock{
+    border-right: 1px solid #fff;
+    background-color: #ff0000;
+}
+.top-main-bar-tel{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -65px;
+    left: -60px;
+    font-size: 18px;
+}
+.top-main-bar-tel span{
+    font-weight: 500;
+}
+.top-main-bar-tel i{
+    position: absolute;
+    left: -25px;
+    top: 20px;
+}
+.cart-button{
+    color: #fff;
+    padding: 5px 28px;
+    background-color: #f6851f;
+    position: relative;
+    top: 10px;
+    left: -5px;
+}
+.top-main-bar-cart a i{
+    position: relative;
+    top: 0px;
+    left: -12px;
+}
+.top-main-bar-cart a:hover{
+    background-color: #f6851f;
+}
