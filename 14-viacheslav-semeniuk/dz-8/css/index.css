@@ -128,4 +128,20 @@
   background-repeat: no-repeat;
 }
 
+.available-stocks-container .stocks .stocks-item .btn-primary {
+  position: relative;
+  top: 10rem;
+  left: 4rem;
+  background-color: #722b6f;
+  border-color: #722b6f;
+  color: #fff;
+  padding: 3px 20px;
+  border-radius: 100px;
+}
+.available-stocks-container .stocks .stocks-item .btn-primary:hover {
+  color: #000;
+  background-color: #fff;
+  border-color: #fff;
+}
+
 /*# sourceMappingURL=index.css.map */
