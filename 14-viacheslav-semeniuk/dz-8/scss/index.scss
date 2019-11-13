@@ -339,9 +339,17 @@
 .pros-container {
   .pros-wrapper {
     .pros-item {
-      img {
+      cursor: pointer;
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+        p {
+          color: #98c93c;
+        }
       }
-      p {
+      img {
+        transition: all ease 0.3s;
       }
     }
   }

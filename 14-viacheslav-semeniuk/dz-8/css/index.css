@@ -307,4 +307,17 @@
   transition: 0.3s;
 }
 
+.pros-container .pros-wrapper .pros-item {
+  cursor: pointer;
+}
+.pros-container .pros-wrapper .pros-item:hover img {
+  transform: scale(1.1);
+}
+.pros-container .pros-wrapper .pros-item:hover p {
+  color: #98c93c;
+}
+.pros-container .pros-wrapper .pros-item img {
+  transition: all ease 0.3s;
+}
+
 /*# sourceMappingURL=index.css.map */
