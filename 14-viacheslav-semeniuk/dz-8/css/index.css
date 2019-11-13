@@ -91,4 +91,33 @@
   left: -29.7rem;
 }
 
+.phone {
+  color: #fff;
+}
+.phone .icon {
+  width: 19px;
+  vertical-align: middle;
+  margin-right: 5px;
+  display: inline-block;
+}
+.phone .icon img {
+  max-width: 100%;
+}
+
+#basket-button {
+  color: #fff;
+}
+
+.carousel-inner .carousel-item img {
+  max-height: 450px;
+}
+
+.brands-container .brands-images {
+  display: flex;
+  justify-content: center;
+}
+.brands-container .brands-images img {
+  width: 65px;
+}
+
 /*# sourceMappingURL=index.css.map */

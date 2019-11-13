@@ -90,3 +90,37 @@
   min-width: 37rem;
   left: -29.7rem;
 }
+
+.phone {
+  color: #fff;
+  .icon {
+    width: 19px;
+    vertical-align: middle;
+    margin-right: 5px;
+    display: inline-block;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+#basket-button {
+  color: #fff;
+}
+.carousel-inner {
+  .carousel-item {
+    img {
+      max-height: 450px;
+    }
+  }
+}
+
+.brands-container {
+  .brands-images {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 65px;
+    }
+  }
+}
