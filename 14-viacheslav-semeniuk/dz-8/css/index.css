@@ -59,7 +59,7 @@
   border-radius: 0;
 }
 
-.dropdown-toggle::after {
+.second-dd-button::after {
   content: none;
 }
 
@@ -150,6 +150,7 @@
 
 .offers-container {
   background-color: #e8eded;
+  padding: 1.5em 0 6em;
 }
 .offers-container .offers-wrapper .offers-item {
   background-color: #fff;
@@ -228,6 +229,82 @@
 }
 .offers-container .offers-wrapper .offers-item .infobox .button_more {
   padding: 5px;
+}
+
+.arrivals-container {
+  background-color: #f5f7f7;
+  padding: 4em 0 6em;
+}
+.arrivals-container .arrivals-wrapper .arrivals-item {
+  background-color: #fff;
+  max-width: 49%;
+}
+.arrivals-container .arrivals-wrapper .arrivals-item .image-wrapper a:hover img {
+  transform: scale(1.1);
+}
+.arrivals-container .arrivals-wrapper .arrivals-item .image-wrapper a img {
+  max-width: 200px;
+  max-height: 300px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.arrivals-container .arrivals-wrapper .arrivals-item .description-wrapper a {
+  color: #000;
+  text-decoration: none;
+}
+.arrivals-container .arrivals-wrapper .arrivals-item .description-wrapper a:hover {
+  color: #98c93c;
+}
+.arrivals-container .arrivals-wrapper .arrivals-item .description-wrapper button {
+  border: 2px solid #98c93c;
+  border-radius: 0;
+  color: #fff;
+  background-color: #98c93c;
+}
+.arrivals-container .arrivals-wrapper .arrivals-item .description-wrapper button:hover {
+  background-color: #a6d941;
+  border-color: #a6d941;
+}
+
+.available-container {
+  background-color: #e8eded;
+}
+.available-container a {
+  color: #000;
+  text-decoration: none;
+}
+.available-container a:hover {
+  color: #98c93c;
+}
+.available-container a:hover img {
+  transform: scale(1.1);
+}
+.available-container .available-wrapper .available-left .available-item {
+  max-height: 200px;
+  max-width: 49%;
+  background-color: #fff;
+}
+.available-container .available-wrapper .available-left .available-item .image-wrapper {
+  height: 120px;
+}
+.available-container .available-wrapper .available-left .available-item .image-wrapper a img {
+  height: 120px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.available-container .available-wrapper .available-right {
+  background-color: #fff;
+}
+.available-container .available-wrapper .available-right .image-wrapper {
+  height: 260px;
+}
+.available-container .available-wrapper .available-right .image-wrapper a img {
+  height: 260px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 /*# sourceMappingURL=index.css.map */
