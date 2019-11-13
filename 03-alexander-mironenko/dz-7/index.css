@@ -31,6 +31,9 @@ html, body {
 	display: none;
 	cursor: pointer;
 }
+p{
+	margin: 5px;
+}
 h2 {
 	display: flex;
 	justify-content: center;
@@ -59,16 +62,17 @@ li a {
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
+
 }
 .main_text {
-	width: 75%;
+	width: 90%;
 	height: 80%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
 	text-transform: uppercase;
 	margin-left: 40px;
 	color: #515151;
+	overflow: auto;
 }
 .footer {
 	width: 100%;
@@ -86,14 +90,15 @@ li a {
 }
 @media (max-width: 768px) {
 	.sidebar {
-		min-width: 0;
+		height: 100%;
+        min-width: 0;
 		width: 50px;
 	}
 	.sidebar_checkbox:checked ~ .sidebar {
-		width: 275px;
+		width: 100%;
 	}
 	h2, ul,
-	.sidebar_checkbox:checked ~ .sidebar__menu {
+	.sidebar_checkbox:checked ~ .main {
 		display: none;
 	}
 	.sidebar_checkbox:checked ~ .sidebar h2,
