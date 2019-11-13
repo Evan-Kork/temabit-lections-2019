@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'DINCyr';
+    src: url('DINCyr-Black.eot');
+    src: url('DINCyr-Black.eot?#iefix') format('embedded-opentype'),
+        url('DINCyr-Black.woff2') format('woff2'),
+        url('DINCyr-Black.woff') format('woff'),
+        url('DINCyr-Black.ttf') format('truetype'),
+        url('DINCyr-Black.svg#DINCyr-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINCyr';
+    src: url('DINCyr-Medium.eot');
+    src: url('DINCyr-Medium.eot?#iefix') format('embedded-opentype'),
+        url('DINCyr-Medium.woff2') format('woff2'),
+        url('DINCyr-Medium.woff') format('woff'),
+        url('DINCyr-Medium.ttf') format('truetype'),
+        url('DINCyr-Medium.svg#DINCyr-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINCyr';
+    src: url('DINCyr-Bold.eot');
+    src: url('DINCyr-Bold.eot?#iefix') format('embedded-opentype'),
+        url('DINCyr-Bold.woff2') format('woff2'),
+        url('DINCyr-Bold.woff') format('woff'),
+        url('DINCyr-Bold.ttf') format('truetype'),
+        url('DINCyr-Bold.svg#DINCyr-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINCyr';
+    src: url('DINCyr-Light.eot');
+    src: url('DINCyr-Light.eot?#iefix') format('embedded-opentype'),
+        url('DINCyr-Light.woff2') format('woff2'),
+        url('DINCyr-Light.woff') format('woff'),
+        url('DINCyr-Light.ttf') format('truetype'),
+        url('DINCyr-Light.svg#DINCyr-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+

@@ -1,0 +1,104 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    position: relative;
+    // font-family: $proximaR;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    // color: $black;
+}
+// .hidden{
+//     overflow: hidden;
+// }
+main{
+    flex: 1 1;
+    padding-bottom: 32px;
+}
+
+.site-global-wrapper{
+    // max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: auto;
+    position: relative;
+    // overflow: hidden;
+
+}
+h1,h2,h3,h4,h5{
+    // font-family: $proximaB;
+    font-weight: normal;
+    font-style: normal;
+}
+a,span{
+    //color:$black;
+    &:hover,
+    &:active,
+    &:focus{
+        //color:$black;
+        // text-decoration: none;
+    }
+}
+section{
+    position: relative;
+    z-index: 1;
+}
+.bg-section{
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.line{
+    display: flex;
+}
+.line-reverse{
+    flex-direction: row-reverse;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    // font-family: $proximaB;
+    // font-weight: normal;
+    // font-style: normal;
+}
+.description{
+    // font-size: 16px;
+    // font-family: $proximaR;
+    // color: $black;
+    // line-height: normal;     
+}
+button{
+    cursor: pointer;
+}
+.btn{
+    display: block;
+    cursor: pointer;
+} 
+// .btn-red-dark{
+//     background-color: $red-dark;
+//     text-align: center;
+//     color: $white;
+//     text-transform: uppercase;
+//     font-family: $proximaB;
+//     font-size: 14px;
+//     transition: $transition_normal;
+//     &:hover{
+//         text-decoration: none;
+//         color: $white;
+//         background-color: lighten($red-dark, 10%);
+//     }
+// }
