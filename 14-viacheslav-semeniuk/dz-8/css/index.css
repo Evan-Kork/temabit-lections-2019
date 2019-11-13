@@ -120,4 +120,12 @@
   width: 65px;
 }
 
+.available-stocks-container .stocks .stocks-item {
+  width: 265px;
+  height: 220px;
+  background-image: url(https://ringoo.ua/wp-content/uploads/2019/04/Site_265h220_24.04.2019.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /*# sourceMappingURL=index.css.map */
