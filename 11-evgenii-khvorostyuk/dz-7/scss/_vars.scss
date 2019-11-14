@@ -1,0 +1,17 @@
+$c--black: #000000;
+$c--grey: grey;
+$c--white: #ffffff;
+
+$transition: all 0.3s ease-in-out;
+
+@mixin for-tablet {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin for-smaller-tablet {
+  @media (max-width: 720px) {
+    @content;
+  }
+}
