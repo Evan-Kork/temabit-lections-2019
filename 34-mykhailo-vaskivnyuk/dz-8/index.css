@@ -50,4 +50,24 @@ html, body {
   min-height: 50px;
 }
 
+.main .carousel .col {
+  padding: 0;
+}
+.main .brands img {
+  margin: auto 5px;
+  width: 66px;
+}
+.main .brands .row:first-child .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .brands .col {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  overflow-x: auto;
+  padding: 10px 10px;
+}
+
 /*# sourceMappingURL=index.css.map */

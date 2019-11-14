@@ -12,6 +12,12 @@ $color_product_colors_blue: #0000ff;
 $color_light: #fff;
 $color_dark: #000;
 
+// mixins
+@mixin aling_center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 // fonts
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
@@ -64,11 +70,9 @@ html, body {
 // structure
 
 .header {
-
 	.top_menu {
 		background-color: $color_ringoo;
 	}
-
 	.ringoo {
 		background-color: $color_ringoo_bg;
 		color: $color_ringoo;
@@ -79,13 +83,26 @@ html, body {
 }
 
 .main {
-
 	.carousel {
-
+		.col {
+			padding: 0;
+		}
 	}
-
 	.brands {
-
+		img {
+			margin: auto 5px;
+			width: 66px;
+		}
+		.row:first-child .col {
+			@include aling_center;
+		}
+		.col {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			overflow-x: auto;
+			padding: 10px 10px;
+		}
 	}
 
 	.promos {
