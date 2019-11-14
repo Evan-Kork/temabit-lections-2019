@@ -110,3 +110,211 @@
 .top-main-bar-cart a:hover{
     background-color: #f6851f;
 }
+.main-slide-container{
+    background-color: #f5f7f7;
+}
+.popular-brands h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+.brands{
+    display: flex;
+    justify-content: space-between;
+}
+.brands img{
+    width: 60px;
+}
+.brand-samsung{
+    width: 60px;
+    height: 55px;
+    background: url("../img/brand1.png");
+    background-size: 100%;
+    transition: all 1.0s;
+}
+.brand-samsung:hover{
+    background-image: url("../img/brand1-hover.png");
+    background-size: 100%;
+}
+.brand-mi{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand6.png");
+    background-size: 100%;
+    transition: all 1.0s;
+}
+.brand-mi:hover{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand6-hover.png");
+    background-size: 100%;
+}
+.brand-apple{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand2.png");
+    background-size: 100%;
+}
+.brand-sony{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand3.png");
+    background-size: 100%;
+}
+.brand-tplink-neffos{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand4.png");
+    background-size: 100%;
+    transition: all 1.0s;
+}
+.brand-tplink-neffos:hover{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand4-hover.png");
+    background-size: 100%;
+}
+.brand-cresyn{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand5.png");
+    background-size: 100%;
+    transition: all 1.0s;
+}
+.brand-cresyn:hover{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand5-hover.png");
+    background-size: 100%;
+}
+.brand-mi{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand6.png");
+    background-size: 100%;
+}
+.brand-mi:hover{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand6-hover.png");
+    background-size: 100%;
+}
+.brand-koss{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand7.png");
+    background-size: 100%;
+}
+.brand-ergo{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand8.png");
+    background-size: 100%;
+    transition: all 1.0s;
+}
+.brand-ergo:hover{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand8-hover.png");
+    background-size: 100%;
+}
+.brand-panasonic{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand9.png");
+    background-size: 100%;
+}
+.brand-huawei{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand11.png");
+    background-size: 100%;
+    transition: all 1.0s;
+}
+.brand-huawei:hover{
+    width: 60px;
+    height: 50px;
+    background: url("../img/brand11-hover.png");
+    background-size: 100%;
+}
+.actualy-stock{
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+.actualy-stock h1{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.stocks{
+    display: flex;
+    justify-content: space-evenly;
+}
+.stock-one{
+    width: 265px;
+    height: 220px;
+    background-image: url("../img/stock-bg-1.png");
+}
+.stock-one a{
+    padding: 6px 20px;
+    background-color: #722b6f;
+    border: 2px solid #722b6f;
+    border-radius: 100px;
+    position: relative;
+    top: 160px;
+    left: 50px;
+    text-transform: uppercase;
+    font-size: 11.5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+}
+.stock-one a:hover{
+    text-decoration: none;
+    border-color: #fff;
+}
+.stock-two{
+    width: 265px;
+    height: 220px;
+    background-image: url("../img/stock-bg-2.png");
+}
+.stock-two a{
+    padding: 6px 20px;
+    background-color: #722b6f;
+    border: 2px solid #722b6f;
+    border-radius: 100px;
+    position: relative;
+    top: 160px;
+    left: 50px;
+    text-transform: uppercase;
+    font-size: 11.5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+}
+.stock-two a:hover{
+    text-decoration: none;
+    border-color: #fff;
+}
+.stock-three{
+    width: 265px;
+    height: 220px;
+    background-image: url("../img/stock-bg-3.png");
+}
+.stock-three a{
+    padding: 6px 20px;
+    background-color: #722b6f;
+    border: 2px solid #722b6f;
+    border-radius: 100px;
+    position: relative;
+    top: 160px;
+    left: 60px;
+    text-transform: uppercase;
+    font-size: 11.5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+}
+.stock-three a:hover{
+    text-decoration: none;
+    border-color: #fff;
+}
