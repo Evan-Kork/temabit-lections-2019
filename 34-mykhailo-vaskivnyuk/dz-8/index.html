@@ -30,17 +30,15 @@
 				<div class = "container ringoo">
 					<div class = "row t_bdr_a t_font">
 						<div class = "col t_bdr_b t_aln">
-							<img src="images/icons/logo.svg" alt="ringoo logo">
+							<img src="images/icons/logo.svg" alt="ringoo logo" style = "width: 75%;">
 						</div>
-						<div class = "col-6 t_bdr_b t_aln">
-							<div class = "container">
-								<div class = "row t_bdr_a t_font">
+						<div class = "col-6 t_bdr_b">
+							<div class = "row t_bdr_a t_font">
 									<div class = "col t_bdr_b t_aln">search</div>
-								</div>
-								<div class = "row t_bdr_a t_font">
-									<div class = "col t_bdr_b t_aln">menu</div>
-								</div>
 							</div>
+							<div class = "row t_bdr_a t_font">
+									<div class = "col t_bdr_b t_aln">menu</div>
+							</div>							
 						</div>
 						<div class = "col t_bdr_b t_aln">tels cart</div>
 					</div>
@@ -53,9 +51,29 @@
 			</header>
 	<!-- CONTENT -->
 			<main class = "main">			
-				<div class = "container slider">
+				<div class = "container carousel">
 					<div class = "row t_bdr_a t_font">
-						<div class = "col t_bdr_b t_aln">slider</div>
+						<div class = "col t_bdr_b">
+		<!-- carousel -->
+							<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  								<div class="carousel-inner">
+    								<div class="carousel-item active"
+    									data-interval="5000">
+        								<img src="https://ringoo.ua/wp-content/uploads/2019/07/1440x450_Ringoo.png" class="d-block w-100" alt="Justin">
+    								</div>
+    								<div class="carousel-item"
+    									data-interval="5000"
+    									data-slide-t0 = "1">
+      									<img src="https://ringoo.ua/wp-content/uploads/2019/11/4-11-1440-h-450.png" class="d-block w-100" alt="Major III Bluetooth">
+    								</div>
+    								<div class="carousel-item"
+    									data-interval="5000">
+      									<img src="https://ringoo.ua/wp-content/uploads/2019/09/Site_Utsenka_1440x450_16.09.2019.png" class="d-block w-100" alt="Уцінені смартфони">
+    								</div>
+  								</div>
+							</div>
+		<!-- /carousel -->										
+						</div>
 					</div>
 				</div>
 				<div class = "container t_bdr_a t_font t_aln">
@@ -124,7 +142,7 @@ start
 ----------------------------
 4. create elements
 - menu
-- slider
+- carousel
 - item
 - slider with videos
 - form email subscription
@@ -145,7 +163,7 @@ end
 	 logo search menu tels cart   | +  |    |    ||    |    |    |
 [ 3] navigation line top          |    |    |    || +  |    |    |
 	<main>
-[ 3] slider                       | +  |    |    ||    |    |    |
+[ 3] carousel                     | +  |    |    ||    |    |    |
 [ 4] brands                       | +  |    |    ||    |    |    |
 [ 5] promos                       | +  |    |    ||    |    |    |
 [ 6] hot offering                 | +  |    |    ||    |    |    |

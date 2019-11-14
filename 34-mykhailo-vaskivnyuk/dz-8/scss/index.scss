@@ -12,6 +12,7 @@ $color_product_colors_blue: #0000ff;
 $color_light: #fff;
 $color_dark: #000;
 
+
 // fonts
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
 
@@ -34,6 +35,11 @@ $color_dark: #000;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.carousel-item {
+	transition: transform 2s ease, opacity .5s ease-out;
+	transition-delay: 3s;
 }
 
 // reset
@@ -74,7 +80,7 @@ html, body {
 
 .main {
 
-	.slider {
+	.carousel {
 
 	}
 
