@@ -1,0 +1,143 @@
+/* Color */
+.color-green {
+  color: $green;
+}
+
+.color-green {
+  color: $green;
+}
+
+.color-greenLight {
+  color: $green-light;
+}
+
+.color-white {
+  color: $white;
+}
+
+.color-grayWhite {
+  color: $gray-white;
+}
+
+.hover-colorGreen {
+  &:hover {
+    color: $green;
+  }
+}
+
+.hover-colorBlack {
+  &:hover {
+    color: $black;
+  }
+}
+
+.bg-reed {
+  background-color: red;
+}
+
+.bg-gray {
+  background-color: $gray;
+}
+
+.bg-grayBlond {
+  background-color: $gray-blond;
+}
+
+.bg-grayLimd {
+  background-color: $gray-limpid;
+}
+
+.bg-grayWhite {
+  background-color: $gray-white;
+}
+
+.bg-black {
+  background-color: $black;
+}
+
+.bg-blackLight {
+  background-color: $black-light;
+}
+
+.bg-green {
+  background-color: $green;
+}
+
+.bg-greenLight {
+  background-color: $green-light;
+}
+
+.bg-orange {
+  background-color: $orange;
+}
+
+.bg-redLight {
+  background-color: $red-light;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.hover-bgTransparent {
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.hover-bgWhite {
+  &:hover {
+    background-color: $white;
+  }
+}
+
+.border-grayBlond {
+  border: 3px solid $gray-blond;
+}
+
+.border-green {
+  border: 3px solid $green;
+}
+
+.border-grayWhite {
+  border: 1px solid $gray-white;
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
+.borderBottom-green {
+  border-bottom: 3px solid $green;
+}
+
+.border-radius-25 {
+  border-radius: 25px;
+}
+
+.border-radius-100 {
+  border-radius: 100%;
+}
+
+.list-style-color {
+  list-style: none;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    background-color: $green;
+
+    width: 6.5px;
+    height: 6.5px;
+
+    border-radius: 100%;
+
+    position: absolute;
+
+    top: 50%;
+    left: -1.1rem;
+
+    transform: translateY(-50%);
+  }
+}

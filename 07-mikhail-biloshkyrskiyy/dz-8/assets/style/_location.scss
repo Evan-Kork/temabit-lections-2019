@@ -1,0 +1,49 @@
+/* Location */
+#location {
+    cursor: pointer;
+    position: relative;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  
+    &::after {
+      content: "";
+      
+      display: block;
+      width: 10px;
+      height: 10px;
+  
+      border-top: 3px solid $green;
+      border-right: 3px solid $green;
+  
+      position: absolute;
+      top: 50%;
+      right: -20px;
+  
+      transform: translateY(-50%) rotate(135deg);
+    }
+  
+    &.active {
+      &::after{
+        transform: translateY(-50%) rotate(-45deg)!important;
+      }
+    }
+  }
+  
+#locotionItems {
+    width: 600px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+  
+
+    border: 2px solid $gray-limpid;
+    border-radius: 7.5px;
+  
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    z-index: 900;
+  
+    transform: translateX(-50%);
+}

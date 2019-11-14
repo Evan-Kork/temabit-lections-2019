@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ringoo</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Hind+Madurai|Roboto+Condensed:400,700&display=swap&subset=cyrillic"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/cc500639f4.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- User Style -->
+    <link rel="stylesheet" href="assets/style/main.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="bg-black py-3">
+            <div class="container d-flex justify-content-between align-items-center flex-wrap">
+                <div class="h1 text-uppercase">
+                    <span class="color-white font-weight-bold">BLACK</span>
+                    <span class="color-green font-weight-bold">FRIDAY</span></div>
+                <div class="stripe__text mx-4 d-none d-lg-flex align-items-center">
+                    <div class="d-flex text-uppercase">
+                        <div class="h1 color-green font-weight-bold">4</div>
+                        <div class="h4 color-green font-weight-bold rotate-v ml-2">днi</div>
+                    </div>
+                    <div class="text-uppercase">
+                        <div class="h3 color-white font-weight-bold mb-0">тільки у ringoo</div>
+                        <div class="h5 color-white font-weight-bold">з 28.11 по 01.12.2019
+                            <span class="text-lowercase">р</span>
+                        </div>
+                    </div>
+                    <div class="h1 mx-2 font-weight-bold text-uppercase">
+                        <span class="h3 color-white font-weight-bold">до</span>
+                        <span class="color-white">70%</span>
+                    </div>
+                </div>
+                <button type="button"
+                    class="bg-green border-transparent py-2 px-4 color-white h4 border-radius-25">Дізнатись</button>
+            </div><!-- ./container -->
+        </div><!-- ./stripe -->
+
+        <div class="bg-greenLight">
+            <div class="container-fluid">
+                <div class="d-flex flex-wrap">
+                    <div class="mr-4">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle after-none color-white hover-colorBlack" href="#" role="button"
+                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Графік роботи
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-100 d-block d-md-none"></div>
+                    <div class="mr-4">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle after-none color-white hover-colorBlack" href="#" role="button"
+                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Магазин
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-100 d-block d-md-none"></div>
+                    <div class="mr-4">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle color-white hover-colorBlack" href="#" role="button"
+                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Допомога
+                            </a>
+
+                            <div class="dropdown-menu m-0 p-0" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Доставка</a>
+                                <a class="dropdown-item" href="#">Оплата</a>
+                                <a class="dropdown-item" href="#">На виплат та кредити</a>
+                                <a class="dropdown-item" href="#">Гарантія</a>
+                                <a class="dropdown-item" href="#">Адреси сервісних центрів</a>
+                                <a class="dropdown-item" href="#">Як скористатись промокодом</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 d-block d-md-none"></div>
+                    <div class="mr-4">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle after-none color-white hover-colorBlack" href="#" role="button"
+                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Корпоративний сайт
+                            </a>
+                        </div>
+                    </div>
+                </div><!-- ./menu__items -->
+            </div><!-- ./container-fluid -->
+        </div><!-- ./menu -->
+
+        <div class="bg-blackLight">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-0 d-none col-lg-2 d-lg-block">
+                        <img src="https://ringoo.ua/wp-content/themes/ringoo/img/logo.svg" class="mt-3 max-width-500"
+                            alt="Logo">
+                    </div><!-- ./col-2 -->
+                    <div class="col-12 col-lg-8 d-flex align-items-end justify-content-lg-center">
+                        <nav class="navbar pb-lg-0 navbar-expand-lg">
+                            <button onclick="handlerAddToggleActive()" class="navbar-toggler" type="button"
+                                data-toggle="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon position-relative">
+                                    <div class="burger"></div>
+                                </span>
+                            </button>
+
+                            <div class="collapse navbar-collapse d-lg-flex flex-lg-column-reverse"
+                                id="navbarSupportedContent">
+
+                                <ul class="navbar-nav">
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle after-none d-block px-4 py-3 hover-bgWhite color-white hover-colorGreen"
+                                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            Телефони
+                                        </a>
+                                        <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle after-none d-block px-4 py-3 hover-bgWhite color-white hover-colorGreen"
+                                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            Телефони
+                                        </a>
+                                        <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle after-none d-block px-4 py-3 hover-bgWhite color-white hover-colorGreen"
+                                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            Телефони
+                                        </a>
+                                        <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle after-none d-block px-4 py-3 hover-bgWhite color-white hover-colorGreen"
+                                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            Телефони
+                                        </a>
+                                        <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle after-none d-block px-4 py-3 bg-reed hover-bgWhite color-white hover-colorGreen"
+                                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            Телефони
+                                        </a>
+                                        <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </li>
+
+                                    <div class="mb-4 d-block d-lg-none"></div>
+                                </ul>
+
+                                <form class="max-width-500 w-100" method="POST" action="#">
+                                    <div class="form-group mb-2 position-relative w-100">
+                                        <i class="fas fa-search position-absolute t-50 l-1rem"></i>
+                                        <input
+                                            class="form-control border-radius-25 bg-gray border-transparent hover-colorWhite hover-bgWhite pl-5"
+                                            type="search" placeholder="Пошук" aria-label="Search">
+                                    </div>
+                                </form>
+
+                            </div>
+                        </nav><!-- ./navbar -->
+                    </div><!-- ./col-8 -->
+                    <div class="col-0 d-none d-lg-flex col-lg-2 justify-content-end align-items-center">
+                        <div>
+                            <div class="color-white text-right"><i class="fas fa-phone-alt i-border"></i>(097) 090-87-07
+                            </div>
+                            <div class="color-white text-right">(073) 090-87-07</div>
+                            <div class="my-1"></div>
+                            <a href="#" class="bg-orange py-2 px-2 
+                                        color-white
+                                        hover-colorGreen
+                                        text-decoration-none
+                                        d-flex align-items-center 
+                                        justify-content-center">
+                                <i class="fas fa-cart-arrow-down"></i>
+                                <div class="mx-2 text-uppercase">кошик</div>
+                            </a>
+                        </div>
+                    </div><!-- ./col-2 -->
+                </div><!-- ./row -->
+            </div><!-- ./container-fluid -->
+        </div>
+    </header><!-- ./header -->
+
+    <main class="content">
+        <div class="container-fluid">
+            <div class="h6 py-1 my-2">
+                <a href="index.html" class="color-green text-decoration-none hover-colorBlack">
+                    Повернутися до index
+                </a>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-4 order-2 order-md-1">
+                    <img class="mw-100"
+                        src="https://ringoo.ua/wp-content/uploads/2019/08/tp_link_neffos_x20_pro_green_images_13418125970.jpg"
+                        alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
+                    <div class="circkles justify-content-center my-2">
+                        <div class="circkle__item">
+                            <div class="circkle__border">
+                                <div class="circkle bg-green"></div>
+                            </div>
+                        </div>
+                        <div class="circkle__item">
+                            <div class="circkle__border">
+                                <div class="circkle bg-black"></div>
+                            </div>
+                        </div>
+                        <div class="circkle__item">
+                            <div class="circkle__border">
+                                <div class="circkle bg-orange"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="w-50" />
+                    <div class="h5 text-dark text-center font-weight-bold mb-4">Підпишись на наші сторінки</div>
+                    <div class="d-flex justify-content-center">
+                        <i class="mx-2 h2 fab fa-facebook text-primary"></i>
+                        <i class="mx-2 h2 fab fa-instagram"></i>
+                        <i class="mx-2 h2 fab fa-youtube text-danger"></i>
+                    </div>
+                </div><!-- ./col -->
+                <div class="col-12 col-md-4 order-1 order-md-2">
+                    <div class="h2 font-weight-bold">
+                        Neffos X20 Pro 3/64GB Green (TP9131AA7UA)
+                    </div>
+                    <div class="font-weight-bold my-2">Код товару: G6515780</div>
+                    <ul class="product__feature">
+                        <li class="list-style-color">Роздільна здатність основної камери, Мп: 13</li>
+                        <li class="list-style-color">Діагональ екрану, дюйм: 6,26</li>
+                        <li class="list-style-color">Ємність акумулятора, мА·г: 4100</li>
+                        <li class="list-style-color">Об'єм оперативної пам'яті, ГБ: 3 Gb</li>
+                        <li class="list-style-color">Об'єм вбудованої пам'яті, ГБ: 64 Gb</li>
+                    </ul>
+                    <hr />
+                    <hr />
+                    <div class="d-flex w-75 m-auto align-items-center justify-content-center">
+                        <i class="mx-2 h2 far fa-credit-card"></i>
+                        <div class="text-center font-weight-bold">ЯК ОПЛАТИТИ ЧИ<br /> ПОВЕРНУТИ ТОВАР</div>
+                    </div>
+                    <hr />
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="mx-2 h2 far fa-credit-card"></i>
+                        <div class="methodPrice__text">
+                            Оплата готівкою, Картою через LiqPay, Безготівковий розрахунок, Кредит, Оплата
+                            частинами.
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="mx-2 h2 far fa-credit-card"></i>
+                        <div class="methodPrice__text">
+                            Обмін та повернення здійснюється протягом 14 днів після покупки, відповідно до
+                            закону
+                            України"Про захист прав споживачів України"
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 order-3 order-md-3">
+                    <div class="my-4 text-right">
+                        <i class="fas fa-balance-scale-right mr-3"></i>
+                        <a href="#" class="font-weight-bold color-green hover-colorBlack text-decoration-none">Додати до
+                            порівняння</a>
+                    </div>
+                    <div class="mb-4 p-4 border-grayWhite">
+                        <div class="mt-2 mb-4 border-grayWhite"></div>
+                        <div class="h2 font-weight-bold color-green text-center mb-2">3699 грн</div>
+                        <button
+                            class="h3 d-block m-auto height-50 w-75 text-uppercase bg-green border-transparent color-white">Купить</button>
+                        <div class="my-2"></div>
+                        <button class="h5 d-block m-auto height-50 w-75 bg-orange border-transparent color-white mb-0">
+                            Купити в один клiк
+                        </button>
+                    </div>
+                    <div>
+                        <div class="h4">Доставка</div>
+                        <hr />
+                        <div class="my-2 d-flex align-items-center">
+                            <img class="d-block" src="https://ringoo.ua/wp-content/uploads/2019/07/Justin_Dostavka.png">
+                            <span class="d-block">
+                                Самовивіз з магазинів мережі
+                                вартість доставки: БЕЗКОШТОВНО
+                            </span>
+                        </div>
+                        <div class="my-2 d-flex align-items-center">
+                            <img class="d-block" src="https://ringoo.ua/wp-content/uploads/2019/07/Justin_Dostavka.png">
+                            <span class="d-block">
+                                Самовивіз з магазинів мережі
+                                вартість доставки: БЕЗКОШТОВНО
+                            </span>
+                        </div>
+                        <div class="my-2 d-flex align-items-center">
+                            <img class="d-block" src="https://ringoo.ua/wp-content/uploads/2019/07/Justin_Dostavka.png">
+                            <span class="d-block">
+                                Самовивіз з магазинів мережі
+                                вартість доставки: БЕЗКОШТОВНО
+                            </span>
+                        </div>
+                        <div class="my-2 d-flex align-items-center">
+                            <img class="d-block" src="https://ringoo.ua/wp-content/uploads/2019/07/Justin_Dostavka.png">
+                            <span class="d-block">
+                                Самовивіз з магазинів мережі
+                                вартість доставки: БЕЗКОШТОВНО
+                            </span>
+                        </div>
+                        <div class="my-2 d-flex align-items-center">
+                            <img class="d-block" src="https://ringoo.ua/wp-content/uploads/2019/07/Justin_Dostavka.png">
+                            <span class="d-block">
+                                Самовивіз з магазинів мережі
+                                вартість доставки: БЕЗКОШТОВНО
+                            </span>
+                        </div>
+                        <div class="my-3"></div>
+                        <a href="#" class="h5 color-green position-relative">Більше інформації
+                            <div class="arrow"></div>
+                        </a>
+                        <div class="my-4"></div>
+                    </div>
+                </div><!-- ./col -->
+            </div><!-- ./row -->
+        </div><!-- ./container-fluid -->
+        <div class="bg-grayLimd borderBottom-green py-4">
+            <div class="container-fluid">
+                <div class="d-none d-lg-flex flex-wrap justify-content-center">
+                    <div
+                        class="h5 mx-md-4 my-md-2 bg-grayWhite p-3 width-200 d-flex justify-content-between border-radius-25">
+                        <i class="fab fa-internet-explorer d-block mr-2"></i>
+                        <span>Характеристики</span>
+                    </div>
+                    <div
+                        class="h5 mx-md-4 my-md-2 bg-grayWhite p-3 width-200 d-flex justify-content-between border-radius-25">
+                        <i class="fab fa-internet-explorer d-block mr-2"></i>
+                        <span>Характеристики</span>
+                    </div>
+                    <div
+                        class="h5 mx-md-4 my-md-2 bg-grayWhite p-3 width-200 d-flex justify-content-between border-radius-25">
+                        <i class="fab fa-internet-explorer d-block mr-2"></i>
+                        <span>Характеристики</span>
+                    </div>
+                    <div
+                        class="h5 mx-md-4 my-md-2 bg-grayWhite p-3 width-200 d-flex justify-content-between border-radius-25">
+                        <i class="fab fa-internet-explorer d-block mr-2"></i>
+                        <span>Характеристики</span>
+                    </div>
+                </div>
+                <ul class="d-flex d-lg-none flex-wrap justify-content-center justify-content-md-start p-0 px-md-4">
+                    <li class="list-style-none mx-1 mx-md-4">
+                        <a href="#" class="color-green hover-colorBlack">Характеристики</a>
+                    </li>
+                    <li class="list-style-none mx-1 mx-md-4">
+                        <a href="#" class="color-green hover-colorBlack">Фото</a>
+                    </li>
+                    <li class="list-style-none mx-1 mx-md-4">
+                        <a href="#" class="color-green hover-colorBlack">Вiдео</a>
+                    </li>
+                    <li class="list-style-none mx-1 mx-md-4">
+                        <a href="#" class="color-green hover-colorBlack">Вiдгуки</a>
+                    </li>
+                </ul>
+                <hr class="d-block my-0 d-lg-none">
+                <div class="row py-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                        <div class="d-flex justify-content-between max-width-200 my-2">
+                            <div class="key">Виробник:</div>
+                            <div class="value">TP-Link</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- ./container-fluid -->
+        </div>
+        <div class="bg-grayLimd py-4">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-4">
+                        <div class="color-green font-weight-bold">Доставка по Києву</div>
+                        <ul>
+                            <li>Безкоштовний самовивіз з
+                                <a href="#" class="color-green">магазинів ringoo</a>
+                            </li>
+                            <li>Кур’єром за адресою</li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-4">
+                        <div class="color-green font-weight-bold">Доставка по Україні</div>
+                        <ul>
+                            <li>Доставка в регіони</li>
+                            <li>До пункту служби доставки</li>
+                            <li>Кур’єром за адресою</li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-4">
+                        <div class="color-green font-weight-bold">Оплата</div>
+                        <ul>
+                            <li>Готівкою</li>
+                            <li>У кредит</li>
+                            <li>Visa/MasterCard, безготівковим розрахунком</li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- ./container-fluid -->
+        </div>
+        <div class="bg-grayWhite py-4">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="h2 font-weight-bold text-center">Акції</div>
+                        <img class="w-100" src="https://ringoo.ua/wp-content/uploads/2019/10/14-11-457-x-228.png"
+                            alt="">
+
+                        <div class="bg-white max-height-300 overflow-y-auto p-4">
+                            <div class="h2">
+                                <a href="#" class="nav__link">Товар тижня в ringoo</a>
+                            </div>
+                            Акційна пропозиція діє з 7.11 – 14.11.2019 р Улюблені бонуси українців – знижка дня, а у
+                            нас ще КРУТІШЕ – ЗНИЖКА тижня! Купуй акційні товари за привабливими ЦІНАМИ! Товари що
+                            приймають участь: Акустична система Fresh Rebel Rockbox Bold M IPX7 Concrete Акустична
+                            система Fresh Rebel Rockbox Bold S IPX7 Indigo Портативна акустична система JAM Double
+                            Chill – Grey Портативна акустична система JAM Hang Up Camo Навушники BT з мікрофоном JAM
+                            Live Loose – Black Навушники BT з мікрофоном JAM Tune – Black Навушники бездротові JBL
+                            E45BT білі Навушники бездротові JBL E45BT чорні Накопичувач SSD Team Lite M.2 SATAIII
+                            MLC 256GB Накопичувач SSD Team MS30 M.2 SATAIII TLC 128GB Зверніть увагу! Зовнішній
+                            вигляд товару може відрізнятись від зображення на рекламних матеріалах. Кількість товару
+                            обмежена. Дана акційна пропозиція несумується з іншими діючими акціями в магазинах та на
+                            сайті. Діє тільки в інтернет-магазині ringoo.ua
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="my-4 d-block d-lg-none"></div>
+                        <div class="h2 font-weight-bold text-center">Або додайте до телефону</div>
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <div class="m-2 p-2 border-grayBlond">
+                                <img src="https://ringoo.ua/wp-content/uploads/2019/02/fleshka.png"
+                                    style="display: inline-block;">
+                                <span>USB-флешки</span>
+                            </div>
+                            <div class="m-2 p-2 border-grayBlond">
+                                <img src="https://ringoo.ua/wp-content/uploads/2019/02/fleshka.png"
+                                    style="display: inline-block;">
+                                <span>USB-флешки</span>
+                            </div>
+                            <div class="m-2 p-2 border-grayBlond">
+                                <img src="https://ringoo.ua/wp-content/uploads/2019/02/fleshka.png"
+                                    style="display: inline-block;">
+                                <span>USB-флешки</span>
+                            </div>
+                            <div class="m-2 p-2 border-grayBlond">
+                                <img src="https://ringoo.ua/wp-content/uploads/2019/02/fleshka.png"
+                                    style="display: inline-block;">
+                                <span>USB-флешки</span>
+                            </div>
+                            <div class="m-2 p-2 border-grayBlond">
+                                <img src="https://ringoo.ua/wp-content/uploads/2019/02/fleshka.png"
+                                    style="display: inline-block;">
+                                <span>USB-флешки</span>
+                            </div>
+                            <div class="m-2 p-2 border-grayBlond">
+                                <img src="https://ringoo.ua/wp-content/uploads/2019/02/fleshka.png"
+                                    style="display: inline-block;">
+                                <span>USB-флешки</span>
+                            </div>
+                            <div class="m-2 p-2 border-grayBlond">
+                                <img src="https://ringoo.ua/wp-content/uploads/2019/02/fleshka.png"
+                                    style="display: inline-block;">
+                                <span>USB-флешки</span>
+                            </div>
+                            <div class="m-2 p-2 border-grayBlond">
+                                <img src="https://ringoo.ua/wp-content/uploads/2019/02/fleshka.png"
+                                    style="display: inline-block;">
+                                <span>USB-флешки</span>
+                            </div>
+                            <div class="m-2 p-2 border-grayBlond">
+                                <img src="https://ringoo.ua/wp-content/uploads/2019/02/fleshka.png"
+                                    style="display: inline-block;">
+                                <span>USB-флешки</span>
+                            </div>
+                            <div class="m-2 p-2 border-grayBlond">
+                                <img src="https://ringoo.ua/wp-content/uploads/2019/02/fleshka.png"
+                                    style="display: inline-block;">
+                                <span>USB-флешки</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- ./container-fluid -->
+        </div>
+        <div class="bg-grayLimd py-4">
+            <div class="container-fluid">
+                <div class="h2 font-weight-bold position-relative text-center">
+                    У наявності зараз в м.
+                    <a id="location" onclick="handlerAddLocationItems()" class="text-decoration-none">
+                        <span class="color-green">Київ</span>
+                    </a>
+                    <div id="locotionItems" class="d-none bg-white">
+                        <div class="d-flex justify-content-between">
+                            <ul>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                                <li class="list-style-none">
+                                    <a href="#" class="color-green hover-colorBlack text-decoration-none h6">Вінницька
+                                        область</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="h5 text-center">У магазинах вашого міста, на жаль, зараз товару немає. Відкрийте мапу й
+                    виберіть
+                    інший населений пункт.</div>
+                <div class="mb-4"></div>
+                <button class="bg-greenLight color-white h5 px-4 py-2 d-block m-auto">Подивитися на мапі</button>
+            </div><!-- ./container-fluid -->
+        </div>
+        <div class="p-4">
+            <div class="container-fluid">
+                <div class="d-block d-md-flex align-items-center">
+                    <img src="https://ringoo.ua/wp-content/uploads/2018/04/consultant.jpg" alt="Adviser"
+                        class="d-block d-md-inline m-auto m-md-0">
+                    <div class="mx-3 d-none d-md-block"></div>
+                    <div class="my-3 d-block d-md-none"></div>
+                    <div>
+                        <div class="h2 text-center text-md-left text-left font-weight-bold">Якщо маєте питання,</div>
+                        <div class="h5 text-center text-md-left">поговоріть із нашим консультантом</div>
+                        <div class="h2 text-center text-md-left font-weight-bold">0 800 308 480</div>
+                    </div>
+                </div>
+                <hr />
+                <div class="h4">Або залиште свій номер</div>
+                <form action="#" method="POST" class="d-block d-md-flex justify-content-between">
+                    <input class="w-100 height-50 px-2" type="text" value="+380">
+                    <div class="mx-2 d-none d-md-block"></div>
+                    <div class="my-2 d-block d-md-none"></div>
+                    <button class="text-uppercase
+                                    bg-greenLight 
+                                    h6 border-transparent 
+                                    color-white p-2 
+                                    min-width-200 height-50
+                                    d-block
+                                    m-auto">
+                        зателефонуйте менi
+                    </button>
+                </form>
+            </div><!-- ./container-fluid -->
+        </div>
+        <div class="bg-greenLight py-4">
+            <div class="container-fluid">
+                <div class="h2 color-white font-weight-bold text-center mb-3">Пiдписуйтесь на розсилку</div>
+                <div class="color-white text-center mb-3">Залиште свій імейл, щоб отримувати актуальні новини, акції та
+                    знижки. Жодного спаму, надсилаємо лише корисне!</div>
+                <form action="#" method="POST">
+                    <input type="text" placeholder="Email" class="mb-3 d-block m-auto w-50 px-2 py-1">
+                    <div class="my-2"></div>
+                    <button type="submit"
+                        class="d-block m-auto bg-black border-transparent color-white px-3 py-2">ПІДПИСАТИСЯ НА
+                        РОЗСИЛКУ</button>
+                </form>
+            </div><!-- ./container-fluid -->
+        </div>
+        <div class="bg-gray">
+            <div class="container-fluid">
+                <div class="h6 py-2 m-0 color-white">product</div>
+            </div>
+        </div>
+    </main><!-- ./content -->
+
+    <footer class="bg-blackLight py-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="d-none d-md-block col-md-6 col-lg-3">
+                    <ul>
+                        <li class="h6 color-greenLight font-weight-bold list-style-none">Про нас</li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 d-none d-lg-flex">
+                    <ul>
+                        <li class="h6 color-greenLight font-weight-bold list-style-none">Про нас</li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                    </ul>
+                    <div class="mx-4"></div>
+                    <ul>
+                        <li class="h6 color-greenLight font-weight-bold list-style-none">Про нас</li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                        <li class="list-style-none">
+                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="info__footer">
+                        <div class="h6 color-greenLight font-weight-bold">Зв’язатися з нами</div>
+                        <div class="mb-2 d-flex align-items-center">
+                            <i class="fas fa-phone-alt i-border mr-2"></i>
+                            <span class="h3 mb-0 color-white">0 800 308 480</span></div>
+                        <div class="color-white h6">Безкоштовні дзвінки для абонентів усіх українських операторів
+                            зв’язку.
+                            Дзвінки з питань сервісу та обслуговування.
+                            Оформлення замовлення за номерами:
+                        </div>
+                        <div class="mb-2"></div>
+                        <div class="phone-min">(097) 090-87-07</div>
+                        <div class="phone-min">(073) 090-87-07</div>
+                    </div><!-- ./info__footer -->
+                </div>
+            </div><!-- ./row -->
+            <div class="row">
+                <div class="col-lg-8"></div>
+                <div class="col-12 col-lg-4">
+                    <div class="d-flex justify-content-center justify-content-lg-start align-items-center my-4">
+                        <div class="mr-2">
+                            <i class="fab fa-facebook h2 color-white mx-2"></i>
+                            <i class="fab fa-instagram h2 color-white mx-2"></i>
+                            <i class="fab fa-youtube h2 color-white mx-2"></i>
+                        </div>
+                        <img src="https://ringoo.ua/wp-content/themes/ringoo-child/images/pay_sys_icons.png"
+                            class="max-width-100">
+                    </div>
+                </div><!-- ./container-fluid -->
+    </footer><!-- /footer -->
+    <div class="bg-black">
+        <div class="container-fluid">
+            <div class="h6 text-center color-white py-1 m-0">Усi права захищено!</div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/assets/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/assets/node_modules/popper.js/dist/popper.js"></script>
+    <script src="/assets/node_modules/bootstrap/dist/js/bootstrap.js"></script> <!-- Main JavaScript -->
+
+    <script src="assets/script/main.js"></script>
+</body>
+
+</html>

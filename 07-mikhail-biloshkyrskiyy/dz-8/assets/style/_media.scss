@@ -1,0 +1,29 @@
+/* Dropdown */
+@include media-breakpoint-down(md) {
+  .dropdown-toggle {
+    padding: 0.5rem 0 !important;
+
+    background-color: transparent !important;
+  }
+
+  .dropdown-menu {
+    padding: 0 1rem;
+    border: 0px solid transparent !important;
+    background-color: transparent !important;
+  }
+
+  .dropdown-item {
+    color: $white;
+
+    &:hover {
+      color: $green;
+      background-color: transparent !important;
+    }
+  }
+}
+
+.text-md-left {
+  @include media-breakpoint-up(md) {
+    text-align: left !important;
+  }
+}

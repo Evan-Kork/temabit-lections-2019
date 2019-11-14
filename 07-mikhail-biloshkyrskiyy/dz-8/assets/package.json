@@ -1,0 +1,28 @@
+{
+  "name": "ringoo",
+  "version": "1.0.0",
+  "description": "web site",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evan-Kork/temabit-lections-2019.git"
+  },
+  "keywords": [
+    "dz-8"
+  ],
+  "author": "Mikhail Beloshkyrskiyy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Evan-Kork/temabit-lections-2019/issues"
+  },
+  "homepage": "https://github.com/Evan-Kork/temabit-lections-2019#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0",
+    "sass": "^1.23.3"
+  }
+}
