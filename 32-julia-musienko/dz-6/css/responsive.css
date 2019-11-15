@@ -1,0 +1,29 @@
+@media (max-width: 1024px) {
+    .container {
+        max-width: 920px;
+        padding: 0;
+    }
+    .content .product {
+        width: 100%;
+    }
+    .main aside {
+        width: 40%;
+    }
+    .content {
+        width: 70%;
+    }
+}
+@media (max-width: 767px) {
+    .main aside {
+        width: 100%;
+    }
+    .content {
+        width: 100%;
+    }
+    .main {
+        flex-direction: column;
+    }
+    .sidebar .logo {
+        text-align: center;
+    }
+}
