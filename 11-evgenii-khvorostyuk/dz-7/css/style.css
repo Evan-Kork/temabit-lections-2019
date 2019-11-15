@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  color: #000000;
+}
+body .site-wrapper {
+  display: flex;
+  min-height: 100%;
+}
+body .site-wrapper .sidebar-menu {
+  background-color: grey;
+  color: #ffffff;
+  padding: 15px;
+  max-width: 300px;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 992px) {
+  body .site-wrapper .sidebar-menu {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 55px;
+    z-index: 2;
+    max-width: unset;
+  }
+}
+@media (max-width: 992px) {
+  body .site-wrapper .sidebar-menu_wrapper {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    margin-top: 35px;
+    text-align: center;
+  }
+}
+body .site-wrapper .sidebar-menu_wrapper-title {
+  color: #000000;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+body .site-wrapper .sidebar-menu_wrapper-nav_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+body .site-wrapper .sidebar-menu_wrapper-nav_list-item {
+  margin-bottom: 10px;
+}
+body .site-wrapper .sidebar-menu_wrapper-nav_list-item:last-child {
+  margin-bottom: 0;
+}
+body .site-wrapper .sidebar-menu_wrapper-nav_list-item a {
+  color: #ffffff;
+  text-decoration: none;
+}
+body .site-wrapper .sidebar-menu_wrapper-nav_list-item a:hover {
+  text-decoration: underline;
+}
+body .site-wrapper .page-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+@media (max-width: 992px) {
+  body .site-wrapper .page-content {
+    margin-left: 55px;
+  }
+}
+body .site-wrapper .page-content_main-section {
+  flex: 1 1 auto;
+  padding: 15px;
+}
+body .site-wrapper .page-content_main-section h1 {
+  margin: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+body .site-wrapper .page-content_main-section p {
+  margin: 0;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+body .site-wrapper .page-content_main-section p:last-child {
+  margin-bottom: 0;
+}
+body .site-wrapper .page-content_footer {
+  background: #ffffff;
+  padding: 20px 10px;
+  border-top: 1px solid #000000;
+}
+body .site-wrapper .page-content_footer-nav_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+@media (max-width: 720px) {
+  body .site-wrapper .page-content_footer-nav_list {
+    flex-direction: column;
+  }
+}
+body .site-wrapper .page-content_footer-nav_list-item a {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 5px;
+  display: block;
+  color: #000000;
+}
+body .site-wrapper .page-content_footer-nav_list-item a:hover {
+  text-decoration: underline;
+}
+body .site-wrapper .menu-toggle-btn {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+}
+body .site-wrapper .menu-toggle-btn:checked + .menu-toggle-btn_label span:nth-child(2) {
+  opacity: 0;
+}
+body .site-wrapper .menu-toggle-btn:checked + .menu-toggle-btn_label span:first-child {
+  transform: rotate(45deg);
+  top: 7px;
+}
+body .site-wrapper .menu-toggle-btn:checked + .menu-toggle-btn_label span:last-child {
+  transform: rotate(-45deg);
+  bottom: 9px;
+}
+body .site-wrapper .menu-toggle-btn:checked ~ .sidebar-menu {
+  width: 100%;
+}
+body .site-wrapper .menu-toggle-btn:checked ~ .sidebar-menu .sidebar-menu_wrapper {
+  opacity: 1;
+}
+body .site-wrapper .menu-toggle-btn_label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  padding: 5px;
+  box-sizing: content-box;
+  z-index: 5;
+}
+@media (max-width: 992px) {
+  body .site-wrapper .menu-toggle-btn_label {
+    display: flex;
+  }
+}
+body .site-wrapper .menu-toggle-btn_label span {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+body .site-wrapper .menu-toggle-btn_label span:first-child {
+  top: 0;
+}
+body .site-wrapper .menu-toggle-btn_label span:last-child {
+  bottom: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
