@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 .container {
     display: flex;
@@ -36,7 +37,7 @@ a {
 }
 .main {
     height: 85vh;
-    width: 200%;
+    width: 100%;
 }
 .main h1 {
     font-size: 60px;
@@ -50,7 +51,7 @@ p {
 .footer {
     display: flex;
     height: 15vh;
-    width: 200%;
+    width: 100%;
     text-align: center;
     justify-content: center;
     border-top: 1px solid black;
@@ -68,7 +69,7 @@ p {
         height: 100%;
     }
     body .content {
-        margin-left: 20px;
+        margin-left: -20px;
     }
     .content {
         width: 50%;
