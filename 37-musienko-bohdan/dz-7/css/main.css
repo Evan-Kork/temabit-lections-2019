@@ -157,6 +157,12 @@ body, p {
   .nav-toggle:checked ~ .nav-toggle__item::before {
     top: 10px;
   }
+  .footer {
+    flex-direction: column;
+  }
+  .footer div {
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 320px) {
