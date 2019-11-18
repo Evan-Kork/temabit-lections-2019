@@ -1,5 +1,4 @@
 @import "bootstrap.css";
-
 .container-fluid{
     padding-left: 0;
     padding-right: 0;
@@ -706,7 +705,6 @@
 .footer-main a:hover{
     color: #98c93c;
     text-decoration: none;
-
 }
 .footer-contact-us{
     display: flex;
