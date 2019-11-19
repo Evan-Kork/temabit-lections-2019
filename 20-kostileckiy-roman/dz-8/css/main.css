@@ -732,3 +732,75 @@
     color: #fff;
     margin-bottom: 0;
 }
+.site-path-container{
+    background-color: #e8eded;
+}
+.site-path-main{
+    display: flex;
+}
+.site-path-container a{
+    color: #98c93c;
+    padding-right: 5px;
+}
+.site-path-container a::after{
+    content: " > ";
+}
+.site-path-main p{
+    margin-bottom: 0;
+}
+.goods-inner-page-main{
+    display: flex;
+}
+.button-back-main{
+    margin-top: 25px;
+}
+.button-back-main a{
+    color: #98c93c;
+    font-size: 22px;
+    font-weight: 500;
+}
+.button-back-main a:hover{
+    text-decoration: none;
+}
+.goods-main{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 35px;
+}
+.goods-prew{
+    width: 360px;
+
+}
+.goods-short-desc{
+
+}
+.goods-buy{
+
+}
+.goods-prew-pick{
+    text-align: center;
+}
+.goods-prew-colors{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.goods-prew-video{
+    text-align: center;
+}
+.goods-prew-video i{
+    color: #98c93c;
+}
+.goods-prew-video a{
+    color: #98c93c;
+}
+.goods-prew-subs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 40px;
+    border-top: 1px solid #d4d9d9;
+}
+.goods-prew-subs a{
+    color: #98c93c;
+}
