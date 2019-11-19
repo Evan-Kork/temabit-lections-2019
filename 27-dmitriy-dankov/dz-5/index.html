@@ -1,14 +1,11 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">        
+        <meta charset="utf-8">    
         <title>Search</title>
         <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
-        <!-- Пошукова форма -->
         <form
             action="https://www.google.com/search"
             method="GET"
@@ -19,19 +16,19 @@
                      alt="Google logo"
                 >
                 <div class="google-search">
-                    <input     
-                        class="search" 
-                        type="search"
-                        name="q"
+                    <input   
+                            class="search" 
+                            type="search"
+                            name="q"
                     >
                     <button>Search</button>
                 </div>
                 <div>    
                     <input 
-                        type="radio"
-                        id="all"
-                        name="tbm"
-                        value=""
+                            type="radio"
+                            id="all"
+                            name="tbm"
+                            value=""
                     >
                     <label for="all">All</label>
                     <input 
@@ -58,26 +55,26 @@
                 </div>
             </fieldset>
         </form>
-        <!-- Анкета -->
         <div class="form-anket">
             <h3>Анкета для роботи в «Сільпо»</h3>
             <form action="#" 
-                method="POST"
+                  method="POST"
             >
-                <!-- Основна інформація -->
                 <fieldset>
                     <legend>
                         <h4>Основна інформація</h4>
                     </legend>
                     <div class="form-group">
-                        <input type="text"
+                        <input 
+                                type="text"
                                 class="data-input"
                                 id="name"
                                 name="name"
                                 placeholder="Ім'я"
                                 required
                         >
-                        <input type="text"
+                        <input 
+                                type="text"
                                 class="data-input"
                                 id="surname"
                                 name="surname"
@@ -85,16 +82,17 @@
                                 required
                         >
                     </div>
-                    <div class="clear"></div>
                     <div class="form-group">
-                        <input type="date"
+                        <input 
+                                type="date"
                                 class="data-input"
                                 id="birthday"
                                 name="Birthday"
                                 placeholder="Прізвище"
                                 required
                         >
-                        <input type="text"
+                        <input 
+                                type="text"
                                 class="data-input"
                                 id="home"
                                 name="Home"
@@ -102,16 +100,17 @@
                                 required
                         >
                     </div>
-                    <div class="clear"></div>
                     <div class="form-group">
-                        <input type="text"
+                        <input 
+                                type="text"
                                 class="data-input"
                                 id="email"
                                 name="mail"
                                 placeholder="Електронна адреса"
                                 required
                         >
-                        <input type="tel"
+                        <input 
+                                type="tel"
                                 class="data-input"
                                 id="phone"
                                 name="phone"
@@ -120,17 +119,17 @@
                                 required
                         >
                     </div>
-                    <div class="clear"></div>
                     <div class="form-group">
                         <h5>Резюме</h5>
-                        <input type="file"
+                        <input 
+                                type="file"
                                 id="doc"
                                 name="doc"
                         >
                     </div>
-                    <div class="clear"></div>
                     <div class="form-group">
-                        <input type="url"
+                        <input 
+                                type="url"
                                 class="link-input"
                                 id="url"
                                 name="url"
@@ -138,44 +137,43 @@
                         >
                     </div>
                 </fieldset>
-                <!-- Бiльше iнформацii -->
                 <fieldset>
                     <div class="form-group">
                         <legend><h4>Вкажіть більше інформації, щоб отримати справді цікаву вакансію<h4></legend>
                     </div>
-                    <div class="clear"></div>
                     <div class="form-group">
-                        <input type="text" 
+                        <input  
+                                type="text" 
                                 class="data-input"
                                 name="city"
                                 id="city"
                                 placeholder="Оберіть бажаний населений пункт"
                         >
-                        <input type="text"
+                        <input 
+                                type="text"
                                 class="data-input"
                                 name="work"
                                 id="work"
                                 placeholder="Оберіть бажану посаду"
                         >
                     </div>
-                    <div class="clear"></div>
                     <div class="form-group">
-                        <input type="text"
+                        <input 
+                                type="text"
                                 class="data-input"
                                 name="shop"
                                 id="shop"
                                 placeholder="Оберіть зручний супермаркет"
                         >
                     </div>
-                    <div class="clear"></div>
                     <div class="form-group">
-                        <input type="checkbox"
+                        <input 
+                                type="checkbox"
                                 id="workday"
                                 name="workday"
                         >
                         <label for="workday">Хочу працювати неповний робочий день</label>
                     </div>
-                    <div class="clear"></div>
                     <div class="form-group">
                         <button class="button">Відправити</button>
                     </div>

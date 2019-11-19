@@ -1,5 +1,3 @@
-/* Загальнi стилi */
-
 html, body {
     padding: 10px;
     margin: 0;
@@ -14,8 +12,6 @@ fieldset {
     margin: 0;
     padding: 0;
 }
-
-/* Пошукова форма */
 
 .google-search {
     display: inline-block;
@@ -34,8 +30,6 @@ fieldset {
     height: 28px;
 }
 
-/* Анкета */
-
 .form-anket {
     margin: 0 auto;
     width: 50%;
@@ -48,22 +42,16 @@ fieldset {
 
 .data-input {
     padding: 10px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    border: none;
     border-bottom: 1px solid black;
     width: calc(50% - 10px);
-    float: left;
     height: 30px;
 }
 
 .link-input {
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    border: none;
     border-bottom: 1px solid black;
     width: 100%;
-    float: left;
     height: 30px;
 }
 
@@ -77,17 +65,11 @@ fieldset {
 }
 
 .form-group input:first-child {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .button {
     height: 30px;
     text-align: center;
     margin-left: 300px;
-}
-
-.clear {
-    width: 100%; 
-    height: 1px;
-    clear: both;
 }
