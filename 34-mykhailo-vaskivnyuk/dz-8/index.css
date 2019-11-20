@@ -21,6 +21,11 @@
   transition-delay: 3s;
 }
 
+:root {
+  font-size: 15px;
+  font-family: Lato;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -28,20 +33,25 @@
 
 html {
   box-sizing: border-box;
-  font-size: 15px;
 }
 
 *, *::after, *::before {
   box-sizing: inherit;
+  font: inherit;
 }
 
 html, body {
   height: 100%;
 }
 
-a {
+a, a:hover {
   text-decoration: none;
   color: #000;
+}
+
+h3 {
+  text-align: center;
+  margin: 0px;
 }
 
 .header .top_menu {
@@ -62,10 +72,8 @@ a {
   margin: auto 5px;
   width: 66px;
 }
-.main .brands .row:first-child .col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.main .brands .caption {
+  padding: 10px;
 }
 .main .brands .row:last-child .col {
   display: flex;
@@ -74,10 +82,8 @@ a {
   overflow-x: auto;
   padding: 10px 10px;
 }
-.main .promos .row:first-child .col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.main .promos .caption {
+  padding: 10px;
 }
 .main .promos *[class^=item] {
   width: 265px;
@@ -104,10 +110,11 @@ a {
 .main .promos .item_2 {
   background-image: url("https://ringoo.ua/wp-content/uploads/2019/10/GglAdwords_KOSS_ALL_265h220_17.10.2019_v2.png");
 }
-.main .hot_offering > .row:first-child .col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.main .hot_offering {
+  background-color: #e8eded;
+}
+.main .hot_offering .caption {
+  padding: 10px;
 }
 .main .hot_offering h4 {
   overflow: hidden;
@@ -118,6 +125,11 @@ a {
 .main .hot_offering span {
   font-weight: bold;
   font-size: 1.5rem;
+}
+.main .hot_offering .item {
+  background-color: #fff;
+  padding: 15px 15px;
+  margin: 15px 0px;
 }
 .main .hot_offering .item .item_img {
   display: block;
@@ -141,7 +153,7 @@ a {
   border-color: #0000ff;
   background-color: #0000ff;
 }
-.main .hot_offering .item .item_color:before {
+.main .hot_offering .item .item_color:hover::before, .main .hot_offering .item .item_color.this::before {
   content: "";
   position: absolute;
   border: 2px solid #98c93c;
@@ -150,6 +162,28 @@ a {
   top: -30%;
   left: -30%;
   border-radius: 100px;
+}
+.main .hot_offering .item .item_btn {
+  display: flex;
+  margin: 10px auto;
+}
+.main .hot_offering .item .item_btn a {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.main .hot_offering .item .item_btn a:first-child {
+  flex: 1;
+  color: #98c93c;
+  text-decoration: underline;
+  padding: 5px;
+}
+.main .hot_offering .item .item_btn a:last-child {
+  width: 180px;
+  background: #98c93c;
+  color: #fff;
+  justify-content: center;
+  text-transform: uppercase;
 }
 .main .advantages .item {
   flex: 1 0 20%;
@@ -177,7 +211,7 @@ a {
 .main .advantages .item div img {
   width: 62px;
 }
-.main .advantages .item h3 {
+.main .advantages .item h4 {
   font-size: 1.2rem;
   margin-top: 15px;
 }
@@ -185,6 +219,12 @@ a {
 .footer .rights_reserved {
   background-color: #000;
   color: #fff;
+}
+
+@media (max-width: 1199.98px) {
+  .t_bdr_a, .t_bdr_b {
+    border: none;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
