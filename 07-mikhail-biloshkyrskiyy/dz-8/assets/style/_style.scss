@@ -1,4 +1,17 @@
 /* Main Style */
+
+.transition {
+  transition: all .3s ease-in-out;
+}
+
+.opacity {
+  opacity: .5;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* Text */
 .text-decoration-none {
   text-decoration: none;
@@ -15,10 +28,6 @@
 /* Overflow */
 .overflow-y-auto {
   overflow-y: auto;
-}
-
-.overflow-hidden {
-  overflow:hidden;
 }
 
 /* Position */

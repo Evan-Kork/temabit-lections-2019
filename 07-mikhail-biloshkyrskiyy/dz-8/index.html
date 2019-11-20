@@ -21,14 +21,13 @@
 </head>
 
 <body>
-
     <header class="header">
-        <div class="bg-black py-3">
+        <div class="bg-black d-none d-lg-block py-3">
             <div class="container d-flex justify-content-between align-items-center flex-wrap">
                 <div class="h1 text-uppercase">
                     <span class="color-white font-weight-bold">BLACK</span>
                     <span class="color-green font-weight-bold">FRIDAY</span></div>
-                <div class="stripe__text mx-4 d-none d-lg-flex align-items-center">
+                <div class="stripe__text mx-4 d-flex align-items-center">
                     <div class="d-flex text-uppercase">
                         <div class="h1 color-green font-weight-bold">4</div>
                         <div class="h4 color-green font-weight-bold rotate-v ml-2">днi</div>
@@ -45,13 +44,13 @@
                     </div>
                 </div>
                 <button type="button"
-                    class="bg-green border-transparent py-2 px-4 color-white h4 border-radius-25">Дізнатись</button>
+                    class="bg-green border-transparent py-2 px-4 color-white hover-bgGreenBlond transition h4 border-radius-25">Дізнатись</button>
             </div><!-- ./container -->
         </div><!-- ./stripe -->
 
         <div class="bg-greenLight">
             <div class="container-fluid">
-                <div class="d-flex flex-wrap">
+                <div class="d-none d-lg-flex flex-wrap">
                     <div class="mr-4">
                         <div class="dropdown">
                             <a class="dropdown-toggle after-none color-white hover-colorBlack" href="#" role="button"
@@ -76,15 +75,6 @@
                                 id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Допомога
                             </a>
-
-                            <div class="dropdown-menu m-0 p-0" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">Доставка</a>
-                                <a class="dropdown-item" href="#">Оплата</a>
-                                <a class="dropdown-item" href="#">На виплат та кредити</a>
-                                <a class="dropdown-item" href="#">Гарантія</a>
-                                <a class="dropdown-item" href="#">Адреси сервісних центрів</a>
-                                <a class="dropdown-item" href="#">Як скористатись промокодом</a>
-                            </div>
                         </div>
                     </div>
                     <div class="w-100 d-block d-md-none"></div>
@@ -103,104 +93,371 @@
         <div class="bg-blackLight">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-0 d-none col-lg-2 d-lg-block">
-                        <img src="https://ringoo.ua/wp-content/themes/ringoo/img/logo.svg" class="mt-3 max-width-500"
+                    <div class="col-0 d-none col-lg-2 d-lg-flex">
+                        <img src="https://ringoo.ua/wp-content/themes/ringoo/img/logo.svg" class="d-block mw-100"
                             alt="Logo">
                     </div><!-- ./col-2 -->
                     <div class="col-12 col-lg-8 d-flex align-items-end justify-content-lg-center">
-                        <nav class="navbar pb-lg-0 navbar-expand-lg">
-                            <button onclick="handlerAddToggleActive()" class="navbar-toggler" type="button"
-                                data-toggle="collapse" data-target="#navbarSupportedContent"
-                                aria-controls="navbarSupportedContent" aria-expanded="false"
-                                aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon position-relative">
-                                    <div class="burger"></div>
-                                </span>
-                            </button>
-
-                            <div class="collapse navbar-collapse d-lg-flex flex-lg-column-reverse"
-                                id="navbarSupportedContent">
-
-                                <ul class="navbar-nav">
-                                    <li class="dropdown">
-                                        <a class="dropdown-toggle after-none d-block px-4 py-3 hover-bgWhite color-white hover-colorGreen"
-                                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
+                        <nav class="d-flex flex-column-reverse pb-lg-0">
+                            <div class="d-flex align-items-center">
+                                <button onclick="handlerAddNavbarLeft()" class="navbar__toggler my-3 d-block d-lg-none">
+                                    <span class="toggler__icon"></span>
+                                </button>
+                                <div class="mx-2"></div>
+                                <img src="https://ringoo.ua/wp-content/themes/ringoo/img/logo.svg"
+                                    class="width-50 d-block d-lg-none" alt="Logo">
+                            </div>
+                            <div id="navbarLeft" class="bg-white">
+                                <div class="bg-greenLight p-2 d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <i class="fas fa-phone-alt i-border border-colorBlack color-black"></i>
+                                        <span class="h7">(097) 090-87-07, (097) 090-87-07</span>
+                                    </div>
+                                    <div class="close" onclick="handlerCloseNavbarLeft()">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </div>
+                                <div class="bg-blackLight p-3">
+                                    <img src="https://ringoo.ua/wp-content/themes/ringoo/img/logo.svg" alt="Logo"
+                                        class="width-100">
+                                </div>
+                                <div class="my-3">
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-black hover-colorGreen transition text-decoration-none">
+                                        <i class="fas fa-home"></i>
+                                        <span class="ml-3">Телефони</span>
+                                    </a>
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-black hover-colorGreen transition text-decoration-none">
+                                        <i class="fas fa-home"></i>
+                                        <span class="ml-3">Телефони</span>
+                                    </a>
+                                    <hr />
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-black hover-colorGreen transition text-decoration-none">
+                                        <i class="fas fa-home"></i>
+                                        <span class="ml-3">Графік роботи</span>
+                                    </a>
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-black hover-colorGreen transition text-decoration-none">
+                                        <i class="fas fa-home"></i>
+                                        <span class="ml-3">Магазин</span>
+                                    </a>
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-black hover-colorGreen transition text-decoration-none">
+                                        <i class="fas fa-home"></i>
+                                        <span class="ml-3">Допомога</span>
+                                    </a>
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-black hover-colorGreen transition text-decoration-none">
+                                        <i class="fas fa-home"></i>
+                                        <span class="ml-3">Корпоративний сайт</span>
+                                    </a>
+                                    <hr />
+                                    <div class="dropdown my-2">
+                                        <a href="#" onclick="handlerActiveDropdown(1)"
+                                            class="ml-3 d-block color-black hover-colorGreen transition text-decoration-none">
+                                            <span class="position-relative">Телефони
+                                                <div class="arrow"></div>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown__menu ml-4">
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown my-2">
+                                        <a href="#" onclick="handlerActiveDropdown(2)"
+                                            class="ml-3 d-block color-black hover-colorGreen transition text-decoration-none">
+                                            <span class="position-relative">Телефони
+                                                <div class="arrow"></div>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown__menu ml-4">
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown my-2">
+                                        <a href="#" onclick="handlerActiveDropdown(3)"
+                                            class="ml-3 d-block color-black hover-colorGreen transition text-decoration-none">
+                                            <span class="position-relative">Телефони
+                                                <div class="arrow"></div>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown__menu ml-4">
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown my-2">
+                                        <a href="#" onclick="handlerActiveDropdown(4)"
+                                            class="ml-3 d-block color-black hover-colorGreen transition text-decoration-none">
+                                            <span class="position-relative">Телефони
+                                                <div class="arrow"></div>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown__menu ml-4">
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown my-2">
+                                        <a href="#" onclick="handlerActiveDropdown(5)"
+                                            class="ml-3 d-block color-black hover-colorGreen transition text-decoration-none">
+                                            <span class="position-relative">Телефони
+                                                <div class="arrow"></div>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown__menu ml-4">
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown my-2">
+                                        <a href="#" onclick="handlerActiveDropdown(6)"
+                                            class="ml-3 d-block color-black hover-colorGreen transition text-decoration-none">
+                                            <span class="position-relative">Телефони
+                                                <div class="arrow"></div>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown__menu ml-4">
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown my-2">
+                                        <a href="#" onclick="handlerActiveDropdown(7)"
+                                            class="ml-3 d-block color-black hover-colorGreen transition text-decoration-none">
+                                            <span class="position-relative">Телефони
+                                                <div class="arrow"></div>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown__menu ml-4">
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown my-2">
+                                        <a href="#" onclick="handlerActiveDropdown(8)"
+                                            class="ml-3 d-block color-black hover-colorGreen transition text-decoration-none">
+                                            <span class="position-relative">Телефони
+                                                <div class="arrow"></div>
+                                            </span>
+                                        </a>
+                                        <div class="dropdown__menu ml-4">
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                            <a href="#"
+                                                class="d-block color-black hover-colorGreen transition text-decoration-none">
+                                                <span class="position-relative">Телефони</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-grayBlond hover-colorGreen transition text-decoration-none">
+                                        <span class="position-relative">Телефони</span>
+                                    </a>
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-grayBlond hover-colorGreen transition text-decoration-none">
+                                        <span class="position-relative">Телефони</span>
+                                    </a>
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-grayBlond hover-colorGreen transition text-decoration-none">
+                                        <span class="position-relative">Телефони</span>
+                                    </a>
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-grayBlond hover-colorGreen transition text-decoration-none">
+                                        <span class="position-relative">Телефони</span>
+                                    </a>
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-grayBlond hover-colorGreen transition text-decoration-none">
+                                        <span class="position-relative">Телефони</span>
+                                    </a>
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-grayBlond hover-colorGreen transition text-decoration-none">
+                                        <span class="position-relative">Телефони</span>
+                                    </a>
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-grayBlond hover-colorGreen transition text-decoration-none">
+                                        <span class="position-relative">Телефони</span>
+                                    </a>
+                                    <a href="#"
+                                        class="ml-3 my-2 d-block color-grayBlond hover-colorGreen transition text-decoration-none">
+                                        <span class="position-relative">Телефони</span>
+                                    </a>
+                                </div>
+                            </div><!-- #/navbarLeft -->
+                            <div class="navbar-lg d-flex flex-column-reverse">
+                                <div class="d-none d-lg-flex">
+                                    <div
+                                        class="px-4 py-3 before transition position-relative hover-bgWhite color-white hover-colorGreen transition">
+                                        <a href="#"
+                                            class="color-inherit hover-colorGreen transition text-decoration-none">
                                             Телефони
                                         </a>
-                                        <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a class="dropdown-toggle after-none d-block px-4 py-3 hover-bgWhite color-white hover-colorGreen"
-                                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
+                                    </div>
+                                    <div
+                                        class="px-4 py-3 before transition position-relative hover-bgWhite color-white hover-colorGreen transition">
+                                        <a href="#"
+                                            class="color-inherit hover-colorGreen transition text-decoration-none">
                                             Телефони
                                         </a>
-                                        <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a class="dropdown-toggle after-none d-block px-4 py-3 hover-bgWhite color-white hover-colorGreen"
-                                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
+                                    </div>
+                                    <div
+                                        class="px-4 py-3 before transition position-relative hover-bgWhite color-white hover-colorGreen transition">
+                                        <a href="#"
+                                            class="color-inherit hover-colorGreen transition text-decoration-none">
                                             Телефони
                                         </a>
-                                        <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a class="dropdown-toggle after-none d-block px-4 py-3 hover-bgWhite color-white hover-colorGreen"
-                                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
+                                    </div>
+                                    <div
+                                        class="px-4 py-3 before transition position-relative hover-bgWhite color-white hover-colorGreen transition">
+                                        <a href="#"
+                                            class="color-inherit hover-colorGreen transition text-decoration-none">
                                             Телефони
                                         </a>
-                                        <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a class="dropdown-toggle after-none d-block px-4 py-3 bg-reed hover-bgWhite color-white hover-colorGreen"
-                                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
+                                    </div>
+                                    <div
+                                        class="px-4 py-3 before transition position-relative hover-bgWhite color-white hover-colorGreen transition">
+                                        <a href="#"
+                                            class="color-inherit hover-colorGreen transition text-decoration-none">
                                             Телефони
                                         </a>
-                                        <div class="dropdown-menu m-0" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </li>
-
-                                    <div class="mb-4 d-block d-lg-none"></div>
-                                </ul>
-
-                                <form class="max-width-500 w-100" method="POST" action="#">
+                                    </div>
+                                    <div
+                                        class="action px-4 py-3 position-relative hover-bgWhite color-white hover-colorGreen transition">
+                                        <a href="#"
+                                            class="color-inherit hover-colorGreen transition text-decoration-none">
+                                            Телефони
+                                        </a>
+                                    </div>
+                                </div>
+                                <form class="max-width-500 w-100 m-auto pt-2 d-none d-lg-block" method="POST"
+                                    action="#">
                                     <div class="form-group mb-2 position-relative w-100">
                                         <i class="fas fa-search position-absolute t-50 l-1rem"></i>
                                         <input
-                                            class="form-control border-radius-25 bg-gray border-transparent hover-colorWhite hover-bgWhite pl-5"
+                                            class="form-control border-radius-25 bg-gray border-transparent focus-bgWhite pl-5"
                                             type="search" placeholder="Пошук" aria-label="Search">
                                     </div>
                                 </form>
-
-                            </div>
+                            </div><!-- ./navbar-lg -->
                         </nav><!-- ./navbar -->
                     </div><!-- ./col-8 -->
                     <div class="col-0 d-none d-lg-flex col-lg-2 justify-content-end align-items-center">
                         <div>
-                            <div class="color-white text-right"><i class="fas fa-phone-alt i-border"></i>(097) 090-87-07
+                            <div class="color-white text-right">
+                                <i class="fas fa-phone-alt i-border"></i>(097) 090-87-07
                             </div>
                             <div class="color-white text-right">(073) 090-87-07</div>
                             <div class="my-1"></div>
@@ -210,14 +467,14 @@
                                 text-decoration-none
                                 d-flex align-items-center 
                                 justify-content-center">
-                                <i class="fas fa-cart-arrow-down"></i>
-                                <div class="mx-2 text-uppercase">кошик</div>
+                                <i class="fas fa-cart-arrow-down transition"></i>
+                                <div class="mx-2 text-uppercase transition">кошик</div>
                             </a>
                         </div>
                     </div><!-- ./col-2 -->
                 </div><!-- ./row -->
             </div><!-- ./container-fluid -->
-        </div>
+        </div><!-- ./bg-blackLight -->
     </header><!-- ./header -->
 
     <main class="content">
@@ -265,240 +522,206 @@
                         </a>
                     </div><!-- ./carousel -->
                 </div><!-- ./content__carousel -->
-            </div>
-        </div>
-        <div class="container-fluid my-4 py-4">
+            </div><!-- ./container-fluid -->
+        </div><!-- ./bg-grayLimd -->
+        <div class="container-fluid my-4 py-4 overflow-hidden">
             <div class="h2 font-weight-bold text-center">Популярнi бренди</div>
             <div class="my-4"></div>
-            <div class="brand__items d-flex justify-content-between flex-wrap">
-                <a href="#">
+            <div class="d-flex justify-content-center flex-wrap">
+                <a href="#" class="d-block m-1">
                     <img class="width-85" src="https://ringoo.ua/wp-content/uploads/2019/07/Samsung-Black-1.png">
                 </a>
-                <a href="#">
+                <a href="#" class="d-block m-1">
                     <img class="width-85" src="https://ringoo.ua/wp-content/uploads/2019/07/Apple-Black-1.png">
                 </a>
-                <a href="#">
+                <a href="#" class="d-block m-1">
                     <img class="width-85" src="https://ringoo.ua/wp-content/uploads/2019/07/Sony.png">
                 </a>
-                <a href="#">
+                <a href="#" class="d-block m-1">
                     <img class="width-85" src="https://ringoo.ua/wp-content/uploads/2019/07/NeffosTPlink-Black-1.png">
                 </a>
-                <a href="#">
+                <a href="#" class="d-block m-1">
                     <img class="width-85" src="https://ringoo.ua/wp-content/uploads/2019/07/Cresyn-Black-1.png">
                 </a>
-                <a href="#">
+                <a href="#" class="d-block m-1">
                     <img class="width-85" src="https://ringoo.ua/wp-content/uploads/2019/07/Jabra.png">
                 </a>
-                <a href="#">
+                <a href="#" class="d-block m-1">
                     <img class="width-85" src="https://ringoo.ua/wp-content/uploads/2019/07/Mi-Black-1.png">
                 </a>
-                <a href="#">
+                <a href="#" class="d-block m-1">
                     <img class="width-85" src="https://ringoo.ua/wp-content/uploads/2019/07/Koss.png&quot">
                 </a>
-                <a href="#">
+                <a href="#" class="d-block m-1">
                     <img class="width-85" src="https://ringoo.ua/wp-content/uploads/2019/07/Ergo-Black-1.png">
                 </a>
-                <a href="#">
+                <a href="#" class="d-block m-1">
                     <img class="width-85" src="https://ringoo.ua/wp-content/uploads/2019/07/NOKIA-Black-1.png">
                 </a>
             </div>
         </div><!-- ./container-fluid -->
-        <div class="bg-grayLimd my-4 py-4 overflow-hidden">
+        <div class="bg-grayLimd my-4 py-4">
             <div class="h2 font-weight-bold text-center">Наявнi акції</div>
             <div class="my-4"></div>
-            <div class="d-flex">
-                <div id="range_1" class="d-flex">
-                    <a href="#">
-                        <img src="https://ringoo.ua/wp-content/uploads/2019/04/Site_265h220_24.04.2019.png&quot">
-                    </a>
-                    <a href="#">
-                        <img
-                            src="https://ringoo.ua/wp-content/uploads/2019/10/Site_NeffosC9X9_265h220_11.10.2019.png&quot">
-                    </a>
-                    <a href="#">
-                        <img
-                            src="https://ringoo.ua/wp-content/uploads/2019/10/GglAdwords_KOSS_ALL_265h220_17.10.2019_v2.png">
-                    </a>
-                    <a href="#">
-                        <img src="https://ringoo.ua/wp-content/uploads/2019/10/7-11-265-x-220-1.png&quot">
-                    </a>
-                    <a href="#">
-                        <img src="https://ringoo.ua/wp-content/uploads/2019/04/Site_265h220_24.04.2019.png&quot">
-                    </a>
-                    <a href="#">
-                        <img
-                            src="https://ringoo.ua/wp-content/uploads/2019/10/Site_NeffosC9X9_265h220_11.10.2019.png&quot">
-                    </a>
-                    <a href="#">
-                        <img
-                            src="https://ringoo.ua/wp-content/uploads/2019/10/GglAdwords_KOSS_ALL_265h220_17.10.2019_v2.png">
-                    </a>
-                    <a href="#">
-                        <img src="https://ringoo.ua/wp-content/uploads/2019/10/7-11-265-x-220-1.png&quot">
-                    </a>
+            <div id="carouselDiapasone_1" class="diapasone__carousel my-2">
+                <div class="carousel__indicators">
+                    <div class="indicator active"></div>
+                    <div class="indicator"></div>
                 </div>
-            </div>
-            <form action="#">
-                <input type="range" class="form-control-range my-4" id="formControlRange_1"
-                    onmousemove="handleRangeProductItem(1)">
-            </form>
-        </div><!-- ./bg-grayLimd -->
-        <div class="my-4 py-4 overflow-hidden">
+                <div class="d-flex justify-content-start justify-content-md-center overflow-hidden">
+                    <div class="carousel__item mx-2">
+                        <a href="#">
+                            <img src="https://ringoo.ua/wp-content/uploads/2019/04/Site_265h220_24.04.2019.png&quot">
+                        </a>
+                    </div>
+                    <div class="carousel__item mx-2">
+                        <a href="#">
+                            <img
+                                src="https://ringoo.ua/wp-content/uploads/2019/10/GglAdwords_KOSS_ALL_265h220_17.10.2019_v2.png">
+                        </a>
+                    </div>
+                </div>
+            </div><!-- #/carouselDiapasone_1 -->
+        </div><!-- ./container-fluid -->
+        <div class="bg-grayLimd my-4 py-4 overflow-hidden">
             <div class="h2 font-weight-bold text-center">Гарячі пропозиції</div>
             <div class="my-4"></div>
-            <div id="range_2" class="d-flex">
-                <div class="max-width-400 bg-white p-4 mx-2">
-                    <a href="#">
-                        <div class="h3 color-green hover-colorBlack">Neffos X20 Pro 3/64GB Green
-                            (TP9131AA7UA)</div>
-                    </a>
-                    <div class="h5 font-weight-bold">3649 грн</div>
-                    <img class="d-block m-auto width-360"
-                        src="https://ringoo.ua/wp-content/uploads/2019/08/tp_link_neffos_x20_pro_green_images_13418125970.jpg"
-                        alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
-                    <div class="circkles justify-content-center my-3">
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-green"></div>
+            <div id="carouselDiapasone_2" class="diapasone__carousel my-2">
+                <div class="carousel__indicators">
+                    <div class="indicator active"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                </div>
+                <div class="d-flex justify-content-start justify-content-md-center overflow-hidden">
+                    <div class="carousel__item">
+                        <div class="max-width-400 bg-white p-4 mx-2">
+                            <a href="#" class="text-decoration-none">
+                                <div class="h3 color-green hover-colorBlack transition">1 X20 Pro 3/64GB Green
+                                    (TP9131AA7UA)</div>
+                            </a>
+                            <div class="h5 font-weight-bold">3649 грн</div>
+                            <img class="d-block m-auto width-360"
+                                src="https://ringoo.ua/wp-content/uploads/2019/04/6471600_1.jpg"
+                                alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
+                            <div class="circkles justify-content-center my-3">
+                                <div class="circkle__item">
+                                    <div class="circkle__border">
+                                        <div class="circkle bg-green"></div>
+                                    </div>
+                                </div>
+                                <div class="circkle__item">
+                                    <div class="circkle__border">
+                                        <div class="circkle bg-black"></div>
+                                    </div>
+                                </div>
+                                <div class="circkle__item">
+                                    <div class="circkle__border">
+                                        <div class="circkle bg-orange"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-black"></div>
-                            </div>
-                        </div>
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-orange"></div>
-                            </div>
+                            <button
+                                class="d-block m-auto px-4 py-1 border-transparent h5 bg-green color-white hover-bgGreenBlond transition">Докладнiше</button>
                         </div>
                     </div>
-                    <button
-                        class="d-block m-auto px-4 py-1 border-transparent h5 bg-green color-white">Докладнiше</button>
-                </div>
-                <div class="max-width-400 bg-white p-4 mx-2">
-                    <a href="#">
-                        <div class="h3 color-green hover-colorBlack">Neffos X20 Pro 3/64GB Green
-                            (TP9131AA7UA)</div>
-                    </a>
-                    <div class="h5 font-weight-bold">3649 грн</div>
-                    <img class="d-block m-auto width-360"
-                        src="https://ringoo.ua/wp-content/uploads/2019/08/tp_link_neffos_x20_pro_green_images_13418125970.jpg"
-                        alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
-                    <div class="circkles justify-content-center my-3">
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-green"></div>
+                    <div class="carousel__item">
+                        <div class="max-width-400 bg-white p-4 mx-2">
+                            <a href="#" class="text-decoration-none">
+                                <div class="h3 color-green hover-colorBlack transition">2 X20 Pro 3/64GB Green
+                                    (TP9131AA7UA)</div>
+                            </a>
+                            <div class="h5 font-weight-bold">3649 грн</div>
+                            <img class="d-block m-auto width-360"
+                                src="https://ringoo.ua/wp-content/uploads/2019/11/iphone11-128gb-black-5d8c562f641f4-1.png"
+                                alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
+                            <div class="circkles justify-content-center my-3">
+                                <div class="circkle__item">
+                                    <div class="circkle__border">
+                                        <div class="circkle bg-green"></div>
+                                    </div>
+                                </div>
+                                <div class="circkle__item">
+                                    <div class="circkle__border">
+                                        <div class="circkle bg-black"></div>
+                                    </div>
+                                </div>
+                                <div class="circkle__item">
+                                    <div class="circkle__border">
+                                        <div class="circkle bg-orange"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-black"></div>
-                            </div>
-                        </div>
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-orange"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <button
-                        class="d-block m-auto px-4 py-1 border-transparent h5 bg-green color-white">Докладнiше</button>
-                </div>
-                <div class="max-width-400 bg-white p-4 mx-2">
-                    <a href="#">
-                        <div class="h3 color-green hover-colorBlack">Neffos X20 Pro 3/64GB Green
-                            (TP9131AA7UA)</div>
-                    </a>
-                    <div class="h5 font-weight-bold">3649 грн</div>
-                    <img class="d-block m-auto width-360"
-                        src="https://ringoo.ua/wp-content/uploads/2019/08/tp_link_neffos_x20_pro_green_images_13418125970.jpg"
-                        alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
-                    <div class="circkles justify-content-center my-3">
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-green"></div>
-                            </div>
-                        </div>
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-black"></div>
-                            </div>
-                        </div>
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-orange"></div>
-                            </div>
+                            <button
+                                class="d-block m-auto px-4 py-1 border-transparent h5 bg-green color-white hover-bgGreenBlond transition">Докладнiше</button>
                         </div>
                     </div>
-                    <button
-                        class="d-block m-auto px-4 py-1 border-transparent h5 bg-green color-white">Докладнiше</button>
-                </div>
-                <div class="max-width-400 bg-white p-4 mx-2">
-                    <a href="#">
-                        <div class="h3 color-green hover-colorBlack">Neffos X20 Pro 3/64GB Green
-                            (TP9131AA7UA)</div>
-                    </a>
-                    <div class="h5 font-weight-bold">3649 грн</div>
-                    <img class="d-block m-auto width-360"
-                        src="https://ringoo.ua/wp-content/uploads/2019/08/tp_link_neffos_x20_pro_green_images_13418125970.jpg"
-                        alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
-                    <div class="circkles justify-content-center my-3">
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-green"></div>
+                    <div class="carousel__item">
+                        <div class="max-width-400 bg-white p-4 mx-2">
+                            <a href="#" class="text-decoration-none">
+                                <div class="h3 color-green hover-colorBlack transition">3 X20 Pro 3/64GB Green
+                                    (TP9131AA7UA)</div>
+                            </a>
+                            <div class="h5 font-weight-bold">3649 грн</div>
+                            <img class="d-block m-auto width-360"
+                                src="https://ringoo.ua/wp-content/uploads/2019/10/iphone_11_pro_max_mg_2_1.jpg"
+                                alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
+                            <div class="circkles justify-content-center my-3">
+                                <div class="circkle__item">
+                                    <div class="circkle__border">
+                                        <div class="circkle bg-green"></div>
+                                    </div>
+                                </div>
+                                <div class="circkle__item">
+                                    <div class="circkle__border">
+                                        <div class="circkle bg-black"></div>
+                                    </div>
+                                </div>
+                                <div class="circkle__item">
+                                    <div class="circkle__border">
+                                        <div class="circkle bg-orange"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-black"></div>
-                            </div>
-                        </div>
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-orange"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <button
-                        class="d-block m-auto px-4 py-1 border-transparent h5 bg-green color-white">Докладнiше</button>
-                </div>
-                <div class="max-width-400 bg-white p-4 mx-2">
-                    <a href="#">
-                        <div class="h3 color-green hover-colorBlack">Neffos X20 Pro 3/64GB Green
-                            (TP9131AA7UA)</div>
-                    </a>
-                    <div class="h5 font-weight-bold">3649 грн</div>
-                    <img class="d-block m-auto width-360"
-                        src="https://ringoo.ua/wp-content/uploads/2019/08/tp_link_neffos_x20_pro_green_images_13418125970.jpg"
-                        alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
-                    <div class="circkles justify-content-center my-3">
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-green"></div>
-                            </div>
-                        </div>
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-black"></div>
-                            </div>
-                        </div>
-                        <div class="circkle__item">
-                            <div class="circkle__border">
-                                <div class="circkle bg-orange"></div>
-                            </div>
+                            <button
+                                class="d-block m-auto px-4 py-1 border-transparent h5 bg-green color-white hover-bgGreenBlond transition">Докладнiше</button>
                         </div>
                     </div>
-                    <button
-                        class="d-block m-auto px-4 py-1 border-transparent h5 bg-green color-white">Докладнiше</button>
+                    <div class="carousel__item">
+                        <div class="max-width-400 bg-white p-4 mx-2">
+                            <a href="#" class="text-decoration-none">
+                                <div class="h3 color-green hover-colorBlack transition">4 X20 Pro 3/64GB Green
+                                    (TP9131AA7UA)</div>
+                            </a>
+                            <div class="h5 font-weight-bold">3649 грн</div>
+                            <img class="d-block m-auto width-360"
+                                src="https://ringoo.ua/wp-content/uploads/2019/08/tp_link_neffos_x20_pro_green_images_13418125970.jpg"
+                                alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
+                            <div class="circkles justify-content-center my-3">
+                                <div class="circkle__item">
+                                    <div class="circkle__border">
+                                        <div class="circkle bg-green"></div>
+                                    </div>
+                                </div>
+                                <div class="circkle__item">
+                                    <div class="circkle__border">
+                                        <div class="circkle bg-black"></div>
+                                    </div>
+                                </div>
+                                <div class="circkle__item">
+                                    <div class="circkle__border">
+                                        <div class="circkle bg-orange"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                class="d-block m-auto px-4 py-1 border-transparent h5 bg-green color-white hover-bgGreenBlond transition">Докладнiше</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="my-4"></div>
-            <form action="#">
-                <input type="range" class="form-control-range" id="formControlRange_2"
-                    onmousemove="handleRangeProductItem(2)">
-            </form>
-        </div>
+            </div><!-- #/carouselDiapasone_2 -->
+        </div><!-- ./bg-grayLimd -->
+        <div class="my-4"></div>
         <div class="bg-grayLimd py-4">
             <div class="container-fluid">
                 <div class="h2 font-weight-bold text-center">Нові надходження</div>
@@ -510,7 +733,8 @@
                                 src="https://ringoo.ua/wp-content/uploads/2018/04/11-85.jpg"
                                 alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
                             <div class="px-2">
-                                <a href="#" class="color-green h5 hover-colorBlack text-decoration-none">Neffos X20
+                                <a href="#"
+                                    class="color-green h5 hover-colorBlack transition text-decoration-none">Neffos X20
                                     Pro 3/64GB Green (TP9131AA7UA)</a>
                                 <br />
                                 <span class="font-weight-bold">3649 грн</span>
@@ -518,7 +742,7 @@
                         </div>
                         <hr />
                         <button
-                            class="bg-green border-transparent color-white px-4 py-1 d-block m-auto">Докладнiше</button>
+                            class="bg-green border-transparent color-white px-4 py-1 d-block m-auto hover-bgGreenBlond transition">Докладнiше</button>
                     </div>
                     <div class="m-4 p-4 bg-white max-width-400">
                         <div class="d-flex">
@@ -526,7 +750,8 @@
                                 src="https://ringoo.ua/wp-content/uploads/2018/04/11-85.jpg"
                                 alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
                             <div class="px-2">
-                                <a href="#" class="color-green h5 hover-colorBlack text-decoration-none">Neffos X20
+                                <a href="#"
+                                    class="color-green h5 hover-colorBlack transition text-decoration-none">Neffos X20
                                     Pro 3/64GB Green (TP9131AA7UA)</a>
                                 <br />
                                 <span class="font-weight-bold">3649 грн</span>
@@ -534,7 +759,7 @@
                         </div>
                         <hr />
                         <button
-                            class="bg-green border-transparent color-white px-4 py-1 d-block m-auto">Докладнiше</button>
+                            class="bg-green border-transparent color-white px-4 py-1 d-block m-auto hover-bgGreenBlond transition">Докладнiше</button>
                     </div>
                     <div class="m-4 p-4 bg-white max-width-400">
                         <div class="d-flex">
@@ -542,7 +767,8 @@
                                 src="https://ringoo.ua/wp-content/uploads/2018/04/11-85.jpg"
                                 alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
                             <div class="px-2">
-                                <a href="#" class="color-green h5 hover-colorBlack text-decoration-none">Neffos X20
+                                <a href="#"
+                                    class="color-green h5 hover-colorBlack transition text-decoration-none">Neffos X20
                                     Pro 3/64GB Green (TP9131AA7UA)</a>
                                 <br />
                                 <span class="font-weight-bold">3649 грн</span>
@@ -550,7 +776,7 @@
                         </div>
                         <hr />
                         <button
-                            class="bg-green border-transparent color-white px-4 py-1 d-block m-auto">Докладнiше</button>
+                            class="bg-green border-transparent color-white px-4 py-1 d-block m-auto hover-bgGreenBlond transition">Докладнiше</button>
                     </div>
                     <div class="m-4 p-4 bg-white max-width-400">
                         <div class="d-flex">
@@ -558,7 +784,8 @@
                                 src="https://ringoo.ua/wp-content/uploads/2018/04/11-85.jpg"
                                 alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
                             <div class="px-2">
-                                <a href="#" class="color-green h5 hover-colorBlack text-decoration-none">Neffos X20
+                                <a href="#"
+                                    class="color-green h5 hover-colorBlack transition text-decoration-none">Neffos X20
                                     Pro 3/64GB Green (TP9131AA7UA)</a>
                                 <br />
                                 <span class="font-weight-bold">3649 грн</span>
@@ -566,11 +793,10 @@
                         </div>
                         <hr />
                         <button
-                            class="bg-green border-transparent color-white px-4 py-1 d-block m-auto">Докладнiше</button>
+                            class="bg-green border-transparent color-white px-4 py-1 d-block m-auto hover-bgGreenBlond transition">Докладнiше</button>
                     </div>
                 </div>
             </div><!-- ./container-fluid -->
-        </div>
         </div><!-- ./bg-grayLimd -->
         <div class="bg-grayLimd py-4">
             <div class="container-fluid">
@@ -654,9 +880,10 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <div class="row">
-                            <div class="col-12 col-md-6 px-0">
+                            <div class="col-12 col-md-6 px-0 d-flex d-md-block justify-content-center">
                                 <div class="m-4 p-4 bg-white max-width-400">
-                                    <a href="#" class="color-green hover-colorBlack text-decoration-none">Neffos
+                                    <a href="#"
+                                        class="color-green hover-colorBlack transition text-decoration-none">Neffos
                                         X20
                                         Pro 3/64GB Green (TP9131AA7UA)</a>
                                     <div class="font-weight-bold">3649 грн</div>
@@ -666,12 +893,13 @@
                                     <div class="my-2"></div>
                                     <hr />
                                     <button
-                                        class="bg-green border-transparent color-white px-4 py-1 d-block m-auto">Докладнiше</button>
+                                        class="bg-green border-transparent color-white px-4 py-1 d-block m-auto hover-bgGreenBlond transition">Докладнiше</button>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 px-0">
+                            <div class="col-12 col-md-6 px-0 d-flex d-md-block justify-content-center">
                                 <div class="m-4 p-4 bg-white max-width-400">
-                                    <a href="#" class="color-green hover-colorBlack text-decoration-none">Neffos
+                                    <a href="#"
+                                        class="color-green hover-colorBlack transition text-decoration-none">Neffos
                                         X20
                                         Pro 3/64GB Green (TP9131AA7UA)</a>
                                     <div class="font-weight-bold">3649 грн</div>
@@ -681,14 +909,15 @@
                                     <div class="my-2"></div>
                                     <hr />
                                     <button
-                                        class="bg-green border-transparent color-white px-4 py-1 d-block m-auto">Докладнiше</button>
+                                        class="bg-green border-transparent color-white px-4 py-1 d-block m-auto hover-bgGreenBlond transition">Докладнiше</button>
                                 </div>
                             </div>
                         </div><!-- ./row -->
                         <div class="row">
-                            <div class="col-12 col-md-6 px-0">
+                            <div class="col-12 col-md-6 px-0 d-flex d-md-block justify-content-center">
                                 <div class="m-4 p-4 bg-white max-width-400">
-                                    <a href="#" class="color-green hover-colorBlack text-decoration-none">Neffos
+                                    <a href="#"
+                                        class="color-green hover-colorBlack transition text-decoration-none">Neffos
                                         X20
                                         Pro 3/64GB Green (TP9131AA7UA)</a>
                                     <div class="font-weight-bold">3649 грн</div>
@@ -698,12 +927,13 @@
                                     <div class="my-2"></div>
                                     <hr />
                                     <button
-                                        class="bg-green border-transparent color-white px-4 py-1 d-block m-auto">Докладнiше</button>
+                                        class="bg-green border-transparent color-white px-4 py-1 d-block m-auto hover-bgGreenBlond transition">Докладнiше</button>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 px-0">
+                            <div class="col-12 col-md-6 px-0 d-flex d-md-block justify-content-center">
                                 <div class="m-4 p-4 bg-white max-width-400">
-                                    <a href="#" class="color-green hover-colorBlack text-decoration-none">Neffos
+                                    <a href="#"
+                                        class="color-green hover-colorBlack transition text-decoration-none">Neffos
                                         X20
                                         Pro 3/64GB Green (TP9131AA7UA)</a>
                                     <div class="font-weight-bold">3649 грн</div>
@@ -713,15 +943,15 @@
                                     <div class="my-2"></div>
                                     <hr />
                                     <button
-                                        class="bg-green border-transparent color-white px-4 py-1 d-block m-auto">Докладнiше</button>
+                                        class="bg-green border-transparent color-white px-4 py-1 d-block m-auto hover-bgGreenBlond transition">Докладнiше</button>
                                 </div>
                             </div>
                         </div><!-- ./row -->
                     </div><!-- ./col-6 -->
                     <div class="my-2 d-lg-none">.</div>
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-lg-6 d-flex d-md-block justify-content-center">
                         <div class="m-4 p-4 bg-white">
-                            <a href="#" class="color-green h5 hover-colorBlack text-decoration-none">Neffos
+                            <a href="#" class="color-green h5 hover-colorBlack transition text-decoration-none">Neffos
                                 X20
                                 Pro 3/64GB Green (TP9131AA7UA)</a>
                             <div class="font-weight-bold">3649 грн</div>
@@ -729,18 +959,19 @@
                                 alt="Neffos X20 Pro 3/64GB Green (TP9131AA7UA)">
                             <hr />
                             <button
-                                class="bg-green border-transparent color-white px-4 py-1 d-block m-auto">Докладнiше</button>
+                                class="bg-green border-transparent color-white px-4 py-1 d-block m-auto hover-bgGreenBlond transition">Докладнiше</button>
                         </div>
                     </div>
                 </div>
             </div><!-- ./container-fluid -->
-        </div>
+        </div><!-- ./bg-grayLimd -->
         <div class="container-fluid my-4 py-4">
             <div class="h2 font-weight-bold text-center">Гарячі пропозиції</div>
             <div class="my-4"></div>
             <div class="d-flex flex-wrap justify-content-between">
                 <div class="d-block m-auto max-width-400 p-4">
-                    <div class="d-block m-auto height-85 width-85 border-radius-100 bg-greenLight position-relative">
+                    <div
+                        class="d-block m-auto height-85 width-85 border-radius-100 bg-greenLight hover-bgGreenBlond transition position-relative">
                         <i class="fas fa-home i-benefits color-white"></i>
                     </div>
                     <div class="my-2"></div>
@@ -749,7 +980,8 @@
                         вибирайте зручний варіант доставки</div>
                 </div>
                 <div class="d-block m-auto max-width-400 p-4">
-                    <div class="d-block m-auto height-85 width-85 border-radius-100 bg-greenLight position-relative">
+                    <div
+                        class="d-block m-auto height-85 width-85 border-radius-100 bg-greenLight hover-bgGreenBlond transition position-relative">
                         <i class="fas fa-home i-benefits color-white"></i>
                     </div>
                     <div class="my-2"></div>
@@ -758,7 +990,8 @@
                         вибирайте зручний варіант доставки</div>
                 </div>
                 <div class="d-block m-auto max-width-400 p-4">
-                    <div class="d-block m-auto height-85 width-85 border-radius-100 bg-greenLight position-relative">
+                    <div
+                        class="d-block m-auto height-85 width-85 border-radius-100 bg-greenLight hover-bgGreenBlond transition position-relative">
                         <i class="fas fa-home i-benefits color-white"></i>
                     </div>
                     <div class="my-2"></div>
@@ -767,7 +1000,8 @@
                         вибирайте зручний варіант доставки</div>
                 </div>
                 <div class="d-block m-auto max-width-400 p-4">
-                    <div class="d-block m-auto height-85 width-85 border-radius-100 bg-greenLight position-relative">
+                    <div
+                        class="d-block m-auto height-85 width-85 border-radius-100 bg-greenLight hover-bgGreenBlond transition position-relative">
                         <i class="fas fa-home i-benefits color-white"></i>
                     </div>
                     <div class="my-2"></div>
@@ -776,7 +1010,8 @@
                         вибирайте зручний варіант доставки</div>
                 </div>
                 <div class="d-block m-auto max-width-400 p-4">
-                    <div class="d-block m-auto height-85 width-85 border-radius-100 bg-greenLight position-relative">
+                    <div
+                        class="d-block m-auto height-85 width-85 border-radius-100 bg-greenLight hover-bgGreenBlond transition position-relative">
                         <i class="fas fa-home i-benefits color-white"></i>
                     </div>
                     <div class="my-2"></div>
@@ -795,168 +1030,206 @@
                     <input type="text" placeholder="Email" class="mb-3 d-block m-auto w-50 px-2 py-1">
                     <div class="my-2"></div>
                     <button type="submit"
-                        class="d-block m-auto bg-black border-transparent color-white px-3 py-2">ПІДПИСАТИСЯ НА
-                        РОЗСИЛКУ</button>
+                        class="d-block m-auto bg-black border-transparent color-white px-3 py-2 hover-bgBlackLight transition">ПІДПИСАТИСЯ
+                        НА
+                        РОЗСИЛКУ
+                    </button>
                 </form>
             </div><!-- ./container-fluid -->
-        </div>
+        </div><!-- ./bg-greenLight -->
         <div class="bg-gray">
             <div class="container-fluid">
                 <div class="h6 py-2 m-0 color-white">index</div>
             </div>
-        </div>
+        </div><!-- ./bg-gray -->
     </main><!-- ./content -->
 
-    <footer class="bg-blackLight py-4">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="d-none d-md-block col-md-6 col-lg-3">
-                    <ul>
-                        <li class="h6 color-greenLight font-weight-bold list-style-none">Про нас</li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-5 d-none d-lg-flex">
-                    <ul>
-                        <li class="h6 color-greenLight font-weight-bold list-style-none">Про нас</li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                    </ul>
-                    <div class="mx-4"></div>
-                    <ul>
-                        <li class="h6 color-greenLight font-weight-bold list-style-none">Про нас</li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                        <li class="list-style-none">
-                            <a href="#" class="color-white hover-colorGreen h7">Контакти</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="info__footer">
-                        <div class="h6 color-greenLight font-weight-bold">Зв’язатися з нами</div>
-                        <div class="mb-2 d-flex align-items-center">
-                            <i class="fas fa-phone-alt i-border mr-2"></i>
-                            <span class="h3 mb-0 color-white">0 800 308 480</span></div>
-                        <div class="color-white h6">Безкоштовні дзвінки для абонентів усіх українських операторів
-                            зв’язку.
-                            Дзвінки з питань сервісу та обслуговування.
-                            Оформлення замовлення за номерами:
-                        </div>
-                        <div class="mb-2"></div>
-                        <div class="phone-min">(097) 090-87-07</div>
-                        <div class="phone-min">(073) 090-87-07</div>
-                    </div><!-- ./info__footer -->
-                </div>
-            </div><!-- ./row -->
-            <div class="row">
-                <div class="col-lg-8"></div>
-                <div class="col-12 col-lg-4">
-                    <div class="d-flex justify-content-center justify-content-lg-start align-items-center my-4">
-                        <div class="mr-2">
-                            <i class="fab fa-facebook h2 color-white mx-2"></i>
-                            <i class="fab fa-instagram h2 color-white mx-2"></i>
-                            <i class="fab fa-youtube h2 color-white mx-2"></i>
-                        </div>
-                        <img src="https://ringoo.ua/wp-content/themes/ringoo-child/images/pay_sys_icons.png"
-                            class="max-width-100">
+    <footer>
+        <div class="bg-blackLight py-4">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="d-none d-md-block col-md-6 col-lg-3">
+                        <ul>
+                            <li class="h6 color-greenLight font-weight-bold list-style-none">Про нас</li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                        </ul>
                     </div>
-                </div><!-- ./container-fluid -->
+                    <div class="col-lg-5 d-none d-lg-flex">
+                        <ul>
+                            <li class="h6 color-greenLight font-weight-bold list-style-none">Про нас</li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                        </ul>
+                        <div class="mx-4"></div>
+                        <ul>
+                            <li class="h6 color-greenLight font-weight-bold list-style-none">Про нас</li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                            <li class="list-style-none">
+                                <a href="#"
+                                    class="color-white hover-colorGreen transition text-decoration-none h7">Контакти</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="info__footer">
+                            <div class="h6 color-greenLight font-weight-bold">Зв’язатися з нами</div>
+                            <div class="mb-2 d-flex align-items-center">
+                                <i class="fas fa-phone-alt i-border mr-2"></i>
+                                <span class="h3 mb-0 color-white">0 800 308 480</span></div>
+                            <div class="color-white h6">Безкоштовні дзвінки для абонентів усіх українських операторів
+                                зв’язку.
+                                Дзвінки з питань сервісу та обслуговування.
+                                Оформлення замовлення за номерами:
+                            </div>
+                            <div class="mb-2"></div>
+                            <div class="phone-min">(097) 090-87-07</div>
+                            <div class="phone-min">(073) 090-87-07</div>
+                        </div><!-- ./info__footer -->
+                    </div>
+                </div><!-- ./row -->
+                <div class="row">
+                    <div class="col-lg-8"></div>
+                    <div class="col-12 col-lg-4">
+                        <div class="d-flex justify-content-center justify-content-lg-start align-items-center my-4">
+                            <div class="mr-2">
+                                <i class="fab fa-facebook h2 color-white hover-colorGreenBlond transition mx-2"></i>
+                                <i class="fab fa-youtube h2 color-white hover-colorGreenBlond transition mx-2"></i>
+                                <i class="fab fa-instagram h2 color-white hover-colorGreenBlond transition mx-2"></i>
+                            </div>
+                            <img src="https://ringoo.ua/wp-content/themes/ringoo-child/images/pay_sys_icons.png"
+                                class="max-width-100">
+                        </div>
+                    </div>
+                </div>
+            </div><!-- ./container-fluid -->
+        </div><!-- ./bg-blackLight -->
+        <div class="bg-black">
+            <div class="container-fluid">
+                <div class="h6 text-center color-white py-1 m-0">Усi права захищено!</div>
+            </div>
+        </div><!-- ./bg-black -->
     </footer><!-- /footer -->
-    <div class="bg-black">
-        <div class="container-fluid">
-            <div class="h6 text-center color-white py-1 m-0">Усi права захищено!</div>
-        </div>
-    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="/assets/node_modules/jquery/dist/jquery.js"></script>
     <script src="/assets/node_modules/popper.js/dist/popper.js"></script>
-    <script src="/assets/node_modules/bootstrap/dist/js/bootstrap.js"> </script> <!-- Main JavaScript -->
+    <script src="/assets/node_modules/bootstrap/dist/js/bootstrap.js"> </script>
+    <script src="/assets/node_modules/ramda/dist/ramda.min.js"></script>
 
+    <!-- Main JavaScript -->
     <script src="assets/script/main.js"></script>
 </body>
 

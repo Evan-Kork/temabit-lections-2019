@@ -1,0 +1,40 @@
+/* Carousel Diapasone */
+.diapasone__carousel {
+  position: relative;
+}
+
+@include media-breakpoint-down(md) {
+  .carousel__item {
+    max-width: 300px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.carousel__indicators {
+  display: flex;
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -1rem;
+  z-index: 900;
+
+  transform: translateX(-50%);
+}
+
+.indicator {
+  width: 60px;
+  height: 5px;
+  margin: 0 2px;
+
+  background-color: $gray;
+
+  transition: background-color 0.2s ease-in-out;
+
+  &.active {
+    background-color: $red-light;
+  }
+}

@@ -21,8 +21,10 @@
   "homepage": "https://github.com/Evan-Kork/temabit-lections-2019#readme",
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "curry": "^1.2.0",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
+    "ramda": "^0.26.1",
     "sass": "^1.23.3"
   }
 }

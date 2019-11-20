@@ -1,6 +1,6 @@
 /* Color */
-.color-green {
-  color: $green;
+.color-inherit {
+  color: inherit;
 }
 
 .color-green {
@@ -19,9 +19,29 @@
   color: $gray-white;
 }
 
+.color-grayBlond {
+  color: $gray-blond;
+}
+
+.color-black {
+  color: black;
+}
+
+.hover-colorWhite {
+  &:hover {
+    color: $white;
+  }
+}
+
 .hover-colorGreen {
   &:hover {
     color: $green;
+  }
+}
+
+.hover-colorGreenBlond {
+  &:hover {
+    color: $green-blond;
   }
 }
 
@@ -79,9 +99,27 @@
   background-color: transparent;
 }
 
+.hover-bgOrangeBlond {
+  &:hover {
+    background-color: $orange-blond;
+  }
+}
+
 .hover-bgTransparent {
   &:hover {
     background-color: transparent;
+  }
+}
+
+.hover-bgGreenBlond {
+  &:hover {
+    background-color: $green-blond;
+  }
+}
+
+.hover-bgBlackLight {
+  &:hover {
+    background-color: $black-light;
   }
 }
 
@@ -89,6 +127,16 @@
   &:hover {
     background-color: $white;
   }
+}
+
+.focus-bgWhite {
+  &:focus {
+    background-color: $white;
+  }
+}
+
+.border-colorBlack {
+  border-color: black;
 }
 
 .border-grayBlond {
