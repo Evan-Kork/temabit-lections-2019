@@ -320,4 +320,16 @@
   transition: all ease 0.3s;
 }
 
+.breadcrumbs-container {
+  background-color: #40423e;
+}
+
+.footer-container {
+  background-color: #262724;
+}
+
+.rights-container {
+  background-color: #1b1c19;
+}
+
 /*# sourceMappingURL=index.css.map */
