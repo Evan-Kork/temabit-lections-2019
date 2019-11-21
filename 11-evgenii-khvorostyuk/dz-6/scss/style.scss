@@ -1,0 +1,226 @@
+@import './vars';
+
+* {
+  box-sizing: border-box;
+}
+
+html,body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  color: $c--black;
+  
+  .container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    
+    header {
+      .header-content {
+
+        &-img-bg {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    .page-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+
+      & > .container {
+        display: flex;
+
+        @include for-mobile {
+          flex-direction: column;
+        }
+      }
+      
+      &__sidebar {
+        max-width: 250px;
+        min-width: 250px;
+        background-color: $c--light-blue;
+        color: $c--red;
+        padding: 10px 15px;
+
+        @include for-mobile {
+          min-width: 100%;
+          max-width: 100%;
+        }
+
+        &_title {
+          display: flex;
+          align-items: center;
+          margin-bottom: 25px;
+
+          img {
+            max-width: 56px;
+            width: 100%;
+            display: block;
+            margin-right: 6px;
+          }
+
+          &-text {
+            color: $c--orange;
+
+            div:first-child {
+              font-size: 26px;
+              line-height: 26px;
+              font-weight: 700;
+            }
+
+            div:last-child {
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 18px;
+            }
+          }
+        }
+        
+        &_order-link {
+          display: block;
+          margin-bottom: 15px;
+          text-decoration: none;
+          font-weight: 600;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        h3 {
+          font-size: 16px;
+          font-weight: normal;
+          margin: 0;
+          margin-bottom: 5px;
+          font-weight: 600;
+        }
+
+        nav {
+          margin-bottom: 15px;
+
+          ul, ol {
+            margin: 0;
+            padding: 0;
+            padding-left: 20px;
+
+            li {
+              a {
+                color: $c--red;
+                text-decoration: none;
+
+                &:hover{
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__wrapper {
+        flex: 1 1 auto;
+        padding: 15px 10px;
+
+        h1 {
+          margin: 0;
+          margin-bottom: 15px;
+          font-size: 26px;
+          color: $c--blue;
+
+          @include for-tablet {
+            font-size: 24px;
+          }
+        }
+
+        &_description {
+          color: $c--blue;
+          margin-bottom: 10px;
+        }
+
+        &_projects-list {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 -5px;
+
+          &-item {
+            flex-basis: 50%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 5px;
+            max-width: 50%;
+
+            @include for-tablet {
+              flex-basis: 100%;
+              max-width: 100%;
+            }
+
+            &_logo-wrapper {
+              overflow: hidden;
+              max-width: 350px;
+              width: 100%;
+              margin: 0 auto;
+              margin-bottom: 10px;
+
+              img {
+                display: block;
+                width: 100%;
+                transition: $transition;
+              }
+            }
+
+            &:hover {
+              &_logo-wrapper {
+                img {
+                  transform: scale(1.2);
+                }
+              }
+            }
+
+            h2 {
+              margin: 0;
+              font-size: 18px;
+            }
+
+            &_description {
+              flex: 1 1 auto;
+              margin-bottom: 15px;
+              padding: 0 10px;
+            }
+
+            &_characteristics {
+              padding: 5px;
+              margin: 0;
+              list-style: none;
+              background-color: $c--grey;
+
+              li {
+                margin-bottom: 3px;
+
+                span {
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

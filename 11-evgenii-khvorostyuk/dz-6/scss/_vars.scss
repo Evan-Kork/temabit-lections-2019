@@ -1,0 +1,20 @@
+$c--black: #000000;
+$c--red:#7c2548;
+$c--orange:#f86a2a;
+$c--grey:#e8e6fb;
+$c--blue:#09046a;
+$c--light-blue:#cdfffe;
+
+$transition: all 0.3s ease-in-out;
+
+@mixin for-tablet {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin for-mobile {
+  @media (max-width: 540px) {
+    @content;
+  }
+}
