@@ -824,6 +824,7 @@
     list-style: none;
     padding-bottom: 5px;
     border-bottom: 1px solid #d4d9d9;
+    text-align: left;
 }
 .goods-short-desc-model ul li{
     color: #000;
@@ -939,7 +940,8 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    border-bottom: 1px solid #d4d9d9
+    border-bottom: 1px solid #d4d9d9;
+    margin-bottom: 20px;
 }
 .delivery-block-header{
     display: flex;
@@ -968,4 +970,44 @@
 .delivery-block-content-item p{
     margin-bottom: 0;
     margin-top: 10px;
+}
+.goods-specs-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.goods-specs-item a{
+    line-height: 1;
+    padding: 15px 20px;
+    color: #262724;
+    background-color: #e6ebeb;
+    font-size: 14px;
+    border-radius: 25px;
+    transition: .25s;
+}
+.goods-specs-item a:hover{
+    transition: .25s;
+    background-color: #98c93c;
+    text-decoration: none;
+}
+.goods-specs-item i{
+    font-size: 17px;
+    padding-right: 10px;
+}
+.specs-item-active a{
+    background-color: #98c93c;
+}
+.goods-specs-table{
+    margin:50px 0;
+}
+.info-pay-delivery-container{
+    background-color: #f5f7f7;
+}
+.info-pay-delivery-main{
+    padding: 50px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #98c93c;
 }
