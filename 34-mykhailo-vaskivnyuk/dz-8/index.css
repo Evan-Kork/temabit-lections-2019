@@ -64,6 +64,28 @@ h3 {
 .header .ringoo .col {
   min-height: 50px;
 }
+.header .ringoo img {
+  width: 100%;
+}
+.header .menu > .col {
+  padding: 0;
+}
+.header .menu .nav .show .nav-link {
+  color: #98c93c;
+}
+.header .menu .nav .nav-link {
+  color: #fff;
+  font-family: "Tahoma";
+  line-height: 2.1em;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.header .menu .nav .dropdown-menu {
+  width: 100%;
+  transform: translate3d(0, 0, 0) !important;
+  top: calc(100% - 2px) !important;
+  left: 1px;
+}
 
 .main .carousel .col {
   padding: 0;
@@ -85,7 +107,7 @@ h3 {
 .main .promos .caption {
   padding: 10px;
 }
-.main .promos *[class^=item] {
+.main .promos [class^=item_] {
   width: 265px;
   height: 220px;
   margin: auto 20px;
@@ -94,7 +116,7 @@ h3 {
   align-items: flex-end;
   padding: 20px;
 }
-.main .promos *[class^=item] button {
+.main .promos [class^=item_] button {
   background-color: #722b6f;
   border: none;
   width: 153.88px;

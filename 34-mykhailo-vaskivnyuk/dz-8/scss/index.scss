@@ -92,7 +92,38 @@ h3 {
 		background-color: $color_ringoo_bg;
 		color: $color_ringoo;
 		.col {
-		min-height: 50px;
+			min-height: 50px;
+		}
+		img {
+			width: 100%;
+		}
+	}
+	.menu {
+
+		>.col {
+			padding: 0;
+		}
+		.nav {
+			.show {
+				.nav-link {
+					color: $color_ringoo;
+				}
+			}
+			.nav-link {
+				color: $color_light;
+				font-family: 'Tahoma';
+				line-height: 2.1em;
+				//font-size: 0.8em;
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+			.dropdown-menu {
+				width: 100%;
+				//transform: translateX(0) translateY(0) !important;
+				transform: translate3d(0, 0, 0) !important;
+				top: calc(100% - 2px) !important;
+				left: 1px;
+			}
 		}
 	}
 }
@@ -124,7 +155,7 @@ h3 {
 		.caption {
 			padding: 10px;
 		}
-		*[class^='item'] {
+		[class^='item_'] {
 			width: 265px;
 			height: 220px;
 			margin: auto 20px;
