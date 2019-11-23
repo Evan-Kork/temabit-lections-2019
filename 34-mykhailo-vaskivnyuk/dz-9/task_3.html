@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DZ-9 TASK 3</title>
+</head>
+<body>
+
+	<script id = "script">
+
+	let arr = [ [34, 8, 34, 90, 34, 987, 1, 5],
+				100,
+				[3, 5, 12, 35, 1, 74] ];
+
+	for (let i = 0; i < arr.length; i++) {
+
+		if (!Array.isArray(arr[i])) {
+			document.write("[" + arr[i] + "]");
+		}
+
+		for (let j = 0; j < arr[i].length; j++) {
+			document.write("[" + arr[i][j] + "]");
+		}
+		document.write("<br/>");
+	}
+
+	</script>
+
+	<script>
+		let code = document.createElement("pre");
+		code.append(document.querySelector("#script").innerHTML);
+		document.body.prepend(code);	
+	</script>
+
+</body>
+</html>
