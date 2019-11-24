@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    document.write("for");
+    for (var i = 1; i < 10; i++) {
+    	document.write("<table border='3'>");
+        for (var j = 1; j <= 10; j++) {
+        	document.write("<tr>");
+            document.write("<td>"+i+"</td>"+"<td>x</td>"+"<td>"+j+"</td>"+"<td>=</td>"+"<td>"+i*j+"</td>");
+            document.write("</tr>");
+        }
+        document.write("<table>");
+    }
+    document.write("while");
+    var i = 1;
+    while(i <10){
+    	var j =1;
+    	document.write("<table border='3'>");
+    	while(j<10){
+        	document.write("<tr>");
+            document.write("<td>"+i+"</td>"+"<td>x</td>"+"<td>"+j+"</td>"+"<td>=</td>"+"<td>"+i*j+"</td>");
+            document.write("</tr>");
+            j++;
+    	}
+    	document.write("<table>");
+    	i++;
+    }
+    </script>
+</body>
+
+</html>
