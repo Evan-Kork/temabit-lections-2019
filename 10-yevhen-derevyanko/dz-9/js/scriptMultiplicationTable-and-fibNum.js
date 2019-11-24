@@ -65,7 +65,7 @@ function getFibonacciNumbers(item){
 
 
 
-//Чи́сла Фібона́ччі №2 (рукурсія bad practice)
+//Чи́сла Фібона́ччі №2 (рекурсія bad practice)
 // let boxFibonacciNumbers = document.querySelector('.fibonacci-numbers');
 // if(boxFibonacciNumbers){
 
