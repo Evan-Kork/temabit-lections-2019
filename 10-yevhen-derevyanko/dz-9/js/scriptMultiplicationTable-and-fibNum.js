@@ -62,3 +62,24 @@ function getFibonacciNumbers(item){
   }
   return NumbFib.join(', ');
 }
+
+
+
+//Чи́сла Фібона́ччі №2 (рукурсія bad practice)
+// let boxFibonacciNumbers = document.querySelector('.fibonacci-numbers');
+// if(boxFibonacciNumbers){
+
+//   let NumbFib = [];
+//   for (let iFib = 0; iFib < 10; iFib++) {
+//     NumbFib.push(getFibonacciNumbers(iFib));
+//   }
+
+//   boxFibonacciNumbers.insertAdjacentHTML("beforeEnd", NumbFib.join(', '));
+//   function getFibonacciNumbers(item){
+//     if(item == 0 || item == 1){
+//       return item;
+//     }else{
+//       return getFibonacciNumbers(item - 1) + getFibonacciNumbers(item - 2);
+//     }
+//   }
+// }
