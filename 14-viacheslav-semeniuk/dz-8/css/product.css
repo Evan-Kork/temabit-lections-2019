@@ -74,7 +74,7 @@
 }
 
 .product-main-container {
-  padding: 1.5em 0 6em;
+  padding: 1.5em 0;
 }
 .product-main-container .main-wrapper .left-part {
   background-color: #fff;
@@ -172,6 +172,24 @@
   font-size: 14px;
 }
 
+.pills-container ul#myTab {
+  background-color: #f5f7f7;
+  padding: 20px;
+  border-bottom: 3px solid #98c93c;
+}
+.pills-container ul#myTab .nav-item {
+  width: 150px;
+}
+.pills-container ul#myTab .nav-item a {
+  background-color: #e6ebeb;
+  border-radius: 100px;
+  color: #000;
+}
+.pills-container ul#myTab .nav-item .active {
+  background-color: #98c93c;
+  color: #fff;
+}
+
 .available-container {
   background-color: #e8eded;
 }
@@ -184,6 +202,9 @@
 }
 .available-container a:hover img {
   transform: scale(1.1);
+}
+.available-container .available-header .dropdown a {
+  font-size: 28px;
 }
 .available-container .available-wrapper .available-left .available-item {
   max-height: 200px;

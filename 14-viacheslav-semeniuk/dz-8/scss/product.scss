@@ -71,7 +71,7 @@
 }
 
 .product-main-container {
-  padding: 1.5em 0 6em;
+  padding: 1.5em 0;
   .main-wrapper {
     .left-part {
       background-color: #fff;
@@ -201,6 +201,26 @@
   }
 }
 
+.pills-container {
+  ul#myTab {
+    background-color: #f5f7f7;
+    padding: 20px;
+    border-bottom: 3px solid #98c93c;
+    .nav-item {
+      width: 150px;
+      a {
+        background-color: #e6ebeb;
+        border-radius: 100px;
+        color: #000;
+      }
+      .active {
+        background-color: #98c93c;
+        color: #fff;
+      }
+    }
+  }
+}
+
 .available-container {
   background-color: #e8eded;
   a {
@@ -212,6 +232,13 @@
     }
     color: #000;
     text-decoration: none;
+  }
+  .available-header {
+    .dropdown {
+      a {
+        font-size: 28px;
+      }
+    }
   }
   .available-wrapper {
     .available-left {
