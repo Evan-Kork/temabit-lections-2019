@@ -48,14 +48,17 @@ if(boxWhile){
 //Чи́сла Фібона́ччі
 let boxFibonacciNumbers = document.querySelector('.fibonacci-numbers');
 if(boxFibonacciNumbers){
+  boxFibonacciNumbers.insertAdjacentHTML("beforeEnd", getFibonacciNumbers(100));
+}
+
+function getFibonacciNumbers(item){
   let NumbFib = [];
-  for (let iFib = 0; iFib <= 50; iFib++) {
+  for (let iFib = 0; iFib <= item; iFib++) {
     if(NumbFib.length == 0 || NumbFib.length == 1){
       NumbFib.push(iFib);
     }else{
       NumbFib.push(NumbFib[iFib-1] + NumbFib[iFib-2]);
     }
   }
-
-  boxFibonacciNumbers.insertAdjacentHTML("beforeEnd", NumbFib.join(', '));
+  return NumbFib.join(', ');
 }
