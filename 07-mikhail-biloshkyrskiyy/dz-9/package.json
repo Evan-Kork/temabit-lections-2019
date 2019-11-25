@@ -1,0 +1,26 @@
+{
+  "name": "dz-9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evan-Kork/temabit-lections-2019.git"
+  },
+  "author": "Misha Beloshkyrskiyy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Evan-Kork/temabit-lections-2019/issues"
+  },
+  "homepage": "https://github.com/Evan-Kork/temabit-lections-2019#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "curry": "^1.2.0",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0",
+    "ramda": "^0.26.1"
+  }
+}
