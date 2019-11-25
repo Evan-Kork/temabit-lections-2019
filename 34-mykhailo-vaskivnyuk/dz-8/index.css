@@ -238,6 +238,69 @@ h3 {
   margin-top: 15px;
 }
 
+.footer .email_sub {
+  background-color: #98c93c;
+  color: #fff;
+}
+.footer .email_sub .col {
+  padding: 35px 0px;
+}
+.footer .email_sub h4 {
+  text-align: center;
+}
+.footer .email_sub span {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.footer .email_sub .email {
+  width: 360px;
+  height: 40px;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+.footer .email_sub .submit {
+  width: 255px;
+  height: 40px;
+  background-color: #262724;
+  border: 1px solid #bfbfbf;
+  border-style: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+.footer .nav_line {
+  background-color: #40423e;
+  color: #fff;
+}
+.footer .bottom_contacts {
+  color: #fff;
+}
+.footer .bottom_contacts .row {
+  background-color: #262724;
+}
+.footer .bottom_contacts h5 {
+  color: #98c93c;
+}
+.footer .bottom_contacts ul {
+  list-style: none;
+}
+.footer .bottom_contacts a {
+  color: #fff;
+}
+.footer .bottom_contacts .icons .icon {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #98c93c;
+  border-radius: 100px;
+}
+.footer .bottom_contacts .icons img {
+  width: 94px;
+}
 .footer .rights_reserved {
   background-color: #000;
   color: #fff;

@@ -9,6 +9,8 @@ $color_promos_btn: #722b6f;
 $color_hot_off_bg: #e8eded;
 $color_product_green: #32cd32;
 $color_product_blue: #0000ff;
+$color_email_bdr: #bfbfbf;
+$color_nav_line: #40423e;
 
 $color_light: #fff;
 $color_dark: #000;
@@ -46,6 +48,14 @@ $color_dark: #000;
 					border-radius: 100px;
 				}
 
+}
+
+@mixin icon {
+	position: relative;
+ 	width: 50px;
+ 	height: 50px;
+ 	border: 1px solid $color_ringoo;
+ 	border-radius: 100px;
 }
 // fonts
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
@@ -317,10 +327,72 @@ h3 {
 .footer {
 
 	.email_sub {
+		background-color: $color_ringoo;
+		color: $color_light;
+		.col {
+			padding: 35px 0px;
+		}
+		h4 {
+			text-align: center;
+		}
+		span {
+			text-align: center;
+			font-size: 1.1em;
+			font-weight: 500;
+			margin-bottom: 30px;
+		}
+		.email {
+			width: 360px;
+			height: 40px;
+			padding-left: 20px;
+			margin-bottom: 30px;
+			font-size: 1.1rem;
+		}
+		.submit {
+			width: 255px;
+			height: 40px;
+			background-color: $color_ringoo_bg;
+			border: 1px solid $color_email_bdr;
+			border-style: none;
+			color: $color_light;
+			// margin-bottom: 30px;
+			font-weight: 500;
+			font-size: 0.9rem;
+			letter-spacing: 1px;
+		}
 
 	}
 
+	.nav_line {
+		background-color: $color_nav_line;
+		color: $color_light;
+	}
+
 	.bottom_contacts {
+		color: $color_light;
+		.row {
+			background-color: $color_ringoo_bg;
+		}
+		h5 {
+			color: $color_ringoo;
+		}
+		ul {
+			list-style: none;
+
+
+			
+		}
+		a {
+				color: $color_light;
+		}
+		.icons {
+			.icon {
+				@include icon;
+			}
+			img {
+				width: 94px;
+			}	
+		}
 
 	}
 
@@ -335,11 +407,7 @@ h3 {
 		@include item-color;
 	}
  	.icon {
- 		position: relative;
- 		width: 50px;
- 		height: 50px;
- 		border: 1px solid $color_ringoo;
- 		border-radius: 100px;
+		@include icon;
  	}
  	.nav {
  		padding-top: 20px;
