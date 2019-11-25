@@ -81,22 +81,15 @@ function addHTML(element) {
     document.body.innerHTML += element
 }
 
-const Fib = {
-    arr: [],
-    index: 0
-}
-
+const ARR_FIB = []
 const decorator = R.curry(function (obj, value) {
-    obj.arr[obj.index] = `<div class="fib">${value}</div>`
-    obj.index++
+    obj.push(`<div class="fib">${value}</div>`)
 })
-
 const fib = R.curry(function (fn, value) {
     fn(value)
     return value <= 1 ? value : getArrFib(value - 1) + getArrFib(value - 2)
 })
-
-const getArrFib = fib(decorator(Fib))
+const getArrFib = fib(decorator(ARR_FIB))
 
 function decoratorFib(arr, number = 0, offset = 1) {
     if (number < arr.length) {
@@ -116,6 +109,6 @@ const addHtmlFib = (number, arr) => {
 document.addEventListener('DOMContentLoaded', () => {
     const result = promptGetNumber('Введите число от (1-100)')
     R.both(result >= minNumber, result <= maxNumber, !isNaN(result)) ?
-        addHtmlFib(result, Fib.arr) :
+        addHtmlFib(result, ARR_FIB) :
         arr('false: Введите число от (1-100)')
 }) */
