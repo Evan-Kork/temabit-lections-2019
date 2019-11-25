@@ -190,9 +190,6 @@
   color: #fff;
 }
 
-.available-container {
-  background-color: #e8eded;
-}
 .available-container a {
   color: #000;
   text-decoration: none;
@@ -231,6 +228,13 @@
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+}
+
+.question-container {
+  background-color: #e8eded;
+}
+.question-container .advertising-wrapper .question-block img {
+  max-height: 200px;
 }
 
 .breadcrumbs-container {
