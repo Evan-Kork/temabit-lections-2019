@@ -1,0 +1,16 @@
+body {
+    font-family: "Open Sans", sans-serif;
+}
+.global {
+    display: flex;
+    flex-direction: column;
+}
+.multi-table {
+    padding: 12px;
+    max-width: auto;
+    border: 2px solid black;
+}
+table td {
+    border: 2px solid black;
+    text-align: center;
+}
