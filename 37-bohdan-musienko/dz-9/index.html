@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dz-9</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+
+    <input type="button" value="ДЗ-1" onclick="sumNumbers()"/>
+    <script type="text/javascript">
+        function sumNumbers() {
+        while(1) {
+            var age = +prompt("Введіть число більше 0");
+            if (age > 0) {
+                alert(`${age}`);
+                break;
+            } else {
+                alert("Ви ввели неправельне число");
+            }
+        }
+    }
+    </script>
+
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
