@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dz-9</title>
+
+  <style>
+    .prompt {
+      margin-bottom: 50px;
+    }
+
+    .multiplication-table table{
+      width: 100%;
+    }
+    .multiplication-table > table{
+      border: 1px solid #000000;
+      max-width: 450px;
+      padding: 5px;
+    }
+
+    table td{
+      border: 1px solid #000000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="prompt">
+      <button onclick="promptPositiveNumber()">Prompt</button>
+    </div>
+    <div class="multiplication-table">
+      <table id="multiplication_table">
+        <tbody>
+          <tr id="top"></tr>
+          <tr id="bottom"></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>
