@@ -1,0 +1,129 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+img {
+	display: block;
+}
+.input-google {
+	display: inline-block;
+	margin-bottom: 15px;
+}
+fieldset {
+	border: 0;
+}
+.main-div {
+	width: 100%;
+	background: #48748f;
+}
+.form {
+	max-width: 500px;
+	padding: 80px 30px 30px;
+	margin: 50px auto 30px;
+	background: rgb(240, 239, 239);
+}
+.form h3 {
+	position: relative;
+	z-index: 5;
+	margin: 0 0 40px;
+	text-align: center;
+	color: #4a90e2;
+	font-size: 30px;
+	font-weight: normal;
+}
+.form-row {
+	position: relative;
+	margin-bottom: 40px;
+}
+.form-row input {
+	display: block;
+	width: 100%;
+	padding: 0 0;
+	line-height: 40px;
+	font-family: 'Roboto', sans-serif;
+	background: none;
+	border-width: 0;
+	border-bottom: 2px solid #4a90e2;
+	transition: all 0.2s ease;
+}
+.form-row label {
+	position: absolute;
+	left: 13px;
+	color: #9d959d;
+	font-size: 20px;
+	font-weight: 300;
+	transform: translateY(-35px);
+	transition: all 0.2s ease;
+}
+.form-row input:focus {
+	outline: 0;
+	border-color: #F77A52;
+}
+.form-row input:focus + label, 
+.form-row input:valid + label {
+	transform: translateY(-60px);
+	margin-left: -14px;
+	font-size: 14px;
+	font-weight: 400;
+	outline: 0;
+	border-color: #F77A52;
+	color: #F77A52;
+}
+.form input[type="submit"] {
+	width: 100%;
+	padding: 0;
+	line-height: 42px;
+	background: #4a90e2;
+	border-width: 0;
+	color: white;
+	font-size: 20px;
+}
+.form p {
+	margin: 0;
+	padding-top: 10px;
+}
+.form-file-main {
+	position: relative;
+	margin-right: auto;
+	border: 2px solid rgb(78, 113, 187);
+	border-style: dashed;
+	margin-bottom: 10px;
+	padding-top: 10px; 
+	text-align: center;
+}
+.form-file-main h4 {
+	color: #9d959d;
+	font-size: 20px;
+	text-align: center;
+}
+.form-file-main input {
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	width: 80%;
+	margin-bottom: 10px;
+	color: #9d959d;
+	font-weight: 300;
+	
+}
+.form-file-main input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+	color: #9d959d;
+}
+.form-file-main label {
+	font-size: 17px;
+	font-family: 'Roboto', sans-serif;
+	color: rgb(71, 81, 92);
+
+}
+.form-file-main select {
+	display: inline-block;
+	margin-bottom: 10px;
+	width: 160px;
+	height: 34px;
+	line-height: 20px;
+	color: #535053;
+	font-size: 16px;
+}
+.margin-input {
+	margin-left: 10%;
+}
