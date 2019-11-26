@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+	<script>
+	let x = -999;
+			do {
+				x = Number(prompt("введіть число більше > 0"));
+				if (!Number.isInteger(x) || x <= 0) {
+						alert("ви ввели невірно. повторіть");
+				}
+			}
+			while (!Number.isInteger(x) || x <= 0);
+			let summa = 0;
+			for (let i = 1; i <= x; i++) {
+				summa = summa + i;
+			}
+			alert("Сума чисел: " + summa);
+	</script>
+</body>
+</html>
