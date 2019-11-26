@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="Loops">
+  <div class="forLoop">
+    <h2>Реализация через for</h2>
+    <table id="table" style="border: 1px solid black">
+      <tr style="border: 1px solid black">
+        <th>Множитель</th>
+        <th>Множитель</th>
+        <th>Результат</th>
+      </tr>
+    </table>
+  </div>
+  <div class="whileLoop">
+    <h2>Реализация через while</h2>
+    <table id="table2" style="border: 1px solid black">
+      <tr style="border: 1px solid black">
+        <th>Множитель</th>
+        <th>Множитель</th>
+        <th>Результат</th>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+
+<script>
+// ------------------Hometask № 1-------------- //
+let result = null;
+result = prompt("Введите число");
+while(result < 0){
+  alert('Вы ввели неверно. Повторите');
+  result = prompt("Введите число");
+}
+let summa = 0;
+while(result > 0){
+  summa += result--;
+}
+alert("Сумма всех плюсовых целых числел до введенного: " + summa);
+
+
+// ------------------Hometask № 2-------------- //
+let table = document.getElementById('table');
+
+for(let i = 1; i <= 10; i++){
+  for(let j = 1; j <= 10; j++){
+    let col1 = document.createElement('td');
+    let col2 = document.createElement('td');
+    let col3 = document.createElement('td');
+    col1.innerHTML = i;
+    col2.innerHTML = j;
+    col3.innerHTML = i*j;
+    let row = document.createElement('tr');
+    row.append(col1, col2, col3);
+    table.append(row);
+  }
+}
+
+table = document.getElementById('table2');
+
+i = 1, j =1;
+while(i <= 10){
+  while(j <= 10){
+    col1 = document.createElement('td');
+    col2 = document.createElement('td');
+    col3 = document.createElement('td');
+    col1.innerHTML = i;
+    col2.innerHTML = j;
+    col3.innerHTML = i*j;
+    row = document.createElement('tr');
+    row.append(col1, col2, col3);
+    table.append(row);
+    j++;
+  }
+  i++ ;
+  j = 1;
+
+}
+
+
+// ------------------Hometask № 3-------------- //
+function fibonacci100(fibonacciNum = 0, fibonacciNumNext = 0, fibonacciNumPrev = 0){
+
+  if(fibonacciNum < 100){
+    if(fibonacciNumNext === 0 && fibonacciNumPrev === 0){
+      document.write(fibonacciNum + ' ');
+      fibonacciNum = ++fibonacciNumNext;
+      document.write(fibonacciNum + ' ');
+    }
+    fibonacciNumPrev = fibonacciNumNext;
+    fibonacciNumNext = fibonacciNum;
+    document.write(fibonacciNum + ' ');
+    
+    fibonacciNum = fibonacciNumNext + fibonacciNumPrev;
+    
+    fibonacci100(fibonacciNum, fibonacciNumNext, fibonacciNumPrev);
+  }
+  return;
+}
+
+fibonacci100();
+ 
+  
+</script>
+</body>
+</html>
