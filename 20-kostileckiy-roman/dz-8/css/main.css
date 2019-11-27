@@ -33,7 +33,7 @@
     color: white;
 }
 .top-main-bar-logo a{
-    position: relative;
+    position: col-md-4;
     top: 10px;
 }
 .top-main-bar-search-input{
@@ -82,8 +82,7 @@
     flex-direction: column;
     position: absolute;
     top: -65px;
-    left: -60px;
-    font-size: 18px;
+    font-size: 16px;
 }
 .top-main-bar-tel span{
     font-weight: 500;
@@ -95,7 +94,7 @@
 }
 .cart-button{
     color: #fff;
-    padding: 5px 28px;
+    padding: 5px 22px;
     background-color: #f6851f;
     position: relative;
     top: 10px;
@@ -494,6 +493,7 @@
     display: flex;
     justify-content: space-evenly;
     margin-top: 35px;
+    margin-bottom: 25px;
 }
 .availability-block-left{
     display: flex;
@@ -701,6 +701,7 @@
 }
 .footer-main a{
     color: #fff;
+    text-align: center;
 }
 .footer-main a:hover{
     color: #98c93c;
@@ -718,7 +719,10 @@
 }
 .footer-contact-us-links{
     text-align: center;
-    font-size: 41px;
+    font-size: 40px;
+}
+.footer-contact-us p{
+    padding-left: 10px;
 }
 .allrighs-container{
     height: 25px;
@@ -726,7 +730,7 @@
 }
 .allrighs-main{
     height: 25px;
-    margin: 0 auto;
+    text-align: center;
 }
 .allrighs-container p{
     color: #fff;
@@ -1010,4 +1014,57 @@
     flex-direction: row;
     justify-content: space-between;
     color: #98c93c;
+}
+@media(max-width: 1024px){
+    .col-md-11{
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+@media(max-width: 768px){
+    .container{
+        max-width: 768px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .top-main-bar-menu{
+        padding-top: 0;
+    }
+    .top-main-bar-tel{
+        display: flex;
+        flex-direction: row;
+        font-size: 16px;
+        justify-content: space-around;
+        padding-top: 20px;
+        position: relative;
+        top: 0px;
+    }
+    .top-main-bar-cart{
+        padding-bottom: 15px;
+    }
+    .mains-slide-carousel{
+        padding-left: 0px;
+        padding-right: 0;
+    }
+    .availability-block-right{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .availability-block-right-pick{
+        width: 100%;
+    }
+    .availability-block-right-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0 35px;
+        width: 100%;
+    }
+    .availability-block-left {
+        justify-content: space-aroun
+    }
+    .row {
+        margin-right: 0px; 
+        margin-left: 0px;
+    }
 }
