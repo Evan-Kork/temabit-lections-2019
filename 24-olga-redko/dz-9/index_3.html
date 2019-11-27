@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS - task 3</title>
+</head>
+
+<body>
+    <script>
+    var n = 100;
+    var fibonacci = [0, 1];
+
+    function fib(n) {
+        let f1 = 0,
+            f2 = 1,
+            fn = 1;
+        for (let i = 1; i < n; i++) {
+            fn = f1 + f2;
+            f1 = f2;
+            f2 = fn;
+            fibonacci[i] = fn;
+        }
+    }
+    fibonacci.slice(0, fib(n));
+    for (let i = 0; i < fibonacci.length; i++) {
+        if (fibonacci[i] >= 100) {
+            fibonacci.splice(i);
+        }
+    }
+    let str = fibonacci.join(", ");
+    document.write('<h3>Числовой ряд Фибоначчи</h3><br><div>' + str + '</div>');
+    </script>
+</body>
+
+</html>
