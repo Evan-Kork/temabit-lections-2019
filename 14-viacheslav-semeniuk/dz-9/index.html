@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS dz-9</title>
+    <style>
+      .tables-container {
+        display: flex;
+        justify-content: space-around;
+      }
+      .table {
+        width: 300px;
+        height: 300px;
+        border-collapse: collapse;
+      }
+      .table,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+      }
+      .table tr:not(:first-child) {
+        background-color: rgb(251, 255, 0);
+      }
+      .caption {
+        font-size: 20px;
+        margin-bottom: 1em;
+      }
+      .table tr:first-child,
+      .table tr td:first-child {
+        background-color: rgb(10, 10, 117);
+        color: #fff;
+      }
+      #whileTable tr:first-child td,
+      #whileTable tr td:first-child {
+        background-color: rgb(0, 114, 6);
+      }
+      #whileTable tr:not(:first-child) {
+        background-color: rgb(21, 255, 0);
+      }
+      #fibonacciContainer {
+        margin: 1em 30em;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      #fibonacciContainer h3 {
+        text-align: center;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tables-container">
+      <table id="forTable" class="table">
+        <caption class="caption">
+          Табличка множення від 1 до 10 за допомогою циклу for
+        </caption>
+      </table>
+      <table id="whileTable" class="table">
+        <caption class="caption">
+          Табличка множення від 1 до 10 за допомогою циклу while
+        </caption>
+      </table>
+    </div>
+    <div id="fibonacciContainer">
+      <h3>Послідовність чисел Фібоначчі, останє число не більше 100:</h3>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
