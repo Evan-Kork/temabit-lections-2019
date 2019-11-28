@@ -4,13 +4,15 @@
 
 function removeValueOne(array, value, offset = -1) {
 	offset = array.lastIndexOf( value, offset );
-	array.splice( offset == -1 ? Infinity : offset, 1 );
+	if ( ~offset ) array.splice( offset, 1 );
 	return offset;
 }
 
 function removeValueAll(array, value) {
 	let offset = 0;
-	while ( offset = removeValueOne(array, value, offset - 1) > 0 );
+	do {
+		offset = removeValueOne(array, value, offset - 1)
+	} while ( offset > 0 )
 }
 
 function removeValues(array, ...values) {
