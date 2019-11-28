@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Сумма цифр введенного числа</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //Сумма цифр числа
+      let res = null;
+      res = prompt("Введите число больше 0 :)");
+      while(res <= 0){
+        alert('Упс..( Что-то неправильно ввели, повторите!');
+        res = prompt("Введите число больше 0 :)");
+      }
+      let sum = 0;
+      while(res > 0){
+        sum += res--;
+      }
+      alert("Итого, сумма всех цифр введенного числа: " + sum);
+
+    </script>
+  </body>
+</html>

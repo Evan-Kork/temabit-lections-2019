@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Определить возраст человека</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //Определитель возраста
+      const number = prompt('Введите ваш возраст!', '');
+      if (number<=0) {
+        alert("Неправильный ввод, повторите!");
+      } else if(number<=10) {
+        alert("Вы ребенок");
+      }else if(number<=18) {
+        alert("Вы подросток");
+      }else if(number<=30) {
+        alert("Вы взрослый");
+      }else if(number<=60) {
+        alert("У Вас уже зрелый возраст");
+      }else if(number>60) {
+        alert("Вы как ребенок");
+      }
+
+    </script>
+
+  </body>
+</html>
