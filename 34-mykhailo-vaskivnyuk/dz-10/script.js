@@ -4,7 +4,7 @@
 
 function removeValue(array, value) {
 	array.reduceRight(
-		(prev, item, index) => array.splice( index, item === value )
+		(prev, item, index) => array.splice( index, item === value ),
 		0
 	);
 }
