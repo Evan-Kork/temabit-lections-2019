@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2taskwhile</title>
+    <style>
+            table {
+                border: 1px solid black;
+                border-collapse: collapse;
+                float: left;
+                margin-right: 50px;
+            }
+            td {
+                border: 1px dashed black;
+            }
+        </style>
+</head>
+<body>
+    <h2>while</h2>
+    <script>
+        let i = 1;
+        while(i < 10) {
+            const table = document.createElement('table');
+            let j = 1;
+            while(j < 10) {
+                const tableRow = document.createElement('tr');
+                tableRow.innerHTML = `<td>${i}</td><td>&#xD7;</td><td>${j}</td><td>=</td><td>${i*j}</td>`;
+                table.appendChild(tableRow);
+                j++;
+            }
+            i++;
+            document.body.appendChild(table);
+        }
+    </script>
+</body>
+</html>
