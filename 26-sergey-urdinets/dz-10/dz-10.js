@@ -3,14 +3,19 @@
 //TASK 1
 {
 	function removeElement(array, value) {
-		array.forEach(function(item, i, arr) {
-			if (item === value) {
-				array.splice(i, 1);
+		for (let i = 0; i < array.length; i++) {
+			let x = array.indexOf(value);
+			if (x !== -1) {
+				array.splice(x, 1);
+				i--;
+			} else {
+				break;
 			}
-		});
+		}
 	}
+
 	{
-	const array = [1, 2, 3, 4, 5, 6, 7];
+	const array = [1, 2, 3, 4, 5, 5, 6, 7];
 	removeElement(array, 5);
 	console.log(array);
 	}
