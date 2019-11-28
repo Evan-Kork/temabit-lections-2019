@@ -1,29 +1,31 @@
+//	https://codesandbox.io/s/dz-10-tii3m
+
 'use strict'
 
 function removeValueOne(array, value, offset = -1) {
-    offset = array.lastIndexOf( value, offset );
-    array.splice( offset == -1 ? Infinity : offset, 1);
-    return offset;
+	offset = array.lastIndexOf( value, offset );
+	array.splice( offset == -1 ? Infinity : offset, 1);
+	return offset;
 }
 
 function removeValueAll(array, value) {
 	let offset = 0;
-    while ( offset = removeValueOne(array, value, offset - 1) > 0 );
+	while ( offset = removeValueOne(array, value, offset - 1) > 0 );
 }
 
 function removeValues(array, ...values) {
-    values.forEach( value => removeValueAll(array, value) ); 
+	values.forEach( value => removeValueAll(array, value) ); 
 }
 
 function unique(array) {
-    let result = array.slice();
-    let i = result.length - 1;
-    while  ( i > 0 ) removeValueOne(result, result[i], --i);
-    return result;
+	let result = array.slice();
+	let i = result.length - 1;
+	while  ( i > 0 ) removeValueOne(result, result[i], --i);
+	return result;
 }
 
 function difference(array1, array2){
-    return array1.filter( value => !array2.includes(value) );
+	return array1.filter( value => !array2.includes(value) );
 };
 
 //------------------------------------------------------------------------------
