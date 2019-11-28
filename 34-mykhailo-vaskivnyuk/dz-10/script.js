@@ -4,7 +4,7 @@
 
 function removeValueOne(array, value, offset = -1) {
 	offset = array.lastIndexOf( value, offset );
-	array.splice( offset == -1 ? Infinity : offset, 1);
+	array.splice( offset == -1 ? Infinity : offset, 1 );
 	return offset;
 }
 
@@ -25,7 +25,7 @@ function unique(array) {
 }
 
 function difference(array1, array2){
-	return array1.filter( value => !array2.includes(value) );
+	return array1.filter( value => !array2.includes( value ) );
 };
 
 //------------------------------------------------------------------------------
