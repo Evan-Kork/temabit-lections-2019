@@ -7,46 +7,33 @@
 	</head>
 
 	<body>
-		<div>
-			<h5>Функція index = removeValueOne(array, value, offset)</h5>
-			<p>
-				Шукає найближче value в array і видаляє в разі знаходження. Пошук
-				здійснюється справа наліво з index = offset. При offset < 0 index =
-				array.length - offset.
-			</p>
-
-			<p>Функція повертає index видаленого елементу</p>
-		</div>
 
 		<div>
-			<h5>Функція removeValueAll(array, value)</h5>
+			<h5>Функція removeValue(array, value)</h5>
 			<p>
-				Шукає всі value в array і видаляє в разі знаходження. Пошук здійснюється
-				справа наліво. Після видалення чергового знайденого елемента - пошук
-				продовжується з index = removed_index - 1
+				Видаляє всі item of array, якщо item.value === value.<br>
+				Перебір array здійснюється справа наліво.
 			</p>
 		</div>
 
 		<div>
 			<h5>Функція removeValues(array, ...values)</h5>
 			<p>
-				Шукає кожне value of values в array і видаляє всі знайдені елементи.
+				Для кожного value of values видаляє всі item of array, якщо item.value === value.
 			</p>
 		</div>
 
 		<div>
 			<h5>Функція unique_array = unique(array)</h5>
 			<p>
-				Повертає новий result_array, який містить лише унікальні значення з
-				array
+				Повертає новий unique_array, який містить лише унікальні значення з array.
 			</p>
 		</div>
 
 		<div>
 			<h5>Функція diff_array1_2 = difference(array1, array2)</h5>
 			<p>
-				Повертає новий result_array, який містить значення з array1 і не містить
-				жодного із значень з array2.
+				Повертає новий diff_array, який містить значення з array1 і не містить жодного із значень з array2.
 			</p>
 		</div>
 		<script src="script.js"></script>
