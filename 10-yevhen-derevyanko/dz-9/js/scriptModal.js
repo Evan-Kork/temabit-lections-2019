@@ -5,9 +5,9 @@ function checkNumber(){
         for (let i = 1; i <= number; i++) {
             out += i;
         }
-        // console.log(out);
         alert(out);
     }else{
+        alert('Ви ввели невірне число, повторіть!');
         checkNumber();
     }
 }

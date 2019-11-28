@@ -48,7 +48,7 @@ if(boxWhile){
 //Чи́сла Фібона́ччі
 let boxFibonacciNumbers = document.querySelector('.fibonacci-numbers');
 if(boxFibonacciNumbers){
-  boxFibonacciNumbers.insertAdjacentHTML("beforeEnd", getFibonacciNumbers(100));
+  boxFibonacciNumbers.insertAdjacentHTML("beforeEnd", getFibonacciNumbers(11));
 }
 
 function getFibonacciNumbers(item){
