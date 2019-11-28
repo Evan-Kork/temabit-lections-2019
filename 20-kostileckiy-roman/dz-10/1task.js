@@ -1,5 +1,7 @@
+// https://codesandbox.io/s/red-fog-x5j4p?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark
+
 //task1
-var myArrCountry = ['Ukraine','Belarus', 'Poland', 'Russia', 'Germaby', 'France', 'Italy', 'Spain']
+var myArrCountry = ['Ukraine','Belarus', 'Poland', 'Russia', 'Germany', 'France', 'Italy', 'Spain']
 var myArrNum = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0]
 function removeItem(array, item){
     for(let i =0; i <array.length; i++){
@@ -27,7 +29,7 @@ function removeItems(array, ...items){
     }
 }
 removeItems(myArrNum, 2,5,8,13);
-removeItems(myArrCountry, 'Belarus', 'Italy');
+removeItems(myArrCountry, 'France', 'Italy');
 console.log(myArrNum);
 console.log(myArrCountry);
 //task3
