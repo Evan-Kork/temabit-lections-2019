@@ -20,14 +20,11 @@ function removeValues(array, ...values) {
 }
 
 function unique(array) {
-	let result = array.slice();
-	let i = result.length - 1;
-	while  ( i > 0 ) removeValueOne(result, result[i], --i);
-	return result;
+	return array.filter( (value, index, array) => ! array.includes( value, index + 1 ) );
 }
 
 function difference(array1, array2){
-	return array1.filter( value => !array2.includes( value ) );
+	return array1.filter( value => ! array2.includes( value ) );
 };
 
 //------------------------------------------------------------------------------
