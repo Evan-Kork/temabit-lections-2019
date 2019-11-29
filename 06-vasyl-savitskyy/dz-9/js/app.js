@@ -31,11 +31,7 @@ const dialogWindow = () => {
     }
 }
 
-let flag = dialogWindow()();
-
-while (!flag) {
-    flag = dialogWindow()();
-}
+while (!dialogWindow()()) {}
 
 /*========================= II ===============================*/
 function tableFor() {
