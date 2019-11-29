@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>DZ-9 TASK 3</title>
+	<title>DZ-9 TASK 2</title>
+	<meta charset="UTF-8">
 </head>
 <body>
 
 	<script id = "script">
 
-	let arr = [ [34, 8, 34, 90, 34, 987, 1, 5],
-				100,
-				[3, 5, 12, 35, 1, 74] ];
-
-	for (let i = 0; i < arr.length; i++) {
-
-		if ( !Array.isArray(arr[i]) ) {
-			document.write("[" + arr[i] + "]<br>");
-			continue;
+		function fib(n) {
+			if (n == 1) return [0, 1];
+			let n_1 = fib(n - 1);
+			document.write(n + " :  " + (n_1[0] + n_1[1]) + "<br>");
+			return [n_1[1], n_1[0] + n_1[1]];
 		}
 
-		for ( let j = 0; j < arr[i].length; j++ ) {
-			document.write("[" + arr[i][j] + "]");
+		function getFibNumber(n) {
+			n = (+n > 0) ? n : 1;
+			document.write("1 :  1<br>");
+			return fib(n)[1];
 		}
-		document.write("<br>");
-	}
+
+		let n = +prompt("Яке число Фібоначчі показати?", 1);
+		setTimeout( alert, 2000, n + " -е число ряду Фібоначчі: " + getFibNumber(n) );
 
 	</script>
 
