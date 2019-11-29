@@ -28,7 +28,8 @@
 
 	<script>
 		let code = document.createElement("pre");
-		code.append(document.querySelector("#script").innerHTML);
+		code.innerHTML = "<code class='javascript'></code>"
+		code.children[0].append(document.querySelector("#script").innerHTML);
 		document.body.prepend(code);	
 	</script>
 
