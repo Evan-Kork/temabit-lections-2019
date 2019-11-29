@@ -4,4 +4,4 @@
 
 * [task 2](https://codesandbox.io/embed/gifted-snow-stij1?fontsize=14&hidenavigation=1&theme=dark)
 
-* [task 3](https://codesandbox.io/embed/jstask3-g4v4o?fontsize=14&hidenavigation=1&theme=dark)
+* [task 3](https://codesandbox.io/s/task31-dowx4?fontsize=14&hidenavigation=1&theme=dark)
