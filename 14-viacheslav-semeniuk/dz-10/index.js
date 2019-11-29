@@ -1,21 +1,24 @@
 // Видалити елемент з масиву
 let removeElement = (array, item) => {
-    array.forEach((i, index, arr) => {
-        if (i === item) arr.splice(index,1)
+    array.forEach((i, index) => {
+        if (i === item) array.splice(index,1)
     });
 
     return array;
 };
 
 // Видалити декілька елементів з масиву
-let removeElements = (array, ...items) => {
-    array.forEach((i, index, arr) => {
-        items.forEach(j => {
-            if (i === j) arr.splice(index,1)
+function removeElements(arr) {
+    let restArguments = Array.from(arguments);
+    restArguments.shift();
+    
+    for(let i = 0; i < arr.length; i++) {
+        restArguments.forEach(j => {
+            if (arr[i] === j) arr.splice(i,1)
         })
-    });
+    }
 
-    return array;
+    return arr;
 };
 
 // Видалити повторні значення з масиву
