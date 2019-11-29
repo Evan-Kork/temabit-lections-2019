@@ -8,30 +8,23 @@
 </head>
 <body>
     <script>
-        // fib
-        'use script';
-        let fibonatchiIndex = +prompt('Введите номер елемента','');
+        function fib(n) {
+            let previousValue = 0;
+            let currentValue = 0;
+            let nextValue = 1;
 
-        function fibonachi(n) {
-        if (n===0) {
-            return 0;
-        }
-        const pozitiveIndex = Math.abs(n);
-        let prevValue = 0;
-        let currentValue = 0;
-        let nextValue = 1;
-
-        for(let i=0; i < pozitiveIndex; i++) {
-            prevValue = currentValue;
-            currentValue = nextValue;
-            nextValue = prevValue + currentValue; 
-        }  
-        if(n < 0) {
-            return currentValue * ((-1)**(pozitiveIndex+1));
-        }
+            for (let i = 0; i > -1; i++) {
+                currentValue = nextValue;
+                nextValue = previousValue + currentValue;
+                previousValue = currentValue;
+                document.write(currentValue,'\t');
+                if(nextValue > n) {
+                    break;
+                }
+            }
             return currentValue;
         }
-        alert(fibonachi(fibonatchiIndex));
+        fib(100);
     </script>
 </body>
 </html>
