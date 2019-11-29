@@ -77,8 +77,8 @@ tableWhile();
 /*========================= III ===============================*/
 const HARD_STOP = 100;
 const arrFibFromZeroToHardStopValue = (max) => {
-    const array = [0];
-    let f = 1;
+    const array = [];
+    let f = 0;
     let a = 1;
 
     while (f < max) {
