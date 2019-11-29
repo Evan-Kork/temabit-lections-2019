@@ -10,7 +10,6 @@ function removeElement (array,itemToRemove){
     }
     return array;
 }
-
 //console.log(removeElement(arrayNum, 10));
 //console.log(removeElement(arrayStr, 'Lima'));
 
@@ -50,3 +49,37 @@ const resultUnique2 = unique(['top', 'bottom', 'top', 'left']);
 
 
 
+// TASK 4
+function difference(array1, array2){
+    let result = [];
+    let arrLong = [];
+    let arrShort = [];
+    if(array1.length > array2.length){
+        arrLong = array1;
+        arrShort = array2;
+    }else{
+        arrLong = array2;
+        arrShort = array1;
+    }
+ 
+
+    for (let i = 0; i < arrLong.length; i++) {
+        // console.log(arrShort[i] === undefined);
+        // console.log(arrLong.includes(arrShort[i]));
+        if(arrLong.includes(arrShort[i])){
+            // console.log(arrLong.includes(arrShort[i]));
+            // console.log(arrShort[i] === undefined);
+            // console.log('-----');
+           result.push(arrLong[i]);
+        }
+        // if(!result.includes(array[i])){
+        //     result.push(array[i]);
+        // }
+    }
+    return result;
+}
+
+const resultdifference = difference([7, -2, 10, 5, 0], [0, 10]);
+// const resultdifference2 = difference(['Beijing', 'Kiev'], ['Kiev', 'London', 'Baghdad']);
+console.log(resultdifference);
+// console.log(resultdifference2);
