@@ -22,7 +22,18 @@ function removeElements(arr) {
 };
 
 // Видалити повторні значення з масиву
-let unique = (array) => [...new Set(array)];
+let unique = (array) => {
+    let arrayOfRepeats = [];
+
+    array.forEach(i => {
+        if ( !arrayOfRepeats.includes(i) ) arrayOfRepeats.push(i);
+    });
+
+    return arrayOfRepeats
+};
+const result = unique(['top', 'bottom', 'top', 'left']);
+console.log(result);
+// Результат: [2, 1, 3]
 
 // Знайти різницю масивів
 let difference = (array1, array2) => array1.filter(i => !array2.includes(i));
