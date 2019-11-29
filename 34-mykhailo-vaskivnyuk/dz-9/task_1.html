@@ -12,8 +12,9 @@
 		let sum = 0;
 
 		while (true) {
-			number = +prompt("введіть ціле число більше 0", 0);
+			number = +prompt("Введіть ціле число більше 0", 0);
 			if (number > 0) break;
+			alert("Ви ввели невірне число, повторіть!");
 		}
 
 		for (let i = 1; i <= number; i++) {
