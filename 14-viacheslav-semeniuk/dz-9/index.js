@@ -21,20 +21,17 @@ let sumNumbers = () => {
 
 // Табличка множення з for
 let multiplyWithForLoop = () =>{
-  let x, y, forTableRow;
   let forTable = document.getElementById("forTable");
+  let x, y, forTableRow;
 
-  for (x = 0; x <= 10; x++) {
-    forTableRow = forTable.insertRow();
-    
-    for (y = 0; y <= 10; y++) {
-      if (x == 0 && y == 0) {
-        forTableRow.insertCell().innerHTML = "X";
-      } else if (x == 0 && y > 0) {
-        forTableRow.insertCell().innerHTML = y;
-      } else if (y == 0 && x > 0) {
+  for (x = 1; x <= 10; x++) {
+    for (y = 1; y <= 5; y++) {
+      forTableRow = forTable.insertRow();
+      for (y = 2; y <= 10; y++) {
         forTableRow.insertCell().innerHTML = x;
-      } else {
+        forTableRow.insertCell().innerHTML = 'x';
+        forTableRow.insertCell().innerHTML = y;
+        forTableRow.insertCell().innerHTML = '=';
         forTableRow.insertCell().innerHTML = x * y;
       }
     }
@@ -84,7 +81,7 @@ let fibonacciSequence = () => {
   return(b);
 }
 
-sumNumbers();
+// sumNumbers();
 multiplyWithForLoop();
-multiplyWithWhileLoop();
+// multiplyWithWhileLoop();
 fibonacciSequence();

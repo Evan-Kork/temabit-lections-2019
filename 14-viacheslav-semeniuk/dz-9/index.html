@@ -18,19 +18,17 @@
       .table,
       td {
         border: 1px solid black;
-        padding: 8px;
+        padding: 6px;
       }
-      .table tr:not(:first-child) {
-        background-color: rgb(251, 255, 0);
+      .table tr td:nth-child(1) {
+        border-left: 2px solid green;
+      }
+      .table tr td:nth-child(5n + 0) {
+        color: green;
+        border-right: 2px solid green;
       }
       .caption {
         font-size: 20px;
-        margin-bottom: 1em;
-      }
-      .table tr:first-child,
-      .table tr td:first-child {
-        background-color: rgb(10, 10, 117);
-        color: #fff;
       }
       #whileTable tr:first-child td,
       #whileTable tr td:first-child {
@@ -58,11 +56,11 @@
           Табличка множення від 1 до 10 за допомогою циклу for
         </caption>
       </table>
-      <table id="whileTable" class="table">
+      <!-- <table id="whileTable" class="table">
         <caption class="caption">
           Табличка множення від 1 до 10 за допомогою циклу while
         </caption>
-      </table>
+      </table> -->
     </div>
     <div id="fibonacciContainer">
       <h3>Послідовність чисел Фібоначчі, останє число не більше 100:</h3>
