@@ -3,13 +3,13 @@ let sumNumbers = () => {
   let n = Number(prompt('Введіть число N:'));
   let result = 0;
 
-  while(isNaN(n) || n <= 0){
+  while(isNaN(n) || n < 1){
     alert('Ви ввели невірне число, повторіть!');
     n = Number(prompt('Введіть число N:'));
 
     if(!isNaN(n) && n > 0){
       break;
-    }
+    } 
   }
 
   for (let b = 0; b <= n; b++) {
@@ -25,8 +25,7 @@ let multiplyWithForLoop = () =>{
   let x, y, forTableRow;
 
   for (x = 1; x <= 10; x++) {
-    for (y = 1; y <= 5; y++) {
-      forTableRow = forTable.insertRow();
+    forTableRow = forTable.insertRow();
       for (y = 2; y <= 10; y++) {
         forTableRow.insertCell().innerHTML = x;
         forTableRow.insertCell().innerHTML = 'x';
@@ -34,31 +33,26 @@ let multiplyWithForLoop = () =>{
         forTableRow.insertCell().innerHTML = '=';
         forTableRow.insertCell().innerHTML = x * y;
       }
-    }
   }
 }
 
 // Табличка множення з while
 let multiplyWithWhileLoop = () => {
-    let i = 0,j = 0, whileTableRow;
+    let x = 1,y = 2, whileTableRow;
     let whileTable = document.getElementById("whileTable"); 
 
-    while(i <= 10){
+    while(x <= 10) {
       whileTableRow = whileTable.insertRow();
-      while(j <= 10){
-        if (i == 0 && j == 0) {
-          whileTableRow.insertCell().innerHTML = "X";
-        } else if (i == 0 && j > 0) {
-          whileTableRow.insertCell().innerHTML = j;
-        } else if (j == 0 && i > 0) {
-          whileTableRow.insertCell().innerHTML = i;
-        } else {
-         whileTableRow.insertCell().innerHTML = i * j;
+      while(y <= 10) {
+          whileTableRow.insertCell().innerHTML = x;
+          whileTableRow.insertCell().innerHTML = 'x';
+          whileTableRow.insertCell().innerHTML = y;
+          whileTableRow.insertCell().innerHTML = '=';
+          whileTableRow.insertCell().innerHTML = x * y;
+          y++;
         }
-        j++;
-      }
-      j = 0;
-      i++;
+      y = 2;
+      x++;
     }
 }
 
@@ -81,7 +75,7 @@ let fibonacciSequence = () => {
   return(b);
 }
 
-// sumNumbers();
+sumNumbers();
 multiplyWithForLoop();
-// multiplyWithWhileLoop();
+multiplyWithWhileLoop();
 fibonacciSequence();
