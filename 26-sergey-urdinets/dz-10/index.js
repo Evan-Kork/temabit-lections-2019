@@ -25,15 +25,34 @@
 
 //TASK 2
 {
-	function removeElements(array, ...values) {
-		for (let i = 0; i < values.length; i++) {
+	function removeElements(array) {
+		for (let i = 1; i < arguments.length; i++) {
 			for (let j = array.length - 1; j >= 0; j--) {
-				if (~array.indexOf(values[i])) {
-					array.splice(array.indexOf(values[i]), 1);
+				if (~array.indexOf(arguments[i])) {
+					array.splice(array.indexOf(arguments[i]), 1);
 				}
 			}
 		}
 	}
+
+ //то же самое через forEach
+	// function removeElements(array) {
+ //    var args = Array.from(arguments);
+	// 	args.forEach( (item, i)=> {
+	// 		for (let j = array.length - 1; j >= 0; j--) {
+	// 			if (~array.indexOf(arguments[i])) {
+	// 				array.splice(array.indexOf(arguments[i]), 1);
+	// 			}
+	// 		}
+	// 	});
+ //  }
+
+
+/*  то же самое через 2 forEach - не работает для массива
+	с большим количеством повторяющихся удаляемых элементов
+	[5,2,1,1,2,3,4,5,6,6,6,6,6,6,1,1,1,1,1,1,1,1,1,1,1,1,7,6,1]
+*/
+
 	console.log("TASK 2");
 	{
 		const array = [1, 2, 3, 4, 5, 6, 7, 6, 1];
