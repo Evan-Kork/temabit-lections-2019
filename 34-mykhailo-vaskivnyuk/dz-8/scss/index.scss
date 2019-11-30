@@ -281,7 +281,43 @@ h3 {
 	}
 
 	.stock {
-
+		.item {
+			height: 100%;
+			div:first-child {
+				width: 50%;
+				min-width: 50%;
+				// height: 115px;
+			}
+			img {
+				width: 100%;
+			}
+			h4 {
+				// overflow: hidden;
+				// height: 40px;
+				// line-height: 3rem;
+				// margin: 0;
+				font-size: 1.1rem;
+			}
+			span {
+				font-weight: bold;
+				font-size: 1.5rem;
+			}
+			a {
+    			max-width: 150px;
+    			height: 30px;    				
+    			background: $color_ringoo;
+    			color: $color_light;
+    			text-transform: uppercase;
+    			display: flex;
+    			align-items: center;
+    			justify-content: center;
+			}
+			&.big {
+				h4 {
+					font-size: 1.5rem;
+				}
+			}
+		}
 	}
 
 	.videos {
