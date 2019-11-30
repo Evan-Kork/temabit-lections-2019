@@ -6,49 +6,48 @@
 </head>
 <body>
 	<script src="index.js"></script>
-	<p>TASK 1. Функция removeElement(array, item) для удаления элемента item из массива array.</p>
+	<p>
+		TASK 1. Функция removeElement(array, item) для удаления элемента item из
+		массива array.
+	</p>
 	<pre>
-		function removeElement(array, value) {
-			for (let i = array.length - 1; i >= 0; i--) {
-				if (~array.indexOf(value)) {
-					array.splice(array.indexOf(value), 1);
-				}
+	function removeElement(array, value) {
+		for (let i = array.length - 1; i >= 0; i--) {
+			if (~array.indexOf(value)) {
+				array.splice(array.indexOf(value), 1);
 			}
 		}
+	}
 	</pre>
-	<p>TASK 2. <b>Улучшенная функция из предыдущего задания</b> для удаления нескольких элементов из массива removeElements(array, item1, ... itemN).</p>
+	<p>
+		TASK 2. Улучшенная функция из предыдущего задания для удаления нескольких
+		элементов из массива removeElements(array, item1, ... itemN).
+	</p>
 	<pre>
-		function removeElements(array, ...values) {
-			for (let i = 0; i < values.length; i++) {
+		function removeElements(array) {
+			for (let i = 1; i < arguments.length; i++) {
 				for (let j = array.length - 1; j >= 0; j--) {
-					if (~array.indexOf(values[i])) {
-						array.splice(array.indexOf(values[i]), 1);
+					if (~array.indexOf(arguments[i])) {
+						array.splice(array.indexOf(arguments[i]), 1);
 					}
 				}
 			}
 		}
 	</pre>
-	<p>TASK 3. Функция unique(array) возвращает новый массив, не содержащий дубликатов.</p>
-	<p>- возвращает <b>первые</b> из повторяющихся элементов:</p>
+	<p>
+		TASK 3. Функция unique(array) возвращает новый массив, не содержащий
+		дубликатов.
+	</p>
 	<pre>
-		function firstUnique(array) {
-			let uniqueArray = array.slice();
-			for (let i = uniqueArray.length; i >= 0; i--) {
-				let x = uniqueArray.indexOf(uniqueArray[i], i + 1);
-				if (~x) {
-					uniqueArray.splice(x, 1);
-				}
-			}
-			return uniqueArray;
+		function unique(array){
+			return array.filter((item, index) => array.indexOf(item) === index)
 		}
 	</pre>
-	<p>- возвращает <b>последние</b> из поторяющихся элементов:</p>
-	<pre>
-		function lastUnique(array) {
-			return array.filter((element, i) => !array.includes(element, i + 1));
-		}
-	</pre>
-	<p>TASK 4. Функция difference(array1, array2) находит разницу между массивами, т.е. возвращать новый массив, содержащий значения, которые содержались в array1, но не содержались в array2.</p>
+	<p>
+		TASK 4. Функция difference(array1, array2) находит разницу между
+		массивами, т.е. возвращать новый массив, содержащий значения, которые
+		содержались в array1, но не содержались в array2.
+	</p>
 	<pre>
 		function difference(array1, array2) {
 			return array1.filter(item => ! array2.includes(item, 0));

@@ -68,38 +68,16 @@
 
 //TASK 3
 {
-	//возвращает ПЕРВЫЕ из повторяющихся элементов
-	function firstUnique(array) {
-		let uniqueArray = array.slice();
-		for (let i = uniqueArray.length; i >= 0; i--) {
-			let x = uniqueArray.indexOf(uniqueArray[i], i + 1);
-			if (~x) {
-				uniqueArray.splice(x, 1);
-			}
-		}
-		return uniqueArray;
-	}
-	// возвращает ПОСЛЕДНИЕ из поторяющихся элементов
-	function lastUnique(array) {
-		return array.filter((element, i) => !array.includes(element, i + 1));
+	function unique(array){
+		return array.filter((item, index) => array.indexOf(item) === index);
 	}
 	console.log("TASK 4");
-	console.log("ПЕРВЫЕ из повторяющихся элементов");
 	{
-		const result = firstUnique([2, 1, 1, 3, 2]);
+		const result = unique([2, 1, 1, 3, 2]);
 		console.log(result);
 	}
 	{
-		const result = firstUnique(["top", "bottom", "top", "left"]);
-		console.log(result);
-	}
-	console.log("ПОСЛЕДНИЕ из повторяющихся элементов");
-	{
-		const result = lastUnique([2, 1, 1, 3, 2]);
-		console.log(result);
-	}
-	{
-		const result = lastUnique(["top", "bottom", "top", "left"]);
+		const result = unique(["top", "bottom", "top", "left"]);
 		console.log(result);
 	}
 }
