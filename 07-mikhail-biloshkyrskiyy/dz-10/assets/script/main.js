@@ -10,6 +10,44 @@ const array_8 = [55, 44, 22, -10]
 const array_9 = [44, 55, -10]
 const array_10 = ['top', 'bottom', 'top', 'left']
 
+function curry(f) {
+    return function (a) {
+        return function (b) {
+            return f(a, b)
+        }
+    }
+}
+
+function equals(item_1, item_2) {
+    if (item_1 === item_2) {
+        return true
+    }
+    return false
+}
+
+function unique(arr) {
+    const result = [];
+
+    arr.forEach(item => {
+        if (!result.includes(item)) {
+            result.push(item);
+        }
+    })
+
+    return result;
+}
+
+function difference(arr1, arr2) {
+    return arr1.filter(item => !arr2.includes(item))
+}
+
+function isEmpty(obj) {
+    for (let key in obj) {
+        return false;
+    }
+    return true;
+}
+
 // Error code
 const ERROR_NOT_RANGE = -1
 // Action type
@@ -19,24 +57,27 @@ function error(message) {
     console.log(message)
 }
 // Selectors
-const getEquals = R.curry((item_1, item_2) => R.equals(item_1, item_2))
-const getIndex = R.curry((fn, arr) => R.findIndex(item => fn(item), arr))
-const getRemove = R.curry((fn, arr) => R.remove(fn(arr), 1, R.equals(fn(arr), ERROR_NOT_RANGE) ? [] : arr))
-const getRemoveElement = (item, arr) => getRemove(getIndex(getEquals(item)))(arr)
-const getUniq = arr => R.uniq(arr)
-const getDifference = (arr_1, arr_2) => R.difference(arr_1, arr_2)
-const getMissing = (arr_1, arr_2) => R.difference(arr_2, arr_1)
+const getEquals = curry((item_1, item_2) => equals(item_1, item_2))
+const getIndex = curry((fn, arr) => arr.findIndex(item => fn(item)))
+const getRemove = curry((fn, arr) => (equals(fn(arr), ERROR_NOT_RANGE) ? [] : arr).splice(fn(arr), 1))
+const getRemoveElement = (item, arr) => {
+    getRemove(getIndex(getEquals(item)))(arr)
+    return arr
+}
+const getUniq = arr => unique(arr)
+const getDifference = (arr_1, arr_2) => difference(arr_1, arr_2)
+const getMissing = (arr_1, arr_2) => difference(arr_2, arr_1)
 // Remove element
 const removeElement = (item, arr) => {
     const result = getRemoveElement(item, arr)
-    return R.isEmpty(result) ? error(`${ARRAY_NOT_ELEMENT}`) : result
+    return isEmpty(result) ? error(`${ARRAY_NOT_ELEMENT}`) : result
 }
 // Remove elements
-const removeElements = (items, arr) => { 
-    R.forEach(item => {
+const removeElements = (items, arr) => {
+    items.forEach(item => {
         const result = getRemoveElement(item, arr)
-        R.isEmpty(result) ? error(`${ARRAY_NOT_ELEMENT}`) : arr = result
-    })(items)
+        isEmpty(result) ? error(`${ARRAY_NOT_ELEMENT}`) : arr = result
+    })
 
     return arr
 }
