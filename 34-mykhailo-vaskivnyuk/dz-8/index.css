@@ -207,8 +207,33 @@ h3 {
   justify-content: center;
   text-transform: uppercase;
 }
-.main .stock .item {
+.main .last_supply {
+  background-color: #f5f7f7;
+}
+.main .last_supply .item {
+  background-color: #fff;
+  height: 247px;
+}
+.main .last_supply .item img {
   height: 100%;
+  flex: 1 1 100%;
+}
+.main .last_supply .item div:last-of-type {
+  width: 60%;
+}
+.main .last_supply .item span {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.main .last_supply .item a {
+  max-width: 150px;
+  height: 30px;
+  background: #98c93c;
+  color: #fff;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .main .stock .item div:first-child {
   width: 50%;
@@ -234,8 +259,14 @@ h3 {
   align-items: center;
   justify-content: center;
 }
+.main .stock .item.big {
+  min-height: 100%;
+}
 .main .stock .item.big h4 {
   font-size: 1.5rem;
+}
+.main .stock .item.big img {
+  width: 90%;
 }
 .main .advantages .item {
   flex: 1 0 20%;
