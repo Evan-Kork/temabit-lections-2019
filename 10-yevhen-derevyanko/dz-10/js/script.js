@@ -61,25 +61,18 @@ function difference(array1, array2){
         arrLong = array2;
         arrShort = array1;
     }
- 
 
-    for (let i = 0; i < arrLong.length; i++) {
-        // console.log(arrShort[i] === undefined);
-        // console.log(arrLong.includes(arrShort[i]));
-        if(arrLong.includes(arrShort[i])){
-            // console.log(arrLong.includes(arrShort[i]));
-            // console.log(arrShort[i] === undefined);
-            // console.log('-----');
-           result.push(arrLong[i]);
+    for (let l = 0; l < arrLong.length; l++) {
+        if(!arrShort.includes(arrLong[l])){
+            result.push(arrLong[l]);
         }
-        // if(!result.includes(array[i])){
-        //     result.push(array[i]);
-        // }
     }
     return result;
 }
 
 const resultdifference = difference([7, -2, 10, 5, 0], [0, 10]);
-// const resultdifference2 = difference(['Beijing', 'Kiev'], ['Kiev', 'London', 'Baghdad']);
-console.log(resultdifference);
+const resultdifference1 = difference([0, 10, 55], [7, -2, 10, 5, 0, 3, 55]);
+const resultdifference2 = difference(['Beijing', 'Kiev'], ['Kiev', 'London', 'Baghdad']);
+// console.log(resultdifference);
+// console.log(resultdifference1);
 // console.log(resultdifference2);
