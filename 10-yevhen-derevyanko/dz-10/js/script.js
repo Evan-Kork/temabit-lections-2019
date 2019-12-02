@@ -10,8 +10,9 @@ function removeElement (array,itemToRemove){
     }
     return array;
 }
-// console.log(removeElement(arrayNum, 10));
-// console.log(removeElement(arrayStr, 'Lima'));
+
+//console.log(removeElement(arrayNum, 10));
+//console.log(removeElement(arrayStr, 'Lima'));
 
 
 // TASK 2
@@ -48,30 +49,3 @@ const resultUnique2 = unique(['top', 'bottom', 'top', 'left']);
 
 
 
-// TASK 4
-function difference(array1, array2){
-    let result = [];
-    let arrLong = [];
-    let arrShort = [];
-    if(array1.length > array2.length){
-        arrLong = array1;
-        arrShort = array2;
-    }else{
-        arrLong = array2;
-        arrShort = array1;
-    }
-
-    for (let l = 0; l < arrLong.length; l++) {
-        if(!arrShort.includes(arrLong[l])){
-            result.push(arrLong[l]);
-        }
-    }
-    return result;
-}
-
-const resultdifference = difference([7, -2, 10, 5, 0], [0, 10]);
-const resultdifference1 = difference([0, 10, 55], [7, -2, 10, 5, 0, 3, 55]);
-const resultdifference2 = difference(['Beijing', 'Kiev'], ['Kiev', 'London', 'Baghdad']);
-// console.log(resultdifference);
-// console.log(resultdifference1);
-// console.log(resultdifference2);
