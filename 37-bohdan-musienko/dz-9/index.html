@@ -23,6 +23,35 @@
     }
     </script>
 
-    <script type="text/javascript" src="js/main.js"></script>
+    <div>
+        <p>Таблиця множення через "цикл for":</p>
+        <script type="text/javascript">
+            document.write('<table border="1" style="border-collapse: collapse; text-align: center">');
+                for (let i = 1; i <=10; i++) {
+                    for (let j = 1; j <= 10; j++) {
+                        document.write(`<tr><td>${i}</td><td>*</td><td>${j}</td><td>=</td><td>${i*j}</td></tr>`);
+                    }
+                }
+            document.write('</table>');
+        </script>
+    </div>
+
+    <script type="text/javascript">
+    var FibNum = [0, 1];
+        function fib(num) {
+            if (num == 0) {
+                return FibNum[0];
+            } else if (num == 1) {
+                return FibNum[1];
+            } else if (!FibNum[num]) {
+                FibNum[num] = fib(num - 2) + fib(num - 1);
+            };
+            return FibNum[num];
+        }
+        fib(100);
+        for (i = 0; i < FibNum.length; i++) {
+            document.write(FibNum[i] + "</br>");
+        }
+    </script>
 </body>
 </html>
