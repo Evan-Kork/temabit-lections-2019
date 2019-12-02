@@ -67,6 +67,60 @@ h3 {
 .header .ringoo img {
   width: 100%;
 }
+.header .search input {
+  width: 70%;
+  background: url("https://ringoo.ua/wp-content/themes/ringoo/img/search_gray.svg") no-repeat 10px 7px;
+  background-color: #424242;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-size: 16px;
+  outline: none;
+  padding: 4px 15px 4px 33px;
+}
+.header .search input:focus {
+  background-color: #fff;
+}
+.header .search input:hover {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.header .cart {
+  color: #fff;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+.header .cart > div {
+  text-align: right;
+}
+.header .cart img {
+  width: 20px;
+  margin-right: 5px;
+}
+.header .cart a {
+  color: #fff;
+  font-weight: 900;
+  display: inline-block;
+  padding-right: 3px;
+}
+.header .cart .cart_count {
+  display: inline-block;
+  background: url("https://ringoo.ua/wp-content/themes/ringoo/img/basket_empty.png") no-repeat 7px 5px;
+  background-size: 25px;
+  background-color: #f6851f;
+  width: 115px;
+  height: 35px;
+  padding-right: 10px;
+  text-align: left;
+  letter-spacing: 0.1rem;
+}
+.header .cart .cart_count span {
+  display: inline-block;
+  padding: 5px 15px;
+}
+.header .cart .cart_count a {
+  font-weight: 700;
+  font-family: "Century Gothic";
+  font-size: 0.95rem;
+}
 .header .menu > .col {
   padding: 0;
 }

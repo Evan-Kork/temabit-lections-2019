@@ -12,6 +12,7 @@ $color_product_blue: #0000ff;
 $color_email_bdr: #bfbfbf;
 $color_nav_line: #40423e;
 $color_section_bg_light: #f5f7f7;
+$color_search_bg: #424242;
 
 $color_light: #fff;
 $color_dark: #000;
@@ -136,6 +137,71 @@ h3 {
 			width: 100%;
 		}
 	}
+	.search {
+		input {
+			width: 70%;
+			background: url("https://ringoo.ua/wp-content/themes/ringoo/img/search_gray.svg") no-repeat 10px 7px;
+			background-color: $color_search_bg;
+			border-radius: 50px;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			
+			background-size: 16px;
+			outline: none;
+			padding: 4px 15px 4px 33px;
+			// color: $color_light;
+			&:focus {
+				background-color: $color_light;
+			}
+			&:hover {
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+		}
+	}
+	.cart {
+		color: $color_light;
+		padding-top: 10px;
+		padding-right: 10px;
+		//display: flex;
+		//text-align: left;
+		>div {
+			//display: inline-block;
+			text-align: right;
+			//width: 80%;
+		}
+		img {
+			width: 20px;
+			margin-right: 5px;
+			//margin-left: -50px;
+		}
+		a {
+			color: $color_light;
+			font-weight: 900;
+			display: inline-block;
+			padding-right: 3px;
+			//width: 112px;
+		}
+		.cart_count {
+			display: inline-block;
+			background: url("https://ringoo.ua/wp-content/themes/ringoo/img/basket_empty.png") no-repeat 7px 5px;
+			background-size: 25px;
+			background-color: $color_cart_bg;
+			width: 115px;
+			height: 35px;
+			padding-right: 10px;
+			text-align: left;
+			letter-spacing: 0.1rem;
+			span {
+				display: inline-block;
+				padding: 5px 15px;
+			}
+			a {
+				font-weight: 700;
+				font-family: "Century Gothic";
+				font-size: 0.95rem;
+			}
+		}
+	}
+
 	.menu {
 
 		>.col {
