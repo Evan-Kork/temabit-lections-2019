@@ -10,12 +10,12 @@ function removeElement (array,itemToRemove){
     }
     return array;
 }
-//console.log(removeElement(arrayNum, 10));
-//console.log(removeElement(arrayStr, 'Lima'));
+// console.log(removeElement(arrayNum, 10));
+// console.log(removeElement(arrayStr, 'Lima'));
 
 
 // TASK 2
-function removeElements(){
+function removeElements(){ // arguments(array, 'itemToRemove-1', 'itemToRemove-2', 'itemToRemove-n')
     let iterToRemove = 1;
     for (let i = 0; i < arguments.length; i++) {
         if(arguments[iterToRemove] && arguments[0].indexOf(arguments[iterToRemove]) != -1){
@@ -25,8 +25,7 @@ function removeElements(){
     }
     return arguments[0];
 }
-// removeElements(arrayStr, 'Kiev',5,'Saratov');
-// console.log(arrayStr);
+// console.log(removeElements(arrayStr, 'Kiev',5,'Saratov'));
 
 
 
