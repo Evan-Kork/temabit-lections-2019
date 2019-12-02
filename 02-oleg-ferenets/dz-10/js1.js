@@ -27,6 +27,7 @@ console.log("Task 2")
 
 const array3 = [1, 2, 3, 4, 5, 6, 7];
 
+
 //function removeElements(array, ...items) {
 //    for (item of items) {
 //        let index = array.indexOf(item);
