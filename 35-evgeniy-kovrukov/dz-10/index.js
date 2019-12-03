@@ -57,7 +57,7 @@ console.log("Logged output: rezult", rezult);
 
 function difference(array1, array2) {
 	return array1.filter(function(item) {
-		return false === array2.includes(item, 0);
+		return !array2.includes(item);
 	});
 }
 const array1 = [7, -2, 10, 5, 0];
@@ -71,7 +71,7 @@ console.log("Logged output: rezult", diff);
 //-----------------------task5
 function missing(array1, array2) {
 	return array1.filter(function(item) {
-		return true !== array2.includes(item, 0);
+		return !array2.includes(item);
 	});
 }
 const array1m = [55, 44, 22, -10];
