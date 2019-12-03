@@ -1,0 +1,41 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.site-global-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height:100%;
+}
+
+header {
+
+}
+main{
+  flex: 1 1;
+}
+footer {
+
+}
+.box-multiplication-table,.box{
+  padding: 10px;
+}
+.box-multiplication-table table{
+  width: 100%;
+}
+.box-multiplication-table > table{
+  border: 1px solid #000;
+  max-width: 600px;
+  padding: 5px;
+}
+
+table td{
+  border: 1px solid #000;
+  text-align: center;
+}
