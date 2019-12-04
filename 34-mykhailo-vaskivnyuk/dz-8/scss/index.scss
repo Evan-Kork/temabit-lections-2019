@@ -1,5 +1,6 @@
 // variables
 $color_ringoo: #98c93c;
+$color_ringoo_light: #a6d941;
 $color_ringoo_bg: #262724;
 $color_search_bg: #424242;
 $color_search_br: rgba(255, 255, 255, 0.1);
@@ -9,13 +10,15 @@ $color_promos_btn: #722b6f;
 $color_hot_off_bg: #e8eded;
 $color_product_green: #32cd32;
 $color_product_blue: #0000ff;
-$color_email_bdr: #bfbfbf;
+$color_email_br: #bfbfbf;
 $color_nav_line: #40423e;
+$color_section_bg: #e8eded;
 $color_section_bg_light: #f5f7f7;
-$color_search_bg: #424242;
 
 $color_light: #fff;
 $color_dark: #000;
+
+$font: "Century Gothic";
 
 // mixins
 @mixin aling_center {
@@ -60,7 +63,7 @@ $color_dark: #000;
  	border-radius: 100px;
 }
 // fonts
-// @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
 
 
 // test classes
@@ -90,7 +93,7 @@ $color_dark: #000;
 // reset
 :root {
 	font-size: 15px;
-	font-family: Lato;
+	font-family: $font;
 }
 
 * {
@@ -100,7 +103,6 @@ $color_dark: #000;
 
 html {
 	box-sizing: border-box;
-	// font-size: 15px;
 }
 
 *, *::after, *::before {
@@ -122,10 +124,47 @@ h3 {
 	margin: 0px;
 }
 
+ul {
+	list-style: none;
+	margin: 0;
+}
+
 // structure
 .header {
 	.top_menu {
 		background-color: $color_ringoo;
+		ul {
+			min-width: 60%;
+			font-family: $font;
+			font-size: 14px;
+			// font-weight: 400;
+			// text-decoration-color: rgb(38, 39, 36);
+			li {
+				padding: 0px 20px;
+				&:hover {
+					background-color: $color_ringoo_light;
+				}
+				.dropdown-menu {
+					transform: translate3d(0, 0, 0) !important;
+					top: calc(100% - 1px) !important;
+					margin-left: -1px;
+					font: inherit;
+					border-radius: 0px;
+				}
+				>button {
+					background-color: transparent;
+					font: inherit;
+					color: inherit;
+					border: none;
+					padding: 0px;
+					outline: none;
+					&:focus {
+						border: none;
+						outline: none;
+					}
+				}				
+			}
+		}
 	}
 	.ringoo {
 		background-color: $color_ringoo_bg;
@@ -288,7 +327,7 @@ h3 {
 	}
 
 	.hot_offering {
-		background-color: $color_hot_off_bg;
+		background-color: $color_section_bg;
 		.caption {
 			padding: 10px;
 		}
@@ -496,7 +535,7 @@ h3 {
 			width: 255px;
 			height: 40px;
 			background-color: $color_ringoo_bg;
-			border: 1px solid $color_email_bdr;
+			border: 1px solid $color_email_br;
 			border-style: none;
 			color: $color_light;
 			// margin-bottom: 30px;
@@ -521,7 +560,7 @@ h3 {
 			color: $color_ringoo;
 		}
 		ul {
-			list-style: none;
+			// list-style: none;
 
 
 			

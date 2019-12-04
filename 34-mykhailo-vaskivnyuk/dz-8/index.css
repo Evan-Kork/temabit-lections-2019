@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap");
 .t_bdr_a {
   border: 1px solid red;
 }
@@ -23,7 +24,7 @@
 
 :root {
   font-size: 15px;
-  font-family: Lato;
+  font-family: "Century Gothic";
 }
 
 * {
@@ -54,8 +55,43 @@ h3 {
   margin: 0px;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+}
+
 .header .top_menu {
   background-color: #98c93c;
+}
+.header .top_menu ul {
+  min-width: 60%;
+  font-family: "Century Gothic";
+  font-size: 14px;
+}
+.header .top_menu ul li {
+  padding: 0px 20px;
+}
+.header .top_menu ul li:hover {
+  background-color: #a6d941;
+}
+.header .top_menu ul li .dropdown-menu {
+  transform: translate3d(0, 0, 0) !important;
+  top: calc(100% - 1px) !important;
+  margin-left: -1px;
+  font: inherit;
+  border-radius: 0px;
+}
+.header .top_menu ul li > button {
+  background-color: transparent;
+  font: inherit;
+  color: inherit;
+  border: none;
+  padding: 0px;
+  outline: none;
+}
+.header .top_menu ul li > button:focus {
+  border: none;
+  outline: none;
 }
 .header .ringoo {
   background-color: #262724;
@@ -399,9 +435,6 @@ h3 {
 }
 .footer .bottom_contacts h5 {
   color: #98c93c;
-}
-.footer .bottom_contacts ul {
-  list-style: none;
 }
 .footer .bottom_contacts a {
   color: #fff;
