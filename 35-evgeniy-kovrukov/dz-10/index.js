@@ -25,7 +25,7 @@ removeElement(city, "Lima");
 
 //-----------------------task2
 function removeEach(array) {
-	var args = [].slice.call(arguments);
+	var args = Array.from(arguments);
 	args.forEach(element => {
 		rez = removeElement(array, element);
 	});
