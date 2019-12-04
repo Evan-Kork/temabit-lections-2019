@@ -5,9 +5,9 @@ function removeElement(array, item) {
     }
     return array;
 }
-function removeElements(array, ...items) {
-    for (item of items) {
-        let index = array.indexOf(item);
+function removeElements(array) {
+    for (let i = 0; i < arguments.length; i++) {
+        let index = array.indexOf(arguments[i]);
         if (index != -1) {
             array.splice(index, 1);
         }
