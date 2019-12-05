@@ -8,7 +8,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<!-- fonts -->
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=" >
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family='Century+Gothic'" >
 		<!-- icons -->
 		<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
 		<!-- CSS -->
@@ -18,12 +18,13 @@
 	<body>
 	<!-- HEADER -->
 			<header class = "header">
+		<!-- top menu -->
 				<div class = "container top_menu">
 					<div class = "row" >
-						<ul class = "d-flex justify-content-between t_bdr_a">
-							<li class = "t_bdr_b"><a href = "#">Графік роботи</a></li>
-							<li class = "t_bdr_b"><a href = "#">Магазини</a></li>
-							<li class="dropdown t_bdr_b">
+						<ul class = "d-none d-lg-flex justify-content-between">
+							<li><a href = "#">Графік роботи</a></li>
+							<li><a href = "#">Магазини</a></li>
+							<li class="dropdown">
   								<button class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">
     								Допомога
   								</button>
@@ -35,25 +36,31 @@
     								<button class="dropdown-item" type="button">Something else here</button>
   								</div>
 							</li>
-							<li class = "t_bdr_b"><a href = "#">Корпоративний сайт</a></li>
+							<li><a href = "#">Корпоративний сайт</a></li>
 						</ul>
 					</div>
 				</div>
+		<!-- /top menu -->
 				<div class = "container ringoo">
-					<div class = "row t_bdr_a t_font">
-						<div class = "col-2 t_bdr_b t_aln">
+		<!-- ringoo -->
+					<div class = "row">
+			<!-- logo -->
+						<div class = "col-2 t_aln">
 							<img src="images/icons/logo.svg" alt="ringoo logo">
 						</div>
-						<div class = "col col-lg-10 col-xl-8 t_bdr_b">
-							<div class = "row search t_bdr_a">
-								<div class = "col t_bdr_b t_aln">
+			<!-- /logo -->
+						<div class = "col col-lg-10 col-xl-8">
+				<!-- search -->
+							<div class = "row search">
+								<div class = "col t_aln">
 									<input type = "text">
 								</div>
 							</div>
-		<!-- menu --> 
-							<div class = "row menu t_bdr_a">
-								<div class = "col t_bdr_b">
-									<ul class="nav nav-tabs nav-justified t_font">
+				<!-- /search -->
+				<!-- menu --> 
+							<div class = "row menu">
+								<div class = "col">
+									<ul class="nav nav-tabs nav-justified">
 										<li class="nav-item">
   											<a class="nav-link" data-toggle="dropdown" href="#">Телефони</a>
 											<div class="dropdown-menu">
@@ -127,27 +134,29 @@
 									</ul>
 								</div>
 							</div>
-		<!-- /menu -->                           
+				<!-- /menu -->                           
 						</div>
-						<div class = "col-2 cart t_bdr_b">
+				<!-- cart -->
+						<div class = "col-2 cart">
 							<div>
-								<a>
+								<a href = "#">
 									<img src = "https://ringoo.ua/wp-content/themes/ringoo/img/phone_icon.svg">
 									097-777-99-00
 								</a>
-								<a>
+								<a href = "#">
 									097-777-99-00
 								</a>
 								<div class = "cart_count">
-									<a>
+									<a href = "#">
 										<span>0</span>КОШИК
 									</a>
 								</div>
 							</div>
 						</div>
+				<!-- /cart -->
 					</div>
-					<div class = "row d-none t_bdr_a t_font">
-						<div class = "col t_bdr_b t_aln">
+					<div class = "row d-none t_bdr_a">
+						<div class = "col t_aln">
 							navigation line top
 						</div>
 					</div>
@@ -157,8 +166,8 @@
 			<main class = "main">
 		<!-- carousel -->                   
 				<div class = "container carousel">
-					<div class = "row t_bdr_a t_font">
-						<div class = "col t_bdr_b">
+					<div class = "row">
+						<div class = "col">
 							<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 								<div class="carousel-inner">
 									<div class="carousel-item active"

@@ -76,7 +76,7 @@ ul {
 }
 .header .top_menu ul li .dropdown-menu {
   transform: translate3d(0, 0, 0) !important;
-  top: calc(100% - 1px) !important;
+  top: calc(100% - 3px) !important;
   margin-left: -1px;
   font: inherit;
   border-radius: 0px;
@@ -86,12 +86,8 @@ ul {
   font: inherit;
   color: inherit;
   border: none;
+  outline: none;
   padding: 0px;
-  outline: none;
-}
-.header .top_menu ul li > button:focus {
-  border: none;
-  outline: none;
 }
 .header .ringoo {
   background-color: #262724;
@@ -117,25 +113,23 @@ ul {
   background-color: #fff;
 }
 .header .search input:hover {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 .header .cart {
-  color: #fff;
-  padding-top: 10px;
-  padding-right: 10px;
+  padding: 10px 10px 10px 0px;
 }
 .header .cart > div {
   text-align: right;
 }
 .header .cart img {
   width: 20px;
-  margin-right: 5px;
+  margin-right: 7px;
 }
 .header .cart a {
   color: #fff;
   font-weight: 900;
   display: inline-block;
-  padding-right: 3px;
+  padding-right: 5px;
 }
 .header .cart .cart_count {
   display: inline-block;
@@ -144,13 +138,13 @@ ul {
   background-color: #f6851f;
   width: 115px;
   height: 35px;
-  padding-right: 10px;
   text-align: left;
   letter-spacing: 0.1rem;
+  line-height: 2rem;
 }
 .header .cart .cart_count span {
   display: inline-block;
-  padding: 5px 15px;
+  margin: 0px 16px;
 }
 .header .cart .cart_count a {
   font-weight: 700;
@@ -160,21 +154,39 @@ ul {
 .header .menu > .col {
   padding: 0;
 }
+.header .menu .nav {
+  border: none;
+  height: 100%;
+}
 .header .menu .nav .show .nav-link {
   color: #98c93c;
+  border-radius: 0px;
 }
 .header .menu .nav .nav-link {
   color: #fff;
   font-family: "Tahoma";
+  height: 100%;
   line-height: 2.1em;
   padding-left: 0px;
   padding-right: 0px;
+  border: none;
+}
+.header .menu .nav .nav-link:hover {
+  color: #98c93c;
+  background-color: #fff;
+  border-radius: 0px;
+}
+.header .menu .nav .nav-link:focus {
+  border: none;
 }
 .header .menu .nav .dropdown-menu {
   width: 100%;
   transform: translate3d(0, 0, 0) !important;
-  top: calc(100% - 2px) !important;
+  top: calc(100% - 1px) !important;
   left: 1px;
+  border: none;
+  border-radius: 0px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -2px -2px 2px rgba(0, 0, 0, 0.1);
 }
 
 .main .carousel .col {
