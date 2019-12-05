@@ -1,0 +1,21 @@
+div {
+	width: 600px;
+	border: 1px solid gray;
+	padding: 20px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+  
+h5 {
+	color: green;
+	font-family: "Century Gothic";
+	font-size: 1.2rem;
+	padding: 10px;
+	margin: 0px;
+}
+  
+p {
+	color: rgb(0, 153, 255);
+	font-family: "Century Gothic";
+	font-size: 1rem;
+}  
