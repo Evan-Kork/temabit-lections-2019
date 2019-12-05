@@ -9,8 +9,13 @@ function removeValue(array, value) {
 	);
 }
 
-function removeValues(array, ...values) {
-	values.forEach( value => removeValue(array, value) ); 
+// function removeValues(array, ...values) {
+// 	values.forEach( value => removeValue(array, value) );
+// }
+
+function removeValues(array) {
+	let values = [].slice.call(arguments, 1);
+	values.forEach( value => removeValue(array, value) );
 }
 
 function unique(array) {
