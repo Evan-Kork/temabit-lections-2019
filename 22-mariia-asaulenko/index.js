@@ -9,19 +9,17 @@
     const array = [1, 2, 3, 4, 5, 6, 7];
     removeElement(array, 5);
     console.log(array);
-}
 
 // task 2
 
-{
     function removeElements (array, ...elements) {
         elements.forEach ((item) => {
             removeElement (array, item);
         })
     }
-    const array = ['Kiev', 'Beijing', 'Lima', 'Saratov'];
-    removeElements(array, 'Lima', 'Berlin', 'Kiev');
-    console.log(array);
+    const array1 = ['Kiev', 'Beijing', 'Lima', 'Saratov'];
+    removeElements(array1, 'Lima', 'Berlin', 'Kiev');
+    console.log(array1);
 }
 
 // task 3
