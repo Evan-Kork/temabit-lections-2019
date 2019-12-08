@@ -16,16 +16,19 @@ function removeElement (array,itemToRemove){
 
 // TASK 2
 function removeElements(){ // arguments(array, 'itemToRemove-1', 'itemToRemove-2', 'itemToRemove-n')
-    let iterToRemove = 1;
-    for (let i = 0; i < arguments.length; i++) {
-        if(arguments[iterToRemove] && arguments[0].indexOf(arguments[iterToRemove]) != -1){
-            arguments[0].splice(arguments[0].indexOf(arguments[iterToRemove]),1);
+    let arg = arguments;
+    let arr = arg[0];
+    delete arg[0];
+
+    for (let i = 0; i < arg.length; i++) {
+        if(arg[i] && arr.indexOf(arg[i]) != -1){
+            arr.splice(arr.indexOf(arg[i]),1);
         }
-        iterToRemove++;
     }
-    return arguments[0];
+    return arr;
 }
-// console.log(removeElements(arrayStr, 'Kiev',5,'Saratov'));
+console.log(removeElements(arrayStr, 'Lima',5,'Saratov'));
+
 
 
 
