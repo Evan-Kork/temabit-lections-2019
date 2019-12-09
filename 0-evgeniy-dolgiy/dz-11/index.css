@@ -1,0 +1,13 @@
+.item {
+	border: 1px solid black;
+}
+.item-header {
+	border-bottom: 1px solid black;
+	height: 30px;
+}
+.item-body {
+	display: none;
+}
+.item.active .item-body {
+	display: block;
+}
