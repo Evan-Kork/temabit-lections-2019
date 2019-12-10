@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - task 1</title>
+</head>
+<body>
+</body>
+<script>
+while (true) {
+    let num = prompt("Введите число больше 0", ""),
+        sum = 0;
+    if (num <= 0) {
+        alert("Вы ввели неправильное число. Повторите!", "");
+    } else {
+        for (let i = 1; i <= num; i++) {
+            sum += i;
+        }
+        alert(sum);
+        break;
+    }
+}
+</script>
+</html>
