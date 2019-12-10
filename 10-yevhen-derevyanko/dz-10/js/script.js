@@ -5,12 +5,24 @@ let arrayStr = ['Kiev', 'Beijing', 'Lima', 'Saratov'];
 
 // TASK 1
 function removeElement (array,itemToRemove){
-    if(array.indexOf(itemToRemove) != -1){
-        array.splice(array.indexOf(itemToRemove),1);
-    }
-    return array;
+    // let indexInArr = array.indexOf(itemToRemove)
+    // if(indexInArr != -1){
+    //     array.splice(indexInArr,1);
+    // }
+    // return array;
+
+
+    // option two - with forEach
+    
+    // let res = [];
+    // array.forEach(element => {
+    //     if(element != itemToRemove){
+    //         res.push(element);
+    //     }
+    // });
+    // return res;
 }
-// console.log(removeElement(arrayNum, 10));
+// console.log(removeElement(arrayNum, 1));
 // console.log(removeElement(arrayStr, 'Lima'));
 
 
@@ -18,16 +30,15 @@ function removeElement (array,itemToRemove){
 function removeElements(){ // arguments(array, 'itemToRemove-1', 'itemToRemove-2', 'itemToRemove-n')
     let arg = arguments;
     let arr = arg[0];
-    delete arg[0];
 
-    for (let i = 0; i < arg.length; i++) {
+    for (let i = 1; i < arg.length; i++) {
         if(arg[i] && arr.indexOf(arg[i]) != -1){
             arr.splice(arr.indexOf(arg[i]),1);
         }
     }
     return arr;
 }
-console.log(removeElements(arrayStr, 'Lima',5,'Saratov'));
+// console.log(removeElements(arrayStr, 'Lima',5,'Saratov'));
 
 
 
@@ -36,11 +47,12 @@ console.log(removeElements(arrayStr, 'Lima',5,'Saratov'));
 // TASK 3
 function unique(array){
     let result = [];
-    for (let i = 0; i < array.length; i++) {
-        if(!result.includes(array[i])){
-            result.push(array[i]);
+
+    array.forEach(function(item){
+        if(!result.includes(item)){
+            result.push(item);
         }
-    }
+    });
     return result;
 }
 
@@ -64,11 +76,12 @@ function difference(array1, array2){
         arrShort = array1;
     }
 
-    for (let l = 0; l < arrLong.length; l++) {
-        if(!arrShort.includes(arrLong[l])){
-            result.push(arrLong[l]);
+    arrLong.forEach(function(item){
+        if(!arrShort.includes(item)){
+            result.push(item);
         }
-    }
+    });
+
     return result;
 }
 
