@@ -1,0 +1,12 @@
+
+section {
+	box-sizing: border-box;
+	width: 50%;
+	height: 50vh;
+	margin: 0 auto;
+	//margin-top: 25vh;
+	border: 1px solid green;
+	line-height: 50vh;
+	text-align: center;
+	font-weight: bold;
+}
