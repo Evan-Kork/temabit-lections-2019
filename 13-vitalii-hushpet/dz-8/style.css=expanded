@@ -1,0 +1,122 @@
+.header {
+  background-color: #98C93C;
+  padding: 0;
+}
+.header .linkheader {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  margin-left: 70px;
+}
+.header .menudrop {
+  background-color: #98C93C;
+  border: 0px;
+  color: black;
+  height: 21px;
+  padding: 0;
+}
+.header .menudrop:focus {
+  background-color: #98C93C;
+}
+
+.menu {
+  background-color: #262724;
+}
+.menu .img-ringoo {
+  height: 70px;
+}
+.menu button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+}
+.menu .num {
+  color: #FFFFFF;
+}
+.menu .korzuna {
+  width: 150px;
+  height: 30px;
+  background-color: #F6851F;
+  padding-bottom: 10px;
+}
+.menu .korzuna .icon {
+  background-image: url(https://ringoo.ua/wp-content/themes/ringoo/img/basket_empty.png);
+  background-repeat: no-repeat;
+  border-top: 3px solid #F6851F;
+  border-left: 3px solid #F6851F;
+  padding-left: 7px;
+}
+
+.brends {
+  text-align: center;
+  margin: 50px;
+}
+
+.link {
+  background-color: #722B6F;
+}
+
+.acsii {
+  text-align: center;
+  margin: 50px;
+}
+.acsii .one {
+  background-image: url("https://ringoo.ua/wp-content/uploads/2019/04/Site_265h220_24.04.2019.png");
+  height: 220px;
+  width: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.acsii .one a {
+  background-color: red;
+}
+.acsii .two {
+  background-image: url("https://ringoo.ua/wp-content/uploads/2019/10/Site_NeffosC9X9_265h220_11.10.2019.png");
+  height: 220px;
+  width: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.acsii .three {
+  background-image: url("https://ringoo.ua/wp-content/uploads/2019/10/GglAdwords_KOSS_ALL_265h220_17.10.2019_v2.png");
+  height: 220px;
+  width: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.acsii .four {
+  background-image: url("https://ringoo.ua/wp-content/uploads/2019/10/7-11-265-x-220-1.png");
+  height: 220px;
+  width: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input.search-query {
+  padding-left: 26px;
+  width: 500px;
+  border-radius: 50px 50px 50px 50px;
+  color: #FFFFFF;
+  background-color: #424242;
+}
+
+form.form-search {
+  position: relative;
+}
+
+form.form-search:before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-image: url(http://getbootstrap.com/2.3.2/assets/img/glyphicons-halflings.png);
+  background-position: -48px 0;
+  position: absolute;
+  left: 25px;
+  opacity: 0.5;
+  z-index: 1000;
+}
+
+/*# sourceMappingURL=style.css=expanded.map */
