@@ -1,12 +1,30 @@
 
 section {
-	box-sizing: border-box;
 	width: 50%;
-	height: 50vh;
 	margin: 0 auto;
-	//margin-top: 25vh;
-	border: 1px solid green;
-	line-height: 50vh;
+}
+
+h1 {
 	text-align: center;
-	font-weight: bold;
+}
+
+.card:not(:last-child) {
+	border-bottom-style: none; 
+}
+
+.card {
+	border-top-width: 4px;
+}
+
+.input-group-prepend span,
+.input-group-prepend button {
+	min-width: 150px;
+}
+
+.card-header {
+	border-bottom: none;
+}
+
+hr {
+	border-color: #28a745;
 }
