@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DZ-9 TASK 1</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+
+	<script>
+
+		let number = 0;
+		let sum = 0;
+
+		while (true) {
+			number = +prompt("Введіть ціле число більше 0", 0);
+			if (number > 0) break;
+			alert("Ви ввели невірне число, повторіть!");
+		}
+
+		for (let i = 1; i <= number; i++) {
+			sum += i;
+		}
+
+		alert("Сума: " + sum);
+
+	</script>
+
+	<script>
+		let code = document.createElement("pre");
+		code.innerHTML = "<code class='javascript'></code>"
+		code.children[0].append(document.querySelector("#script").innerHTML);
+		document.body.prepend(code);	
+	</script>
+
+</body>
+</html>
