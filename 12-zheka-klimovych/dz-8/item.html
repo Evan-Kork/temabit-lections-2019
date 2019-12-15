@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./scss/item.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <title>Item</title>
+  </head>
+  <body>
+    <!-- Хедер -->
+    <header class="header">
+        <!-- Меню шапки header-->
+        <div class="row header-menu">
+            <div style="margin-left: 12rem;" class="header-menu-link col-md-1">
+                <li><a href="#">Графік роботи</a></li>
+            </div>
+            <div class="header-menu-link col-md-1">
+                <li><a href="#">Магазини</a></li>
+            </div>
+            <div class="dropdown header-menu-link col-md-1">
+                <button class="dropbtn submenu">Допомога</button>
+                <div class="dropdown-content">
+                    <li><a href="#">Акційні пропозиції</a></li>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">Оплата</a></li>
+                    <li><a href="#">На виплат та кредити</a></li>
+                    <li><a href="#">Гарантія</a></li>
+                    <li><a href="#">Адреси сервісних центрів</a></li>
+                    <li><a href="#">Як скористатись промокодом</a></li>
+                </div>
+            </div>
+            <div class="header-menu-link col-md-2">
+                <li><a href="#">Корпоративний сайт</a></li>
+            </div>
+        </div>
+        <div class="row header-wrapper">
+            <div class="col-md-3 logo">
+                <img src="https://ringoo.ua/wp-content/themes/ringoo/img/logo.svg" alt="logo" width="150px">
+            </div>
+            <!-- Центральное меню и поиск header -->
+            <div class="col-md-6 header-center">
+                <div class="row">
+                    <!-- Поиск -->
+                    <div class="col-md header-search pt-2 pb-2 justify-content-center d-flex">
+                        <i class="fa fa-search"></i>
+                        <input  
+                            class="search col-md-10" 
+                            type="search" 
+                            placeholder="Пошук"
+                            id="global-search"
+                            required
+                        />
+                    </div>
+                    <div class="w-100"></div>
+                    <!-- Центральное меню -->
+                    <div class="col-md header-center-menu d-flex">
+                        <!-- Меню телефоны первая вкладка -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#" role="button">Телефони</a>
+                            <div class="dropdown-menu phone">
+                                <div class="row">
+                                    <!-- Колонка все телефоны -->
+                                    <div class="col-md-4">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Усі смартфони</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Samsung</a>
+                                        <a class="dropdown-item" href="#">Xiaomi</a>
+                                        <a class="dropdown-item" href="#">Huawei</a>
+                                        <a class="dropdown-item" href="#">TP-Link Neffos</a>
+                                        <a class="dropdown-item" href="#">Bravis</a>
+                                        <a class="dropdown-item" href="#">Ergo</a>
+                                        <a class="dropdown-item" href="#">OnePlus</a>
+                                        <a class="dropdown-item" href="#">Motorola</a>
+                                        <a class="dropdown-item" href="#">Nokia</a>
+                                        <a class="dropdown-item" href="#">Vivo</a>
+                                        <a class="dropdown-item pb-2" href="#">Sony</a>
+                                    </div>
+                                    <!-- Колонка мобильные телефоны -->
+                                    <div class="col-md-4">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Мобільні телефони</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Astro</a>
+                                        <a class="dropdown-item" href="#">Bravis</a>
+                                        <a class="dropdown-item" href="#">Ergo</a>
+                                        <a class="dropdown-item" href="#">Nokia</a>
+                                        <a class="dropdown-item" href="#">2E</a>
+                                        <a class="dropdown-item" href="#">Prestigio</a>
+                                        <a class="dropdown-item" href="#">Viaan</a>
+                                    </div>
+                                    <!-- Колонка сервис и уценка -->
+                                    <div class="col-md-4">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Сервіси та послуги</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Подарункові сертифікати</a>
+                                        <a class="dropdown-item mb-5" href="#">Стартові пакети</a>
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Уцінка</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Смартфони</a>
+                                        <a class="dropdown-item" href="#">ПК та ноутбуки</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Меню електроника вторая вкладка -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#" role="button">Електроніка</a>
+                            <div class="dropdown-menu electronics">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Планшети</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Samsung</a>
+                                        <a class="dropdown-item" href="#">Huawei</a>
+                                        <a class="dropdown-item pb-2" href="#">Lenovo</a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6>
+                                            <a class="dropdown-item mb-3 d-flex justify-content-end pr-5" href="#">Аксесуари</a>
+                                        </h6>
+                                        <a class="dropdown-item d-flex justify-content-end pr-1" href="#">Чохли для планшетів</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Меню гаджети третья вкладка -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#" role="button">Гаджети</a>
+                            <div class="dropdown-menu gadget">
+                                <div class="row">
+                                    <!-- Колонка за категориями -->
+                                    <div class="col-md-3">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">За категоріями</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Гіроборди</a>
+                                        <a class="dropdown-item" href="#">Іграшки</a>
+                                        <a class="dropdown-item" href="#">Камери</a>
+                                        <a class="dropdown-item" href="#">Квадрокоптери</a>
+                                        <a class="dropdown-item" href="#">Комп"ютерні миши</a>
+                                        <a class="dropdown-item" href="#">Смарт-годинники</a>
+                                        <a class="dropdown-item" href="#">Фітнес-браслети</a>
+                                        <a class="dropdown-item" href="#">VR-окуляри</a>
+                                        <a class="dropdown-item" href="#">Wifi-роутери</a>
+                                        <a class="dropdown-item pb-2" href="#">Playstation Store</a>
+                                    </div>
+                                    <!-- Колонка аксессуары для гаджетов -->
+                                    <div class="col-md-4">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Аксесуари для гаджетів</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Аксесуари для фітнес-браслетів</a>
+                                        <a class="dropdown-item" href="#">Аксесуари для смарт-годинників</a>
+                                    </div>
+                                    <!-- Колонка за операционной системой -->
+                                    <div class="col-md-5 OS">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">За операційною системою</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Гаджети для Android</a>
+                                        <a class="dropdown-item" href="#">Гаджети для iOS</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Меню аксессуары четвертая вкладка -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#" role="button">Аксесуари</a>
+                            <div class="dropdown-menu accessory">
+                                <div class="row">
+                                    <!-- Колонка за категориями -->
+                                    <div class="col-md-4">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">За категоріями</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Чохли для смартфонів</a>
+                                        <a class="dropdown-item" href="#">Захисне скло та плівки</a>
+                                        <a class="dropdown-item" href="#">Карти пам'яті</a>
+                                        <a class="dropdown-item" href="#">Портативні батареї</a>
+                                        <a class="dropdown-item" href="#">Зарядні пристрої</a>
+                                        <a class="dropdown-item" href="#">Навушники та гарнітури</a>
+                                        <a class="dropdown-item" href="#">Елементи живлення</a>
+                                        <a class="dropdown-item" href="#">Портативна акустика</a>
+                                        <a class="dropdown-item" href="#">Кабелі та адаптери</a>
+                                        <a class="dropdown-item" href="#">Автотримачі</a>
+                                        <a class="dropdown-item" href="#">Селфі-моноподи</a>
+                                        <a class="dropdown-item" href="#">USB-флешки</a>
+                                        <a class="dropdown-item" href="#">Wi-Fi роутери</a>
+                                        <a class="dropdown-item pb-2" href="#">Автотримачі</a>
+                                    </div>
+                                    <!-- Колонка за сімісними брендами-->
+                                    <div class="col-md-4">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">За сумісними брендами</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Аксесуари для iPhone</a>
+                                        <a class="dropdown-item" href="#">Аксесуари для Samsung</a>
+                                        <a class="dropdown-item" href="#">Аксесуари для Huawei</a>
+                                        <a class="dropdown-item" href="#">Аксесуари для TP-Link</a>
+                                        <a class="dropdown-item" href="#">Аксесуари для Xiaomi</a>
+                                        <a class="dropdown-item" href="#">Аксесуари для Meizu</a>
+                                        <a class="dropdown-item" href="#">Аксесуари для Bravis</a>
+                                        <a class="dropdown-item" href="#">Аксесуари для Ergo</a>
+                                        <a class="dropdown-item" href="#">Аксесуари для LG</a>
+                                        <a class="dropdown-item" href="#">Аксесуари для Motorola</a>
+                                        <a class="dropdown-item" href="#">Аксесуари для Nokia</a>
+                                        <a class="dropdown-item pb-2" href="#">Аксесуари для Prestigio</a>
+                                    </div>
+                                    <!-- Колонка популярні -->
+                                    <div class="col-md-4">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Популярні</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Чохли для iPhone</a>
+                                        <a class="dropdown-item" href="#">Чохли для Samsung</a>
+                                        <a class="dropdown-item" href="#">Чохли для Huawei</a>
+                                        <a class="dropdown-item" href="#">Чохли для Meizu</a>
+                                        <a class="dropdown-item" href="#">Чохли для Nokia</a>
+                                        <a class="dropdown-item" href="#">Чохли для TP-Link</a>
+                                        <a class="dropdown-item" href="#">Чохли для Xiaomi</a>
+                                        <a class="dropdown-item" href="#">Захисне скло для iPhone</a>
+                                        <a class="dropdown-item" href="#">Захисне скло для Samsung</a>
+                                        <a class="dropdown-item" href="#">Захисне скло для Huawei</a>
+                                        <a class="dropdown-item" href="#">Захисне скло для Meizu</a>
+                                        <a class="dropdown-item" href="#">Захисне скло для TP-Link</a>
+                                        <a class="dropdown-item pb-2" href="#">Захисне скло для Xiaomi</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Меню Apple пятая вкладка -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#" role="button">Apple</a>
+                            <div class="dropdown-menu apple">
+                                <div class="row">
+                                    <!-- Колонка все смартфоны -->
+                                    <div class="col-md-4">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Усі смартфони</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Apple iPhone Xs Max 512Gb</a>
+                                        <a class="dropdown-item" href="#">Apple iPhone Xs Max 256Gb</a>
+                                        <a class="dropdown-item" href="#">Apple iPhone Xs Max 64Gb</a>
+                                        <a class="dropdown-item" href="#">Apple iPhone Xs 512Gb</a>
+                                        <a class="dropdown-item" href="#">Apple iPhone Xs 256Gb</a>
+                                        <a class="dropdown-item" href="#">Apple iPhone X 256GB</a>
+                                        <a class="dropdown-item" href="#">Apple iPhone Xs 64Gb</a>
+                                        <a class="dropdown-item pb-2" href="#">Apple iPhone X 64GB</a>
+                                    </div>
+                                    <!-- Колонка защита смартфонов -->
+                                    <div class="col-md-4">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Захист смартфонів</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Чохли</a>
+                                        <a class="dropdown-item" href="#">Скло та плівки</a>
+                                    </div>
+                                    <!-- Колонка аксессуары-->
+                                    <div class="col-md-4">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Аксесуари</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Навушники та гарнітура</a>
+                                        <a class="dropdown-item" href="#">Кабелі та адаптери</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Меню Neffos шестая вкладка -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#" role="button">TP-Link Neffos</a>
+                            <div class="dropdown-menu neffos">
+                                <div class="row">
+                                    <!-- Колонка все смартфоны -->
+                                    <div class="col-md-4">  
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Усі смартфони</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">TP-Link Neffos N1</a>
+                                        <a class="dropdown-item" href="#">TP-Link Neffos C5s</a>
+                                        <a class="dropdown-item" href="#">TP-Link Neffos Y5s</a>
+                                        <a class="dropdown-item" href="#">TP-Link Neffos X9</a>
+                                        <a class="dropdown-item" href="#">TP-Link Neffos C9a</a>
+                                        <a class="dropdown-item" href="#">TP-Link Neffos X1 Lite</a>
+                                        <a class="dropdown-item" href="#">TP-LINK Neffos X20 Pro</a>
+                                        <a class="dropdown-item" href="#">TP-Link Neffos X1 2/16GB</a>
+                                        <a class="dropdown-item" href="#">TP-Link Neffos X1 3/32GB</a>
+                                        <a class="dropdown-item" href="#">TP-Link Neffos X1 Max 3/32GB</a>
+                                        <a class="dropdown-item" href="#">TP-Link Neffos C5 Plus</a>
+                                        <a class="dropdown-item" href="#">TP-Link Neffos C7</a>
+                                        <a class="dropdown-item pb-2" href="#">TP-Link Neffos C5A</a>
+                                    </div>
+                                    <!-- Колонка защита смартфонов -->
+                                    <div class="col-md-4">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Захист смартфонів</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Чохли</a>
+                                        <a class="dropdown-item" href="#">Скло та плівки</a>
+                                    </div>
+                                    <!-- Колонка аксессуары-->
+                                    <div class="col-md-4">
+                                        <h6>
+                                            <a class="dropdown-item mb-3" href="#">Аксесуари</a>
+                                        </h6>
+                                        <a class="dropdown-item" href="#">Монопод Neffos</a>
+                                        <a class="dropdown-item" href="#">Павербанк TP-Link TL-PB3350</a>
+                                        <a class="dropdown-item" href="#">Павербанк TP-Link TL-PB5200</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Меню акции седьмая вкладка -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#" role="button">Акції</a>
+                            <div class="dropdown-menu stocks">
+                                <div class="row">
+                                    <h6 class="col-md-8">
+                                        <a class="dropdown-item p-1" href="#">Уцінений товар</a>
+                                    </h6>
+                                    <h6 class="col-md-4">
+                                        <a class="dropdown-item p-1" href="#">Навушники Koss</a>
+                                    </h6>
+                                </div>
+                            </div>
+                        </li>
+                    </div> 
+                </div>
+            </div>
+            <!-- Номера и корзина header -->
+            <div class="col-md-3 header-right">
+                <div class="row d-flex flex-column">
+                    <div class="col-md ml-4 pt-2">
+                        <img class="phone-logo" src="https://ringoo.ua/wp-content/themes/ringoo/img/phone_icon.svg" alt="phone">(097) 090-87-07
+                    </div>
+                    <div class="col-md ml-1">(073) 090-87-07</div>
+                    <div class="col-md">
+                        <button type="button" class="btn btn-warning btn-store text-white">
+                            <img src="./img/store-logo.png" alt="store-logo">
+                            Кошик
+                        </button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Главный контент-->
+    <main>
+        <section class="wrapper-links col-md-11 offset-1 pt-2 pb-2">
+            <div class="links mb-4">
+                <span>
+                    <a class="link-main" href="#">Головна</a>
+                </span>
+                <span>
+                    <a class="link-category" href="#">Смартфони</a>
+                </span>
+                <span>Samsung Galaxy A80 2019 8/128GB</span>
+            </div>
+            <div class="return mt-4">
+                <a class="link-return" href="#">До каталогу</a>
+            </div>
+        </section>
+        <section class="container-product offset-1 col-md-10 justify-content-center d-flex">
+            <div class="product-img col-md-4 d-flex flex-column justify-content-center">
+                <div class="product-img-item d-flex justify-content-center">
+                    <img src="https://ringoo.ua/wp-content/uploads/2019/08/6476617_1.jpg" alt="Samsung Galaxy A80 2019 8/128GB Phantom Black (SM-A805FZKD)">
+                </div>
+                <div class="product-colors d-flex justify-content-center">
+                    <div class="radio-green mb-3 mr-2"></div>
+                    <div class="radio-black mb-3 mr-2"></div>
+                    <div class="radio-white mb-3"></div>
+                </div>
+                <div class="product-social">
+                    <p class="text-center pt-3 font-weight-bold">Підпишись на наші сторінки</p>
+                    <div class="mt-3 social justify-content-center d-flex">
+                        <i class="fa fa-instagram mr-3 text-warning" aria-hidden="true"></i>
+                        <i class="fa fa-facebook-square mr-3 text-danger" aria-hidden="true"></i>
+                        <i class="fa fa-youtube text-primary" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="product-description col-md-4">
+                <h2>Samsung Galaxy A80 2019 8/128GB Phantom Black (SM-A805FZKD)</h2>
+                <h5>Код товару: G6476615</h5>
+                <ul class="mt-4 pb-3">
+                    <li>Роздільна здатність основної камери, Мп: 48</li>
+                    <li>Діагональ екрану, дюйм: 6,7</li>
+                    <li>Ємність акумулятора, мА·г: 3700</li>
+                    <li>Об'єм оперативної пам'яті, ГБ: 8 Gb</li>
+                    <li>Об'єм вбудованої пам'яті, ГБ: 128 Gb</li>
+                </ul>
+                <div class="product-description-card pt-3 d-flex">
+                    <i class="fa fa-credit-card pr-5 pl-5" aria-hidden="true"></i>
+                    <span class="pb-3">ЯК ОПЛАТИТИ ЧИ ПОВЕРНУТИ ТОВАР</span>
+                </div>
+                <div class="product-description-delivery d-flex mt-3">
+                    <i class="fa fa-shopping-cart pr-3 pl-3" aria-hidden="true"></i>
+                    <span class="pb-3">Оплата готівкою, Картою через LiqPay, 
+                        Безготівковий розрахунок, Кредит, Оплата частинами.</span>
+                </div>
+                <div class="product-description-delivery d-flex mt-3">
+                    <i class="fa fa-shopping-cart pr-3 pl-3" aria-hidden="true"></i>
+                    <span class="pb-3">Обмін та повернення здійснюється протягом 14 днів після покупки, відповідно до закону України"Про захист прав споживачів України"</span>
+                </div>
+            </div>
+            <div class="product-order col-md-4">
+                <div class="comparison-link">
+                    <i class="fa fa-external-link ml-5 pl-5" aria-hidden="true"></i>
+                    <a href="#" class="compare-text">Додати до порівняння</a>
+                </div>
+                <div class="product-btn pt-4">
+                    <div class="price d-flex flex-column justify-content-center offset-1 col-md-10">
+                        <span class="text-secondary first-price justify-content-center d-flex ">6999</span>
+                        <span class="text-danger justify-content-center d-flex">3999
+                            <span>грн</span>
+                        </span>
+                        <span class="price-diff d-flex justify-content-center text-danger">(Вигода: 4000.00 грн)</span>
+                        <button type="button" class="btn btn-warning buy">КУПИТИ</button>
+                        <button type="button" class="btn btn-success buy-click ">Купити в один клік</button>
+                    </div>
+                </div>
+                <div class="product-delivery mt-4 d-flex justify-content-center pb-3">
+                    <i class="fa fa-car mr-3" aria-hidden="true"></i>
+                    <span class="d-flex align-items-center ml-2">ДОСТАВКА</span>
+                </div>
+                <div class="mt-3 d-flex justify-content-center">
+                    <img src="https://ringoo.ua/wp-content/uploads/2019/07/Justin_Dostavka.png">
+                    <div class="d-flex align-self-end">Самовивіз з відділення
+                    <br> вартість доставки: БЕЗКОШТОВНО
+                    </div>
+                </div>
+                <div class="mt-3 d-flex justify-content-center">
+                    <img src="https://ringoo.ua/wp-content/uploads/2019/07/NP_Dostavka.png">
+                    <div class="d-flex align-self-end">Самовивіз з відділення
+                        <br> вартість доставки: БЕЗКОШТОВНО
+                    </div>
+                </div>
+                <div class="mt-3 d-flex justify-content-center">
+                    <img src="https://ringoo.ua/wp-content/uploads/2019/07/UkrPochta_Dostavka.png">
+                    <div class="d-flex align-self-end">Самовивіз з відділення
+                        <br> вартість доставки: БЕЗКОШТОВНО
+                    </div>
+                </div>
+                <div class="mt-3 d-flex justify-content-center">
+                    <img src="https://ringoo.ua/wp-content/uploads/2019/07/NP_Samovyvoz.png">
+                    <div class="d-flex align-self-end">Самовивіз з відділення
+                        <br> вартість доставки: БЕЗКОШТОВНО
+                    </div>
+                </div>
+                <a href="#" class="d-flex justify-content-center mt-3 mb-3 text-success font-weight-bold">Більше інформації</a>
+            </div>
+        </section>
+        <section class="table">
+            <ul class="table-nav d-flex offset-1 col-md-10 justify-content-between">
+                <li class="d-flex align-items-center">
+                    <i class="fa fa-info-circle mr-2" aria-hidden="true"></i>
+                    Характеристики
+                </li>
+                <li class="d-flex align-items-center">
+                    <i class="fa fa-file-o mr-2" aria-hidden="true"></i>
+                    Огляд
+                </li>
+                <li class="d-flex align-items-center">
+                    <i class="fa fa-play mr-2" aria-hidden="true"></i>
+                    Відео</li>
+                <li class="d-flex align-items-center">
+                    <i class="fa fa-picture-o mr-2" aria-hidden="true"></i>
+                    Фото</li>
+                <li class="d-flex align-items-center">
+                    <i class="fa fa-comment-o mr-2" aria-hidden="true"></i>
+                    Відгуки</li>
+            </ul>
+            <table class="table table-borderless offset-1 col-md-10 mb-5">
+                <tbody>
+                    <tr class="col-md-12 d-flex">
+                        <th class="w-25 font-weight-bold">Виробник</th>
+                        <td class="w-75">Samsung</td>
+                        <td class="w-25 font-weight-bold">Тип телефону</td>
+                        <td class="w-75">Смартфон</td>
+                    </tr>
+                    <tr class="col-md-12 d-flex">
+                        <th class="w-25 font-weight-bold">Кількість SIM-карт:</th>
+                        <td class="w-75">2</td>
+                        <td class="w-25 font-weight-bold">Tип SIM-карти:</td>
+                        <td class="w-75">Nano-Sim</td>
+                    </tr>
+                    <tr class="col-md-12 d-flex">
+                        <th class="w-25 font-weight-bold">Форм-фактор:</th>
+                        <td class="w-75">моноблок</td>
+                        <td class="w-25 font-weight-bold">Кількість ядер процесора:</td>
+                        <td class="w-75">4</td>
+                    </tr>
+                    <tr class="col-md-12 d-flex">
+                        <th class="w-25 font-weight-bold">
+                                Максимальна частота процесора, МГц:</th>
+                        <td class="w-75">2200</td>
+                        <td class="w-25 font-weight-bold">Операційна система:</td>
+                        <td class="w-75">Android</td>
+                    </tr>
+                    <tr class="col-md-12 d-flex">
+                        <th class="w-25 font-weight-bold">Діагональ екрану, дюйм:</th>
+                        <td class="w-75">6,7</td>
+                        <td class="w-25 font-weight-bold">Інтерфейси:</td>
+                        <td class="w-75">Bluetooth, GPS, NFC</td>
+                    </tr>
+                    <tr class="col-md-12 d-flex">
+                        <th class="w-25 font-weight-bold">Діагональ екрану, дюйм:</th>
+                        <td class="w-75">6,7</td>
+                        <td class="w-25 font-weight-bold">Операційна система:</td>
+                        <td class="w-75">Android</td>
+                    </tr>
+                    <tr class="col-md-12 d-flex">
+                        <th class="w-25 font-weight-bold">Діагональ екрану, дюйм:</th>
+                        <td class="w-75">6,7</td>
+                        <td class="w-25 font-weight-bold">Операційна система:</td>
+                        <td class="w-75">Android</td>
+                    </tr>
+                    <tr class="col-md-12 d-flex">
+                        <th class="w-25 font-weight-bold">Діагональ екрану, дюйм:</th>
+                        <td class="w-75">6,7</td>
+                        <td class="w-25 font-weight-bold">Операційна система:</td>
+                        <td class="w-75">Android</td>
+                    </tr>
+                    <tr class="col-md-12 d-flex">
+                        <th class="w-25 font-weight-bold">Діагональ екрану, дюйм:</th>
+                        <td class="w-75">6,7</td>
+                        <td class="w-25 font-weight-bold">Операційна система:</td>
+                        <td class="w-75">Android</td>
+                    </tr>
+                    <tr class="col-md-12 d-flex">
+                        <th class="w-25 font-weight-bold">Діагональ екрану, дюйм:</th>
+                        <td class="w-75">6,7</td>
+                        <td class="w-25 font-weight-bold">Операційна система:</td>
+                        <td class="w-75">Android</td>
+                    </tr>
+                    <tr class="col-md-12 d-flex">
+                        <th class="w-25 font-weight-bold">Діагональ екрану, дюйм:</th>
+                        <td class="w-75">6,7</td>
+                        <td class="w-25 font-weight-bold">Операційна система:</td>
+                        <td class="w-75">Android</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="delivery col-md-12 d-flex justify-content-center pt-5 pb-1">
+                <ul class="col-md-3 justify-content-center d-flex flex-column">
+                    <h5 class="font-weight-bold text-success">Доставка по Україні</h5> 
+                    <li>Доставка в регіони з</li>
+                    <li>Кур'єром за адресою</li>
+                    <li>До пункту служби доставки</li>
+                </ul>
+                <ul class="col-md-3 justify-content-center d-flex flex-column">
+                    <h5 class="font-weight-bold text-success">Доставка по Україні</h5> 
+                    <li>Доставка в регіони з</li>
+                    <li>Кур'єром за адресою</li>
+                    <li>До пункту служби доставки</li>
+                </ul>
+                <ul class="col-md-3 justify-content-center d-flex flex-column">
+                    <h5 class="font-weight-bold text-success">Доставка по Україні</h5> 
+                    <li>Доставка в регіони з</li>
+                    <li>Кур'єром за адресою</li>
+                    <li>До пункту служби доставки</li>
+                </ul>
+            </div>
+            <div class="in-stock col-md-12 d-flex justify-content-center flex-column">
+                <h3 class="font-weight-bold mt-5 mb-5 d-flex justify-content-center">У наявності зараз у м.
+                    <a class="stock-link text-success" href="#">Київ</a>
+                </h3>
+                <p class="d-flex justify-content-center font-weight-bold mb-5">У магазинах вашого міста, нажаль, зараз товару немає. Відкрийте мапу та виберіть інший населений пункт.</p>
+                <button type="button" class="btn btn-success offset-5 col-md-2 mb-5">ПОДИВИТИСЯ НА МАПІ</button>
+            </div>
+        </section>
+        <section class="bottom-banners col-md-12 d-flex justify-content-center">
+            <div class="col-md-4 d-flex first-item mr-3 bg-white mt-5 mb-4 flex-column">
+                <div class="container-banner d-flex">
+                    <div class="image-banner col-md-4 d-flex flex-column pt-3">
+                        <img src="https://ringoo.ua/wp-content/uploads/2019/08/6476617_1.jpg">
+                        <a href="#">Дивитися всі характеристики</a>
+                    </div>
+                    <div class="col-md-8 pt-3">
+                        <h2>Samsung Galaxy A80 2019 8/128GB Phantom Black (SM-A805FZKD)</h2>
+                        <ul class="pb-3">
+                            <li>Роздільна здатність основної камери, Мп: 48</li>
+                            <li>Діагональ екрану, дюйм: 6,7</li>
+                            <li>Ємність акумулятора, мА·г: 3700</li>
+                            <li>Об'єм оперативної пам'яті, ГБ: 8 Gb</li>
+                            <li>Об'єм вбудованої пам'яті, ГБ: 128 Gb</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md d-flex justify-content-end pb-3 pt-1">
+                    <h2 class="d-flex">6599 грн</h2>
+                    <button type="button" class=" ml-3 btn btn-warning d-flex col-md-3 font-weight-bold justify-content-center">КУПИТИ</button>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex second-item ml-3 bg-white mt-5 mb-4 flex-column">
+                <div class="question d-flex pb-5">
+                    <div class="d-flex">
+                        <img  class="pt-3" src="https://ringoo.ua/wp-content/uploads/2018/04/consultant.jpg" alt="Adviser">
+                    </div>
+                    <div class="d-flex flex-column justify-content-end pl-4 font-weight-bold">
+                        <h3>Якщо маєте питання,</h3>
+                        <span class="mb-3">поговоріть з нашим консультантом</span>
+                        <h3>0 800 308 556</h3>
+                    </div>
+                </div>
+                <div class="number mt-5">
+                    <h4 class="font-weight-bold mb-4">Або залиште свій номер</h4>
+                    <div class="d-flex justify-content-center">
+                        <input type="text" name="number" id="number" placeholder="+380">
+                        <button type="button" class="btn btn-success ml-5 font-weight-bold">ЗАТЕЛЕФОНУЙТЕ МЕНІ</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="container-footer">
+        <section class="mailing d-flex flex-column">
+            <div class="mail-1 text-white mt-4 font-weight-bold d-flex justify-content-center">Підписуйтесь на розсилку</div>
+            <div class="text-white mt-3 font-weight-bold d-flex justify-content-center">Залиште свій імейл, щоб отримувати актуальні новини, акції та знижки. Жодного спаму, надсилаємо лише корисне!</div>
+            <div><input class="email mt-3" type="email" name="email" placeholder="Email"></div>
+            <div class="justify-content-center d-flex mt-4"><button type="button" class="btn btn-dark email-btn">ПІДПИСАТИСЯ НА РОЗСИЛКУ</button></div>
+        </section>
+        <section class="footer font-weight-bold">
+            <div class="col-md main-line text-white">
+                Головна
+            </div>
+            <div class="aside d-flex">
+                <div class="offset-md-1 col-md-2 catalog justify-content-center">
+                    <h5 class="pb-3 pt-4 font-weight-bold">Каталог</h5>
+                    <li><a href="#">Смартфони</a></li>
+                    <li><a href="#">Електроніка</a></li>
+                    <li><a href="#">Телефони</a></li>
+                    <li><a href="#">Гаджети</a></li>
+                    <li><a href="#">Акції</a></li>
+                </div>
+                <div class="col-md-3 help ">
+                    <h5 class="pb-3 pt-4 font-weight-bold">Допомога</h5>
+                    <li><a href="#">Оплата</a></li>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">На виплат та кредити</a></li>
+                    <li><a href="#">Адреси сервісних центрів</a></li>
+                    <li><a href="#">Публічна оферта</a></li>
+                    <li><a href="#">Гарантія, повернення, обмін</a></li>
+                </div>
+                <div class="col-md-3 about">
+                    <h5 class="pb-3 pt-4 font-weight-bold">Про нас</h5>
+                    <li><a href="#">Магазини</a></li>
+                    <li><a href="#">Про команію</a></li>
+                    <li><a href="#">Власний рахунок</a></li>
+                    <li><a href="#">Робота в компанії</a></li>
+                    <li><a href="#">Орендодавцям</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="pb-3 pt-4 font-weight-bold">Звязатися з нами</h5>
+                    <div>
+                        <i class="fa fa-phone-square" aria-hidden="true"></i>
+                        <span class="text-white pl-2">0 800 958 999</span>
+                    </div>
+                    <div class="text-secondary footer-description w-75">
+                        Безкоштовні дзвінки для абоненrтів усіх українських операторів зв’язку. Дзвінки з питань сервісу та обслуговування.
+                        Оформлення замовлення за номерами:
+                    </div>
+                    <div class="text-white">097-098-99-99</div>
+                    <div class="text-white">097-098-99-99</div>
+                    <div class="mt-3 social">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                        <span class="line pr-1"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="all-right col-md d-flex justify-content-center">
+                Усі права захищені
+            </div>
+        </section>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
