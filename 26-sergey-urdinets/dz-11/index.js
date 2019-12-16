@@ -1,16 +1,18 @@
 
 /*
-	To add new methods update objects: "arrMethodsObj" and "functions".
+	To add new methods update objects: "arrMethods" and "functions".
 	To change starting active item - update: "currentActiveItem".
 */
 
 //---VARS START---
 
-const arrMethodsObj = {
+const arrMethods = {
 	/*
 		object = {
 			array metod: {
-			number of argument: name of argument,
+				arguments quantity: number;
+				argument number: argument name,
+				...
 		}
 	*/
 	concat: {
@@ -78,13 +80,13 @@ const functions = {
 }; 
 
 let currentActiveItem = {
-	id: Object.keys(arrMethodsObj)[0],
+	id: Object.keys(arrMethods)[0],
 	isOpen: false,
 }
 
 //---VARS END---
 
-Object.keys(arrMethodsObj).forEach((element) => createBlock(element));
+Object.keys(arrMethods).forEach((element) => createBlock(element));
 document.querySelector("#documentation").addEventListener("click", (event) => createItemBody(event, currentActiveItem));
 
 let openByDefault = new MouseEvent("click", {
@@ -167,13 +169,13 @@ function createItemBodyElements(id, parent) {
 	separator.style.margin = "10px";
 	parent.appendChild(separator);
 
-	if (arrMethodsObj[id].argsQty > 0) {
-		for (let i = 0; i < arrMethodsObj[id].argsQty; i++) {
+	if (arrMethods[id].argsQty > 0) {
+		for (let i = 0; i < arrMethods[id].argsQty; i++) {
 			let argumentInput = document.createElement("input");
 			argumentInput.id = `${id}-arg_${i}`;
 			argumentInput.style.marginRight = "10px";
 			argumentInput.style.marginLeft = "4px";
-			parent.appendChild(document.createTextNode(arrMethodsObj[id][i]));
+			parent.appendChild(document.createTextNode(arrMethods[id][i]));
 			parent.appendChild(argumentInput);
 		}
 	}
@@ -197,7 +199,7 @@ function getReuslt(id, parent) {
 	if (document.querySelector(`#${id}-original`)) {
 		metodArgs.value_0 = document.querySelector(`#${id}-original`).value;
 
-		for (let i = 0; i < arrMethodsObj[id].argsQty; i++) {
+		for (let i = 0; i < arrMethods[id].argsQty; i++) {
 			metodArgs[`value_${i + 1}`] = document.querySelector(`#${id}-arg_${i}`).value;
 		}
 	}
