@@ -109,7 +109,8 @@ class ArrayMethodsManual extends Manual {
 
 		super(manual);
 		this.card_tpl = this.current_card;
-		this.changeCard(this.current_card);
+		this.changeCard(this.card_tpl);
+		this.card_tpl.remove();
 
 		for (let array_method of Object.values(array_methods)) {
 
@@ -118,7 +119,6 @@ class ArrayMethodsManual extends Manual {
 			this.createCardForm(array_method_card, array_method.method_args);
 		}
 
-		this.card_tpl.remove();
 		this.setCurrentCard();
 	}
 
