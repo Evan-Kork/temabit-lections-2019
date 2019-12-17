@@ -16,11 +16,16 @@ function removeElements(arr) {
     let restArguments = Array.from(arguments);
     restArguments.shift();
     restArguments.sort();
-    
+
     for(let i = 0; i < arr.length; i++) {
+        let wasSplice = false;
         restArguments.forEach(j => {
-            if (arr[i] === j) arr.splice(i,1)
+            if (arr[i] === j) {
+                arr.splice(i,1);
+                wasSplice = wasSplice ? wasSplice : true;
+            }
         })
+        if(wasSplice) {--i}
     }
 
     return arr;
