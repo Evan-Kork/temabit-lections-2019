@@ -142,11 +142,12 @@ class ArrayMethodsManual extends Manual {
 	}
 
 	createCardForm(card, args_list) {
-		
-		let args_elements = card.querySelectorAll("[data-variable]");
-		args_elements.forEach( element => {
-			if (!args_list.includes(element.dataset.variable)){
-			element.closest(".input-group").remove();		}
+
+		let form = card.querySelector("form");
+		let args_elements = [...form.args.elements];
+		args_elements.forEach(element => {
+			if (args_list.includes(element.name)) return;
+			element.closest(".input-group").remove();
 		});
 	}
 }
@@ -156,31 +157,27 @@ class ArrayMethodsManual extends Manual {
 function arrayMethodTest(card) {
 	
 	let array_method = card.dataset.name;
-	let array_out_element = card.querySelector("[data-in_out='array_out']");
-	let result_element = card.querySelector("[data-in_out='result']");
-	
-	let array = card.querySelector("[data-in_out='array']");
-	array = array.value.split(",").map(element => +element);
+	let form = card.querySelector("form");
+	let array = form.array.value.split(",").map(element => +element);
+	let array_method_args = [...form.args.elements];
 
-	let array_method_args = card.querySelectorAll("[data-variable]");
-	array_method_args = [...array_method_args];
 	array_method_args = array_method_args
 		.filter(element => element.value == "" ? false : true)
-		.map(element => element.dataset.variable == "callback" ? 
+		.map(element => element.name == "callback" ? 
 			new Function("...args", element.value) :
 			+element.value
 	);
 
 	try{
 		let result = array[array_method]( ...array_method_args );
-		result_element.value = Array.isArray(result) ? result.join(" : ") : result;
-		result_element.style.color = "";
+		form.result.value = Array.isArray(result) ? result.join(" : ") : result;
+		form.result.style.color = "";
 	} catch (e) {
-		result_element.value = "ERROR: " + e.message;
-		result_element.style.color = "red";
+		form.result.value = "ERROR: " + e.message;
+		form.result.style.color = "red";
 	}
 
-	array_out_element.value = array.join(" : ");
+	form.array_out.value = array.join(" : ");
 }
 
 //------------------------------------------------------------------

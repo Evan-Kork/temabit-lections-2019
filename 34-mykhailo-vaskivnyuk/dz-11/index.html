@@ -24,37 +24,39 @@
 					<div class="input-group-prepend">
 						<span class="input-group-text">input array [ ... ]</span>
 					</div>
-					<input type="text" class="form-control" placeholder="1, 2, 3, ..." data-in_out="array">
+					<input type="text" class="form-control" placeholder="1, 2, 3, ..." name="array">
 				</div>
+			<fieldset name="args">
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
 						<span class="input-group-text">fn callback(...args)</span>
 					</div>
-					<textarea class="form-control" placeholder="return args[0] > 3" data-variable="callback"></textarea>
+					<textarea class="form-control" placeholder="return args[0] > 3" name="callback"></textarea>
 				</div>
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
 						<span class="input-group-text">value</span>
 					</div>
-					<input type="text" class="form-control" placeholder="any value" data-variable="value">
+					<input type="text" class="form-control" placeholder="any value" name="value">
 				</div>				
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
 						<span class="input-group-text">[index]</span>
 					</div>
-					<input type="text" class="form-control" placeholder="" data-variable="index">
+					<input type="text" class="form-control" placeholder="" name="index">
 				</div>
+			</fieldset>
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
 						<span class="input-group-text">output array [ ... ]</span>
 					</div>
-					<input type="text" class="form-control" placeholder="1 : 2 : 3 : ..." data-in_out="array_out">
+					<input type="text" class="form-control" placeholder="1 : 2 : 3 : ..." name="array_out">
 				</div>
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
 						<button class="btn btn-outline-secondary" type="button">RESULT</button>
 					</div>
-					<input type="text" class="form-control" placeholder="" data-in_out="result">
+					<input type="text" class="form-control" placeholder="" name="result">
 				</div>
 			</form>
 		</div>
