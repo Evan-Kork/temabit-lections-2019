@@ -1,0 +1,57 @@
+@import "node_modules/bootstrap/scss/_functions.scss";
+@import "node_modules/bootstrap/scss/_variables.scss";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+
+.item {
+  color: white;
+
+  background-color: #ed2945;
+  margin-bottom: 2px;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #c22439;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include media-breakpoint-up(md) {
+    font-size: 1.75rem;
+  }
+}
+
+.extended {
+  color: black;
+  background-color: white;
+}
+
+.syntax {
+  background-color: #eeeeee;
+
+  border-left: 5px solid #3d7e9a;
+  border-right: 5px solid #3d7e9a;
+
+  max-width: 100%;
+}
+
+.padding {
+  padding: 0.6rem;
+}
+
+.marginLeft {
+  margin-left: 0.4rem;
+}
+
+.link {
+  color: white;
+
+  &:hover {
+    color: #e5e5e5;
+    text-decoration: none;
+  }
+}
