@@ -80,12 +80,3 @@ documentation.addEventListener('click', evt => {
         }
     }
 });
-
-
-
-
-
-
-
-
-
