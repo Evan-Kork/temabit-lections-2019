@@ -47,8 +47,6 @@ var items = [
                         <button type="submit" onclick="methods.Sort(arrForSort)">Reverse</button></br></br>
                     </div>
                 </div>`}];
-
-
 var documentation = document.querySelector('#documentation')
     documentation.innerHTML = items[0].itemHTML + items[1].itemHTML + items[2].itemHTML;
 var itemHeaders = document.querySelectorAll('.item');
