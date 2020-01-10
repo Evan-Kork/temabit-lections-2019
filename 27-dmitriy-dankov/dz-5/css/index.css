@@ -1,0 +1,75 @@
+html, body {
+    padding: 10px;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.google-search {
+    display: inline-block;
+    position: relative;
+    bottom: 25px;
+    margin-left: 10px;
+}
+
+.google-search button {
+    width: 135px;
+    height: 28px;
+}
+
+.search {
+    width: 400px;
+    height: 28px;
+}
+
+.form-anket {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.form-anket h3 {
+    text-align: center;
+    width: 100%;
+}
+
+.data-input {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+    width: calc(50% - 10px);
+    height: 30px;
+}
+
+.link-input {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 30px;
+}
+
+.form-group:not(:last-child) {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.form-group:last-child {
+    margin-bottom: 20px;
+}
+
+.form-group input:first-child {
+    margin-right: 10px;
+}
+
+.button {
+    height: 30px;
+    text-align: center;
+    margin-left: 300px;
+}
