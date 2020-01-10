@@ -12,9 +12,9 @@ var items = [
                 <input type="text" name="" id="sliceArrValue" readonly>
                 <p>Enter the value to slice</p>
                 <label for="startSlice">Start slice value</label>
-                <input type="number" name="" id="startSlice" readonly>
+                <input type="number" name="" id="startSlice">
                 <label for="endSlice">End slice value</label>
-                <input type="number" name="" id="endSlice" readonly>
+                <input type="number" name="" id="endSlice">
                 <button type="submit" onclick="methods.Slice(arrForSlice)">Slice</button></br></br>
                 <label for="resultSlice">Result</label>
                 <input type="text" name="" id="resultSlice" value="" readonly>
@@ -32,6 +32,8 @@ var items = [
                         <label for="revArr">Array</label>
                         <input type="text" name="" id="revArr" value="" readonly>
                         <button type="submit" onclick="methods.Reverse(arrForSlice)">Reverse</button></br></br>
+                        <label for="revArrRes">Result</label>
+                        <input type="text" name="" id="revArrRes" value="" readonly>
                     </div>
                 </div>`},
     {itemName:'Sort',
@@ -45,6 +47,8 @@ var items = [
                         <label for="sortArr">Array</label>
                         <input type="text" name="" id="sortArr" value="" size="31" readonly>
                         <button type="submit" onclick="methods.Sort(arrForSort)">Reverse</button></br></br>
+                        <label for="sortArrRes">Result</label>
+                        <input type="text" name="" id="sortArrRes" value="" size="31" readonly>
                     </div>
                 </div>`}];
 var documentation = document.querySelector('#documentation')
@@ -53,28 +57,33 @@ var itemHeaders = document.querySelectorAll('.item');
 var itemBodyes = document.querySelectorAll('.content-body')
 var arrForSlice = [1,2,3,4,5,6,7,8,9,10,11,12]
 var arrForSort = [24,65,76,12,42,1,8,0,213,345,122,457]
-var startSlice = document.querySelector('input[id=startSlice]').value =4
-var endSlice = document.querySelector('input[id=endSlice]').value = 11
 document.querySelector('input[id=sliceArrValue]').value = arrForSlice
 document.querySelector('input[id=revArr]').value = arrForSlice
 document.querySelector('input[id=sortArr]').value = arrForSort
 itemBodyes[1].classList.add('hide')
 itemBodyes[2].classList.add('hide')
 var methods = []
-methods.Slice = function (arr){
-    document.querySelector('input[id=resultSlice]').value = arr.slice(startSlice, endSlice)
+methods.Slice = function (array){
+    let startSlice = document.querySelector('input[id=startSlice]').value
+    let endSlice = document.querySelector('input[id=endSlice]').value
+    document.querySelector('input[id=resultSlice]').value = array.slice(startSlice,endSlice)
 }
 methods.Reverse = function (arr){
-    document.querySelector('input[id=revArr]').value = arr.reverse()
+    document.querySelector('input[id=revArrRes]').value = arr.reverse()
 }
 methods.Sort = function (arr){
-    document.querySelector('input[id=sortArr]').value = arr.sort()
+    document.querySelector('input[id=sortArrRes]').value = arr.sort()
 }
 documentation.addEventListener('click', evt => {
     if(evt.target.classList.contains('content-head')){
         for(let i = 0; i < itemBodyes.length; i++){
             itemBodyes[i].classList.add('hide')
             evt.target.nextElementSibling.classList.remove('hide')
+            document.querySelector('input[id=sortArrRes]').value = ''
+            document.querySelector('input[id=revArrRes]').value = ''
+            document.querySelector('input[id=resultSlice]').value =''
+            document.querySelector('input[id=startSlice]').value = ''
+            document.querySelector('input[id=endSlice]').value = ''
         }
     }
 });
