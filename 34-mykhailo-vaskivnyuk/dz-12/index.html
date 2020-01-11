@@ -8,19 +8,46 @@
 	<body>
 		<pre><code>
 <!-- CODE -->
-class FakeDate extends Date {
+let FakeDate = (function(fake_date = 0) {
 
-	constructor(date = 0) {
-
-		let fake_date = super(date);
-
-		if ("fake_time" in this.constructor) {
-			fake_date.setTime(this.constructor.fake_time);
-		} else {
-			this.constructor.fake_time = fake_date.getTime();
+	function FakeDate() {
+		if (!(this instanceof FakeDate)) {
+			return String(new Date(FakeDate.time));
 		}
 
-		return fake_date;
+		let date_object = new Date(FakeDate.time);
+		Object.setPrototypeOf(date_object, FakeDate.prototype);
+		return date_object;
+	}
+
+	Object.setPrototypeOf(FakeDate, Date);
+	FakeDate.prototype = Object.create(Date.prototype);
+
+	FakeDate.setNow = function(time) {
+		FakeDate.time = time;
+	}
+
+	FakeDate.now = function() {
+		return this.time;
+	}
+
+	FakeDate.time = fake_date;
+
+	return FakeDate;
+})(0);
+
+/*
+class FakeDate extends Date {
+
+	constructor() {
+
+		let fake_date = super();
+
+		if (!("fake_time" in this.constructor)) {
+			this.constructor.setNow();
+		}
+
+		fake_date.setTime(this.constructor.fake_time);
 	}
 
 	static now() {
@@ -33,31 +60,30 @@ class FakeDate extends Date {
 
 	static setNow(fake_time = null) {
 
-		this.fake_time = (fake_time == null)
+		this.fake_time = (fake_time === null)
 			? Date.now() : fake_time;
 
 		return this.fake_time;
 	}
 
 }
-<!-- TEST -->
+*/
+
 let one_day = 24 * 60 * 60 * 1000;
 
-let fake_date = new FakeDate("2019-01-01");
-let fake_time = FakeDate.now();
-console.log(new Date(fake_time));
+console.log(FakeDate());
 
-fake_date = new FakeDate();
-fake_time = FakeDate.now();
-console.log(new Date(fake_time));
+console.log(new Date(FakeDate.now()));
 
-FakeDate.setNow(fake_time - one_day);
-fake_time = FakeDate.now();
-console.log(new Date(fake_time));
+console.log(new FakeDate());
 
-fake_date = new FakeDate();
-fake_time = FakeDate.now();
-console.log(new Date(fake_time));
+FakeDate.setNow(FakeDate.now() + one_day);
+
+console.log(FakeDate());
+
+console.log(new Date(FakeDate.now()));
+
+console.log(new FakeDate());
 <!-- CODE -->
 		</pre></code>
 		<script src="script.js"></script>
