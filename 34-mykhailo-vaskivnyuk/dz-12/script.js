@@ -1,3 +1,42 @@
+"use strict";
+//===================================================
+function assert(value, message) {
+    if (!value) {
+        throw new Error(message);
+    }
+}
+
+function test(x) {
+    assert(x == 2 && x == 3, 'Invalid value');
+}
+
+//var x = undefined; /// <== Підібрати коректне значення змінної
+let x = {
+	x: 2,
+	toString() {return this.x++}
+}
+
+test(x);
+//===================================================
+function freeze(obj) {
+	Object.freeze(obj);
+	for (let value of Object.values(obj)) {
+		if (typeof(value) == "object") {
+			freeze(value);
+		}
+	}
+}
+
+let frozen = {
+    a: 1,
+    b: 2,
+    c: {
+        x: 1
+    }
+};
+
+freeze(frozen);
+//===================================================
 let FakeDate = (function(fake_date = 0) {
 
 	function FakeDate() {
