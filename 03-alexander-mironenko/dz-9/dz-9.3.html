@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Fibonacci number</title>
+</head>
+<body>
+<script>
+	let n = +prompt('введіть число Фібоначчі');
+	const fib2 = n => {
+	if(n == 0){
+		return [0, 1];
+		}
+	else{
+    const [prev, next] = fib2(n - 1);
+    return [next, prev + next];
+		}
+	}
+	const fib = n => fib2(n)[0];
+	alert(fib(n));
+</script>
+</body>
+</html>
