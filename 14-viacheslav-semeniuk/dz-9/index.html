@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS dz-9</title>
+    <style>
+      .tables-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        background-color: #9bdabf;
+      }
+      .caption {
+        font-size: 20px;
+        margin-bottom: 1em;
+      }
+      td {
+        padding: 7px;
+      }
+      .table tr td:nth-child(5n + 0) {
+        border-right: 1px solid black;
+        border-collapse: 50px;
+      }
+      #whileTable {
+        margin-top: 2.5em;
+        background-color: #3cdde2;
+      }
+      /* fibonacci container */
+      #fibonacciContainer {
+        margin: 2em 30em;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      #fibonacciContainer h3 {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tables-container">
+      <table id="forTable" class="table">
+        <caption class="caption">
+          Табличка множення від 1 до 10 за допомогою циклу for
+        </caption>
+      </table>
+      <table id="whileTable" class="table">
+        <caption class="caption">
+          Табличка множення від 1 до 10 за допомогою циклу while
+        </caption>
+      </table>
+    </div>
+    <div id="fibonacciContainer">
+      <h3>Послідовність чисел Фібоначчі, останє число не більше 100:</h3>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
