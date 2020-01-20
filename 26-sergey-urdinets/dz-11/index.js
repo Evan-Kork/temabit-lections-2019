@@ -8,73 +8,72 @@
 
 const arrMethods = {
 	/*
-		object = {
-			array metod: {
-				arguments quantity: number;
-				argument number: argument name,
+		methods = {
+			array metod: [
+				1st argument name,
+				2nd argument name,
 				...
+			]
 		}
 	*/
-	concat: {
-		argsQty: 1,
-		0: "array",
-	},
-	reverse: {
-		argsQty: 0,
-	},
-	slice: {
-		argsQty: 2,
-		0: "begin",
-		1: "end",
-	},
-	splice: {
-		argsQty: 3,
-		0: "start",
-		1: "delete count",
-		2: "insert element",
-	},
-	includes: {
-		argsQty: 2,
-		0: "search element",
-		1: "from index",
-	},
-	push: {
-		argsQty: 1,
-		0: "element",
-	},
+	concat: [
+		"array",
+	],
+	reverse: [],
+	slice: [
+		"begin",
+		"end",
+	],
+	splice: [
+		"start",
+		"delete count",
+		"insert element",
+	],
+	includes: [
+		"search element",
+		"from index",
+	],
+	push: [
+		"element",
+	],
 }
 
 const functions = {
 	/*
-	object = {
-		value_0: original array,
-		value_n...: method arguments,
-	}
+	array = [
+		original array,   // array[0]
+		method arguments, // array[1...]
+		...,
+	]
 */
-	concat: function(object, separator) {
-		let new_array =  object.value_0.split(separator).concat(object.value_1.split(separator));
+	concat: function(arr, separator) {
+		let new_array =  arr[0].split(separator).concat(arr[1].split(separator));
 		return new_array;
 	},
-	reverse: function(object, separator) {
-		let new_array = object.value_0.split(separator).reverse();
+	reverse: function(arr, separator) {
+		let new_array = arr[0].split(separator).reverse();
 		return new_array;
 	},
-	slice: function(object, separator) {
-		let new_array = object.value_0.split(separator).slice(object.value_1, object.value_2);
+	slice: function(arr, separator) {
+		let new_array = arr[0].split(separator).slice(arr[1], arr[2]);
 		return new_array;
 	},
-	splice: function(object, separator) {
-		let new_array = object.value_0.split(separator);
-		new_array.splice(object.value_1, object.value_2, object.value_3);
+	splice: function(arr, separator) {
+		let new_array = arr[0].split(separator);
+		if (arr[3] !== "") {
+			new_array.splice(arr[1], arr[2], arr[3]);
+		} else {
+			new_array.splice(arr[1], arr[2]);
+		}
 		return new_array;
 	},
-	includes: function(object, separator) {
-		let include = object.value_0.split(separator).includes(object.value_1, object.value_2);
+	includes: function(arr, separator) {
+		let include = arr[0].split(separator).includes(arr[1], arr[2]);
 		return include;
 	},
-	push: function(object, separator) {
-		let new_array = object.value_0.split(separator);
-		new_array.push(object.value_1);
+	push: function(arr, separator) {
+		let new_array = arr[0].split(separator);
+		new_array.push(arr[1]);
 		return new_array;
 	},
 }; 
@@ -106,8 +105,7 @@ function createBlock(title) {
 	document.querySelector("#documentation").appendChild(newItem);
 
 	let itemHeader = document.createElement("div");
-	itemHeader.style.cssText = "background-color: lightgray; border: 1px solid black; cursor: pointer; padding: 10px";
-	itemHeader.classList.add("item-header");
+	itemHeader.classList.add("item-header", "item");
 	itemHeader.id = `${title}-header`;
 	itemHeader.appendChild(
 		document.createTextNode(title[0].toUpperCase() + title.slice(1))
@@ -122,8 +120,8 @@ function createItemBody(event, active) {
 
 		if (deactivated !== active.id) {
 			let itemBody = document.createElement("div");
-			itemBody.style.cssText = "border: 1px solid black; padding: 10px";
 			itemBody.id = `${active.id}-body`;
+			itemBody.classList.add("item");
 
 			createItemBodyElements(active.id, itemBody);
 
@@ -157,7 +155,6 @@ function createItemBodyElements(id, parent) {
 
 	let original = document.createElement("input");
 	original.type = "text";
-	original.style.margin = "10px";
 	original.id = `${id}-original`;
 	parent.appendChild(original);
 	parent.appendChild(document.createTextNode("Separator"));
@@ -165,16 +162,14 @@ function createItemBodyElements(id, parent) {
 	let separator = document.createElement("input");
 	separator.id = `${id}-separator`;
 	separator.maxLength = 3;
-	separator.style.width = "25px";
-	separator.style.margin = "10px";
+	separator.classList.add("item-separator");
 	parent.appendChild(separator);
 
-	if (arrMethods[id].argsQty > 0) {
-		for (let i = 0; i < arrMethods[id].argsQty; i++) {
+	if (arrMethods[id].length > 0) {
+		for (let i = 0; i < arrMethods[id].length; i++) {
 			let argumentInput = document.createElement("input");
 			argumentInput.id = `${id}-arg_${i}`;
-			argumentInput.style.marginRight = "10px";
-			argumentInput.style.marginLeft = "4px";
+			argumentInput.classList.add("item-arguments");
 			parent.appendChild(document.createTextNode(arrMethods[id][i]));
 			parent.appendChild(argumentInput);
 		}
@@ -183,7 +178,6 @@ function createItemBodyElements(id, parent) {
 	let submit = document.createElement("input");
 	submit.type = "button";
 	submit.value = "Get result";
-	submit.style.margin = "10px";
 	submit.id = `${id}-submit`;
 	parent.appendChild(submit);
 	submit.addEventListener("click", event => getReuslt(id, parent));
@@ -194,18 +188,20 @@ function getReuslt(id, parent) {
 		document.querySelector(`#${id}-result`).remove();
 	}
 
-	let metodArgs = {};
+	let metodArgsValues = [];
 
 	if (document.querySelector(`#${id}-original`)) {
-		metodArgs.value_0 = document.querySelector(`#${id}-original`).value;
+		metodArgsValues.push(
+			document.querySelector(`#${id}-original`).value);
 
-		for (let i = 0; i < arrMethods[id].argsQty; i++) {
-			metodArgs[`value_${i + 1}`] = document.querySelector(`#${id}-arg_${i}`).value;
+		for (let i = 0; i < arrMethods[id].length; i++) {
+			metodArgsValues.push(
+				document.querySelector(`#${id}-arg_${i}`).value);
 		}
 	}
 
 	let resultText = functions[id](
-		metodArgs,
+		metodArgsValues,
 		document.querySelector(`#${id}-separator`).value
 	);
 	console.log(resultText);

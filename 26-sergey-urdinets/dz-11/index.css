@@ -1,0 +1,20 @@
+.item {
+	border: 1px solid black; 
+	padding: 10px;
+}
+.item-header {
+	background-color: lightgray; 
+	cursor: pointer;
+}
+
+input {
+	margin: 10px;	
+}
+
+.item-arguments {
+	margin-left: 4px;
+}
+
+.item-separator {
+	width: 25px;
+}
