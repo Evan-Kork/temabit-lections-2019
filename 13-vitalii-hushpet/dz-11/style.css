@@ -1,0 +1,22 @@
+body{
+	margin: 1,auto;
+	padding: 0;
+	background:#a9e8e8 ;
+}
+input{
+    display: block;
+    border-radius: 20px;
+    padding: 5px;
+    margin: auto;
+}
+#rez{
+    font-size: 18px;
+    color: #4d5050;
+    text-align: center;
+}
+#documentation{
+    margin: auto;
+}
+div{
+    text-align: center;
+}
