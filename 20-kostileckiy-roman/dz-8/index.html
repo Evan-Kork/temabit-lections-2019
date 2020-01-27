@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ringoo</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6b8833a6cc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="top-links">
+            <div class="row">
+                <div class="col-md-12 col-xl-12">
+                    <ul class="top-links-menu">
+                        <li><a href="#">Графік роботи</a></li>
+                        <li><a href="#">Магазини</a></li>
+                        <li><a href="#">Допомога</a></li>
+                        <li><a href="#">Корпоративний сайт</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="top-main-bar">
+            <div class="row">
+                <div class="top-main-bar-logo col-md-2 col-xl-2">
+                    <a href=""><img src="img/logo.png" alt=""></a>
+                </div>
+                <div class="top-main-bar-serch col-md-8 col-xl-6">
+                    <input type="search" name="" id="" placeholder="Пошук" class="top-main-bar-search-input">
+                </div>
+                <div class="w-100"></div>
+                <div class="top-main-bar-menu col-md-12 col-xl-10">
+                    <ul>
+                        <li><a href="#">Телефони</a></li>
+                        <li><a href="#">Електроніка</a></li>
+                        <li><a href="#">Гаджети</a></li>
+                        <li><a href="#">Аксесуари</a></li>
+                        <li><a href="#">Apple</a></li>
+                        <li><a href="#">TP-Link</a></li>
+                        <li><a href="#" class="stock">Акції</a></li>
+                    </ul>
+                </div>
+                <div class="w-100"></div>
+                <div class="top-main-bar-cart col-md-12 col-xl-2">
+                    <div class="top-main-bar-tel">
+                        <i class="fas fa-phone-square-alt"></i>
+                            <span>(097) 090-87-07</span>
+                            <span>(073) 090-87-07</span>
+                                <div class="top-main-bar-cart">
+                                    <a href="#" class="cart-button"><i class="fas fa-shopping-cart"></i> Кошик</a>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--End top main bar-->
+        <div class="main-slide-container">
+            <div class="row">
+                <div class="mains-slide-carousel col-md-12 col-xl-12">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="./img/slide1.png" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="./img/slide2.png" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="./img/slide3.png" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                </div>
+            </div>
+        </div><!--end slide bar-->
+        <div class="popular-brands-container">
+            <div class="row">
+                <div class="popular-brands col-md-12 col-xl-12">
+                <h1>Популярні бренди</h1>
+                    <div class="brands">
+                        <a href="#" class="brand-samsung"></a>
+                        <a href="#" class="brand-apple"></a>
+                        <a href="#" class="brand-sony"></a>
+                        <a href="#" class="brand-tplink-neffos"></a>
+                        <a href="#" class="brand-cresyn"></a>
+                        <a href="#" class="brand-mi"></a>
+                        <a href="#" class="brand-koss"></a>
+                        <a href="#" class="brand-ergo"></a>
+                        <a href="#" class="brand-panasonic"></a>
+                        <a href="#" class="brand-huawei"></a>
+                    </div>
+                </div>
+            </div>
+        </div><!--End brands container-->
+        <div class="actualy-stock-container">
+            <div class="row">
+                <div class="actualy-stock col-md-12 col-xl-12">
+                    <h1>Наявні акції</h1>
+                        <div class="stocks">
+                            <div class="stock-one">
+                                <a href="#">Уцінений товар</a>
+                            </div>
+                            <div class="stock-two">
+                                <a href="#">Навушники KOSS</a>
+                            </div>
+                            <div class="stock-three">
+                                <a href="#">Товар тижня</a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div><!--End stocks-->
+        <div class="hot-deals-container">
+            <div class="row">
+                <div class="hot-deals-main col-md-12 col-xl-12">
+                    <h1>Гарячі пропозиції</h1>
+                    <div class="hot-deals">
+                        <div class="hot-deal-one">
+                            <a href="#" class="model-name">Neffos X20 Pro 3/64GB Green</a>
+                            <p class="model-price">3699 грн</p>
+                            <a href="" class="model-pick"><img src="img/hot-deal-one.png" alt=""></a>
+                            <div class="model-colors">
+                                <a href="" class="model-color-green"></a>
+                                <a href="" class="model-color-black"></a>
+                            </div>
+                            <div class="model-links">
+                                    <a href="" class="model-quick-details">Швидкий огляд</a>
+                                    <a href="" class="model-details">Детальніше</a>
+                            </div>
+                        </div>
+                        <div class="hot-deal-two">
+                                <a href="" class="model-name">Neffos X20 Pro 3/64GB Green</a>
+                                    <p class="model-price">3699 грн</p>
+                                        <a href="" class="model-pick"><img src="img/hot-deal-two.png" alt=""></a>
+                                <div class="model-colors">
+                                    <a href="" class="model-color-green"></a>
+                                    <a href="" class="model-color-black"></a>
+                                </div>
+                                <div class="model-links">
+                                        <a href="" class="model-quick-details">Швидкий огляд</a>
+                                        <a href="" class="model-details">Детальніше</a>
+                                </div>
+                        </div>
+                        <div class="hot-deal-three">
+                                <a href="" class="model-name">Neffos X20 Pro 3/64GB Green</a>
+                                <p class="model-price">3699 грн</p>
+                                <a href="" class="model-pick"><img src="img/hot-deal-three.png" alt=""></a>
+                                <div class="model-colors">
+                                    <a href="" class="model-color-green"></a>
+                                    <a href="" class="model-color-black"></a>
+                                </div>
+                                <div class="model-links">
+                                        <a href="" class="model-quick-details">Швидкий огляд</a>
+                                        <a href="" class="model-details">Детальніше</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--END HOT DEALS-->
+        <div class="new-produts-container">
+            <div class="row">
+                <div class="new-products-main col-md-12 col-xl-12">
+                    <h1>Нові надходження</h1>
+                    <div class="new-products">
+                        <div class="new-product">
+                                <div class="new-product-pick-block">
+                                        <a href="" class="new-product-pick"><img src="img/new-product-one.png" alt=""></a>
+                                </div>
+                                <div class="new-products-details-block">
+                                    <a href="" class="new-product-model">Huawei P Smart Pro Chrystal</a>
+                                        <p class="new-product-price">8499 грн</p>
+                                    <a href="" class="new-product-details">Детальніше</a>
+                                </div>
+                        </div>
+                        <div class="new-product">
+                                <div class="new-product-pick-block">
+                                        <a href="" class="new-product-pick"><img src="img/new-product-two.png" alt=""></a>
+                                </div>
+                                <div class="new-products-details-block">
+                                    <a href="" class="new-product-model">Huawei P Smart Pro Chrystal</a>
+                                        <p class="new-product-price">8499 грн</p>
+                                    <a href="" class="new-product-details">Детальніше</a>
+                                </div>
+                        </div>
+                        <div class="new-product">
+                                <div class="new-product-pick-block">
+                                        <a href="" class="new-product-pick"><img src="img/new-product-three.png" alt=""></a>
+                                </div>
+                                <div class="new-products-details-block">
+                                    <a href="" class="new-product-model">Huawei P Smart Pro Chrystal</a>
+                                        <p class="new-product-price">8499 грн</p>
+                                    <a href="" class="new-product-details">Детальніше</a>
+                                </div>
+                        </div>
+                        <div class="new-product">
+                                <div class="new-product-pick-block">
+                                        <a href="" class="new-product-pick"><img src="img/new-product-four.png" alt=""></a>
+                                </div>
+                                <div class="new-products-details-block">
+                                    <a href="" class="new-product-model">Huawei P Smart Pro Chrystal</a>
+                                        <p class="new-product-price">8499 грн</p>
+                                    <a href="" class="new-product-details">Детальніше</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--END NEW PRODUCTS-->
+        <div class="availability-container">
+            <div class="row">
+                <div class="availability-main col-md-12 col-xl-12">
+                    <div class="dropdown availability-in-city">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                У наявності зараз
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Вінниця</a>
+                                <a class="dropdown-item" href="#">Кіїв</a>
+                                <a class="dropdown-item" href="#">Одесса</a>
+                            </div>
+                    </div>
+                    <div class="availability-blocks">
+                        <div class="availability-block-left">
+                            <div class="availability-block-left-container">
+                                <div class="availability-block-left-pick">
+                                    <a href=""><img src="img/aval-left-1.jpg" alt=""></a>
+                                </div>
+                                <div class="availability-block-left-details">
+                                    <a href="" class="availability-block-left-details-name">Автотримач iOttie iTap Magnetic Mini Air </a>
+                                    <p class="availability-block-left-details-price">699.00 грн</p>
+                                    <a href="" class="availability-block-left-details-button">Детальніше</a>
+                                </div>
+                            </div>
+                            <div class="availability-block-left-container">
+                                    <div class="availability-block-left-pick">
+                                            <a href=""><img src="img/aval-left-2.jpg" alt=""></a>
+                                        </div>
+                                        <div class="availability-block-left-details">
+                                            <a href="" class="availability-block-left-details-name">Micro-SDHC 128 Gb Samsung Class 10</a>
+                                            <p class="availability-block-left-details-price">Очікується</p>
+                                            <a href="" class="availability-block-left-details-button">Детальніше</a>
+                                        </div>
+                            </div>
+                            <div class="availability-block-left-container">
+                                    <div class="availability-block-left-pick">
+                                            <a href=""><img src="img/aval-left-3.jpg" alt=""></a>
+                                        </div>
+                                        <div class="availability-block-left-details">
+                                            <a href="" class="availability-block-left-details-name">Кабель Remax (RL-L200) AUX 2m</a>
+                                            <p class="availability-block-left-details-price">149.00 грн</p>
+                                            <a href="" class="availability-block-left-details-button">Детальніше</a>
+                                        </div>
+                            </div>
+                            <div class="availability-block-left-container">
+                                    <div class="availability-block-left-pick">
+                                        <a href=""><img src="img/aval-left-4.jpg" alt=""></a>
+                                    </div>
+                                    <div class="availability-block-left-details">
+                                        <a href="" class="availability-block-left-details-name">Уцінка Prestigio PSP 3512 MultiPhone</a>
+                                        <p class="availability-block-left-details-price">1299.00 грн</p>
+                                        <a href="" class="availability-block-left-details-button">Детальніше</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="availability-block-right">
+                                <div class="availability-block-right-pick">
+                                        <a href=""><img src="img/aval-right-1.jpg" alt=""></a>
+                                </div>
+                                <div class="availability-block-right-details">
+                                    <a href="" class="availability-block-right-details-name">Уцінка Prestigio PSP 3512 MultiPhone</a>
+                                    <p class="availability-block-right-details-price">1299.00 грн</p>
+                                    <a href="" class="availability-block-right-details-button">Детальніше</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--END availability -->
+        <div class="advantages-container">
+            <div class="row">
+                <div class="advantages-main col-md-12 col-xl-12">
+                    <h1>Переваги</h1>
+                    <div class="advantages-content">
+                        <div class="advantages-item">
+                            <div class="advantage-item-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="advantage-item-title">
+                                <h3>Ми поруч</h3>
+                            </div>
+                            <div class="advantage-item-description">
+                                <a href="">Забирайте замовлення в найближчому магазині ringoo або вибирайте зручний варіант доставки</a>
+                            </div>
+                        </div>
+                        <div class="advantages-item">
+                                <div class="advantage-item-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <div class="advantage-item-title">
+                                    <h3>Розстрочка</h3>
+                                </div>
+                                <div class="advantage-item-description">
+                                    <a href="">Вибирайте оптимальні умови кредитування, користуйтеся телефоном уже зараз</a>
+                                </div>
+                        </div>
+                        <div class="advantages-item">
+                                <div class="advantage-item-icon">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <div class="advantage-item-title">
+                                    <h3>Гарантія</h3>
+                                </div>
+                                <div class="advantage-item-description">
+                                    <a href="">Повна офіційна гарантія на кожен товар, обслуговування в сервісних центрах</a>
+                                </div>
+                        </div>
+                        <div class="advantages-item">
+                                <div class="advantage-item-icon">
+                                    <i class="fas fa-wallet"></i>
+                                </div>
+                                <div class="advantage-item-title">
+                                    <h3>Власний Рахунок</h3>
+                                </div>
+                                <div class="advantage-item-description">
+                                    <a href="">Отримуйте додаткові бали за програмою мережі супермаркетів «Сільпо»</a>
+                                </div>
+                        </div>
+                        <div class="advantages-item">
+                                <div class="advantage-item-icon">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </div>
+                                <div class="advantage-item-title">
+                                    <h3>Сервіс</h3>
+                                </div>
+                                <div class="advantage-item-description">
+                                    <a href="">Сервісні послуги, додаткова гарантія від пошкоджень, налаштування телефонів</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--END ADVANTAGES-->
+        <div class="subscription-container">
+            <div class="row">
+                <div class="subscription-main col-md-12 col-xl-12">
+                    <label for="email">Підписуйтесь на розсилку</label>
+                    <p>Залиште свій імейл, щоб отримувати актуальні новини, акції та знижки. Жодного спаму, надсилаємо лише корисне!</p>
+                    <input type="email" name="email" id="email" placeholder="Ваш E-Mail">
+                    <input type="submit" value="ПІДПИСАТИСЯ НА РОЗСИЛКУ">
+                </div>
+            </div>
+        </div><!--END SUBS-->
+        <div class="breadcumbs-container">
+            <div class="row">
+                <div class="breadcumbs col-md-12 col-xl-12">
+                    <a href="">Головна</a>
+                </div>
+            </div>
+        </div><!--END BREAD-->
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-main col-md-12 col-xl-12">
+                    <div class="footer-catalog-links">
+                        <h4>Каталог</h4>
+                        <ul>
+                            <li><a href="">Смартфони</a></li>
+                            <li><a href="">Електроніка</a></li>
+                            <li><a href="">Аксессуари</a></li>
+                            <li><a href="">Гаджети</a></li>
+                            <li><a href="">Акції</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-help-links">
+                        <h4>Допомога в покупці</h4>
+                        <ul>
+                            <li><a href="">Оплата</a></li>
+                            <li><a href="">Доставка</a></li>
+                            <li><a href="">На виплат та кредити</a></li>
+                            <li><a href="">Гарантія, повернення, обмін</a></li>
+                            <li><a href="">Адреси сервісних центрів</a></li>
+                            <li><a href="">Як скористатись промокодом</a></li>
+                            <li><a href="">Публічна оферта</a></li>
+                            <li><a href="">Акційні пропозиції</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-about-us">
+                        <h4>Про нас</h4>
+                        <ul>
+                            <li><a href="">Магазини</a></li>
+                            <li><a href="">Про компанію</a></li>
+                            <li><a href="">«Власний Рахунок»</a></li>
+                            <li><a href="">Комісійна торгівля</a></li>
+                            <li><a href="">Робота в компанії</a></li>
+                            <li><a href="">Орендодавцям</a></li>
+                            <li><a href="">Контакти</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact-us">
+                        <h4>Зв’язатися з нами</h4>
+                        <div class="footer-contact-us-tel">
+                            
+                            <a href="tel:+0 800 308 480"><i class="fas fa-phone-volume"></i>  0 800 308 480</a>
+                        </div>
+                        <p>Безкоштовні дзвінки для абонентів усіх українських операторів зв’язку. Дзвінки з питань сервісу та обслуговування.
+                                Оформлення замовлення за номерами:</p>
+                            <a href="tel:+380970908707">(097) 090-87-07</a>
+                            <a href="tel:+380730908707">(073) 090-87-07</a>
+                        <div class="footer-contact-us-links">
+                           <a href=""><i class="fab fa-facebook"></i></a>
+                           <a href=""><i class="fab fa-instagram"></i></a>
+                           <a href=""><i class="fab fa-youtube-square"></i></a>
+                           <a href=""><i class="fab fa-cc-mastercard"></i></a>
+                           <a href=""><i class="fab fa-cc-visa"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--END FOOTER-->
+        <div class="allrighs-container">
+            <div class="row">
+                <div class="allrighs-main col-md-12 col-xl-12">
+                    <p>Усі права захищені</p>
+                </div>
+            </div>
+        </div>
+        </div><!-- END CONTAINER FLUID-->
+</body>
+</html>
