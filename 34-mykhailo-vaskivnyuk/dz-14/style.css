@@ -1,0 +1,40 @@
+:root {
+	--margin-left: 5px;
+}
+
+button[disabled] {
+	color: #ddd;
+}
+
+button {
+	width: 100px;
+}
+
+input {
+	width: 300px;
+	margin: var(--margin-left);
+}
+
+.response {
+	margin-left: var(--margin-left);
+}
+
+[data-response-status="200"] {
+	color: green;
+}
+
+[data-response-status="300"] {
+	color: yellow;
+}
+
+[data-response-status="400"] {
+	color: red;
+}
+
+[data-response-status="500"] {
+	color: red;
+}
+
+[data-response-status="error"] {
+	color: red;
+}
