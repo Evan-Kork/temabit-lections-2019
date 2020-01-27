@@ -1,10 +1,10 @@
 class MyRequestsForm {
 	constructor(form) {
 		this.form = form;
-		this.input_template = form.querySelector("[name='input_template']");
+		this.input_template = form.querySelector("template");
 		this.request = request;
 		this.form.add_btn.addEventListener("click", this.add.bind(this));		
-		this.form.addEventListener("submit", this.submit.bind(this));
+		this.form.addEventListener("submit", this.send.bind(this));
 		this.form.addEventListener("click", this.delete.bind(this));
 	}
 
@@ -20,21 +20,22 @@ class MyRequestsForm {
 		input.remove();
 	}
 
-	submit(event) {
+	send(event) {
 		event.preventDefault();
+		console.log(event);
 		this.lock();
 		this.clear();
 		let inputs = this.form.querySelectorAll(".request");
 		let requests = [];
 		for (let input of inputs) {
-			let url = input.querySelector("[name='request_url']").value;
+			let url = input.querySelector("input").value;
 			requests.push(
 				this.request(url)
 					.then(response => this.show_response(input, response))
 					.catch(error => this.show_error(input, error))
 			);
 		}
-		Promise.all(requests).then(this.lock(false));
+		Promise.all(requests).then(() => this.lock(false));
 	}
 
 	clear() {
@@ -52,8 +53,8 @@ class MyRequestsForm {
 
 	show_response(input, response) {
 		let res_response = input.querySelector(".response");
-		let res_request_url = input.querySelector(".request_url");
-		let res_response_code = input.querySelector(".response_code");
+		let res_request_url = input.querySelector("[data-response-url]");
+		let res_response_code = input.querySelector("[data-response-code]");
 		res_request_url.innerHTML = response.url;
 		res_response_code.innerHTML = `${response.status} ${response.statusText}`;
 		res_response.dataset.responseStatus=Math.floor(response.status / 100) * 100;
@@ -61,7 +62,7 @@ class MyRequestsForm {
 
 	show_error(input, error) {
 		let res_response = input.querySelector(".response");
-		let res_response_code = input.querySelector(".response_code");
+		let res_response_code = input.querySelector("[data-response-code]");
 		res_response_code.innerHTML = `${error.name} ${error.message}`;
 		res_response.dataset.responseStatus="error";
 	}

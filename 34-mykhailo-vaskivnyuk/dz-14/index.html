@@ -17,13 +17,13 @@
 		
 		<fieldset name="input_fields">
 		<!-- input fields -->
-			<template name="input_template">
+			<template>
 				<div class="request">
-					<input type="text" name="request_url" placeholder="http://somesite.com">
+					<input type="url" placeholder="http://somesite.com">
 					<button name="delete_btn">del</button>
-					<div class="response" data-response-status="0">
-						<div class="request_url"></div>
-						<div class="response_code"></div>
+					<div class="response" data-response-status>
+						<div data-response-url></div>
+						<div data-response-code></div>
 					</div>
 				</div>
 			</template>
