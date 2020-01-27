@@ -1,0 +1,484 @@
+@charset "UTF-8";
+.main .top-breadcrumbs {
+  width: 100%;
+  color: #262724;
+  padding-left: 30px;
+  font-size: 16px;
+  padding: 10px 0;
+  margin: 0 104.5px;
+}
+.main .top-breadcrumbs a {
+  color: #98C93C;
+  padding: 0 10px;
+}
+.main .top-breadcrumbs div {
+  padding-left: 10px;
+}
+.main .item {
+  margin: 0 104.5px;
+}
+.main .item .beck {
+  padding: 15px;
+}
+.main .item .beck a {
+  color: #98C93C;
+  font-size: 18px;
+}
+.main .item .item-content {
+  display: flex;
+  justify-content: space-around;
+}
+.main .item .text-end {
+  text-align: end;
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+.main .item .text-end a {
+  font-size: 18px;
+  color: #98C93C;
+}
+.main .item .text-end img {
+  width: 32px;
+}
+.main .item .social-pages {
+  border-top: 1px solid #d4d9d9;
+}
+.main .item .social-pages h3 {
+  text-align: center;
+}
+.main .item .top-social-icons {
+  display: flex;
+  justify-content: center;
+}
+.main .item .top-social-icons div {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 5px;
+  cursor: pointer;
+}
+.main .item .top-social-icons div:hover {
+  background-color: #98C93C;
+}
+.main .item .top-social-icons .facebook {
+  background-color: #3d4e7A;
+}
+.main .item .top-social-icons .instagram {
+  background-color: #e4358c;
+}
+.main .item .top-social-icons .youtube {
+  background-color: #ff0000;
+}
+.main .item .top-social-icons i {
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+}
+.main .item .main-info-tel {
+  padding: 0 0 20px 16px;
+  border-bottom: 1px solid #d4d9d9;
+}
+.main .item .main-info-tel li {
+  color: #98C93C;
+  font-size: 18px;
+}
+.main .item .main-info-tel span {
+  font-size: 14rpx;
+  color: #262724;
+}
+.main .item .option {
+  display: flex;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+.main .item .option-title {
+  padding: 20px;
+  border-top: 1px solid #d4d9d9;
+  border-bottom: 1px solid #d4d9d9;
+  text-align: center;
+}
+.main .item .option-title h4 {
+  font-size: 19px;
+}
+.main .item .option-title img {
+  width: 64px;
+  height: 64px;
+}
+.main .item .option-title-second {
+  border-top: 0;
+}
+.main .item .card-buy {
+  border-radius: 0;
+}
+.main .item .card-buy h5 {
+  font-size: 40px;
+  padding: 20px;
+}
+.main .item .card-buy h5 small {
+  font-size: 20px;
+}
+.main .item .card-buy .card-body-buy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .item .card-buy .small-btn-success {
+  font-size: 15px;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: #f6851f;
+  align-content: center;
+  margin-bottom: 15px;
+  color: #fff;
+  width: 210px;
+}
+.main .item .card-buy .small-btn {
+  font-size: 15px;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: #98C93C;
+  align-content: center;
+  color: #fff;
+  width: 210px;
+}
+.main .item .modal-content-order {
+  background-color: #f5f7f7;
+  border-radius: 0;
+}
+.main .item .modal-header-order {
+  border: 0;
+}
+.main .item .modal-header-order h5 {
+  font-weight: bold;
+  font-size: 20px;
+}
+.main .item .modal-header-order button {
+  position: relative;
+  top: -10px;
+  left: 20px;
+  background-color: #fff;
+  height: 40px;
+  width: 40px;
+  opacity: 1;
+}
+.main .item .modal-body-order form {
+  display: flex;
+  flex-direction: column;
+}
+.main .item .modal-body-order div {
+  margin: 10px 0;
+}
+.main .item .modal-body-order button {
+  font-size: 15px;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: #98C93C;
+  align-content: center;
+}
+.main .item .text-center {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.main .item .text-center a {
+  color: #98C93C;
+}
+.main .article-content {
+  margin: 0 104.5px;
+}
+.main .article-content .characteristic-item {
+  padding: 0;
+}
+.main .article-content .characteristic-item ul {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.main .article-content .characteristic-item > ul > li {
+  width: 140px;
+  font-size: 10px;
+}
+.main .article-content .characteristic-item i {
+  font-size: 25px;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+.main .article-content .nav-tabs {
+  height: 85px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #98C93C;
+}
+.main .article-content .nav-link {
+  background-color: rgba(153, 153, 153, 0.3);
+  color: #262724;
+  border: 0;
+  border-radius: 21px;
+}
+.main .article-content .active {
+  background-color: #98C93C;
+  color: white;
+}
+.main .article-content .tab-content {
+  padding-left: 15px;
+}
+.main .article-content .tab-content div {
+  color: #262724;
+  page-break-after: 15px;
+  background-color: #fff;
+}
+.main .article-content table {
+  font-size: 14px;
+  width: 100%;
+}
+.main .article-content table tbody {
+  display: block;
+}
+.main .article-content table tbody {
+  width: 100%;
+}
+.main .article-content table .tab-content th {
+  width: 115px;
+}
+.main .article-content .photo-content-item {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 50px;
+}
+.main .article-content .photo-content-item img {
+  height: 300px;
+  border: 1px solid rgba(153, 153, 153, 0.3);
+  margin: 15px;
+}
+.main .article-content .col-md-3 .img-thumbnail {
+  height: 100%;
+}
+.main .article-content .title-btn {
+  position: absolute;
+  left: -9999px;
+}
+.main .article-content .title-btn:checked + .content-feedback {
+  display: block;
+}
+.main .article-content .click-btn {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  width: 220px;
+  height: 40px;
+  background-color: #98C93C;
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+  vertical-align: center;
+  align-items: center;
+}
+.main .article-content .content-feedback {
+  margin-top: 10px;
+  display: none;
+}
+.main .article-content .rating {
+  display: inline-table;
+}
+.main .article-content .rating:not(:checked) > input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+.main .article-content #feedback {
+  width: 100%;
+}
+.main .article-content .rating:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ddd;
+}
+.main .article-content .rating:not(:checked) > label:before {
+  content: "★   ";
+}
+.main .article-content .rating > input:checked ~ label {
+  color: #98C93C;
+}
+.main .article-content .rating:not(:checked) > label:hover,
+.main .article-content .rating:not(:checked) > label:hover ~ label {
+  color: #98C93C;
+}
+.main .article-content .rating > input:checked + label:hover,
+.main .article-content .rating > input:checked + label:hover ~ label,
+.main .article-content .rating > input:checked ~ label:hover,
+.main .article-content .rating > input:checked ~ label:hover ~ label,
+.main .article-content .rating > label:hover ~ input:checked ~ label {
+  color: #98C93C;
+}
+.main .article-content .rating > label:active {
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+.main .article-content .form-group input {
+  width: 450px;
+  height: 36px;
+  border-radius: 0;
+  background-color: #f5f7f7;
+}
+.main .article-content .form-group textarea {
+  width: 450px;
+  border-radius: 0;
+  background-color: #f5f7f7;
+}
+.main .article-content .btn-send {
+  font-size: 16px;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: #98C93C;
+  align-content: center;
+  margin-bottom: 15px;
+}
+.main .in-town .delivery h3 {
+  color: #98C93C;
+}
+.main .in-town .delivery li {
+  font-size: 16px;
+}
+.main .in-town .delivery li a {
+  color: #98C93C;
+}
+.main .in-town .conent-intown {
+  display: flex;
+  justify-content: center;
+}
+.main .in-town .conent-intown p {
+  font-size: 30px;
+}
+.main .in-town .small-btn-success {
+  font-size: 11px;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: #98C93C;
+  align-content: center;
+  padding: 10px 45px;
+  width: max-content;
+}
+.main .in-town .modal .card {
+  display: block;
+  margin: 0 5px;
+  border-left: 1px solid #d4d9d9;
+}
+.main .in-town .modal .modal-content {
+  border-radius: 0;
+}
+.main .in-town .modal .modal-large {
+  display: flex;
+  margin: 0 30px 15px 30px;
+  border-bottom: 1px solid #d4d9d9;
+  padding: 15px 0;
+}
+.main .in-town .modal .modal-large .btn-cross {
+  position: relative;
+  top: -15px;
+  left: 40px;
+  background-color: #fff;
+  opacity: 1;
+}
+.main .in-town .modal .modal-large .modal-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.main .in-town .modal .modal-large .modal-title .title {
+  display: flex;
+}
+.main .in-town .modal .modal-large .modal-title .title p {
+  font-size: 30px;
+  margin: 0;
+}
+.main .in-town .modal .modal-large .modal-title .title .btn-select-town {
+  margin: 0;
+}
+.main .in-town .modal .modal-large .modal-title .btn-show {
+  font-size: 16px;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: #98C93C;
+  align-content: center;
+  padding: 5px 20px;
+  height: fit-content;
+}
+.main .in-town .modal .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+.main .in-town .modal .card-text {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+.main .in-town .modal .atantion-text {
+  font-size: 12px;
+  color: #f6851f;
+  font-weight: bold;
+}
+.main .in-town .modal .modal-body {
+  height: 300px;
+  padding: 0;
+}
+.main .in-town .modal .btn-that {
+  font-size: 11px;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: #98C93C;
+  align-content: center;
+  padding: 9px 23px;
+}
+.main .in-town .modal .modal-form {
+  width: 340px;
+  left: 270px;
+}
+.main .in-town .modal .modal-header-form {
+  padding: 10px;
+  display: flex;
+  height: 55px;
+  background-color: #f5f7f7;
+  border-bottom: 2px solid #98C93C;
+}
+.main .in-town .modal .modal-body-form {
+  height: auto;
+  padding: 15px;
+}
+.main .in-town .modal .modal-form label {
+  display: block;
+  font-size: 16px;
+}
+.main .in-town .modal .modal-form input {
+  font-size: 16px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: #f5f7f7;
+}
+.main .in-town .modal .btn-submit {
+  font-size: 15px;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: #98C93C;
+  align-content: center;
+  width: 100%;
+  margin-left: 10px;
+}
+
+/*# sourceMappingURL=item.css.map */
