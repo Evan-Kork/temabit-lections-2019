@@ -169,18 +169,6 @@
     padding-left: 10px;
 }
 
-// input:before {
-//     content: "\f002";
-//     font-family: FontAwesome;
-//     font-size: 16px;
-//     color: green;
-// }
-// .bif::before {
-//     content: "\f002";
-//     font-family: FontAwesome;
-//     font-size: 16px;
-//     color: red;
-// }
 .tab-col:hover {
     .text-left {
         background-color: lime;
@@ -383,8 +371,6 @@ label {
 .round {
     text-align: center;
     width: 100px;
-    /* поддерживаются любые единицы, в том числе проценты */
-    // margin: 1em auto;
     background: white;
     border-color: #98c93c;
     border-style: solid;
@@ -395,7 +381,6 @@ label {
     content: "";
     display: inline-block;
     vertical-align: middle;
-    //padding-top: 100%;
 }
 
 .footer1 {
@@ -495,10 +480,6 @@ label {
     width: 950px;
     overflow-y: hidden;
     left: -700px;
-    // .myPhoneStyle {
-    //     width: $widthPhoneStyle;
-    //     height: $heightPhoneStyle;
-    // }
     div:nth-child(2) {
         position: relative;
         left: 250px;
@@ -542,12 +523,6 @@ label {
             }
         }
     }
-    // span:before {
-    //     content: "\f002";
-    //     font-family: FontAwesome;
-    //     font-size: 16px;
-    //     color: green;
-    // }
     p,
     .colorItem {
         color: black;
@@ -561,9 +536,6 @@ label {
 }
 
 .borderBuy {
-    // border-style: solid;
-    // border-color: gray;
-    // border-width: 0.5px;
     margin-top: 10px;
     padding: 10px;
     .buy {
@@ -602,10 +574,6 @@ label {
 .menuCenter {
     background-color: #f5f8f9;
     padding: 20px;
-    //  border: white;
-    //border-bottom: 3px green;
-    //    border: none;
-    //border-style: solid;
     .nav-item {
         border-radius: 20px;
         background-color: #a5a8a9;
@@ -670,6 +638,26 @@ label {
     .topMenu2 {
         display: flex;
         justify-content: flex-left;
+    }
+    .menuCenter {
+        background-color: #f5f8f9;
+        padding: 20px;
+        .nav-item {
+            border-radius: 20px;
+            background-color: #a5a8a9;
+            color: black;
+            a {
+                color: black;
+            }
+            margin: 5px 10px 5px 10px;
+            .active {
+                color: white;
+                border-radius: 20px;
+            }
+        }
+        li {
+            display: block;
+        }
     }
 }
 

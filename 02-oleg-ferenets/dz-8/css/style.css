@@ -445,7 +445,6 @@ label {
 .round {
   text-align: center;
   width: 100px;
-  /* поддерживаются любые единицы, в том числе проценты */
   background: white;
   border-color: #98c93c;
   border-style: solid;
@@ -710,6 +709,27 @@ label {
   .topMenu2 {
     display: flex;
     justify-content: flex-left;
+  }
+
+  .menuCenter {
+    background-color: #f5f8f9;
+    padding: 20px;
+  }
+  .menuCenter .nav-item {
+    border-radius: 20px;
+    background-color: #a5a8a9;
+    color: black;
+    margin: 5px 10px 5px 10px;
+  }
+  .menuCenter .nav-item a {
+    color: black;
+  }
+  .menuCenter .nav-item .active {
+    color: white;
+    border-radius: 20px;
+  }
+  .menuCenter li {
+    display: block;
   }
 }
 @media only all and (min-width: 770px) {
