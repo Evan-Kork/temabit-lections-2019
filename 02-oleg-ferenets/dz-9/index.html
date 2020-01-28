@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js</title>
+</head>
+
+<body>
+
+    <script>
+        // задание 1
+        var x = Number(prompt("введите число > 0"));
+
+        do {
+            if (x == undefined || x <= 0) {
+                if (x <= 0) {
+                    alert("вы ввели неверно. повторите");
+                }
+                x = Number(prompt("введите число > 0"));
+            }
+        }
+        while (x <= 0);
+        var summa = 0;
+        for (var i = 1; i <= x; i++) {
+            summa = summa + i;
+        }
+        alert("Сумма чисел:" + summa);
+
+        //задание2
+        //вывести табличку умножения через for и while. Оформить в ввиде таблицы
+
+        var rez;
+        document.write('<table  border="1">');
+        document.write('<caption>' + 'Таблица умножения' + '</caption>');
+        for (var i = 1; i < 10; i++) {
+            if (i == 1) {
+                for (var j = 0; j < 10; j++) {
+                    rez = i * j;
+                    if (rez == 0) rez = " ";
+                    document.write("<th>" + rez + "<\/th>"); // шапка таблицы
+                };
+            }
+            document.writeln("<tr>");
+            for (var j = 0; j < 10; j++) {
+                rez = i * j;
+                if (j == 0) {
+                    rez = i;
+                    document.write("<th>" + rez + "<\/th>");
+                } else {
+                    document.write("<td>" + rez + "<\/td>");
+                }
+            };
+            document.writeln("<\/tr>");
+        }
+        document.write("<\/table> ");
+
+        document.write('<br>');
+
+        // таблица умножения через вайл
+        var a = 1;
+        var ab;
+        document.write('<table border="1">');
+        document.write('<caption>' + 'Таблица умножения' + '</caption>');
+
+        while (a < 10) {
+            var b = 0;
+            // var temp = 0;
+            if (a == 1) {
+                while (b < 10) {
+                    ab = a * b;
+                    if (ab == 0) ab = " ";
+                    document.write("<th>" + ab + "<\/th>"); // шапка таблицы
+                    b++;
+                }
+            }
+            b = 0;
+            document.write("<tr>");
+            while (b < 10) {
+                ab = a * b;
+                if (b == 0) {
+                    document.write("<th>" + a + "<\/th>");
+                } else {
+                    document.write("<td>" + ab + "<\/td>");
+                }
+                b++;
+            }
+            document.writeln("<\/tr>");
+            a++;
+        }
+        document.write("<\/table>")
+
+        document.write('<br>');
+        document.write('Числа фибоначи');
+        document.write('<br>');
+
+        //дз3 (используя функцию)  вывести числа фибоначи, до 100 через рекурсию
+        //в которой первые два числа равны либо 1 и 1, либо 0 и 1, а каждое последующее число равно сумме двух предыдущих чисел
+        /*  Последовательность Фибоначчи определяется следующим образом:
+        F_0 = 0, 
+        F_1 = 1, 
+        F_n = F_{n-1} + F_{n-2}. 
+        */
+
+        function fib(n) {
+            if (n == 1 || n == 2)
+                return 1;
+            if (n == 0)
+                return 0;
+            return fib(n - 1) + fib(n - 2);
+        }
+        //до 25 поставил, при больших  значениях браузер виснет
+        for (var i = 0; i < 25; i++)
+            document.writeln(fib(i));
+    </script>
+
+
+</body>
+
+</html>
+
+
+
+
+<!-- Дз-1. через промпт запросить число Н. Вывести через алерт сумму (от 1 до  Н). Если число Н отрицательное, алерт  "вы ввели неверно, повторите".
+Сделать через while.
+
+дз2 вывести табличку умножения через фор и вайл(2 варианта). Оформить в ввиде таблицы с границами
+
+дз3 (используя функцию)  вывести числа фибоначи, до 100 через рекурсию -->
+
+
+<!-- http://htmlbook.ru/html/script  пример: таблица в цикле через документ.врайт-->
