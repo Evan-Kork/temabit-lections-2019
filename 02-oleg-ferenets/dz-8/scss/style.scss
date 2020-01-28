@@ -118,7 +118,6 @@
     }
 }
 
-/////////////////////////////
 .topMenu1 {
     /* color: #262724; */
     background-color: #98c93c;
@@ -156,13 +155,11 @@
 .topMenu2Right {
     display: flex;
     flex-direction: row;
-    /* background-color: violet; */
 }
 
 .phone {
     color: white;
     padding-left: 1rem;
-    /* background-color: crimson; */
 }
 
 .cart {
@@ -172,20 +169,18 @@
     padding-left: 10px;
 }
 
-input:before {
-    content: "\f002";
-    font-family: FontAwesome;
-    font-size: 16px;
-    color: green;
-}
-
-.bif::before {
-    content: "\f002";
-    font-family: FontAwesome;
-    font-size: 16px;
-    color: red;
-}
-
+// input:before {
+//     content: "\f002";
+//     font-family: FontAwesome;
+//     font-size: 16px;
+//     color: green;
+// }
+// .bif::before {
+//     content: "\f002";
+//     font-family: FontAwesome;
+//     font-size: 16px;
+//     color: red;
+// }
 .tab-col:hover {
     .text-left {
         background-color: lime;
@@ -216,7 +211,6 @@ input:before {
     justify-content: space-around;
     padding: 3px 8px 3px 10px;
     margin: 8px;
-    ;
 }
 
 .menu2 {
@@ -255,12 +249,7 @@ input:before {
     margin: 0;
     padding: 0;
     .colorLink {
-        // font-weight: bolder;
         color: green;
-    }
-    a {
-        // color: #98c93c;
-        // font-weight: bold;
     }
     .myImgHot {
         min-width: 40%;
@@ -422,7 +411,7 @@ label {
         padding: 5px 5px 5px 15px;
     }
     input {
-        width: 350px;
+        width: 330px;
     }
 }
 
@@ -672,4 +661,38 @@ label {
         color: #98c93c;
         /* Цвет активных ссылок */
     }
+}
+
+@media only all and (max-width: 768px) {
+    .hidediv {
+        display: none;
+    }
+    .topMenu2 {
+        display: flex;
+        justify-content: flex-left;
+    }
+}
+
+@media only all and (min-width: 770px) {
+    .topMenu2 {
+        justify-content: center;
+    }
+    .hidenavbar {
+        display: none;
+    }
+}
+
+.fa.fa-navicon {
+    color: white;
+    font-size: xx-large;
+}
+
+.hidenavbar {
+    .cart {
+        background-color: black;
+    }
+}
+
+.search2 {
+    font-size: xx-large;
 }

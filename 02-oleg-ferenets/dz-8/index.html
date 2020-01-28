@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid hidediv m-0">
         <div class="row row-sm maincolor justify-content-center">
             <nav class="navbar navbar-expand-lg navbar-default ">
                 <ul class="navbar-nav menu1">
@@ -45,11 +45,71 @@
         </div>
     </div>
 
-    <div class="row topMenu2 justify-content-center m-0">
-        <div class="topMenu2Img col-2 col-lg-2 col-md-2 col-sm-2  d-flex flex-wrap align-content-lg-center">
+    <div class="row topMenu2  m-0">
+
+        <div class="bg-dark hidenavbar">
+            <nav class="navbar navbar-expand-lg navbar-dark ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+                <i class="fa fa-navicon"></i>
+              </span>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Телефони</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Електроніка</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Гаджети</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Аксесуари</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Apple</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Tp-Link Neffos</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Акції</a>
+                        </li>
+
+                    </ul>
+                    <!-- <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> -->
+                </div>
+            </nav>
+        </div>
+
+
+
+
+
+        <div class="topMenu2Img col-2  d-flex flex-wrap align-content-lg-center">
             <a href="#"><img src="img/logo.svg" style="height: 60px;" alt=""></a>
         </div>
-        <div class="col-7 col-lg-7 col-md-7 col-sm-7">
+        <div class="ml-5 pd-5 col-6 hidenavbar search2 text-right">
+            <div class="row justify-content-end">
+                <!-- <img src="img/icon1.jpg" width="30px" alt=""> -->
+                <div class="cart"> <i class="fa fa-shopping-cart"></i></div>
+                <div class="text-white">(0)</div>
+            </div>
+
+
+            <div class="row center search">
+                <input type="text" class="input container" name="search" placeholder="Пошук">
+            </div>
+
+        </div>
+
+        <div class="col-7 hidediv">
             <div class="row center search">
                 <input type="text" class="input container" name="search" placeholder="Пошук">
             </div>
@@ -276,7 +336,7 @@
         </div>
 
 
-        <div class="topMenu2Right  col-3 col-lg-3 col-md-3 col-sm-3">
+        <div class="topMenu2Right  col-3 hidediv">
             <div>
                 <img src="img/phone_icon.svg" style="height: 20px;" alt="">
             </div>
@@ -291,7 +351,7 @@
     </div>
 
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide m-0" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -322,7 +382,6 @@
         </a>
     </div>
     <div class="row brend bg-white m-0">
-
         <div class="h3 w-100 text-center">Популярні бренди</div>
         <a class="col-sm-2 col-md-1" href="#"><img src="img/Apple-Black-1.png" title=""></a>
         <a class="col-sm-2 col-md-1" href="#"><img src="img/Cresyn-1.png" title=""></a>
@@ -342,16 +401,16 @@
         <div class="h3 w-100 text-center">Наявні акції</div>
         <div class="col-sm-11">
             <div class="row">
-                <div class="col-sm-3 bg-white p-3 ">
+                <div class="col-sm-6 col-md-3  bg-white p-3 ">
                     <img class="img-fluid" src="img/akcii1.png" alt="akcii">
                 </div>
-                <div class="col-sm-3 bg-white p-3 ">
+                <div class="col-sm-6 col-md-3 bg-white p-3 ">
                     <img class="img-fluid" src="img/akcii2.png" alt="akcii">
                 </div>
-                <div class="col-sm-3 bg-white  p-3">
+                <div class="col-sm-6 col-md-3 bg-white  p-3">
                     <img class="img-fluid" src="img/akcii1.png" alt="akcii">
                 </div>
-                <div class="col-sm-3 bg-white p-3">
+                <div class="col-sm-6 col-md-3 bg-white p-3">
                     <img class="img-fluid" src="img/akcii2.png" alt="akcii">
                 </div>
             </div>
@@ -429,8 +488,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
 
@@ -537,15 +594,12 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
 
-    <div class="container-fluid justify-content-center colorNovi pl-5 pr-5">
+    <div class="container-fluid justify-content-center colorNovi pl-5 pr-5 m-0">
         <div class="col">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12 col-lg-6">
                     <div class="row">
                         <div class="col bg-white m-2 ">
                             <div class="row ">
@@ -606,14 +660,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="offset-1  col bg-white m-2 container d-flex align-items-center ">
+                <div class="offset-1  col-lg-5 bg-white m-2 container d-flex align-items-center ">
 
-                    <div class="row align-items-end">
+                    <div class="row align-items-end ">
                         <div class="col-6 myImg">
                             <img class="img-fluid" src="img/20_1500.jpg" alt="">
                         </div>
                         <div class="col-6 align-self-center">
-                            <div class="myTextbig row">
+                            <div class="myTextbig row ">
 
                                 <div>Захисне скло Neffos для TP-Link Neffos C9 Max (2019)
                                     <div class="price">98.00 грн</div>
@@ -637,7 +691,7 @@
     </div>
 
     <div class="row number9 justify-content-center m-0">
-        <div class="col-sm-2 justify-content-center">
+        <div class="col-sm-4 col-lg-2 justify-content-center">
 
             <img src="img/ringoo1.jpg" alt="">
             <div class="row justify-content-center">
@@ -646,20 +700,20 @@
             </div>
         </div>
 
-        <div class="col-sm-2">
+        <div class="col-sm-4 col-lg-2 ">
             <img src="img/ringoo2.jpg" alt="">
             <div class="h4">Розстрочка</div>
             <p>Вибирайте оптимальні умови кредитування, користуйтеся телефоном уже зараз</p>
         </div>
 
-        <div class="advantages__item col-sm-2">
+        <div class=" col-sm-4 col-lg-2 ">
             <img src="img/ringoo3.jpg" alt="">
             <div class="h4">Гарантія</div>
             <p>Повна офіційна гарантія на&nbsp;кожен товар, обслуговування в&nbsp;сервісних центрах</p>
         </div>
 
 
-        <div class="advantages__item col-sm-2">
+        <div class=" col-sm-4 col-lg-2 ">
 
             <img src="img/ringoo4.jpg" alt="">
 
@@ -668,7 +722,7 @@
         </div>
 
 
-        <div class="advantages__item col-sm-2">
+        <div class=" col-sm-4 col-lg-2">
             <img src="img/ringoo5.jpg" alt="">
 
             <div class="h4">Сервіс</div>
@@ -708,7 +762,7 @@
                         <li>Акції</li>
                     </ul>
                 </div>
-                <div class="col-sm-5 offset-sm-2">
+                <div class="col-sm-5 offset-sm-2 hidediv">
                     <p class="text-success">Допомога в покупцi</p>
                     <ul>
                         <li>Оплата</li>
@@ -723,9 +777,9 @@
                 <div class="col-sm-1"></div>
             </div>
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-7 m-0">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-4 hidediv">
                     <p class="text-success">Про нас</p>
                     <ul>
                         <li>Магазини</li>
@@ -737,7 +791,7 @@
                         <li>Контакти</li>
                     </ul>
                 </div>
-                <div class="col-sm-5 offset-sm-2 ">
+                <div class="col-lg-5 col-md-10 offset-sm-2 ">
                     <p>Зв’язатися з нами</p>
 
                     <div class="row">
@@ -772,6 +826,11 @@
             <p class="text-white bg-dark"> Усі права захищені</p>
         </div>
     </div>
+
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

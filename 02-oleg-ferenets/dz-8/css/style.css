@@ -240,13 +240,11 @@
 .topMenu2Right {
   display: flex;
   flex-direction: row;
-  /* background-color: violet; */
 }
 
 .phone {
   color: white;
   padding-left: 1rem;
-  /* background-color: crimson; */
 }
 
 .cart {
@@ -254,20 +252,6 @@
   margin: 0.4rem 0 0.4rem 1rem;
   color: white;
   padding-left: 10px;
-}
-
-input:before {
-  content: "";
-  font-family: FontAwesome;
-  font-size: 16px;
-  color: green;
-}
-
-.bif::before {
-  content: "";
-  font-family: FontAwesome;
-  font-size: 16px;
-  color: red;
 }
 
 .tab-col:hover .text-left {
@@ -488,7 +472,7 @@ label {
   padding: 5px 5px 5px 15px;
 }
 .footer1 input {
-  width: 350px;
+  width: 330px;
 }
 
 .footer2 {
@@ -716,6 +700,38 @@ label {
 .colorBackLink > A:active {
   color: #98c93c;
   /* Цвет активных ссылок */
+}
+
+@media only all and (max-width: 768px) {
+  .hidediv {
+    display: none;
+  }
+
+  .topMenu2 {
+    display: flex;
+    justify-content: flex-left;
+  }
+}
+@media only all and (min-width: 770px) {
+  .topMenu2 {
+    justify-content: center;
+  }
+
+  .hidenavbar {
+    display: none;
+  }
+}
+.fa.fa-navicon {
+  color: white;
+  font-size: xx-large;
+}
+
+.hidenavbar .cart {
+  background-color: black;
+}
+
+.search2 {
+  font-size: xx-large;
 }
 
 /*# sourceMappingURL=style.css.map */
