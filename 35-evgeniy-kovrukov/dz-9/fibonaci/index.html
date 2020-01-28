@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Fibonacci</title>
+</head>
+<body>
+	<script>
+		
+		var x = Number(window.prompt("enter number >0"));
+		function fibonaci(n) {
+			let first = 1;
+			let second = 1;
+			document.write(first, "</br>", second);
+			for (let i = 3; i <= n; i++) {
+				let third = first + second;
+				first = second;
+				second = third;
+				document.write("</br>",third);
+			}
+			return second;
+		}
+		alert(fibonaci(x));
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Sum of digits of a numder</title>
+</head>
+<body>
+	
+	<script>
+		
+		var x = Number(window.prompt("enter number >0"));
+		var sum = Number(0) ;
+		
+		if (x > 0){
+			while (x > 0){
+				document.write("x = ",x + "</br>");
+				sum += x;
+				x--;
+			}
+			alert(sum);
+			document.write("sum = ",sum + "</br>");
+		}
+		else {
+			alert("wrong number (<0)")
+		}
+
+	</script>
+	
+</body>
+</html>
