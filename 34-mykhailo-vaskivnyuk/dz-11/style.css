@@ -1,0 +1,30 @@
+
+section {
+	width: 50%;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+.card:not(:last-child) {
+	border-bottom-style: none; 
+}
+
+.card {
+	border-top-width: 4px;
+}
+
+.input-group-prepend span,
+.input-group-prepend button {
+	min-width: 150px;
+}
+
+.card-header {
+	border-bottom: none;
+}
+
+hr {
+	border-color: #28a745;
+}
