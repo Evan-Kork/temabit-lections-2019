@@ -1,0 +1,22 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+
+    background-color: #ed2945;
+    
+    margin-bottom: 2px;
+    padding: .5rem;
+
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+
+    &:hover {
+        color: #e5e5e5;
+        background-color: #c22439;
+
+        text-decoration: none;
+    }
+}
