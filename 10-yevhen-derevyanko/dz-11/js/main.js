@@ -130,7 +130,7 @@ function startProces(slideBox){
     let nameMethod = slideBox.dataset.namemethod;
     let inputs = slideBox.querySelectorAll('.slide-panel-control input');
     let inputValue = [];
-
+    console.log(nameMethod);
     for (let input of inputs) {
         if(input.value){
             if(input.classList.contains('error')){
@@ -141,7 +141,7 @@ function startProces(slideBox){
             input.classList.add('error');
         }
     }
-    if(inputValue.length == 2 || nameMethod == 'unique'){
+    if(inputValue.length == 2){
         switch (nameMethod) {
             case 'map':
                 drowningResults(runMethodMap(inputValue),slideBox);
