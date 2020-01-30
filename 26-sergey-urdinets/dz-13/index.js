@@ -87,14 +87,10 @@ function* map(operator, ...iterables) {
       if (!x.done) {
         tempArr.push(x.value);
       } else {
-        y = false;
-        tempArr.length = 0;           //очистка неполного массива и прерывание цикла
-        break;
+        return;                       //закрытие генератора без неполного tempArr
       }
     }
-    if (tempArr.length) {             //для пропуска последнего неполного ряда значений
-      yield operator(...tempArr);
-    }
+    yield operator(...tempArr);
   }
 }
 
