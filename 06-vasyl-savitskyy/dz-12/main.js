@@ -112,3 +112,41 @@ logAndEval('FakeDate.setNow(FakeDate.now() + 864000000)');
 logAndEval('FakeDate()');
 logAndEval('new FakeDate()');
 logAndEval('FakeDate.now()');
+
+//------------------------------------------------------------
+
+function FakeDate2() {
+    if (!(this instanceof FakeDate2)) {
+        return String(new FakeDate2());
+    }
+
+    this.createdDate = new Date(FakeDate2.value);
+    Object.setPrototypeOf(this.createdDate, FakeDate2.prototype);
+    return this.createdDate;
+}
+
+Object.setPrototypeOf(FakeDate2, Date);
+FakeDate2.prototype = Object.create(Date.prototype);
+
+FakeDate2.now = function now() {
+    return FakeDate2.value;
+}
+
+FakeDate2.setNow = function(value = 0) {
+    if (isNaN(value) || !isFinite(value)) {
+        throw new Error('value is not correct');
+    }
+    FakeDate2.value = +value;
+    return true;
+}
+
+FakeDate2.value = 922838400000;
+
+console.log('\n\n\n --- FakeDate2 ---')
+logAndEval('FakeDate2()');
+logAndEval('new FakeDate2()');
+logAndEval('FakeDate2.now()');
+logAndEval('FakeDate2.setNow(FakeDate2.now() + 864000000)');
+logAndEval('FakeDate2()');
+logAndEval('new FakeDate2()');
+logAndEval('FakeDate2.now()');
