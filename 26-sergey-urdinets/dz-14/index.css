@@ -1,0 +1,36 @@
+
+input {
+  border: none;
+  background-color: black;
+  cursor: pointer;
+  color: white;
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  display: block;
+  margin: 10px;
+}
+input:disabled {
+  border: 1px solid darkgrey;
+  background-color: lightgray;
+  cursor: auto;
+}
+
+.success {
+  background-color: green;
+}
+
+.danger {
+  background-color: red;
+}
+.warning {
+  background-color: yellow;
+}
+label {
+  display: block;
+  width: auto;
+  margin: 10px;
+}
+.result-block {
+  display: inline-block;
+}
