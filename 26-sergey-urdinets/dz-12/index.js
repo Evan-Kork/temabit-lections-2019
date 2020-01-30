@@ -4,15 +4,13 @@ function FakeDate(...value) {
 	}
 
 	let myDate = new Date(...value);
-
-	myDate.setNow = function(...value){
-		this.setTime(...value);
-	};
-
 	Object.setPrototypeOf(myDate, FakeDate.prototype);
-
-	return myDate;
+		return myDate;
 }
+
+FakeDate.setNow = function(...value){
+	return (new Date(...value)).valueOf();
+};
 
 FakeDate.prototype = Object.create(Date.prototype);
 Object.setPrototypeOf(FakeDate, Date);
@@ -28,13 +26,9 @@ console.log("----------------");
 console.log("Date.now():     ", Date.now());
 console.log("FakeDate.now(): ", FakeDate.now());
 console.log("----------------");
-
 console.log("new Date(86400000):     ", new Date(86400000));
 console.log("new FakeDate(86400000): ", new FakeDate(86400000)); // 24*60*60*1000 = 86400000
 console.log("----------------");
-
-let x = new FakeDate();
-console.log(x);
-x.setNow(55555555555);
-console.log(x);
-console.log( x instanceof FakeDate);
+console.log("FakeDate.setNow(1995, 11, 17): ", FakeDate.setNow(1995, 11, 17));
+console.log("FakeDate.setNow('December 17, 1995 03:24:00'): ", FakeDate.setNow('December 17, 1995 00:00:00'));
+console.log("new FakeDate() instanceof FakeDate: ", new FakeDate() instanceof FakeDate);
