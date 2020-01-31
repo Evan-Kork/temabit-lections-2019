@@ -34,3 +34,7 @@ label {
 .result-block {
   display: inline-block;
 }
+textarea {
+  min-width: 800px;
+  min-height: 150px;
+}

@@ -8,6 +8,22 @@ function createElementsOfDOM() {
   
   let insertDataBlock = document.createElement("div");
   insertDataBlock.id = "insert-data-block";
+  let textArea = document.createElement("textarea");
+  textArea.id = "text-area";
+  
+  
+  
+  textArea.value = "https://jsonplaceholder.typicode.com/todos\n"
+                  +"https://jsonplaceholder.typicode.com/possssts\n"   //error
+                  +"https://jsonplaceholder.typicode.com/photos\n"
+                  +"https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer\n"
+                  +"https://jsonplaceholder.typicode.com/posts\n"
+                  +"https://jsonplaceholder.typicode.com/photos\n"
+                  +"https://marketplace.visualstudio.com/items?itemName=ritwissckdey.LiveServer";  //error
+
+
+
+  insertDataBlock.appendChild(textArea);
   parent.appendChild(insertDataBlock);
   
   let submit = document.createElement("input");
@@ -28,40 +44,50 @@ function getResults() {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
-  //блокировка кнопки
-  document.querySelector("#submit").disabled = true;
-  //создать запросы и отослать
-  
-  //перебор инпутов и sendDataFetch для каждого
+
+  document.querySelector("#submit").disabled = true;  
+
+  const urlList = document.querySelector("#text-area").value.split('\n');   
+
+  let requests = urlList.map(url => sendData(url)); 
 
 
-// https://learn.javascript.ru/static-properties-and-methods
-  //получить результат 
-  //и вызвать функцию отрисовки результатов или сразу в промис
-  
-  
-  
-  
-  
-  resultVisualizations("url", 210);
-  resultVisualizations("url", 330);
-  resultVisualizations("url", 400);
+  Promise.all(requests)
+  .catch(err => console.error("Error!", err.statusText, err.status))
+  .finally( () => document.querySelector("#submit").disabled = false);
 
 
   // разблокировать кнопку
-  document.querySelector("#submit").disabled = false;
+  // document.querySelector("#submit").disabled = false;
 }
 
-function sendDataFetch(url) {
-  fetch(url)
-  .then((response) => {
-    resultVisualizations(url, response.status);
-  }).catch(error => {
-    alert("ERORRRRR");
+function sendData(url) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.onload = function () {
+      // resolve(xhr.response);
+      if (this.status >= 200 && this.status < 300) {
+        resolve(xhr.response);
+      } else {
+        reject({
+          status: this.status,
+          statusText: xhr.statusText,
+        });
+      }
+      resultVisualizations(this.responseURL, this.status);
+    };
+    xhr.onerror = function () {
+      reject({
+        status: this.status,
+        statusText: xhr.statusText,
+      });
+    };
+    xhr.send();
   });
 }
 
-function resultVisualizations(url, statusCode) {  //адрес запроса и код ответа
+function resultVisualizations(url, statusCode) {  
   const parentForResults = document.querySelector("#result-block");
 
   let label = document.createElement("label");
@@ -76,3 +102,5 @@ function resultVisualizations(url, statusCode) {  //адрес запроса и
   }
   parentForResults.appendChild(label);
 }
+
+
