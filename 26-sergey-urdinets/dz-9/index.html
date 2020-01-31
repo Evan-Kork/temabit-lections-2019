@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dz-9</title>
+</head>
+<body>
+	<p>Cумма положительных чисел через "while":</p>
+	<input type="button" value="Запуск" onclick="sumOfNumbers()"/>
+	<script type="text/javascript">
+		function sumOfNumbers() {
+		while(1) {
+			let inputNumber = +prompt("Введите число больше 0");
+			if (inputNumber > 0) {
+				let i = 0, summ = 0;
+				while(i <= inputNumber) {
+					summ += i;
+					i++;
+				}
+				alert(summ);
+				break;
+			} else {
+				alert("Вы ввели неверное число");
+			}
+		}
+	}
+	</script>
+	<p>Ряд Фибоначчи в диапазоне 0-100:</p>
+	<script type="text/javascript">
+		function fibonacciNumber(n) {
+			return n <= 1 ? n : fibonacciNumber(n - 1) + fibonacciNumber(n - 2);
+		}
+		let fibonacciString = '';
+		i = 0;
+		do {
+			fibonacciString += ' ' + fibonacciNumber(i);
+			i++;
+		} while (fibonacciNumber(i)<100);
+		document.write(`<p>${fibonacciString}</p>`);
+	</script>
+	<div style="display: flex;">
+		<div>
+			<p>Таблица умножения через "for":</p>
+			<script type="text/javascript">
+				document.write('<table border="1" style="border-collapse: collapse; text-align: center">');
+					for (let i = 1; i <=10; i++) {
+						for (let j = 1; j <= 10; j++) {
+							document.write(`<tr><td>${i}</td><td>*</td><td>${j}</td><td>=</td><td>${i*j}</td></tr>`);
+						}
+					}
+				document.write('</table>');
+			</script>
+		</div>
+		<div style="margin-left: 40px;">
+			<p>Таблица умножения через "while":</p>
+			<script type="text/javascript">
+				document.write('<table border="1" style="border-collapse: collapse; text-align: center">');
+					let i = 1, j = 1;
+					while (i <= 10) {
+						while (j <= 10) {
+							document.write(`<tr><td>${i}</td><td>*</td><td>${j}</td><td>=</td><td>${i*j}</td></tr>`);
+							j++;
+						}
+						j = 1;
+						i++;
+					}
+				document.write('</table>');
+			</script>
+		</div>
+	</div>
+</body>
+</html>
