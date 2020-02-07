@@ -3,6 +3,7 @@
 
 // Приклад використання:
 
+//Вариант 1
 function intersection(...arrays) {
 
   let result = new Set();
@@ -13,8 +14,8 @@ function intersection(...arrays) {
         result.add(x);
       }
     } else {
+      let current = new Set(item);
       for (let value of result) {  //находим общие элементы
-        let current = new Set(item);
         if (!current.has(value)) {
           result.delete(value);
         }
@@ -24,6 +25,25 @@ function intersection(...arrays) {
 
   return Array.from(result);
 }
+
+//Вариант 2
+// function intersection(...arrays) {
+//   let tempArray = [];
+//   let tempResult = new Set(arrays[0]);
+
+//   for (let x = 1; x < arrays.length; x++) {       //очищаем от повторов
+//     tempArray.push(new Set(arrays[x]));
+//   }
+  
+//   let result;
+//   for (let item of tempArray) {
+//     result = [...tempResult].filter(x => item.has(x));
+//   }
+//   return [...result];
+// }
+
+
+
 
 console.log(intersection([1, 2, 2, 3, 4, 5], [2, 3, 3, 4, 5, 6]));
 /// [2,3,4,5]
