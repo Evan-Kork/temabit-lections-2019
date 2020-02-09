@@ -1,0 +1,160 @@
+/* Main Style */
+
+.transition {
+  transition: all .3s ease-in-out;
+}
+
+.opacity {
+  opacity: .5;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Text */
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+.h7 {
+  font-size: 0.9rem;
+}
+
+/* Overflow */
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+/* Position */
+.t-50{
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.l-1rem {
+  left: 1rem;
+}
+
+.r-1rem {
+  right: -1rem;
+}
+
+.after-none {
+  &::after {
+    display: none;
+  }
+}
+
+.rotate-v {
+  transform: rotate(270deg);
+}
+
+/* i fontawesome */
+.i-border {
+  padding: 3px;
+  margin-right: 0.3rem;
+
+  color: $green;
+
+  border: 1px solid $green;
+  border-radius: 100%;
+
+  font-size: 0.7rem;
+}
+
+.i-benefits {
+  font-size: 3.5rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+/* Burger Drop Down */
+.burger {
+  width: 30px;
+  height: 2px;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background-color: $white;
+
+  &::after, &::before {
+    content: "";
+
+    display: block;
+    width: 30px;
+    height: 2px;
+
+    background-color: $white;
+
+    position: absolute;
+    z-index: 900;
+    top: -10px;
+  }
+
+  &::before {
+    top: 10px;
+  }
+}
+
+
+.arrow {
+  content: "";
+
+  display: block;
+  height: 6.5px;
+  width: 6.5px;
+
+  border-top: 2px solid $green;
+  border-right: 2px solid $green;
+
+  position: absolute;
+  top: 50%;
+  right: -.7rem;
+
+  transform: translateY(-50%) rotate(45deg);
+}
+
+
+/* Circke color */
+.circkles {
+  display: flex;
+
+  .circkle__item {
+    display: flex;
+    margin: 0 0.5rem;
+
+    .circkle__border {
+      padding: 6px;
+
+      border: 1px solid $green;
+      border-radius: 100%;
+
+      cursor: pointer;
+      .circkle {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+      }
+    }
+  }
+}
+
+/* Input range */
+.form-control-range {
+  display: block;
+  margin: 0 auto;
+
+  width: 300px;
+}
