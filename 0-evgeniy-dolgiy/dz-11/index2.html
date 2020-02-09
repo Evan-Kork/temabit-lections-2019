@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Documentation</title>
+	<link rel="stylesheet" href="index2.css">
+</head>
+<body>
+	<div id="documentation">
+		<div class="item active">
+			<div class="item-header">Slice</div>
+			<div class="item-body">
+				<div>
+					<label for="slice-array">Array</label>
+					<input
+						id="slice-array"
+						type="text"
+						value="1,2,3,4,5"
+						
+					/>
+				</div>
+				<div>
+					<label for="slice-start">Start</label>
+					<input
+						id="slice-start"
+						type="number"
+						step="1"
+						value="1"
+					/>
+				</div>
+				<div>
+					<label for="slice-end">End</label>
+					<input
+						id="slice-end"
+						type="number"
+						step="1"
+						value="3"
+					/>
+				</div>
+				<div>
+					<button class="slice-submit">Submit</button>
+				</div>
+				<div class="slice-result"></div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="item-header">Concat</div>
+			<div class="item-body">
+				Concat body
+			</div>
+		</div>
+	</div>
+	<script src="index2.js"></script>
+</body>
+</html>

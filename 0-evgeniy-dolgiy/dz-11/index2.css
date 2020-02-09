@@ -1,0 +1,21 @@
+.item {
+	border: 1px solid black;
+}
+.item-header {
+	background-color: lightgrey;
+	border-bottom: 1px solid black;
+	padding: 10px;
+	cursor: pointer;
+}
+.item-body {
+	/*display: none;*/
+	height: 0;
+	padding: 0 10px;
+	overflow: hidden;
+	display: block;
+	transition: all 1s;
+}
+.active .item-body {
+	height: auto;
+	padding: 10px;
+}
