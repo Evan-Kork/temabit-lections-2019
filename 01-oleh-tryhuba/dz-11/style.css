@@ -1,0 +1,23 @@
+.item {
+    border: 1px solid #000;
+}
+.item.active {
+    display: block;
+}
+.item-header {
+    background-color: #084bb6;
+    padding: 20px 10px;
+}
+.item-body {
+    height: 0;
+    overflow: hidden;
+    transition:all 1s;
+    padding: 0 10px;
+    background-color: #b6a52e;
+
+}
+.active .item-body {
+    display: block;
+    height: auto;
+    padding: 10px
+}
