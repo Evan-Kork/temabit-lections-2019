@@ -42,7 +42,7 @@ class MyRequestsForm {
 		let elements = this.form.querySelectorAll(".response *");
 		elements.forEach(element => {
 			element.innerHTML = "";
-			element.dataset.responseStatus="0"
+			element.dataset.responseStatus="";
 		});
 	}
 
