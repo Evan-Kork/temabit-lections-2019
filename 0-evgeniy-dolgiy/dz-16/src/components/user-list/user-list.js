@@ -3,36 +3,29 @@ import React, { Component } from 'react';
 class UserList extends Component {
   constructor (props) {
     super(props);
-    this.state = {
-      userList: [
-        {
-          name: 'Evgeniy',
-          surname: 'Dolgiy'
-        },
-        {
-          name: 'Evgeniy',
-          surname: 'Dolgiy'
-        },
-        {
-          name: 'Evgeniy',
-          surname: 'Dolgiy'
-        },
-        {
-          name: 'Evgeniy',
-          surname: 'Dolgiy'
-        }
-      ]
-    };
   }
   
-  componentDidMount () {
-    console.log('componentDidMount');
-    let userList = this.state.userList;
-    userList.push({name: 'Evgeniy', surname: 'Dolgiy'});
-    this.setState({userList: userList}, () => {
-      // console.log('userList claback', this.state.userList);
-    });
-    // console.log('userList', this.state.userList);
+  // componentDidMount () {
+  //   console.log('componentDidMount');
+  //   let userList = this.state.userList;
+  //   userList.push({name: 'Evgeniy', surname: 'Dolgiy'});
+  //   this.setState({userList: userList}, () => {
+  //     // console.log('userList claback', this.state.userList);
+  //   });
+  //   // console.log('userList', this.state.userList);
+  // }
+  
+  // selectUser (item) {
+  //   console.log(item);
+  // }
+  
+  selectUser(index) {
+    return () => {
+      console.log(index);
+      if (this.props.selectUser) {
+        this.props.selectUser(index);
+      }
+    }
   }
   
   render () {
@@ -48,9 +41,12 @@ class UserList extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.userList.map((item, index) => {
+            {this.props.userList.map((item, index) => {
               return (
-                <tr key={index}>
+                <tr
+                  key={index}
+                  onClick={this.selectUser(index)}
+                >
                   <td>{item.name}</td>
                   <td>{item.surname}</td>
                 </tr>
