@@ -7,24 +7,7 @@ class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      userList: [
-        {
-          name: 'Evgeniy1',
-          surname: 'Dolgiy1'
-        },
-        {
-          name: 'Evgeniy2',
-          surname: 'Dolgiy2'
-        },
-        {
-          name: 'Evgeniy3',
-          surname: 'Dolgiy3'
-        },
-        {
-          name: 'Evgeniy4',
-          surname: 'Dolgiy4'
-        }
-      ],
+      userList: [],
       selectedUser: null,
       editUserMode: false
     };
@@ -50,61 +33,14 @@ class App extends React.Component {
     return (
       <div className="App">
         <UserList
-          userList={this.state.userList}
           selectUser={this.selectUser}
         />
-        { this.state.selectedUser !== null ? 
-          <UserInfo
-            userInfo={this.state.userList[this.state.selectedUser]}
-            setEditUserMode={this.setEditUserMode}
-           />: null
-        }
-        { this.state.editUserMode ?
-          <UserEdit
-            user={this.state.userList[this.state.selectedUser]}
-          /> : null}
+        <UserInfo
+          setEditUserMode={this.setEditUserMode}
+         />
+        <UserEdit/>
       </div>);
   }
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// // import React { Component } from 'react';
-// import UserList from './components/user-list/user-list';
-// import UserInfo from './components/user-info/user-info';
-// import UserEdit from './components/user-edit/user-edit';
-
-// class App extends React.Component {
-// // class App extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       name: 'Evgeniy',
-//       surname: 'Dolgiy'
-//     }
-//   }
-//   render() {
-//     return (
-//       <div className="App">
-//         <UserList />
-//         <UserInfo />
-//         <UserEdit />
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
