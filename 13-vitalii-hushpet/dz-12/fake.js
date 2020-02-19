@@ -18,14 +18,7 @@ class randomFakeData {
 class randomFakeDataNow{
 	constructor() {
 		var data= Date.now();
-		this.now = Math.floor(Math.random() * (data - 1) + 1)
-	}
-}
-class test{
-	constructor(){
-		this.data = new Date(1000 * 60 * 60 * 24);
-		var i = this.data.now;
-		console.log(i)
+		this.now = Math.floor(Math.random() * (data - 1) + 1);
 	}
 }
 var fake_Data = new fakeData(2001, 5, 10);
@@ -34,6 +27,5 @@ var random_Fake_Data_Now = new randomFakeDataNow();
 console.log("fake data",fake_Data);
 console.log("random_Fake_Data",random_Fake_Data);
 console.log("random_Fake_Data_Now",random_Fake_Data_Now);
-console.log(new test())
 
 
