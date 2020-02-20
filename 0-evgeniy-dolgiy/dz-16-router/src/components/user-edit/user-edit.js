@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 class UserEdit extends Component {
   constructor(props) {
-    console.log('constructor');
     super(props);
     this.state = {
       userEdit: this.props.userEdit
@@ -13,29 +12,16 @@ class UserEdit extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   
-  componentDidMount() {
-    console.log('props', this.props.match.params.userID);
-    if (this.props.match.params.userID) {
-      this.props.dispatch({type: 'SET_ITEM_EDIT_BY_ID', data: this.props.match.params.userID})
-    }
+  static getDerivedStateFromProps(props, state) {
+    return {
+      userEdit: props.userEdit
+    };
   }
   
-  componentDidUpdate(prevProps) {
-    if (this.props.match.params.userID !== prevProps.match.params.userID) {
-      this.props.dispatch({type: 'SET_ITEM_EDIT_BY_ID', data: this.props.match.params.userID})
-    }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('nextProps, nextState', nextProps, nextState);
+    return true;
   }
-  
-  // static getDerivedStateFromProps(props, state) {
-  //   return {
-  //     userEdit: props.userEdit
-  //   };
-  // }
-  
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   console.log('nextProps, nextState', nextProps, nextState);
-  //   return true;
-  // }
   // componentDidUpdate(prevProps) {
   //   console.log('componentDidUpdate', prevProps.user.name !== this.props.user.name, prevProps.user, this.state.userEdit);
   //   if (prevProps.user.name !== this.props.user.name) {
@@ -49,7 +35,7 @@ class UserEdit extends Component {
     this.setState({userEdit: userEdit}, () => {
       console.log('setState', this.state.userEdit);
     });
-    // console.log('after setState', this.state.userEdit);
+    console.log('after setState', this.state.userEdit);
   }
   
   saveUser =() => {
@@ -60,7 +46,7 @@ class UserEdit extends Component {
   }
   
   render() {
-    // console.log('render', this.state.userEdit, this.props);
+    console.log('render', this.state.userEdit, this.props.userEdit);
     return (this.props.editMode ? 
       (<div>
         <h1>User Edit</h1>
