@@ -44,6 +44,7 @@ const users = (state = initialState, action) => {
       // newState.selectedItem = ;
       return newState;
     case 'SET_ITEM_EDIT_BY_ID':
+      console.log('SET_ITEM_EDIT_BY_ID');
       for (let i = 0; i < newState.list.length; i++) {
         if (newState.list[i].id === +action.data) {
           console.log('action.data', action);

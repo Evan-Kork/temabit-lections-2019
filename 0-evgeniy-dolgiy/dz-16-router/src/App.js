@@ -2,7 +2,8 @@ import React from 'react';
 import UserList from './components/user-list/user-list';
 import UserInfo from './components/user-info/user-info';
 import UserEdit from './components/user-edit/user-edit';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import NotFoundPage from './components/not-found-page/not-found-page';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends React.Component {
   constructor (props) {
@@ -34,9 +35,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <HashRouter>
-          <Route exact path="/" component={UserList}/>
-          <Route path="/user/:userID" component={UserInfo} />
-          <Route path="/user-edit/:userID" component={UserEdit} />
+          <Switch>
+            <Route exact path="/" component={UserList}/>
+            <Route path="/user/:userID" component={UserInfo} />
+            <Route path="/user-edit/:userID" component={UserEdit} />
+            <Route path="/404" component={NotFoundPage} />
+            <Redirect to="/404" />
+          </Switch>
           {/*<UserList
             selectUser={this.selectUser}
           />

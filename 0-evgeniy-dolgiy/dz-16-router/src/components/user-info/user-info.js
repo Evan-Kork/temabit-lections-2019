@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 
 class UserInfo extends Component {
@@ -9,6 +9,7 @@ class UserInfo extends Component {
   }
   
   componentDidMount() {
+    console.log('this.props', this.props);
     if (this.props.match.params.userID) {
     console.log('props', this.props.match.params.userID);
       this.props.dispatch({type: 'SET_ITEM_BY_ID', data: this.props.match.params.userID})
@@ -26,14 +27,14 @@ class UserInfo extends Component {
   //   return {};
   // }
   
-  setEditUserMode() {
-    return () => {
-      this.props.dispatch({type: 'EDIT_ITEM_CHANGE', data: {}})
-      // if (this.props.setEditUserMode) {
-      //   this.props.setEditUserMode();
-      // }
-    }
-  }
+  // setEditUserMode() {
+  //   return () => {
+  //     this.props.dispatch({type: 'EDIT_ITEM_CHANGE', data: {}})
+  //     // if (this.props.setEditUserMode) {
+  //     //   this.props.setEditUserMode();
+  //     // }
+  //   }
+  // }
   render() {
     console.log('this.props.userInfo', this.props.userInfo);
     return (
@@ -41,7 +42,6 @@ class UserInfo extends Component {
         <div>
           <h1>User Info</h1>
           <Link to={`/`}>Back</Link>
-          <Link to={`/user-edit/${this.props.userInfo.id}`}>Go to edit</Link>
           <div>
             <span>Name</span>
             <span>{this.props.userInfo.name}</span>
@@ -51,7 +51,8 @@ class UserInfo extends Component {
             <span>{this.props.userInfo.surname}</span>
           </div>
           <div>
-            <button onClick={this.setEditUserMode()}>Edit</button>
+            <Link to={`/user-edit/${this.props.userInfo.id}`}>Go to edit</Link>
+            {/*<button onClick={this.setEditUserMode()}>Edit</button>*/}
           </div>
         </div>): null
     )
