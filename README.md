@@ -39,21 +39,21 @@
     1. Information about tipi viddilen
 
 #### Tracking
-6) GET /api/tracking/history/:number
+6) GET /api/tracking/:number
     1. Departure movement history
-    2. URL params -> number -> (/api/branches/201810165)
+    2. URL params -> number -> (/api/tracking/201810165)
 7) GET /api/tracking/history/:number
     1. Departure movement history
-    2. URL params -> number -> (/api/branches/201810165)
+    2. URL params -> number -> (/api/tracking/history/201810165)
 
 #### Localities
-7) GET /api/localities/
+8) GET /api/localities/
     1. Information about settlements
-8) GET /api/localities/all
+9) GET /api/localities/all
     1. Information about settlements
-9) GET /api/localities/activity
+10) GET /api/localities/activity
     1. Information on settlements in which the branch is currently operating
 
 #### Services
-10) GET /api/services/
+11) GET /api/services/
     1. Information about available services
