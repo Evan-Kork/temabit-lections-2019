@@ -11,7 +11,9 @@
     const array = [1, 2, 3, 4, 5, 6, 7];
     function Remove_Arr(array, item) {
        array.splice(array.indexOf(item), 1);
-       if (array.indexOf(false)) console.log ('Such an item is absent');
+       if (array.indexOf(false)) {
+           console.log('Such an item is absent');
+       }
        console.log(array);
     }
     Remove_Arr (array, 5);
@@ -28,7 +30,9 @@
     const array3 = [2, 1, 1, 3, 2];
     const arr_res = [];
     function unique(array) {for (let item of array) {
-        if (!arr_res.includes(item)) (arr_res.push(item));
+        if (!arr_res.includes(item)) {
+            arr_res.push(item)
+        }
     }}
     unique(array3);
     console.log(arr_res);
@@ -37,8 +41,11 @@
     const arr = [1,2];
     const res = [];
     function difference (array, res) {
-        for (let item of array) if (!array.includes(item) || !arr.includes(item))
-            (res.push(item));
+        for (let item of array) {
+            if (!array.includes(item) || !arr.includes(item)) {
+                (res.push(item))
+            }
+        }
     }
     difference (array4, res);
     console.log(res);
@@ -48,8 +55,9 @@
     const res2 = [];
     function missing(array5, array6) {
         for (let item of array5) {
-            if (array5.includes(item) && !array6.includes(item))
+            if (array5.includes(item) && !array6.includes(item)) {
                 (res2.push(item));
+            }
         }
     }
     missing (array5, array6);
