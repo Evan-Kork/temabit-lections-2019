@@ -1,0 +1,339 @@
+.head {
+    height: 120%;
+    background-color: #8bb837;
+    padding-top: 5px;
+}
+.head a {
+    padding-left: 100px;
+    color: black;
+}
+.head a:hover {
+    color: black;
+    text-decoration: none;
+}
+.head select {
+    margin-left: 100px;
+    background-color: #8bb837;
+    border: 0;
+}
+nav {
+    background-color: #262724;
+    padding: 10px ;
+}
+.navigation input {
+    background-color: #424242;
+    width: 300%;
+    border-radius: 15px;
+    padding-left: 10px;
+    border-color: #525252;
+    display: block;
+    margin-left: 15%;
+    margin-bottom: 10px;
+    height: 35px;
+}
+.navigation_links a {
+    color: white;
+    padding: 5px 10px;
+    border-right: 1px solid white;
+    font-weight: bold;
+}
+.navigation_links a:hover {
+    color: white;
+    text-decoration: none;
+}
+.navigation_links a:nth-last-child(2) {
+    border: 0;
+}
+.navigation_links a:last-child {
+    background-color: red;
+    font-weight: normal;
+    font-size: 12px;
+    border: 0;
+    padding: 17px 25px;
+}
+.burger {
+    display: none;
+}
+.number_burger {
+    color: black;
+    margin-top: 5px;
+    font-size: 10px;
+    text-align: left;
+    padding: 0;
+}
+#logo_burger {
+    width: 100px;
+
+}
+.info {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+.info p {
+    padding-left: 35px;
+    margin: 0;
+}
+.info button {
+    text-transform: uppercase;
+    background-color: #f6851f;
+    color: white;
+    padding: 5px 35px;
+    border: 0;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 35px;
+}
+h2 {
+    text-align: center;
+    padding: 30px 0;
+}
+.brands {
+    font-size: 40px;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.brands img {
+    width: 70px;
+}
+.brands a:hover, .brands a {
+    text-decoration: none;
+    color: black;
+}
+.stocks {
+    text-align: center;
+    height: 160px;
+    background-image: url("images/disc.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 100px;
+    padding-top: 110px;
+}
+.stocks button {
+    background-color: #722b6f;
+    border: 0;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+#koss {
+    background-image: url("images/koss.png");
+}
+.background {
+    background-color: #e8eded;
+}
+.hot_offer {
+    background-color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #98c93c;
+    margin-bottom: 70px;
+    font-weight: bold;
+}
+.hot_offer a {
+    color: #7db030;
+}
+.hot_offer p {
+    color: black;
+    text-align: justify;
+}
+.hot_offer img {
+    width: 100%;
+}
+.change_color {
+    text-align: center;
+}
+.change_color button {
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+.details a {
+    margin-right: 10px;
+}
+.details button {
+    background-color: #98c93c;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 10px 15px;
+    border: 0;
+}
+.new {
+    background-color: #f5f7f7;
+}
+.new_item {
+    font-weight: bold;
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+.new_item img {
+    width: 40%;
+    float: left;
+}
+.new_item a {
+    color: black;
+    text-decoration: none;
+}
+.new_item a:hover {
+    color: #98c93c;
+    text-decoration: none;
+}
+.new_item p {
+    margin-top: 70px;
+}
+h2 select {
+    border: 0;
+    border-bottom: 1px solid #98c93c;
+    color: #98c93c;
+}
+.available {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: white;
+    padding: 5px;
+    text-align: center;
+    float: left;
+    width: 300px;
+}
+.available img {
+    width: 40%;
+    float: left;
+}
+.available a {
+    color: black;
+    text-decoration: none;
+    width: 500px;
+}
+.available a:hover {
+    color: #98c93c;
+}
+.available p {
+    padding-top: 20px;
+}
+.available button {
+    color: #98c93c;
+    background-color: white;
+    border: 1px solid #98c93c;
+}
+.available button:hover {
+    color: white;
+    background-color: #98c93c;
+}
+
+.advantages {
+    text-align: center;
+}
+.advantages a {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+.advantages a:hover {
+    color: #98c93c;
+}
+.mailing {
+    text-align: center;
+    background-color: #98c93c;
+    color: #eff6e1;
+    padding: 40px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+.mailing input {
+    width: 120%;
+    color: #9fa19d;
+    padding: 3px;
+    margin-right: 100px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.mailing button {
+    text-align: center;
+    font-weight: bold;
+    background-color: #262724;
+    color: #9fa19d;
+    border: 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    margin-left: 50px;
+}
+.mailing button:hover {
+    background-color: #9fa19d;
+    color: #262724;
+}
+.main {
+    background-color: #40423e;
+}
+.main p {
+    margin-left: 10%;
+    color: #eff6e1;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.footer {
+    background-color: #262724;
+}
+.footer h6 {
+    color: #69be3c;
+    padding-top: 40px;
+}
+.footer_list ul, .footer_list a {
+    list-style-type: none;
+    color: #f1f1f1;
+    padding: 0;
+}
+.footer_list a {
+    text-decoration: none;
+    font-weight: bold;
+}
+.footer_list a:hover {
+    color: #69be3c;
+}
+#footer_list_text {
+    color: #71736e;
+}
+#footer_list_main_number {
+    font-size: 23px;
+    font-weight: bold;
+}
+#footer_list_main_number:hover,
+#footer_list_number1:hover,
+#footer_list_number2:hover {
+    color: #f1f1f1;
+}
+.copyrights {
+    text-align: center;
+    background-color: #1b1c19;
+    color: #f1f1f1;
+    font-weight: bold;
+}
+@media screen and (max-width: 1199px) {
+    .navigation_links {
+        font-size: 10px;
+    }
+    .info {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .burger {
+        display: block;
+    }
+    .head {
+        display: none;
+    }
+    .main_nav {
+        display: none;
+    }
+}
