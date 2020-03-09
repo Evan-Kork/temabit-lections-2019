@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { toogleSearchClosest } from '../../../../actions/actions';
+import { toogleSearchClosest } from '../../../../../actions/actions';
 
 function SearchCheckbox(props) {
   return (
@@ -16,6 +16,7 @@ function SearchCheckbox(props) {
     </>
   );
 }
+
 function mapStateToProps(state) {
   return {
     isChecked: state.common.isOnlyClosest

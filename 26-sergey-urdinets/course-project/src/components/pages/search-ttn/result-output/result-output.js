@@ -1,22 +1,23 @@
 import React from 'react';
 
+function getImg(status) {
+  switch (status) {
+    case 'Запланована до відправки':
+      return 'https://justin.ua/wp-content/uploads/2019/06/start_on.png';
+    case 'В місті відправника':
+      return 'https://justin.ua/wp-content/uploads/2019/06/start_on.png';
+    case 'Прямує в місто одержання':
+      return 'https://justin.ua/wp-content/uploads/2019/06/road_on.png';
+    case 'На відділенні в місті одержання':
+      return 'https://justin.ua/wp-content/uploads/2019/06/department_on.png';
+    case 'Одержано':
+      return 'https://justin.ua/wp-content/uploads/2019/06/end_success_on.png';
+    default:
+      return 'https://justin.ua/wp-content/uploads/2019/06/start_on.png';
+  }
+}
+
 function ResultOutput(props) {
-  const getImg = status => {
-    switch (status) {
-      case 'Запланована до відправки':
-        return 'https://justin.ua/wp-content/uploads/2019/06/start_on.png';
-      case 'В місті відправника':
-        return 'https://justin.ua/wp-content/uploads/2019/06/start_on.png';
-      case 'Прямує в місто одержання':
-        return 'https://justin.ua/wp-content/uploads/2019/06/road_on.png';
-      case 'На відділенні в місті одержання':
-        return 'https://justin.ua/wp-content/uploads/2019/06/department_on.png';
-      case 'Одержано':
-        return 'https://justin.ua/wp-content/uploads/2019/06/end_success_on.png';
-      default:
-        return 'https://justin.ua/wp-content/uploads/2019/06/start_on.png';
-    }
-  };
 
   return (
     <>

@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Paragraph from './departments-paragraph';
 
+function getData(setState) {
+  fetch('http://localhost:3000/openapi.justin.ua/branch_types')
+  .then(response => response.json())
+  .then(result => {
+    if (result.status) {
+      setState(result.result);
+    }
+  })
+  .catch(e => console.log(e));
+}
+
 function InfoDepartments() {
   const [state, setState] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/openapi.justin.ua/branch_types')
-      .then(response => response.json())
-      .then(result => {
-        if (result.status) {
-          setState(result.result);
-        }
-      })
-      .catch(e => console.log(e));
+    getData(setState);
   }, []);
 
   return state.length ? (

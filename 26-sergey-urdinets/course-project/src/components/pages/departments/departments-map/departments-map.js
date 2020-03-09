@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import SimpleMap from './simple-map/simple-map';
 
-function DepartmentsMap() {
+function DepartmentsMap(props) {
   let history = useHistory();
 
   useEffect(() => {
@@ -25,12 +25,11 @@ function DepartmentsMap() {
           </div>
         </div>
         <div className='w-100'></div>
-        <SimpleMap />
+        <SimpleMap data={props.data} />
         <div className='w-100 mb-5'></div>
       </div>
     </div>
   );
 }
-
 
 export default DepartmentsMap;

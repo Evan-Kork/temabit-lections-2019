@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Paragraph from './services-paragraph';
-import { connect } from 'react-redux';
+
+function getData(setState) {
+  fetch('http://localhost:3000/openapi.justin.ua/services')
+  .then(response => response.json())
+  .then(result => {
+    if (result.status) {
+      setState(result.result);
+    }
+  })
+  .catch(e => console.log(e));
+}
 
 function InfoServices() {
   const [state, setState] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/openapi.justin.ua/services')
-      .then(response => response.json())
-      .then(result => {
-        if (result.status) {
-          setState(result.result);
-        }
-      })
-      .catch(e => console.log(e));
+    getData(setState);
   }, []);
 
   return state.length ? (
@@ -28,10 +31,5 @@ function InfoServices() {
   ) : null;
 }
 
-function mapStateToProps(state) {
-  return {
-    path: state.common.activePath
-  };
-}
 
-export default connect(mapStateToProps)(InfoServices);
+export default InfoServices;

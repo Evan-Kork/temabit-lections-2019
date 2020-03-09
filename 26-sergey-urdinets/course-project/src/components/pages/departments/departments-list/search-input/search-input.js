@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { editSearchDepartmentData } from '../../../../actions/actions';
+import { editSearchDepartmentData } from '../../../../../actions/actions';
 
 function SearchClosestInput(props) {
   return (

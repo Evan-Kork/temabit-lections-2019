@@ -4,7 +4,7 @@ import SearchClosestInput from './search-input/search-input';
 import InfiniteTable from './infinite-table/infinite-table';
 import SearchCheckbox from './search-checkbox/search-checkbox';
 
-function DepartmentsList() {
+function DepartmentsList(props) {
   let history = useHistory();
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function DepartmentsList() {
           </div>
         </div>
         <div className='w-100'></div>
-        <InfiniteTable />
+        <InfiniteTable data={props.data}/>
       </div>
     </div>
   );
