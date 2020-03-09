@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?bxn6ua');
+  src:  url('fonts/icomoon.eot?bxn6ua#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?bxn6ua') format('truetype'),
+    url('fonts/icomoon.woff?bxn6ua') format('woff'),
+    url('fonts/icomoon.svg?bxn6ua#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\e911";
+  color: white;
+}
+.icon-instagram:before {
+  content: "\e912";
+  color: white;
+}
+.icon-messenger:before {
+  content: "\e913";
+  color: white;
+}
+.icon-telegram:before {
+  content: "\e914";
+  color: white;
+}
+.icon-viber:before {
+  content: "\e915";
+  color: white;
+}
