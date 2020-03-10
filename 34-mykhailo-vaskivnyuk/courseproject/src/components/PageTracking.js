@@ -33,7 +33,7 @@ class PageTracking extends React.Component {
 
 		return (
 			<React.Fragment>
-				<ContentHeader title="Дані про відділення" />
+				<ContentHeader title="Інформація про відправлення" />
 				<FormTracking order={order} onSubmit={this.handleTracking} />
 				{order ? <TrackingInfo order={order} /> : null}
 				{order ? <TrackingHistory order={order} /> : null}

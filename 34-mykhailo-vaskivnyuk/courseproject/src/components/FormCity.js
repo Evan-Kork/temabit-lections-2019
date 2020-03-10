@@ -5,58 +5,58 @@ import request from "../functions/request";
 
 class FormCity extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+	constructor(props) {
+		super(props);
+	}
 
-    componentDidMount() {
+	componentDidMount() {
 		if (this.props.localities.data) return;
-        const method = "localities";
-        const params = "";
+		const method = "localities";
+		const params = "";
 		request(
-            { method, params },
+			{ method, params },
 			(data, error) => {
 				this.props.setResponse(
-                    method,
-                    {data, error}
-                );
+					method,
+					{data, error}
+				);
 			}
 		);
-    }
-    
-    render() {
+	}
+	
+	render() {
 
-        dev_log.render(this);
-        //dev_log(this.props.localities);
-        const city = this.props.city ? this.props.city : "";
+		dev_log.render(this);
+		//dev_log(this.props.localities);
+		const city = this.props.city ? this.props.city : "";
 
-        //const cities = ["first", "second", "third"];
-        const { data, error } = this.props.localities;
-        if (!data) return null;
+		//const cities = ["first", "second", "third"];
+		const { data, error } = this.props.localities;
+		if (!data) return null;
 
-        const options = data.map((item, index) => {
-            return <option key={item.SCOATOU} value={item.title_ua}> {item.title_ua} </option>
-        });
+		const options = data.map((item, index) => {
+			return <option key={item.SCOATOU} value={item.title_ua}> {item.title_ua} </option>
+		});
 
-        return (
-            <div className="row justify-content-center">
-                <div className="locality">
-                    <form>
-                        <select defaultValue={city} name="city" onChange={this.props.onChange}>
-                        <option disabled key={0} value="">Виберіть місто</option>
-                        {options}
-                        </select>
-                    </form>
-                </div>
-            </div>
-        );
-    }
+		return (
+			<div className="row justify-content-center">
+				<div className="locality">
+					<form>
+						<select defaultValue={city} name="city" onChange={this.props.onChange}>
+						<option disabled key={0} value="">Виберіть місто</option>
+						{options}
+						</select>
+					</form>
+				</div>
+			</div>
+		);
+	}
 }
 
 function mapStateToProps(state) {
-    return {
-        localities: state.responses.localities
-    }
+	return {
+		localities: state.responses.localities
+	}
 }
 
 export default FormCity = connect(mapStateToProps, { setResponse })(FormCity);
@@ -73,9 +73,9 @@ export default FormCity = connect(mapStateToProps, { setResponse })(FormCity);
 
 {/* <form>
 <label>City 
-    <select defaultValue={city} name="city" onChange={this.props.onChange}>
-        <option disabled key={0} value="">select a city</option>
-        {options}
-    </select>
+	<select defaultValue={city} name="city" onChange={this.props.onChange}>
+		<option disabled key={0} value="">select a city</option>
+		{options}
+	</select>
 </label>
 </form> */}

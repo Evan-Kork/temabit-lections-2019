@@ -16,7 +16,7 @@ class App extends React.Component {
 				<Router>
 					<Header />
 					<div className="main wrapper">
-			    		<main className="container">
+						<main className="container">
 							<Content />
 						</main>
 					</div>

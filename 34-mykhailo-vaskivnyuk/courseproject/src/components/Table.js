@@ -112,7 +112,7 @@ class Table extends React.PureComponent {
 						<tbody>
 							{body}
 						</tbody>
-        			</table>
+					</table>
 				</div>
 			</React.Fragment>
 		);

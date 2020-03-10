@@ -73,7 +73,7 @@ module.exports = env => {
 				{
 					test: /\.(woff|woff2|eot|ttf|otf)$/,
 					use: [
-					    'file-loader',
+						'file-loader',
 					]
 				},
 
@@ -89,7 +89,7 @@ module.exports = env => {
 		devServer: {
 			// contentBase: resolve(__dirname, "dist"),
 			// historyApiFallback: true,
-    		// hot: true,
+			// hot: true,
 			port: 9000,
 			proxy: { // http://localhost/api/{par1}/{par2} -> http://openapi.justin.ua/{par1}/{par2}
 				"/api": {

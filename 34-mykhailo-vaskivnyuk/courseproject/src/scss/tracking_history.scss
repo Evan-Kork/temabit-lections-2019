@@ -1,115 +1,115 @@
 .branch {
 
-    form {
-        display: flex;
-        align-items: center;
-    }
-    //font: inherit;
-    //@debug: #164ce2;
-    .branch_number {
-        //@extend %font;
-        //-webkit-tap-highlight-color: transparent;
-        padding: 10px 15px;
-        border: 2px solid $color_dark;
-        //box-shadow: none;
-        //vertical-align: top;
-        //-webkit-appearance: none;
-        background-color: transparent;
-        font-style: italic;
-        color: $color_dark;
-        margin-right: 0;
-        margin-bottom: 0px;
-        width: 246px;
-        outline: none;
-        &::placeholder {
-            color: $color_dark;
-        }
-    }
+	form {
+		display: flex;
+		align-items: center;
+	}
+	//font: inherit;
+	//@debug: #164ce2;
+	.branch_number {
+		//@extend %font;
+		//-webkit-tap-highlight-color: transparent;
+		padding: 10px 15px;
+		border: 2px solid $color_dark;
+		//box-shadow: none;
+		//vertical-align: top;
+		//-webkit-appearance: none;
+		background-color: transparent;
+		font-style: italic;
+		color: $color_dark;
+		margin-right: 0;
+		margin-bottom: 0px;
+		width: 246px;
+		outline: none;
+		&::placeholder {
+			color: $color_dark;
+		}
+	}
 
-    i {
-        font-size: 40px;
-        margin: 0 5px;
-    }
+	i {
+		font-size: 40px;
+		margin: 0 5px;
+	}
 }
 .locality {
 
-    // form {
-    //     display: flex;
-    //     align-items: center;
-    // }
-    //font: inherit;
-    //@debug: #164ce2;
-    // .order_number {
-        select {
-        //@extend %font;
-        //-webkit-tap-highlight-color: transparent;
-        padding: 10px 15px;
-        border: 2px solid $color_dark;
-        //box-shadow: none;
-        //vertical-align: top;
-        //-webkit-appearance: none;
-        background-color: transparent;
-        font-style: italic;
-        color: $color_dark;
-        margin-right: 0;
-        margin-bottom: 0px;
-        width: 246px;
-        outline: none;
-        &::placeholder {
-            color: $color_dark;
-        }
-    }
+	// form {
+	//     display: flex;
+	//     align-items: center;
+	// }
+	//font: inherit;
+	//@debug: #164ce2;
+	// .order_number {
+		select {
+		//@extend %font;
+		//-webkit-tap-highlight-color: transparent;
+		padding: 10px 15px;
+		border: 2px solid $color_dark;
+		//box-shadow: none;
+		//vertical-align: top;
+		//-webkit-appearance: none;
+		background-color: transparent;
+		font-style: italic;
+		color: $color_dark;
+		margin-right: 0;
+		margin-bottom: 0px;
+		width: 246px;
+		outline: none;
+		&::placeholder {
+			color: $color_dark;
+		}
+	}
 }
 
 .tracking {
 
-    form {
-        display: flex;
-        align-items: center;
-    }
-    //font: inherit;
-    //@debug: #164ce2;
-    .order_number {
-        //@extend %font;
-        //-webkit-tap-highlight-color: transparent;
-        padding: 10px 15px;
-        border: 2px solid $color_dark;
-        //box-shadow: none;
-        //vertical-align: top;
-        //-webkit-appearance: none;
-        background-color: transparent;
-        font-style: italic;
-        color: $color_dark;
-        margin-right: 0;
-        margin-bottom: 0px;
-        width: 246px;
-        outline: none;
-        &::placeholder {
-            color: $color_dark;
-        }
-    }
+	form {
+		display: flex;
+		align-items: center;
+	}
+	//font: inherit;
+	//@debug: #164ce2;
+	.order_number {
+		//@extend %font;
+		//-webkit-tap-highlight-color: transparent;
+		padding: 10px 15px;
+		border: 2px solid $color_dark;
+		//box-shadow: none;
+		//vertical-align: top;
+		//-webkit-appearance: none;
+		background-color: transparent;
+		font-style: italic;
+		color: $color_dark;
+		margin-right: 0;
+		margin-bottom: 0px;
+		width: 246px;
+		outline: none;
+		&::placeholder {
+			color: $color_dark;
+		}
+	}
 
-    i {
-        font-size: 40px;
-        margin: 0 5px;
-    }
+	i {
+		font-size: 40px;
+		margin: 0 5px;
+	}
 }
 
 .tracking_history {
-    .tracking_status {
-        opacity: 20%;
-        &.active {
-            opacity: 100%;
-        }       
-    }
-    .tracking_icon {
-        min-height: 110px;
-        // opacity: 20%;
-        // &.active {
-        //     opacity: 100%;
-        // }
-    }
-    .tracking_line {
-        width: 100%;
-    }
+	.tracking_status {
+		opacity: 20%;
+		&.active {
+			opacity: 100%;
+		}       
+	}
+	.tracking_icon {
+		min-height: 110px;
+		// opacity: 20%;
+		// &.active {
+		//     opacity: 100%;
+		// }
+	}
+	.tracking_line {
+		width: 100%;
+	}
 }

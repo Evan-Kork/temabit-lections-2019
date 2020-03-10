@@ -1,18 +1,18 @@
 function menu(state = {}, action) {
-    switch (action.type) {
-        case "SET_SELECTED_MENU":
+	switch (action.type) {
+		case "SET_SELECTED_MENU":
 			const menuList = state.list;
 			const index = menuList.findIndex(item => 
 				("/" + item.link) == action.data ? true : false 
 			);
 			//console.log(index);
 			const selected = menuList[index] ? menuList[index] : null;
-            state = Object.assign({}, state, { selected });
-            console.log("SET_SELECTED_MENU : " + action.data);
-            break;
+			state = Object.assign({}, state, { selected });
+			console.log("SET_SELECTED_MENU : " + action.data);
+			break;
 		default:	
-    }
-    return state;
+	}
+	return state;
 }
 
 export default menu;

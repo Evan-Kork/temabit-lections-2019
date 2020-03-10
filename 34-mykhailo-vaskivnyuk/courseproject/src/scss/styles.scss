@@ -17,20 +17,20 @@ $header_height: 100px;
 @import "~bootstrap/scss/bootstrap";
 
 a {
-    color: inherit;
-    &:hover {
+	color: inherit;
+	&:hover {
 		color: inherit;
-        text-decoration: none;
-    }
-    &:visited {
+		text-decoration: none;
+	}
+	&:visited {
 		color: inherit;
-    }
+	}
 }
 
 ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 //---------- ELEMENTS ---------------
@@ -42,122 +42,122 @@ ul {
 //---------- BLOCKS -----------------
 
 .wrapper {
-    &.header {
-        width: 100%;
+	&.header {
+		width: 100%;
 		background-color: $justin_color;
 		position: fixed;
 		z-index: 1000;
-    }
-    &.main {
+	}
+	&.main {
 		margin-top: $header_height * 2 - 20px;
-        background-color: white;
-        flex: 1;
-    }
-    &.footer {
-        width: 100%;
-        background-color: $justin_color;
-    }
+		background-color: white;
+		flex: 1;
+	}
+	&.footer {
+		width: 100%;
+		background-color: $justin_color;
+	}
 }
 
 //---------- HEADER -----------------
 
 header {
 	
-    background-color: $justin_color;
-    @extend %font;
-    .logo {
+	background-color: $justin_color;
+	@extend %font;
+	.logo {
 		display: flex;
 		align-items: center;
 		min-height: $header_height;
-        order: 0;
-        img {
-            max-width: 185px;
-        }
-    }
-    .links {
+		order: 0;
+		img {
+			max-width: 185px;
+		}
+	}
+	.links {
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
 		min-height: $header_height - 20px;
-        order: 2;
-    }
-    .connection {
-        order: 1;
-        display: flex;
-        align-items: center;
-        .phone {
-            cursor: pointer;
-            margin: 5px;
-            min-width: 130px;
-        }
-        .tracking {
-            font: inherit;
-            background: #164ce2;
-            .order_number {
-                font: inherit;
-                padding: 10px 15px;
-                border: 1px solid #ddd;
-                background-color: transparent;
-                font-style: italic;
-                color: #fff !important;
-                margin-right: 0;
-                margin-bottom: 0px;
-                width: 246px;
-                outline: none;
-                &::placeholder {
-                    color: #eeeeff;
-                }
-            }
-        }
-        i {
-            cursor: pointer;
-            margin-left: 10px;
-            font-size: 20px;
-        }
-    }
+		order: 2;
+	}
+	.connection {
+		order: 1;
+		display: flex;
+		align-items: center;
+		.phone {
+			cursor: pointer;
+			margin: 5px;
+			min-width: 130px;
+		}
+		.tracking {
+			font: inherit;
+			background: #164ce2;
+			.order_number {
+				font: inherit;
+				padding: 10px 15px;
+				border: 1px solid #ddd;
+				background-color: transparent;
+				font-style: italic;
+				color: #fff !important;
+				margin-right: 0;
+				margin-bottom: 0px;
+				width: 246px;
+				outline: none;
+				&::placeholder {
+					color: #eeeeff;
+				}
+			}
+		}
+		i {
+			cursor: pointer;
+			margin-left: 10px;
+			font-size: 20px;
+		}
+	}
 }
 
 //---------- MAIN -------------------
 
 main {
-    .h2 {
-        @extend %font;
-        color: $color_dark;
-        font-weight: 600;
-        font-size: 36px;
-        text-align: center;
+	.h2 {
+		@extend %font;
+		color: $color_dark;
+		font-weight: 600;
+		font-size: 36px;
+		text-align: center;
 		line-height: 38px;
 		margin-bottom: 60px;
-    }
-    .h2_line {
-        text-align: center;
-        span {
+	}
+	.h2_line {
+		text-align: center;
+		span {
 			display: inline-block;
 			width: 200px;
 			margin-top: 50px;
 			margin-bottom: 20px;
 			border-top: 3px solid #b8d8fe;
-        }
-    }
-    .branch_img {
-        max-width: 650px;
-        margin-bottom: 20px;
-        img {
-            width: 100%;
-        }
-    }
+		}
+	}
+	.branch_img {
+		max-width: 650px;
+		margin-bottom: 20px;
+		img {
+			width: 100%;
+		}
+	}
 }
 
 //---------- FOOTER -----------------
 
 footer {
-    background-color: $justin_color;
-    font-family: ProximaNova, sans-serif;
+	background-color: $justin_color;
+	font-family: ProximaNova, sans-serif;
 	color: $color_white;
 	.links {
 		padding: 20px;
 		.links_block {
-    		ul {
+			ul {
 				border-right: none;
 			}
 		}
@@ -175,37 +175,37 @@ footer {
 
 .menu {
 	//position: relative;
-    .sidebar {
-        position: fixed;
-        right: -330px;
-        top: 0;
-        width: 330px;
-        height: 100%;
-        overflow: hidden;
-        background-color: $menu_bg_color;
-        z-index: 9999;
+	.sidebar {
+		position: fixed;
+		right: -330px;
+		top: 0;
+		width: 330px;
+		height: 100%;
+		overflow: hidden;
+		background-color: $menu_bg_color;
+		z-index: 9999;
 		border-left: 1px solid #d7e7fe;
 		transition: right 0.5s;
-        @extend %font;
-        .menu_close_button {
-            height: 100px;
-            padding: 20px;
-            cursor: pointer;
-            i {
-                font-size: 30px;
-                color: #888888;
-            }
-        }
-        ul {
-            color: $menu_color;
-            padding: 0 30px;
-            overflow: auto;
-            max-height: 70%;
-            li {
-                width: 100%;
-                display: inline-block;
-                //padding: 0 10px 0 0;
-                a {
+		@extend %font;
+		.menu_close_button {
+			height: 100px;
+			padding: 20px;
+			cursor: pointer;
+			i {
+				font-size: 30px;
+				color: #888888;
+			}
+		}
+		ul {
+			color: $menu_color;
+			padding: 0 30px;
+			overflow: auto;
+			max-height: 70%;
+			li {
+				width: 100%;
+				display: inline-block;
+				//padding: 0 10px 0 0;
+				a {
 					display: block;
 					line-height: 34px;
 					padding: 0 10px;
@@ -215,13 +215,13 @@ footer {
 					&:hover {
 						background-color: $menu_active;
 					}
-                }
-            }    
+				}
+			}    
 		}
 		&.show {
 			right: 0;
 		}
-    }
+	}
 
 }
 
@@ -240,7 +240,7 @@ footer {
 	footer {
 		.links {
 			.links_block {
-    			ul {
+				ul {
 					border-right: 1px solid $color_white;
 				}
 				&:last-child() {
@@ -255,17 +255,17 @@ footer {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-    header {
-        .logo {
+	header {
+		.logo {
 			order: 0;
-        }
-        .links {
+		}
+		.links {
 			order: 1;
 			min-height: $header_height;
-        }
-        .connection {
-            order: 2;
-        }
+		}
+		.connection {
+			order: 2;
+		}
 	}
 	.wrapper {
 		&.main {

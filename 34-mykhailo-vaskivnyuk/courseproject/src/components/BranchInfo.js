@@ -9,21 +9,21 @@ const SERVICES = {
 
 class BranchInfo extends React.Component {
 
-    getServices(services) {
+	getServices(services) {
 		let array = [];
 		for (let service in services) {
 			if (services[service] && SERVICES[service])
 				array.push(SERVICES[service]);
 		}
 		return array;
-    }
-    
-    render() {
+	}
+	
+	render() {
 
 		dev_log.render(this);
 		
 		const data = this.props.branchInfo;
-        //dev_log(data);
+		//dev_log(data);
 		// const head = (
 		// 	<tr>
 		// 		<th></th>
@@ -32,31 +32,31 @@ class BranchInfo extends React.Component {
 		// );
 
 		const body = [
-            // <React.Profiler>
+			// <React.Profiler>
 			(<tr key={"number"}>
-			    <td>Адреса</td><td>{data.number}</td>
-            </tr>),
-            (<tr key={"adress"}>
-				<td>Навігація</td><td>{data.adress}</td>
-            </tr>),
-            (<tr key={"services"}>
-				<td>Сервіси</td><td>{data.public.navigation_ua}</td>
-            </tr>),  
-            (<tr key={"shedule_description"}>
-				<td>Графік роботи</td><td>Додаткові: {this.getServices(data.services).join("; ")}</td>
-            </tr>),
-            (<tr key={"max_weight"}>
-				<td>Максимальна вага</td><td>{data.shedule_description}</td>
-            </tr>),
-            (<tr key={"lat_lng"}>
-                <td>Координати</td><td>lat: {data.lat}; lng: {data.lat}</td>
+				<td>Адреса</td><td>{data.number}</td>
 			</tr>),
-            // </React.Profiler>
-        ];
-    
+			(<tr key={"adress"}>
+				<td>Навігація</td><td>{data.adress}</td>
+			</tr>),
+			(<tr key={"services"}>
+				<td>Сервіси</td><td>{data.public.navigation_ua}</td>
+			</tr>),  
+			(<tr key={"shedule_description"}>
+				<td>Графік роботи</td><td>Додаткові: {this.getServices(data.services).join("; ")}</td>
+			</tr>),
+			(<tr key={"max_weight"}>
+				<td>Максимальна вага</td><td>{data.shedule_description}</td>
+			</tr>),
+			(<tr key={"lat_lng"}>
+				<td>Координати</td><td>lat: {data.lat}; lng: {data.lat}</td>
+			</tr>),
+			// </React.Profiler>
+		];
+	
 
 		return(
-            <div className="row justify-content-center">
+			<div className="row justify-content-center">
 				<div className="tbl_branch">
 					<table>
 						{/* <thead>
@@ -65,7 +65,7 @@ class BranchInfo extends React.Component {
 						<tbody>
 							{body}
 						</tbody>
-        			</table>
+					</table>
 				</div>
 			</div>
 		);
@@ -75,7 +75,7 @@ class BranchInfo extends React.Component {
 export default BranchInfo;
 
 // render() {
-        
+		
 //     const branchInfo = this.props.branchInfo;
 //     const divs = parser(branchInfo);
 

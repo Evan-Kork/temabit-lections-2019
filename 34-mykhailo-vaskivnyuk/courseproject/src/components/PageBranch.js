@@ -9,12 +9,12 @@ import RequestInfo from "./RequestInfo";
 
 class PageBranch extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.handleBranch = this.handleBranch.bind(this);
-    }
+	constructor(props) {
+		super(props);
+		this.handleBranch = this.handleBranch.bind(this);
+	}
 
-    handleBranch(event) {
+	handleBranch(event) {
 		event.preventDefault();
 		let branch;
 		dev_log(event.target.parentElement);
@@ -25,62 +25,62 @@ class PageBranch extends React.Component {
 		}
 		//const branch = event.target.branch.value;
 		//dev_log("VALUE" + event.target.branch.value);
-        this.props.history.push("/branch/" + branch);
-    }
+		this.props.history.push("/branch/" + branch);
+	}
 
-    componentDidMount() {
+	componentDidMount() {
 		if (this.props.branches.data) return;
-        const method = "branches";
-        const params = "";
+		const method = "branches";
+		const params = "";
 		request(
-            { method, params },
+			{ method, params },
 			(data, error) => {
 				dev_log(error);
 				this.props.setResponse(
-                    method,
-                    {data, error}
-                );
+					method,
+					{data, error}
+				);
 			}
 		);
-    }
-    
-    render() {
+	}
+	
+	render() {
 
 		// if (this.props.selected != 4) {
 		// 	this.props.setMenu(4);
 		// 	return null;
 		// }
 		
-        dev_log.render(this);
+		dev_log.render(this);
 
-        const branch = this.props.match.params.branch;
-        let { data, error } = this.props.branches;
-        dev_log(data);
-        let branchInfo = null;
-        if (data && branch) {
-            branchInfo = data.filter(item => item.number === branch);
+		const branch = this.props.match.params.branch;
+		let { data, error } = this.props.branches;
+		dev_log(data);
+		let branchInfo = null;
+		if (data && branch) {
+			branchInfo = data.filter(item => item.number === branch);
 			branchInfo = branchInfo.length ? branchInfo[0] : null;
 			if (!branchInfo) error = { message: "Відділення № " + branch + " відсутнє!"};
-        }
+		}
 
-        dev_log(branchInfo);
+		dev_log(branchInfo);
 
-        return (
-                <React.Fragment>
-                    <ContentHeader title="Дані про відділення" />
-                    <FormBranch branch={branch} onSubmit={this.handleBranch} />
+		return (
+				<React.Fragment>
+					<ContentHeader title="Дані про відділення" />
+					<FormBranch branch={branch} onSubmit={this.handleBranch} />
 					{branchInfo ? <BranchInfo branchInfo={branchInfo} /> : 
 						branch ? <RequestInfo error={error} /> : null}
-                    {(branchInfo && branchInfo.photos) ? (
-                    <div className="row justify-content-center">
-					    <div className="branch_img">
-						    <img src={branchInfo.photos[0]} />
-					    </div>
-                    </div>)
-                    : null}
-                </React.Fragment>
-        );
-    }
+					{(branchInfo && branchInfo.photos) ? (
+					<div className="row justify-content-center">
+						<div className="branch_img">
+							<img src={branchInfo.photos[0]} />
+						</div>
+					</div>)
+					: null}
+				</React.Fragment>
+		);
+	}
 }
 
 function mapStateToProps(state) {

@@ -23,8 +23,8 @@ const store = createStore(reducer, data);
 const app_root = document.getElementById("root");
 
 ReactDOM.render(
-    <Provider store={store}>
-                <App />
-    </Provider>,
-    app_root
+	<Provider store={store}>
+				<App />
+	</Provider>,
+	app_root
 );

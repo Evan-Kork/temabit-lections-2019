@@ -9,7 +9,7 @@ import RequestInfo from "./RequestInfo";
 
 class TableData extends React.Component {
 
-    constructor(props) {
+	constructor(props) {
 		super(props);
 		this.state = {
 			data: null,
@@ -45,7 +45,7 @@ class TableData extends React.Component {
 
 	}
 
-    handleTable(comment_data, redirect) {
+	handleTable(comment_data, redirect) {
 
 		if (redirect) {
 			dev_log(redirect);
@@ -55,24 +55,24 @@ class TableData extends React.Component {
 		}
 
 		this.setState({ comment_data });
-    }
-    
-    componentDidMount() {
+	}
+	
+	componentDidMount() {
 		if (this.props.branches.data) return;
-        const method = "branches";
-        const params = "";
+		const method = "branches";
+		const params = "";
 		request(
-            { method, params },
+			{ method, params },
 			(data, error) => {
 				this.props.setResponse(
-                    method,
-                    { data, error }
-                );
+					method,
+					{ data, error }
+				);
 			}
 		);
-    }
-    
-    render() {
+	}
+	
+	render() {
 
 		let data, error;
 		const filter = this.props.filter;
@@ -89,17 +89,17 @@ class TableData extends React.Component {
 			dev_log(error);
 		} else {
 			//dev_log(data);
-        }
+		}
 		dev_log("filter");
 		dev_log(filter);
-        return (
-            <div className="row justify-content-center">
-                {comment_data ? <Comment data={comment_data} /> : null}
+		return (
+			<div className="row justify-content-center">
+				{comment_data ? <Comment data={comment_data} /> : null}
 				{data ? <Table data={data} handler={this.handleTable} />
 					: (!filter || (filter && filter.city)) ? <RequestInfo error={error} />
 					: null}
-            </div>
-    )};
+			</div>
+	)};
 }
 
 function mapStateToProps(state) {

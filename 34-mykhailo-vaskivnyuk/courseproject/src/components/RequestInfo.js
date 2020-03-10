@@ -5,8 +5,8 @@ class RequestInfo extends React.Component {
 	constructor(props) {
 		super(props);
 	}
-    
-    render() {
+	
+	render() {
 
 		dev_log.render(this);
 		
@@ -19,12 +19,12 @@ class RequestInfo extends React.Component {
 		
 		const body = [
 			(<tr key={"request_status"}>
-			    <td className={className}>{request_status}</td>
-            </tr>)
-        ];
-    
+				<td className={className}>{request_status}</td>
+			</tr>)
+		];
+	
 		return(
-            <div className="row justify-content-center">
+			<div className="row justify-content-center">
 				<div className="tbl_request">
 					<table>
 						{/* <thead>
@@ -33,7 +33,7 @@ class RequestInfo extends React.Component {
 						<tbody>
 							{body}
 						</tbody>
-        			</table>
+					</table>
 				</div>
 			</div>
 		);
