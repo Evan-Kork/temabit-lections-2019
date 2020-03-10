@@ -1,0 +1,45 @@
+import React from "react";
+import FormTracking from "./FormTracking";
+import TrackingInfo from "./TrackingInfo";
+import TrackingHistory from "./TrackingHistory";
+import ContentHeader from "./ContentHeader";
+
+class PageTracking extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.handleTracking = this.handleTracking.bind(this);
+	}
+
+	handleTracking(event) {
+		event.preventDefault();
+		let order;
+		if (event.target.tagName == "FORM") {
+			order = event.target.order.value;
+		} else {
+			order = event.target.parentElement.order.value;
+		}
+		//const order = event.target.order.value;
+		this.props.history.push("/tracking/" + order);
+	}
+	
+	render() {
+		
+		dev_log.render(this);
+
+		const order = this.props.match.params.order;
+
+		//dev_log(order);
+
+		return (
+			<React.Fragment>
+				<ContentHeader title="Дані про відділення" />
+				<FormTracking order={order} onSubmit={this.handleTracking} />
+				{order ? <TrackingInfo order={order} /> : null}
+				{order ? <TrackingHistory order={order} /> : null}
+			</React.Fragment>
+		);
+	}
+}
+
+export default PageTracking;
