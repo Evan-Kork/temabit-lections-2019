@@ -7,7 +7,6 @@ function SearchTtn(props) {
     document.title = 'Відстежити посилку | Justin';
   }, []);
 
-  console.log("SearchTtn",props);
   return (
     <div className='search-ttn page container-fluid'>
       <div className='row text-center'>
