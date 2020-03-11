@@ -1,0 +1,23 @@
+.root {
+    min-width: 320px;
+    background-color: #303f93;
+    font-size: .9rem;
+}
+
+.link {
+    margin: 0 .2rem;
+
+    color: white;
+    font-weight: 400;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        text-decoration: none;
+        color: #A0ACEB;
+    }
+
+    svg {
+        color: white;
+        margin: 0 .3rem;
+    }
+}

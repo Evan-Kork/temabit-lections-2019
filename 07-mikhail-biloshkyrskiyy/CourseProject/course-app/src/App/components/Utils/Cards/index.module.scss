@@ -1,0 +1,27 @@
+.root {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.media {
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    display: block;
+    margin: 0 auto;
+    font-size: 6rem;
+    color: #4d5ebe;
+}
+
+.link {
+    color: #4d5ebe;
+    font-weight: 600;
+
+    padding: 0 .3rem;
+    &:hover {
+        text-decoration: none;
+    }
+}

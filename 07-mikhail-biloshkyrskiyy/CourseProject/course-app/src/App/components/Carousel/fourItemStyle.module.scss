@@ -1,0 +1,29 @@
+.carousel {
+    ol {
+        margin-bottom: 0;
+
+        li {
+            height: 1rem;
+            width: 1rem;
+        }
+    }
+}
+
+.carouselItems {
+    padding-bottom: 40px;
+
+    .carousel-indicators {
+        margin-bottom: 0;
+    }
+}
+
+.carouselItem {
+    display: flex;
+    justify-content: center;
+}
+
+.carouselImage {
+    margin: 0 10px;
+    max-width: 250px;
+    display: block;
+}
