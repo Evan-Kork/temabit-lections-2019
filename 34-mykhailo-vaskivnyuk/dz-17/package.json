@@ -1,0 +1,13 @@
+{
+  "name": "fs_path_stream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "s": "node index.js"
+  },
+  "author": "Mykhailo Vaskivnyuk",
+  "license": "ISC",
+  "dependencies": {}
+}
