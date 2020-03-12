@@ -1,33 +1,52 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 import Layout from '@/containers/Layout'
-import Office from '@/components/Content/Office'
-import TypesOffice from '@/components/Content/TypesOffice'
-import Location from '@/components/Content/Map'
-import Localities from '@/components/Content/Localities'
 
+const Office = lazy(() => import('@/components/Content/Office'))
+const TypesOffice = lazy(() => import('@/components/Content/TypesOffice'))
+const Location = lazy(() => import('@/components/Content/Map'))
+const Localities = lazy(() => import('@/components/Content/Localities'))
+
+const ErrorBoundary = lazy(() => import('@/components/Utils/ErrorBoundary'))
 
 const RouterOffice = (
     <Switch>
         <Route path='/office' exact>
             <Layout>
-                <Office />
+                <Suspense fallback={<CircularProgress color="secondary" />}>
+                    <ErrorBoundary>
+                        <Office />
+                    </ErrorBoundary>
+                </Suspense>
             </Layout>
         </Route>
         <Route path='/office/types'>
             <Layout>
-                <TypesOffice />
+                <Suspense fallback={<CircularProgress color="secondary" />}>
+                    <ErrorBoundary>
+                        <TypesOffice />
+                    </ErrorBoundary>
+                </Suspense>
             </Layout>
         </Route>
         <Route path='/office/location'>
             <Layout>
-                <Location />
+                <Suspense fallback={<CircularProgress color="secondary" />}>
+                    <ErrorBoundary>
+                        <Location />
+                    </ErrorBoundary>
+                </Suspense>
             </Layout>
         </Route>
         <Route path='/office/localities'>
             <Layout>
-                <Localities />
+                <Suspense fallback={<CircularProgress color="secondary" />}>
+                    <ErrorBoundary>
+                        <Localities />
+                    </ErrorBoundary>
+                </Suspense>
             </Layout>
         </Route>
     </Switch>

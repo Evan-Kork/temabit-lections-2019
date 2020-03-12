@@ -49,6 +49,10 @@ import {
     updateCalculationPrice,
     getTypeCalculationPrice
 } from '@/schema/calculation'
+import {
+    getError,
+    addError
+} from '@/schema/error'
 
 export const Query = new GraphQLObjectType({
     name: 'Query',
@@ -62,7 +66,8 @@ export const Query = new GraphQLObjectType({
         getCalculationLength,
         getCalculationWeight,
         getCalculationPrice,
-        getTypeCalculationPrice
+        getTypeCalculationPrice,
+        getError
     }
 })
 
@@ -92,7 +97,8 @@ export const Mutation = new GraphQLObjectType({
         removeCalculationWeight,
         addCalculationPrice,
         removeCalculationPrice,
-        updateCalculationPrice
+        updateCalculationPrice,
+        addError
     }
 })
 

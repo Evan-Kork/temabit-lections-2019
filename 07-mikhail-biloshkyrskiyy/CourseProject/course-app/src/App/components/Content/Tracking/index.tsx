@@ -21,7 +21,6 @@ import Menu from '@/components/Navigation/Menu'
 import TrackingProduct from '@/components/Tracking'
 import Paper from '@/components/Utils/Paper'
 import Input from '@/components/Utils/Input'
-
 import { HeightLayout } from '@/context'
 import classes from './index.module.scss'
 
@@ -50,9 +49,7 @@ const initialValues = {
 const Tracking: React.FC<Props> = (props: Props) => {
     const { loading, data } = useQuery<MenuInvertoryData, MenuInvertoryVars>(GET_MENU_INVERTORY, { variables: { typeMenu: MenuType.Declaration } })
     props.actionMenuTracking(loading, data?.menu as iMenu[])
-
     const heightContext = useContext(HeightLayout)
-
     useEffect(() => {
         if (props.tracking[0] === undefined) {
             if (sessionStorage.getItem('tracking')) {
@@ -82,7 +79,7 @@ const Tracking: React.FC<Props> = (props: Props) => {
                         />
                     </Box>
                     <Box className='h-100 d-flex'>
-                        {props.tracking[0] ? <TrackingProduct tracking={props.tracking[0]} /> : <Paper />}
+                        {props.tracking[0] ? <TrackingProduct tracking={props.tracking[0]} /> : <Paper title="Uhoh! There's not a single declaration to trace." supTitle="Enter declaration number." />}
                     </Box>
                 </Box>
             </Box>

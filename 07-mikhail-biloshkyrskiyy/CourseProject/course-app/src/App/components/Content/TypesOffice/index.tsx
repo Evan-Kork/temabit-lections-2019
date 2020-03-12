@@ -19,7 +19,6 @@ import { MenuInvertoryData, MenuInvertoryVars, GET_MENU_INVERTORY } from './Quer
 import Menu from '@/components/Navigation/Menu'
 import BranchTypes from '@/components/BranchTypes'
 import Paper from '@/components/Utils/Paper'
-
 import { HeightLayout } from '@/context'
 import classes from './index.module.scss'
 
@@ -47,7 +46,6 @@ const TypesOffice: React.FC<Props> = (props: Props) => {
     props.actionMenuBranch(loading, data?.menu as iMenu[])
 
     const heightContext = useContext(HeightLayout)
-
     useEffect(() => {
         if (props.branchTypes[0] === undefined) {
             if (sessionStorage.getItem('branchTypes')) {
@@ -63,7 +61,7 @@ const TypesOffice: React.FC<Props> = (props: Props) => {
             <Box className='d-flex flex-column flex-lg-row' style={{ minHeight: heightContext.height }}>
                 <Menu menu={data?.menu as iMenu[]} />
                 <Box className={`${classes.content} d-flex h-100 flex-column w-100`}>
-                    {props.branchTypes[0] ? <BranchTypes branchTypes={props.branchTypes} /> : <Paper />}
+                    {props.branchTypes[0] ? <BranchTypes branchTypes={props.branchTypes} /> : <Paper title="Sorry, there's been an error. 500!!!" supTitle="This information is either corrupted or not available on the server." />}
                 </Box>
             </Box>
         </Container>

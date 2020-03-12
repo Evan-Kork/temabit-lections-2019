@@ -1,20 +1,31 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
-import Layout from '@/containers/Layout'
-import Tracking from '@/components/Content/Tracking'
-import TrackingHistory from '@/components/Content/TrackingHistory'
+const Layout = lazy(() => import('@/containers/Layout'))
+const Tracking = lazy(() => import('@/components/Content/Tracking'))
+const TrackingHistory = lazy(() => import('@/components/Content/TrackingHistory'))
+
+const ErrorBoundary = lazy(() => import('@/components/Utils/ErrorBoundary'))
 
 const RouterDeclaration = (
     <Switch>
         <Route path='/tracking' exact>
             <Layout>
-                <Tracking />
+                <Suspense fallback={<CircularProgress color="secondary" />}>
+                    <ErrorBoundary>
+                        <Tracking />
+                    </ErrorBoundary>
+                </Suspense>
             </Layout>
         </Route>
         <Route path='/tracking/history'>
             <Layout>
-                <TrackingHistory />
+                <Suspense fallback={<CircularProgress color="secondary" />}>
+                    <ErrorBoundary>
+                        <TrackingHistory />
+                    </ErrorBoundary>
+                </Suspense>
             </Layout>
         </Route>
     </Switch>

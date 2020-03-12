@@ -23,7 +23,6 @@ import { MenuInvertoryData, MenuInvertoryVars, GET_MENU_INVERTORY } from './Quer
 import Menu from '@/components/Navigation/Menu'
 import Branch from '@/components/Branch'
 import Paper from '@/components/Utils/Paper'
-
 import { HeightLayout } from '@/context'
 import classes from './index.module.scss'
 // This import connects hook with styles
@@ -53,9 +52,7 @@ const Office: React.FC<Props> = (props: Props) => {
     const makeClasses = useStyles()
     const { loading, data } = useQuery<MenuInvertoryData, MenuInvertoryVars>(GET_MENU_INVERTORY, { variables: { typeMenu: MenuType.Office } })
     props.actionMenuBranch(loading, data?.menu as iMenu[])
-
     const heightContext = useContext(HeightLayout)
-
     useEffect(() => {
         if (props.branches[0] === undefined) {
             if (sessionStorage.getItem('branch')) {
@@ -97,7 +94,7 @@ const Office: React.FC<Props> = (props: Props) => {
                         />
                     </Box>
                     <Box className='h-100 d-flex'>
-                        {props.branches[0] ? <Branch branches={props.branches} /> : <Paper />}
+                        {props.branches[0] ? <Branch branches={props.branches} /> : <Paper title="Uhoh! There's not a single branche location." supTitle="Enter branche location." />}
                     </Box>
                 </Box>
             </Box>

@@ -6,13 +6,11 @@ import FourItem from '@/components/Carousel/fourItem'
 import Card from '@/components/Utils/Cards'
 import Banner from '@/components/Banner'
 import Carousel from '@/components/Carousel'
-
 import { HeightLayout } from '@/context'
 import classes from './index.module.scss'
 
 const Content: React.FC = () => {
     const heightContext = useContext(HeightLayout)
-
     return (
         <Box style={{ minHeight: heightContext.height }}>
             <Box display={{ xs: 'none', sm: 'block' }}>

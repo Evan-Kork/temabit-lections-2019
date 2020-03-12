@@ -1,35 +1,63 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 import Layout from '@/containers/Layout'
 
-import Content from '@/components/Content/Layout'
-import About from '@/components/Content/About'
-import Calculator from '@/components/Content/Calculator'
+const Content = lazy(() => import('@/components/Content/Layout'))
+const About = lazy(() => import('@/components/Content/About'))
+const Calculator = lazy(() => import('@/components/Content/Calculator'))
+
+const ErrorBoundary = lazy(() => import('@/components/Utils/ErrorBoundary'))
+const Paper = lazy(() => import('@/components/Utils/Paper'))
 
 import RouterTracking from '@/routes/tracking'
 import RouterOffice from '@/routes/office'
 
 export default (
     <>
+        {RouterTracking}
+        {RouterOffice}
         <Switch>
             <Route path='/' exact>
                 <Layout>
-                    <Content />
+                    <Suspense fallback={<CircularProgress color="secondary" />}>
+                        <ErrorBoundary>
+                            <Content />
+                        </ErrorBoundary>
+                    </Suspense >
                 </Layout>
             </Route>
             <Route path='/about'>
                 <Layout>
-                    <About />
+                    <Suspense fallback={<CircularProgress color="secondary" />}>
+                        <ErrorBoundary>
+                            <About />
+                        </ErrorBoundary>
+                    </Suspense >
                 </Layout>
             </Route>
             <Route path='/calculation'>
                 <Layout>
-                    <Calculator />
+                    <Suspense fallback={<CircularProgress color="secondary" />}>
+                        <ErrorBoundary>
+                            <Calculator />
+                        </ErrorBoundary>
+                    </Suspense >
+                </Layout>
+            </Route>
+            <Route>
+                <Layout>
+                    <Suspense fallback={<CircularProgress color="secondary" />}>
+                        <ErrorBoundary>
+                            <Paper
+                                title="Uhoh!Server error, 404!!!! The page not found!!! you're asking for doesn't exist."
+                                supTitle="Page you're asking for doesn't exist."
+                            />
+                        </ErrorBoundary>
+                    </Suspense >
                 </Layout>
             </Route>
         </Switch>
-        {RouterTracking}
-        {RouterOffice}
     </>
 )
