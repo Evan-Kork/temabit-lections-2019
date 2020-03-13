@@ -70,7 +70,9 @@ function write_data_to_file(err, file_handler, bytesRead = null, buffer = null, 
 //---------------------------------------------------------------------
 
 function close_file(file_handler) {
-		
+
+	if (!files.has(file_handler.fd)) return;
+
 	const handler = files.get(file_handler.fd);
 	fs.closeSync(handler);
 	files.delete(file_handler.fd);
