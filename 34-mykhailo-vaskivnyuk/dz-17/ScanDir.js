@@ -45,8 +45,11 @@ class ScanDir {
 	
 					this.emmiter.emit("fileOpen", null, file_name, path_to_file, file_handler,
 						(can_read) => {
-							if (can_read)
+							if (can_read) {
 								this.read_file(file_handler, file_name, buffer)
+							} else {
+								fs.closeSync(file_handler.fd);
+							}
 						}
 					);
 
@@ -79,8 +82,11 @@ class ScanDir {
 					bytesRead,
 					buffer,
 					(read_next) => { 
-						if (read_next) 
-							this.read_file(file_handler, file_name, buffer)
+						if (read_next) {
+							this.read_file(file_handler, file_name, buffer);
+						} else {
+							fs.closeSync(file_handler.id);
+						}
 					}
 			);
 		});
