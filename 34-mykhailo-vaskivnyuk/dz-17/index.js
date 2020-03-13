@@ -35,7 +35,7 @@ function open_file_for_write(err, file_name, path_to_file, file_handler = null, 
 		}
 
 		 files.set(file_handler.fd, handler);
-		 console.log("Open file for write: " + file_name + file_handler.fd);
+		 console.log(`Open file for write: ${file_name} N: ${handler}`);
 		 read_file(true);
 	});
 }
@@ -52,28 +52,29 @@ function write_data_to_file(err, file_handler, bytesRead = null, buffer = null, 
 		return;
 	}
 
-	console.log("Write data to file: " + handler);
-	console.log(handler);
+	console.log(`Write data to file N: ${handler}`);
 
 	fs.write(handler, buffer, 0, bytesRead, err => {
+
 		if ( err ) {
 			console.log("Error: " + err.message);
 			close_file(file_handler);
 			read_next(false);
 			return;
 		}
-		if ( bytesRead ) read_next(true)
+		
+		read_next(true);
 	});
 }
 
 //---------------------------------------------------------------------
 
-function close_file() {
+function close_file(file_handler) {
 		
 	const handler = files.get(file_handler.fd);
 	fs.closeSync(handler);
 	files.delete(file_handler.fd);
-
+	console.log(`File has copied N: ${handler}`);
 }
 
 //---------------------------------------------------------------------

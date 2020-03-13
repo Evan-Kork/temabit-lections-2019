@@ -41,7 +41,7 @@ class ScanDir {
 
 					file_handler = await fs.promises.open(file_path);
 				
-					console.log("Open file for read: " + path_to_file + "/" + file_name);
+					console.log(`Open file for read: ${path_to_file} / ${file_name} N: ${file_handler.fd}`);
 	
 					this.emmiter.emit("fileOpen", null, file_name, path_to_file, file_handler,
 						(can_read) => {
@@ -66,7 +66,7 @@ class ScanDir {
 
 		fs.read(file_handler.fd, buffer, 0, 1024, null, (err, bytesRead, buffer) => {
 			
-			console.log("Read file data: " + file_name + " N: " + file_handler.fd);
+			console.log(`Read file data: ${file_name} N: ${file_handler.fd}`);
 			
 			if ( err ) {
 				this.emmiter.emit("fileRead",
@@ -76,6 +76,12 @@ class ScanDir {
 				return;					
 			}
 			
+			if ( !bytesRead ) {
+				fs.closeSync(file_handler.fd);
+				this.emmiter.emit("fileClose", file_handler);
+				return;
+			}
+
 			this.emmiter.emit("fileRead",
 					err,
 					file_handler,
