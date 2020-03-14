@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const ScanDir = require("./ScanDir");
+const ScanDir = require("./ScanDir_first");
 
 const dir_name_from = "src_2";
 const dir_name_to = "src_1";
