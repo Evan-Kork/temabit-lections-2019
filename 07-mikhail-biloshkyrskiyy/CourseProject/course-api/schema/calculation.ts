@@ -1,239 +1,193 @@
+import { gql } from 'apollo-server'
 import { model } from 'mongoose'
-import {
-    GraphQLObjectType,
-    GraphQLString,
-    GraphQLInt,
-    GraphQLID,
-    GraphQLNonNull,
-    GraphQLList
-} from 'graphql'
 
-import { WeightRangEnum, LegthRangEnum } from '@/enum/calculation'
+import { WeightRangEnum, LengthRangEnum } from '@/enum/calculation'
+import { iCalculationWeight, iCalculationLength, iCalculationPrice } from '@/interfaces/iCalculation'
+
 import '@/models/calculation'
 const CalculationWeight = model('CalculationWeight')
 const CalculationLength = model('CalculationLegth')
 const CalculationPrice = model('CalculationPrice')
 
-const CalculationWeightType = new GraphQLObjectType({
-    name: 'CalculationWeight',
-    fields: () => ({
-        id: {
-            type: GraphQLID
-        },
-        weight: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        rang: {
-            type: new GraphQLNonNull(WeightRangEnum)
-        }
-    })
-})
-const CalculationLengthType = new GraphQLObjectType({
-    name: 'CalculationLegth',
-    fields: () => ({
-        id: {
-            type: GraphQLID
-        },
-        parcelLength: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        rang: {
-            type: new GraphQLNonNull(LegthRangEnum)
-        }
-    })
-})
-const CalculationPriceType = new GraphQLObjectType({
-    name: 'CalculationPrice',
-    fields: () => ({
-        price: {
-            type: new GraphQLNonNull(GraphQLInt)
-        },
-        rang: {
-            type: new GraphQLNonNull(GraphQLInt)
-        }
-    })
-})
+const EnumCalculationWeightRangGql = gql`
+    enum EnumCalculationWeightRang {
+        XS,
+        S,
+        M,
+        L,
+        XL,
+        XXL,
+        XXXL
+    }
+`
+const EnumCalculationLengthRangGql = gql`
+    enum EnumCalculationLengthRang {
+        Short,
+        Medium,
+        Long
+    }
+`
 
-export const getCalculationWeight = {
-    type: new GraphQLList(CalculationWeightType),
-    resolve(parent: any, args: any) {
-        return CalculationWeight.find()
+export const CalculationType = gql`
+    ${EnumCalculationWeightRangGql}
+    ${EnumCalculationLengthRangGql}
+
+    type CalculationWeightType {
+        id: String,
+        title: String,
+        type: EnumCalculationWeightRang,
+        rang: Int
     }
-}
-export const getCalculationLength = {
-    type: new GraphQLList(CalculationLengthType),
-    resolve(parent: any, args: any) {
-        return CalculationLength.find()
+
+    type CalculationLengthType {
+        id: String,
+        title: String,
+        type: EnumCalculationLengthRang,
+        rang: Int
     }
-}
-export const getCalculationPrice = {
-    type: new GraphQLList(CalculationPriceType),
-    resolve(parent: any, args: any) {
-        return CalculationPrice.find()
+
+    type CalculationPriceType {
+        id: String,
+        price: Int,
+        rang: Int
     }
-}
-export const getTypeCalculationPrice = {
-    type: new GraphQLList(CalculationPriceType),
-    args: {
-        rang: {
-            type: new GraphQLNonNull(GraphQLInt)
-        }
-    },
-    resolve(parent:any, args:any) {
-        return CalculationPrice.find({
-            rang: args.rang
-        })
+
+    input AddCalculationWeight {
+        id: String,
+        title: String!,
+        type: EnumCalculationWeightRang!,
+        rang: Int!
     }
+
+    input UpdateCalculationWeight {
+        id: String,
+        title: String!,
+        type: EnumCalculationWeightRang!,
+        rang: Int
+    }
+
+    input AddCalculationLength {
+        id: String,
+        title: String!,
+        type: EnumCalculationLengthRang!,
+        rang: Int!
+    }
+
+    input UpdateCalculationLength {
+        id: String,
+        title: String!,
+        type: EnumCalculationLengthRang!,
+        rang: Int
+    }
+
+    input AddCalculationPrice {
+        id: String,
+        price: Int!,
+        rang: Int!
+    }
+
+    input UpdateCalculationPrice {
+        id: String,
+        price: Int!,
+        rang: Int!
+    }
+`
+
+export const TypeDefsQuery = `
+    calculationWeight: [CalculationWeightType],
+    calculationLength: [CalculationLengthType],
+    calculationPrice: [CalculationPriceType],
+    getTypeCalculationWeight(type: EnumCalculationWeightRang!): [CalculationWeightType]
+    getTypeCalculationLength(type: EnumCalculationLengthRang!): [CalculationLengthType]
+`
+
+export const TypeDefsMutation = `
+    addCalculationWeight(calculationWeight: AddCalculationWeight!): CalculationWeightType,
+    removeCalculationWeight(id: String!): CalculationWeightType,
+    updateCalculationWeight(calculationWeight: AddCalculationWeight!): CalculationWeightType,
+
+    addCalculationLength(calculationLength: AddCalculationLength!): CalculationLengthType,
+    removeCalculationLength(id: String!): CalculationLengthType,
+    updateCalculationLength(calculationLength: AddCalculationLength!): CalculationLengthType,
+
+    addCalculationPrice(calculationPrice: AddCalculationPrice!): CalculationPriceType,
+    removeCalculationPrice(id: String!): CalculationPriceType,
+    updateCalculationPrice(calculationPrice: AddCalculationPrice!): CalculationPriceType
+`
+
+export const Query = {
+    calculationWeight: () => CalculationWeight.find(),
+    calculationLength: () => CalculationLength.find(),
+    calculationPrice: () => CalculationPrice.find(),
+
+    getTypeCalculationWeight: async (parent: any, args: { type: WeightRangEnum }) => await CalculationWeight.find({ type: args.type }),
+    getTypeCalculationLength: async (parent: any, args: { type: LengthRangEnum }) => await CalculationLength.find({ type: args.type })
 }
 
-export const addCalculationWeight = {
-    type: CalculationWeightType,
-    args: {
-        weight: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        rang: {
-            type: new GraphQLNonNull(WeightRangEnum)
-        }
-    },
-    async resolve(parent: any, args: any) {
-        if (await CalculationWeight.findOne({ weight: args.weight }) === null) {
-            const weight = new CalculationWeight({
-                weight: args.weight,
-                rang: args.rang
+export const Mutation = {
+    addCalculationWeight: async (parent: any, args: { calculationWeight: iCalculationWeight }) => {
+        if (await CalculationWeight.findOne({ title: args.calculationWeight.title, type: args.calculationWeight.type }) === null) {
+            const calculationWeight = new CalculationWeight({
+                title: args.calculationWeight.title,
+                type: args.calculationWeight.type,
+                rang: args.calculationWeight.rang
             })
-            return weight.save()
-        }
-    }
-}
-export const addCalculationLength = {
-    type: CalculationLengthType,
-    args: {
-        parcelLength: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        rang: {
-            type: new GraphQLNonNull(LegthRangEnum)
+            return calculationWeight.save()
         }
     },
-    async resolve(parent: any, args: any) {
-        if (await CalculationLength.findOne({ parcelLength: args.parcelLength }) === null) {
-            const length = new CalculationLength({
-                parcelLength: args.parcelLength,
-                rang: args.rang
+    addCalculationLength: async (parent: any, args: { calculationLength: iCalculationLength }) => {
+        if (await CalculationLength.findOne({ title: args.calculationLength.title, type: args.calculationLength.type }) === null) {
+            const calculationLength = new CalculationLength({
+                title: args.calculationLength.title,
+                type: args.calculationLength.type,
+                rang: args.calculationLength.rang
             })
-            return length.save()
-        }
-    }
-}
-export const addCalculationPrice = {
-    type: CalculationPriceType,
-    args: {
-        price: {
-            type: new GraphQLNonNull(GraphQLInt)
-        },
-        rang: {
-            type: new GraphQLNonNull(GraphQLInt)
+            return calculationLength.save()
         }
     },
-    async resolve(parent: any, args: any) {
-        if (await CalculationPrice.findOne({ rang: args.rang }) === null) {
+    addCalculationPrice: async (parent: any, args: { calculationPrice: iCalculationPrice }) => {
+        if (await CalculationPrice.findOne({ rang: args.calculationPrice.rang }) === null) {
             const calculationPrice = new CalculationPrice({
-                price: args.price,
-                rang: args.rang
+                price: args.calculationPrice.price,
+                rang: args.calculationPrice.rang
             })
             return calculationPrice.save()
         }
-    }
-}
-
-export const removeCalculationWeight = {
-    type: CalculationWeightType,
-    args: {
-        id: {
-            type: GraphQLID
-        }
     },
-    async resolve(parent: any, args: any) {
+
+    removeCalculationWeight: async (parent: any, args: { id: string }) => {
         return await CalculationWeight.findByIdAndRemove(args.id)
-    }
-}
-export const removeCalculationLength = {
-    type: CalculationLengthType,
-    args: {
-        id: {
-            type: GraphQLID
-        }
     },
-    async resolve(parent: any, args: any) {
+    removeCalculationLength: async (parent: any, args: { id: string }) => {
         return await CalculationLength.findByIdAndRemove(args.id)
-    }
-}
-export const removeCalculationPrice = {
-    type: CalculationPriceType,
-    args: {
-        id: {
-            type: GraphQLID
-        }
     },
-    async resolve(parent: any, args: any) {
+    removeCalculationPrice: async (parent: any, args: { id: string }) => {
         return await CalculationPrice.findByIdAndRemove(args.id)
-    }
-}
+    },
 
-export const updateCalculationWeight = {
-    type: CalculationWeightType,
-    args: {
-        weight: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        rang: {
-            type: WeightRangEnum
-        }
-    },
-    async resolve(parent: any, args: any) {
-        return await CalculationWeight.findOneAndUpdate({ weight: args.weight }, {
+    updateCalculationWeight: async (parent: any, args: { calculationWeight: iCalculationWeight }) => {
+        return await CalculationWeight.findOneAndUpdate({ title: args.calculationWeight.title, type: args.calculationWeight.type }, {
             $set: {
-                weight: args.weight,
-                rang: args.rang
+                title: args.calculationWeight.title,
+                type: args.calculationWeight.type,
+                rang: args.calculationWeight.rang
             }
         }).setOptions({ omitUndefined: true })
-    }
-}
-export const updateCalculationLength = {
-    type: CalculationLengthType,
-    args: {
-        parcelLength: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        rang: {
-            type: LegthRangEnum
-        }
     },
-    async resolve(parent: any, args: any) {
-        return await CalculationLength.findOneAndUpdate({ parcelLength: args.parcelLength }, {
+    updateCalculationLength: async (parent: any, args: { calculationLength: iCalculationLength }) => {
+        return await CalculationLength.findOneAndUpdate({ title: args.calculationLength.title, type: args.calculationLength.type }, {
             $set: {
-                parcelLength: args.parcelLength,
-                rang: args.rang
+                title: args.calculationLength.title,
+                type: args.calculationLength.type,
+                rang: args.calculationLength.rang
             }
         }).setOptions({ omitUndefined: true })
-    }
-}
-export const updateCalculationPrice = {
-    type: CalculationPriceType,
-    args: {
-        price: {
-            type: new GraphQLNonNull(GraphQLInt)
-        },
-        rang: {
-            type: new GraphQLNonNull(GraphQLInt)
-        }
     },
-    async resolve(parent: any, args: any) {
-        return await CalculationPrice.findOneAndUpdate({ price: args.price }, {
+    updateCalculationPrice: async (parent: any, args: { calculationPrice: iCalculationPrice }) => {
+        return await CalculationPrice.findOneAndUpdate({ rang: args.calculationPrice.rang }, {
             $set: {
-                price: args.price,
-                rang: args.rang
+                price: args.calculationPrice.price,
+                rang: args.calculationPrice.rang
             }
         }).setOptions({ omitUndefined: true })
     }

@@ -3,21 +3,23 @@ import { iCalculationLength, iCalculationWeight, iCalculationPrice } from '@/int
 
 export interface CalculationInvertoryData {
     weight: iCalculationWeight[]
-    parcelLength: iCalculationLength[]
+    _length: iCalculationLength[]
     price: iCalculationPrice[]
 }
 
 export const GET_CALCULATION_INVERTORY = gql`
 query{
-	weight:getCalculationWeight {
+    weight:calculationWeight {\
+        title
+        type
         rang
-        weight
     }
-    parcelLength:getCalculationLength {
+    _length:calculationLength {
+        title
+        type
         rang
-        parcelLength
     }
-    price: getCalculationPrice {
+    price: calculationPrice {
         price
         rang
     }

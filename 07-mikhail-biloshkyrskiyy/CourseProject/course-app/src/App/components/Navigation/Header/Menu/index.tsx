@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect, ConnectedProps } from 'react-redux'
 import { useQuery } from '@apollo/react-hooks'
@@ -49,7 +49,7 @@ const Menu: React.FC<iProps & Props> = (props: iProps & Props) => {
         props.setIsOpen(false)
     }
 
-    const { loading, data } = useQuery<MenuInvertoryData, MenuInvertoryVars>(GET_MENU_INVERTORY, { variables: { typeMenu: MenuType.Base } })
+    const { loading, data } = useQuery<MenuInvertoryData, MenuInvertoryVars>(GET_MENU_INVERTORY, { variables: { type: MenuType.Base } })
     props.actionMenu(loading, data?.menu as iMenu[])
     return (
         <Drawer

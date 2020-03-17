@@ -6,16 +6,17 @@ export interface MenuInvertoryData {
 }
 
 export interface MenuInvertoryVars {
-    typeMenu: MenuType;
+    type: MenuType
 }
 
 export const GET_MENU_INVERTORY = gql`
-    query($typeMenu: TypeMenuEnum){
-        menu: getTypeMenu(typeMenu: $typeMenu) {
+    query($type: EnumMenuType!){
+        menu: getTypeMenu(type: $type){
             title
             icon
             path
             availability
+            typeMenu
         }
     }
 `

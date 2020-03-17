@@ -1,96 +1,68 @@
+import { gql } from 'apollo-server'
 import { model } from 'mongoose'
-import {
-    GraphQLObjectType,
-    GraphQLString,
-    GraphQLID,
-    GraphQLNonNull,
-    GraphQLList
-} from 'graphql'
+
+import { iAdvantages } from '@/interfaces/iAdvantages'
 
 import '@/models/advantages'
 const Advantages = model('Advantages')
 
-const AdvantagesType = new GraphQLObjectType({
-    name: 'Advantages',
-    fields: () => ({
-        id: {
-            type: GraphQLID
-        },
-        title: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        icon: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        text: {
-            type: GraphQLString
-        }
-    })
-})
-
-export const getAdvantages = {
-    type: new GraphQLList(AdvantagesType),
-    resolve(parent: any, args: any) {
-        return Advantages.find()
+export const AdvantagesType = gql`
+    type AdvantagesType {
+        id: String,
+        title: String,
+        text: String,
+        icon: String
     }
+
+    input AddAdvantages {
+        id: String,
+        title: String!,
+        text: String!,
+        icon: String!
+    }
+
+    input UpdateAdvantages {
+        id: String,
+        title: String!,
+        text: String,
+        icon: String
+    }
+`
+
+export const TypeDefsQuery = `
+    advantages: [AdvantagesType]
+`
+
+export const TypeDefsMutation = `
+    addAdvantages(advantages: AddAdvantages!): AdvantagesType,
+    removeAdvantages(id: String!): AdvantagesType,
+    updateAdvantages(advantages: UpdateAdvantages!): AdvantagesType
+`
+
+export const Query = {
+    advantages: () => Advantages.find()
 }
 
-export const addAdvantages = {
-    type: AdvantagesType,
-    args: {
-        title: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        icon: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        text: {
-            type: GraphQLString
-        }
-    },
-    async resolve(parent: any, args: any) {
-        if (await Advantages.findOne({ title: args.title }) === null) {
+export const Mutation = {
+    addAdvantages: async (parent: any, args: { advantages: iAdvantages }) => {
+        if (await Advantages.findOne({ title: args.advantages.title }) === null) {
             const advantages = new Advantages({
-                title: args.title,
-                icon: args.icon,
-                text: args.text
+                title: args.advantages.title,
+                text: args.advantages.text,
+                icon: args.advantages.icon
             })
             return advantages.save()
         }
-    }
-}
-
-export const removeAdvantages = {
-    type: AdvantagesType,
-    args: {
-        id: {
-            type: GraphQLID
-        }
     },
-    async resolve(parent: any, args: any) {
+    removeAdvantages: async (parent: any, args: { id: string }) => {
         return await Advantages.findByIdAndRemove(args.id)
-    }
-}
-
-export const updateAdvantages = {
-    type: AdvantagesType,
-    args: {
-        title: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        icon: {
-            type: GraphQLString
-        },
-        text: {
-            type: GraphQLString
-        }
     },
-    async resolve(parent: any, args: any) {
-        return await Advantages.findOneAndUpdate({ title: args.title }, {
+    updateAdvantages: async (parent: any, args: { advantages: iAdvantages }) => {
+        return await Advantages.findOneAndUpdate({ title: args.advantages.title }, {
             $set: {
-                title: args.title,
-                icon: args.icon,
-                text: args.text
+                title: args.advantages.title,
+                text: args.advantages.text,
+                icon: args.advantages.icon
             }
         }).setOptions({ omitUndefined: true })
     }

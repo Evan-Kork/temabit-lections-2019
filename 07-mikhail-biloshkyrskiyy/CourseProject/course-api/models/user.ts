@@ -1,34 +1,34 @@
 import { Schema, model } from 'mongoose'
 
-import { Availability, MenuType } from '@/enum/menu'
+enum AccessibilityType {
+    User = 'User',
+    Moderator = 'Moderator',
+    Administrator = 'Administrator'
+}
 
-const MenuSchema = new Schema({
-    title: {
+const UserSchema = new Schema({
+    login: {
         type: String,
         maxlength: 255,
         minlength: 3,
         required: true
     },
-    icon: {
+    accessibility: {
+        type: AccessibilityType,
+        required: true
+    },
+    password: {
         type: String,
         maxlength: 255,
         minlength: 3,
         required: true
     },
-    path: {
+    email: {
         type: String,
         maxlength: 255,
         minlength: 3,
-        required: true
-    },
-    availability: {
-        type: Availability,
-        required: true
-    },
-    typeMenu: {
-        type: MenuType,
         required: true
     }
 })
 
-model('Menu', MenuSchema)
+model('User', UserSchema)

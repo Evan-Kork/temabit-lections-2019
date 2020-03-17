@@ -1,11 +1,11 @@
 import { Schema, model } from 'mongoose'
 
 const ErrorSchema = new Schema({
-    error: {
+    title: {
         type: String,
         required: true
     },
-    errorInfo: {
+    info: {
         type: String,
         required: true
     },

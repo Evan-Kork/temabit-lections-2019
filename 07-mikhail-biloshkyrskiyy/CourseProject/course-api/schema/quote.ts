@@ -1,85 +1,63 @@
+import { gql } from 'apollo-server'
 import { model } from 'mongoose'
-import {
-    GraphQLObjectType,
-    GraphQLString,
-    GraphQLID,
-    GraphQLNonNull,
-    GraphQLList
-} from 'graphql'
+
+import { iQuote } from '@/interfaces/iQuote'
 
 import '@/models/quote'
 const Quote = model('Quote')
 
-const QuoteType = new GraphQLObjectType({
-    name: 'Quote',
-    fields: () => ({
-        id: {
-            type: GraphQLID
-        },
-        title: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        text: {
-            type: new GraphQLNonNull(GraphQLString)
-        }
-    })
-})
-
-export const getQuote = {
-    type: new GraphQLList(QuoteType),
-    resolve(parent: any, args: any) {
-        return Quote.find()
+export const QuoteType = gql`
+    type QuoteType {
+        id: String,
+        title: String,
+        text: String
     }
+
+    input AddQuote {
+        id: String,
+        title: String!,
+        text: String!
+    }
+
+    input UpdateQuote {
+        id: String,
+        title: String!,
+        text: String
+    }
+`
+
+export const TypeDefsQuery = `
+    quote: [QuoteType]
+`
+
+export const TypeDefsMutation = `
+    addQuote(quote: AddQuote!): QuoteType,
+    removeQuote(id: String!): QuoteType,
+    updateQuote(quote: UpdateQuote!): QuoteType
+`
+
+export const Query = {
+    quote: () => Quote.find()
 }
 
-export const addQuote = {
-    type: QuoteType,
-    args: {
-        title: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        text: {
-            type: new GraphQLNonNull(GraphQLString)
-        }
-    },
-    async resolve(parent: any, args: any) {
-        if (await Quote.findOne({ title: args.title }) === null) {
-            const advantages = new Quote({
-                title: args.title,
-                text: args.text
+export const Mutation = {
+    addQuote: async (parent: any, args: { quote: iQuote }) => {
+        if (await Quote.findOne({ title: args.quote.title }) === null) {
+            const quote = new Quote({
+                title: args.quote.title,
+                text: args.quote.text
             })
-            return advantages.save()
-        }
-    }
-}
-
-export const removeQuote = {
-    type: QuoteType,
-    args: {
-        id: {
-            type: GraphQLID
+            return quote.save()
         }
     },
-    async resolve(parent: any, args: any) {
+    removeQuote: async (parent: any, args: { id: string }) => {
         return await Quote.findByIdAndRemove(args.id)
-    }
-}
-
-export const updateQuote = {
-    type: QuoteType,
-    args: {
-        title: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        text: {
-            type: GraphQLString
-        }
     },
-    async resolve(parent: any, args: any) {
-        return await Quote.findOneAndUpdate({ title: args.title }, {
+    updateQuote: async (parent: any, args: { quote: iQuote }) => {
+        return await Quote.findOneAndUpdate({ title: args.quote.title }, {
             $set: {
-                title: args.title,
-                text: args.text
+                title: args.quote.title,
+                text: args.quote.text
             }
         }).setOptions({ omitUndefined: true })
     }

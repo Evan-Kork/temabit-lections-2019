@@ -1,18 +1,10 @@
-import { GraphQLEnumType } from 'graphql'
+export enum Availability {
+    NoRegistrations = 'NoRegistrations',
+    Registrations = 'Registrations'
+}
 
-export const AvailabilityEnum = new GraphQLEnumType({
-    name: 'AvailabilityEnum',
-    values: {
-        NoRegistrations: { value: 'NoRegistrations' },
-        Registrations: { value: 'Registrations' },
-    }
-})
-
-export const MenuEnum = new GraphQLEnumType({
-    name: 'TypeMenuEnum',
-    values: {
-        Base: { value: 'Base' },
-        Declaration: { value: 'Declaration' },
-        Office: { value: 'Office' }
-    }
-})
+export enum MenuType {
+    Base = 'Base',
+    Declaration = 'Declaration',
+    Office = 'Office'
+}

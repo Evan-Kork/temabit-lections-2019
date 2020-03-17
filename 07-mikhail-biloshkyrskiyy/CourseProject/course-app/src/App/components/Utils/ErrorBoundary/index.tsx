@@ -12,7 +12,7 @@ import Paper from '@/components/Utils/Paper'
 // what parameters are in the component
 interface iPropsErrorBoundary {
     children: React.ReactNode
-    error: string
+    title: string
     info: string
     date: string
 }
@@ -21,12 +21,14 @@ const ErrorBoundary: React.FC<iPropsErrorBoundary> = (props: iPropsErrorBoundary
     const [addError] = useMutation<iErrorInvertory>(ADD_ERROR_INVERTORY)
 
     useEffect(() => {
-        if (props.error !== '') {
+        if (props.title !== '') {
             addError({
                 variables: {
-                    error: props.error,
-                    errorInfo: props.info,
-                    date: props.date
+                    "error": {
+                        title: props.title,
+                        info: props.info,
+                        date: props.date
+                    }
                 }
             })
         }
@@ -47,7 +49,7 @@ export default class СomponentDidCatch extends React.Component<iPropsСomponent
     constructor(props: any) {
         super(props);
         this.state = {
-            error: '',
+            title: '',
             info: '',
             date: '',
             hasError: false
@@ -56,7 +58,7 @@ export default class СomponentDidCatch extends React.Component<iPropsСomponent
 
     static getDerivedStateFromError(error: Error) {
         return {
-            error: error.message,
+            title: error.message,
             info: error.stack,
             date: format(new Date, 'ss-mm-kk dd-MM-yyyy'),
             hasError: true
@@ -65,10 +67,10 @@ export default class СomponentDidCatch extends React.Component<iPropsСomponent
 
     render() {
         //@ts-ignore
-        const { error, info, date, hasError } = this.state
+        const { title, info, date, hasError } = this.state
 
         if (hasError) {
-            return <ErrorBoundary error={error} info={info} date={date}>
+            return <ErrorBoundary title={title} info={info} date={date}>
                 <Paper
                     title="Uhoh!Server error, 500!!!! Please contact the administrator to continue."
                     supTitle="At this point, we're doing everything we can to resolve this issue."

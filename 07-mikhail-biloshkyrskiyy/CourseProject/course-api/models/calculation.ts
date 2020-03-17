@@ -15,30 +15,34 @@ enum LegthRang {
     'Long' = 3,
 }
 const CalculationWeightSchema = new Schema({
-    weight: {
+    title: {
         type: String,
         maxlength: 255,
         minlength: 2,
         required: true
     },
-    rang: {
+    type: {
         type: WeightRang,
-        maxlength: 255,
-        minlength: 2,
+        required: true
+    },
+    rang: {
+        type: Number,
         required: true
     }
 })
 const CalculationLengthSchema = new Schema({
-    parcelLength: {
+    title: {
         type: String,
         maxlength: 255,
         minlength: 2,
         required: true
     },
-    rang: {
+    type: {
         type: LegthRang,
-        maxlength: 255,
-        minlength: 2,
+        required: true
+    },
+    rang: {
+        type: Number,
         required: true
     }
 })

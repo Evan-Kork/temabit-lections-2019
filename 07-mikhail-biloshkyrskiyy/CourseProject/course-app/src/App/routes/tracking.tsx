@@ -2,7 +2,8 @@ import React, { lazy, Suspense } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
-const Layout = lazy(() => import('@/containers/Layout'))
+import Layout from '@/containers/Layout'
+
 const Tracking = lazy(() => import('@/components/Content/Tracking'))
 const TrackingHistory = lazy(() => import('@/components/Content/TrackingHistory'))
 

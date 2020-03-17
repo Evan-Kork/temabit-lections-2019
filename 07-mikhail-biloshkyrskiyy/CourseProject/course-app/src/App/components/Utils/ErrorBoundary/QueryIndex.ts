@@ -1,17 +1,16 @@
 import gql from 'graphql-tag'
 
 export interface iErrorInvertory {
-    error: string
-    errorInfo: string
+    title: string
+    info: string
     date: string
 }
 
 export const ADD_ERROR_INVERTORY = gql`
-    mutation($error: String!, $errorInfo: String!, $date: String!){
-        addError(error: $error, errorInfo: $errorInfo, date: $date) {
-            id
-            error
-            errorInfo
+    mutation($error: AddError!){
+        addError(error: $error){
+            title
+            info
             date
         }
     }

@@ -1,12 +1,12 @@
 import express from 'express'
-import graphql from 'express-graphql'
 import cors from 'cors'
 import logger from 'morgan'
 import mongoose from 'mongoose'
 import session from 'express-session'
+import { ApolloServer } from 'apollo-server'
 import passport from 'passport'
 
-import passportMiddleware from '@/middleware/passport'
+import passwordMiddleware from '@/middleware/passport'
 import keys from '@/config/keys'
 
 // IMPORT ROUTES
@@ -17,7 +17,7 @@ import localitiesRouter from '@/routes/localities'
 import servicesRouter from '@/routes/services'
 
 // IMPORT GRAPHQL
-import schema from '@/schema'
+import { typeDefs, resolvers } from '@/schema'
 
 const app = express()
 const MongoStore = require('connect-mongodb-session')(session)
@@ -53,12 +53,8 @@ app.use(session({
     store
 }))
 app.use(logger('dev'))
-passportMiddleware(passport)
+passwordMiddleware(passport)
 
-app.use('/graphql', graphql({
-    schema,
-    graphiql: true
-}))
 // ROUTER
 app.use('/api/', indexRouter)
 app.use('/api/branches', branchesRouter)
@@ -67,7 +63,14 @@ app.use('/api/localities', localitiesRouter)
 app.use('/api/services', servicesRouter)
 
 // LISTEN PORT
-const PORT = process.env.PORT || 5000
-app.listen(PORT, () => {
-    console.log(`App lisening o ${PORT}`)
+const PORT_REST_API = process.env.PORT || 5000
+const PORT_GRAPHQL = process.env.PORT || 4000
+
+const server = new ApolloServer({ typeDefs, resolvers })
+
+app.listen(PORT_REST_API, () => {
+    console.log(`Rest api lisening o ${PORT_REST_API}`)
+})
+server.listen(PORT_GRAPHQL).then(({ url }) => {
+    console.log(`GraphQL ready at ${url}`);
 })

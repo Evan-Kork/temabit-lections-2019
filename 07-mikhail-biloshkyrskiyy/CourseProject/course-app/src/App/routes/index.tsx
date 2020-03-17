@@ -7,6 +7,7 @@ import Layout from '@/containers/Layout'
 const Content = lazy(() => import('@/components/Content/Layout'))
 const About = lazy(() => import('@/components/Content/About'))
 const Calculator = lazy(() => import('@/components/Content/Calculator'))
+const Tariffs = lazy(() => import('@/components/Content/Tariffs'))
 
 const ErrorBoundary = lazy(() => import('@/components/Utils/ErrorBoundary'))
 const Paper = lazy(() => import('@/components/Utils/Paper'))
@@ -42,6 +43,15 @@ export default (
                     <Suspense fallback={<CircularProgress color="secondary" />}>
                         <ErrorBoundary>
                             <Calculator />
+                        </ErrorBoundary>
+                    </Suspense >
+                </Layout>
+            </Route>
+            <Route path='/tariffs'>
+                <Layout>
+                    <Suspense fallback={<CircularProgress color="secondary" />}>
+                        <ErrorBoundary>
+                            <Tariffs />
                         </ErrorBoundary>
                     </Suspense >
                 </Layout>

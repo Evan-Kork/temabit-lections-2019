@@ -51,7 +51,7 @@ type Props = PropsFromRedux
 
 const Localities: React.FC<Props> = (props: Props) => {
     const makeClasses = useStyles()
-    const { loading, data } = useQuery<MenuInvertoryData, MenuInvertoryVars>(GET_MENU_INVERTORY, { variables: { typeMenu: MenuType.Office } })
+    const { loading, data } = useQuery<MenuInvertoryData, MenuInvertoryVars>(GET_MENU_INVERTORY, { variables: { type: MenuType.Office } })
     props.actionMenuBranch(loading, data?.menu as iMenu[])
     const heightContext = useContext(HeightLayout)
     useEffect(() => {

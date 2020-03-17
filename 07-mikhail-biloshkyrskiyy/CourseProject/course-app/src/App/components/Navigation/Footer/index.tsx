@@ -70,7 +70,7 @@ function itemLink(value: iMenu, key: number) {
 }
 
 const Footer: React.FC<Props> = (props: Props) => {
-    const { loading, data } = useQuery<MenuInvertoryData, MenuInvertoryVars>(GET_MENU_INVERTORY, { variables: { typeMenu: MenuType.Base }})
+    const { loading, data } = useQuery<MenuInvertoryData, MenuInvertoryVars>(GET_MENU_INVERTORY, { variables: { type: MenuType.Base }})
     props.actionMenu(loading, data?.menu as iMenu[])
 
     return (

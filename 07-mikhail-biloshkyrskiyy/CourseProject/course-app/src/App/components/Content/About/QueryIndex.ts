@@ -14,25 +14,21 @@ export interface AboutInvertoryData {
 
 export const GET_DATA_INVERTORY = gql`
     query{
-        advantages: getAdvantages {
-            id
+        advantages {
             title
             icon
             text
         }
-        command: getCommand {
-            id
+        command {
             title
             position
             img
         }
-        quote: getQuote {
-            id
+        quote {
             title
             text
         }
-        sponsor: getSponsor {
-            id
+        sponsor {
             title
             logotype
             text

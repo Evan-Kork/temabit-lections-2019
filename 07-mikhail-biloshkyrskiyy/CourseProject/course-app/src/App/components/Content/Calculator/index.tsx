@@ -56,8 +56,8 @@ type Props = PropsFromRedux
 const initialValues = {
     start: '',
     end: '',
-    weight: WeightRang.L,
-    parcelLength: LegthRang.Short
+    weight: WeightRang.XS,
+    _length: LegthRang.Short
 }
 interface iCalculator {
     name: string
@@ -123,7 +123,7 @@ const GetTextFieldWeigth = (value: iCalculator, weight: iCalculationWeight[], ke
                 >
                     {weight.map((option: iCalculationWeight) => (
                         <MenuItem key={option.rang} value={option.rang}>
-                            {option.weight}
+                            {option.title}
                         </MenuItem>
                     ))}
                 </TextField>)} />
@@ -140,23 +140,26 @@ const GetTextFieldLength = (value: iCalculator, parcelLength: iCalculationLength
                     name={value.name}
                     onChange={field.onChange}
                     helperText={value.helperText}
-                    value={field.value.parcelLength}
+                    value={field.value._length}
                     variant="outlined"
                 >
                     {parcelLength.map((option: iCalculationLength) => (
                         <MenuItem key={option.rang} value={option.rang}>
-                            {option.parcelLength}
+                            {option.title}
                         </MenuItem>
                     ))}
                 </TextField>)} />
         </Col>
     )
 }
-const GetPrice = (weight: WeightRang, parcelLength: LegthRang, price: iCalculationPrice[]) => {
-    for (let i = 0; i < price.length - 1; i++) {
-        //@ts-ignore
-        if (price[i].rang < WeightRang[weight] * LegthRang[parcelLength] && price[i + 1].rang > WeightRang[weight] * LegthRang[parcelLength]) {
-            return price[i].price
+const GetPrice = (WeightRang: number, LegthRang: number, price: iCalculationPrice[]) => {
+    if (price[0].rang > WeightRang * LegthRang) {
+        return price[0].price
+    } else {
+        for (let i = 0; i < price.length - 1; i++) {
+            if  (WeightRang * LegthRang <= price[i].rang) {
+                return price[i].price
+            }
         }
     }
 
@@ -169,13 +172,13 @@ const Calculator: React.FC<Props> = (props: Props) => {
     const [price, setPrice] = useState(0)
 
     props.actionCalculationWeight(loading, data?.weight as iCalculationWeight[])
-    props.actionCalculationLength(loading, data?.parcelLength as iCalculationLength[])
+    props.actionCalculationLength(loading, data?._length as iCalculationLength[])
 
     const label: iCalculator[] = [
         { name: 'start', label: 'Choose a city', helperText: 'Please select your a city' },
         { name: 'end', label: 'Choose a city', helperText: 'Please select your a city' },
         { name: 'weight', label: 'Choose a weight', helperText: 'Please select your a weight' },
-        { name: 'parcelLength', label: 'Choose a length', helperText: 'Please select your a legth' }
+        { name: '_length', label: 'Choose a length', helperText: 'Please select your a legth' }
     ]
 
     useEffect(() => {
@@ -201,7 +204,7 @@ const Calculator: React.FC<Props> = (props: Props) => {
                         <div className={classes.title}>Сalculate the cost</div>
                     </Box>
                     <Formik initialValues={initialValues} onSubmit={(values) => {
-                        data?.price && setPrice(GetPrice(values.weight, values.parcelLength, data?.price))
+                        data?.price && setPrice(GetPrice(values.weight, values._length, data?.price))
                     }} render={() => (<Form className={makeClasses.root}>
                         <Row>
                             {props.localities && label.map((value: iCalculator, index: number) => {
@@ -211,8 +214,8 @@ const Calculator: React.FC<Props> = (props: Props) => {
                                     return GetTextFieldLocalitiesEnd(value, Object.values(props.localities), index)
                                 } else if (value.name === 'weight') {
                                     return data?.weight && GetTextFieldWeigth(value, data?.weight, index)
-                                } else if (value.name === 'parcelLength') {
-                                    return data?.parcelLength && GetTextFieldLength(value, data?.parcelLength, index)
+                                } else if (value.name === '_length') {
+                                    return data?._length && GetTextFieldLength(value, data?._length, index)
                                 }
                             })}
                         </Row>

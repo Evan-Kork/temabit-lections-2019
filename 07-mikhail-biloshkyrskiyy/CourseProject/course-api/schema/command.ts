@@ -1,96 +1,68 @@
+import { gql } from 'apollo-server'
 import { model } from 'mongoose'
-import {
-    GraphQLObjectType,
-    GraphQLString,
-    GraphQLID,
-    GraphQLNonNull,
-    GraphQLList
-} from 'graphql'
+
+import { iCommand } from '@/interfaces/iCommand'
 
 import '@/models/command'
 const Command = model('Command')
 
-const CommandType = new GraphQLObjectType({
-    name: 'Command',
-    fields: () => ({
-        id: {
-            type: GraphQLID
-        },
-        title: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        position: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        img: {
-            type: new GraphQLNonNull(GraphQLString)
-        }
-    })
-})
-
-export const getCommand = {
-    type: new GraphQLList(CommandType),
-    resolve(parent: any, args: any) {
-        return Command.find()
+export const CommandType = gql`
+    type CommandType {
+        id: String,
+        title: String,
+        position: String,
+        img: String
     }
+
+    input AddCommand {
+        id: String,
+        title: String!,
+        position: String!,
+        img: String!
+    }
+
+    input UpdateCommand {
+        id: String,
+        title: String!,
+        position: String,
+        img: String
+    }
+`
+
+export const TypeDefsQuery = `
+    command: [CommandType]
+`
+
+export const TypeDefsMutation = `
+    addCommand(command: AddCommand!): CommandType,
+    removeCommand(id: String!): CommandType,
+    updateCommand(command: UpdateCommand!): CommandType
+`
+
+export const Query = {
+    command: () => Command.find()
 }
 
-export const addCommand = {
-    type: CommandType,
-    args: {
-        title: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        position: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        img: {
-            type: new GraphQLNonNull(GraphQLString)
-        }
-    },
-    async resolve(parent: any, args: any) {
-        if (await Command.findOne({ title: args.title }) === null) {
-            const advantages = new Command({
-                title: args.title,
-                position: args.position,
-                img: args.img
+export const Mutation = {
+    addCommand: async (parent: any, args: { command: iCommand }) => {
+        if (await Command.findOne({ title: args.command.title }) === null) {
+            const command = new Command({
+                title: args.command.title,
+                position: args.command.position,
+                img: args.command.img
             })
-            return advantages.save()
-        }
-    }
-}
-
-export const removeCommand = {
-    type: CommandType,
-    args: {
-        id: {
-            type: GraphQLID
+            return command.save()
         }
     },
-    async resolve(parent: any, args: any) {
+    removeCommand: async (parent: any, args: { id: string }) => {
         return await Command.findByIdAndRemove(args.id)
-    }
-}
-
-export const updateCommand = {
-    type: CommandType,
-    args: {
-        title: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        position: {
-            type: GraphQLString
-        },
-        img: {
-            type: GraphQLString
-        }
     },
-    async resolve(parent: any, args: any) {
-        return await Command.findOneAndUpdate({ title: args.title }, {
+    updateCommand: async (parent: any, args: { command: iCommand }) => {
+        return await Command.findOneAndUpdate({ title: args.command.title }, {
             $set: {
-                title: args.title,
-                position: args.position,
-                img: args.img
+                title: args.command.title,
+                position: args.command.position,
+                img: args.command.img
             }
         }).setOptions({ omitUndefined: true })
     }

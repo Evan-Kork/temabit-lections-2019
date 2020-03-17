@@ -1,10 +1,12 @@
 export interface iCalculationWeight {
-    weight: string
-    rang: WeightRang
+    title: String
+    type: WeightRang
+    rang: number
 }
 export interface iCalculationLength {
-    parcelLength: string
-    rang: LegthRang
+    title: string
+    type: LegthRang
+    rang: number
 }
 export interface iCalculationPrice {
     price: number

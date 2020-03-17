@@ -1,108 +1,133 @@
-import {
-    GraphQLSchema,
-    GraphQLObjectType
-} from 'graphql'
+import { gql } from 'apollo-server'
 
 import {
-    getTypeMenu,
-    getMenu,
-    addMenu,
-    removeMenu,
-    updateMenu
+    MenuType,
+    TypeDefsQuery as TypeDefsQueryMenu,
+    TypeDefsMutation as TypeDefsMutationMenu,
+    Query as QueryMenu,
+    Mutation as MutationMenu
 } from '@/schema/menu'
 import {
-    getAdvantages,
-    addAdvantages,
-    removeAdvantages,
-    updateAdvantages
-} from '@/schema/advantages'
-import {
-    getSponsor,
-    addSponsor,
-    removeSponsor,
-    updateSponsor
-} from '@/schema/sponsor'
-import {
-    getCommand,
-    addCommand,
-    removeCommand,
-    updateCommand
-} from '@/schema/command'
-import {
-    getQuote,
-    addQuote,
-    removeQuote,
-    updateQuote
+    QuoteType,
+    TypeDefsQuery as TypeDefsQueryQuote,
+    TypeDefsMutation as TypeDefsMutationQuote,
+    Query as QueryQuote,
+    Mutation as MutationQuote
 } from '@/schema/quote'
 import {
-    getCalculationLength,
-    addCalculationLength,
-    removeCalculationLength,
-    updateCalculationLength,
-    getCalculationWeight,
-    addCalculationWeight,
-    removeCalculationWeight,
-    updateCalculationWeight,
-    getCalculationPrice,
-    addCalculationPrice,
-    removeCalculationPrice,
-    updateCalculationPrice,
-    getTypeCalculationPrice
+    AdvantagesType,
+    TypeDefsQuery as TypeDefsQueryAdvantages,
+    TypeDefsMutation as TypeDefsMutationAdvantages,
+    Query as QueryAdvantages,
+    Mutation as MutationAdvantages
+} from '@/schema/advantages'
+import {
+    SponsorType,
+    TypeDefsQuery as TypeDefsQuerySponsor,
+    TypeDefsMutation as TypeDefsMutationSponsor,
+    Query as QuerySponsor,
+    Mutation as MutationSponsor
+} from '@/schema/sponsor'
+import {
+    ArticleType,
+    TypeDefsQuery as TypeDefsQueryArticle,
+    TypeDefsMutation as TypeDefsMutationArticle,
+    Query as QueryArticle,
+    Mutation as MutationArticle
+} from '@/schema/article'
+import {
+    CalculationType,
+    TypeDefsQuery as TypeDefsQueryCalculation,
+    TypeDefsMutation as TypeDefsMutationCalculation,
+    Query as QueryCalculation,
+    Mutation as MutationCalculation
 } from '@/schema/calculation'
 import {
-    getError,
-    addError
+    CommandType,
+    TypeDefsQuery as TypeDefsQueryCommand,
+    TypeDefsMutation as TypeDefsMutationCommand,
+    Query as QueryCommand,
+    Mutation as MutationCommand
+} from '@/schema/command'
+import {
+    ErrorType,
+    TypeDefsQuery as TypeDefsQueryError,
+    TypeDefsMutation as TypeDefsMutationError,
+    Query as QueryError,
+    Mutation as MutationError
 } from '@/schema/error'
+import {
+    UserType,
+    TypeDefsQuery as TypeDefsQueryUser,
+    TypeDefsMutation as TypeDefsMutationUser,
+    Query as QueryUser,
+    Mutation as MutationUser
+} from '@/schema/user'
 
-export const Query = new GraphQLObjectType({
-    name: 'Query',
-    fields: {
-        getTypeMenu,
-        getMenu,
-        getAdvantages,
-        getSponsor,
-        getCommand,
-        getQuote,
-        getCalculationLength,
-        getCalculationWeight,
-        getCalculationPrice,
-        getTypeCalculationPrice,
-        getError
+const TypeDefs = gql`
+    ${MenuType}
+    ${QuoteType}
+    ${AdvantagesType}
+    ${SponsorType}
+    ${ArticleType}
+    ${CalculationType}
+    ${CommandType}
+    ${ErrorType}
+    ${UserType}
+
+    type Query {
+        ${TypeDefsQueryMenu}
+        ${TypeDefsQueryQuote}
+        ${TypeDefsQueryAdvantages}
+        ${TypeDefsQuerySponsor}
+        ${TypeDefsQueryArticle}
+        ${TypeDefsQueryCalculation}
+        ${TypeDefsQueryCommand}
+        ${TypeDefsQueryError}
+        ${TypeDefsQueryUser}
     }
-})
 
-export const Mutation = new GraphQLObjectType({
-    name: 'Mutation',
-    fields: {
-        addMenu,
-        removeMenu,
-        updateMenu,
-        addAdvantages,
-        removeAdvantages,
-        updateAdvantages,
-        addSponsor,
-        removeSponsor,
-        updateSponsor,
-        addCommand,
-        removeCommand,
-        updateCommand,
-        addQuote,
-        removeQuote,
-        updateQuote,
-        addCalculationLength,
-        removeCalculationLength,
-        addCalculationWeight,
-        updateCalculationLength,
-        updateCalculationWeight,
-        removeCalculationWeight,
-        addCalculationPrice,
-        removeCalculationPrice,
-        updateCalculationPrice,
-        addError
+    type Mutation {
+        ${TypeDefsMutationMenu}
+        ${TypeDefsMutationQuote}
+        ${TypeDefsMutationAdvantages}
+        ${TypeDefsMutationSponsor}
+        ${TypeDefsMutationArticle}
+        ${TypeDefsMutationCalculation}
+        ${TypeDefsMutationCommand}
+        ${TypeDefsMutationError}
+        ${TypeDefsMutationUser}
     }
-})
+`
 
-export default new GraphQLSchema({
-    query: Query,
-    mutation: Mutation
-})
+const Resolvers = {
+    Query: {
+        ...QueryMenu,
+        ...QueryQuote,
+        ...QueryAdvantages,
+        ...QuerySponsor,
+        ...QueryArticle,
+        ...QueryCalculation,
+        ...QueryCommand,
+        ...QueryError,
+        ...QueryUser
+    },
+    Mutation: {
+        ...MutationMenu,
+        ...MutationQuote,
+        ...MutationAdvantages,
+        ...MutationSponsor,
+        ...MutationArticle,
+        ...MutationCalculation,
+        ...MutationCommand,
+        ...MutationError,
+        ...MutationUser
+    }
+}
+
+export const typeDefs = {
+    ...TypeDefs
+}
+export const resolvers = {
+    ...Resolvers
+}
