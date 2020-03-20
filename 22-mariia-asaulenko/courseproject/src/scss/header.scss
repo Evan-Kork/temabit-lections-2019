@@ -1,0 +1,44 @@
+.header {
+    background-color: #164CE2;
+    color: #fff;
+    padding: 25px 0;
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    svg {
+        color: #fff;
+    }
+    .menu-item {
+        align-items: center;
+        display: flex;
+    };
+    .group-btn {
+        margin: 0 auto;
+    }
+    .contact {
+        font-size: 18px;
+        color: #fff;
+        white-space: nowrap;
+
+    }
+    .contact:hover {
+        text-decoration: none;
+    }
+    .burger-btn {
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .tracking {
+        background-color: #164CE2;
+        border: 1px solid #fff;
+        color: #fff;
+    }
+    ::placeholder {
+        color: #fff;
+        font-style: italic;
+        font-size: 12px;
+        text-align: center;
+    }
+}
