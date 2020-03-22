@@ -4,15 +4,14 @@ import { Link } from 'react-router-dom';
 
 import Head from './header'
 import Footer from './footer'
-import Menu from './menu'
 
 
-function IndexFile() {
+class IndexFile extends React.Component {
 
+    render(){
     return (
         <div className="main row">
         <Head/>
-        <Menu/>
 
     <div>
         <div id="carouselExampleIndicators" className="carousel slide carousel-main" data-ride="carousel">
@@ -46,7 +45,7 @@ function IndexFile() {
         <div className="col-2"></div>
         <div className="col-3 row find">
             <div className="col-4"></div>
-            <img className="point-img col-4" src="point.png" />
+            <img className="point-img col-4" src="point.png" alt="img" />
             <div className="col-4"></div>
             <div className="col-4"></div>
             <div className="line col-4"></div>
@@ -57,7 +56,7 @@ function IndexFile() {
         <div className="col-1"></div>
         <div className="col-3 row find">
             <div className="col-4"></div>
-            <img className="point-img col-4" src="call.png" />
+            <img className="point-img col-4" src="call.png" alt="img" />
             <div className="col-4"></div>
             <div className="col-4"></div>
             <div className="line col-4"></div>
@@ -96,7 +95,7 @@ function IndexFile() {
     </div>
     <Footer/>
 </div>
-    )
+    )}
 };
 
 export default IndexFile

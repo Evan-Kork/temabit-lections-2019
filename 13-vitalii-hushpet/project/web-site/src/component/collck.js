@@ -1,21 +1,50 @@
 import React from 'react';
 import Head from './header'
 import Footer from './footer'
-import Menu from './menu'
 import OptGen from './option_gen'
-function Callck() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:9998/?url=http://openapi.justin.ua/localities', false);
-    xhr.send();
-    var json = JSON.parse(xhr.responseText);
-    var arrayLocation= json.result
+var json;
+class Callck extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { selectStart:"",selectFinish:"",selectWeight:"",selectLegth:"",shouldShowElem:false}
+        this.handleChange = this.handleChange.bind(this);
+        this.onClick = this.onClick.bind(this);
+    }
+    handleChange(event) {
+        switch (event.target.id) {
+            case "selectStart":
+                this.setState({ selectStart: event.target.value });
+            break;
+            case "selectFinish":
+                this.setState({ selectFinish: event.target.value });
+            break;
+            case "selectWeight":
+                this.setState({ selectWeight: event.target.value });
+            break;
+            case "selectLegth":
+                this.setState({ selectLegth: event.target.value });
+            break;
+            default :
+            break;
+        }
+    };
+    onClick(){
+        if(this.state.selectStart === "" || this.state.selectFinish === "" || this.state.selectWeight ==="" || this.state.selectLegth===""){
+            this.setState({ shouldShowElem: false});
+        }else{
+            this.setState({ shouldShowElem: true});
+        }
+    }
 
-return (
+    UNSAFE_componentWillMount() {
+        json = apiResponse();
+    }
+    render() {
+        return (
 
-<div className="main row w-100">
+            <div className="main row w-100">
 
     <Head />
-    <Menu />
     <div className="callck row w-100">
         <div className="col-5"></div>
         <div className="col-2 tracking">Колькулятор</div>
@@ -25,10 +54,10 @@ return (
     <div className="row w-100 ">
         <div className="col-2"></div>
         <div className="col-3">
-            <select className="selects" id="select-start">
+            <select className="selects" value={this.state.value} onChange={this.handleChange} id="selectStart">
                 <option value="">Оберіт Місто</option>
             {
-               arrayLocation.map(todo=>{
+               json.result.map(todo=>{
                return <OptGen todo={todo} key={todo.uuid}/>
                }) 
             }
@@ -36,10 +65,10 @@ return (
         </div>
         <div className="col-1"></div>
         <div className="col-3">            
-            <select className="selects" id="select-finish">
+            <select className="selects" value={this.state.value} onChange={this.handleChange} id="selectFinish">
                 <option value="">Оберіт Місто</option>
             {
-               arrayLocation.map(todo=>{
+               json.result.map(todo=>{
                return <OptGen todo={todo} key={todo.uuid}/>
                }) 
             }
@@ -51,7 +80,7 @@ return (
         <div className="w-100"> &nbsp;</div>
         <div className="col-2"></div>
         <div className="col-3">
-            <select className="selects" id="select-weight">
+            <select className="selects" value={this.state.value} onChange={this.handleChange} id="selectWeight">
                 <option value="">Оберіт вагу</option>
                 <option value="1">До 1 Кг</option>
                 <option value="10">До 10 Кг</option>
@@ -61,7 +90,7 @@ return (
         </div>
         <div className="col-1"></div>
         <div className="col-3">            
-            <select className="selects" id="select-legth">
+            <select className="selects" value={this.state.value} onChange={this.handleChange} id="selectLegth">
                 <option value="">Оберіт розрір</option>
                 <option value="30">До 30 см</option>
                 <option value="60">До 60 см</option>
@@ -71,19 +100,40 @@ return (
         <div className="col-3"></div>
     </div>
     <div className="col-12 callck-btn">
-        <button type="button" onClick={onClick} className="btn btn-outline-success">Розрахувати</button>
+        <button type="button" onClick={this.onClick} className="btn btn-outline-success">Розрахувати</button>
     </div>
-    <div className="col-12" id="res"></div>
+
+    <div className="col-12" id="res">
+        {this.state.shouldShowElem &&
+            <div className="elem">За обраними Вами характеристиками вартість доставки буде складати: { Math.floor(Math.random() * 1000) } гривень"</div>
+        }
+    </div>
     <Footer/>
 </div>
-)
+        )
+    }
 }
-function onClick() {
-    if (document.getElementById("select-legth").value !== ""&&document.getElementById("select-weight").value !== ""&&document.getElementById("select-start").value !== ""&&document.getElementById("select-finish").value !== ""){ 
-        document.getElementById("res").innerText ="За обраними Вами характеристиками вартість доставки буде складати: "+ Math.floor(Math.random()*1000) + " гривень"
-    }
-    else{
-        document.getElementById("res").innerText = "Поля для кого робив вибирай давай"        
-    }
-} 
 export default Callck
+
+
+function apiResponse() {
+    var tempjson = { result: [{ title_ua: "Помилка запиту" }] }
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:9998/?url=http://openapi.justin.ua/localities/', false);
+    xhr.send();
+    if (xhr.status !== 200) {
+        return tempjson;
+    } else {
+        try {
+            var json = JSON.parse(xhr.responseText);
+            if (!json.result) {
+                return tempjson;
+            } else {
+                return json;
+            }
+        } catch (e) {
+            return tempjson;
+        }
+
+    }
+}

@@ -2,13 +2,11 @@ import React from "react";
 import Head from './header'
 import Footer from './footer'
 import Search from './searchforfinder'
-import Menu from './menu'
 function LocatorBranches() {
 return (
 <div className="main row">
 
     <Head />
-    <Menu/>
     <div className="w-100 row main-locator-branches">
             <div className="col-5"></div>
         <div className="col-2 tracking">Найближче віділення</div>

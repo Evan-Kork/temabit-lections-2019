@@ -1,15 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 function Menu() {
-    function menuClose() {
-        document.getElementById("menu").style.display="none";
-    }
 return (
 <div id="menu" className="menu">
     <div className="row">
-        <div className="col-1"></div>
-        <button onClick={menuClose} className="exit-menu col-2">X</button>
-        <div className="col-9"></div>
+        <div className="col-4"></div>
+        <div className="col-4 menu-head">Меню</div>
+        <div className="col-4"></div>
     </div>
     <div className="row w-100">
         <div className="col-2"></div>

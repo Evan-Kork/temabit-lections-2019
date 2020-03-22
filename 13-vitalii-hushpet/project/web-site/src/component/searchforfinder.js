@@ -6,11 +6,7 @@ function Search(text) {
     const history = useHistory();
     const { handleSubmit, register, errors } = useForm();
     const onSubmit = values => {
-        console.log(values);
-        var i = text.text;
-        console.log(i)
         history.push("/"+text.text+":" + values.search);
-
     };
     return (
         <nav className=" navbar-light bg-light">
