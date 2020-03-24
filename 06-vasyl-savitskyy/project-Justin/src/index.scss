@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+    
+body {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: .05em;
+    line-height: 1.5;
+    
+    #root {
+        .c-pointer { cursor: pointer; }
+        .w-max-c { width: max-content; }
+
+        //------ ui start -----------
+        .modal_justin {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            overflow: auto;
+        }
+
+        .pagination-container {
+            .disabled {
+                cursor: no-drop;
+            }
+        }
+
+        .page_head_separator {
+            .separatpr_content {
+                background: #b8d8fe;
+                min-width: 300px;
+                height: 4px;
+            } 
+        }
+        //------ ui end -----------
+        
+        .__link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: .05em;
+            line-height: 1.5;
+            
+            &:hover {
+                color: #6afffd;
+            }
+        }
+
+        .btn-justin {
+            color: #164ce2;
+            background-color: #4effff;
+            border-color: #4effff;
+
+            &:hover {
+                background-color: #17a2b8;
+                border-color: #17a2b8;
+            }
+        }
+
+        .table_block {
+            overflow: auto;
+            .branches_table {
+                th, td {
+                    padding-left: 0.5rem;
+                    padding-right: 0.5rem;
+                }
+                tbody {
+                    font-size: 14px;
+                    
+                    .active_item {
+                        &:hover {
+                            background-color: #164ce2;
+                            color: #fff;
+                        }
+                    }
+                }
+    
+                .column_1 {min-width: 80px;}
+                .column_2 {min-width: 270px;}
+                .column_3 {min-width: 279px;}
+                .column_4 {min-width: 97px;}
+                .column_5 {min-width: 160px;}
+            }
+        }
+    }
+}

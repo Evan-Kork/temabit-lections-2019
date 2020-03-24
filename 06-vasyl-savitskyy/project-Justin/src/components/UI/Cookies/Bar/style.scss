@@ -1,0 +1,19 @@
+#root {
+    .cookies_bar {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        position: fixed;
+        background-color: #464646;
+        color: #ddd;
+    }
+
+    .btn_accept_cookies {
+        background-color: #333;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        font-weight: 400;
+        font-size: 12px;
+    }
+}

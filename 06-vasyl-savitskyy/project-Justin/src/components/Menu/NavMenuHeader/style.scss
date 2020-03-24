@@ -1,0 +1,55 @@
+#root {
+    .site_header {
+        .nav_menu_header {
+            display: none;
+            position: absolute;
+            top: 0;
+            position: fixed;
+            width: 350px;
+            min-width: 350px;
+            height: 100vh;
+            background-color: #d5e6fa;
+            color: #164ce2;
+            z-index: 2000;
+            box-shadow:4px 0px 20px 0px rgba(0,0,0, 0.5);
+            -moz-box-shadow:4px 0px 20px 0px rgba(0,0,0, 0.5);
+            -webkit-box-shadow:4px 0px 20px 0px rgba(0,0,0, 0.5);
+
+            @media screen and (min-width: 768px) {
+                right: 0px;
+            }
+
+            @media screen and (max-width: 768px) {
+                left: 0px;
+            }
+
+            span[type="button"] {
+                font-size: 37px;
+            }
+
+            nav {
+                .__link {
+                    color: #164ce2;
+
+                    &:hover {
+                        background-color: #6afffd;
+                    }
+                }
+
+                a {
+                    span {
+                        position: absolute;
+                        right: 0;
+                    }
+                }
+            }
+
+            .social_icons {
+                flex-grow: 0;
+                .__link, &:hover {
+                    color: #164ce2;
+                }
+            }
+        }
+    }
+}

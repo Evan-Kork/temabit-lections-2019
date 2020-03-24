@@ -1,0 +1,20 @@
+@mixin menu_btn_lines {
+    position: absolute;
+    left: 50%; margin-left: -10px;
+    width: 20px;
+    height: 2px;
+    background-color: #fff; 
+}
+
+#root {
+    .site_header {
+        .wrapper_menu_btn {
+            cursor: pointer;
+            
+            i {
+                color: #fff;
+                font-size: 28px;
+            }
+        }
+    }
+}
