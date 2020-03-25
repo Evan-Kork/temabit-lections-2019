@@ -5,11 +5,15 @@
 }
 
 .link {
+    cursor: pointer;
+
     margin: 0 .2rem;
+    padding: 0;
 
     color: white;
     font-weight: 400;
     transition: all .3s ease-in-out;
+    display: inline;
 
     &:hover {
         text-decoration: none;

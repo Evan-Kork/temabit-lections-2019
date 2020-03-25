@@ -1,7 +1,7 @@
-import { gql } from 'apollo-server'
+import { gql } from 'apollo-server-express'
 import { model } from 'mongoose'
 
-import { iUser } from '@/interfaces/iUser'
+import { iUser, iLogin } from '@/interfaces/iUser'
 import { UserAccessibilityEnum } from '@/enum/user'
 
 import '@/models/user'
@@ -20,25 +20,57 @@ export const UserType = gql`
     type UserType {
         id: String,
         login: String,
-        accessibility: EnumUserType,
         password: String,
-        email: String
+        email: String,
+        phone: String,
+        name: String,
+        region: String,
+        city: String,
+        birthday: String,
+        parcelDepartment: String,
+        accessibility: EnumUserType
+    }
+
+    type AuthType {
+        jwt: String
+    }
+
+    type RegistrationResult {
+        success: Boolean,
+        message: String
+    }
+
+    input Login {
+        login: String!,
+        password: String!
     }
 
     input AddUser {
         id: String,
         login: String!,
-        accessibility: EnumUserType,
-        password: String,
-        email: String
+        password: String!,
+        email: String!,
+        phone: String!,
+        name: String!,
+        region: String,
+        city: String,
+        birthday: String,
+        parcelDepartment: String,
+        accessibility: EnumUserType
     }
 
     input UpdateUser {
         id: String,
         login: String!,
-        accessibility: EnumUserType!,
         password: String!,
-        email: String!
+        email: String,
+        phone: String,
+        name: String,
+        region: String,
+        city: String,
+        birthday: String,
+        parcelDepartment: String,
+        accessibility: EnumUserType
     }
 `
 
@@ -48,9 +80,10 @@ export const TypeDefsQuery = `
 `
 
 export const TypeDefsMutation = `
-    addUser(user: AddUser!): UserType,
+    auth(login: Login!): AuthType
+    registration(user: AddUser!): RegistrationResult,
     removeUser(id: String!): UserType,
-    updateUser(user: UpdateUser!): UserType
+    updateUser(user: UpdateUser!): UserType,
 `
 
 export const Query = {
@@ -58,15 +91,42 @@ export const Query = {
 }
 
 export const Mutation = {
-    addUser: async (parent: any, args: { user: iUser }) => {
-        if (await User.findOne({ login: args.user.login }) === null) {
-            const user = new User({
-                login: args.user.login,
-                accessibility: args.user.accessibility,
-                password: args.user.password,
-                email: args.user.email
-            })
-            return user.save()
+    auth: (parent: any, args: { login: iLogin }) => {
+        console.log(args.login)
+        return { jwt: 'test' }
+    },
+    registration: async (parent: any, args: { user: iUser }) => {
+        try {
+            if (await User.findOne({ login: args.user.login, email: args.user.email }) === null) {
+                new User({
+                    login: args.user.login,
+                    password: args.user.password,
+                    email: args.user.email,
+                    phone: args.user.phone,
+                    name: args.user.name,
+                    region: args.user.region,
+                    city: args.user.city,
+                    birthday: args.user.birthday,
+                    parcelDepartment: args.user.parcelDepartment,
+                    accessibility: args.user.accessibility
+                }).save()
+
+                return {
+                    success: true,
+                    message: 'Successfully logged in user'
+                }
+            }
+            else {
+                return {
+                    success: false,
+                    message: 'This login or email is present in the database'
+                }
+            }
+        } catch (error) {
+            return {
+                success: false,
+                message: error
+            }
         }
     },
     removeUser: async (parent: any, args: { id: string }) => {
@@ -76,9 +136,15 @@ export const Mutation = {
         return await User.findOneAndUpdate({ login: args.user.login }, {
             $set: {
                 login: args.user.login,
-                accessibility: args.user.accessibility,
                 password: args.user.password,
-                email: args.user.email
+                email: args.user.email,
+                phone: args.user.phone,
+                name: args.user.name,
+                region: args.user.region,
+                city: args.user.city,
+                birthday: args.user.birthday,
+                parcelDepartment: args.user.parcelDepartment,
+                accessibility: args.user.accessibility
             }
         }).setOptions({ omitUndefined: true })
     }

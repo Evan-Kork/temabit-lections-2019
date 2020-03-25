@@ -6,6 +6,8 @@ import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
+import Backdrop from '@material-ui/core/Backdrop'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 import iRootState from '@/interfaces/iRootState'
 import iMenu, { MenuType } from '@/interfaces/iMenu'
@@ -20,10 +22,9 @@ import {
     getLocalities,
     getLocalitiesSelect
 } from '@/selectors'
-import { MenuInvertoryData, MenuInvertoryVars, GET_MENU_INVERTORY } from './QueryIndex'
+import { MenuInvertoryData, MenuInvertoryVars, GET_MENU_INVERTORY } from './Query'
 import Menu from '@/components/Navigation/Menu'
 import LocalitiesOffice from '@/components/Localities'
-import Paper from '@/components/Utils/Paper'
 import { HeightLayout } from '@/context'
 import classes from './index.module.scss'
 // This import connects hook with styles
@@ -96,7 +97,9 @@ const Localities: React.FC<Props> = (props: Props) => {
         } else if (props.localities[0]) {
             return <LocalitiesOffice localities={props.localities} />
         } else {
-            return <Paper title="Uhoh! There's not a single branche location." supTitle="Enter branche location." />
+            return <Backdrop className={makeClasses.backdrop} open={true}>
+                <CircularProgress color="primary" />
+            </Backdrop>
         }
     }
 

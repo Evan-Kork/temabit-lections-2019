@@ -8,7 +8,7 @@ import iAdvantages from '@/interfaces/iAdvantages'
 import iSponsor from '@/interfaces/iSponsor'
 import iCommand from '@/interfaces/iCommand'
 import iQuote from '@/interfaces/iQuote'
-import { AboutInvertoryData, GET_DATA_INVERTORY } from './QueryIndex'
+import { AboutInvertoryData, GET_DATA_INVERTORY } from './Query'
 import { HeightLayout } from '@/context'
 import classes from './index.module.scss'
 

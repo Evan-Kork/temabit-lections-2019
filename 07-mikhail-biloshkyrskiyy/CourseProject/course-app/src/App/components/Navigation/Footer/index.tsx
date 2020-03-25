@@ -15,7 +15,7 @@ import {
 
 import iRootState from '@/interfaces/iRootState'
 import iMenu, { MenuType } from '@/interfaces/iMenu'
-import { MenuInvertoryData, MenuInvertoryVars, GET_MENU_INVERTORY } from './QueryIndex'
+import { MenuInvertoryData, MenuInvertoryVars, GET_MENU_INVERTORY } from './Query'
 import { actionMenu } from '@/actions/actionMenu'
 import Logotype from '@/components/Logotype'
 import classes from './index.module.scss'

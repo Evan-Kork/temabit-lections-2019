@@ -3,7 +3,7 @@ import cors from 'cors'
 import logger from 'morgan'
 import mongoose from 'mongoose'
 import session from 'express-session'
-import { ApolloServer } from 'apollo-server'
+import { ApolloServer } from 'apollo-server-express'
 import passport from 'passport'
 
 import passwordMiddleware from '@/middleware/passport'
@@ -63,14 +63,17 @@ app.use('/api/localities', localitiesRouter)
 app.use('/api/services', servicesRouter)
 
 // LISTEN PORT
-const PORT_REST_API = process.env.PORT || 5000
-const PORT_GRAPHQL = process.env.PORT || 4000
+const PORT = process.env.PORT || 5000
 
-const server = new ApolloServer({ typeDefs, resolvers })
-
-app.listen(PORT_REST_API, () => {
-    console.log(`Rest api lisening o ${PORT_REST_API}`)
+const graphql = new ApolloServer({
+    typeDefs,
+    resolvers,
+    context: ({req}) => {
+        const token = req.headers.authorization || ''
+    }
 })
-server.listen(PORT_GRAPHQL).then(({ url }) => {
-    console.log(`GraphQL ready at ${url}`);
+graphql.applyMiddleware({ app })
+
+app.listen(PORT, () => {
+    console.log(`listening of server port ${PORT}`)
 })

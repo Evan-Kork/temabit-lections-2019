@@ -1,8 +1,10 @@
 import React, { lazy, Suspense } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import Backdrop from '@material-ui/core/Backdrop'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 import Layout from '@/containers/Layout'
+// This import connects hook with styles
+import useStyles from './makeStyle'
 
 const Office = lazy(() => import('@/components/Content/Office'))
 const TypesOffice = lazy(() => import('@/components/Content/TypesOffice'))
@@ -11,45 +13,74 @@ const Localities = lazy(() => import('@/components/Content/Localities'))
 
 const ErrorBoundary = lazy(() => import('@/components/Utils/ErrorBoundary'))
 
-const RouterOffice = (
-    <Switch>
-        <Route path='/office' exact>
-            <Layout>
-                <Suspense fallback={<CircularProgress color="secondary" />}>
-                    <ErrorBoundary>
-                        <Office />
-                    </ErrorBoundary>
-                </Suspense>
-            </Layout>
-        </Route>
-        <Route path='/office/types'>
-            <Layout>
-                <Suspense fallback={<CircularProgress color="secondary" />}>
-                    <ErrorBoundary>
-                        <TypesOffice />
-                    </ErrorBoundary>
-                </Suspense>
-            </Layout>
-        </Route>
-        <Route path='/office/location'>
-            <Layout>
-                <Suspense fallback={<CircularProgress color="secondary" />}>
-                    <ErrorBoundary>
-                        <Location />
-                    </ErrorBoundary>
-                </Suspense>
-            </Layout>
-        </Route>
-        <Route path='/office/localities'>
-            <Layout>
-                <Suspense fallback={<CircularProgress color="secondary" />}>
-                    <ErrorBoundary>
-                        <Localities />
-                    </ErrorBoundary>
-                </Suspense>
-            </Layout>
-        </Route>
-    </Switch>
-)
+export const RouterOffice: React.FC = () => {
+    const makeClasses = useStyles()
 
-export default RouterOffice
+    return (
+        <Layout>
+            <Suspense fallback={
+                <Backdrop className={makeClasses.backdrop} open={true}>
+                    <CircularProgress color="primary" />
+                </Backdrop>
+            }>
+                <ErrorBoundary>
+                    <Office />
+                </ErrorBoundary>
+            </Suspense>
+        </Layout>
+    )
+}
+
+export const RouterOfficeTypes: React.FC = () => {
+    const makeClasses = useStyles()
+
+    return (
+        <Layout>
+            <Suspense fallback={
+                <Backdrop className={makeClasses.backdrop} open={true}>
+                    <CircularProgress color="primary" />
+                </Backdrop>
+            }>
+                <ErrorBoundary>
+                    <TypesOffice />
+                </ErrorBoundary>
+            </Suspense>
+        </Layout>
+    )
+}
+
+export const RouterOfficeLocation: React.FC = () => {
+    const makeClasses = useStyles()
+
+    return (
+        <Layout>
+            <Suspense fallback={
+                <Backdrop className={makeClasses.backdrop} open={true}>
+                    <CircularProgress color="primary" />
+                </Backdrop>
+            }>
+                <ErrorBoundary>
+                    <Location />
+                </ErrorBoundary>
+            </Suspense>
+        </Layout>
+    )
+}
+
+export const RouterOfficeLocalities: React.FC = () => {
+    const makeClasses = useStyles()
+
+    return (
+        <Layout>
+            <Suspense fallback={
+                <Backdrop className={makeClasses.backdrop} open={true}>
+                    <CircularProgress color="primary" />
+                </Backdrop>
+            }>
+                <ErrorBoundary>
+                    <Localities />
+                </ErrorBoundary>
+            </Suspense>
+        </Layout>
+    )
+}

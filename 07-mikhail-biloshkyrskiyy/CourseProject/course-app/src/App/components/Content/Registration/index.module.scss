@@ -1,0 +1,51 @@
+.root {
+    background-color: #fff;
+}
+
+.bc {
+    background: linear-gradient(45deg, #7179a9, #3982e2);
+}
+
+.title {
+    color: white;
+    font-size: 2.0rem;
+    font-weight: bold;
+    font-family: 'Caladea', serif;
+}
+
+.text {
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Caladea', serif;
+}
+
+.box {
+    height: 120px;
+    width: 300px;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border: 1px solid #0d1438;
+    border-radius: 6px;
+
+    .box__title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #3f51b5;
+    }
+
+    .box__text {
+        color: #3f51b5;
+    }
+}
+
+.link {
+    &:hover {
+        text-decoration: none;
+    }
+}

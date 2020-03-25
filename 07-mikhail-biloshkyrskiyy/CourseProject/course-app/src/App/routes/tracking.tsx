@@ -1,35 +1,48 @@
 import React, { lazy, Suspense } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import Backdrop from '@material-ui/core/Backdrop'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 import Layout from '@/containers/Layout'
+// This import connects hook with styles
+import useStyles from './makeStyle'
 
 const Tracking = lazy(() => import('@/components/Content/Tracking'))
 const TrackingHistory = lazy(() => import('@/components/Content/TrackingHistory'))
 
 const ErrorBoundary = lazy(() => import('@/components/Utils/ErrorBoundary'))
 
-const RouterDeclaration = (
-    <Switch>
-        <Route path='/tracking' exact>
-            <Layout>
-                <Suspense fallback={<CircularProgress color="secondary" />}>
-                    <ErrorBoundary>
-                        <Tracking />
-                    </ErrorBoundary>
-                </Suspense>
-            </Layout>
-        </Route>
-        <Route path='/tracking/history'>
-            <Layout>
-                <Suspense fallback={<CircularProgress color="secondary" />}>
-                    <ErrorBoundary>
-                        <TrackingHistory />
-                    </ErrorBoundary>
-                </Suspense>
-            </Layout>
-        </Route>
-    </Switch>
-)
+export const RouterTracking: React.FC = () => {
+    const makeClasses = useStyles()
 
-export default RouterDeclaration
+    return (
+        <Layout>
+            <Suspense fallback={
+                <Backdrop className={makeClasses.backdrop} open={true}>
+                    <CircularProgress color="primary" />
+                </Backdrop>
+            }>
+                <ErrorBoundary>
+                    <Tracking />
+                </ErrorBoundary>
+            </Suspense>
+        </Layout>
+    )
+}
+
+export const RouterTrackingHistory: React.FC = () => {
+    const makeClasses = useStyles()
+
+    return (
+        <Layout>
+            <Suspense fallback={
+                <Backdrop className={makeClasses.backdrop} open={true}>
+                    <CircularProgress color="primary" />
+                </Backdrop>
+            }>
+                <ErrorBoundary>
+                    <TrackingHistory />
+                </ErrorBoundary>
+            </Suspense>
+        </Layout>
+    )
+}

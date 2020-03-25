@@ -28,7 +28,7 @@ import {
 import {
     getLocalities
 } from '@/selectors'
-import { CalculationInvertoryData, GET_CALCULATION_INVERTORY } from './QueryIndex'
+import { CalculationInvertoryData, GET_CALCULATION_INVERTORY } from './Query'
 
 import { HeightLayout } from '@/context'
 import classes from './index.module.scss'

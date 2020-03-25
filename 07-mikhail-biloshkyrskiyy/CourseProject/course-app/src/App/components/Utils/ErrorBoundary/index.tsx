@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box'
 
 import { HeightLayout } from '@/context'
 
-import { iErrorInvertory, ADD_ERROR_INVERTORY } from './QueryIndex'
+import { iErrorInvertory, ADD_ERROR_INVERTORY } from './Query'
 import Paper from '@/components/Utils/Paper'
 
 // Interface indicates
@@ -60,7 +60,7 @@ export default class СomponentDidCatch extends React.Component<iPropsСomponent
         return {
             title: error.message,
             info: error.stack,
-            date: format(new Date, 'ss-mm-kk dd-MM-yyyy'),
+            date: format(new Date, 'kk-mm-ss dd-MM-yyyy'),
             hasError: true
         };
     }

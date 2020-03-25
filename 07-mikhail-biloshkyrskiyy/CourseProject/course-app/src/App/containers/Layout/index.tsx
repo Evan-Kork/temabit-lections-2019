@@ -5,8 +5,8 @@ import Header from '@/components/Navigation/Header'
 import Footer from '@/components/Navigation/Footer'
 
 import { HeightLayout } from '@/context'
-import classes from './index.module.scss'
-
+// This import connects hook with styles
+import useStyles from './makeStyle'
 // Interface indicates
 // what parameters are in the component
 interface iProps {
@@ -14,6 +14,7 @@ interface iProps {
 }
 
 const Layout: React.FC<iProps> = (props: iProps) => {
+    const makeClasses = useStyles()
     const refFooter = useRef(null)
 
     const [stateHeightHeader, setStateHeightHeader] = useState(0)
@@ -42,7 +43,7 @@ const Layout: React.FC<iProps> = (props: iProps) => {
     return (
         <>
             <Header stateHeight={stateHeightHeader} setStateHeight={setStateHeightHeader} />
-            <Box className={classes.root}>
+            <Box className={makeClasses.root}>
                 <main>
                     <HeightLayout.Provider value={{ height: `calc(100vh - (${stateRefHeader}px + ${stateRefFooter}px) - 1px)` }}>
                         {props.children}

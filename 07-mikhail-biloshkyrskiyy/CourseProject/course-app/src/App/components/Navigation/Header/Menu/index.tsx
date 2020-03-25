@@ -14,7 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 
 import iRootState from '@/interfaces/iRootState'
 import iMenu, { MenuType } from '@/interfaces/iMenu'
-import { MenuInvertoryData, MenuInvertoryVars, GET_MENU_INVERTORY } from './QueryIndex'
+import { MenuInvertoryData, MenuInvertoryVars, GET_MENU_INVERTORY } from './Query'
 import { actionMenu } from '@/actions/actionMenu'
 // This import connects hook with styles
 import useStyles from './makeStyle'

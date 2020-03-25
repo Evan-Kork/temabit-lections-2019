@@ -1,4 +1,4 @@
-import { gql } from 'apollo-server'
+import { gql } from 'apollo-server-express'
 import { model } from 'mongoose'
 
 import { WeightRangEnum, LengthRangEnum } from '@/enum/calculation'
