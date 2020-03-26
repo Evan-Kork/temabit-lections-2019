@@ -1,0 +1,11 @@
+.cards-row {
+    position: relative;
+    top: 10px;
+    z-index: 3;
+}
+
+@media (min-width: 1024px) {
+    .cards-row {
+        top: -80px;
+    }
+}

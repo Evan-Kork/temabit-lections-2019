@@ -1,0 +1,29 @@
+footer {
+    background-color: #164CE2;
+    color: #ffffff;
+    .menu-blok {
+        margin-top: 15px;
+        border-right: 1px solid #ffffff;
+    };
+    .menu-blok:last-child {
+        border: none;
+    }
+    li {
+        list-style-type: none;
+        a {
+            font-size: 19px;
+            white-space: nowrap;
+        };
+    };
+    a {
+        text-decoration: none;
+        color: #ffffff;
+    };
+    a:hover {
+        text-decoration: none;
+        color: #17a2b8;;
+    };
+    .social-networks > a> svg {
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,44 @@
+.list-content {
+    .btn-btn {
+        background-color: #4effff;
+        border: none;
+        border-radius: 40px;
+        padding: 12px 17px;
+        color: #164CE2;
+        font-size: 16px;
+    }
+    .btn-btn:hover {
+        background-color: #3bc7c7;
+        color: #164CE2;
+        text-decoration: none;
+    }
+    th {
+        font-size: 18px;
+    }
+    tr {
+        font-size: 14px;
+    }
+    .number-th {
+        width: 81px;
+    }
+    .addr-th {
+        width: 300px;
+    }
+    .navigation-th {
+        width: 320px;
+    }
+    .servise-th {
+        width: 90px;
+    }
+    .shedule-th {
+        width: 160px;
+    }
+    .btn-prev,.btn-next {
+        font-size: 25px;
+        font-weight: bold;
+        color: #164ce2;
+        background-color: transparent;
+        outline: 0;
+        border: none;
+    }
+}

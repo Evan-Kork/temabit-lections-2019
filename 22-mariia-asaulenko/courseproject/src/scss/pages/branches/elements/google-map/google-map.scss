@@ -1,0 +1,11 @@
+.map{
+    height: 650px; 
+    width: 100%; 
+    margin: 20px;
+    .geotag {
+        font-size: 35px;
+        color: red;
+        cursor: auto;
+        transform: translateY(-45px);
+    } 
+}
