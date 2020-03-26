@@ -8,6 +8,7 @@ import useStyles from './makeStyle'
 
 const Registration = lazy(() => import('@/components/Content/Registration'))
 const UserRegistration = lazy(() => import('@/components/Content/Registration/User'))
+const CompanyRegistration = lazy(() => import('@/components/Content/Registration/Company'))
 
 const ErrorBoundary = lazy(() => import('@/components/Utils/ErrorBoundary'))
 
@@ -41,6 +42,24 @@ export const RouterUserRegistration: React.FC = () => {
             }>
                 <ErrorBoundary>
                     <UserRegistration />
+                </ErrorBoundary>
+            </Suspense>
+        </Layout>
+    )
+}
+
+export const RouterCompanyRegistration: React.FC = () => {
+    const makeClasses = useStyles()
+
+    return (
+        <Layout>
+            <Suspense fallback={
+                <Backdrop className={makeClasses.backdrop} open={true}>
+                    <CircularProgress color="primary" />
+                </Backdrop>
+            }>
+                <ErrorBoundary>
+                    <CompanyRegistration />
                 </ErrorBoundary>
             </Suspense>
         </Layout>

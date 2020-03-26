@@ -1,10 +1,6 @@
 import { Schema, model } from 'mongoose'
 
-enum AccessibilityType {
-    User = 'User',
-    Moderator = 'Moderator',
-    Administrator = 'Administrator'
-}
+import { AccessibilityType } from '@/enum/auth'
 
 const UserSchema = new Schema({
     login: {

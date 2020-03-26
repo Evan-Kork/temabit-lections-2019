@@ -23,7 +23,8 @@ import {
 } from '@/routes/office'
 import {
     RouterRegistration,
-    RouterUserRegistration
+    RouterUserRegistration,
+    RouterCompanyRegistration
 } from '@/routes/auth'
 import {
     NotFound
@@ -72,6 +73,9 @@ export default (
         </Route>
         <Route path='/registration/user'>
             <RouterUserRegistration />
+        </Route>
+        <Route path='/registration/company'>
+            <RouterCompanyRegistration />
         </Route>
         <Route path='/office' exact>
             <RouterOffice />

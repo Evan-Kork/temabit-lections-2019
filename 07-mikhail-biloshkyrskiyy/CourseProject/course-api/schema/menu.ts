@@ -65,7 +65,7 @@ export const TypeDefsMutation = `
 
 export const Query = {
     menu: () => Menu.find(),
-    getTypeMenu: async (parent: any, args: { type: EnumMenuType }) => await Menu.find({ typeMenu: args.type }),
+    getTypeMenu: async (parent: any, args: { type: EnumMenuType }) => await Menu.find({ typeMenu: args.type })
 }
 
 export const Mutation = {

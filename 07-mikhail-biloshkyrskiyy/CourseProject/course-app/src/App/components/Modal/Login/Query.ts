@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-import { iAuth, iLogin } from '@/interfaces/iUser'
+import { iAuth, iLogin } from '@/interfaces/iAuth'
 
 export interface AuthInvertoryData {
     auth: iAuth

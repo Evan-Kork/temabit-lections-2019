@@ -1,4 +1,4 @@
-import { UserAccessibilityEnum } from '@/enum/user'
+import { AccessibilityType } from '@/enum/auth'
 
 export interface iUser {
     id: string
@@ -11,7 +11,20 @@ export interface iUser {
     city: string
     birthday: Date
     parcelDepartment: string
-    accessibility: UserAccessibilityEnum
+    accessibility: AccessibilityType
+}
+
+export interface iCompany {
+    id: string
+    login: string
+    password: string
+    email: string
+    phone: string
+    name: string
+    region: string
+    city: string
+    parcelDepartment: string
+    accessibility: AccessibilityType
 }
 
 export interface iLogin {

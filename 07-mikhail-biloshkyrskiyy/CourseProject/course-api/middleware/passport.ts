@@ -3,7 +3,7 @@ import { Strategy, ExtractJwt } from 'passport-jwt'
 import { model } from 'mongoose'
 
 import keys from '@/config/keys'
-import '@/models/user'
+import '@/models/auth/user'
 const User = model('User')
 
 const options = {

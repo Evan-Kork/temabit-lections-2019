@@ -1,22 +1,13 @@
 import { gql } from 'apollo-server-express'
 import { model } from 'mongoose'
 
-import { iUser, iLogin } from '@/interfaces/iUser'
-import { UserAccessibilityEnum } from '@/enum/user'
+import { iUser } from '@/interfaces/iAuth'
+import { AccessibilityType } from '@/enum/auth'
 
-import '@/models/user'
+import '@/models/auth/user'
 const User = model('User')
 
-const EnumUserTypeGql = gql`
-    enum EnumUserType {
-        User,
-        Moderator,
-        Administrator
-    }
-`
 export const UserType = gql`
-    ${EnumUserTypeGql}
-
     type UserType {
         id: String,
         login: String,
@@ -28,21 +19,7 @@ export const UserType = gql`
         city: String,
         birthday: String,
         parcelDepartment: String,
-        accessibility: EnumUserType
-    }
-
-    type AuthType {
-        jwt: String
-    }
-
-    type RegistrationResult {
-        success: Boolean,
-        message: String
-    }
-
-    input Login {
-        login: String!,
-        password: String!
+        accessibility: EnumAccessibilityType
     }
 
     input AddUser {
@@ -56,7 +33,7 @@ export const UserType = gql`
         city: String,
         birthday: String,
         parcelDepartment: String,
-        accessibility: EnumUserType
+        accessibility: EnumAccessibilityType
     }
 
     input UpdateUser {
@@ -70,32 +47,28 @@ export const UserType = gql`
         city: String,
         birthday: String,
         parcelDepartment: String,
-        accessibility: EnumUserType
+        accessibility: EnumAccessibilityType
     }
 `
 
 export const TypeDefsQuery = `
     user: [UserType],
-    getTypeUser(type: EnumUserType!): [UserType]
+    getTypeUser(type: EnumAccessibilityType!): [UserType]
 `
 
 export const TypeDefsMutation = `
-    auth(login: Login!): AuthType
-    registration(user: AddUser!): RegistrationResult,
+    registrationUser(user: AddUser!): RegistrationResult,
     removeUser(id: String!): UserType,
     updateUser(user: UpdateUser!): UserType,
 `
 
 export const Query = {
-    user: () => User.find()
+    user: () => User.find(),
+    getTypeUser: async (parent: any, args: { accessibility: AccessibilityType }) => await User.find({ accessibility: args.accessibility }),
 }
 
 export const Mutation = {
-    auth: (parent: any, args: { login: iLogin }) => {
-        console.log(args.login)
-        return { jwt: 'test' }
-    },
-    registration: async (parent: any, args: { user: iUser }) => {
+    registrationUser: async (parent: any, args: { user: iUser }) => {
         try {
             if (await User.findOne({ login: args.user.login, email: args.user.email }) === null) {
                 new User({

@@ -10,7 +10,7 @@ import {
 import Button from '@material-ui/core/Button'
 import Alert from '@material-ui/lab/Alert'
 
-import { UserInvertoryData, UserInvertoryVars, GET_USER_INVERTORY } from '../Query'
+import { CompanyInvertoryData, CompanyInvertoryVars, GET_COMPANY_INVERTORY } from '../Query'
 import iRootState from '@/interfaces/iRootState'
 import { iLocation } from '@/interfaces/iBranch'
 import { LocalitiesType } from '@/interfaces/iBranch'
@@ -27,7 +27,7 @@ import {
 } from '@/selectors'
 import Steper from '@/components/Stepper'
 import { HeightLayout } from '@/context'
-import { initialValuesUser, SchemaUser, fieldsUser } from '../Initial'
+import { initialValuesCompany, SchemaCompany, fieldsCompany } from '../Initial'
 import { activeStep, setRegion, setCity, setParcelDepartment } from '../fields'
 
 import classes from './index.module.scss'
@@ -55,14 +55,14 @@ const connector = connect(
 
 type PropsFromRedux = ConnectedProps<typeof connector>
 type Props = PropsFromRedux
-const UserRegistration: React.FC<Props> = (props: Props) => {
-    const steps = ['Basic user data', 'User details for receiving the parcel']
+const CompanyRegistration: React.FC<Props> = (props: Props) => {
+    const steps = ['Basic company data', 'Company details for receiving the parcel']
 
     const history = useHistory()
     const heightContext = useContext(HeightLayout)
     const makeClasses = useStyles()
 
-    const [registrationUser, data] = useMutation<UserInvertoryData, UserInvertoryVars>(GET_USER_INVERTORY)
+    const [registrationCompany, data] = useMutation<CompanyInvertoryData, CompanyInvertoryVars>(GET_COMPANY_INVERTORY)
 
     const [activeStepState, setActiveStepState] = useState(0)
     const [hidenActiveStepState, setHidenActiveStepState] = useState(0)
@@ -110,10 +110,10 @@ const UserRegistration: React.FC<Props> = (props: Props) => {
     // and, as a result, the result passes.
     // on the homepage
     useEffect(() => {
-        if (data.data?.registrationUser.success !== undefined) {
-            setSuccess(data.data?.registrationUser.success)
-            if (!data.data?.registrationUser.success) {
-                setHiddenError([data.data?.registrationUser.message])
+        if (data.data?.registrationCompany.success !== undefined) {
+            setSuccess(data.data?.registrationCompany.success)
+            if (!data.data?.registrationCompany.success) {
+                setHiddenError([data.data?.registrationCompany.message])
             } else {
                 setTimeout(() => {
                     history.push('/')
@@ -160,14 +160,14 @@ const UserRegistration: React.FC<Props> = (props: Props) => {
     return (
         <Box style={{ minHeight: heightContext.height }} className={makeClasses.root}>
             <Formik
-                initialValues={initialValuesUser}
-                validationSchema={SchemaUser}
+                initialValues={initialValuesCompany}
+                validationSchema={SchemaCompany}
                 onSubmit={(values) => {
                     // Send the useMutation event to Graphql.
                     // with form variables
-                    registrationUser({
+                    registrationCompany({
                         variables: {
-                            user: {
+                            company: {
                                 login: values.login,
                                 password: values.password,
                                 email: values.email,
@@ -175,9 +175,8 @@ const UserRegistration: React.FC<Props> = (props: Props) => {
                                 name: values.name,
                                 region: values.region,
                                 city: values.city,
-                                birthday: values.birthday,
                                 parcelDepartment: values.parcelDepartment,
-                                accessibility: "User"
+                                accessibility: "Company"
                             }
                         }
                     })
@@ -192,11 +191,11 @@ const UserRegistration: React.FC<Props> = (props: Props) => {
                             skipped={skipped}
                         >
                             {
-                                // Basic function to display all fieldsUser of the form
+                                // Basic function to display all fields of the form
                                 // also collects information about errors
                             }
                             {activeStep(
-                                fieldsUser,
+                                fieldsCompany,
                                 activeStepState,
                                 hidenActiveStepState,
                                 setHidenActiveStepState,
@@ -247,4 +246,4 @@ const UserRegistration: React.FC<Props> = (props: Props) => {
     )
 }
 
-export default connector(UserRegistration)
+export default connector(CompanyRegistration)

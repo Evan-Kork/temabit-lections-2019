@@ -11,7 +11,6 @@ import InputLabel from '@material-ui/core/InputLabel'
 
 import { iInput } from '@/interfaces/iInput'
 import { iLocalities, iBranch } from '@/interfaces/iBranch'
-import { filled } from './Initial'
 
 export function setRegion(region: iLocalities[]) {
     const setRegion = new Set<string>()
@@ -163,8 +162,10 @@ function getField(
         </div>
     )} />
 }
-
+// Basic function to display all fields of the form
+// also collects information about errors
 export function activeStep(
+    fields: iInput[],
     activeStep: number,
     hidenActiveStep: number,
     setHidenActiveStep: Function,
@@ -177,47 +178,24 @@ export function activeStep(
     allErrors: string[],
     setAllErrors: Function
 ) {
-    if (activeStep !== hidenActiveStep || activeStep === 0) {
-        if (activeStep !== hidenActiveStep) {
-            setHidenActiveStep(activeStep)
-            setActiveErrors(new Set<string>())
-            setAllErrors([])
-        }
-        return filled.map((value: iInput, index: number) => {
-            if (index < filled.length / 2) {
-                if (value.type === 'text' || value.type === 'password' || value.type === 'phone' || value.type === 'email') {
-                    return getField(value.name, value.label, value.type, setActiveErrors, allErrors, setAllErrors, index)
-                } else if (value.type === 'date') {
-                    return getFieldDate(value.name, value.label, value.type, setActiveErrors, allErrors, setAllErrors, index)
-                } else if (value.type === 'region') {
-                    return getFieldRegion(value.name, value.label, region, setRegionState, setActiveErrors, allErrors, setAllErrors, index)
-                } else if (value.type === 'city') {
-                    return getFieldCity(value.name, value.label, city, setCityState, setActiveErrors, allErrors, setAllErrors, index)
-                } else if (value.type === 'department') {
-                    return getFieldParcelDepartment(value.name, value.label, parcelDepartment, setActiveErrors, allErrors, setAllErrors, index)
-                }
-            }
-        })
-    } else {
-        if (activeStep !== hidenActiveStep) {
-            setHidenActiveStep(activeStep)
-            setActiveErrors(new Set<string>())
-            setAllErrors([])
-        }
-        return filled.map((value: iInput, index: number) => {
-            if (index >= filled.length / 2) {
-                if (value.type === 'text' || value.type === 'password' || value.type === 'phone' || value.type === 'email') {
-                    return getField(value.name, value.label, value.type, setActiveErrors, allErrors, setAllErrors, index)
-                } else if (value.type === 'date') {
-                    return getFieldDate(value.name, value.label, value.type, setActiveErrors, allErrors, setAllErrors, index)
-                } else if (value.type === 'region') {
-                    return getFieldRegion(value.name, value.label, region, setRegionState, setActiveErrors, allErrors, setAllErrors, index)
-                } else if (value.type === 'city') {
-                    return getFieldCity(value.name, value.label, city, setCityState, setActiveErrors, allErrors, setAllErrors, index)
-                } else if (value.type === 'department') {
-                    return getFieldParcelDepartment(value.name, value.label, parcelDepartment, setActiveErrors, allErrors, setAllErrors, index)
-                }
-            }
-        })
+    if (activeStep !== hidenActiveStep) {
+        setHidenActiveStep(activeStep)
+        setActiveErrors(new Set<string>())
+        setAllErrors([])
     }
+    return fields.map((value: iInput, index: number) => {
+        if (value.page === activeStep) {
+            if (value.type === 'text' || value.type === 'password' || value.type === 'phone' || value.type === 'email') {
+                return getField(value.name, value.label, value.type, setActiveErrors, allErrors, setAllErrors, index)
+            } else if (value.type === 'date') {
+                return getFieldDate(value.name, value.label, value.type, setActiveErrors, allErrors, setAllErrors, index)
+            } else if (value.type === 'region') {
+                return getFieldRegion(value.name, value.label, region, setRegionState, setActiveErrors, allErrors, setAllErrors, index)
+            } else if (value.type === 'city') {
+                return getFieldCity(value.name, value.label, city, setCityState, setActiveErrors, allErrors, setAllErrors, index)
+            } else if (value.type === 'department') {
+                return getFieldParcelDepartment(value.name, value.label, parcelDepartment, setActiveErrors, allErrors, setAllErrors, index)
+            }
+        }
+    })
 }

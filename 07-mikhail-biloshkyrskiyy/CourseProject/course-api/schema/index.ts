@@ -1,4 +1,5 @@
 import { gql } from 'apollo-server-express'
+import { EnumAccessibilityTypeGql, TypeRegistrationResult } from '@/schema/auth'
 
 import {
     MenuType,
@@ -62,9 +63,24 @@ import {
     TypeDefsMutation as TypeDefsMutationUser,
     Query as QueryUser,
     Mutation as MutationUser
-} from '@/schema/user'
+} from '@/schema/auth/user'
+import {
+    CompanyType,
+    TypeDefsQuery as TypeDefsQueryCompany,
+    TypeDefsMutation as TypeDefsMutationCompany,
+    Query as QueryCompany,
+    Mutation as MutationCompany
+} from '@/schema/auth/company'
+import {
+    AuthType,
+    TypeDefsMutation as TypeDefsMutationAuth,
+    Mutation as MutationAuth
+} from '@/schema/auth'
 
 const TypeDefs = gql`
+    ${EnumAccessibilityTypeGql}
+    ${TypeRegistrationResult}
+
     ${MenuType}
     ${QuoteType}
     ${AdvantagesType}
@@ -73,7 +89,9 @@ const TypeDefs = gql`
     ${CalculationType}
     ${CommandType}
     ${ErrorType}
+    ${AuthType}
     ${UserType}
+    ${CompanyType}
 
     type Query {
         ${TypeDefsQueryMenu}
@@ -85,6 +103,7 @@ const TypeDefs = gql`
         ${TypeDefsQueryCommand}
         ${TypeDefsQueryError}
         ${TypeDefsQueryUser}
+        ${TypeDefsQueryCompany}
     }
 
     type Mutation {
@@ -96,7 +115,9 @@ const TypeDefs = gql`
         ${TypeDefsMutationCalculation}
         ${TypeDefsMutationCommand}
         ${TypeDefsMutationError}
+        ${TypeDefsMutationAuth}
         ${TypeDefsMutationUser}
+        ${TypeDefsMutationCompany}
     }
 `
 
@@ -110,7 +131,8 @@ const Resolvers = {
         ...QueryCalculation,
         ...QueryCommand,
         ...QueryError,
-        ...QueryUser
+        ...QueryUser,
+        ...QueryCompany
     },
     Mutation: {
         ...MutationMenu,
@@ -121,7 +143,9 @@ const Resolvers = {
         ...MutationCalculation,
         ...MutationCommand,
         ...MutationError,
-        ...MutationUser
+        ...MutationAuth,
+        ...MutationUser,
+        ...MutationCompany
     }
 }
 
