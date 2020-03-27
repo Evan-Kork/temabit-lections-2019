@@ -1,5 +1,15 @@
 import { gql } from 'apollo-server-express'
-import { iLogin } from '@/interfaces/iAuth'
+import { model } from 'mongoose'
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
+
+import { iLogin, iUser, iCompany } from '@/interfaces/iAuth'
+import keys from '@/config/keys'
+
+import '@/models/auth/user'
+import '@/models/auth/company'
+const User = model('User')
+const Company = model('Company')
 
 export const EnumAccessibilityTypeGql = gql`
     enum EnumAccessibilityType {
@@ -19,6 +29,7 @@ export const TypeRegistrationResult = gql`
 export const AuthType = gql`
     type AuthType {
         jwt: String
+        success: Boolean
     }
 
     input Login {
@@ -27,13 +38,47 @@ export const AuthType = gql`
     }
 `
 
-export const TypeDefsMutation = `
-    auth(login: Login!): AuthType
+export const TypeDefsQuery = `
+    login(auth: Login!): AuthType
 `
 
-export const Mutation = {
-    auth: (parent: any, args: { login: iLogin }) => {
-        console.log(args.login)
-        return { jwt: 'test' }
+export const Query = {
+    login: async (parent: any, args: { auth: iLogin }) => {
+        const user = await User.findOne({ login: args.auth.login }) as unknown as iUser
+        if (user !== null) {
+            const isPasswords = await bcrypt.compare(args.auth.password, user.password)
+            if (isPasswords) {
+                const token = jwt.sign({ ...user }, keys.JWT, { expiresIn: 60 * 60 })
+
+                return {
+                    jwt: token,
+                    success: true
+                }
+            }
+            else {
+                return {
+                    jwt: undefined,
+                    success: false
+                }
+            }
+        } else {
+            const company = await Company.findOne({ login: args.auth.login }) as unknown as iCompany
+            const isPasswords = await bcrypt.compare(args.auth.password, company.password)
+
+            if (isPasswords) {
+                const token = jwt.sign({ ...company }, keys.JWT, { expiresIn: 60 * 60 })
+
+                return {
+                    jwt: token,
+                    success: true
+                }
+            }
+            else {
+                return {
+                    jwt: undefined,
+                    success: false
+                }
+            }
+        }
     }
 }

@@ -5,7 +5,6 @@ import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
-import Backdrop from '@material-ui/core/Backdrop'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 import iRootState from '@/interfaces/iRootState'
@@ -97,9 +96,9 @@ const Map: React.FC<Props> = (props: Props) => {
                     <Box className='h-100 d-flex'>
                         {
                             props.branches[0] ? <Location branch={props.branches[0]} /> :
-                                <Backdrop className={makeClasses.backdrop} open={true}>
+                                <div className={classes.backdrop}>
                                     <CircularProgress color="primary" />
-                                </Backdrop>
+                                </div>
                         }
                     </Box>
                 </Box>

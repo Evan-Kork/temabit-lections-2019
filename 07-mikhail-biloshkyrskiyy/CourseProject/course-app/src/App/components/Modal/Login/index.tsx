@@ -1,5 +1,5 @@
-import React from 'react'
-import { useMutation } from '@apollo/react-hooks'
+import React, { useEffect } from 'react'
+import { useLazyQuery } from '@apollo/react-hooks'
 import { Link } from 'react-router-dom'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
@@ -27,8 +27,14 @@ interface iProps {
 }
 const Login: React.FC<iProps> = (props: iProps) => {
     const makeClasses = useStyles()
-    const [auth, { data }] = useMutation<AuthInvertoryData, LoginInvertoryVars>(GET_AUTH_JWT)
+    const [login, data] = useLazyQuery<AuthInvertoryData, LoginInvertoryVars>(GET_AUTH_JWT)
 
+    useEffect(() => {
+        if (data.data?.login.success !== undefined && data.data?.login.success) {
+            localStorage.setItem('token', data.data?.login.jwt)
+            props.setIsOpen(false)
+        }
+    }, [data.loading])
     return (
         <Modal
             aria-labelledby="transition-modal-title"
@@ -50,9 +56,9 @@ const Login: React.FC<iProps> = (props: iProps) => {
                         initialValues={initialValues}
                         validationSchema={Schema}
                         onSubmit={(values) => {
-                            auth({
+                            login({
                                 variables: {
-                                    "login": {
+                                    auth: {
                                         login: values.login,
                                         password: values.password
                                     }
@@ -70,7 +76,7 @@ const Login: React.FC<iProps> = (props: iProps) => {
                             <Field render={({ field, form }: FieldProps) => (
                                 <div className='my-4'>
                                     <div className="form-group">
-                                        <TextField onChange={field.onChange} name='password' label="Password" className={`form-control ${form.touched.password && form.errors.password && 'is-invalid'}`} />
+                                        <TextField onChange={field.onChange} type='password' name='password' label="Password" className={`form-control ${form.touched.password && form.errors.password && 'is-invalid'}`} />
                                     </div>
                                     {form.touched.password && form.errors.password && <div className="invalid-feedback d-block">{form.errors.password}</div>}
                                 </div>

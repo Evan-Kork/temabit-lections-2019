@@ -6,7 +6,6 @@ import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search'
-import Backdrop from '@material-ui/core/Backdrop'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 import iRootState from '@/interfaces/iRootState'
@@ -97,9 +96,9 @@ const Localities: React.FC<Props> = (props: Props) => {
         } else if (props.localities[0]) {
             return <LocalitiesOffice localities={props.localities} />
         } else {
-            return <Backdrop className={makeClasses.backdrop} open={true}>
+            return <div className={classes.backdrop}>
                 <CircularProgress color="primary" />
-            </Backdrop>
+            </div>
         }
     }
 

@@ -1,14 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { connect, ConnectedProps } from 'react-redux'
 import { useQuery } from '@apollo/react-hooks'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import { Row, Col } from 'react-bootstrap'
 
-import iAdvantages from '@/interfaces/iAdvantages'
-import iSponsor from '@/interfaces/iSponsor'
-import iCommand from '@/interfaces/iCommand'
-import iQuote from '@/interfaces/iQuote'
+import iRootState from '@/interfaces/iRootState'
+import {
+    actionAdvantages,
+    actionCommand,
+    actionQuote,
+    actionSponsor
+} from '@/actions/actionAbout'
+
+import { iQuote, iCommand, iSponsor, iAdvantages } from '@/interfaces/iAbout'
 import { AboutInvertoryData, GET_DATA_INVERTORY } from './Query'
+
 import { HeightLayout } from '@/context'
 import classes from './index.module.scss'
 
@@ -96,9 +103,32 @@ const GetRowQuote = (items: iQuote[]) => {
         </Row>
     )
 }
-const Tracking: React.FC = () => {
+
+const mapState = (state: iRootState) => ({})
+const mapDispatch = {
+    actionAdvantages,
+    actionCommand,
+    actionQuote,
+    actionSponsor
+}
+
+const connector = connect(
+    mapState,
+    mapDispatch
+)
+type PropsFromRedux = ConnectedProps<typeof connector>
+type Props = PropsFromRedux
+
+const About: React.FC<Props> = (props: Props) => {
     const heightContext = useContext(HeightLayout)
-    const { data } = useQuery<AboutInvertoryData>(GET_DATA_INVERTORY)
+    const { loading, data } = useQuery<AboutInvertoryData>(GET_DATA_INVERTORY)
+
+    useEffect(() => {
+        data?.advantages && props.actionAdvantages(data?.advantages)
+        data?.sponsor && props.actionSponsor(data?.sponsor)
+        data?.command && props.actionCommand(data?.command)
+        data?.quote && props.actionQuote(data?.quote)
+    }, [loading])
 
     return (
         <Box style={{ minHeight: heightContext.height }} className={classes.root}>
@@ -156,4 +186,4 @@ const Tracking: React.FC = () => {
     )
 }
 
-export default Tracking
+export default connector(About)

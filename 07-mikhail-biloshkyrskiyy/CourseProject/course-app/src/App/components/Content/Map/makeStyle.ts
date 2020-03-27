@@ -32,9 +32,5 @@ export default makeStyles(theme => ({
         padding: theme.spacing(1, 7, 1, 1),
         transition: theme.transitions.create('width'),
         width: '100%',
-    },
-    backdrop: {
-        zIndex: theme.zIndex.drawer + 1,
-        color: '#fff',
     }
 }))

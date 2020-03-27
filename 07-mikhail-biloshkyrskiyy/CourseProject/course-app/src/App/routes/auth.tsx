@@ -1,10 +1,8 @@
 import React, { lazy, Suspense } from 'react'
-import Backdrop from '@material-ui/core/Backdrop'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 import Layout from '@/containers/Layout'
-// This import connects hook with styles
-import useStyles from './makeStyle'
+import Backdrop from '@/components/Utils/Backdrop'
 
 const Registration = lazy(() => import('@/components/Content/Registration'))
 const UserRegistration = lazy(() => import('@/components/Content/Registration/User'))
@@ -13,12 +11,10 @@ const CompanyRegistration = lazy(() => import('@/components/Content/Registration
 const ErrorBoundary = lazy(() => import('@/components/Utils/ErrorBoundary'))
 
 export const RouterRegistration: React.FC = () => {
-    const makeClasses = useStyles()
-
     return (
         <Layout>
             <Suspense fallback={
-                <Backdrop className={makeClasses.backdrop} open={true}>
+                <Backdrop>
                     <CircularProgress color="primary" />
                 </Backdrop>
             }>
@@ -31,12 +27,10 @@ export const RouterRegistration: React.FC = () => {
 }
 
 export const RouterUserRegistration: React.FC = () => {
-    const makeClasses = useStyles()
-
     return (
         <Layout>
             <Suspense fallback={
-                <Backdrop className={makeClasses.backdrop} open={true}>
+                <Backdrop>
                     <CircularProgress color="primary" />
                 </Backdrop>
             }>
@@ -49,12 +43,10 @@ export const RouterUserRegistration: React.FC = () => {
 }
 
 export const RouterCompanyRegistration: React.FC = () => {
-    const makeClasses = useStyles()
-
     return (
         <Layout>
             <Suspense fallback={
-                <Backdrop className={makeClasses.backdrop} open={true}>
+                <Backdrop>
                     <CircularProgress color="primary" />
                 </Backdrop>
             }>

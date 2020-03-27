@@ -34,4 +34,5 @@ export interface iLogin {
 
 export interface iAuth {
     jwt: string
+    success: boolean
 }

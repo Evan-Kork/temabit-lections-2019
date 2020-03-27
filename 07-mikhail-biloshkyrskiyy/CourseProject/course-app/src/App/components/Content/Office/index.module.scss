@@ -16,3 +16,14 @@
         font-size: .8rem;
     }
 }
+
+.backdrop {
+    background-color: #fff;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}

@@ -9,6 +9,8 @@ import iMenu from '@/interfaces/iMenu'
 import useStyles from './makeStyle'
 import classes from './index.module.scss'
 
+// Interface indicates
+// what parameters are in the component
 interface iProps {
     menu: iMenu[]
 }

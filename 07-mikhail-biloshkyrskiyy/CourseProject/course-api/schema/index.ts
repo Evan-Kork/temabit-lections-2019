@@ -73,8 +73,8 @@ import {
 } from '@/schema/auth/company'
 import {
     AuthType,
-    TypeDefsMutation as TypeDefsMutationAuth,
-    Mutation as MutationAuth
+    TypeDefsQuery as TypeDefsQueryAuth,
+    Query as QueryAuth
 } from '@/schema/auth'
 
 const TypeDefs = gql`
@@ -102,6 +102,7 @@ const TypeDefs = gql`
         ${TypeDefsQueryCalculation}
         ${TypeDefsQueryCommand}
         ${TypeDefsQueryError}
+        ${TypeDefsQueryAuth}
         ${TypeDefsQueryUser}
         ${TypeDefsQueryCompany}
     }
@@ -115,7 +116,6 @@ const TypeDefs = gql`
         ${TypeDefsMutationCalculation}
         ${TypeDefsMutationCommand}
         ${TypeDefsMutationError}
-        ${TypeDefsMutationAuth}
         ${TypeDefsMutationUser}
         ${TypeDefsMutationCompany}
     }
@@ -131,6 +131,7 @@ const Resolvers = {
         ...QueryCalculation,
         ...QueryCommand,
         ...QueryError,
+        ...QueryAuth,
         ...QueryUser,
         ...QueryCompany
     },
@@ -143,7 +144,6 @@ const Resolvers = {
         ...MutationCalculation,
         ...MutationCommand,
         ...MutationError,
-        ...MutationAuth,
         ...MutationUser,
         ...MutationCompany
     }

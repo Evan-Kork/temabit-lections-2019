@@ -3,17 +3,18 @@ import gql from 'graphql-tag'
 import { iAuth, iLogin } from '@/interfaces/iAuth'
 
 export interface AuthInvertoryData {
-    auth: iAuth
+    login: iAuth
 }
 
 export interface LoginInvertoryVars {
-    login: iLogin
+    auth: iLogin
 }
 
 export const GET_AUTH_JWT = gql`
-    mutation($login: Login!) {
-        auth(login: $login) {
-            jwt
-        }
+query($auth: Login!){
+    login(auth: $auth){
+        jwt
+        success
     }
+}
 `

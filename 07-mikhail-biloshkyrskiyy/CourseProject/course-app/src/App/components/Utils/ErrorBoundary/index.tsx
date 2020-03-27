@@ -1,45 +1,9 @@
-import React, { useEffect, useContext } from 'react'
-import { useMutation } from '@apollo/react-hooks'
+import React from 'react'
 import { format } from 'date-fns'
-import Box from '@material-ui/core/Box'
 
-import { HeightLayout } from '@/context'
-
-import { iErrorInvertory, ADD_ERROR_INVERTORY } from './Query'
+import ErrorBoundary from './actionError'
 import Paper from '@/components/Utils/Paper'
 
-// Interface indicates
-// what parameters are in the component
-interface iPropsErrorBoundary {
-    children: React.ReactNode
-    title: string
-    info: string
-    date: string
-}
-const ErrorBoundary: React.FC<iPropsErrorBoundary> = (props: iPropsErrorBoundary) => {
-    const heightContext = useContext(HeightLayout)
-    const [addError] = useMutation<iErrorInvertory>(ADD_ERROR_INVERTORY)
-
-    useEffect(() => {
-        if (props.title !== '') {
-            addError({
-                variables: {
-                    "error": {
-                        title: props.title,
-                        info: props.info,
-                        date: props.date
-                    }
-                }
-            })
-        }
-    }, [])
-
-    return (
-        <Box style={{ minHeight: heightContext.height }}>
-            {props.children}
-        </Box>
-    )
-}
 // Interface indicates
 // what parameters are in the component
 interface iPropsСomponentDidCatch {

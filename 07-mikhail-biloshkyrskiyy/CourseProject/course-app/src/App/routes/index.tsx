@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 import Layout from '@/containers/Layout'
+import Backdrop from '@/components/Utils/Backdrop'
 
 const Content = lazy(() => import('@/components/Content/Layout'))
 const About = lazy(() => import('@/components/Content/About'))
@@ -34,7 +35,9 @@ export default (
     <Switch>
         <Route path='/' exact>
             <Layout>
-                <Suspense fallback={<CircularProgress color="secondary" />}>
+                <Suspense fallback={<Backdrop>
+                    <CircularProgress color="primary" />
+                </Backdrop>}>
                     <ErrorBoundary>
                         <Content />
                     </ErrorBoundary>
@@ -43,7 +46,9 @@ export default (
         </Route>
         <Route path='/about'>
             <Layout>
-                <Suspense fallback={<CircularProgress color="secondary" />}>
+                <Suspense fallback={<Backdrop>
+                    <CircularProgress color="primary" />
+                </Backdrop>}>
                     <ErrorBoundary>
                         <About />
                     </ErrorBoundary>
@@ -52,7 +57,9 @@ export default (
         </Route>
         <Route path='/calculation'>
             <Layout>
-                <Suspense fallback={<CircularProgress color="secondary" />}>
+                <Suspense fallback={<Backdrop>
+                    <CircularProgress color="primary" />
+                </Backdrop>}>
                     <ErrorBoundary>
                         <Calculator />
                     </ErrorBoundary>
@@ -61,7 +68,9 @@ export default (
         </Route>
         <Route path='/tariffs'>
             <Layout>
-                <Suspense fallback={<CircularProgress color="secondary" />}>
+                <Suspense fallback={<Backdrop>
+                    <CircularProgress color="primary" />
+                </Backdrop>}>
                     <ErrorBoundary>
                         <Tariffs />
                     </ErrorBoundary>

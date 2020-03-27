@@ -32,6 +32,7 @@ export enum UserAccessibilityEnum {
 
 export interface iAuth {
     jwt: string
+    success: boolean
 }
 
 export interface iLogin {

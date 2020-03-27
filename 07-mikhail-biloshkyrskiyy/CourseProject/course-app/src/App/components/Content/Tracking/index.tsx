@@ -3,7 +3,6 @@ import { connect, ConnectedProps } from 'react-redux'
 import { useQuery } from '@apollo/react-hooks'
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
-import Backdrop from '@material-ui/core/Backdrop'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 import iRootState from '@/interfaces/iRootState'
@@ -24,8 +23,6 @@ import TrackingProduct from '@/components/Tracking'
 import Input from '@/components/Utils/Input'
 import { HeightLayout } from '@/context'
 import classes from './index.module.scss'
-// This import connects hook with styles
-import useStyles from './makeStyle'
 
 const mapState = (state: iRootState) => ({
     tracking: getTracking(state),
@@ -50,7 +47,6 @@ const initialValues = {
     declaration: ''
 }
 const Tracking: React.FC<Props> = (props: Props) => {
-    const makeClasses = useStyles()
     const { loading, data } = useQuery<MenuInvertoryData, MenuInvertoryVars>(GET_MENU_INVERTORY, { variables: { type: MenuType.Declaration } })
     props.actionMenuTracking(loading, data?.menu as iMenu[])
     const heightContext = useContext(HeightLayout)
@@ -85,9 +81,9 @@ const Tracking: React.FC<Props> = (props: Props) => {
                     <Box className='h-100 d-flex'>
                         {
                             props.tracking[0] ? <TrackingProduct tracking={props.tracking[0]} /> :
-                                <Backdrop className={makeClasses.backdrop} open={true}>
+                                <div className={classes.backdrop}>
                                     <CircularProgress color="primary" />
-                                </Backdrop>
+                                </div>
                         }
                     </Box>
                 </Box>

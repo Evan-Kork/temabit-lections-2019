@@ -1,9 +1,6 @@
 import gql from 'graphql-tag'
 
-import iAdvantages from '@/interfaces/iAdvantages'
-import iCommand from '@/interfaces/iCommand'
-import iQuote from '@/interfaces/iQuote'
-import iSponsor from '@/interfaces/iSponsor'
+import { iSponsor, iQuote, iCommand, iAdvantages } from '@/interfaces/iAbout'
 
 export interface AboutInvertoryData {
     advantages: iAdvantages[]

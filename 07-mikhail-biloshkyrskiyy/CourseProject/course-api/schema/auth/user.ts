@@ -1,5 +1,6 @@
 import { gql } from 'apollo-server-express'
 import { model } from 'mongoose'
+import bcrypt from 'bcryptjs'
 
 import { iUser } from '@/interfaces/iAuth'
 import { AccessibilityType } from '@/enum/auth'
@@ -71,9 +72,11 @@ export const Mutation = {
     registrationUser: async (parent: any, args: { user: iUser }) => {
         try {
             if (await User.findOne({ login: args.user.login, email: args.user.email }) === null) {
+                const salt = await bcrypt.genSalt(10)
+
                 new User({
                     login: args.user.login,
-                    password: args.user.password,
+                    password: await bcrypt.hash(args.user.password, salt),
                     email: args.user.email,
                     phone: args.user.phone,
                     name: args.user.name,

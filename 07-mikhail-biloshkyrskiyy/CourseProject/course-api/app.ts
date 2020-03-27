@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 import session from 'express-session'
 import { ApolloServer } from 'apollo-server-express'
 import passport from 'passport'
+import { GraphQLLocalStrategy, buildContext } from 'graphql-passport'
 
 import passwordMiddleware from '@/middleware/passport'
 import keys from '@/config/keys'
@@ -15,6 +16,25 @@ import branchesRouter from '@/routes/branches'
 import trackingRouter from '@/routes/tracking'
 import localitiesRouter from '@/routes/localities'
 import servicesRouter from '@/routes/services'
+
+import { model } from 'mongoose'
+import '@/models/auth/user'
+const User = model('User')
+
+passport.use(
+    //@ts-ignore
+    new GraphQLLocalStrategy((email, password, done) => {
+        console.log('test')
+        const matchingUser = User.find(user => email === user.email && password === user.password);
+        const error = matchingUser ? null : new Error('no matching user');
+        done(null, { id: 1, name: 'test', passport: 'test' });
+    }),
+)
+
+passport.serializeUser((user: any, done) => {
+    console.log(user)
+    done(null, user.id);
+})
 
 // IMPORT GRAPHQL
 import { typeDefs, resolvers } from '@/schema'
@@ -30,8 +50,7 @@ mongoose.connect(
         useUnifiedTopology: true,
         useNewUrlParser: true
     }
-)
-    .then(() => console.log('MongoDB connected.'))
+).then(() => console.log('MongoDB connected.'))
     .catch(error => console.log(error))
 
 
@@ -43,7 +62,6 @@ const store = new MongoStore({
 
 // EXPRESS MIDDLEWARE
 app.use(cors())
-app.use(passport.initialize())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(session({
@@ -53,7 +71,8 @@ app.use(session({
     store
 }))
 app.use(logger('dev'))
-passwordMiddleware(passport)
+app.use(passport.initialize())
+app.use(passport.session())
 
 // ROUTER
 app.use('/api/', indexRouter)
@@ -68,9 +87,7 @@ const PORT = process.env.PORT || 5000
 const graphql = new ApolloServer({
     typeDefs,
     resolvers,
-    context: ({req}) => {
-        const token = req.headers.authorization || ''
-    }
+    context: ({ req, res }) => buildContext({ req, res })
 })
 graphql.applyMiddleware({ app })
 

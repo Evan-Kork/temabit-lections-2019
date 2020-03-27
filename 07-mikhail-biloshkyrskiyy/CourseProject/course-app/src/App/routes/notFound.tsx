@@ -1,21 +1,17 @@
 import React, { lazy, Suspense } from 'react'
-import Backdrop from '@material-ui/core/Backdrop'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 import Layout from '@/containers/Layout'
-// This import connects hook with styles
-import useStyles from './makeStyle'
+import Backdrop from '@/components/Utils/Backdrop'
 
 const Paper = lazy(() => import('@/components/Utils/Paper'))
 const ErrorBoundary = lazy(() => import('@/components/Utils/ErrorBoundary'))
 
 export const NotFound: React.FC = () => {
-    const makeClasses = useStyles()
-
     return (
         <Layout>
             <Suspense fallback={
-                <Backdrop className={makeClasses.backdrop} open={true}>
+                <Backdrop>
                     <CircularProgress color="primary" />
                 </Backdrop>
             }>

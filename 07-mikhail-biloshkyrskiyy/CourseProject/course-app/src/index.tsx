@@ -21,10 +21,16 @@ const store = createStore(
     createRootReducer(history),
     composeWithDevTools(applyMiddleware(...middlewares))
 )
+
 const client = new ApolloClient({
     uri: 'http://localhost:5000/graphql',
-    headers: {
-        authorization: 'Bearer test jwt'
+    request: (operation) => {
+        const token = localStorage.getItem('token')
+        operation.setContext({
+            headers: {
+                authorization: token ? `Bearer ${token}` : ''
+            }
+        })
     }
 })
 

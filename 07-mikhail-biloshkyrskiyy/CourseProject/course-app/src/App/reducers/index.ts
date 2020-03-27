@@ -3,30 +3,18 @@ import { connectRouter } from 'connected-react-router'
 import { History } from 'history'
 
 import Menu from '@/reducers/Menu'
-import SideMenu from '@/reducers/Menu/sideMenu'
 import Tracking from '@/reducers/Tracking'
-import TrackingHistory from '@/reducers/Tracking/trackingHistory'
-import Declaration from '@/reducers/Tracking/declaration'
-import Location from '@/reducers/Branch/location'
 import Branch from '@/reducers/Branch'
-import BranchTypes from '@/reducers/Branch/types'
-import Localities from '@/reducers/Branch/localities'
-import LocalitiesSelect from '@/reducers/Branch/localitiesSelect'
-import CalculationLength from '@/reducers/Calculation/length'
-import CalculationWeight from '@/reducers/Calculation/weight'
+import Calculation from '@/reducers/Calculation'
+import Error from '@/reducers/Error'
+import About from '@/reducers/About'
 
 export default (history : History) => combineReducers({
     Menu,
-    SideMenu,
-    Declaration,
-    Location,
     Tracking,
-    TrackingHistory,
     Branch,
-    BranchTypes,
-    Localities,
-    LocalitiesSelect,
-    CalculationLength,
-    CalculationWeight,
+    Calculation,
+    Error,
+    About,
     router: connectRouter(history)
 })
