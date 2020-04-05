@@ -15,9 +15,7 @@ import Logotype from '@/components/Logotype'
 
 import iRootState from '@/interfaces/iRootState'
 import { iDeclaration } from '@/interfaces/iTracking'
-import {
-    actionTracking
-} from '@/actions/actionTracking'
+import { actionTracking } from '@/actions/actionTracking'
 
 // This import connects hook with styles
 import useStyles from './makeStyle'

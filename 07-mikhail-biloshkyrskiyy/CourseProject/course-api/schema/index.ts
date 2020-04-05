@@ -71,11 +71,6 @@ import {
     Query as QueryCompany,
     Mutation as MutationCompany
 } from '@/schema/auth/company'
-import {
-    AuthType,
-    TypeDefsQuery as TypeDefsQueryAuth,
-    Query as QueryAuth
-} from '@/schema/auth'
 
 const TypeDefs = gql`
     ${EnumAccessibilityTypeGql}
@@ -89,7 +84,6 @@ const TypeDefs = gql`
     ${CalculationType}
     ${CommandType}
     ${ErrorType}
-    ${AuthType}
     ${UserType}
     ${CompanyType}
 
@@ -102,7 +96,6 @@ const TypeDefs = gql`
         ${TypeDefsQueryCalculation}
         ${TypeDefsQueryCommand}
         ${TypeDefsQueryError}
-        ${TypeDefsQueryAuth}
         ${TypeDefsQueryUser}
         ${TypeDefsQueryCompany}
     }
@@ -131,7 +124,6 @@ const Resolvers = {
         ...QueryCalculation,
         ...QueryCommand,
         ...QueryError,
-        ...QueryAuth,
         ...QueryUser,
         ...QueryCompany
     },

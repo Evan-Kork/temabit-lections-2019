@@ -1,12 +1,12 @@
 import * as Yup from 'yup'
 
 export const initialValues = {
-    login: '',
+    email: '',
     password: ''
 }
 
 export const Schema = Yup.object().shape({
-    login: Yup.string()
+    email: Yup.string()
         .min(2, 'Too Short!')
         .max(50, 'Too Long!')
         .required('Enter login'),

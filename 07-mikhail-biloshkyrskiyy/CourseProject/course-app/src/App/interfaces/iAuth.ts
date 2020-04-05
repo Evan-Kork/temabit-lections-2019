@@ -30,17 +30,12 @@ export enum UserAccessibilityEnum {
     Administrator
 }
 
-export interface iAuth {
-    jwt: string
-    success: boolean
-}
-
 export interface iLogin {
-    login: string
+    email: string
     password: string
 }
 
-export interface iRegistrationResult {
-    success: boolean
+export interface iApiResult {
     message: string
+    success: boolean
 }

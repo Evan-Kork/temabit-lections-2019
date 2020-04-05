@@ -28,7 +28,7 @@ export interface iCompany {
 }
 
 export interface iLogin {
-    login: string
+    email: string
     password: string
 }
 

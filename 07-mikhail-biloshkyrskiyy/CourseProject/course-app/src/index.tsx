@@ -1,5 +1,8 @@
 import React from 'react'
-import ApolloClient from 'apollo-boost'
+import ApolloClient from 'apollo-client'
+import { createHttpLink } from 'apollo-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import { setContext } from 'apollo-link-context'
 import { ApolloProvider } from '@apollo/react-hooks'
 import { render } from 'react-dom'
 import { routerMiddleware, ConnectedRouter } from 'connected-react-router'
@@ -8,6 +11,7 @@ import { Provider, ReactReduxContext } from 'react-redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { createBrowserHistory } from 'history'
+import Cookie from 'js-cookie'
 
 import createRootReducer from '@/reducers'
 import routes from '@/routes'
@@ -22,16 +26,24 @@ const store = createStore(
     composeWithDevTools(applyMiddleware(...middlewares))
 )
 
-const client = new ApolloClient({
+const httpLink = createHttpLink({
     uri: 'http://localhost:5000/graphql',
-    request: (operation) => {
-        const token = localStorage.getItem('token')
-        operation.setContext({
-            headers: {
-                authorization: token ? `Bearer ${token}` : ''
-            }
-        })
+    credentials: 'same-origin'
+})
+
+const authLink = setContext((_, { headers }) => {
+    // return the headers to the context so httpLink can read them
+    return {
+        headers: {
+            ...headers,
+            authorization: Cookie.get('jwt')
+        }
     }
+})
+
+const client = new ApolloClient({
+    cache: new InMemoryCache(),
+    link: authLink.concat(httpLink),
 })
 
 render(

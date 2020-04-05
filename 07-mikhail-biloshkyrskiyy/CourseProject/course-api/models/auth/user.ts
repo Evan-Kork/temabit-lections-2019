@@ -2,7 +2,7 @@ import { Schema, model } from 'mongoose'
 
 import { AccessibilityType } from '@/enum/auth'
 
-const UserSchema = new Schema({
+export const UserSchema = new Schema({
     login: {
         type: String,
         maxlength: 255,

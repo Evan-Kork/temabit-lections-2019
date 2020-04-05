@@ -16,7 +16,7 @@
         "sourceMap": true,
         "moduleResolution": "node",
         "resolveJsonModule": true,
-        "isolatedModules": true,
+        "isolatedModules": false,
         "forceConsistentCasingInFileNames": true,
 
         "baseUrl": "./",

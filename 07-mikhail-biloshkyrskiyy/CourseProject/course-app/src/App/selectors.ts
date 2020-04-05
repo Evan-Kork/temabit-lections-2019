@@ -1,6 +1,7 @@
 import iRootState from '@/interfaces/iRootState'
 import { iTracking, iDeclaration } from '@/interfaces/iTracking'
 import { iBranch, iLocation, iLocalities, iFormat } from '@/interfaces/iBranch'
+import { iApiResult } from '@/interfaces/iAuth'
 
 export const getDeclaration = (state: iRootState): iDeclaration => state.Tracking.declaration
 export const getTracking = (state: iRootState): iTracking[] => state.Tracking.tracking
@@ -12,3 +13,5 @@ export const getBranchTypes = (state: iRootState):iFormat[] => state.Branch.bran
 
 export const getLocalities = (state: iRootState):iLocalities[] => state.Branch.localities
 export const getLocalitiesSelect = (state: iRootState):iLocalities[] => state.Branch.localitiesSelect
+
+export const getIsAuth = (state: iRootState): iApiResult => state.Auth.user.result

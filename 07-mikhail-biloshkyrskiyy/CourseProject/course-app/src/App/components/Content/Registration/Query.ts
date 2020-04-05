@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
-import { iUser, iCompany, iRegistrationResult } from '@/interfaces/iAuth'
+import { iUser, iCompany, iApiResult } from '@/interfaces/iAuth'
 
 export interface UserInvertoryData {
-    registrationUser: iRegistrationResult
+    registrationUser: iApiResult
 }
 
 export interface UserInvertoryVars {
@@ -19,7 +19,7 @@ mutation($user: AddUser!) {
 `
 
 export interface CompanyInvertoryData {
-    registrationCompany: iRegistrationResult
+    registrationCompany: iApiResult
 }
 
 export interface CompanyInvertoryVars {

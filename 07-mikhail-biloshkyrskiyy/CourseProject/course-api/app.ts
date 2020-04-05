@@ -1,47 +1,31 @@
 import express from 'express'
-import cors from 'cors'
-import logger from 'morgan'
-import mongoose from 'mongoose'
 import session from 'express-session'
 import { ApolloServer } from 'apollo-server-express'
-import passport from 'passport'
-import { GraphQLLocalStrategy, buildContext } from 'graphql-passport'
-
-import passwordMiddleware from '@/middleware/passport'
-import keys from '@/config/keys'
-
+import { makeExecutableSchema } from 'graphql-tools'
+import cors from 'cors'
+import mongoose from 'mongoose'
+import cookieParser from 'cookie-parser'
+import bodyParser from 'body-parser'
 // IMPORT ROUTES
 import indexRouter from '@/routes/index'
 import branchesRouter from '@/routes/branches'
 import trackingRouter from '@/routes/tracking'
 import localitiesRouter from '@/routes/localities'
 import servicesRouter from '@/routes/services'
-
-import { model } from 'mongoose'
-import '@/models/auth/user'
-const User = model('User')
-
-passport.use(
-    //@ts-ignore
-    new GraphQLLocalStrategy((email, password, done) => {
-        console.log('test')
-        const matchingUser = User.find(user => email === user.email && password === user.password);
-        const error = matchingUser ? null : new Error('no matching user');
-        done(null, { id: 1, name: 'test', passport: 'test' });
-    }),
-)
-
-passport.serializeUser((user: any, done) => {
-    console.log(user)
-    done(null, user.id);
-})
-
+import authRouter from '@/routes/auth'
+import authentication from '@/middleware/authentication'
 // IMPORT GRAPHQL
 import { typeDefs, resolvers } from '@/schema'
 
-const app = express()
-const MongoStore = require('connect-mongodb-session')(session)
+import keys from '@/config/keys'
 
+const app = express()
+
+const MongoStore = require("connect-mongodb-session")(session)
+const schema = makeExecutableSchema({
+    typeDefs,
+    resolvers,
+})
 // MONGOOSE
 mongoose.Promise = global.Promise
 mongoose.connect(
@@ -53,44 +37,43 @@ mongoose.connect(
 ).then(() => console.log('MongoDB connected.'))
     .catch(error => console.log(error))
 
-
-// STORE
-const store = new MongoStore({
+const SessionStore = new MongoStore({
     collection: 'sessions',
     uri: keys.MONGODB_URI
 })
 
-// EXPRESS MIDDLEWARE
-app.use(cors())
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+const graphql = new ApolloServer({
+    schema,
+    context: ({ req }) => req.headers.authorization && authentication(req.headers.authorization)
+})
+
+app.use(cors({ credentials: true }))
+app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser())
+app.use(bodyParser())
 app.use(session({
-    secret: 'some secret value',
+    name: 'sessionId',
+    secret: 'Some secret key',
     resave: false,
     saveUninitialized: false,
-    store
+    cookie: {
+        maxAge: 600000,
+        httpOnly: true,
+        secure: false
+    },
+    store: SessionStore
 }))
-app.use(logger('dev'))
-app.use(passport.initialize())
-app.use(passport.session())
-
+graphql.applyMiddleware({ app, cors: false })
 // ROUTER
 app.use('/api/', indexRouter)
+app.use('/api/authorization', authRouter)
 app.use('/api/branches', branchesRouter)
 app.use('/api/tracking', trackingRouter)
 app.use('/api/localities', localitiesRouter)
 app.use('/api/services', servicesRouter)
-
 // LISTEN PORT
 const PORT = process.env.PORT || 5000
 
-const graphql = new ApolloServer({
-    typeDefs,
-    resolvers,
-    context: ({ req, res }) => buildContext({ req, res })
-})
-graphql.applyMiddleware({ app })
-
 app.listen(PORT, () => {
-    console.log(`listening of server port ${PORT}`)
+    console.log(`Server ready at http://localhost:${PORT}`)
 })

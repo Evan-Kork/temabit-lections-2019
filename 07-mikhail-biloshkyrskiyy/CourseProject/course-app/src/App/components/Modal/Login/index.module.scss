@@ -25,3 +25,8 @@
     display: block;
     margin: 0 auto;
 }
+
+.alert {
+    margin-bottom: .2rem;
+    animation: opacity .4s ease-in-out;
+}
