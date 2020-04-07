@@ -30,6 +30,9 @@ import {
 import {
     NotFound
 } from '@/routes/notFound'
+import {
+    RouterPrivateOffice
+} from '@/routes/private'
 
 export default (
     <Switch>
@@ -103,6 +106,9 @@ export default (
         </Route>
         <Route path='/tracking/history'>
             <RouterTrackingHistory />
+        </Route>
+        <Route path='/private-office'>
+            <RouterPrivateOffice />
         </Route>
         <Route>
             <NotFound />

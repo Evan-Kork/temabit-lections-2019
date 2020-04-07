@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Cookie from 'js-cookie'
 import { connect, ConnectedProps } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Box from '@material-ui/core/Box'
@@ -18,14 +17,14 @@ import Alert from '@material-ui/lab/Alert'
 
 import iRootState from '@/interfaces/iRootState'
 import { actionLogin } from '@/actions/actionAuth'
-import { getIsAuth } from '@/selectors'
+import { getApiResult } from '@/selectors'
 import { initialValues, Schema } from './Initial'
 // This import connects hook with styles
 import useStyles from './makeStyle'
 import classes from './index.module.scss'
 
 const mapState = (state: iRootState) => ({
-    isAuth: getIsAuth(state)
+    isAuth: getApiResult(state)
 })
 const mapDispatch = {
     actionLogin
@@ -48,19 +47,11 @@ const Login: React.FC<Props> = (props: Props) => {
     const makeClasses = useStyles()
 
     useEffect(() => {
-        if (props.isAuth && props.isAuth.success) {
+        if (props.isAuth.success) {
             setTimeout(() => {
                 props.setIsOpen(false)
                 props.setIsCookie(false)
             }, 1000)
-        } else {
-            if(props.isAuth && !props.isAuth.success){
-                props.setIsOpen(true)
-                props.setIsCookie(Cookie.get('jwt') !== '')
-            } else {
-                props.setIsOpen(false)
-                props.setIsCookie(Cookie.get('jwt') !== '')
-            }
         }
     }, [props.isAuth])
     return (
@@ -79,7 +70,7 @@ const Login: React.FC<Props> = (props: Props) => {
             <Fade in={props.isOpen}>
                 <div className={makeClasses.paper}>
                     <Box className={`${classes.title} mb-2`}>Welcome to Justin</Box>
-                    <Box>{props.isAuth && <Alert severity={props.isAuth.success ? "success" : "error"} className={classes.alert}>{props.isAuth.message}</Alert>}</Box>
+                    <Box>{props.isAuth.success && <Alert severity={props.isAuth.success ? "success" : "error"} className={classes.alert}>{props.isAuth.message}</Alert>}</Box>
                     <img className={classes.img} src={require('./man.png').default} alt='' />
                     <Formik
                         initialValues={initialValues}

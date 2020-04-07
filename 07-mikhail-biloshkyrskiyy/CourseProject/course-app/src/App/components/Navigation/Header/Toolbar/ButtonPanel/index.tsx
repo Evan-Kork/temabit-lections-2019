@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Cookie from 'js-cookie'
 import { connect, ConnectedProps } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -10,13 +10,18 @@ import { faSignInAlt, faUsers, faBookOpen, faSignOutAlt } from '@fortawesome/fre
 import Breadcrumbs from '@/components/Navigation/Header/Toolbar/Breadcrumbs'
 import Login from '@/components/Modal/Login'
 import iRootState from '@/interfaces/iRootState'
-import { actionLogout } from '@/actions/actionAuth'
+import { actionLogout, actionInitLogin } from '@/actions/actionAuth'
+import { getUser, getApiResult } from '@/selectors'
 
 import classes from './index.module.scss'
 
-const mapState = (state: iRootState) => ({})
+const mapState = (state: iRootState) => ({
+    isAuth: getApiResult(state),
+    user: getUser(state)
+})
 const mapDispatch = {
-    actionLogout
+    actionLogout,
+    actionInitLogin
 }
 
 const connector = connect(
@@ -31,19 +36,33 @@ const ButtonPanel: React.FC<Props> = (props: Props) => {
     const [isOpen, setIsOpen] = useState(false)
     const [isCookie, setIsCookie] = useState(Cookie.get('jwt') !== '')
 
+    useEffect(() => {
+        if (props.user) {
+            if (sessionStorage.getItem('rp')) {
+                props.actionInitLogin()
+            }
+        }
+    }, [])
+
     return (
         <Box className={classes.root}>
             <Container className='w-100 d-flex flex-wrap justify-content-between align-items-center m-auto'>
                 <Box className='d-flex'>
-                    <Link className={classes.link} to='/office'>
+                    <Link className={classes.link} to='/private-office'>
                         <FontAwesomeIcon icon={faSignInAlt} />
                         Private office
                     </Link>
                     {isCookie ?
-                        <div className={classes.link} onClick={() => setIsOpen(!isOpen)}>
-                            <FontAwesomeIcon icon={faUsers} />
-                            Login
-                        </div>
+                        <>
+                            <div className={classes.link} onClick={() => setIsOpen(!isOpen)}>
+                                <FontAwesomeIcon icon={faUsers} />
+                                Login
+                            </div>
+                            <Link className={classes.link} to='/registration'>
+                                <FontAwesomeIcon icon={faBookOpen} />
+                                Registration
+                            </Link>
+                        </>
                         :
                         <div className={classes.link} onClick={() => {
                             props.actionLogout()
@@ -53,10 +72,6 @@ const ButtonPanel: React.FC<Props> = (props: Props) => {
                             Logout
                         </div>
                     }
-                    <Link className={classes.link} to='/registration'>
-                        <FontAwesomeIcon icon={faBookOpen} />
-                        Registration
-                    </Link>
                 </Box>
                 <Breadcrumbs />
                 <Login isOpen={isOpen} setIsOpen={setIsOpen} setIsCookie={setIsCookie} />

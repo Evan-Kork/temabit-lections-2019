@@ -4,5 +4,7 @@ export default {
     MONGODB_URI: `mongodb+srv://admin:admin@clustercourseproject-tbs6b.mongodb.net/test?retryWrites=true&w=majority`,
 
     JWT: 'dev-jwt',
-    OPENAPI: 'http://openapi.justin.ua'
+    OPENAPI: 'http://openapi.justin.ua',
+
+    UserPrivateKey: 'Justin private key'
 }

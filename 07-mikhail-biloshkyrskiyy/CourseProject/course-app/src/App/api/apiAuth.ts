@@ -1,18 +1,19 @@
 import request from 'superagent'
 
-import { iLogin, iUser, iApiResult } from '@/interfaces/iAuth'
+import { iLogin, iUser, iApiResult, iToken } from '@/interfaces/iAuth'
 
-export const apiLogin = async (value: iLogin): Promise<iUser & iApiResult> => {
+export const apiLogin = async (value: iLogin): Promise<iUser & iApiResult & iToken> => {
     const { body } = await request
         .post(`/api/authorization/login`)
         .send(value)
-    const { user, message, success } = body
-
-    const result = {
-        message,
-        success
-    }
     return new Promise(resolve => {
-        resolve({ ...user, result })
+        resolve(body)
+    })
+}
+
+export const apiReloadingToken = async (): Promise<iApiResult & iToken> => {
+    const { body } = await request.get(`/api/authorization/reloading-token`)
+    return new Promise(resolve => {
+        resolve(body)
     })
 }

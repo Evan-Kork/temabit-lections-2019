@@ -44,7 +44,7 @@ const SessionStore = new MongoStore({
 
 const graphql = new ApolloServer({
     schema,
-    context: ({ req }) => req.headers.authorization && authentication(req.headers.authorization)
+    context: ({ req }) => authentication(req.headers.authorization)
 })
 
 app.use(cors({ credentials: true }))
@@ -56,11 +56,6 @@ app.use(session({
     secret: 'Some secret key',
     resave: false,
     saveUninitialized: false,
-    cookie: {
-        maxAge: 600000,
-        httpOnly: true,
-        secure: false
-    },
     store: SessionStore
 }))
 graphql.applyMiddleware({ app, cors: false })

@@ -1,7 +1,7 @@
 import iMenu from '@/interfaces/iMenu'
 import { iTracking, iDeclaration } from '@/interfaces/iTracking'
 import { iBranch, iLocation, iLocalities, iFormat } from '@/interfaces/iBranch'
-import { iApiResult } from '@/interfaces/iAuth'
+import { iApiResult, iUser, iToken } from '@/interfaces/iAuth'
 
 export default interface iRootState {
     Menu: iMenu[]
@@ -18,8 +18,8 @@ export default interface iRootState {
         localitiesSelect: iLocalities[]
     }
     Auth: {
-        user: {
-            result: iApiResult
-        }
+        user: iUser
+        result: iApiResult
+        token: iToken
     }
 }

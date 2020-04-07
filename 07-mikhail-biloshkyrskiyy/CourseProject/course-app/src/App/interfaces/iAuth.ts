@@ -39,3 +39,7 @@ export interface iApiResult {
     message: string
     success: boolean
 }
+
+export interface iToken {
+    time: number
+}

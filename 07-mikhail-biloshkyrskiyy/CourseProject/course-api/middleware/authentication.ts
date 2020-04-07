@@ -10,11 +10,11 @@ const Company = model('Company')
 import keys from '@/config/keys'
 import { iUser, iCompany } from '@/interfaces/iAuth'
 
-export default async function authentication(token: string) {
+export default async function authentication(token: string | undefined) {
     try {
         //@ts-ignore
         const { email, password, accessibility } = jwt.verify(token, keys.JWT)._doc
-        if (accessibility === 'User') {
+        if (accessibility === 'User' || accessibility === 'Administrator' || accessibility === 'Moderator') {
             const user = await User.findOne({ email }) as unknown as iUser
             if (password === user.password) {
                 return {
@@ -41,5 +41,5 @@ export default async function authentication(token: string) {
                 }
             }
         }
-    } catch (error) { }
+    } catch (error) {}
 }
