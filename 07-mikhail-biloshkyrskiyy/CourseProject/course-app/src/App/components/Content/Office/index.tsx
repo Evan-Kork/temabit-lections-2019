@@ -9,20 +9,20 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 
 import iRootState from '@/interfaces/iRootState'
 import iMenu, { MenuType } from '@/interfaces/iMenu'
-import { iLocation } from '@/interfaces/iBranch'
+import { iLocation } from '@/interfaces/iOffice'
 import {
-    actionMenuBranch,
-    actionBranchAll,
-    actionBranchArray,
-    actionInitBranch
-} from '@/actions/actionBranch'
+    actionMenuOffice,
+    actionOfficeAll,
+    actionOfficeArray,
+    actionInitOffice
+} from '@/actions/actionOffice'
 import {
     getLocation,
-    getBranches
+    getOffice
 } from '@/selectors'
 import { MenuInvertoryData, MenuInvertoryVars, GET_MENU_INVERTORY } from './Query'
 import Menu from '@/components/Navigation/Menu'
-import Branch from '@/components/Branch'
+import OfficeTable from '@/components/Content/Office/Table'
 import { HeightLayout } from '@/context'
 import classes from './index.module.scss'
 // This import connects hook with styles
@@ -30,14 +30,14 @@ import useStyles from './makeStyle'
 
 const mapState = (state: iRootState) => ({
     location: getLocation(state),
-    branches: getBranches(state)
+    branches: getOffice(state)
 })
 
 const mapDispatch = {
-    actionMenuBranch,
-    actionBranchAll,
-    actionBranchArray,
-    actionInitBranch
+    actionMenuOffice,
+    actionOfficeAll,
+    actionOfficeArray,
+    actionInitOffice
 }
 
 const connector = connect(
@@ -51,25 +51,25 @@ type Props = PropsFromRedux
 const Office: React.FC<Props> = (props: Props) => {
     const makeClasses = useStyles()
     const { loading, data } = useQuery<MenuInvertoryData, MenuInvertoryVars>(GET_MENU_INVERTORY, { variables: { type: MenuType.Office } })
-    props.actionMenuBranch(loading, data?.menu as iMenu[])
+    props.actionMenuOffice(loading, data?.menu as iMenu[])
     const heightContext = useContext(HeightLayout)
     useEffect(() => {
         if (props.branches[0] === undefined) {
-            if (sessionStorage.getItem('branch')) {
-                props.actionInitBranch()
+            if (sessionStorage.getItem('office')) {
+                props.actionInitOffice()
             } else if (props.location.location !== undefined) {
-                props.actionBranchArray(Object.values(props.location))
+                props.actionOfficeArray(Object.values(props.location))
             } else if (JSON.parse(sessionStorage.getItem('location') as string) as iLocation !== null) {
-                props.actionBranchArray(Object.values(JSON.parse(sessionStorage.getItem('location') as string) as iLocation))
+                props.actionOfficeArray(Object.values(JSON.parse(sessionStorage.getItem('location') as string) as iLocation))
             } else {
-                props.actionBranchAll()
+                props.actionOfficeAll()
             }
         }
     }, [])
 
     const handlerOnChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
         try {
-            props.actionBranchArray(event.target.value.split(','))
+            props.actionOfficeArray(event.target.value.split(','))
         } catch (error) { }
     }
 
@@ -95,7 +95,7 @@ const Office: React.FC<Props> = (props: Props) => {
                     </Box>
                     <Box className='h-100 d-flex'>
                         {
-                            props.branches[0] ? <Branch branches={props.branches} /> :
+                            props.branches[0] ? <OfficeTable office={props.branches} /> :
                                 <div className={classes.backdrop}>
                                     <CircularProgress color="primary" />
                                 </div>

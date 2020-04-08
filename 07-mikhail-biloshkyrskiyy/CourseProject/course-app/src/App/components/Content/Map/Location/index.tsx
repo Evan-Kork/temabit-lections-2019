@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import GoogleMapReact from 'google-map-react'
 import Box from '@material-ui/core/Box'
 
-import { iBranch } from '@/interfaces/iBranch'
+import { iOffice } from '@/interfaces/iOffice'
 import classes from './index.module.scss'
 
 import config from '@/config/index'
@@ -18,7 +18,7 @@ const Marker = (props: any) => {
 // Interface indicates
 // what parameters are in the component
 interface iProps {
-    branch: iBranch
+    branch: iOffice
 }
 const Location: React.FC<iProps> = (props: iProps) => {
     const [zoom, setZoom] = useState(14)

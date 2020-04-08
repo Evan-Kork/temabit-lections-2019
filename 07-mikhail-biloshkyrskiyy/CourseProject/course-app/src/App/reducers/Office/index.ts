@@ -1,9 +1,9 @@
 import {
-    ACTION_BRANCH_SUCCESS,
-    iBranchAction,
+    ACTION_OFFICE_SUCCESS,
+    iOfficeAction,
 
-    ACTION_INIT_BRANCH_SUCCESS,
-    iInitBranchAction,
+    ACTION_INIT_OFFICE_SUCCESS,
+    iInitOfficeAction,
 
     ACTION_LOCALITIES_SUCCESS,
     iLocalitiesAction,
@@ -17,44 +17,44 @@ import {
     ACTION_LOCATION_SUCCESS,
     iLocationAction,
 
-    ACTION_BRANCH_TYPES_SUCCESS,
-    iBranchTypesAction,
+    ACTION_OFFICE_TYPES_SUCCESS,
+    iOfficeTypesAction,
 
-    ACTION_INIT_BRANCH_TYPES_SUCCESS,
-    iInitBranchTypesAction
-} from '@/actionTypes/typeBranch'
+    ACTION_INIT_OFFICE_TYPES_SUCCESS,
+    iInitOfficeTypesAction
+} from '@/actionTypes/typeOffice'
 
 const initialState = {
-    branch: {},
-    branchTypes: {},
+    office: {},
+    officeTypes: {},
     location: {},
     localities: {},
     localitiesSelect: {}
 }
 
-type Action = iBranchAction & iInitBranchAction & iLocalitiesAction & iInitLocalitiesAction &
-    iLocalitiesSelectAction & iLocationAction & iBranchTypesAction & iInitBranchTypesAction
+type Action = iOfficeAction & iInitOfficeAction & iLocalitiesAction & iInitLocalitiesAction &
+    iLocalitiesSelectAction & iLocationAction & iOfficeTypesAction & iInitOfficeTypesAction
 export default (state = initialState, action: Action) => {
     switch (action.type) {
-        case ACTION_BRANCH_SUCCESS:
+        case ACTION_OFFICE_SUCCESS:
             return {
                 ...state,
-                branch: action.payload
+                office: action.payload
             }
-        case ACTION_INIT_BRANCH_SUCCESS:
+        case ACTION_INIT_OFFICE_SUCCESS:
             return {
                 ...state,
-                branch: action.payload
+                office: action.payload
             }
-        case ACTION_BRANCH_TYPES_SUCCESS:
+        case ACTION_OFFICE_TYPES_SUCCESS:
             return {
                 ...state,
-                branchTypes: action.payload
+                officeTypes: action.payload
             }
-        case ACTION_INIT_BRANCH_TYPES_SUCCESS:
+        case ACTION_INIT_OFFICE_TYPES_SUCCESS:
             return {
                 ...state,
-                branchTypes: action.payload
+                officeTypes: action.payload
             }
         case ACTION_LOCATION_SUCCESS:
             return {

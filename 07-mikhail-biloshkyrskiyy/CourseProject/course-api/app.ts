@@ -8,7 +8,7 @@ import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 // IMPORT ROUTES
 import indexRouter from '@/routes/index'
-import branchesRouter from '@/routes/branches'
+import branchesRouter from '@/routes/office'
 import trackingRouter from '@/routes/tracking'
 import localitiesRouter from '@/routes/localities'
 import servicesRouter from '@/routes/services'
@@ -62,7 +62,7 @@ graphql.applyMiddleware({ app, cors: false })
 // ROUTER
 app.use('/api/', indexRouter)
 app.use('/api/authorization', authRouter)
-app.use('/api/branches', branchesRouter)
+app.use('/api/office', branchesRouter)
 app.use('/api/tracking', trackingRouter)
 app.use('/api/localities', localitiesRouter)
 app.use('/api/services', servicesRouter)

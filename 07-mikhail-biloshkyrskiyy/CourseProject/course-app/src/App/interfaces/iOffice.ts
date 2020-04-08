@@ -1,4 +1,4 @@
-export interface iBranch {
+export interface iOffice {
     number: number
     adress: string
     locality: string

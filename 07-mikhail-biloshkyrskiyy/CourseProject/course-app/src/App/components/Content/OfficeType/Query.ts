@@ -15,7 +15,6 @@ export const GET_MENU_INVERTORY = gql`
             title
             icon
             path
-            availability
             typeMenu
         }
     }

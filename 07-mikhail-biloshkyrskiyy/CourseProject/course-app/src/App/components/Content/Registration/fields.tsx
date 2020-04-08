@@ -10,7 +10,7 @@ import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
 
 import { iInput } from '@/interfaces/iInput'
-import { iLocalities, iBranch } from '@/interfaces/iBranch'
+import { iLocalities, iOffice } from '@/interfaces/iOffice'
 
 export function setRegion(region: iLocalities[]) {
     const setRegion = new Set<string>()
@@ -22,9 +22,9 @@ export function setCity(city: iLocalities[], cityState: string) {
     city.map((value: iLocalities) => value.parent_title_ua === cityState && setCity.add(value.title_ua))
     return setCity
 }
-export function setParcelDepartment(department: iBranch[], departmentState: string) {
+export function setParcelDepartment(department: iOffice[], departmentState: string) {
     const setParcelDepartment = new Set<string>()
-    department.map((value: iBranch) => value.locality === departmentState && setParcelDepartment.add(value.adress))
+    department.map((value: iOffice) => value.locality === departmentState && setParcelDepartment.add(value.adress))
     return setParcelDepartment
 }
 function setAllError(element: any, array: string[], setArray: Function) {

@@ -39,7 +39,6 @@ const connector = connect(
 interface iProps {
     isOpen: boolean
     setIsOpen: Function
-    setIsCookie: Function
 }
 type PropsFromRedux = ConnectedProps<typeof connector>
 type Props = PropsFromRedux & iProps
@@ -50,7 +49,6 @@ const Login: React.FC<Props> = (props: Props) => {
         if (props.isAuth.success) {
             setTimeout(() => {
                 props.setIsOpen(false)
-                props.setIsCookie(false)
             }, 1000)
         }
     }, [props.isAuth])

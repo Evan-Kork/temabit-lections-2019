@@ -15,7 +15,7 @@ import classes from './index.module.scss'
 interface iProps {
     tracking: iTracking
 }
-const Tracking: React.FC<iProps> = (props: iProps) => {
+const TrackingTable: React.FC<iProps> = (props: iProps) => {
     return (
         <Box className={classes.root}>
             <Box className={classes.header} display={{ xs: 'none' , sm: 'block' }}>
@@ -76,4 +76,4 @@ const Tracking: React.FC<iProps> = (props: iProps) => {
     )
 }
 
-export default Tracking
+export default TrackingTable

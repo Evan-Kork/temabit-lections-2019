@@ -8,7 +8,7 @@ import TableHead from '@material-ui/core/TableHead'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 
-import { iLocalities } from '@/interfaces/iBranch'
+import { iLocalities } from '@/interfaces/iOffice'
 // This import connects hook with styles
 import useStyles from './makeStyle'
 // Interface indicates
@@ -16,7 +16,7 @@ import useStyles from './makeStyle'
 interface iProps {
     localities: iLocalities[]
 }
-const Localities: React.FC<iProps> = (props: iProps) => {
+const LocalitiesTable: React.FC<iProps> = (props: iProps) => {
     const makeClasses = useStyles()
     const [page, setPage] = React.useState(0)
     const [rowsPerPage, setRowsPerPage] = React.useState(10)
@@ -73,4 +73,4 @@ const Localities: React.FC<iProps> = (props: iProps) => {
     )
 }
 
-export default Localities
+export default LocalitiesTable

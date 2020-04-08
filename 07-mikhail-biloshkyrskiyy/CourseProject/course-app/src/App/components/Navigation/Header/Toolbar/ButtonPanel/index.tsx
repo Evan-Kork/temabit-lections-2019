@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Cookie from 'js-cookie'
 import { connect, ConnectedProps } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
@@ -34,7 +33,6 @@ type Props = PropsFromRedux
 
 const ButtonPanel: React.FC<Props> = (props: Props) => {
     const [isOpen, setIsOpen] = useState(false)
-    const [isCookie, setIsCookie] = useState(Cookie.get('jwt') !== '')
 
     useEffect(() => {
         if (props.user) {
@@ -52,7 +50,7 @@ const ButtonPanel: React.FC<Props> = (props: Props) => {
                         <FontAwesomeIcon icon={faSignInAlt} />
                         Private office
                     </Link>
-                    {isCookie ?
+                    {props.user.accessibility === undefined ?
                         <>
                             <div className={classes.link} onClick={() => setIsOpen(!isOpen)}>
                                 <FontAwesomeIcon icon={faUsers} />
@@ -66,7 +64,6 @@ const ButtonPanel: React.FC<Props> = (props: Props) => {
                         :
                         <div className={classes.link} onClick={() => {
                             props.actionLogout()
-                            setIsCookie(Cookie.get('jwt') !== '')
                         }}>
                             <FontAwesomeIcon icon={faSignOutAlt} />
                             Logout
@@ -74,7 +71,7 @@ const ButtonPanel: React.FC<Props> = (props: Props) => {
                     }
                 </Box>
                 <Breadcrumbs />
-                <Login isOpen={isOpen} setIsOpen={setIsOpen} setIsCookie={setIsCookie} />
+                <Login isOpen={isOpen} setIsOpen={setIsOpen} />
             </Container>
         </Box >
     )

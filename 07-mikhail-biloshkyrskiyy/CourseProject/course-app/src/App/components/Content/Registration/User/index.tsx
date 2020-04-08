@@ -12,18 +12,18 @@ import Alert from '@material-ui/lab/Alert'
 
 import { UserInvertoryData, UserInvertoryVars, GET_USER_INVERTORY } from '../Query'
 import iRootState from '@/interfaces/iRootState'
-import { iLocation } from '@/interfaces/iBranch'
-import { LocalitiesType } from '@/interfaces/iBranch'
+import { iLocation } from '@/interfaces/iOffice'
+import { LocalitiesType } from '@/interfaces/iOffice'
 import {
     actionLocalities,
     actionInitLocalities,
-    actionBranchAll,
-    actionBranchArray,
-    actionInitBranch
-} from '@/actions/actionBranch'
+    actionOfficeAll,
+    actionOfficeArray,
+    actionInitOffice
+} from '@/actions/actionOffice'
 import {
     getLocalities,
-    getBranches
+    getOffice
 } from '@/selectors'
 import Steper from '@/components/Stepper'
 import { HeightLayout } from '@/context'
@@ -37,15 +37,15 @@ import ColorButton from '../buttonStyle'
 
 const mapState = (state: iRootState) => ({
     localities: getLocalities(state),
-    branches: getBranches(state)
+    branches: getOffice(state)
 })
 
 const mapDispatch = {
     actionLocalities,
     actionInitLocalities,
-    actionBranchAll,
-    actionBranchArray,
-    actionInitBranch
+    actionOfficeAll: actionOfficeAll,
+    actionOfficeArray,
+    actionInitOffice
 }
 
 const connector = connect(
@@ -94,14 +94,14 @@ const UserRegistration: React.FC<Props> = (props: Props) => {
     // and makes a request
     useEffect(() => {
         if (props.branches[0] === undefined) {
-            if (sessionStorage.getItem('branch')) {
-                props.actionInitBranch()
+            if (sessionStorage.getItem('office')) {
+                props.actionInitOffice()
             } else if (locationState !== '') {
-                props.actionBranchArray(Object.values(locationState))
+                props.actionOfficeArray(Object.values(locationState))
             } else if (JSON.parse(sessionStorage.getItem('location') as string) as iLocation !== null) {
-                props.actionBranchArray(Object.values(JSON.parse(sessionStorage.getItem('location') as string) as iLocation))
+                props.actionOfficeArray(Object.values(JSON.parse(sessionStorage.getItem('location') as string) as iLocation))
             } else {
-                props.actionBranchAll()
+                props.actionOfficeAll()
             }
         }
     }, [])

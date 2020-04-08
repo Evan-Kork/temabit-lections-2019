@@ -8,15 +8,15 @@ import TableHead from '@material-ui/core/TableHead'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 
-import { iBranch } from '@/interfaces/iBranch'
+import { iOffice } from '@/interfaces/iOffice'
 // This import connects hook with styles
 import useStyles from './makeStyle'
 // Interface indicates
 // what parameters are in the component
 interface iProps {
-    branches: iBranch[]
+    office: iOffice[]
 }
-const Branch: React.FC<iProps> = (props: iProps) => {
+const OfficeTable: React.FC<iProps> = (props: iProps) => {
     const makeClasses = useStyles()
     const [page, setPage] = React.useState(0)
     const [rowsPerPage, setRowsPerPage] = React.useState(10)
@@ -44,7 +44,7 @@ const Branch: React.FC<iProps> = (props: iProps) => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {Object.values(props.branches).slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row: iBranch, index: number) => {
+                        {Object.values(props.office).slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row: iOffice, index: number) => {
                             return (
                                 <TableRow hover role="checkbox" key={index}>
                                     <TableCell>
@@ -71,7 +71,7 @@ const Branch: React.FC<iProps> = (props: iProps) => {
             <TablePagination
                 rowsPerPageOptions={[10, 25, 100]}
                 component="div"
-                count={Object.values(props.branches).length}
+                count={Object.values(props.office).length}
                 rowsPerPage={rowsPerPage}
                 page={page}
                 onChangePage={handleChangePage}
@@ -81,4 +81,4 @@ const Branch: React.FC<iProps> = (props: iProps) => {
     )
 }
 
-export default Branch
+export default OfficeTable

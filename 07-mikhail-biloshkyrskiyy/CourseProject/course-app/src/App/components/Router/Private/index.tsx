@@ -1,32 +1,20 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-import { connect, ConnectedProps } from 'react-redux'
+import CryptoJS from 'crypto-js'
 
-import iRootState from '@/interfaces/iRootState'
-import { getUser } from '@/selectors'
-
-const mapState = (state: iRootState) => ({
-    user: getUser(state)
-})
-const mapDispatch = {}
-
-const connector = connect(
-    mapState,
-    mapDispatch
-)
+import keys from '@/config'
 // Interface indicates
 // what parameters are in the component
 interface iProps {
     children: React.ReactNode
 }
-type PropsFromRedux = ConnectedProps<typeof connector>
-type Props = PropsFromRedux & iProps
-const Private: React.FC<Props> = (props: Props) => {
+const Private: React.FC<iProps> = (props: iProps) => {
+    const { user } = JSON.parse(CryptoJS.AES.decrypt(sessionStorage.getItem('rp') as string, keys.UserPrivateKey).toString(CryptoJS.enc.Utf8))
     return (
         <>
-            {props.user.accessibility ? props.children : <Redirect to='/' />}
+            {user.accessibility ? props.children : <Redirect to='/' />}
         </>
     )
 }
 
-export default connector(Private)
+export default Private

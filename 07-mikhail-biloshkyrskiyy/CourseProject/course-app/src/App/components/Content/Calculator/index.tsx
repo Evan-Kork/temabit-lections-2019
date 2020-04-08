@@ -15,12 +15,12 @@ import {
 import Button from '@material-ui/core/Button'
 
 import iRootState from '@/interfaces/iRootState'
-import { iLocalities, LocalitiesType } from '@/interfaces/iBranch'
+import { iLocalities, LocalitiesType } from '@/interfaces/iOffice'
 import { iCalculationWeight, iCalculationLength, iCalculationPrice, WeightRang, LegthRang } from '@/interfaces/iCalculation'
 import {
     actionLocalities,
     actionInitLocalities
-} from '@/actions/actionBranch'
+} from '@/actions/actionOffice'
 import {
     actionCalculationWeight,
     actionCalculationLength

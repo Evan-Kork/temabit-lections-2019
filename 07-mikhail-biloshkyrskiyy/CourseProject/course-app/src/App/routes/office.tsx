@@ -5,7 +5,7 @@ import Layout from '@/containers/Layout'
 import Backdrop from '@/components/Utils/Backdrop'
 
 const Office = lazy(() => import('@/components/Content/Office'))
-const TypesOffice = lazy(() => import('@/components/Content/TypesOffice'))
+const OfficeType = lazy(() => import('@/components/Content/OfficeType'))
 const Location = lazy(() => import('@/components/Content/Map'))
 const Localities = lazy(() => import('@/components/Content/Localities'))
 
@@ -36,7 +36,7 @@ export const RouterOfficeTypes: React.FC = () => {
                 </Backdrop>
             }>
                 <ErrorBoundary>
-                    <TypesOffice />
+                    <OfficeType />
                 </ErrorBoundary>
             </Suspense>
         </Layout>

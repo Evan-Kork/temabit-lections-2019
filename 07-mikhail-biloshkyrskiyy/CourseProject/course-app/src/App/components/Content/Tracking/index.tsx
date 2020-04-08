@@ -19,7 +19,7 @@ import {
 } from '@/selectors'
 import { MenuInvertoryData, MenuInvertoryVars, GET_MENU_INVERTORY } from './Query'
 import Menu from '@/components/Navigation/Menu'
-import TrackingProduct from '@/components/Tracking'
+import TrackingTable from '@/components/Content/Tracking/Table'
 import Input from '@/components/Utils/Input'
 import { HeightLayout } from '@/context'
 import classes from './index.module.scss'
@@ -80,7 +80,7 @@ const Tracking: React.FC<Props> = (props: Props) => {
                     </Box>
                     <Box className='h-100 d-flex'>
                         {
-                            props.tracking[0] ? <TrackingProduct tracking={props.tracking[0]} /> :
+                            props.tracking[0] ? <TrackingTable tracking={props.tracking[0]} /> :
                                 <div className={classes.backdrop}>
                                     <CircularProgress color="primary" />
                                 </div>

@@ -1,6 +1,6 @@
 import iMenu from '@/interfaces/iMenu'
 import { iTracking, iDeclaration } from '@/interfaces/iTracking'
-import { iBranch, iLocation, iLocalities, iFormat } from '@/interfaces/iBranch'
+import { iOffice, iLocation, iLocalities, iFormat } from '@/interfaces/iOffice'
 import { iApiResult, iUser, iToken } from '@/interfaces/iAuth'
 
 export default interface iRootState {
@@ -10,9 +10,9 @@ export default interface iRootState {
         declaration: iDeclaration
         trackingHistory: iTracking[]
     }
-    Branch: {
-        branch: iBranch[]
-        branchTypes: iFormat[]
+    Office: {
+        office: iOffice[]
+        officeTypes: iFormat[]
         location: iLocation
         localities: iLocalities[]
         localitiesSelect: iLocalities[]

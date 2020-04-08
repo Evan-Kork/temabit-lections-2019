@@ -4,7 +4,7 @@ import { History } from 'history'
 
 import Menu from '@/reducers/Menu'
 import Tracking from '@/reducers/Tracking'
-import Branch from '@/reducers/Branch'
+import Office from '@/reducers/Office'
 import Calculation from '@/reducers/Calculation'
 import Error from '@/reducers/Error'
 import About from '@/reducers/About'
@@ -14,7 +14,7 @@ export default (history : History) => combineReducers({
     Auth,
     Menu,
     Tracking,
-    Branch,
+    Office,
     Calculation,
     Error,
     About,

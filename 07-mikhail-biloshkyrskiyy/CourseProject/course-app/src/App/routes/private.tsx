@@ -5,6 +5,7 @@ import Layout from '@/containers/Layout'
 import Backdrop from '@/components/Utils/Backdrop'
 import Private from '@/components/Router/Private'
 
+const PrivateOffice = lazy(() => import('@/components/Content/PrivateOffice'))
 const ErrorBoundary = lazy(() => import('@/components/Utils/ErrorBoundary'))
 
 export const RouterPrivateOffice: React.FC = () => {
@@ -17,7 +18,7 @@ export const RouterPrivateOffice: React.FC = () => {
                     </Backdrop>
                 }>
                     <ErrorBoundary>
-                        <div>Private office</div>
+                        <PrivateOffice />
                     </ErrorBoundary>
                 </Suspense >
             </Private>

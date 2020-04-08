@@ -7,9 +7,9 @@ import {
     iMenuTrackingAction
 } from '@/actionTypes/typeTracking'
 import {
-    ACTION_MENU_BRANCH_SUCCESS,
-    iMenuBranchAction
-} from '@/actionTypes/typeBranch'
+    ACTION_MENU_OFFICE_SUCCESS,
+    iMenuOfficeAction
+} from '@/actionTypes/typeOffice'
 
 const initialState = {
     menu: {},
@@ -17,7 +17,7 @@ const initialState = {
     branch: {}
 }
 
-type Action = iMenuAction & iMenuTrackingAction & iMenuBranchAction
+type Action = iMenuAction & iMenuTrackingAction & iMenuOfficeAction
 export default (state = initialState, action: Action) => {
     switch (action.type) {
         case ACTION_MENU_SUCCESS:
@@ -30,7 +30,7 @@ export default (state = initialState, action: Action) => {
                 ...state,
                 tracking: action.payload
             }
-        case ACTION_MENU_BRANCH_SUCCESS:
+        case ACTION_MENU_OFFICE_SUCCESS:
             return {
                 ...state,
                 branch: action.payload

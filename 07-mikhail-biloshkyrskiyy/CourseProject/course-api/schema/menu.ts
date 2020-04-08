@@ -7,21 +7,15 @@ import { iMenu } from '@/interfaces/iMenu'
 import '@/models/menu'
 
 const Menu = model('Menu')
-const EnumAvailabilityGql = gql`
-    enum EnumAvailability {
-        NoRegistrations,
-        Registrations
-    }
-`
 const EnumMenuTypeGql = gql`
     enum EnumMenuType {
         Base,
         Declaration,
-        Office
+        Office,
+        PrivateOffice
     }
 `
 export const MenuType = gql`
-    ${EnumAvailabilityGql}
     ${EnumMenuTypeGql}
 
     type MenuType {
@@ -29,7 +23,6 @@ export const MenuType = gql`
         title: String,
         icon: String,
         path: String,
-        availability: EnumAvailability
         typeMenu: EnumMenuType
     }
 
@@ -38,7 +31,6 @@ export const MenuType = gql`
         title: String!,
         icon: String!,
         path: String!,
-        availability: EnumAvailability!,
         typeMenu: EnumMenuType!
     }
 
@@ -47,7 +39,6 @@ export const MenuType = gql`
         title: String!,
         icon: String,
         path: String,
-        availability: EnumAvailability,
         typeMenu: EnumMenuType
     }
 `
@@ -75,7 +66,6 @@ export const Mutation = {
                 title: args.menu.title,
                 icon: args.menu.icon,
                 path: args.menu.path,
-                availability: args.menu.availability,
                 typeMenu: args.menu.typeMenu
             })
             return menu.save()
@@ -90,7 +80,6 @@ export const Mutation = {
                 title: args.menu.title,
                 icon: args.menu.icon,
                 path: args.menu.path,
-                availability: args.menu.availability,
                 typeMenu: args.menu.typeMenu
             }
         }).setOptions({ omitUndefined: true })
