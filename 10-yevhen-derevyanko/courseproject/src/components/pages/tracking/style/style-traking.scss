@@ -1,0 +1,9 @@
+.line-track{
+    align-items: flex-start;
+    >div{
+        flex-basis: 50%;
+        &:first-child{
+            margin-right: 30px;
+        }
+    }
+}

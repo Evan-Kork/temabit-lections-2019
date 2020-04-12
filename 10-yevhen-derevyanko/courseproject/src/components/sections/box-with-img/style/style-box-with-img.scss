@@ -1,0 +1,11 @@
+.box-img{
+    margin-bottom: 40px;
+    img{
+        display: block;
+        margin: 0 auto;
+        @media screen and (max-width:1200px){
+            width: 100%;
+            
+        }
+    }
+}
