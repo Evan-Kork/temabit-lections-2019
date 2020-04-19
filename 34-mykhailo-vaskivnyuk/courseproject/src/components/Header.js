@@ -43,9 +43,3 @@ class Header extends React.Component {
 }
 
 export default Header;
-
-{/* <form className="tracking d-none d-md-inline">
-<input  className="order_number"
-		type="text"
-		placeholder="Введіть номер відправлення" />
-</form> */}

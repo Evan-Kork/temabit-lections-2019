@@ -36,7 +36,6 @@ class Table extends React.PureComponent {
 							event.relatedTarget.closest("TR") : null;
 
 		if (target != rel_target) this.props.handler(null);
-
 	}
 
 	handleOnClick() {
@@ -71,8 +70,6 @@ class Table extends React.PureComponent {
 	}
 
 	render() {
-
-		dev_log.render(this);
 		
 		const data = this.props.data;
 

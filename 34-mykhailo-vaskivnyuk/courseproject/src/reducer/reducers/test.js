@@ -6,7 +6,6 @@ function test(state = {}, action) {
 			break;
 		default:
 	}
-	//const newState = JSON.parse(JSON.stringify(state));
 	return state;
 }
 

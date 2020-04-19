@@ -21,9 +21,6 @@ class FormBranch extends React.Component {
 	}
 
 	render() {
-		
-		dev_log.render(this);
-		
 		return (
 			<div className="row justify-content-center">
 				<div className="branch">
@@ -41,9 +38,3 @@ class FormBranch extends React.Component {
 }
 
 export default FormBranch;
-
-{/* <form ref={this.formRef} onSubmit={this.props.onSubmit}>
-				<label>Branch 
-					<input type="number" name="branch" />
-				</label>
-			</form> */}

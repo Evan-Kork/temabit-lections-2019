@@ -9,8 +9,6 @@ class App extends React.Component {
 
 	render() {
 
-		dev_log.render(this);
-
 		return (
 			<div className="min-vh-100 d-flex flex-column justify-content-between">
 				<Router>

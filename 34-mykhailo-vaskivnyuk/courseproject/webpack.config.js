@@ -9,15 +9,11 @@ module.exports = env => {
 //---------------------------------------------------------------------
 		mode: env.production ? "production" : "development",
 //---------------------------------------------------------------------
-		// devtool: env.production ? 'source-map' : 'source-map',
-//---------------------------------------------------------------------
 		entry: resolve(__dirname, "src/index.js"),
 //---------------------------------------------------------------------
 		output: {
 			path: resolve(__dirname, "dist"),
-			filename: "[hash].final.js",
-			// sourceMapFilename: "[hash].final.map"
-			// publicPath: '/'
+			filename: "[hash].final.js"
 		},
 //---------------------------------------------------------------------
 		optimization: {
@@ -49,23 +45,15 @@ module.exports = env => {
 					use: [
 						
 						{// Creates `style` nodes from JS strings
-							// loader: 'style-loader'
 							loader: MiniCssExtractPlugin.loader
 						},
 
 						{// Translates CSS into CommonJS
-							loader: 'css-loader',
-							// options: {
-							// 	sourceMap: true
-							// }
+							loader: 'css-loader'
 						},
 						
 						{// Compiles Sass to CSS
-							loader: 'sass-loader',
-							// options: {
-							// 	sourceMap: true
-							// 	outputStyle: 'compressed'								
-							// }
+							loader: 'sass-loader'
 						}
 					]
 				},
@@ -73,23 +61,20 @@ module.exports = env => {
 				{
 					test: /\.(woff|woff2|eot|ttf|otf)$/,
 					use: [
-						'file-loader',
+						'file-loader'
 					]
 				},
 
 				{
 					test: /\.(png|svg|jpg|gif)$/,
 					use: [
-					  'file-loader',
+					  'file-loader'
 					]
 				}
 			]
 		},
 //---------------------------------------------------------------------
 		devServer: {
-			// contentBase: resolve(__dirname, "dist"),
-			// historyApiFallback: true,
-			// hot: true,
 			port: 9000,
 			proxy: { // http://localhost/api/{par1}/{par2} -> http://openapi.justin.ua/{par1}/{par2}
 				"/api": {
@@ -102,16 +87,3 @@ module.exports = env => {
 //---------------------------------------------------------------------
 	}
 };
-
-// devServer: {
-// 	// contentBase: resolve(__dirname, "dist"),
-// 	// historyApiFallback: true,
-// 	// hot: true,
-// 	port: 9000,
-// 	proxy: {
-// 		"/api": {
-// 			target: "http://localhost:5000"
-// 			//pathRewrite: {'^/api': ''}
-// 		}
-// 	}
-// }

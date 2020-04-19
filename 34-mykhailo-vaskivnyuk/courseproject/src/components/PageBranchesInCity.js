@@ -14,17 +14,13 @@ class PageBranchesInCity extends React.Component {
 	}
 
 	handleCity(event) {
-		dev_log(event.target.value);
 		this.setState({ filter: { city: event.target.value } });
 	}
 
 	render() {
-	
-		dev_log.render(this);
 		
 		const filter = this.state.filter;
 		const city = filter.city;
-		dev_log(filter);
 
 		return (
 			<React.Fragment>

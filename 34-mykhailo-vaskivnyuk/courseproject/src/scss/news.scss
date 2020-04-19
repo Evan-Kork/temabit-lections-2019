@@ -12,7 +12,6 @@
 }
 
 .subscription {
-	//@extend %font;
 	margin-bottom: 20px;
 	padding: 20px;
 	background-color: $justin_color;
@@ -22,21 +21,14 @@
 }
 
 .subscription {
-	// display: inline-block;
 	font: inherit;
-	// background: #164ce2;
 	input[type="e-mail"] {
 		font: inherit;
-		//-webkit-tap-highlight-color: transparent;
 		font-size: 16px;
 		padding: 0 15px;
 		height: 46px;
 		border: 1px solid #ddd;
-		//box-shadow: none;
-		//vertical-align: top;
-		//-webkit-appearance: none;
 		background-color: transparent;
-		//font-style: italic;
 		color: #fff !important;
 		margin-right: 0;
 		margin-bottom: 0px;
@@ -57,14 +49,11 @@
 		color: $menu_color;
 		outline: none;
 		box-shadow: none;
-		//border: 1px solid $menu_bg_active;
 		border-style: none;
 		height: 46px;
-		
 		padding: 0;
 		border: 1px solid black;
 		border-style: none;
-		//text-align: center;
 		vertical-align: top;
 	}
 }

@@ -19,17 +19,12 @@ class PageTracking extends React.Component {
 		} else {
 			order = event.target.parentElement.order.value;
 		}
-		//const order = event.target.order.value;
 		this.props.history.push("/tracking/" + order);
 	}
 	
 	render() {
-		
-		dev_log.render(this);
 
 		const order = this.props.match.params.order;
-
-		//dev_log(order);
 
 		return (
 			<React.Fragment>

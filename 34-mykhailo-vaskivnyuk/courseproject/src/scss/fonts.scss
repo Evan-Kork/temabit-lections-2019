@@ -1,22 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 @font-face {
 	font-family: "ProximaNova";
-	/* src: url(https://justin.ua/wp-content/themes/tm-heli-child/fonts/ProximaNova-Regular.eot); */
 	src:
-		/* url(https://justin.ua/wp-content/themes/tm-heli-child/fonts/ProximaNova-Regular.eot?#iefix)
-			format('embedded-opentype'),
-		url(https://justin.ua/wp-content/themes/tm-heli-child/fonts/ProximaNova-Regular.woff)
-			format('woff'), */
 		url("fonts/ProximaNova-Regular.ttf")
 			format("truetype");
-		/* url(https://justin.ua/wp-content/themes/tm-heli-child/fonts/ProximaNova-Regular.svg#wf) 
-			format('svg') */
 }
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css");
-//@import "fonts/fontawesome/css/all.css";
-// $fa-font-path: "fontawesome/webfonts";
-// @import "../fontawesome/scss/fontawesome.scss";
 
 %font {
 	font-family: "ProximaNova", sans-serif !important;

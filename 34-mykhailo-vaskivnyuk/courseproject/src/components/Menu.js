@@ -23,30 +23,13 @@ class Menu extends React.Component {
 
 	handleMenuLink(event) {
 		const target = event.target;
-		console.log("handleMenuLink, tag: " + target.tagName);
 		if (target.tagName == "A") {
-			// const selected = target.dataset.id;
 			this.handleMenu();
-			// if (this.props.selected.id != selected)
-			// 	this.props.setMenu(selected);
 		}
 	}
 
-	// getSelected(path) {
-	// 	dev_log(path);
-	// 	const menuList = this.props.menuList;
-	// 	const index = menuList.findIndex(item => 
-	// 		("/" + item.link) == path ? true : false 
-	// 	);
-	// 	if (menuList[index])
-	// 		return menuList[index].id;
-	// 	return null;
-	// }
-
 	render() {
-		dev_log.render(this);
-		//dev_log(this.getSelected(this.props.match.path));
-		dev_log(selected);
+
 		const menuList = this.props.menuList;
 		const selected = this.props.selected;
 		const path = this.props.match.path;
@@ -54,10 +37,6 @@ class Menu extends React.Component {
 			this.props.setMenu(path);
 			return null;
 		}
-
-		//const selected = this.getSelected(this.props.match.path)
-		
-		dev_log(selected);
 
 		const lis = menuList.map( menuItem => {
 			
@@ -103,17 +82,3 @@ function mapStateToProps (state) {
 }
   
 export default connect(mapStateToProps, { setMenu })(Menu);
-
-{/* <div className="menu">
-<div onClick={this.handleMenu} className="menu_open_button">
-	<i className="fas fa-bars"/>
-</div>
-<nav onClick={this.handleMenuLink} className={`menu_nav ${show_menu}`}>
-	<div onClick={this.handleMenu} className="menu_close_button">
-		<i className="fas fa-times"/>
-	</div>
-	<ul>
-		{lis}
-	</ul>
-</nav>
-</div> */}

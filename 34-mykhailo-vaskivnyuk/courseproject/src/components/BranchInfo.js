@@ -1,5 +1,4 @@
 import React from "react";
-// import parser from "../functions/parser";
 
 const SERVICES = {
 	monobank: 'Картка "MONOBANK"',
@@ -19,20 +18,10 @@ class BranchInfo extends React.Component {
 	}
 	
 	render() {
-
-		dev_log.render(this);
 		
 		const data = this.props.branchInfo;
-		//dev_log(data);
-		// const head = (
-		// 	<tr>
-		// 		<th></th>
-		// 		<th></th>
-		// 	</tr>
-		// );
 
 		const body = [
-			// <React.Profiler>
 			(<tr key={"number"}>
 				<td>Адреса</td><td>{data.number}</td>
 			</tr>),
@@ -50,18 +39,13 @@ class BranchInfo extends React.Component {
 			</tr>),
 			(<tr key={"lat_lng"}>
 				<td>Координати</td><td>lat: {data.lat}; lng: {data.lat}</td>
-			</tr>),
-			// </React.Profiler>
+			</tr>)
 		];
 	
-
 		return(
 			<div className="row justify-content-center">
 				<div className="tbl_branch">
 					<table>
-						{/* <thead>
-							{head}
-						</thead> */}
 						<tbody>
 							{body}
 						</tbody>
@@ -73,17 +57,3 @@ class BranchInfo extends React.Component {
 }
 
 export default BranchInfo;
-
-// render() {
-		
-//     const branchInfo = this.props.branchInfo;
-//     const divs = parser(branchInfo);
-
-//     dev_log(divs);
-
-//     return (
-//         <div>
-//             {divs}
-//         </div>
-//     );
-// }

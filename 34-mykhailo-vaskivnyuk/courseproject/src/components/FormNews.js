@@ -4,8 +4,6 @@ class FormNews extends React.Component {
 
 	render() {
 		
-		dev_log.render(this);
-		
 		return (
 			<div className="row justify-content-center">
 				<div className="news_filter">

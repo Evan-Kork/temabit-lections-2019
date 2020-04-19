@@ -29,22 +29,3 @@ class TrackingStatus extends React.Component {
 }
 
 export default TrackingStatus;
-
-				{/* <div class="row tracking_history">				
-
-				<div class="col-12 col-md-3">
-					<div class="tracking_icon"><img src="imgs/road_on.png"></div>
-					<div><span>В ДОРОЗІ</span></div>
-					<img class="tracking_line" src="imgs/polosa_on.png">
-				</div>
-				<div class="col-12 col-md-3">
-					<div class="tracking_icon"><img src="imgs/start_on.png"></div>
-					<div><span>ВИЇХАЛА</span></div>
-					<img class="tracking_line" src="imgs/polosa_on.png">
-				</div>
-				<div class="col-12 col-md-3">
-					<div class="tracking_icon"><img src="imgs/road_on.png"></div>
-					<div><span>В ДОРОЗІ</span></div>
-					<img class="tracking_line" src="imgs/polosa_on.png">
-				</div>
-			<div> */}

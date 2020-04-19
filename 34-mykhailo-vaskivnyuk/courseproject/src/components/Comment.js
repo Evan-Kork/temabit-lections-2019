@@ -2,7 +2,6 @@ import React from "react";
 
 class Comment extends React.Component {
 
-
 	render() {
 
 		const { branch, position } = this.props.data;
@@ -23,16 +22,3 @@ class Comment extends React.Component {
 }
 
 export default Comment;
-
-{/* <div style={{
-				position: "absolute",
-				top,
-				left,
-				backgroundColor: "white",
-				borderColor: "red",
-				borderWidth: "1px",
-				borderStyle: "solid",
-				padding: "10px"
-				}}>
-				{`branch number: ${number}`}
-			</div> */}

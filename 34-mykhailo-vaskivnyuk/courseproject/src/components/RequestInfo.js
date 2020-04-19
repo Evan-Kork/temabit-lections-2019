@@ -7,13 +7,8 @@ class RequestInfo extends React.Component {
 	}
 	
 	render() {
-
-		dev_log.render(this);
 		
 		const error = this.props.error;
-		
-		dev_log(error);
-
 		const request_status = error ? error.message : "Зачекайте, дані завантажуються!";
 		const className = error ? "request_error" : "";
 		
@@ -27,9 +22,6 @@ class RequestInfo extends React.Component {
 			<div className="row justify-content-center">
 				<div className="tbl_request">
 					<table>
-						{/* <thead>
-							{head}
-						</thead> */}
 						<tbody>
 							{body}
 						</tbody>

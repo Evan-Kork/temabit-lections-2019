@@ -1,5 +1,4 @@
 import React from "react";
-import parser from "../functions/parser";
 import request from "../functions/request";
 import RequestInfo from "./RequestInfo";
 
@@ -23,7 +22,6 @@ class TrackingInfo extends React.Component {
 		request(
 			{ method, params },
 			(data, error) => {
-				//dev_log(data);
 				this.setState(
 					{ [method]: { data, error } }
 				);
@@ -49,20 +47,10 @@ class TrackingInfo extends React.Component {
 	}
 
 	render() {
-		// orderNumber :: 201810163
-		// orderDescription :: Замовлення клієнта 201810163 від 7/25/2018
-		// date :: 2018-08-06
-		// time :: 17:20:05
-		// status :: Прострочений термін зберігання
-		// departmentNumber ::
-		// departmentAdress ::
 		
 		let { data, error } = this.state.tracking;
-		
-		//dev_log(error);
-		//const divs = parser(data);
-		if (!data){
 
+		if (!data){
 			return (
 				<div className="row justify-content-center">
 					<RequestInfo error={error}/>
@@ -73,7 +61,6 @@ class TrackingInfo extends React.Component {
 		data = data[0];
 
 		const body = [
-			// <React.Profiler>
 			(<tr key={"orderNumber"}>
 				<td>Замовленя №</td><td>{data.orderNumber}</td>
 			</tr>),
@@ -95,18 +82,12 @@ class TrackingInfo extends React.Component {
 			(<tr key={"departmentAdress"}>
 				<td>Адреса</td><td>{data.departmentAdress}</td>
 			</tr>),
-			// </React.Profiler>
 		];
-
-		//dev_log(divs);
 		
 		return (
 			<div className="row justify-content-center">
 				<div className="tbl_tracking">
 					<table>
-						{/* <thead>
-							{head}
-						</thead> */}
 						<tbody>
 							{body}
 						</tbody>

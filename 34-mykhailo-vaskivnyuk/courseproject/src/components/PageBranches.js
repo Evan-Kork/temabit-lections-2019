@@ -6,8 +6,6 @@ class PageBranches extends React.Component {
 
 	render() {
 
-		dev_log.render(this);
-
 		return (
 			<React.Fragment>
 				<ContentHeader title="Наші відділення (поштомаркети)" />

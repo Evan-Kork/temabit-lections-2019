@@ -14,9 +14,3 @@ class Pagination extends React.Component {
 }
 
 export default Pagination;
-
-{/* <div onClick={this.props.onClick}>
-<span data-direction="prev">prev </span>
-<span>Page {this.props.page} of {this.props.pages}</span>
-<span data-direction="next"> next</span>
-</div> */}

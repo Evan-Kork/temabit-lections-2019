@@ -15,8 +15,6 @@ class FormTrackingHeader extends React.Component {
 
 	render() {
 		
-		dev_log.render(this);
-		
 		return (
 			<form className="tracking d-none d-md-inline" onSubmit={this.onSubmit}>
 				<input 	className="order_number"					

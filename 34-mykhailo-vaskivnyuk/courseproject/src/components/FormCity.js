@@ -26,11 +26,8 @@ class FormCity extends React.Component {
 	
 	render() {
 
-		dev_log.render(this);
-		//dev_log(this.props.localities);
 		const city = this.props.city ? this.props.city : "";
 
-		//const cities = ["first", "second", "third"];
 		const { data, error } = this.props.localities;
 		if (!data) return null;
 
@@ -60,22 +57,3 @@ function mapStateToProps(state) {
 }
 
 export default FormCity = connect(mapStateToProps, { setResponse })(FormCity);
-
-// uuid: "82362067-dc04-11e7-80c6-00155dfbfb00"
-// SCOATOU: "3510300000"
-// parent_uuid: "17bc2896-dbfe-11e7-80c6-00155dfbfb00"
-// title_ua: "Олександрія"
-// parent_title_ua: "Кіровоградська"
-// title_ru: "Александрия"
-// parent_title_ru: "Кировоградская"
-// title_en: ""
-// parent_title_en: ""
-
-{/* <form>
-<label>City 
-	<select defaultValue={city} name="city" onChange={this.props.onChange}>
-		<option disabled key={0} value="">select a city</option>
-		{options}
-	</select>
-</label>
-</form> */}

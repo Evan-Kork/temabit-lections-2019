@@ -29,7 +29,9 @@ function mapStateToProps(state) {
 }
 
 export const Test1Connected = connect(mapStateToProps, { setMenu })(Test1);
+
 //--------------------------------------------------
+
 class Test2 extends React.Component {
 	constructor(props) {
 		super(props);
@@ -58,4 +60,5 @@ function mapStateToProps2(state) {
 }
 
 export const Test2Connected = connect(mapStateToProps2, { setTest })(Test2);
+
 //--------------------------------------------------

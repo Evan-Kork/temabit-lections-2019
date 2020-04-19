@@ -123,21 +123,12 @@ table {
 	position: absolute;
 	height: 200px;
 	background-color: $color_white;
-	//min-width: 200px;
 	border: 1px solid #d7e7fe;
 	padding: 5px;
 	img {
 		height: 100%
 	}
 }
-// position: "absolute",
-// top,
-// left,
-// backgroundColor: "white",
-// borderColor: "red",
-// borderWidth: "1px",
-// borderStyle: "solid",
-// padding: "10px"
 
 @media (min-width: 576px) { 
 	.tbl_branches, .tbl_branch, .tbl_tracking, .tbl_request {

@@ -1,5 +1,4 @@
 import React from "react";
-import parser from "../functions/parser";
 import request from "../functions/request";
 import TrackingStatus from "./TrackingStatus";
 
@@ -47,52 +46,6 @@ class TrackingHistory extends React.Component {
 		this.getTrackingHistory();
 	}
 
-	// getHistory(data) {
-	//     const history = new Map();
-	//     data.forEach(item => {
-	//         let status = "";
-	//         switch(item.status) {
-	//             case "Запланована до відправки":
-	//                 status = "ready";
-	//                 break;
-	//             case "Прямує в місто одержання":
-	//                 status = "going";
-	//                 break;
-	//             case "На відділенні в місті одержання":
-	//                 status = "on_branch";
-	//                 break;
-	//             case "Одержано":
-	//                 status = "taken";
-	//                 break;
-	//         }               
-	//         status ? history.set(status, {date: item.date, time: item.time}) : null;
-	//     });
-
-	//     return history;
-	// }
-	
-	// getHistory(data) {
-	//     const history = {};
-	//     data.forEach(item => {
-	//         switch(item.status) {
-	//             case "Запланована до відправки":
-	//                 history.ready = true;
-	//                 break;
-	//             case "Прямує в місто одержання":
-	//                 history.going = true;
-	//                 break;
-	//             case "На відділенні в місті одержання":
-	//                 history.on_branch = true;
-	//                 break;
-	//             case "Одержано":
-	//                 history.taken =true;
-	//                 break;
-	//         }               
-	//     });
-
-	//     return history;
-	// }
-
 	getHistory(data) {
 		const history = {};
 		data.forEach(item => {
@@ -120,13 +73,8 @@ class TrackingHistory extends React.Component {
 	render() {
 		
 		const { data, error } = this.state.tracking_history;
-		//dev_log(error);
 		if (!data) return null;
 		const history = this.getHistory(data);
-
-		//const divs = parser(data);
-
-		dev_log(data);
 
 		return (
 			<div className="row tracking_history">

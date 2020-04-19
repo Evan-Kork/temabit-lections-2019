@@ -22,8 +22,6 @@ class FormTracking extends React.Component {
 
 	render() {
 		
-		dev_log.render(this);
-		
 		return (
 			<div className="row justify-content-center">
 				<div className="tracking">
@@ -41,9 +39,3 @@ class FormTracking extends React.Component {
 }
 
 export default FormTracking;
-
-{/* <form ref={this.formRef} onSubmit={this.props.onSubmit}>
-				<label>Order 
-					<input type="number" name="order" />
-				</label>
-			</form> */}

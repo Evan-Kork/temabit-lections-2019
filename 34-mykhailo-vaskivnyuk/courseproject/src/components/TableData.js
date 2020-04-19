@@ -3,7 +3,6 @@ import Table from "./Table";
 import Comment from "./Comment";
 import { connect } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
-// import { Redirect } from "react-router-dom";
 import request from "../functions/request";
 import RequestInfo from "./RequestInfo";
 
@@ -25,9 +24,8 @@ class TableData extends React.Component {
 
 		const filter = props.filter;
 		if (!filter || filter === state.filter) return null;
-
+		
 		let { data, error } = props.branches;
-
 		if (!data) return null;
 
 		if (filter.city) {
@@ -42,13 +40,11 @@ class TableData extends React.Component {
 		}
 		
 		return { data, error, filter };
-
 	}
 
 	handleTable(comment_data, redirect) {
 
 		if (redirect) {
-			dev_log(redirect);
 			this.props.redirect("/branch/" + redirect);
 			window.scrollTo(0, 0);
 			return;
@@ -85,13 +81,6 @@ class TableData extends React.Component {
 
 		const comment_data = this.state.comment_data;
 
-		if (error) {
-			dev_log(error);
-		} else {
-			//dev_log(data);
-		}
-		dev_log("filter");
-		dev_log(filter);
 		return (
 			<div className="row justify-content-center">
 				{comment_data ? <Comment data={comment_data} /> : null}

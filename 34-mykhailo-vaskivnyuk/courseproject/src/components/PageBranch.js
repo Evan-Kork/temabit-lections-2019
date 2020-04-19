@@ -17,14 +17,11 @@ class PageBranch extends React.Component {
 	handleBranch(event) {
 		event.preventDefault();
 		let branch;
-		dev_log(event.target.parentElement);
 		if (event.target.tagName == "FORM") {
 			branch = event.target.branch.value;
 		} else {
 			branch = event.target.parentElement.branch.value;
 		}
-		//const branch = event.target.branch.value;
-		//dev_log("VALUE" + event.target.branch.value);
 		this.props.history.push("/branch/" + branch);
 	}
 
@@ -35,7 +32,6 @@ class PageBranch extends React.Component {
 		request(
 			{ method, params },
 			(data, error) => {
-				dev_log(error);
 				this.props.setResponse(
 					method,
 					{data, error}
@@ -46,24 +42,14 @@ class PageBranch extends React.Component {
 	
 	render() {
 
-		// if (this.props.selected != 4) {
-		// 	this.props.setMenu(4);
-		// 	return null;
-		// }
-		
-		dev_log.render(this);
-
 		const branch = this.props.match.params.branch;
 		let { data, error } = this.props.branches;
-		dev_log(data);
 		let branchInfo = null;
 		if (data && branch) {
 			branchInfo = data.filter(item => item.number === branch);
 			branchInfo = branchInfo.length ? branchInfo[0] : null;
 			if (!branchInfo) error = { message: "Відділення № " + branch + " відсутнє!"};
 		}
-
-		dev_log(branchInfo);
 
 		return (
 				<React.Fragment>
@@ -86,7 +72,6 @@ class PageBranch extends React.Component {
 function mapStateToProps(state) {
 	return {
 		branches: state.responses.branches,
-		//selected: state.menu.selected
 	}
 }
 
