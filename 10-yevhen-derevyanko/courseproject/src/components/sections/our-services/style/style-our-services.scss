@@ -9,11 +9,19 @@ $white:#ffffff;
     background-color: $white;
     flex-basis: 50%;
     margin: 0 10px;
+    @media screen and(max-width:767px){
+        margin: 0;
+        flex-basis: 100%;
+        margin-bottom: 15px;
+    }
     .content{
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 30px 20px;
+        @media screen and(max-width:576px){
+            padding: 15px 10px;
+        }
         .icon{
             width: 72px;
             height: 72px;
@@ -23,15 +31,28 @@ $white:#ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
+            @media screen and(max-width:576px){
+                width: 50px;
+                height: 50px;
+                margin-bottom: 15px;
+            }
             svg{
                 color: $white;
                 font-size: 30px;
+                @media screen and(max-width:576px){
+                    font-size: 26px;
+                }
             }
         }
         .title{
             font-weight: 600;
             font-size: 36px;
             margin-bottom: 20px;
+            @media screen and(max-width:576px){
+                font-size: 28px;
+                margin-bottom: 10px;
+                text-align: center;
+            }
             &:before{
                 content:'';
                 display: block;
@@ -56,6 +77,7 @@ $white:#ffffff;
             padding: 12px 15px;
             text-transform: uppercase;
             text-decoration: none;
+            text-align: center;
             &:hover{
                 background-color: darken($blueLight, 20%);
                 text-decoration: none;

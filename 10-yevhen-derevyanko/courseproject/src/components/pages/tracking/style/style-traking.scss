@@ -1,9 +1,19 @@
 .line-track{
     align-items: flex-start;
+    @media screen and(max-width:767px){
+        flex-direction: column-reverse;
+    }
     >div{
         flex-basis: 50%;
+        @media screen and(max-width:767px){
+            flex-basis: 100%;
+            width: 100%;
+        }
         &:first-child{
             margin-right: 30px;
+            @media screen and(max-width:767px){
+                margin-right: 0;
+            }
         }
     }
 }

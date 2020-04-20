@@ -5,20 +5,34 @@ $blueLight2:#d5e6fa;
 
 .column-calculator{
     padding: 60px 0;
+    @media screen and(max-width:767px){
+        padding: 30px 0;
+    }
     .title-calc{
         text-align: center;
         font-weight: 600;
         font-size: 36px;
         margin-bottom: 40px;
+        @media screen and(max-width:767px){
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
     }
     .box-calc{
         .line-input{
             margin: 0 -20px;
+            @media screen and(max-width:767px){
+                margin: 0;
+                flex-direction: column;
+            }
         }
         .item-input{
             flex: 1 1;
             padding: 0 20px;
             margin-bottom: 20px;
+            @media screen and(max-width:767px){
+               padding: 0;
+            }
             label{
                 position: relative;
                 display: block;

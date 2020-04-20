@@ -51,6 +51,7 @@ $blueLight2:#d5e6fa;
     }
     .aside-nav{
         flex: 1 1;
+        overflow-y: auto;
         ul{
             list-style: none;
             padding: 0;

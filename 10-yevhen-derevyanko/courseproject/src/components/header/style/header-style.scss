@@ -8,27 +8,75 @@ header{
 .line-header{
     align-items: center;
     padding: 20px 0;
+    @media screen and(max-width:1199px){
+        padding: 15px 0;
+    }
+    @media screen and(max-width:767px){
+        flex-wrap: wrap;
+    }
     .site-logo{
         img{
             max-width: 180px;
             width: 100%;
+            @media screen and(max-width:1199px){
+                max-width: 155px;
+            }
+            @media screen and(max-width:576px){
+                max-width: 100px;
+            }
         }
     }
     nav{
         margin-left: 8%;
         margin-right: 30px;
+
+        @media screen and(max-width:1199px){
+            margin-left: 4%;
+            margin-right: 20px;
+        }
+        @media screen and(max-width:767px){
+            order: 10;
+            margin: 0;
+            flex: 1 1;
+            margin-top: 15px;
+        }
         ul{
             list-style: none;
             margin: 0;
             padding: 0;
             display: flex;
+            @media screen and(max-width:991px){
+                flex-direction: column;
+            }
+            @media screen and(max-width:767px){
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
             li{
                 margin-right: 40px;
+                @media screen and(max-width:1199px){
+                    margin-right: 20px;
+                }
+                @media screen and(max-width:991px){
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+                @media screen and(max-width:767px){
+                    margin-bottom: 0;
+                }
                 &:last-child{
                     margin-right: 0;
+                    @media screen and(max-width:991px){
+                        margin-bottom: 0;
+                    }
                 }
                 a{
-
+                    img{
+                        @media screen and(max-width:576px){
+                           max-width: 120px;
+                        }
+                    }
                 }
             }
         }
@@ -38,12 +86,22 @@ header{
         flex: 1 1;
         justify-content: flex-end;
         margin-right: 40px;
+        @media screen and(max-width:767px){
+            margin-right: 20px;
+            flex-direction: column;
+        }
+        @media screen and(max-width:576px){
+           margin: 0 10px;
+        }
         .contact-phone{
             color: $white;
             transition: all ease-in-out 0.3s;
             text-decoration: none;
             margin-right: 40px;
             white-space: nowrap;
+            @media screen and(max-width:767px){
+                margin: 0 15px;
+            }
             &:hover{
                 color: $blueLight;
             }

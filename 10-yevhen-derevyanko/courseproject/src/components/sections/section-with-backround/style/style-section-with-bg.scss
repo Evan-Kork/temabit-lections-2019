@@ -18,4 +18,8 @@
 .line-box{
     position: relative;
     top: -100px;
+    @media screen and(max-width:767px){
+        top: 0;
+        flex-direction: column;
+    }
 }

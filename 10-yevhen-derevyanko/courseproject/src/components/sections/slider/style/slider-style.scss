@@ -15,6 +15,10 @@ $white:#ffffff;
         color: $white;
         text-align: center;
         margin: 20px 0;
+        @media screen and(max-width:576px){
+            font-size: 28px;
+            margin: 10px 0;
+        }
     }
 }
 
@@ -57,11 +61,17 @@ $white:#ffffff;
 }
 .partners-slider{
     margin-bottom: 20px;
+    @media screen and(max-width:576px){
+        margin-bottom: 10px;
+    }
     .slick-arrow {
         display: none !important;
     }
     .slick-dots{
         margin-top: 30px;
+        @media screen and(max-width:576px){
+            margin-top: 10px;
+        }
         li{
             background-color: rgba(255,255,255, 0.5);
             height: 15px;
@@ -78,11 +88,17 @@ $white:#ffffff;
     }
     .item-slide{
         display: flex;
+        @media screen and(max-width:767px){
+            flex-wrap: wrap;
+        }
         >a{
             flex-basis: 25%;
             display: flex;
             align-items: center;
             justify-content: center;
+            @media screen and(max-width:767px){
+                flex-basis: 50%;
+            }
             &:hover{
                 img{
                     filter: grayscale(0);
