@@ -10,15 +10,13 @@ import App from "./components/App";
 import reducer from "./reducer/reducer";
 import data from "./data/data";
 
-import { dev_log } from "./functions/dev";
-
-window.dev_log = dev_log;
-
-dev_log("APP START!");
+// ------------- DEV ------------- //
+// import { dev_log } from "./functions/dev";
+// window.dev_log = dev_log;
+// dev_log("APP START!");
+// ------------- DEV ------------- //
 
 const store = createStore(reducer, data);
-
-//console.log(store.getState());
 
 const app_root = document.getElementById("root");
 

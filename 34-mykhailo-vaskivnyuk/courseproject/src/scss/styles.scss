@@ -36,6 +36,7 @@ ul {
 //---------- ELEMENTS ---------------
 
 @import "table.scss";
+@import "home.scss";
 @import "tracking_history.scss";
 @import "news.scss";
 
@@ -119,6 +120,7 @@ header {
 //---------- MAIN -------------------
 
 main {
+	padding-bottom: 50px;
 	.h2 {
 		@extend %font;
 		color: $color_dark;
