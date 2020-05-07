@@ -1,0 +1,137 @@
+.pages {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+	i {
+		margin: 0 10px;
+		font-size: 25px;
+		cursor: pointer;
+	}
+	span {
+		font: inherit;
+		color: $color_dark;
+		font-size: 16px;
+		display: inline-block;
+		padding-bottom: 5px;
+	}
+}
+
+.tbl_branches, .tbl_branch, .tbl_tracking, .tbl_request {
+	overflow-x: auto;
+}
+
+table {
+	margin: 30px 0;
+	color: $color_dark;
+	min-width: 570px;
+	@extend %font;
+	border: 1px solid #d7e7fe;
+	thead {
+		tr {
+			th {
+				padding: 20px 0;
+				text-align: center;
+			}
+		}
+	}
+	tbody {
+		font-size: 14px;
+		tr {
+			cursor: pointer;
+			&:nth-child(2n+1) {
+				background-color:  #f4f9ff;
+			}
+			&:hover {
+				background-color: $menu_active;
+			}
+			td {
+				font-size: 14px;
+				padding: 8px;
+				border-right: 1px solid #d7e7fe;
+				border-top: none;
+				&:nth-child(1) {
+					width: 50px;
+					text-align: center;
+				}
+				&:nth-child(2) {
+					width: 300px;
+				}
+				&:nth-child(3) {
+					width: 250px;
+				}
+				&:nth-child(4) {
+					width: 150px;
+				}
+				&:nth-child(5) {
+					width: 200px;
+				}
+			}
+		}
+	}
+}
+
+.tbl_branch {
+	max-width: 650px;
+	table {
+		td {
+			&:nth-child(1) {
+				width: 200px;
+				text-align: left;
+			}
+			&:nth-child(2) {
+				width: 450px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.tbl_tracking {
+	max-width: 650px;
+	table {
+		td {
+			&:nth-child(1) {
+				width: 250px;
+				text-align: left;
+			}
+			&:nth-child(2) {
+				width: 400px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.tbl_request {
+	max-width: 600px;
+	table {
+		td {
+			font-weight: 600;
+			&:nth-child(1) {
+				width: 600px;
+			}
+			&.request_error {
+				color: red;
+			}
+		}
+	}
+}
+
+.comment {
+	position: absolute;
+	height: 200px;
+	background-color: $color_white;
+	border: 1px solid #d7e7fe;
+	padding: 5px;
+	img {
+		height: 100%
+	}
+}
+
+@media (min-width: 576px) { 
+	.tbl_branches, .tbl_branch, .tbl_tracking, .tbl_request {
+		overflow-x: initial;
+	}
+}
