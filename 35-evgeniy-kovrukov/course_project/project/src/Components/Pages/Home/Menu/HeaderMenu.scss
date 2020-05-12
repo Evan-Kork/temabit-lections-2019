@@ -1,0 +1,23 @@
+
+
+.font_left {
+   font-family: 'Righteous', cursive;
+}
+
+/* ===============>>> HEADER <<<================ */
+header {
+   padding:10px 0px;
+   transition: all 300ms ease-in;
+}
+
+header .header_logo {
+   flex-grow: 1;
+}
+header .header_logo_title {
+   text-transform: uppercase;
+   font-size: 40px;
+}
+
+header .header_logo_caption {
+   text-transform: uppercase;
+}

@@ -1,0 +1,45 @@
+/* h1 {
+  color: green;
+
+}
+
+p {
+  font-size: 50px;
+} */
+$main_blue: #164ce2;
+// .App{
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: row;
+//   width: 700px;
+// }
+// .ttn-input{
+//   background-color: $main_blue;
+// }
+.Content-component {
+	background-image: url("https://justin.ua/wp-content/uploads/2018/06/fon_new_28_02_2019.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 900px;
+}
+.BranchPage-component{
+	background-color: #f4f9ff !important;
+	background-image: url('https://justin.ua/wp-content/uploads/2018/06/fon.png') !important;
+	background-repeat: no-repeat;
+	
+}
+th, td{
+	width: 20%;
+}
+.Banner-component{
+	padding-top: 100px;
+}
+.MuiDrawer-paper {
+	width: 300px;
+}
+.MuiSvgIcon-root path{
+	color: #fff;
+}
+.Footer-component, .nav-list{
+	background-color: $main_blue;
+}
