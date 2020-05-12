@@ -4,12 +4,8 @@ import styles from '../tracker.module.css'
 import Col from "react-bootstrap/Col";
 import {createStore} from "redux";
 import {rootReducer} from "../../../redux/rootReducer";
-// Не закончил :C
 
 class Calc extends React.Component {
-    constructor(props) {
-        super(props);
-    }
         render(){
         return (
             <Container>
@@ -48,10 +44,8 @@ class Calc extends React.Component {
                         </Col>
                     </form>
                 <button className={styles.btnSucces + " btn btn-success"} type="submit">Розрахувати вартість</button>
-
             </Container>
         )}
 }
-
 
 export default Calc
