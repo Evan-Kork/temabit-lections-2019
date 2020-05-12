@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header from "../components/header/header";
 import Tracker from "../components/tracker/tracker";
+import Footer from "../components/footer/footer";
 
 class TrackerPage extends Component {
     render() {
@@ -8,6 +9,7 @@ class TrackerPage extends Component {
             <div>
                 <Header/>
                 <Tracker/>
+                <Footer/>
             </div>
         );
     }
