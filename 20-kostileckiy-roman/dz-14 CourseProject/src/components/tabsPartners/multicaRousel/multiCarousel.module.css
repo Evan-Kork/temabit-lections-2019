@@ -1,0 +1,18 @@
+.carouselFlex{
+    display: flex;
+}
+.imageSize{
+
+}
+.cardsgroup{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: 365px;
+}
+
+.cardsImg{
+    background-color: transparent;
+    border: none;
+    width: 100px;
+}

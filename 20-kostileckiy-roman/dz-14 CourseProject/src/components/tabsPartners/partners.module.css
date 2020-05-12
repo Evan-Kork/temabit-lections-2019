@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+
+}
+.containerbg{
+    background-image: url("../../resources/bg1.jpg");
+    background-size: 100% 100%;
+    padding: 50px 0;
+}
+.titleContainer{
+    display: flex;
+    justify-content: center;
+}
+.titleContainer img{
+    padding: 30px 60px;
+    border-bottom: 3px solid #d8ffff;
+}
+.bodyContainer{
+    text-align: center;
+}
+.button{
+    border-radius: 50px;
+}
+.button:hover{
+    background-color: #3bc7c7;
+    border-color: #3bc7c7;
+}
+.partnersImg{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
