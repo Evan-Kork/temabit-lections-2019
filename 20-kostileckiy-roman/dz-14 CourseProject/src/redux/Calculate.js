@@ -4,16 +4,20 @@ const initialState = {
         SUB_TITLE:"Розрахуйте вартість"
     },
     LABELS:{
-        FROM:"Звідки:",
-        TO:"Куди:",
-        WEIGHT:"Вага:",
-        LENGH:"Вага:"
+        FROM:{TEXT:"Звідки:",ID:"from"},
+        TO:{TEXT:"Куди:",ID:"to"},
+        WEIGHT:{TEXT:"Вага:",ID:"weight"},
+        LENGH:{TEXT:"Вага:",ID:"length"}
     },
     OPTIONS:{
         FROM:"Оберіть місто",
         TO:"Оберіть місто",
         WEIGHT:"Оберіть вагу",
         LENGH:"Оберіть довжину"
+    },
+    BTN:{
+        TEXT:"Розрахувати вартість",
+        TYPE:"submit"
     },
     City: [
         "Івано-Франківськ",

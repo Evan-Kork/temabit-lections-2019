@@ -5,8 +5,6 @@ import Col from "react-bootstrap/Col";
 import {createStore} from "redux";
 import {calcaculate} from "../../../redux/Calculate";
 
-
-
 class Calc extends React.Component {
     constructor(props) {
         super(props);
@@ -15,7 +13,6 @@ class Calc extends React.Component {
         this.length = this.store.length.map(element => <option key={element} value={element} name={element}>до {element} см</option>)
         this.weight = this.store.weight.map(element => <option key={element} value={element} name={element}>до {element} кг</option>)
     }
-
     inputChangeHandler = event =>{
         event.persist()
         this.setState(prev => ({...prev, ...{
@@ -27,31 +24,31 @@ class Calc extends React.Component {
             <Container>
                     <form className={styles.form} onClick={this.inputChangeHandler}>
                         <Col>
-                            <label htmlFor="from">{this.store.LABELS.FROM}</label>
-                            <select className="custom-select" id='from'>
+                            <label htmlFor={this.store.LABELS.FROM.ID}>{this.store.LABELS.FROM.TEXT}</label>
+                            <select className="custom-select" id={this.store.LABELS.FROM.ID} key={this.store.LABELS.FROM.ID}>
                                 <option defaultValue disabled="disabled">{this.store.OPTIONS.FROM}</option>
                                 {this.city}
                             </select>
-                            <label htmlFor="weight">{this.store.LABELS.WEIGHT}</label>
-                            <select className="custom-select" id="weight">
+                            <label htmlFor={this.store.LABELS.WEIGHT.ID}>{this.store.LABELS.WEIGHT.TEXT}</label>
+                            <select className="custom-select"id={this.store.LABELS.WEIGHT.ID} key={this.store.LABELS.WEIGHT.ID}>
                                 <option defaultValue disabled="disabled">{this.store.OPTIONS.WEIGHT}</option>
                                 {this.weight}
                             </select>
                         </Col>
                         <Col>
-                            <label htmlFor="to">{this.store.LABELS.TO}</label>
-                            <select className="custom-select" id="to">
+                            <label htmlFor={this.store.LABELS.TO.ID}>{this.store.LABELS.TO.TEXT}</label>
+                            <select className="custom-select" id={this.store.LABELS.TO.ID} key={this.store.LABELS.TO.ID}>
                                 <option defaultValue disabled="disabled">{this.store.OPTIONS.TO}</option>
                                 {this.city}
                             </select>
-                            <label htmlFor="length">{this.store.LABELS.LENGH}</label>
-                            <select className="custom-select" id="length">
+                            <label htmlFor={this.store.LABELS.LENGH.ID}>{this.store.LABELS.LENGH.TEXT}</label>
+                            <select className="custom-select" id={this.store.LABELS.LENGH.ID} key={this.store.LABELS.LENGH.ID}>
                                 <option defaultValue disabled="disabled">{this.store.OPTIONS.LENGH}</option>
                                 {this.length}
                             </select>
                         </Col>
                     </form>
-                <button className={styles.btnSucces + " btn btn-success"} type="submit">Розрахувати вартість</button>
+                <button className={styles.btnSucces + " btn btn-success"} type={this.store.BTN.TYPE}>{this.store.BTN.TEXT}</button>
             </Container>
         )}
 }
