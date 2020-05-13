@@ -3,7 +3,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import styles from '../footer.module.css'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { faFacebookF, faInstagram, faTelegram, faFacebookMessenger, faViber } from '@fortawesome/free-brands-svg-icons'
 import {createStore} from "redux";
 import {Footer} from "../../../redux/footerReducer";
 
@@ -12,7 +11,6 @@ class FoterDown extends Component {
         super(props);
         this.store = createStore(Footer).getState().DOWN_SIDE
     }
-
     render() {
         return (
             <Container>

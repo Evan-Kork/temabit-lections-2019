@@ -1,4 +1,20 @@
 const initialState = {
+    HEADERS:{
+        TITLE:"Калькулятор",
+        SUB_TITLE:"Розрахуйте вартість"
+    },
+    LABELS:{
+        FROM:"Звідки:",
+        TO:"Куди:",
+        WEIGHT:"Вага:",
+        LENGH:"Вага:"
+    },
+    OPTIONS:{
+        FROM:"Оберіть місто",
+        TO:"Оберіть місто",
+        WEIGHT:"Оберіть вагу",
+        LENGH:"Оберіть довжину"
+    },
     City: [
         "Івано-Франківськ",
         "Ізмаїл",
@@ -133,7 +149,9 @@ const initialState = {
         "Яготин"
     ],
     weight: [0.5,1,2,5,10,15,30],
-    length: [40, 60, 90]
+    length: [40, 60, 90],
+
+
 }
 
 export const calcaculate = (state = initialState, action) =>{

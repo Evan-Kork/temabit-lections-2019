@@ -4,9 +4,7 @@ import Container from "react-bootstrap/Container";
 import Header from "../components/header/header";
 import TabsAndPartners from "../components/tabsPartners/tabsAndPartners";
 import Footer from "../components/footer/footer";
-import JustinConnect from "../redux/connectJustin/connect";
 import MainCarousel from "../components/carousel/Carousel";
-
 
 
 class MainPage extends Component {
@@ -19,7 +17,6 @@ class MainPage extends Component {
                         <TabsAndPartners/>
                         <Footer/>
                     </Container>
-                    <JustinConnect/>
                 </div>
         )
     }
