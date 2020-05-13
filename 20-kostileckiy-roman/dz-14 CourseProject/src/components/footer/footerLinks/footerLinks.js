@@ -13,7 +13,6 @@ class FooterLinks extends Component {
         this.middleLinks = this.store.LINKS.MIDDLE.map(element => <li><a href="/">{element}</a></li>)
         this.rightLinks = this.store.LINKS.RIGHT.map(element => <li><a href="/">{element}</a></li>)
     }
-
     render() {
         return (
             <Container>
@@ -38,5 +37,4 @@ class FooterLinks extends Component {
         );
     }
 }
-
 export default FooterLinks;

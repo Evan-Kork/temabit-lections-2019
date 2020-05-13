@@ -1,3 +1,4 @@
+import { faFacebookF, faInstagram, faTelegram, faFacebookMessenger, faViber } from '@fortawesome/free-brands-svg-icons'
 
 const initialState = {
     // LINKS:{
@@ -72,6 +73,20 @@ const initialState = {
         LEFT:["Про Justin","Карта відділень","Список відділень","Розрахунок вартості"],
         MIDDLE:["Тарифи","Умови надання послуг","Питання та відповіді","Укласти договір"],
         RIGHT:["Наші партнери","Кредитні посередники","Новини","Контакти"]
+    },
+    DOWN_SIDE:{
+        ICONS:{
+            FACEBOOK:{ICON:faFacebookF,LINK:"/",TITLE:"Facebook"},
+            INSTAGFRAM:{ICON:faInstagram,LINK:"/",TITLE:"Instagram"},
+            TELEGRAM:{ICON:faTelegram,LINK:"/",TITLE:"Telegram"},
+            MESSENGER:{ICON:faFacebookMessenger,LINK:"/",TITLE:"Facebook Messenger"},
+            VIBER:{ICON:faViber,LINK:"/",TITLE:"VIBER"}
+        },
+        COPYRING:{TEXT:"© 2020 Компания Justin"},
+        PRIVACY_POLICY:{
+            TEXT:"Політика конфіденційності",
+            LINK:"/"
+        }
     }
 }
 
