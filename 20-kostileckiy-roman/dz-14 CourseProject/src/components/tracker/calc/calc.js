@@ -3,25 +3,24 @@ import Container from "react-bootstrap/Container";
 import styles from '../tracker.module.css'
 import Col from "react-bootstrap/Col";
 import {createStore} from "redux";
-import {rootReducer} from "../../../redux/rootReducer";
+import {calcaculate} from "../../../redux/Calculate";
 
-const city = createStore(rootReducer).getState()
-    .CalculateCostSending.City
-    .map(element => <option key={element} value={element}>{element}</option>)
-
-const length = createStore(rootReducer).getState()
-    .CalculateCostSending.length
-    .map(element => <option key={element} value={element}>до {element} см</option>)
-
-const weight = createStore(rootReducer).getState()
-    .CalculateCostSending.weight
-    .map(element => <option key={element} value={element}>до {element} кг</option>)
+const store = createStore(calcaculate).getState()
+const city = store.City.map(element => <option key={element} value={element} name={element}>{element}</option>)
+const length = store.length.map(element => <option key={element} value={element} name={element}>до {element} см</option>)
+const weight = store.weight.map(element => <option key={element} value={element} name={element}>до {element} кг</option>)
 
 class Calc extends React.Component {
+    inputChangeHandler = event =>{
+        event.persist()
+        this.setState(prev => ({...prev, ...{
+            [event.target.name]:event.target.value
+        }}))
+    }
         render(){
         return (
             <Container>
-                    <form className={styles.form}>
+                    <form className={styles.form} onClick={this.inputChangeHandler}>
                         <Col>
                             <label htmlFor="from">Звідки:</label>
                             <select className="custom-select" id='from'>
