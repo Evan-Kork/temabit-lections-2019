@@ -1,5 +1,6 @@
 import Locations from "../resources/ico-location.png";
 import Calculator from "../resources/ico-calculator.png";
+import partners from '../resources/partners.png';
 
 const initialState = {
     LOCATION:{
@@ -14,6 +15,10 @@ const initialState = {
         TEXT:"Калькулятор",
         LINK:"/tracker",
         BTN_TEXT:"РОЗРАХУВАТИ ВАРТІСТЬ ВІДПРАВЛЕННЯ"
+    },
+    PARTNERS:{
+        IMG:partners,
+        TEXT:"Партнери",
     }
 }
 export const tabsAndPartner = (state = initialState, action) =>{

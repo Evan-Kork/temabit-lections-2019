@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import styles from "../partners.module.css";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import {TRACKER_PAGE} from "../../../redux/pagePath";
 import {createStore} from "redux";
 import {tabsAndPartner} from "../../../redux/tabsAndPartnerReduser";
 
@@ -32,7 +31,10 @@ class Cards extends Component {
                 </Card>
                 <Card className={styles.calc} style={{ width: '24rem' }}>
                     <Card.Title className={styles.titleContainer}>
-                        <img src={this.store.CALCULATOR.IMG} alt={this.store.CALCULATOR.TEXT} className={styles.tabImage}/>
+                        <img
+                            src={this.store.CALCULATOR.IMG}
+                            alt={this.store.CALCULATOR.TEXT}
+                            className={styles.tabImage}/>
                     </Card.Title>
                     <Card.Body className={styles.bodyContainer}>
                         <Card.Title>Калькулятор</Card.Title>
