@@ -1,26 +1,26 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
-import {HOMEPAGE, TRACKER_PAGE} from "./redux/pagePath";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainPage from "./pages/mainPage";
 import TrackerPage from "./pages/trackerPage";
+import {createStore} from "redux";
+import {Link} from "./redux/LinkReduser";
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.store = createStore(Link).getState().LINK_TO
+    }
     render() {
         return (
             <BrowserRouter>
-              <Route exact path={HOMEPAGE}>
+              <Route exact path={this.store.PAGE_MAIN}>
                   <MainPage/>
               </Route>
-              <Route exact path={TRACKER_PAGE}>
+              <Route exact path={this.store.PAGE_TRACKER}>
                   <TrackerPage/>
               </Route>
             </BrowserRouter>
-
-
-
-
-
         );
     }
 }

@@ -2,34 +2,35 @@ import React, {Component} from 'react';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import styles from '../footer.module.css'
+import {createStore} from "redux";
+import {Footer} from "../../../redux/footerReducer";
 
 class FooterLinks extends Component {
+    constructor(props) {
+        super(props);
+        this.store = createStore(Footer).getState()
+        this.leftLinks = this.store.LINKS.LEFT.map(element => <li><a href="/">{element}</a></li>)
+        this.middleLinks = this.store.LINKS.MIDDLE.map(element => <li><a href="/">{element}</a></li>)
+        this.rightLinks = this.store.LINKS.RIGHT.map(element => <li><a href="/">{element}</a></li>)
+    }
+
     render() {
         return (
             <Container>
                 <Row className={styles.footerLinks}>
                     <div>
                         <ul>
-                            <li><a href="/">Про Justin</a></li>
-                            <li><a href="/">Карта відділень</a></li>
-                            <li><a href="/">Список відділень</a></li>
-                            <li><a href="/">Розрахунок вартості</a></li>
+                            {this.leftLinks}
                         </ul>
                     </div>
                     <div className={styles.centerLinks}>
                         <ul>
-                            <li><a href="/">Тарифи</a></li>
-                            <li><a href="/">Умови надання послуг</a></li>
-                            <li><a href="/">Питання та відповіді</a></li>
-                            <li><a href="/">Укласти договір</a></li>
+                            {this.middleLinks}
                         </ul>
                     </div>
                     <div>
                         <ul>
-                            <li><a href="/">Наші партнери</a></li>
-                            <li><a href="/">Кредитні посередники</a></li>
-                            <li><a href="/">Новини</a></li>
-                            <li><a href="/">Контакти</a></li>
+                            {this.rightLinks}
                         </ul>
                     </div>
                 </Row>
