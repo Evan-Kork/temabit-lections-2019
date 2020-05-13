@@ -5,6 +5,18 @@ import Col from "react-bootstrap/Col";
 import {createStore} from "redux";
 import {rootReducer} from "../../../redux/rootReducer";
 
+const city = createStore(rootReducer).getState()
+    .CalculateCostSending.City
+    .map(element => <option key={element} value={element}>{element}</option>)
+
+const length = createStore(rootReducer).getState()
+    .CalculateCostSending.length
+    .map(element => <option key={element} value={element}>до {element} см</option>)
+
+const weight = createStore(rootReducer).getState()
+    .CalculateCostSending.weight
+    .map(element => <option key={element} value={element}>до {element} кг</option>)
+
 class Calc extends React.Component {
         render(){
         return (
@@ -14,32 +26,24 @@ class Calc extends React.Component {
                             <label htmlFor="from">Звідки:</label>
                             <select className="custom-select" id='from'>
                                 <option defaultValue disabled="disabled">Оберіть місто</option>
-                                {createStore(rootReducer).getState()
-                                        .CalculateCostSending.City
-                                            .map(element =><option key={element} value={element}>{element}</option> )}
+                                {city}
                             </select>
                             <label htmlFor="weight">Вага:</label>
                             <select className="custom-select" id="weight">
                                 <option defaultValue disabled="disabled">Оберіть вагу</option>
-                                {createStore(rootReducer)
-                                    .getState().CalculateCostSending.weight
-                                    .map(element => <option value={element}>до {element} кг</option>)}
+                                {weight}
                             </select>
                         </Col>
                         <Col>
                             <label htmlFor="to">Куди:</label>
                             <select className="custom-select" id="to">
                                 <option defaultValue disabled="disabled">Оберіть місто</option>
-                                {createStore(rootReducer).getState()
-                                    .CalculateCostSending.City
-                                    .map(element =><option value={element}>{element}</option> )}
+                                {city}
                             </select>
                             <label htmlFor="length">Довжина:</label>
                             <select className="custom-select" id="length">
                                 <option defaultValue disabled="disabled">Оберіть довжину</option>
-                                {createStore(rootReducer).getState()
-                                    .CalculateCostSending.length
-                                    .map(element => <option value={element}>до {element} см</option>)}
+                                {length}
                             </select>
                         </Col>
                     </form>
