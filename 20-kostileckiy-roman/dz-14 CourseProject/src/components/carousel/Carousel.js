@@ -7,9 +7,9 @@ class MainCarousel extends Component {
     constructor(props) {
         super(props);
         this.controlledCarousel = ()=>{
-            const [index, setIndex] = 0;
+            this.setIndex = 0;
             this.handleSelect = (selectIndex, e) =>{
-                setIndex(selectIndex)
+                this.setIndex(selectIndex)
             }
         }
         this.store = createStore(carousel).getState()
@@ -17,7 +17,7 @@ class MainCarousel extends Component {
     render() {
         return (
             <div>
-                <Carousel activeIndex={this.index} onSelect={this.handleSelect} indicators={false} fade={true}>
+                <Carousel activeIndex={this.index} onSelect={this.controlledCarousel} indicators={false} fade={true}>
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
