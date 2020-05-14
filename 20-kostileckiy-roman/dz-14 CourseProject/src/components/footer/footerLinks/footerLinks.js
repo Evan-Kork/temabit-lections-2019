@@ -9,9 +9,9 @@ class FooterLinks extends Component {
     constructor(props) {
         super(props);
         this.store = createStore(Footer).getState()
-        this.leftLinks = this.store.LINKS.LEFT.map(element => <li><a href="/">{element}</a></li>)
-        this.middleLinks = this.store.LINKS.MIDDLE.map(element => <li><a href="/">{element}</a></li>)
-        this.rightLinks = this.store.LINKS.RIGHT.map(element => <li><a href="/">{element}</a></li>)
+        this.leftLinks = this.store.LINKS.LEFT.map(element => <li key={element.toString()}><a href="/" >{element}</a></li>)
+        this.middleLinks = this.store.LINKS.MIDDLE.map(element => <li key={element.toString()}><a href="/">{element}</a></li>)
+        this.rightLinks = this.store.LINKS.RIGHT.map(element => <li key={element.toString()}><a href="/">{element}</a></li>)
     }
     render() {
         return (
