@@ -1,3 +1,34 @@
+const requestUrl = 'http://api.justin.ua/justin_pms_test/hs/v2/runRequest';
+const invocation = new XMLHttpRequest();
+const logPass = "Exchange";
+
+const callJustinApi = () =>{
+    if (invocation){
+        invocation.open("GET", requestUrl, true)
+
+
+    }
+}
+
+// const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+// const xhr = new XMLHttpRequest()
+// xhr.open(
+//     'GET',
+//     requestUrl,
+//     true,
+//     "Exchange",
+//     "Exchange")
+// xhr.send()
+// xhr.onreadystatechange = () => {
+//     if (xhr.status === 0){
+//         console.log(xhr.status, 'загрузка')
+//     }else if(xhr.status === 200) {
+//         console.log('result', xhr.status, JSON.parse(xhr.responseText))
+//     }else {
+//         console.log('err', xhr.status)
+//     }
+// }
+
 const initialState = {
     HEADERS:{
         TITLE:"Калькулятор",
@@ -154,8 +185,6 @@ const initialState = {
     ],
     weight: [0.5,1,2,5,10,15,30],
     length: [40, 60, 90],
-
-
 }
 
 export const calcaculate = (state = initialState, action) =>{

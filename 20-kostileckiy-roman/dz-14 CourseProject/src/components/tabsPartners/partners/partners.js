@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import partners from '../../../resources/partners.png';
 import styles from '../partners.module.css'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import MultiCarousel from "../multicaRousel/multiCarousel";
 import {createStore} from "redux";
 import {tabsAndPartner} from "../../../redux/tabsAndPartnerReduser";
-
 
 class Partners extends Component {
     constructor(props) {

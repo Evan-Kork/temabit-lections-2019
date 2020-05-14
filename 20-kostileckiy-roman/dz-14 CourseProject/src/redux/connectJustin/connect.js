@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-
 const requestUrl = 'http://api.justin.ua/justin_pms_test/hs/v2/runRequest '
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const xhr = new XMLHttpRequest()
