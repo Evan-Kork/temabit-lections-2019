@@ -13,13 +13,13 @@ class MultiCarousel extends Component {
         super(props);
         this.store = createStore(tabsAndPartner).getState().MULTICAROUSEL
         this.logoPackOne = this.store.PARTNERS_LOGO_1.map(element =>
-                <Card style={{ width: '18rem' }} className={styles.cardsImg}>
-                    <Card.Img variant="top" src={element}/>
+                <Card style={{ width: '18rem' }} className={styles.cardsImg} key={element.toString()}>
+                    <Card.Img variant="top" src={element} />
                 </Card>
         )
         this.logoPackTwo = this.store.PARTNERS_LOGO_2.map(element =>
-            <Card style={{ width: '18rem' }} className={styles.cardsImg}>
-                <Card.Img variant="top" src={element}/>
+            <Card style={{ width: '18rem' }} className={styles.cardsImg} key={element.toString()}>
+                <Card.Img variant="top" src={element} />
             </Card>
         )
     }
@@ -28,12 +28,12 @@ class MultiCarousel extends Component {
             <Container>
                     <Carousel controls={false}>
                         <CarouselItem>
-                            <CardGroup className={styles.cardsgroup}>
+                            <CardGroup className={styles.cardsGroup}>
                                 {this.logoPackOne}
                             </CardGroup>
                         </CarouselItem>
                         <CarouselItem>
-                            <CardGroup className={styles.cardsgroup}>
+                            <CardGroup className={styles.cardsGroup}>
                                 {this.logoPackTwo}
                             </CardGroup>
                         </CarouselItem>
