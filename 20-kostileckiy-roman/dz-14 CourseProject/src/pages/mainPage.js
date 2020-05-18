@@ -6,7 +6,6 @@ import TabsAndPartners from "../components/tabsPartners/tabsAndPartners";
 import Footer from "../components/footer/footer";
 import MainCarousel from "../components/carousel/Carousel";
 
-
 class MainPage extends Component {
     render() {
         return (

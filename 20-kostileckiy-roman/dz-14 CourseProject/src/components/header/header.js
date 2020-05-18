@@ -10,7 +10,6 @@ import {createStore} from "redux";
 import {header} from "../../redux/headerReduser";
 
 
-
 class Header extends Component {
     constructor(props) {
         super(props);
@@ -19,7 +18,7 @@ class Header extends Component {
     render() {
         return (
             <Container fluid className={styles.header}>
-            <Container className={styles.headerContainer}>
+            <Container>
                     <Row className={styles.rowContainer}>
                         <Col xl={3}>
                             <div className={styles.logo}>
