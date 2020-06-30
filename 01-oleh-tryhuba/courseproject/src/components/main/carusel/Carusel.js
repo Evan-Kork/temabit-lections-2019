@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDom           from 'react-dom';
 import './carusel.scss'
 import JustinApiService   from '../../app/services/JustinApiService'
 import Spiner             from "../../spiner/Spiner";

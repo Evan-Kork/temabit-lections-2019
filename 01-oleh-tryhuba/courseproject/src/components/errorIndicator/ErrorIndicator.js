@@ -1,5 +1,4 @@
 import React    from "react"
-import ReactDom from "react-dom"
 import "./errorIndicator.scss"
 import no from './no.png'
 

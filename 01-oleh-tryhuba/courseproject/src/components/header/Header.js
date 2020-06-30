@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import ReactDom from 'react-dom'
+import React from 'react';
 import './header.scss'
 import Logo from '../../img/logo_new.png'
 import Deliver from '../../img/international_btn.png'

@@ -1,4 +1,4 @@
-import React, {Component, SyntheticEvent} from 'react';
+import React, {Component} from 'react';
 import './carusel.scss'
 import JustinApiService from '../../app/services/JustinApiService'
 import Spiner from "../../spiner/Spiner";
