@@ -1,26 +1,37 @@
-import React, {useState} from 'react';
-import ReactDom from 'react-dom'
+import React from 'react';
 import './header.scss'
 import Logo from '../../img/logo_new.png'
 import Deliver from '../../img/international_btn.png'
 import HeaderSearch from "./header-search/Header-search";
 import {NavLink} from "react-router-dom";
 
-export default class Header extends React.Component {
 
-	constructor(props) {
+type MyState = {
+	showNavMenu: boolean
+}
+
+type MyProps = {
+	readonly title?: string;
+}
+
+
+export default class Header extends React.Component<MyProps, MyState> {
+
+
+	constructor(props: MyProps) {
 		super(props);
+
 		this.state = {
 			showNavMenu: false
 		};
 	}
 
-	showNav = (e) => {
+	showNav = () => {
 		this.setState({
 			showNavMenu: true
 		});
 	};
-	closeNav = (e) => {
+	closeNav = () => {
 		this.setState({
 			showNavMenu: false
 		});
@@ -29,7 +40,7 @@ export default class Header extends React.Component {
 	render() {
 		return (
 			<div className="row justify-content-between">
-
+				<div className="myClass">${this.props.title}</div>
 				<div className="header">
 					<div className="header__logo">
 						<img src={Logo} alt="logo"/>
