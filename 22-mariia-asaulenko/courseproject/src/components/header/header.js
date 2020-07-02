@@ -30,7 +30,7 @@ const Header = () => {
       <Row className="d-flex">
         <Col className="menu-item order-lg-1">
           <Link to="/">
-            <img alt="logo" src="https://justin.ua/wp-content/uploads/2019/03/logo_new.png"></img>
+            <img alt="logo" src="http://localhost:9000/img/logo_new.png"></img>
           </Link>
         </Col>
         <Col className="contact menu-item d-md-none order-lg-3">
@@ -65,12 +65,12 @@ const Header = () => {
         <div className="group-btn d-flex flex-row order-lg-2 my-0 mx-auto m-lg-0">
           <Col className="menu-item ">
             <a href="#">
-              <img alt="delivery" src="https://justin.ua/wp-content/uploads/2020/02/Knopka_Mignarodna_DOSTAVKA.png"></img>
+              <img alt="delivery" src="http://localhost:9000/img/Knopka_Mignarodna_DOSTAVKA.png"></img>
             </a>
           </Col>
           <Col className="menu-item">
             <a href="#">
-              <img alt="user-cabbinet" src="https://justin.ua/wp-content/uploads/2020/02/KABINET.png"></img>
+              <img alt="user-cabbinet" src="http://localhost:9000/img/KABINET.png"></img>
             </a>
           </Col>
         </div>

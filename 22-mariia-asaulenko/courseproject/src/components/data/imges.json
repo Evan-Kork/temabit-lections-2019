@@ -1,26 +1,10 @@
 [
 	{
-		"src": "https://justin.ua/wp-content/uploads/2020/02/Sayt_IZI.jpg",
-		"alt": "special offer"
+		"src": "http://localhost:9000/img/carousel-1.jpg",
+		"alt": "tel"
 	},
 	{
-		"src": "https://justin.ua/wp-content/uploads/2020/02/Sayt_EPICENTR-2.jpg",
-		"alt": "epicentr"
-	},
-	{
-		"src": "https://justin.ua/wp-content/uploads/2020/02/Sayt_ROZETKA_3-1.jpg",
-		"alt": "rozetka"
-	},
-	{
-		"src": "https://justin.ua/wp-content/uploads/2020/02/Kasta_for_sayt.jpg",
-		"alt": "kasts"
-	},
-	{
-		"src": "https://justin.ua/wp-content/uploads/2019/10/PARFUMS.png",
-		"alt": "parfums"
-	},
-	{
-		"src": "https://justin.ua/wp-content/uploads/2019/11/Baner-resajz.jpg",
-		"alt": "lebutique"
+		"src": "http://localhost:9000/img/carousel-3.png",
+		"alt": "ringo"
 	}
 ]
