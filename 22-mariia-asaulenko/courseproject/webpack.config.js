@@ -10,7 +10,7 @@ module.exports = {
   mode: isProd ? "production" : "development",
 
   entry: resolve(__dirname, "src/index.js"),
-
+  devtool: 'inline-source-map',
   output: {
     path: resolve(__dirname, "dist"),
     filename: "[hash].final.js"
@@ -66,6 +66,20 @@ module.exports = {
           'css-loader',
           'sass-loader',
         ],
+      },
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader"
+          }
+        ]
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
       }
     ]
   },
@@ -74,5 +88,13 @@ module.exports = {
     contentBase: resolve(__dirname, "dist"),
     hot: true,
     port: 9001,
-  }
+  },
+  // externals: {
+    // "react": "React",
+    // "react-dom": "ReactDOM"
+  // },
+  resolve: {
+    extensions: [".jsx", ".js", ".json", ".ts", ".tsx"]
+},
+
 };

@@ -1,7 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import '../../../scss/pages/title-pages/title-pages.scss';
 
-const TitlePages = ({title}) => (
+interface TitleProp {
+  title: string
+}
+
+const TitlePages = ({title}:TitleProp) => (
   <div className="title d-flex flex-column align-items-center">
     <div className="line-top"></div>
     <h2>{title}</h2>

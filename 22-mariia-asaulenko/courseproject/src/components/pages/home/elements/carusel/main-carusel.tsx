@@ -1,12 +1,17 @@
-import React from 'react';
+import * as React from 'react';
 import { Carousel } from 'react-bootstrap';
-import imges from '../../../../data/imges';
+import * as imges from '../../../../data/imges.json';
 import '../../../../../scss/pages/home/elements/main-carusel.scss';
+
+type imge = {
+  src:string,
+  alt?:string
+}
 
 const MainCarousel = () => (
   <Carousel className="carusel" indicators={false}>
     {
-      imges.map(({ src, alt }) => (
+      imges.map(({ src, alt }:imge) => (
         <Carousel.Item key={alt}>
           <img
             className="d-block w-100"

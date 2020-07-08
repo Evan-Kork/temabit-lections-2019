@@ -1,9 +1,10 @@
-import React from 'react'
+import * as React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faTelegram, faFacebookMessenger, faViber } from '@fortawesome/free-brands-svg-icons';
-import socialItems from "../data/social-networks";
+import * as socialItems from "../data/social-networks.json";
+import {Icon} from '../../../interface'
 
-const icons = { faFacebookF, faInstagram, faTelegram, faFacebookMessenger, faViber };
+const icons:Icon = { faFacebookF, faInstagram, faTelegram, faFacebookMessenger, faViber };
 const SocialNetworks = () => (
   <>
     {socialItems.map(({ icon, src }) => (

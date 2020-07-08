@@ -1,10 +1,12 @@
 import './scss/app.scss';
-import React from 'react';
+import * as React from 'react';
 import Home from './components/pages/home/home';
 import TrackingTtn from './components/pages/tracking-ttn/tracking-ttn'
 import Branches from './components/pages/branches/branches';
 import BranchesList from './components/pages/branches-list/branches-list';
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import "reflect-metadata";
+import "es6-shim";
 
 class App extends React.Component {
   render() {

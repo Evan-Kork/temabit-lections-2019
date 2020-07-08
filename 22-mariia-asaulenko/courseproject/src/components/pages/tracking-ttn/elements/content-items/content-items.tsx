@@ -1,12 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import *as React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import StatusCard from '../status-card/status-card';
 import DisabledCard from '../disabled-card/disabled-card';
-import ttnHistory from '../../../../data/ttn-history';
+import * as ttnHistory from '../../../../data/ttn-history.json';
 import '../../../../../scss/pages/tracking-ttn/elements/content-items.scss'
+
+class DataTtn {
+  date: string;;
+  departmentNumber: number;
+  departmentAdress:string;
+  id: number;
+  alt: string;
+  imgState: string;
+  titleState:string;
+  text: string;
+  status?: string;
+  // zaplanovano?:string;
+}
+
+interface MyData {
+  zaplanovano: DataTtn;
+
+}
+interface Data extends DataTtn {}
 
 const useQuery = () => new URLSearchParams(useLocation().search);
 
@@ -15,17 +34,19 @@ const ContentItems = () => {
   let query = useQuery();
   const ttnNumber = query.get("ttn_number");
 
-  const [orderNumber, setOrderNumber] = useState(ttnNumber);
-  const [orderData, setOrderData] = useState([]);
+  const [orderNumber, setOrderNumber] = React.useState(ttnNumber);
+  const [orderData, setOrderData] = React.useState([]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setOrderNumber(ttnNumber);
     fetch(`http://localhost:9000/tracking_history/${ttnNumber}`).
       then((res) => res.json()).
-      then(({ result = [] }) => setOrderData(result))
+      then(({ result = [] }) => {
+        console.log(result)
+        setOrderData(result)})
   }, [ttnNumber])
 
-  const getOrderNumber = (event) => {
+  const getOrderNumber = (event:React.ChangeEvent<HTMLInputElement>) => {
     event.stopPropagation();
     event.preventDefault();
     setOrderNumber(event.target.value);
@@ -37,7 +58,7 @@ const ContentItems = () => {
     window.location.href = `/#/tracking-ttn/?ttn_number=${orderNumber}`;
   }
 
-  const getNewData = (heapDataArr) => {
+  const getNewData = (heapDataArr: Array<Object>) => {
     let newData = [...heapDataArr];
 
     newData.sort((a, b) => Date.parse(a.date) < Date.parse(b.date) ? 1 : -1)
@@ -90,7 +111,7 @@ const ContentItems = () => {
     finishData = getNewData(orderData)
   };
 
-  const handleKeyPress = (event) => event.key === 'Enter' && setNum()
+  const handleKeyPress = (event:React.SyntheticEvent) => event.key === 'Enter' && setNum()
   return (
     <Container className="content-items d-flex flex-column justify-content-center align-items-center w-100 ">
       <Row className="d-flex justify-content-center align-items-center my-3">

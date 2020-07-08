@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../../../../../scss/pages/branches/elements/branches-content/branches-content.scss'

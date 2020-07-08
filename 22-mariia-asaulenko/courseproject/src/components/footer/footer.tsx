@@ -1,10 +1,15 @@
-import React from 'react';
+import * as React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import SocialNetworks from '../social-networks/social-networks'
+import { ItemMenu } from '../../../interface'
 import '../../scss/footer.scss'
 
-const Footer = ({ items }) => (
+interface ItemsProps {
+  items: Array<ItemMenu[]>
+}
+
+const Footer = ({ items }: ItemsProps) => (
   <footer>
     <Container>
       <Row>

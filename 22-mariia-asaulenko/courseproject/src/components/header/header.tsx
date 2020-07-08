@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
@@ -11,19 +11,18 @@ const Header = () => {
   function openDrawer() {
     dispatch({ type: 'OPEN_DRAWER' });
   }
-  const [orderNumber, setOrderNumber] = useState('');
-  const getOrderNumber = (event) => {
+  const [orderNumber, setOrderNumber] = React.useState('');
+  const getOrderNumber = (event:React.ChangeEvent<HTMLInputElement>) => {
     event.stopPropagation();
     event.preventDefault();
     setOrderNumber(event.target.value);
   }
-  const setNum = () => {
+  const setNum = (event:React.SyntheticEvent) => {
     event.stopPropagation();
     event.preventDefault();
     window.location.href = `/#/tracking-ttn/?ttn_number=${orderNumber}`;
     setOrderNumber('');
   }
-
 
   return (
     <header className="header d-flex justify-content-around">

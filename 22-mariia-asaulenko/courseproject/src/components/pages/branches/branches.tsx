@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import Header from '../../header/header';
 import Drawer from '../../drawer/drawer';
 import Footer from '../../footer/footer';
 import BranchesContent from './elements/branches-content/branches-content';
 import MyGoogleMap from './elements/google-map/google-map';
 import ContentContainer from '../content-container/content-container';
-import menuItems from '../../data/menu-items';
+import * as menuItems from '../../data/menu-items.json';
 import TitlePages from '../title-pages/title-pages';
 import '../../../scss/pages/tracking-ttn/tracking-ttn.scss';
 

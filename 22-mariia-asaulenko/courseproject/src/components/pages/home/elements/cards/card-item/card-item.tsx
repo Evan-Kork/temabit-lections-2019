@@ -1,12 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 import { Card } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faCalculator } from '@fortawesome/free-solid-svg-icons'
 import '../../../../../../scss/pages/home/elements/card-item.scss'
 import { Link } from 'react-router-dom';
+import { CardProp, Icon } from "../../../../../../../interface";
 
-const icons = { faMapMarkerAlt, faCalculator };
-const CardItem = ({ image, title, path, buttonName }) => (
+const icons: Icon = { faMapMarkerAlt, faCalculator };
+const CardItem = ({ image, title, path, buttonName }:CardProp) => (
   <Card  className="card-item align-items-center col-5">
     <FontAwesomeIcon icon={icons[image]} />
     <Card.Body>

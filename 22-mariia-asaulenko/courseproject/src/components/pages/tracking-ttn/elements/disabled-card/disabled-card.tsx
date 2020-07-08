@@ -1,9 +1,16 @@
-import React from 'react'
+import * as React from 'react'
 import { Col } from 'react-bootstrap'
 import '../../../../../scss/pages/tracking-ttn/elements/disabled-card.scss'
 
+interface DicableCardProp {
+  id:string;
+  alt:string;
+  imgState: string;
+  titleState?: string;
+  text?: string;
+}
 
-const DisabledCard = ({ id, alt, imgState }) => (
+const DisabledCard = ({ id, alt, imgState }:DicableCardProp) => (
   <Col className="item-status col-12 col-sm-6 col-md-3 d-flex flex-column align-items-center disable" key={id}>
     <div className="img-container">
       <img alt={alt} src={imgState} />

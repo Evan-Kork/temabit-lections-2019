@@ -1,17 +1,22 @@
-import React from 'react';
+import * as React from 'react';
 import '../../scss/drawer.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import SocialNetworks from '../social-networks/social-networks'
 import { Link } from 'react-router-dom';
+import {State, ItemMenu} from '../../../interface'
 
-function Drawer({ items }) {
+interface Prop {
+  items: Array <ItemMenu[]>
+}
+
+function Drawer({ items }:Prop) {
   const dispatch = useDispatch()
 
   function closeDrawer() {
     dispatch({ type: "CLOSE_DRAWER" })
   }
 
-  const isDrawerOpen = useSelector(state => {
+  const isDrawerOpen = useSelector((state: State) => {
     return state.isDrawerOpened;
   });
   const classOpen = `drawer-menu${isDrawerOpen ? " open" : ""}`

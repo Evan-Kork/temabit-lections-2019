@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import '../../../../../scss/pages/home/elements/img-card.scss'
 
 const ImgCard = () => (

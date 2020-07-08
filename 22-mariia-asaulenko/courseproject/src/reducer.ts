@@ -1,9 +1,18 @@
+import {State} from "../interface"
 
-const initialState = {
+interface ActionType {
+  type: string,
+  payload?: {
+    [key:string]:any,
+  }
+}
+
+const initialState:State = {
   isDrawerOpened: false,
 }
 
-const reducer = (state = initialState, action) => {
+
+const reducer = (state:State = initialState, action:ActionType) => {
 
   switch (action.type) {
     case 'OPEN_DRAWER':
