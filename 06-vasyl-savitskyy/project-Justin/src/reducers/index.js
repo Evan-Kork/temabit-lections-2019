@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
 import {connectRouter} from "connected-react-router";
 
-import setting from "./reducer-setting";
-import branches from "./reducer-branches";
+import setting from "./reducer-setting.ts";
+import branches from "./reducer-branches.ts";
 import branches_locator from "./reducer-branches_locator";
 import branch_types from "./reducer-branch_types";
 import services from "./reducer-services";

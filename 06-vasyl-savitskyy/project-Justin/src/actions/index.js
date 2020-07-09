@@ -1,7 +1,7 @@
 import {
     screenResize,
     acceptCookies
-} from "./action-setting";
+} from "./action-setting.ts";
 import {
     branchesLocatorClear,
     fetchBranchesLocator

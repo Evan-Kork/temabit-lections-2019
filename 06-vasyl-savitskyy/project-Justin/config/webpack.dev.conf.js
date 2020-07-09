@@ -17,10 +17,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         overlay: {
             errors: true,
             warnings: true,
-        },
-        /** якщо використовується проксі */
-        proxy: {
-            '/api': 'http://localhost:5000'
         }
     },
     plugins: [

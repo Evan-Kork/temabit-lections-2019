@@ -1,4 +1,4 @@
-import {isMobile} from "./for-setting";
+import {isMobile} from "./for-setting.ts";
 import {combiteParametersThroughComma} from "./combine-params";
 import {
     cookieEnabled,

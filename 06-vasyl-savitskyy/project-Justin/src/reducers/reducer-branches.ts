@@ -16,7 +16,21 @@ import {
     getBranchesForView
 } from "../utils";
 
-const initialState = {
+export type InitialStateType = {
+    loading: boolean
+    error: boolean
+    errorMessage: string | null
+    response: string | null
+    searchMap: any
+    pageMap: any
+    search: typeof INITIAL_SEARCH
+    activePage: number
+    countPages: number | null
+    сountOnPage: typeof INITIAL_COUNT_ON_PAGE
+    countItems: number | null
+}
+
+const initialState: InitialStateType = {
     loading: false,
     error: false,
     errorMessage: null,
@@ -30,7 +44,7 @@ const initialState = {
     countItems: null
 };
 
-const branches = (state = initialState, action) => {
+const branches = (state = initialState, action: any): InitialStateType => {
 
     switch(action.type) {
         case BRANCHES_LOADING:
@@ -72,7 +86,7 @@ const branches = (state = initialState, action) => {
                 };
             }
             const updateCachBranches = new Map();
-            state.searchMap.forEach((val, key) => updateCachBranches.set(key, val));
+            state.searchMap.forEach((val: any, key: any) => updateCachBranches.set(key, val));
             const branchesBySearch = getBranchesBySearch(
                 state.searchMap.get(INITIAL_SEARCH),
                 action.payload);

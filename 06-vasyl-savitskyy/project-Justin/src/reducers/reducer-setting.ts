@@ -7,18 +7,24 @@ import {
     ACCEPT_COOKIES
 } from "../actionTypes";
 
-const newParamForSimpleStore = (key, param) => {
+const newParamForSimpleStore = (key: string, param: boolean): boolean => {
     simpleStore(key, param);
     return param;
 }
 
-const initialState = {
+type InitialStateType = {
+    isMobile: boolean
+    isCookies: boolean
+    lang: "ua" | null
+}
+
+const initialState: InitialStateType = {
     isMobile: isMobile(),
-    isCookies: simpleStore("isCookiesJustin") || false,
+    isCookies: !!simpleStore("isCookiesJustin") || false,
     lang: "ua"
 };
 
-const setting = (state = initialState, action) => {
+const setting = (state = initialState, action: any): InitialStateType => {
 
     switch (action.type) {
         case SCREEN_RESIZE:
