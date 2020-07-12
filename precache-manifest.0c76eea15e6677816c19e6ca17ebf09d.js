@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e10ba0c411d59d5264268f2464d552bb",
+    "revision": "83ba47eee04e128f7f78f6c2109c33d8",
     "url": "/AlexZ2019/social-network-learn-version-/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/AlexZ2019/social-network-learn-version-/static/css/4.aa1e2b86.chunk.css"
   },
   {
-    "revision": "63aa63b0881cea0b07a6",
+    "revision": "98b2e645de863b34270c",
     "url": "/AlexZ2019/social-network-learn-version-/static/css/main.e0eb431b.chunk.css"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/AlexZ2019/social-network-learn-version-/static/js/4.1ee55a8d.chunk.js"
   },
   {
-    "revision": "63aa63b0881cea0b07a6",
-    "url": "/AlexZ2019/social-network-learn-version-/static/js/main.bf359f6c.chunk.js"
+    "revision": "98b2e645de863b34270c",
+    "url": "/AlexZ2019/social-network-learn-version-/static/js/main.dae2096d.chunk.js"
   },
   {
     "revision": "62643d1a05f5b5deb71d",
