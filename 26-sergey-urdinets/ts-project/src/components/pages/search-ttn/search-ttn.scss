@@ -1,0 +1,7 @@
+.search-ttn {
+  input {
+    border: $brand-color 1px solid;
+    width: 220px;
+  }
+  @import './result-output/result-output.scss';
+}

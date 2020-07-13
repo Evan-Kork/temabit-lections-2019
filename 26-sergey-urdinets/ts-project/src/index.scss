@@ -1,0 +1,25 @@
+@import './style';
+@import "./custom";
+@import "~bootstrap/scss/bootstrap";
+@import './components/header/header';
+@import './components/footer/footer';
+@import './components/sidebar/sidebar';
+@import './components/pages/home/home.scss';
+@import './components/pages/search-ttn/search-ttn.scss';
+@import './components/pages/departments/departments-list/departments-list.scss';
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: $brand-color;
+}
+a:hover {
+	color: cyan;
+	text-decoration: none;
+}
+.page {
+	background-color: #f4f9ff;
+	min-height: 670px;
+}

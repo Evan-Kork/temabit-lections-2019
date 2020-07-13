@@ -1,0 +1,12 @@
+.sidebar {
+  overflow: auto;
+  text-align: left;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  background-color: $brand-color;
+  z-index: 2000;
+  @import './social-networks/social-networks.scss';
+}

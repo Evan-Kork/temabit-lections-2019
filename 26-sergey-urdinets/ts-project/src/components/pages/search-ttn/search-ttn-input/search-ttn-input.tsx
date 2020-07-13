@@ -1,0 +1,44 @@
+import React, { useState, useEffect, ReactElement } from 'react';
+import { useHistory } from 'react-router-dom';
+
+type Props = {
+  ttn: string;
+}
+
+function SearchTtnInput(props: Props) : ReactElement<Props> {
+  let history = useHistory();
+  const [input, setInput] = useState<string>(props.ttn);
+
+  useEffect(() => {
+    setInput(props.ttn);
+  }, [props.ttn]);
+
+  function handleKeyPress(event: React.KeyboardEvent) {
+    if (event.key == 'Enter') {
+      history.push(`/search-ttn/${input}`);
+    }
+  }
+
+  return (
+    <>
+      <input
+        type='text'
+        value={input}
+        onChange={e => setInput(e.target.value)}
+        onKeyPress={handleKeyPress}
+        placeholder='Введіть номер відправлення'
+      />
+      <button
+        className='btn-primary'
+        disabled={input == '' ? true : false}
+        onClick={() => {
+          history.push(`/search-ttn/${input}`);
+        }}
+      >
+        ▷
+      </button>
+    </>
+  );
+}
+
+export default SearchTtnInput;
