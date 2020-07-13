@@ -8,7 +8,9 @@ function parser(object) {
 				divs.push(...parser(object[field]));
 				break;
 			default:
-		divs.push(<div key={i++}>{field} :: {object[field]}</div>);
+				divs.push(
+					<div key={i++}>{field} :: {object[field]}</div>
+				);
 		}
 	}
 	return divs;

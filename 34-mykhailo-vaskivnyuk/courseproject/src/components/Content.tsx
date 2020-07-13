@@ -8,11 +8,10 @@ import PageBranchesInCity from "./PageBranchesInCity";
 import PageTracking from "./PageTracking";
 import PageNews from "./PageNews";
 
-class Content extends React.Component {
-
-	render() {
-		return (
-			<React.Fragment>
+function Content(): React.ReactElement {
+	return (
+		<div className="main wrapper">
+			<main className="container">
 				<Switch>
 					<Route	path="/branches/locality"
 							component={PageBranchesInCity} />
@@ -27,9 +26,9 @@ class Content extends React.Component {
 					<Route	path="/"
 							component={PageHome} />
 				</Switch>
-			</React.Fragment>
-		);
-	}
+			</main>
+		</div>
+	);
 }
 
 export default Content;

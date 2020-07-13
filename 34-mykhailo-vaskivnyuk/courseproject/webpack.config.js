@@ -9,11 +9,15 @@ module.exports = env => {
 //---------------------------------------------------------------------
 		mode: env.production ? "production" : "development",
 //---------------------------------------------------------------------
-		entry: resolve(__dirname, "src/index.js"),
+		entry: resolve(__dirname, "src/index.tsx"),
 //---------------------------------------------------------------------
 		output: {
 			path: resolve(__dirname, "dist"),
 			filename: "[hash].final.js"
+		},
+//---------------------------------------------------------------------
+		resolve: {
+			extensions: [ '.tsx', '.ts', '.js' ],
 		},
 //---------------------------------------------------------------------
 		optimization: {
@@ -33,6 +37,12 @@ module.exports = env => {
 //---------------------------------------------------------------------
 		module: {
 			rules: [
+
+				{
+					test: /\.tsx?$/,
+					use: 'ts-loader',
+					exclude: /node_modules/,
+				},
 
 				{
 					test: /\.m?js$/,

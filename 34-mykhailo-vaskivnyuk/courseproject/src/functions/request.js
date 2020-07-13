@@ -3,10 +3,10 @@ import methods from "../data/openapi";
 function request(req, callback) {
 	
 	const url_base = "http://localhost:9000/api";
-	const method = methods[req.method].request;
-	const params = req.params;
+	const { method, params } = req;
+	const request = method && methods[method] && methods[method].request;
 	
-	const url = url_base + encodeURI(method + params);
+	const url = url_base + encodeURI(`${request}${params}`);
 
 	fetch(url)
 	.then(response => {
