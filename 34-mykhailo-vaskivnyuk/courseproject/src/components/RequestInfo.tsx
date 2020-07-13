@@ -1,10 +1,10 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 interface Props {
-	error: Error
+	error: Error,
 }
 
-function RequestInfo(props: Props): React.ReactElement {
+function RequestInfo(props: Props): ReactElement {
 
 	const { error } = props;
 	const request_status = error ? error.message : "Зачекайте, дані завантажуються!";

@@ -1,4 +1,9 @@
-import React from "react";
+import React, { 
+	ReactElement,
+	FormEventHandler,
+	FormEvent,
+ } from "react";
+import { RouteComponentProps } from "react-router-dom";
 import FormTracking from "./FormTracking";
 import TrackingInfo from "./TrackingInfo";
 import TrackingHistory from "./TrackingHistory";
@@ -6,10 +11,7 @@ import ContentHeader from "./ContentHeader";
 
 type HTMLForm = HTMLElement & { order: HTMLInputElement };
 
-interface Props {
-	history: {
-		push: (path: string) => void,
-	},
+type Props = RouteComponentProps & {
 	match: {
 		params: {
 			order: string,
@@ -17,9 +19,9 @@ interface Props {
 	},
 }
 
-function PageTracking(props: Props): React.ReactElement {
+function PageTracking(props: Props): ReactElement {
 
-	const handleTracking: React.FormEventHandler = (event: React.FormEvent) => {
+	const handleTracking: FormEventHandler = (event: FormEvent) => {
 		event.preventDefault();
 		let elem = event.target as HTMLForm;
 		elem.tagName === "FORM" || (elem = elem.parentElement as HTMLForm);

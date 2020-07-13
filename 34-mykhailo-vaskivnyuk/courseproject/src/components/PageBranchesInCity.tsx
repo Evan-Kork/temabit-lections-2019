@@ -3,9 +3,7 @@ import FormCity from "./FormCity";
 import TableData from "./TableData";
 import ContentHeader from "./ContentHeader";
 
-interface Props {
-	history: any
-}
+interface Props {}
 
 type FormEventData = React.FormEvent & {
 	target?: HTMLInputElement
@@ -23,7 +21,7 @@ function PageBranchesInCity(props: Props): React.ReactElement {
 		<React.Fragment>
 			<ContentHeader title="Наші відділення (поштомаркети) у місті" />
 			<FormCity city={city} onChange={handleCity}/>
-			<TableData filter={filter} redirect={props.history.push} />
+			<TableData filter={filter} />
 		</React.Fragment>
 	);
 }

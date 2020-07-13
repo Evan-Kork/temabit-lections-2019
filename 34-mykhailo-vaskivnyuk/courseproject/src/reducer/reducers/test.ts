@@ -1,4 +1,4 @@
-function test(state: string, action: Reducer.ActionTest): string {
+function test(state: string = "", action: Reducer.ActionTest): string {
 	switch (action.type) {
 		case "SET_TEST":
 			state = action.data;

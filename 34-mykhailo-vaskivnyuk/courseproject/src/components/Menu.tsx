@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import { NavLink, withRouter } from "react-router-dom";
+import { NavLink, withRouter, RouteComponentProps } from "react-router-dom";
 import { connect } from "react-redux";
 import { setMenu } from "../reducer/actions/actions";
 
-interface Props {
+type Props = RouteComponentProps & {
 	list: Data.Pages,
 	selected: Data.Page,
-	match: {
-		path: string,
-	}
 	setMenu: (path: string) => Reducer.ActionMenu,
 }
 

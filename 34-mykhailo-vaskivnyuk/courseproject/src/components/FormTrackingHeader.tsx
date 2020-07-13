@@ -1,11 +1,9 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
+import React, { ReactElement, FormEvent } from "react";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 
-interface Props {
-	history: any;
-}
+interface Props extends RouteComponentProps { }
 
-type FormEventData = React.FormEvent & {
+type FormEventData = FormEvent & {
 	target: {
 		order?: HTMLInputElement
 	}
@@ -17,7 +15,7 @@ const onSubmit = (history: any) => (event: FormEventData) => {
 	history.push("/tracking/" + order);
 }
 
-function FormTrackingHeader(props: Props): React.ReactElement {
+function FormTrackingHeader(props: Props): ReactElement {
 	return (
 		<form
 			className="tracking d-none d-md-inline"
@@ -33,30 +31,3 @@ function FormTrackingHeader(props: Props): React.ReactElement {
 
 
 export default withRouter(FormTrackingHeader);
-
-/*
-class FormTrackingHeader extends React.Component {
-
-	constructor(props) {
-		super(props);
-		this.onSubmit = this.onSubmit.bind(this);
-	}
-
-	onSubmit(event) {
-		event.preventDefault();
-		const order = event.target.order.value;
-		this.props.history.push("/tracking/" + order);
-	}
-
-	render() {
-		return (
-			<form className="tracking d-none d-md-inline" onSubmit={this.onSubmit}>
-				<input 	className="order_number"					
-						type="text"
-						name="order"
-						placeholder="Введіть номер відправлення" />
-			</form>
-		);
-	}
-}
-*/

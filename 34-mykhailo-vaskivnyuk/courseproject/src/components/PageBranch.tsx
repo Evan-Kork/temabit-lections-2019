@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { RouteComponentProps } from "react-router-dom";
 import { connect } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
 import request from "../functions/request";
@@ -7,11 +8,8 @@ import BranchInfo from "./BranchInfo";
 import ContentHeader from "./ContentHeader";
 import RequestInfo from "./RequestInfo";
 
-interface Props {
+type Props = RouteComponentProps & {
 	branches: Data.BranchesData,
-	history: {
-		push: (location: string) => void,
-	},
 	match: {
 		params: {
 			branch: number,
@@ -88,4 +86,4 @@ function mapStateToProps(state: Data.State): Pick<Data.Responses, 'branches'> {
 	};
 }
 
-export default connect(mapStateToProps, { setResponse })(PageBranch);;
+export default connect(mapStateToProps, { setResponse })(PageBranch);

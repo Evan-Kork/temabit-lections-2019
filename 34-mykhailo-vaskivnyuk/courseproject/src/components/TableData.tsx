@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 import Table from "./Table";
 import Comment from "./Comment";
 import { connect } from "react-redux";
@@ -6,35 +7,34 @@ import { setResponse } from "../reducer/actions/actions";
 import request from "../functions/request";
 import RequestInfo from "./RequestInfo";
 
-interface Props {
+type Props = RouteComponentProps & {
 	setResponse: (req: string, res: Data.BranchesData) => void,
 	branches: Data.BranchesData,
-	redirect: (location: string) => void;
 	filter?: { city: string },
 }
 
 interface LocalState {
 	setState: (state: LocalState) => void,
+	props: Props,
 	data: Data.Branches,
 	error: Error,
 	comment_data: any,
 	filter: { city: string },
-	redirect: (location: string) => void,
 }
 
-function handleTable(comment_data: any, redirect: number): void {
+function handleTable(comment_data: any, branchNumber: number): void {
 	const _this: LocalState = (this as any) as LocalState;
-	if (redirect) {
-		_this.redirect("/branch/" + redirect);
+	if (branchNumber) {
+		_this.props.history.push("/branch/" + branchNumber);
 		window.scrollTo(0, 0);
 		return;
 	}
 	_this.setState({ ..._this, comment_data });
 }
 
-function getDerivedStateFromProps(props: Props): void {
+function getDerivedStateFromProps(): void {
 	const _this: LocalState = (this as any) as LocalState;
-	const { filter, branches } = props;
+	const { filter, branches } = _this.props;
 	if (!filter || filter === _this.filter) return null;
 	
 	let { data, error } = branches;
@@ -47,7 +47,7 @@ function getDerivedStateFromProps(props: Props): void {
 			data = null;
 		}
 	}
-	_this.setState({ ...this, data, error, filter });
+	_this.setState({ ..._this, data, error, filter });
 }
 
 function TableData(props: Props): React.ReactElement {
@@ -56,11 +56,10 @@ function TableData(props: Props): React.ReactElement {
 		error: null,
 		comment_data: null,
 		filter: props.filter,
-		redirect: props.redirect,
 	} as LocalState);
 	state.setState = setState;
-
-	getDerivedStateFromProps.bind(state)(props);
+	state.props = props;
+	getDerivedStateFromProps.bind(state);
 
 	useEffect(() => {
 		if (props.branches.data) return;
@@ -99,4 +98,4 @@ function mapStateToProps(state: Data.State): Pick<Data.Responses, 'branches'> {
 	}
 }
 
-export default connect(mapStateToProps, { setResponse })(TableData);
+export default withRouter(connect(mapStateToProps, { setResponse })(TableData));

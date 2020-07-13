@@ -1,16 +1,14 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import TableData from "./TableData";
 import ContentHeader from "./ContentHeader";
 
-interface Props {
-	history: { push: (location: string) => void };
-}
+interface Props {};
 
-function PageBranches({ history }: Props): React.ReactElement {
+function PageBranches(props: Props): ReactElement {
 	return (
 		<React.Fragment>
 			<ContentHeader title="Наші відділення (поштомаркети)" />
-			<TableData redirect={history.push} />
+			<TableData />
 		</React.Fragment>
 	);
 }
