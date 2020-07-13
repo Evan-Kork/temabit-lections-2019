@@ -1,7 +1,7 @@
 import React, { 
-	ReactElement,
-	FormEventHandler,
-	FormEvent,
+    ReactElement,
+    FormEventHandler,
+    FormEvent,
  } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import FormTracking from "./FormTracking";
@@ -12,33 +12,33 @@ import ContentHeader from "./ContentHeader";
 type HTMLForm = HTMLElement & { order: HTMLInputElement };
 
 type Props = RouteComponentProps & {
-	match: {
-		params: {
-			order: string,
-		},
-	},
+    match: {
+        params: {
+            order: string,
+        },
+    },
 }
 
 function PageTracking(props: Props): ReactElement {
 
-	const handleTracking: FormEventHandler = (event: FormEvent) => {
-		event.preventDefault();
-		let elem = event.target as HTMLForm;
-		elem.tagName === "FORM" || (elem = elem.parentElement as HTMLForm);
-		const order = elem.order.value;
-		props.history.push("/tracking/" + order);
-	}
+    const handleTracking: FormEventHandler = (event: FormEvent) => {
+        event.preventDefault();
+        let elem = event.target as HTMLForm;
+        elem.tagName === "FORM" || (elem = elem.parentElement as HTMLForm);
+        const order = elem.order.value;
+        props.history.push("/tracking/" + order);
+    }
 
-	const { order } = props.match.params;
+    const { order } = props.match.params;
 
-	return (
-		<React.Fragment>
-			<ContentHeader title="Інформація про відправлення" />
-			<FormTracking order={order} onSubmit={handleTracking} />
-			{order ? <TrackingInfo order={order} /> : null}
-			{order ? <TrackingHistory order={order} /> : null}
-		</React.Fragment>
-	);
+    return (
+        <React.Fragment>
+            <ContentHeader title="Інформація про відправлення" />
+            <FormTracking order={order} onSubmit={handleTracking} />
+            {order ? <TrackingInfo order={order} /> : null}
+            {order ? <TrackingHistory order={order} /> : null}
+        </React.Fragment>
+    );
 }
 
 export default PageTracking;

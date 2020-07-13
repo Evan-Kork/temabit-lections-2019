@@ -6,15 +6,15 @@ import Content from "./Content";
 import Footer from "./Footer";
 
 function App(): ReactElement {
-	return (
-		<div className="min-vh-100 d-flex flex-column justify-content-between">
-			<Router>
-				<Header />
-				<Content />
-				<Footer />
-			</Router>
-		</div>
-	);
+    return (
+        <div className="min-vh-100 d-flex flex-column justify-content-between">
+            <Router>
+                <Header />
+                <Content />
+                <Footer />
+            </Router>
+        </div>
+    );
 }
 
 export default App;

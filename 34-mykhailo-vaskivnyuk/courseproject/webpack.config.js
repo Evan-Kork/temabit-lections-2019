@@ -5,95 +5,95 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = env => {
 
-	return {
+    return {
 //---------------------------------------------------------------------
-		mode: env.production ? "production" : "development",
+        mode: env.production ? "production" : "development",
 //---------------------------------------------------------------------
-		entry: resolve(__dirname, "src/index.tsx"),
+        entry: resolve(__dirname, "src/index.tsx"),
 //---------------------------------------------------------------------
-		output: {
-			path: resolve(__dirname, "dist"),
-			filename: "[hash].final.js"
-		},
+        output: {
+            path: resolve(__dirname, "dist"),
+            filename: "[hash].final.js"
+        },
 //---------------------------------------------------------------------
-		resolve: {
-			extensions: [ '.tsx', '.ts', '.js' ],
-		},
+        resolve: {
+            extensions: [ '.tsx', '.ts', '.js' ],
+        },
 //---------------------------------------------------------------------
-		optimization: {
-			minimize: true,
-			minimizer: [new TerserPlugin()]
-		},
+        optimization: {
+            minimize: true,
+            minimizer: [new TerserPlugin()]
+        },
 //---------------------------------------------------------------------
-		plugins: [
-			new HtmlWebpackPlugin({
-			  template: resolve(__dirname, "index.html"),
-			  title: "index.html"
-			}),
-			new MiniCssExtractPlugin({
-				filename: "[hash].css"
-			})
-		],
+        plugins: [
+            new HtmlWebpackPlugin({
+              template: resolve(__dirname, "index.html"),
+              title: "index.html"
+            }),
+            new MiniCssExtractPlugin({
+                filename: "[hash].css"
+            })
+        ],
 //---------------------------------------------------------------------
-		module: {
-			rules: [
+        module: {
+            rules: [
 
-				{
-					test: /\.tsx?$/,
-					use: 'ts-loader',
-					exclude: /node_modules/,
-				},
+                {
+                    test: /\.tsx?$/,
+                    use: 'ts-loader',
+                    exclude: /node_modules/,
+                },
 
-				{
-					test: /\.m?js$/,
-					exclude: /node_modules/,
-					loader: "babel-loader"
-				},
+                {
+                    test: /\.m?js$/,
+                    exclude: /node_modules/,
+                    loader: "babel-loader"
+                },
 
-				{
-					test: /\.s?[ac]ss$/i,
-					use: [
-						
-						{// Creates `style` nodes from JS strings
-							loader: MiniCssExtractPlugin.loader
-						},
+                {
+                    test: /\.s?[ac]ss$/i,
+                    use: [
+                        
+                        {// Creates `style` nodes from JS strings
+                            loader: MiniCssExtractPlugin.loader
+                        },
 
-						{// Translates CSS into CommonJS
-							loader: 'css-loader'
-						},
-						
-						{// Compiles Sass to CSS
-							loader: 'sass-loader'
-						}
-					]
-				},
+                        {// Translates CSS into CommonJS
+                            loader: 'css-loader'
+                        },
+                        
+                        {// Compiles Sass to CSS
+                            loader: 'sass-loader'
+                        }
+                    ]
+                },
 
-				{
-					test: /\.(woff|woff2|eot|ttf|otf)$/,
-					use: [
-						'file-loader'
-					]
-				},
+                {
+                    test: /\.(woff|woff2|eot|ttf|otf)$/,
+                    use: [
+                        'file-loader'
+                    ]
+                },
 
-				{
-					test: /\.(png|svg|jpg|gif)$/,
-					use: [
-					  'file-loader'
-					]
-				}
-			]
-		},
+                {
+                    test: /\.(png|svg|jpg|gif)$/,
+                    use: [
+                        'file-loader'
+                    ]
+                }
+            ]
+        },
 //---------------------------------------------------------------------
-		devServer: {
-			port: 9000,
-			proxy: { // http://localhost/api/{par1}/{par2} -> http://openapi.justin.ua/{par1}/{par2}
-				"/api": {
-					target: "http://openapi.justin.ua",
-					pathRewrite: {'^/api': ''},
-					changeOrigin: true
-				}
-			}
-		}
+        devServer: {
+            port: 9000,
+            proxy: { // http://localhost/api/{par1}/{par2} -> http://openapi.justin.ua/{par1}/{par2}
+                "/api": {
+                    target: "http://openapi.justin.ua",
+                    pathRewrite: {'^/api': ''},
+                    changeOrigin: true
+                }
+            }
+        }
 //---------------------------------------------------------------------
-	}
+    }
 };

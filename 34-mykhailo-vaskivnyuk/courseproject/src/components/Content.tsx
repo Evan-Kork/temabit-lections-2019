@@ -9,26 +9,26 @@ import PageTracking from "./PageTracking";
 import PageNews from "./PageNews";
 
 function Content(): ReactElement {
-	return (
-		<div className="main wrapper">
-			<main className="container">
-				<Switch>
-					<Route	path="/branches/locality"
-							component={PageBranchesInCity} />
-					<Route	path="/branches"
-							component={PageBranches} />
-					<Route	path={["/branch/:branch", "/branch"]} 
-							component={PageBranch} />
-					<Route	path={["/tracking/:order", "/tracking"]} 
-							component={PageTracking} />
-					<Route	path="/news"
-							component={PageNews} />
-					<Route	path="/"
-							component={PageHome} />
-				</Switch>
-			</main>
-		</div>
-	);
+    return (
+        <div className="main wrapper">
+            <main className="container">
+                <Switch>
+                    <Route	path="/branches/locality"
+                            component={PageBranchesInCity} />
+                    <Route	path="/branches"
+                            component={PageBranches} />
+                    <Route	path={["/branch/:branch", "/branch"]} 
+                            component={PageBranch} />
+                    <Route	path={["/tracking/:order", "/tracking"]} 
+                            component={PageTracking} />
+                    <Route	path="/news"
+                            component={PageNews} />
+                    <Route	path="/"
+                            component={PageHome} />
+                </Switch>
+            </main>
+        </div>
+    );
 }
 
 export default Content;

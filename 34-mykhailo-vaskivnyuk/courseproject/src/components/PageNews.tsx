@@ -5,37 +5,37 @@ import ContentHeader from "./ContentHeader";
 import FormNews from "./FormNews";
 
 type FormEventData = React.FormEvent & { 
-	target: HTMLElement & {
-		dataset?: {
-			type: Data.NewsTypes,
-		}
-	}
+    target: HTMLElement & {
+        dataset?: {
+            type: Data.NewsTypes,
+        }
+    }
 };
 
 function PageNews(): ReactElement {
 
-	const [type, setType] = useState("all" as Data.NewsTypes);
+    const [type, setType] = useState("all" as Data.NewsTypes);
 
-	const handlerNews: React.FormEventHandler = (event: FormEventData) => {
-		const { tagName, dataset } = event.target;
-		tagName === "SPAN"
-			&& type !== dataset.type
-			&& setType(dataset.type);
-	}
+    const handlerNews: React.FormEventHandler = (event: FormEventData) => {
+        const { tagName, dataset } = event.target;
+        tagName === "SPAN"
+            && type !== dataset.type
+            && setType(dataset.type);
+    }
 
-	const divs = news
-		.filter(item => type === "all" || item.type === type)
-		.map(item => <News key={item.id} data={item}/>);
+    const divs = news
+        .filter(item => type === "all" || item.type === type)
+        .map(item => <News key={item.id} data={item}/>);
 
-	return (
-		<React.Fragment>
-			<ContentHeader title="Дані про відділення" />
-			<FormNews onClick={handlerNews} type={type}/>
-			<div className="row news">
-				{divs}
-			</div>
-		</React.Fragment>
-	);
+    return (
+        <React.Fragment>
+            <ContentHeader title="Дані про відділення" />
+            <FormNews onClick={handlerNews} type={type}/>
+            <div className="row news">
+                {divs}
+            </div>
+        </React.Fragment>
+    );
 }
 
 export default PageNews;
