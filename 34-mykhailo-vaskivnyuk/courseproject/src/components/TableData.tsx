@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { ReactElement, useState, useEffect } from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import Table from "./Table";
 import Comment from "./Comment";
@@ -50,7 +50,7 @@ function getDerivedStateFromProps(): void {
 	_this.setState({ ..._this, data, error, filter });
 }
 
-function TableData(props: Props): React.ReactElement {
+function TableData(props: Props): ReactElement {
 	const [state, setState] = useState({
 		data: null,
 		error: null,

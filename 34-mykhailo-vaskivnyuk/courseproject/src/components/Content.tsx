@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import PageHome from "./PageHome";
@@ -8,7 +8,7 @@ import PageBranchesInCity from "./PageBranchesInCity";
 import PageTracking from "./PageTracking";
 import PageNews from "./PageNews";
 
-function Content(): React.ReactElement {
+function Content(): ReactElement {
 	return (
 		<div className="main wrapper">
 			<main className="container">

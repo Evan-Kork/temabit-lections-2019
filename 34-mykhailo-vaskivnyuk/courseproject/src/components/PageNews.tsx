@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactElement, useState } from "react";
 import news from "../data/news";
 import News from "./News";
 import ContentHeader from "./ContentHeader";
@@ -12,7 +12,7 @@ type FormEventData = React.FormEvent & {
 	}
 };
 
-function PageNews(): React.ReactElement {
+function PageNews(): ReactElement {
 
 	const [type, setType] = useState("all" as Data.NewsTypes);
 

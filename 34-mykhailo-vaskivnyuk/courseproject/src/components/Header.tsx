@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import Menu from "./Menu";
 import FormTrackingHeader from "./FormTrackingHeader";
 
-function Header(): React.ReactElement {
+function Header(): ReactElement {
 	return (
 		<div className="header wrapper">
 			<header className="container">

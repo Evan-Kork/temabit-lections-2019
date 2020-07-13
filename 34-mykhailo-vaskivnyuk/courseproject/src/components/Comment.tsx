@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 interface Props {
 	data: { 
@@ -12,7 +12,7 @@ interface Props {
 	};
 }
 
-function Comment(props: Props): React.ReactElement {
+function Comment(props: Props): ReactElement {
 	const { branch, position } = props.data;
 	const { top: _top, left: _left } = position;
 	const top = _top - 202 + pageYOffset + "px";

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import ContentHeader from "./ContentHeader";
 
-function PageHome(): React.ReactElement {
+function PageHome(): ReactElement {
 	return (
 		<React.Fragment>
 			<ContentHeader title="Головна" />

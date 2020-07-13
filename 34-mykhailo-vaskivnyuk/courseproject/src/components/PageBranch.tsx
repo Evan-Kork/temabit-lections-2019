@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { ReactElement, useEffect } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { connect } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
@@ -23,7 +23,7 @@ type Props = RouteComponentProps & {
 
 type HTMLForm = HTMLElement & { branch: HTMLInputElement };
 
-function PageBranch(props: Props): React.ReactElement {
+function PageBranch(props: Props): ReactElement {
 
 	const handleBranch: React.FormEventHandler = (event: React.FormEvent) => {
 		event.preventDefault();

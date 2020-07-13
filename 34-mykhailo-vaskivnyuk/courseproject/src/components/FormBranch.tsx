@@ -1,11 +1,11 @@
-import React, { useRef, useEffect } from "react";
+import React, { ReactElement, useRef, useEffect } from "react";
 
 interface Props {
 	onSubmit: React.FormEventHandler,
 	branch: number,
 }
 
-function FormBranch(props: Props): React.ReactElement {
+function FormBranch(props: Props): ReactElement {
 	const { branch, onSubmit } = props;
 	const branchRef = useRef(null);
 	const setBranch = (): void => {

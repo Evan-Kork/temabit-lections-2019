@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 interface Props {
 	branchInfo: Data.Branch,
@@ -20,7 +20,7 @@ function getServices(services: Data.Services): string {
 	return array.join("; ");
 }
 
-function BranchInfo(props: Props): React.ReactElement {
+function BranchInfo(props: Props): ReactElement {
 	const data = props.branchInfo;
 
 	const body = [

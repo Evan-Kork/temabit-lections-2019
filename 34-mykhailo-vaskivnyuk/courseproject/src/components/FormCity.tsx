@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { ReactElement, useEffect } from "react";
 import { connect } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
 import request from "../functions/request";
@@ -13,7 +13,7 @@ interface Props {
 	) => void,
 }
 
-function FormCity(props: Props): React.ReactElement{
+function FormCity(props: Props): ReactElement{
 
 	useEffect(() => {
 		if (props.localities.data) return;

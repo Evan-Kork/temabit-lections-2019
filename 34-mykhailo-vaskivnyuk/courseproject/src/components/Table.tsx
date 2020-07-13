@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactElement, useState } from "react";
 import Pagination from "./Pagination";
 
 interface Props {
@@ -75,7 +75,7 @@ const handlePagination: React.FormEventHandler = function(event: React.FormEvent
 	}
 }
 
-function Table(props: Props): React.ReactElement {
+function Table(props: Props): ReactElement {
 	const [state, setState] = useState({
 		page: 1,
 		pages: Math.floor(props.data.length / 50) + 1,

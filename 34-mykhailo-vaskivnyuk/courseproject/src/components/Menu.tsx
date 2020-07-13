@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ReactElement, useState } from "react";
 import { NavLink, withRouter, RouteComponentProps } from "react-router-dom";
 import { connect } from "react-redux";
 import { setMenu } from "../reducer/actions/actions";
@@ -11,7 +11,7 @@ type Props = RouteComponentProps & {
 
 type EventData = React.FormEvent & { target: HTMLElement };
 
-function Menu(props: Props): React.ReactElement {
+function Menu(props: Props): ReactElement {
 	const [isOpened, setOpened] = useState(false);
 
 	const handleMenu: React.FormEventHandler =

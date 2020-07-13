@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { ReactElement, useState, useEffect } from "react";
 import request from "../functions/request";
 import RequestInfo from "./RequestInfo";
 

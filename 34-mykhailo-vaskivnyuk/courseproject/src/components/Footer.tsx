@@ -1,6 +1,6 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
-function Footer(): React.ReactElement {
+function Footer(): ReactElement {
 	return (
 		<div className="footer wrapper">
 			<footer className="container">

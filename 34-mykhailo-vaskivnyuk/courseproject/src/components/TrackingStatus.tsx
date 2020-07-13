@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 interface Props {
 	status: Data.StatusesNames,
@@ -19,7 +19,7 @@ const STATUSES: Statuses = {
 	taken: { img: "../src/imgs/start_on.png", text: "ОТРИМАНА" }
 }
 
-function TrackingStatus(props: Props): React.ReactElement {
+function TrackingStatus(props: Props): ReactElement {
 	const { status, data } = props;
 	const { img, text } = STATUSES[status];
 	const { date, time } = data || {};

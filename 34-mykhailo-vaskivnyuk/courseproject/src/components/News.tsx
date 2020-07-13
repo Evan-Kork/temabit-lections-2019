@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 interface Props {
 	data: {
@@ -9,7 +9,7 @@ interface Props {
 	}
 }
 
-function News(props: Props): React.ReactElement {
+function News(props: Props): ReactElement {
 	const { data } = props;
 	const { img, title, date, description } = data;
 	return(

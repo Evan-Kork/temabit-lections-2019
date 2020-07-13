@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { ReactElement, useState, useEffect } from "react";
 import request from "../functions/request";
 import TrackingStatus from "./TrackingStatus";
 import RequestInfo from "./RequestInfo";
@@ -35,7 +35,7 @@ function getHistory(data: Data.TrackingHistoryInfo[]): TrackingHistory {
 	return history;
 }
 
-function TrackingHistory(props: Props): React.ReactElement {
+function TrackingHistory(props: Props): ReactElement {
 	const [order, setOrder] = useState("");
 	const [tracking_history, setTrackingHistory] =
 		useState({ data: null, error: null }  as Data.TrackingHistoryData);

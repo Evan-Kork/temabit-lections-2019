@@ -1,10 +1,10 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 interface Props {
 	title: string
 }
 
-function ContentHeader({ title }: Props): React.ReactElement {
+function ContentHeader({ title }: Props): ReactElement {
 	return (
 		<div className="row">
 			<div className="col">

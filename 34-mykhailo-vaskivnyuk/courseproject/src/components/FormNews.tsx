@@ -1,11 +1,11 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 interface Props {
 	onClick: React.FormEventHandler,
 	type: Data.NewsTypes,
 }
 
-function FormNews(props: Props): React.ReactElement {
+function FormNews(props: Props): ReactElement {
 
 	const isActive = (type: Data.NewsTypes) => props.type === type ? "active" : "";
 

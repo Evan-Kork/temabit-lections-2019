@@ -1,11 +1,11 @@
-import React, { useRef, useEffect } from "react";
+import React, { ReactElement, useRef, useEffect } from "react";
 
 interface Props {
 	onSubmit: React.FormEventHandler,
 	order: string,
 }
 
-function FormTracking(props: Props): React.ReactElement {
+function FormTracking(props: Props): ReactElement {
 	const { order, onSubmit } = props;
 	const orderRef = useRef(null);
 	const setBranch = (): void => {
