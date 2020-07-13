@@ -1,25 +1,26 @@
-import React, { useState, ReactElement } from 'react';
+import React, { useState, ReactElement, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function SearchTtnInput() : ReactElement {
+export default function SearchTtnInput(): ReactElement {
   let history = useHistory();
   let [input, setInput] = useState<string>('');
 
-  function handleKeyPress(event: React.KeyboardEvent) {
+  const handleKeyPress = useCallback((event: React.KeyboardEvent) => {
     if (event.key == 'Enter') {
       history.push(`/search-ttn/${input}`);
       setInput('');
     }
-  }
+  }, [input]);
+
+  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value), []);
+
   return (
     <input
       type='text'
       value={input}
-      onChange={e => setInput(e.target.value)}
+      onChange={onChange}
       onKeyPress={handleKeyPress}
       placeholder='Введіть номер відправлення'
     />
   );
 }
-
-export default SearchTtnInput;

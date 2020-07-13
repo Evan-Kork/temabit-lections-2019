@@ -1,4 +1,4 @@
-import React, { useState, ReactElement } from 'react';
+import React, { useState, ReactElement, useCallback } from 'react';
 import { Marker, InfoWindow } from '@react-google-maps/api';
 import { Locations } from './simple-map';
 import { Clusterer } from '@react-google-maps/marker-clusterer';
@@ -13,9 +13,9 @@ interface Props {
 export default function MarkerWithInfo(props: Props): ReactElement {
   const [isShow, setShow] = useState(false);
 
-  function handleMarkerClick() {
+  const handleMarkerClick = useCallback(() => {
     setShow(!isShow);
-  }
+  }, []);
 
   return (
     <Marker
@@ -36,5 +36,3 @@ export default function MarkerWithInfo(props: Props): ReactElement {
     </Marker>
   );
 }
-
-

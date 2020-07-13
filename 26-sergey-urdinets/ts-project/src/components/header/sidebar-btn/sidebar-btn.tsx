@@ -1,30 +1,22 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useCallback } from 'react';
 import Sidebar from '../../sidebar/sidebar';
-import { connect, ConnectedProps } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { toogleSidebar } from '../../../actions/actions';
-import { GlobalState } from '../../../reducers/index';
+import { RootState } from '../../../reducers/index';
 
-const mapState = (state: GlobalState) => ({
-  isOpen: state.common.isSidebarOpen,
-});
-
-const connector = connect(mapState);
-
-type PropsFromRedux = ConnectedProps<typeof connector>;
-
-function SidebarBtn(props: PropsFromRedux) : ReactElement {
-  function handleClick() {
-    props.dispatch(toogleSidebar());
-  }
+export default function SidebarBtn(): ReactElement {
+  const isOpen = useSelector<RootState>((state) => state.isSidebarOpen);
+  const dispatch = useDispatch();
+  const handleClick = useCallback(() => {
+    dispatch(toogleSidebar());
+  }, []);
 
   return (
     <>
       <a type='button' onClick={handleClick} className='button'>
         &equiv;
       </a>
-      {props.isOpen ? <Sidebar /> : null}
+      {isOpen ? <Sidebar /> : null}
     </>
   );
 }
-
-export default connector(SidebarBtn);

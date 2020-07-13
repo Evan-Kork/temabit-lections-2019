@@ -1,27 +1,19 @@
-import React, { ReactElement } from 'react';
-import { connect, ConnectedProps } from 'react-redux';
+import React, { ReactElement, useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { toogleSearchClosest } from '../../../../../actions/actions';
-import {GlobalState} from '../../../../../reducers/index';
+import { RootState } from '../../../../../reducers/index';
 
-const mapState = (state: GlobalState) => ({
-  isChecked: state.common.isOnlyClosest
-});
-const connector = connect(mapState);
-type Props = ConnectedProps<typeof connector>;
+export default function SearchCheckbox(): ReactElement {
+  const isChecked = useSelector((state: RootState) => state.isOnlyClosest);
+  const dispatch = useDispatch();
+  const onChange = useCallback(() => dispatch(toogleSearchClosest()), []);
 
-function SearchCheckbox(props: Props) : ReactElement{
   return (
     <>
       <label className='m-0 search-closest'>
-        <input
-          type='checkbox'
-          checked={props.isChecked}
-          onChange={() => props.dispatch(toogleSearchClosest())}
-        />
+        <input type='checkbox' checked={isChecked} onChange={onChange} />
         найближчі відділення <br /> <sup>(місто, вулиця, будинок)</sup>
       </label>
     </>
   );
 }
-
-export default connector(SearchCheckbox);

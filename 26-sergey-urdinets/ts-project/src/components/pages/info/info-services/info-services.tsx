@@ -24,7 +24,7 @@ function validateLog<T>(obj: T): void {
 }
 
 
-function InfoServices() : ReactElement {
+export default function InfoServices() : ReactElement {
   const [state, setState] = useState([] as Bank[]);  // надо экспортировать интерфейс ответа
 
   useEffect(() => {
@@ -42,6 +42,3 @@ function InfoServices() : ReactElement {
     </>
   ) : null;
 }
-
-
-export default InfoServices;

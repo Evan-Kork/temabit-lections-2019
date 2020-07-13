@@ -1,17 +1,14 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useCallback } from 'react';
 import NavBar from './nav-bar/nav-bar';
 import SocialNetworks from './social-networks/social-networks';
-import { connect } from 'react-redux';
-import { toogleSidebar, ActionTypes } from '../../actions/actions';
+import { useDispatch } from 'react-redux';
+import { toogleSidebar } from '../../actions/actions';
 
-interface Props {
-  dispatch: React.Dispatch<React.SetStateAction<ActionTypes>>
-}
-
-function Sidebar(props: Props) : ReactElement<Props> {
-  function handleClick() {
-    props.dispatch(toogleSidebar());
-  }
+export default function Sidebar(): ReactElement {
+  const dispatch = useDispatch();
+  const handleClick = useCallback(() => {
+    dispatch(toogleSidebar());
+  }, []);
 
   return (
     <div className='sidebar d-flex flex-column justify-content-between'>
@@ -23,5 +20,3 @@ function Sidebar(props: Props) : ReactElement<Props> {
     </div>
   );
 }
-
-export default connect()(Sidebar);

@@ -5,7 +5,7 @@ type Props = {
   text: string;
 };
 
-function ParagraphDepartments(props: Props): ReactElement<Props> {
+export default function ParagraphDepartments(props: Props): ReactElement<Props> {
   return (
     <>
       <div className='col col-md-10 col-xl-8'>
@@ -16,5 +16,3 @@ function ParagraphDepartments(props: Props): ReactElement<Props> {
     </>
   );
 }
-
-export default ParagraphDepartments;

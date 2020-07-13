@@ -11,7 +11,7 @@ type Props = {
   }
 }
 
-function SearchTtn(props: Props) : ReactElement<Props> {
+export default function SearchTtn(props: Props) : ReactElement<Props> {
   useTitle('Відстежити посилку | Justin');
 
   return (
@@ -27,5 +27,3 @@ function SearchTtn(props: Props) : ReactElement<Props> {
     </div>
   );
 }
-
-export default SearchTtn;

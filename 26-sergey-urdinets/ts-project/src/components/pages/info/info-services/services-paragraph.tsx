@@ -5,7 +5,7 @@ interface Props{
   value: Bank
 }
 
-function Paragraph(props: Props) : ReactElement<Props> {
+export default function Paragraph(props: Props) : ReactElement<Props> {
   let x = Object.keys(props.value)[0];
 
   return (
@@ -18,5 +18,3 @@ function Paragraph(props: Props) : ReactElement<Props> {
     </>
   );
 }
-
-export default Paragraph;

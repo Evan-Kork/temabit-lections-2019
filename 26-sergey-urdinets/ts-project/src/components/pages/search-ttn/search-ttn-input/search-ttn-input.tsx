@@ -1,11 +1,11 @@
-import React, { useState, useEffect, ReactElement } from 'react';
+import React, { useState, useEffect, ReactElement, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 type Props = {
   ttn: string;
-}
+};
 
-function SearchTtnInput(props: Props) : ReactElement<Props> {
+export default function SearchTtnInput(props: Props): ReactElement<Props> {
   let history = useHistory();
   const [input, setInput] = useState<string>(props.ttn);
 
@@ -13,18 +13,22 @@ function SearchTtnInput(props: Props) : ReactElement<Props> {
     setInput(props.ttn);
   }, [props.ttn]);
 
-  function handleKeyPress(event: React.KeyboardEvent) {
+  const handleKeyPress = (event: React.KeyboardEvent) => {
     if (event.key == 'Enter') {
-      history.push(`/search-ttn/${input}`);
+      if (event.key == 'Enter') {
+        history.push(`/search-ttn/${input}`);
+      }
     }
-  }
+  };
 
   return (
     <>
       <input
         type='text'
         value={input}
-        onChange={e => setInput(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setInput(e.target.value)
+        }
         onKeyPress={handleKeyPress}
         placeholder='Введіть номер відправлення'
       />
@@ -40,5 +44,3 @@ function SearchTtnInput(props: Props) : ReactElement<Props> {
     </>
   );
 }
-
-export default SearchTtnInput;

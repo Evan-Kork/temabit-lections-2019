@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import SimpleMap from './simple-map/simple-map';
+import {useTitle} from 'react-use';
 
-function DepartmentsMap(props) {
+export default function DepartmentsMap(props) {
   let history = useHistory();
-
-  useEffect(() => {
-    document.title = 'Карта поштомаркетів Justin | Justin';
-  }, []);
+  useTitle('Карта поштомаркетів Justin | Justin');
 
   return (
     <div className='page container-fluid m-0'>
@@ -32,4 +30,3 @@ function DepartmentsMap(props) {
   );
 }
 
-export default DepartmentsMap;

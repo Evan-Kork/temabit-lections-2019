@@ -27,8 +27,7 @@ type Props = {
   item: ResultTTN;
 }
 
-
-function ResultOutput(props: Props) : ReactElement<Props> {
+export default function ResultOutput(props: Props) : ReactElement<Props> {
   return (
     <>
       <div className='col col-sm-4 col-xl-2 mt-4'>
@@ -54,5 +53,3 @@ function ResultOutput(props: Props) : ReactElement<Props> {
     </>
   );
 }
-
-export default ResultOutput;

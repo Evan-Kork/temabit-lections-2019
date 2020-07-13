@@ -5,7 +5,7 @@ interface Props {
   data: Department[]
 }
 
-function Table(props: Props) {
+export default function Table(props: Props) {
   return (
     <table className='w-100'>
       <thead className='text-center bg-white'>
@@ -50,5 +50,3 @@ function Table(props: Props) {
     </table>
   );
 }
-
-export default Table;

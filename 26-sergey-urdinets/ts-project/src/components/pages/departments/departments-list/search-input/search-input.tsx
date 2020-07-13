@@ -1,28 +1,22 @@
-import React, { ReactElement } from 'react';
-import { connect, ConnectedProps } from 'react-redux';
+import React, { ReactElement, useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { editSearchDepartmentData } from '../../../../../actions/actions';
-import {GlobalState} from '../../../../../reducers/index';
+import { RootState } from '../../../../../reducers/index';
 
-const mapState = (state: GlobalState) => ({
-  value: state.common.searchDepartment
-});
-const connector = connect(mapState);
-type Props = ConnectedProps<typeof connector>;
+export default function SearchClosestInput(): ReactElement {
+  const value = useSelector((state: RootState) => state.searchDepartment);
+  const dispatch = useDispatch();
 
-function SearchClosestInput(props: Props) : ReactElement{
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(editSearchDepartmentData(e.target.value));
+  }
+
   return (
     <>
       <label>
         Пошук:
-        <input
-          value={props.value}
-          onChange={e => {
-            props.dispatch(editSearchDepartmentData(e.target.value));
-          }}
-        />
+        <input value={value} onChange={onChange} />
       </label>
     </>
   );
 }
-
-export default connector(SearchClosestInput);

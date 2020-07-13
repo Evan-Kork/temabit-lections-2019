@@ -1,8 +1,8 @@
 import React, { useState, useEffect, ReactElement } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { connect, ConnectedProps } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Table from './table/table';
-import { GlobalState } from '../../../../../reducers/index';
+import { RootState } from '../../../../../reducers/index';
 import {
   Department,
   ClosestDepartments,
@@ -10,16 +10,7 @@ import {
 import { plainToClass } from 'class-transformer';
 import { validateOrReject } from 'class-validator';
 
-const mapState = (state: GlobalState) => ({
-  value: state.common.searchDepartment,
-  isChecked: state.common.isOnlyClosest,
-});
-
-const connector = connect(mapState);
-
-type PropsFromRedux = ConnectedProps<typeof connector>;
-
-interface Props extends PropsFromRedux {
+interface Props {
   data: Department[];
 }
 
@@ -88,19 +79,22 @@ function fetchMoreData(
   }
 }
 
-function InfiniteTable(props: Props): ReactElement {
+export default function InfiniteTable(props: Props): ReactElement {
   const [tableState, setTableState] = useState([] as Department[]);
   const [searchResults, setSearchResults] = useState([] as Department[]);
+  const value = useSelector((state:RootState)=>state.searchDepartment);
+  const isChecked = useSelector((state:RootState)=>state.isOnlyClosest);
+
 
   useEffect(() => {
     getDepartment(
-      props.value,
+      value,
       props.data,
-      props.isChecked,
+      isChecked,
       setTableState,
       setSearchResults
     );
-  }, [props]);
+  }, [value, props, isChecked]);
 
   return (
     <>
@@ -110,7 +104,7 @@ function InfiniteTable(props: Props): ReactElement {
             dataLength={tableState.length}
             next={() =>
               fetchMoreData(
-                props.value,
+                value,
                 tableState,
                 props.data,
                 searchResults,
@@ -130,5 +124,3 @@ function InfiniteTable(props: Props): ReactElement {
     </>
   );
 }
-
-export default connector(InfiniteTable);
