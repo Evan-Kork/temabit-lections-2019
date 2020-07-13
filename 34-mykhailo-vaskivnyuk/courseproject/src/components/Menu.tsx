@@ -9,7 +9,7 @@ interface Props {
 	match: {
 		path: string,
 	}
-	setMenu: (path: string) => void,
+	setMenu: (path: string) => Reducer.ActionMenu,
 }
 
 type EventData = React.FormEvent & { target: HTMLElement };

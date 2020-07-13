@@ -1,4 +1,5 @@
-function responses(state = {}, action) {
+function responses(state: Data.Responses, action: Reducer.ActionResponse): Data.Responses | {} {
+	if (!state) return {};
 	switch (action.type) {
 		case "SET_BRANCHES":
 			state = Object.assign(
