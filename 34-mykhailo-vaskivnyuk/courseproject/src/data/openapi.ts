@@ -1,4 +1,4 @@
-const methods = {
+const methods: Data.MethodsAPI = {
 	branches: {
 		name: "Інформація про відділення",
 		request: "/branches"

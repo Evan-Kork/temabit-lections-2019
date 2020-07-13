@@ -1,4 +1,4 @@
-const news = [
+const news: Data.News = [
 	{
 		id: 1,
 		type: "promotion",

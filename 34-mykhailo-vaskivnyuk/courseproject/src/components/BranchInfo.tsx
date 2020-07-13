@@ -1,14 +1,9 @@
 import React, { ReactElement } from "react";
+import SERVICES from "../data/services";
 
 interface Props {
 	branchInfo: Data.Branch,
 }
-
-const SERVICES: Data.Services = {
-	monobank: 'Картка "MONOBANK"',
-	["3mob"]: "3Mob",
-	uplata: "Uplata"
-};
 
 function getServices(services: Data.Services): string {
 	let array = [];
@@ -22,30 +17,22 @@ function getServices(services: Data.Services): string {
 
 function BranchInfo(props: Props): ReactElement {
 	const data = props.branchInfo;
-
-	const body = [
-		(<tr key={"number"}>
-			<td>Номер</td><td>{data.number}</td>
-		</tr>),
-		(<tr key={"adress"}>
-			<td>Адреса</td><td>{data.adress}</td>
-		</tr>),
-		(<tr key={"navigation"}>
-			<td>Навігація</td><td>{data.public.navigation_ua}</td>
-		</tr>),
-		(<tr key={"shedule_description"}>
-			<td>Графік роботи</td><td>{data.shedule_description}</td>
-		</tr>),
-		(<tr key={"services"}>
-			<td>Сервіси</td><td>Додаткові: {getServices(data.services)}</td>
-		</tr>),
-		(<tr key={"max_weight"}>
-			<td>Максимальна вага</td><td>{data.max_weight}</td>
-		</tr>),
-		(<tr key={"lat_lng"}>
-			<td>Координати</td><td>lat: {data.lat}; lng: {data.lng}</td>
-		</tr>)
+	const rows = [
+		{ key: 'number', data: data.number, title: 'Номер' },
+		{ key: 'adress', data: data.adress, title: 'Адреса' },
+		{ key: 'navigation', data: data.public.navigation_ua, title: 'Навігація' },
+		{ key: 'shedule_description', data: data.shedule_description, title: 'Графік роботи' },
+		{ key: 'services', data: getServices(data.services), title: 'Сервіси' },
+		{ key: 'max_weight', data: data.max_weight, title: 'Максимальна вага' },
+		{ key: 'lat_lng', data: `lat: ${data.lat}; lng: ${data.lng}`, title: 'Координати' },
 	];
+
+	const body = rows.map(({ key, data, title }) =>	(
+		<tr key={key}>
+			<td>{title}</td>
+			<td>{data}</td>
+		</tr>
+	));
 
 	return(
 		<div className="row justify-content-center">

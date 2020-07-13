@@ -86,6 +86,24 @@ declare namespace Data {
 
 	type NewsTypes = 'all' | 'promotion' | 'company_news';
 
+	interface NewsItem {
+		id: number,
+		type: NewsTypes,
+		img: string,
+		title: string,
+		date: string,
+		description: string,
+	}
+
+	type News = NewsItem[];
+
+	interface MethodsAPI {
+		[Method: string]: {
+			name: string,
+			request: string,
+		},
+	}
+
 	interface State {
 		menu: Menu;
 		test: string;
