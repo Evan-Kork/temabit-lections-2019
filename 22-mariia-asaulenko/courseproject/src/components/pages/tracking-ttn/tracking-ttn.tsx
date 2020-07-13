@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import Header from '../../header/header';
 import Drawer from '../../drawer/drawer';
 import Footer from '../../footer/footer';
 import ContentContainer from '../content-container/content-container';
 import ContentItems from './elements/content-items/content-items';
-import menuItems from '../../data/menu-items';
+import * as menuItems from '../../data/menu-items.json';
 import TitlePages from '../title-pages/title-pages';
 import '../../../scss/pages/tracking-ttn/tracking-ttn.scss';
 

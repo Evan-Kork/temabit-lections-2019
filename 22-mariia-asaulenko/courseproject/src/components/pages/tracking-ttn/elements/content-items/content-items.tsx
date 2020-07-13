@@ -1,4 +1,4 @@
-import *as React from 'react';
+import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,47 +6,43 @@ import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import StatusCard from '../status-card/status-card';
 import DisabledCard from '../disabled-card/disabled-card';
 import * as ttnHistory from '../../../../data/ttn-history.json';
+import { plainToClass } from "class-transformer";
+import { ResultData } from '../../../../../../interface'
+import { validate } from "class-validator";
+import { Ttn } from './class-valid-ttn';
+import { DataTtn } from './class-trans-datattn'
 import '../../../../../scss/pages/tracking-ttn/elements/content-items.scss'
 
-class DataTtn {
-  date: string;;
-  departmentNumber: number;
-  departmentAdress:string;
-  id: number;
-  alt: string;
-  imgState: string;
-  titleState:string;
-  text: string;
-  status?: string;
-  // zaplanovano?:string;
+interface DataTransform {
+  [zaplanovano: string]: DataTtn;
+  vDoroge?: DataTtn;
+  vViddilenni?: DataTtn;
+  odergano?: DataTtn;
 }
-
-interface MyData {
-  zaplanovano: DataTtn;
-
-}
-interface Data extends DataTtn {}
 
 const useQuery = () => new URLSearchParams(useLocation().search);
 
 const ContentItems = () => {
-  const statusNames = ["zaplanovano", "vDoroge", "vViddilenni", "odergano"];
+  const statusNames: Array<string> = ["zaplanovano", "vDoroge", "vViddilenni", "odergano"];
   let query = useQuery();
-  const ttnNumber = query.get("ttn_number");
+  const ttnNumber: string = query.get("ttn_number");
 
-  const [orderNumber, setOrderNumber] = React.useState(ttnNumber);
-  const [orderData, setOrderData] = React.useState([]);
+  const orderNumber = new Ttn();
+  let setOrderNumber: Function;
+  [orderNumber.code, setOrderNumber] = React.useState(ttnNumber);
+  const [orderData, setOrderData]: [Array<DataTtn>, Function] = React.useState([]);
 
   React.useEffect(() => {
     setOrderNumber(ttnNumber);
     fetch(`http://localhost:9000/tracking_history/${ttnNumber}`).
       then((res) => res.json()).
-      then(({ result = [] }) => {
-        console.log(result)
-        setOrderData(result)})
+      then(({ result }: ResultData) => {
+        const dataToOrder = plainToClass(DataTtn, result)
+        setOrderData(dataToOrder)
+      })
   }, [ttnNumber])
 
-  const getOrderNumber = (event:React.ChangeEvent<HTMLInputElement>) => {
+  const getOrderNumber = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.stopPropagation();
     event.preventDefault();
     setOrderNumber(event.target.value);
@@ -55,14 +51,24 @@ const ContentItems = () => {
   const setNum = () => {
     event.stopPropagation();
     event.preventDefault();
-    window.location.href = `/#/tracking-ttn/?ttn_number=${orderNumber}`;
+    validate(orderNumber).then(res => {
+      if (res.length>0) {
+        res.map(({ constraints }: any, index: number) => {
+          for (let nameError in constraints) {
+            alert(constraints[nameError])
+          }
+        })
+      } else {
+        window.location.href = `/#/tracking-ttn/?ttn_number=${orderNumber.code}`;
+      }
+    })
   }
 
-  const getNewData = (heapDataArr: Array<Object>) => {
-    let newData = [...heapDataArr];
+  const getNewData = (heapDataArr: Array<DataTtn>) => {
+    let newData: Array<DataTtn> = [...heapDataArr];
 
     newData.sort((a, b) => Date.parse(a.date) < Date.parse(b.date) ? 1 : -1)
-    const data = newData.reduce((result, currentItem) => {
+    const data: DataTransform = newData.reduce((result: DataTransform, currentItem: DataTtn) => {
       switch (currentItem.status) {
         case ("Запланована до відправки"):
           return result.zaplanovano ?
@@ -106,12 +112,12 @@ const ContentItems = () => {
     return data
   }
 
-  let finishData;
+  let finishData: DataTransform;
   if (orderData) {
     finishData = getNewData(orderData)
   };
 
-  const handleKeyPress = (event:React.SyntheticEvent) => event.key === 'Enter' && setNum()
+  const handleKeyPress = (event: React.KeyboardEvent) => event.key === 'Enter' && setNum()
   return (
     <Container className="content-items d-flex flex-column justify-content-center align-items-center w-100 ">
       <Row className="d-flex justify-content-center align-items-center my-3">
@@ -123,8 +129,7 @@ const ContentItems = () => {
               className="tracking"
               type="text"
               onChange={getOrderNumber}
-              value={orderNumber}
-              pattern="^[ 0-9]+$"
+              value={orderNumber.code}
               placeholder="Введіть номер відправлення"
               onKeyPress={handleKeyPress}>
             </input>

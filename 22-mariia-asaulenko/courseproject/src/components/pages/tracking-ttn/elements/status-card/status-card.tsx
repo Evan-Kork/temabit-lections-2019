@@ -1,10 +1,20 @@
-import React from 'react'
+import * as React from 'react'
 import { Col } from 'react-bootstrap'
 import '../../../../../scss/pages/tracking-ttn/elements/status-card.scss'
 
-const StatusCard = ({date, departmentNumber, departmentAdress, id,alt, imgState, titleState, text}) => {
+interface CardProp {
+  date: string;
+  departmentNumber: number;
+  departmentAdress: string;
+  id: string;
+  alt: string;
+  imgState: string;
+  titleState: string;
+  text: string;
+}
+const StatusCard = ({date, departmentNumber, departmentAdress, id,alt, imgState, titleState, text}:CardProp) => {
   
-  const dataParse = (dat) => {
+  const dataParse = (dat:string) => {
     const date = new Date(Date.parse(dat));
     const options = {
       year: 'numeric',

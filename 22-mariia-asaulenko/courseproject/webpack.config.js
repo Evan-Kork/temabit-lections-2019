@@ -9,7 +9,7 @@ const isProd = process.env.NODE_ENV === "production";
 module.exports = {
   mode: isProd ? "production" : "development",
 
-  entry: resolve(__dirname, "src/index.js"),
+  entry: resolve(__dirname, "src/index.tsx"),
   devtool: 'inline-source-map',
   output: {
     path: resolve(__dirname, "dist"),
