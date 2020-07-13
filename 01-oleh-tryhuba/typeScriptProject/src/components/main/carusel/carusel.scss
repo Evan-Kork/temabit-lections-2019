@@ -1,0 +1,38 @@
+.carusel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+  .ldio-2zfm77nua0x div > div {
+    background: blue;
+  }
+  button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  &__image {
+    max-height: 100%;
+    max-width: 100%;
+    width: 60%;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 15px;
+    height: auto;
+
+    p {
+      margin: 0;
+    }
+  }
+}

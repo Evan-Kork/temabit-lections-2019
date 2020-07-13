@@ -1,0 +1,95 @@
+.titles h1 {
+  font-size: 3.1256vw;
+  line-height: 118.79%;
+  margin-bottom: 1.71908vw;
+}
+
+p.about {
+  font-size: 1.5628vw;
+  line-height: 125.29%;
+  color: #111;
+  opacity: .5;
+}
+
+
+.rates-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 1.40652vw;
+}
+
+.rates-table, .table-wrapper {
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.rates-table, .table-wrapper {
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.table-wrapper {
+  border-radius: .85954vw;
+  padding-left: 1.87536vw;
+  margin-bottom: 3.04746vw;
+}
+
+.rates-table tr td.title {
+  padding: 0 1.9535vw;
+}
+
+.rates-table tr td {
+  height: 7.0326vw;
+  vertical-align: middle;
+  text-align: center;
+  border-bottom: 1px solid hsla(0, 0%, 90.2%, .4);
+}
+
+.rates-table tr td.sm {
+  font-size: 1.09396vw;
+  text-transform: uppercase;
+}
+
+.rates-table tr td.blue {
+  background-color: #41b6e6;
+  color: #fff;
+}
+
+.rates-table tr td {
+  height: 7.0326vw;
+  vertical-align: middle;
+  text-align: center;
+  border-bottom: 1px solid hsla(0, 0%, 90.2%, .4);
+}
+
+.blue {
+  color: #104eff;
+}
+
+.rates-table tr td.light-blue {
+  background-color: #4562fe;
+  color: #fff;
+}
+
+.rates-table tr td.green {
+  background-color: #2cd5c4;
+  color: #fff;
+}
+
+.rates-table tr td.deep-blue {
+  background-color: #304ffe;
+  color: #fff;
+}
+
+.rates-table tr td.dirty-blue {
+  background-color: #edf8fe;
+}
+
+.rates-table tr td.dirty-light-blue {
+  background-color: #ebfbfa;
+}
+
+.main {
+  height: auto;
+}
