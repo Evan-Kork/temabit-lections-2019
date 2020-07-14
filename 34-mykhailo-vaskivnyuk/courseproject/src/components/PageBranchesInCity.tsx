@@ -1,18 +1,17 @@
-import React, { ReactElement, useState } from "react";
+import React, {
+    ReactElement, ChangeEvent, EventHandler,
+    useState } from "react";
 import FormCity from "./FormCity";
 import TableData from "./TableData";
 import ContentHeader from "./ContentHeader";
 
-interface Props {}
+type eData = ChangeEvent<HTMLInputElement>;
+type eHandler = EventHandler<eData>;
 
-type FormEventData = React.FormEvent & {
-    target?: HTMLInputElement
-};
-
-function PageBranchesInCity(props: Props): ReactElement {
+function PageBranchesInCity(props: {}): ReactElement {
     const [filter, setFilter] = useState({ city: null });
 
-    const handleCity: React.FormEventHandler = (event: FormEventData) =>
+    const handleCity: eHandler = (event: eData) =>
         setFilter({ city: event.target.value });
         
     const { city } = filter;

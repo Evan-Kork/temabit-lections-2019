@@ -65,7 +65,7 @@ function PageBranch(props: Props): ReactElement {
             <ContentHeader title="Дані про відділення" />
             <FormBranch branch={branch} onSubmit={handleBranch} />
             {branchInfo ?
-                <BranchInfo branchInfo={branchInfo} />
+                <BranchInfo branch={branchInfo} />
             : branch ?
                 <RequestInfo error={error} />
             : null}

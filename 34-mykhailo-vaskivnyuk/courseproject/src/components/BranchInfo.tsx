@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import SERVICES from "../data/services";
 
 interface Props {
-    branchInfo: Data.Branch,
+    branch: Data.Branch,
 }
 
 function getServices(services: Data.Services): string {
@@ -16,15 +16,15 @@ function getServices(services: Data.Services): string {
 }
 
 function BranchInfo(props: Props): ReactElement {
-    const data = props.branchInfo;
+    const { branch } = props;
     const rows = [
-        { key: 'number', data: data.number, title: 'Номер' },
-        { key: 'adress', data: data.adress, title: 'Адреса' },
-        { key: 'navigation', data: data.public.navigation_ua, title: 'Навігація' },
-        { key: 'shedule_description', data: data.shedule_description, title: 'Графік роботи' },
-        { key: 'services', data: getServices(data.services), title: 'Сервіси' },
-        { key: 'max_weight', data: data.max_weight, title: 'Максимальна вага' },
-        { key: 'lat_lng', data: `lat: ${data.lat}; lng: ${data.lng}`, title: 'Координати' },
+        { key: 'number', data: branch.number, title: 'Номер' },
+        { key: 'adress', data: branch.adress, title: 'Адреса' },
+        { key: 'navigation', data: branch.public.navigation_ua, title: 'Навігація' },
+        { key: 'shedule_description', data: branch.shedule_description, title: 'Графік роботи' },
+        { key: 'services', data: getServices(branch.services), title: 'Сервіси' },
+        { key: 'max_weight', data: branch.max_weight, title: 'Максимальна вага' },
+        { key: 'lat_lng', data: `lat: ${branch.lat}; lng: ${branch.lng}`, title: 'Координати' },
     ];
 
     const body = rows.map(({ key, data, title }) =>	(
