@@ -1,11 +1,11 @@
-import React, {FC, ReactComponentElement, useEffect, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import './carusel.scss'
 import JustinApiService, {AllBranches} from '../../app/services/JustinApiService'
 import Spiner from "../../spiner/Spiner";
 import ErrorIndicator from "../../errorIndicator/ErrorIndicator";
 import no from '../../../img/no-img.png'
 
-const Carusel: FC = (props): ReactComponentElement<any> => {
+const Carusel: FC = () => {
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(false);
 
@@ -25,7 +25,6 @@ const Carusel: FC = (props): ReactComponentElement<any> => {
 		shedule_description: '',
 		type: '',
 	} as AllBranches);
-
 
 	const updateService = (): void => {
 		const count = Math.floor((Math.random() * 300) + 2)
@@ -62,7 +61,6 @@ const Carusel: FC = (props): ReactComponentElement<any> => {
 	useEffect(() => {
 		updateService();
 	}, [])
-
 
 	const nextBrunch = (e: React.MouseEvent<HTMLButtonElement>) => {
 		setLoading(true);

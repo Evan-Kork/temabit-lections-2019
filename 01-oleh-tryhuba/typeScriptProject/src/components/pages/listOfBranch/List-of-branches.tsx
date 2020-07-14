@@ -1,6 +1,6 @@
 import React, {FC, Fragment, ReactElement, useEffect, useState} from 'react';
 import './ListOfBranch.scss'
-import JustinApiService from "../../app/services/JustinApiService";
+import JustinApiService, {AllBranches} from "../../app/services/JustinApiService";
 import ErrorIndicator from "../../errorIndicator/ErrorIndicator";
 import Spiner from "../../spiner/Spiner";
 
@@ -8,13 +8,14 @@ const ListOfBranches = () => {
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(false);
 
-	const [allbranch, setAllBranch] = useState([]);
+	const [allbranch, setAllBranch] = useState({});
 
 	useEffect((): void => {
 		updateService();
 	}, [])
 
-	const onBranchLoaded = (res: any): void => {
+
+	const onBranchLoaded = (res: Array<ReactElement>): void => {
 		setAllBranch({...res})
 		setLoading(false)
 	};
@@ -32,14 +33,14 @@ const ListOfBranches = () => {
 
 	const countries: Array<object> = Object.entries(allbranch);
 
-	const listItems: Array<ReactElement<any, any>> = countries.map((value, index) =>
+	const listItems: Array<ReactElement> = countries.map((value, index) =>
 		<AllBranchess key={index} {...value} />
 	);
 
-	const errorMessage: ReactElement<any, any> | null = error ? <ErrorIndicator/> : null;
+	const errorMessage: ReactElement | null = error ? <ErrorIndicator/> : null;
 	const hasData: boolean = !(loading || error);
-	const spinner: ReactElement<any, any> | null = loading ? <Spiner/> : null;
-	let content: Array<ReactElement<any, any>> | null = hasData ? listItems : null;
+	const spinner: ReactElement | null = loading ? <Spiner/> : null;
+	let content: Array<ReactElement> | null = hasData ? listItems : null;
 
 	return (
 		<Fragment>
@@ -58,7 +59,14 @@ const ListOfBranches = () => {
 	)
 };
 
+type TProps = {
+	key: number,
+	branch: AllBranches
+}
+
+
 const AllBranchess: FC<any> = ({...props}) => {
+
 	const {services, adress, shedule_description, number} = props[1];
 	const navigation: string | null = props[1].public.navigation_ua;
 	const servicesArray: Array<string> = [];

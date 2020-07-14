@@ -25,24 +25,15 @@ export interface AllBranches {
 	public: Array<string> //	Масив із публічною інформацією про філіал та навігацією різними мовами
 }
 
-export interface IBranch {
-	description: string,
-	adress: string,
-	number: string,
-	photos: Array<string>,
-	format: string,
-}
-
-type resultType = {
+interface resultType {
 	msg: string | null,
-	result: Array<any>,
+	result: Array<AllBranches>,
 	status: number
 }
 
-
 export default class JustinApiService {
 
-	_apiBase: string = `http://openapi.justin.ua`;
+	private _apiBase: string = `http://openapi.justin.ua`;
 
 	getResponce = async (url: string): Promise<resultType> => {
 		const proxyurl: string = "https://cors-anywhere.herokuapp.com/";
@@ -54,65 +45,57 @@ export default class JustinApiService {
 	};
 
 	//Запит для отримання інформації всіх відділень
-	getAllBranches = async (): Promise<any> => {
+	getAllBranches = async (): Promise<Array<AllBranches> | any> => {
 		const res = await this.getResponce(`/branches/`);
 		return res.result.map(this._transformBranch);
 	};
 
 	//Запит для отримання інформації про відділення в населеному пункті (підтримує багатомовність):
-	getAllBranchLocality = async (city: string) => {
-		const res = await this.getResponce(`/branches/?locality=${city}`);
-		return res.result;
+	getAllBranchLocality = async (city: string): Promise<resultType> => {
+		return await this.getResponce(`/branches/?locality=${city}`);
 	};
 
 	//Запит для отримання інформації одного відділення:
-	getOneBranch = async (id: number): Promise<any> => {
+	getOneBranch = async (id: number): Promise<AllBranches> => {
 		const branch = await this.getResponce(`/branches/${id}`);
 		return this._transformBranch(branch.result[0]);
 	};
 
-	//Метод дозволяє отримати інформацію про типи відділен   ь
-	getTypesInfo = async () => {
-		const res = await this.getResponce(`/branch_types`);
-		return res.result;
+	//Метод дозволяє отримати інформацію про типи відділень
+	getTypesInfo = async (): Promise<resultType> => {
+		return await this.getResponce(`/branch_types`)
 	};
 
 	//Метод дозволяє отримати інформацію про найближчі відділення до вказаної адреси
-	getOneNearestBranch = async (id: number) => {
-		const res = await this.getResponce(`/branches_locator/${id}`);
-		return res.result;
+	getOneNearestBranch = async (id: number): Promise<resultType> => {
+		return await this.getResponce(`/branches_locator/${id}`);
 	};
 
 	//Метод дозволяє отримати інформацію про відправлення
-	getTracking = async (numOrder: number): Promise<tracking> => {
-		const res = await this.getResponce(`/tracking/${numOrder}`);
-		return res.result[0];
+	getTracking = async (numOrder: number): Promise<resultType> => {
+		return await this.getResponce(`/tracking/${numOrder}`);
 	};
 
 	//Метод дозволяє отримати історію руху відправлення
-	getTrackingHistory = async (numOrder: number) => {
-		const res = await this.getResponce(`/tracking_history/${numOrder}`);
-		return res.result;
+	getTrackingHistory = async (numOrder: number): Promise<resultType> => {
+		return await this.getResponce(`/tracking_history/${numOrder}`);
 	};
 
 	//Метод дозволяє отримати інформацію про населені пункти
-	getInfoLocation = async () => {
-		const res = await this.getResponce(`/localities`);
-		return res.result;
+	getInfoLocation = async (): Promise<resultType> => {
+		return await this.getResponce(`/localities`);
 	};
 
 	//Запит на отримання інформації про населені пункти в яких на даний момент працюють відділення
-	getInfoLocationActive = async () => {
-		const res = await this.getResponce(`/localities/activity`);
-		return res.result;
+	getInfoLocationActive = async (): Promise<resultType> => {
+		return await this.getResponce(`/localities/activity`);
 	};
 
-	getServices = async () => {
-		const res = await this.getResponce(`/services`);
-		return res.result;
+	getServices = async (): Promise<resultType> => {
+		return await this.getResponce(`/services`);
 	};
 
-	_transformBranch = (branch: IBranch): IBranch => {
+	private _transformBranch = (branch: AllBranches): AllBranches => {
 		return {...branch}
 	}
 }

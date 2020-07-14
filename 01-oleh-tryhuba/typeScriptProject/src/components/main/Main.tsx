@@ -15,7 +15,6 @@ const Main: FC = () => {
 				<Route path={'/list-of-branches'} component={ListOfBranches}/>
 				<Route path={'/tariffs'} component={Tariffs}/>
 			</Switch>
-
 		</div>
 	)
 };
