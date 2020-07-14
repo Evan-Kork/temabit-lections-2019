@@ -7,15 +7,13 @@ import Spiner from "../../spiner/Spiner";
 const ListOfBranches = () => {
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(false);
-
 	const [allbranch, setAllBranch] = useState({});
 
 	useEffect((): void => {
 		updateService();
 	}, [])
 
-
-	const onBranchLoaded = (res: Array<ReactElement>): void => {
+	const onBranchLoaded = (res: Array<AllBranches>): void => {
 		setAllBranch({...res})
 		setLoading(false)
 	};
@@ -58,12 +56,6 @@ const ListOfBranches = () => {
 		</Fragment>
 	)
 };
-
-type TProps = {
-	key: number,
-	branch: AllBranches
-}
-
 
 const AllBranchess: FC<any> = ({...props}) => {
 

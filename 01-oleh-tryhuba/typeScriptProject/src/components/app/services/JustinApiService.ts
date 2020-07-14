@@ -45,7 +45,7 @@ export default class JustinApiService {
 	};
 
 	//Запит для отримання інформації всіх відділень
-	getAllBranches = async (): Promise<Array<AllBranches> | any> => {
+	getAllBranches = async (): Promise<Array<AllBranches>> => {
 		const res = await this.getResponce(`/branches/`);
 		return res.result.map(this._transformBranch);
 	};

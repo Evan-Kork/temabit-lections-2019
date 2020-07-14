@@ -9,24 +9,10 @@ const Carusel: FC = () => {
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(false);
 
-	const [branch, setBranch] = useState({
-		adress: '',
-		photos: [''],
-		description: '',
-		format: '',
-		number: '',
-		delivery_branch_id: '',
-		lat: '',
-		lng: '',
-		locality: '',
-		max_weight: '',
-		public: [''],
-		services: [],
-		shedule_description: '',
-		type: '',
-	} as AllBranches);
+	const [branch, setBranch] = useState({} as AllBranches);
 
 	const updateService = (): void => {
+		setError(false);
 		const count = Math.floor((Math.random() * 300) + 2)
 		new JustinApiService().getOneBranch(count)
 		.then((branch) => onBranchLoaded(branch))
@@ -34,22 +20,7 @@ const Carusel: FC = () => {
 	};
 
 	const onBranchLoaded = (res: AllBranches): void => {
-		setBranch({
-			adress: res.adress,
-			photos: res.photos,
-			description: res.description,
-			format: res.format,
-			number: res.number,
-			delivery_branch_id: res.delivery_branch_id,
-			lat: res.lat,
-			lng: res.lng,
-			locality: res.locality,
-			max_weight: res.max_weight,
-			public: res.public,
-			services: res.services,
-			shedule_description: res.shedule_description,
-			type: res.type,
-		})
+		setBranch(res)
 		setLoading(false)
 	};
 
