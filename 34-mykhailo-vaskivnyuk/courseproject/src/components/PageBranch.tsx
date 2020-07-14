@@ -21,17 +21,10 @@ type Props = RouteComponentProps & {
     ) => void,
 }
 
-type HTMLForm = HTMLElement & { branch: HTMLInputElement };
-
 function PageBranch(props: Props): ReactElement {
 
-    const handleBranch: React.FormEventHandler = (event: React.FormEvent) => {
-        event.preventDefault();
-        let elem = event.target as HTMLForm;
-        elem.tagName === "FORM" || (elem = elem.parentElement as HTMLForm);
-        const branch = elem.branch.value;
+    const handleBranch = (branch: string) =>
         props.history.push("/branch/" + branch);
-    }
 
     useEffect(() => {
         if (props.branches.data) return;
@@ -63,7 +56,7 @@ function PageBranch(props: Props): ReactElement {
     return (
         <React.Fragment>
             <ContentHeader title="Дані про відділення" />
-            <FormBranch branch={branch} onSubmit={handleBranch} />
+            <FormBranch branch={branch} handleBranch={handleBranch} />
             {branchInfo ?
                 <BranchInfo branch={branchInfo} />
             : branch ?

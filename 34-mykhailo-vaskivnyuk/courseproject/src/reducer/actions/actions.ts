@@ -12,7 +12,9 @@ export function setMenu(path: string): Reducer.ActionMenu {
     }
 }
 
-export function setResponse(req: string, res: Data.BranchesData | Data.LocalitiesData): Reducer.ActionResponse {
+type Res<R> = { [K in keyof R]: R[K] }[keyof R];
+
+export function setResponse<R extends Data.Response>(req: string, res: R): Reducer.ActionResponse<R> {
     return {
         type: "SET_" + req.toUpperCase(),
         data: res,

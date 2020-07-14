@@ -1,27 +1,34 @@
-import React, { ReactElement, useRef, useEffect } from "react";
+import React, {
+    ReactElement,
+    FormEventHandler, FormEvent,
+    useRef, useEffect } from "react";
 
 interface Props {
-    onSubmit: React.FormEventHandler,
+    handleBranch: (branch: string) => any,
     branch: number,
 }
 
 function FormBranch(props: Props): ReactElement {
-    const { branch, onSubmit } = props;
+    const { branch, handleBranch } = props;
     const branchRef = useRef(null);
-    const setBranch = (): void => {
-        branchRef.current.branch.value = branch || "";
-    };
 
     useEffect(
-        setBranch,
-        [branch]
+        () => { branchRef.current.value = branch || ""; },
+        [branch],
     );
+
+    const onSubmit: FormEventHandler = (event: FormEvent): void => {
+        event.preventDefault();
+        const branch = branchRef.current.value;
+        handleBranch(branch);
+    }
 
     return (
         <div className="row justify-content-center">
             <div className="branch">
-                <form ref={branchRef} onSubmit={onSubmit}>
+                <form onSubmit={onSubmit}>
                     <input
+                        ref={branchRef}
                         name="branch"
                         className="branch_number"
                         type="number"

@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
 interface Props {
-    title: string
+    title: string,
 }
 
 function ContentHeader({ title }: Props): ReactElement {

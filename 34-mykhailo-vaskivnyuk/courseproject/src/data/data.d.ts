@@ -17,6 +17,8 @@ declare namespace Data {
         localities: LocalitiesData,
     }
 
+    type Response = { [K in keyof Responses]: Responses[K] }[keyof Responses];
+
     interface BranchesData {
         data: Branches,
         error: Error,

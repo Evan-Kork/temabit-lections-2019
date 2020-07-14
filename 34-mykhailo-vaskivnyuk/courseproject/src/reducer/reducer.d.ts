@@ -11,7 +11,7 @@ declare namespace Reducer {
         data: string,
     }
 
-    interface ActionResponse extends Action {
-        data: Data.BranchesData | Data.LocalitiesData,
+    interface ActionResponse<R extends Data.Response> extends Action {
+        data: R,
     }
 }

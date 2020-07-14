@@ -1,4 +1,4 @@
-function responses(state: Data.Responses, action: Reducer.ActionResponse): Data.Responses | {} {
+function responses<R extends Data.Response>(state: Data.Responses, action: Reducer.ActionResponse<R>): Data.Responses | {} {
     if (!state) return {};
     switch (action.type) {
         case "SET_BRANCHES":
