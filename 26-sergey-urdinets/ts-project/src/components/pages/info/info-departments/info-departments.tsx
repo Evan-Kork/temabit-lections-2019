@@ -5,7 +5,7 @@ import {
   DepartmentTypes,
 } from '../../../../interfaces/interfaces';
 import { plainToClass } from 'class-transformer';
-import { validateOrReject } from 'class-validator';
+import { validateLog } from '../../../funcs';
 
 function getData(
   setState: React.Dispatch<React.SetStateAction<DepartmentTypes[]>>
@@ -20,12 +20,6 @@ function getData(
       }
     })
     .catch((e) => console.log(e));
-}
-
-function validateLog<T>(obj: T): void {
-  validateOrReject(obj, { skipMissingProperties: true }).catch((errors) => {
-    console.log('Promise rejected (validation failed). Errors: ', errors);
-  });
 }
 
 export default function InfoDepartments(): ReactElement {

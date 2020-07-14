@@ -1,10 +1,10 @@
 import React, { useState, useEffect, ReactElement } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import SwitchToHistoryBtn from '../switch-to-history-btn/switch-to-history-btn';
 import ResultOutput from '../result-output/result-output';
 import { plainToClass } from 'class-transformer';
 import { Tracking } from '../../../../interfaces/interfaces';
-import { validateOrReject } from 'class-validator';
+import { validateLog } from '../../../funcs';
 import { RootState } from '../../../../reducers/index';
 
 interface Props  {
@@ -63,8 +63,3 @@ export default function SearchTtnResults(props: Props): ReactElement<Props> {
   );
 }
 
-function validateLog<T>(obj: T): void {
-  validateOrReject(obj, { skipMissingProperties: true }).catch((errors) => {
-    console.log('Promise rejected (validation failed). Errors: ', errors);
-  });
-}

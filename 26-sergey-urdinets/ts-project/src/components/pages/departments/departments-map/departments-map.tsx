@@ -2,8 +2,13 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import SimpleMap from './simple-map/simple-map';
 import {useTitle} from 'react-use';
+import { Department } from '../../../../interfaces/interfaces';
 
-export default function DepartmentsMap(props) {
+interface Props {
+  data: Department[];
+}
+
+export default function DepartmentsMap(props: Props) {
   let history = useHistory();
   useTitle('Карта поштомаркетів Justin | Justin');
 

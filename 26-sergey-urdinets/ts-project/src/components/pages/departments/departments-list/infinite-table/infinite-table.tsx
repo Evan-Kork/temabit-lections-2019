@@ -8,7 +8,7 @@ import {
   ClosestDepartments,
 } from '../../../../../interfaces/interfaces';
 import { plainToClass } from 'class-transformer';
-import { validateOrReject } from 'class-validator';
+import { validateLog } from '../../../../funcs';
 
 interface Props {
   data: Department[];
@@ -51,12 +51,6 @@ function getDepartment(
     setSearchResults(arr);
     setTableState(arr.slice(0, 20));
   }
-}
-
-function validateLog<T>(obj: T): void {
-  validateOrReject(obj, { skipMissingProperties: true }).catch((errors) => {
-    console.log('Promise rejected (validation failed). Errors: ', errors);
-  });
 }
 
 function fetchMoreData(

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactElement, useCallback } from 'react';
+import React, { useState, useEffect, ReactElement } from 'react';
 import { useHistory } from 'react-router-dom';
 
 type Props = {

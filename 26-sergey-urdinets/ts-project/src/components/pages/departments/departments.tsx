@@ -4,7 +4,7 @@ import DepartmentsMap from './departments-map/departments-map';
 import { useHistory, RouteComponentProps } from 'react-router-dom';
 import { DepartmentsAll, Department } from '../../../interfaces/interfaces';
 import { plainToClass } from 'class-transformer';
-import { validateOrReject } from 'class-validator';
+import { validateLog } from '../../funcs';
 
 function getAllDepartments(
   setFullDepartments: React.Dispatch<React.SetStateAction<Department[]>>
@@ -19,12 +19,6 @@ function getAllDepartments(
       } else setFullDepartments([]);
     })
     .catch((e) => console.log(e));
-}
-
-function validateLog<T>(obj: T): void {
-  validateOrReject(obj, { skipMissingProperties: true }).catch((errors) => {
-    console.log('Promise rejected (validation failed). Errors: ', errors);
-  });
 }
 
 export default function Departments(
