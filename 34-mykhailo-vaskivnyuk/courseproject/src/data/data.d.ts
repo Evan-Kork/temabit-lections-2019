@@ -106,7 +106,7 @@ declare namespace Data {
         },
     }
 
-    interface State {
+    export interface State {
         menu: Menu;
         test: string;
         responses: Responses;

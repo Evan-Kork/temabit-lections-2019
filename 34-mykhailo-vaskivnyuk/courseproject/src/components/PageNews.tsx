@@ -1,12 +1,12 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, ChangeEvent, EventHandler, useState } from "react";
 import news from "../data/news";
 import News from "./News";
 import ContentHeader from "./ContentHeader";
 import FormNews from "./FormNews";
 
-type FormEventData = React.FormEvent & { 
-    target: HTMLElement & {
-        dataset?: {
+type EventData = ChangeEvent<HTMLSpanElement> & { 
+    target: {
+        dataset: {
             type: Data.NewsTypes,
         }
     }
@@ -16,7 +16,7 @@ function PageNews(): ReactElement {
 
     const [type, setType] = useState("all" as Data.NewsTypes);
 
-    const handlerNews: React.FormEventHandler = (event: FormEventData) => {
+    const handlerNews: EventHandler<EventData> = (event: EventData) => {
         const { tagName, dataset } = event.target;
         tagName === "SPAN"
             && type !== dataset.type

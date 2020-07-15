@@ -2,9 +2,7 @@ import React, { ReactElement } from "react";
 import TableData from "./TableData";
 import ContentHeader from "./ContentHeader";
 
-interface Props {};
-
-function PageBranches(props: Props): ReactElement {
+function PageBranches(props: {}): ReactElement {
     return (
         <React.Fragment>
             <ContentHeader title="Наші відділення (поштомаркети)" />

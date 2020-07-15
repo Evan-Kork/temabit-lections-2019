@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import ContentHeader from "./ContentHeader";
 
-function PageHome(): ReactElement {
+function PageHome(props: {}): ReactElement {
     return (
         <React.Fragment>
             <ContentHeader title="Головна" />

@@ -12,8 +12,6 @@ export function setMenu(path: string): Reducer.ActionMenu {
     }
 }
 
-type Res<R> = { [K in keyof R]: R[K] }[keyof R];
-
 export function setResponse<R extends Data.Response>(req: string, res: R): Reducer.ActionResponse<R> {
     return {
         type: "SET_" + req.toUpperCase(),

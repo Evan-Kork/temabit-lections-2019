@@ -1,5 +1,5 @@
 /// <reference path='./data.d.ts' />
-
+ 
 const data: Data.State = {
 
     menu: {
