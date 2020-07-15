@@ -1,3 +1,4 @@
+//	Масив із публічною інформацією про філіал та навігацією різними мовами
 interface Navigation {
 	navigation_en: string
 	navigation_ru: string
@@ -18,7 +19,7 @@ export interface AllBranches {
 	shedule_description: string //	Опис розкладу роботи
 	photos: Array<string> //	Масив із посиланням на публічні зображення філіалу
 	services: Array<number> //	Масив із відміткою про доступні сервіси на філіалі (1 - доступний, 0 - недоступний). Детальніше в пункті "Інформація про доступні сервіси"
-	public: Navigation//	Масив із публічною інформацією про філіал та навігацією різними мовами
+	public: Navigation
 }
 
 interface resultType {
