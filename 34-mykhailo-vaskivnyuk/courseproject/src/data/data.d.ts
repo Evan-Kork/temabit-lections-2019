@@ -47,6 +47,8 @@ declare namespace Data {
         max_weight: number,
         photos: string[],
         locality: string,
+
+        navigation_ua: string,
     }
 
     interface Locality {

@@ -59,7 +59,7 @@ function TableData(props: Props): ReactElement {
     } as LocalState);
     state.setState = setState;
     state.props = props;
-    getDerivedStateFromProps.bind(state);
+    getDerivedStateFromProps.bind(state)();
 
     useEffect(() => {
         if (props.branches.data) return;

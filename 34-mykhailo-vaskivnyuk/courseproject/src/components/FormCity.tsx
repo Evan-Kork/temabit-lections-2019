@@ -24,7 +24,7 @@ function FormCity(props: Props): ReactElement{
             (data: Data.Localities, error: Error) => {
                 props.setResponse(
                     method,
-                    {data, error}
+                    { data, error }
                 );
             }
         );

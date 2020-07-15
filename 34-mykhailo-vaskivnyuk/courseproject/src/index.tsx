@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { createStore, Store } from "redux";
 import { Provider } from "react-redux";
 
+import "reflect-metadata";
 import 'bootstrap';
 import "./scss/styles.scss";
 

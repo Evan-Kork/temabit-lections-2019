@@ -20,7 +20,7 @@ function BranchInfo(props: Props): ReactElement {
     const rows = [
         { key: 'number', data: branch.number, title: 'Номер' },
         { key: 'adress', data: branch.adress, title: 'Адреса' },
-        { key: 'navigation', data: branch.public.navigation_ua, title: 'Навігація' },
+        { key: 'navigation', data: branch.navigation_ua, title: 'Навігація' },
         { key: 'shedule_description', data: branch.shedule_description, title: 'Графік роботи' },
         { key: 'services', data: getServices(branch.services), title: 'Сервіси' },
         { key: 'max_weight', data: branch.max_weight, title: 'Максимальна вага' },
