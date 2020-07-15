@@ -57,7 +57,7 @@ const ListOfBranches = () => {
 	)
 };
 
-const AllBranchess: FC<any> = ({...props}) => {
+const AllBranchess: FC<any> = (props: Array<AllBranches>) => {
 
 	const {services, adress, shedule_description, number} = props[1];
 	const navigation: string | null = props[1].public.navigation_ua;

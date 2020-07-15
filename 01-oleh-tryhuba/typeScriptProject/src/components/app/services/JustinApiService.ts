@@ -1,11 +1,7 @@
-interface tracking {
-	orderNumber: string //	Номер відправлення
-	orderDescription: string //	Опис відправлення
-	date: string //	Дата
-	time: string //	Час
-	status: string //	Статус відправлення
-	departmentNumber: string //	Відділення (вказано, якщо відправлення знаходиться на відділенні)
-	departmentAdress: string //	Адреса відділення (вказано, якщо відправлення знаходиться на відділенні)
+interface Navigation {
+	navigation_en: string
+	navigation_ru: string
+	navigation_ua: string
 }
 
 export interface AllBranches {
@@ -22,7 +18,7 @@ export interface AllBranches {
 	shedule_description: string //	Опис розкладу роботи
 	photos: Array<string> //	Масив із посиланням на публічні зображення філіалу
 	services: Array<number> //	Масив із відміткою про доступні сервіси на філіалі (1 - доступний, 0 - недоступний). Детальніше в пункті "Інформація про доступні сервіси"
-	public: Array<string> //	Масив із публічною інформацією про філіал та навігацією різними мовами
+	public: Navigation//	Масив із публічною інформацією про філіал та навігацією різними мовами
 }
 
 interface resultType {
