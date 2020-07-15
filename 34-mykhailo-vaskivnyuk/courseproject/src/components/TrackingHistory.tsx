@@ -2,6 +2,7 @@ import React, { ReactElement, useState, useEffect } from "react";
 import request from "../functions/request";
 import TrackingStatus from "./TrackingStatus";
 import RequestInfo from "./RequestInfo";
+import * as Data from "../data/data.types";
 
 interface Props {
     order: string,

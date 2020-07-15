@@ -2,6 +2,7 @@ import React, { ReactElement, useEffect } from "react";
 import { connect } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
 import request from "../functions/request";
+import * as Data from "../data/data.types";
 
 interface Props {
     localities: Data.LocalitiesData,

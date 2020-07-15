@@ -1,3 +1,6 @@
+import * as Data from "../../data/data.types";
+import Reducer from "../reducer.d";
+
 export function setTest(test: string): Reducer.ActionTest {
     return {
         type: "SET_TEST",

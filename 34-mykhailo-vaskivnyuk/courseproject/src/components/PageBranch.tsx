@@ -7,6 +7,7 @@ import FormBranch from "./FormBranch";
 import BranchInfo from "./BranchInfo";
 import ContentHeader from "./ContentHeader";
 import RequestInfo from "./RequestInfo";
+import * as Data from "../data/data.types";
 
 type Props = RouteComponentProps & {
     branches: Data.BranchesData,
@@ -35,7 +36,7 @@ function PageBranch(props: Props): ReactElement {
             (data: Data.Branches, error: Error) => {
                 props.setResponse(
                     method,
-                    {data, error}
+                    { data, error }
                 );
             }
         );

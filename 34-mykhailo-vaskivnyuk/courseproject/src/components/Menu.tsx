@@ -2,6 +2,8 @@ import React, { ReactElement, useState } from "react";
 import { NavLink, withRouter, RouteComponentProps } from "react-router-dom";
 import { connect } from "react-redux";
 import { setMenu } from "../reducer/actions/actions";
+import * as Data from "../data/data.types";
+import Reducer from "../reducer/reducer.d";
 
 type Props = RouteComponentProps & {
     list: Data.Pages,

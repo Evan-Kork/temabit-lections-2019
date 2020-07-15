@@ -1,17 +1,17 @@
-declare namespace Reducer {
-    interface Action {
-        type: string,
-    }
+import * as Data from "../data/data.types";
 
-    interface ActionTest extends Action {
-        data: string,
-    }
+export interface Action {
+    type: string,
+}
 
-    interface ActionMenu extends Action {
-        data: string,
-    }
+export interface ActionTest extends Action {
+    data: string,
+}
 
-    interface ActionResponse<R extends Data.Response> extends Action {
-        data: R,
-    }
+export interface ActionMenu extends Action {
+    data: string,
+}
+
+export interface ActionResponse<R extends Data.Response> extends Action {
+    data: R,
 }

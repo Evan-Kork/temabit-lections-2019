@@ -1,4 +1,5 @@
 import methods from "../data/openapi";
+import * as Data from "../data/data.types";
 
 interface Request {
     method: string,

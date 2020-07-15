@@ -1,6 +1,8 @@
 import React, { ReactElement, useState } from "react";
 import Pagination from "./Pagination";
 import SERVICES from "../data/services";
+import * as Data from "../data/data.types";
+
 interface Props {
     data: Data.Branches,
     handler: any,

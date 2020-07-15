@@ -1,5 +1,6 @@
-/// <reference path='./data.d.ts' />
- 
+//// <reference path='./data.d.ts' />
+import * as Data from "./data.types";
+
 const data: Data.State = {
 
     menu: {

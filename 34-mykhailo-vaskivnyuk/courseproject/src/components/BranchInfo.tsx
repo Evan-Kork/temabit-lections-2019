@@ -1,8 +1,9 @@
 import React, { ReactElement } from "react";
 import SERVICES from "../data/services";
+import * as Data from "../data/data.types";
 
 interface Props {
-    branch: Data.Branch,
+    branch: Data.BranchClass,
 }
 
 function getServices(services: Data.Services): string {

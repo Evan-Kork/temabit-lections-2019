@@ -1,3 +1,5 @@
+import * as Data from "./data.types";
+
 const methods: Data.MethodsAPI = {
     branches: {
         name: "Інформація про відділення",
