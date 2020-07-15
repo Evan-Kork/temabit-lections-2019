@@ -11,7 +11,7 @@ export class Branch {
             navigation_ua: string,
         };
         shedule_description: string;
-        services: Services;
+        services: Data.Services;
         lat: number;
         lng: number;
         max_weight: number;
@@ -29,7 +29,3 @@ export class Locality {
     SCOATOU: string;
     title_ua: string;
 }
-
-export type ServicesNames = 'monobank' | '3mob' | 'uplata';
-
-export type Services = { [Service in ServicesNames]: string; };

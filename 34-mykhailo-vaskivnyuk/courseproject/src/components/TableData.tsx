@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
 import request from "../functions/request";
 import RequestInfo from "./RequestInfo";
-import * as Data from "../data/data.types";
 
 type Props = RouteComponentProps & {
     setResponse: (req: string, res: Data.BranchesData) => void,

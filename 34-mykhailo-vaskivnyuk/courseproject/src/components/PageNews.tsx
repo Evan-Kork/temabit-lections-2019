@@ -3,7 +3,6 @@ import news from "../data/news";
 import News from "./News";
 import ContentHeader from "./ContentHeader";
 import FormNews from "./FormNews";
-import * as Data from "../data/data.types";
 
 type EventData = ChangeEvent<HTMLSpanElement> & { 
     target: {

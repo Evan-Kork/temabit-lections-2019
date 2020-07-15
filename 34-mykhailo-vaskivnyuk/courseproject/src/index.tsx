@@ -7,8 +7,6 @@ import "reflect-metadata";
 import 'bootstrap';
 import "./scss/styles.scss";
 
-import * as Data from "./data/data.types";
-
 import App from "./components/App";
 import reducer from "./reducer/reducer";
 import data from "./data/data";

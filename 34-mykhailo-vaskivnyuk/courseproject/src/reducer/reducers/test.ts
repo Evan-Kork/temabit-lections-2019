@@ -1,5 +1,3 @@
-import Reducer from "../reducer.d";
-
 function test(state: string = "", action: Reducer.ActionTest): string {
     switch (action.type) {
         case "SET_TEST":

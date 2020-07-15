@@ -7,7 +7,6 @@ import FormBranch from "./FormBranch";
 import BranchInfo from "./BranchInfo";
 import ContentHeader from "./ContentHeader";
 import RequestInfo from "./RequestInfo";
-import * as Data from "../data/data.types";
 
 type Props = RouteComponentProps & {
     branches: Data.BranchesData,
@@ -41,7 +40,6 @@ function PageBranch(props: Props): ReactElement {
             }
         );
     }, []);
-
 
     const branch = props.match.params.branch;
     let { data, error } = props.branches;

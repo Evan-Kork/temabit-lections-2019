@@ -1,5 +1,4 @@
-//// <reference path='./data.d.ts' />
-import * as Data from "./data.types";
+/// <reference path='./data.d.ts' />
 
 const data: Data.State = {
 

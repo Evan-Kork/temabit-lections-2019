@@ -1,5 +1,4 @@
 import methods from "../data/openapi";
-import * as Data from "../data/data.types";
 
 interface Request {
     method: string,
@@ -7,7 +6,7 @@ interface Request {
 }
 
 type ResponsesData =
-    | Data.Branches
+    | Data.Branches<Data.Branch>
     | Data.Localities
     | Data.TrackingHistoryInfo[]
     | Data.TrackingInfo[];

@@ -1,5 +1,4 @@
 import React, { ReactElement } from "react";
-import * as Data from "../data/data.types";
 
 interface Props {
     onClick: React.FormEventHandler,

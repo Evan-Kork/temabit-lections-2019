@@ -1,5 +1,3 @@
-import * as Data from "./data.types";
-
 const news: Data.News = [
     {
         id: 1,
