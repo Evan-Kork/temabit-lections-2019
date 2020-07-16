@@ -7,7 +7,7 @@ import { Tracking } from '../../../../interfaces/interfaces';
 import { validateLog } from '../../../funcs';
 import { RootState } from '../../../../reducers/index';
 
-interface Props  {
+interface Props {
   ttn: string;
 }
 
@@ -28,15 +28,13 @@ function getTtnData(
     .then((result) => {
       let data = plainToClass(Tracking, result);
       validateLog(data);
-      if (data.status) {
-        setSearchResult(data);
-      }
+      setSearchResult(data);
     })
     .catch((e) => console.log(e));
 }
 
 export default function SearchTtnResults(props: Props): ReactElement<Props> {
-  const isHistory  = useSelector((state: RootState) => state.isShowHistory);
+  const isHistory = useSelector((state: RootState) => state.isShowHistory);
 
   const [searchResult, setSearchResult] = useState({
     status: 0,
@@ -62,4 +60,3 @@ export default function SearchTtnResults(props: Props): ReactElement<Props> {
     </>
   );
 }
-

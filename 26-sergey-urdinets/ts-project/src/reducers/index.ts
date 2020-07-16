@@ -12,9 +12,6 @@ export type RootState = ReturnType<typeof rootReducer>
 const rootReducer = (state = initialState, action: ActionTypes) => {
   let newState = { ...state };
   
-console.log('old state',newState);
-
-
   switch (action.type) {
     case Actions.EDIT_DEPARTMENTS_SEARCH:
       newState.searchDepartment = action.data;

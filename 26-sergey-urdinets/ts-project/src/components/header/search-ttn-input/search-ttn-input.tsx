@@ -5,7 +5,7 @@ export default function SearchTtnInput(): ReactElement {
   let history = useHistory();
   let [input, setInput] = useState<string>('');
 
-  const handleKeyPress = useCallback((event: React.KeyboardEvent) => {
+  const onKeyPress = useCallback((event: React.KeyboardEvent) => {
     if (event.key == 'Enter') {
       history.push(`/search-ttn/${input}`);
       setInput('');
@@ -19,7 +19,7 @@ export default function SearchTtnInput(): ReactElement {
       type='text'
       value={input}
       onChange={onChange}
-      onKeyPress={handleKeyPress}
+      onKeyPress={onKeyPress}
       placeholder='Введіть номер відправлення'
     />
   );

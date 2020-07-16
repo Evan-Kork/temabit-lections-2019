@@ -13,7 +13,7 @@ interface Props {
 export default function MarkerWithInfo(props: Props): ReactElement {
   const [isShow, setShow] = useState(false);
 
-  const handleMarkerClick = useCallback(() => {
+  const onMarkerClick = useCallback(() => {
     setShow(!isShow);
   }, []);
 
@@ -22,10 +22,10 @@ export default function MarkerWithInfo(props: Props): ReactElement {
       position={props.position}
       clusterer={props.clusterer}
       title={`${props.description}\nЯк знайти:${props.hint}`}
-      onClick={handleMarkerClick}
+      onClick={onMarkerClick}
     >
       {isShow ? (
-        <InfoWindow position={props.position} onCloseClick={handleMarkerClick}>
+        <InfoWindow position={props.position} onCloseClick={onMarkerClick}>
           <span>
             {props.description}
             <br />

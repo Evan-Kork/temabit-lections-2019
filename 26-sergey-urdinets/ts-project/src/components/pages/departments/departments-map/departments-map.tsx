@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import SimpleMap from './simple-map/simple-map';
-import {useTitle} from 'react-use';
+import { useTitle } from 'react-use';
 import { Department } from '../../../../interfaces/interfaces';
 
 interface Props {
@@ -11,6 +11,7 @@ interface Props {
 export default function DepartmentsMap(props: Props) {
   let history = useHistory();
   useTitle('Карта поштомаркетів Justin | Justin');
+  const onClick = useCallback(() => history.push('/departments-list'), []);
 
   return (
     <div className='page container-fluid m-0'>
@@ -19,10 +20,7 @@ export default function DepartmentsMap(props: Props) {
           <p className='h3 mt-5'>Карта поштомаркетів (відділень)</p>
           <p className=''>Ми там, де Вам зручно!</p>
           <div className='form-group d-flex justify-content-end'>
-            <button
-              onClick={() => history.push('/departments-list')}
-              className='btn-primary ml-3 ml-sm-0'
-            >
+            <button onClick={onClick} className='btn-primary ml-3 ml-sm-0'>
               Список <span className='d-none d-sm-inline'>відділень</span>
             </button>
           </div>
@@ -34,4 +32,3 @@ export default function DepartmentsMap(props: Props) {
     </div>
   );
 }
-

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import SearchClosestInput from './search-input/search-input';
 import InfiniteTable from './infinite-table/infinite-table';
@@ -13,6 +13,7 @@ interface Props {
 export default function DepartmentsList(props: Props) : ReactElement {
   let history = useHistory();
   useTitle('Список відділень Justin | Justin');
+  const onClick = useCallback(() => history.push('/departments-map'), []);
 
   return (
     <div className='page departments-list container-fluid'>
@@ -25,7 +26,7 @@ export default function DepartmentsList(props: Props) : ReactElement {
               <SearchCheckbox />
             </div>
             <button
-              onClick={() => history.push('/departments-map')}
+              onClick={onClick}
               className='btn-primary ml-3 ml-sm-0'
             >
               Карта <span className='d-none d-sm-inline'>відділень</span>

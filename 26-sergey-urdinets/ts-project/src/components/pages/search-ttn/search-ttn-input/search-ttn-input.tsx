@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactElement } from 'react';
+import React, { useState, useEffect, ReactElement, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 type Props = {
@@ -13,31 +13,39 @@ export default function SearchTtnInput(props: Props): ReactElement<Props> {
     setInput(props.ttn);
   }, [props.ttn]);
 
-  const handleKeyPress = (event: React.KeyboardEvent) => {
-    if (event.key == 'Enter') {
+  const handleKeyPress = useCallback(
+    (event: React.KeyboardEvent) => {
       if (event.key == 'Enter') {
-        history.push(`/search-ttn/${input}`);
+        if (event.key == 'Enter') {
+          history.push(`/search-ttn/${input}`);
+        }
       }
-    }
-  };
+    },
+    [input, props.ttn]
+  );
+
+  const onClick = useCallback(() => {
+    history.push(`/search-ttn/${input}`);
+  }, [input, props.ttn]);
+
+  const onChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value),
+    []
+  );
 
   return (
     <>
       <input
         type='text'
         value={input}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setInput(e.target.value)
-        }
+        onChange={onChange}
         onKeyPress={handleKeyPress}
         placeholder='Введіть номер відправлення'
       />
       <button
         className='btn-primary'
         disabled={input == '' ? true : false}
-        onClick={() => {
-          history.push(`/search-ttn/${input}`);
-        }}
+        onClick={onClick}
       >
         ▷
       </button>

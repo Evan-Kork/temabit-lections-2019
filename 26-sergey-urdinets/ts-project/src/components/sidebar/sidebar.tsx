@@ -6,13 +6,13 @@ import { toogleSidebar } from '../../actions/actions';
 
 export default function Sidebar(): ReactElement {
   const dispatch = useDispatch();
-  const handleClick = useCallback(() => {
+  const onClick = useCallback(() => {
     dispatch(toogleSidebar());
   }, []);
 
   return (
     <div className='sidebar d-flex flex-column justify-content-between'>
-      <a className='button' onClick={handleClick}>
+      <a className='button' onClick={onClick}>
         &#215;
       </a>
       <NavBar />

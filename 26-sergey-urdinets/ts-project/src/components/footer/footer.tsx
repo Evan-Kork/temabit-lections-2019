@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import SocialNetworks from './social-networks/social-networks';
 import NavBar from './nav-bar/nav-bar';
 
+const year = new Date().getFullYear();
+
 export default function Footer() : ReactElement {
+
   return (
     <footer>
       <div className='row justify-content-center m-0'>
@@ -11,7 +14,7 @@ export default function Footer() : ReactElement {
           <NavBar />
         </div>
         <div className='col text-center text-nowrap'>
-          <span>© 2020 Компанiя Justin</span>
+          <span>© {year} Компанiя Justin</span>
         </div>
         <div className='col text-center text-sm-left m-3 m-sm-1'>
           <SocialNetworks />
