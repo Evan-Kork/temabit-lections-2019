@@ -6,7 +6,7 @@ import { setMenu } from "../reducer/actions/actions";
 type Props = RouteComponentProps & {
     list: Data.Pages,
     selected: Data.Page,
-    setMenu: (path: string) => Reducer.ActionMenu,
+    setMenu: (path: string) => void,
 }
 
 type eData = ChangeEvent<HTMLElement> & MouseEvent;

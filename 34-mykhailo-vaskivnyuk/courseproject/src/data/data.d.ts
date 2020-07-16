@@ -1,48 +1,54 @@
 declare namespace Data {
-    export interface State {
+    interface State {
         menu: Menu;
         test: string;
         responses: Responses;
     }
 
-    //----- MENU ---------------
-    export interface Menu {
+    /*--------------------------
+    /          MENU
+    /-------------------------*/
+
+    interface Menu {
         list: Pages;
         selected: Page;
     }
 
-    export interface Page {
+    interface Page {
         id: number;
         link: string;
         text: string;
     }
 
-    export type Pages = Page[];
+    type Pages = Page[];
 
-    //----- RESPONSES ----------
-    export interface Responses<B extends Branch = BranchClass> {
+    /*--------------------------
+    /         RESPONSES
+    /-------------------------*/
+
+    interface Responses<B extends Branch = BranchClass> {
         branches: BranchesData<B>,
         localities: LocalitiesData,
     }
 
-    // export type Response = { [K in keyof Responses]: Responses[K] }[keyof Responses];
-    export type Response =
+    // type Response = { [K in keyof Responses]: Responses[K] }[keyof Responses];
+    type Response =
         | BranchesData<Branch>
         | LocalitiesData;
 
-    export interface BranchesData<B extends Branch = BranchClass> {
+    interface BranchesData<B extends Branch = BranchClass> {
         data: Branches<B>,
         error: Error,
     }
 
-    export interface LocalitiesData {
+    interface LocalitiesData {
         data: Localities,
         error: Error,
     }
 
-    export type Branches<B extends Branch = BranchClass> = B[];
+    type Branches<B extends Branch = BranchClass> = B[];
 
-    export class Branch {
+    class Branch {
         delivery_branch_id: number;
         number: number;
         adress: string;
@@ -58,25 +64,36 @@ declare namespace Data {
         locality: string;
     }
 
-    export class BranchClass extends Branch {
+    class BranchClass extends Branch {
         readonly navigation_ua: string;
         readonly lat_lng: string;
     }
 
-    export type Localities = Locality[];
+    type ServicesNames = keyof Services;
 
-    export class Locality {
+    interface Services {
+        monobank: string,
+        ['3mob']: string,
+        uplata: string,
+    }
+
+    type Localities = Locality[];
+
+    class Locality {
         SCOATOU: string;
         title_ua: string;
     }
 
-    //----- OTHERS ------------
-    export interface TrackingData {
+    /*--------------------------
+    /         TRACKING
+    /-------------------------*/
+
+    interface TrackingData {
         data: TrackingInfo[],
         error: Error,
     }
 
-    export interface TrackingInfo {
+    interface TrackingInfo {
         orderNumber: number,
         status: string,
         date: string,
@@ -86,18 +103,18 @@ declare namespace Data {
         departmentAdress: string,
     }
 
-    export interface TrackingHistoryData {
+    interface TrackingHistoryData {
         data: TrackingHistoryInfo[],
         error: Error,
     }
 
-    export interface TrackingHistoryInfo {
+    interface TrackingHistoryInfo {
         status: string,
         date: string,
         time: string,
     }
 
-    export type StatusesNames = 'ready' | 'going' | 'on_branch' | 'taken';
+    type StatusesNames = 'ready' | 'going' | 'on_branch' | 'taken';
     
     type Statuses = {
         [Status in Data.StatusesNames]: {
@@ -106,9 +123,13 @@ declare namespace Data {
         }
     };
     
-    export type NewsTypes = 'all' | 'promotion' | 'company_news';
+    /*--------------------------
+    /          NEWS
+    /-------------------------*/
 
-    export interface NewsItem {
+    type NewsTypes = 'all' | 'promotion' | 'company_news';
+
+    interface NewsItem {
         id: number,
         type: NewsTypes,
         img: string,
@@ -117,16 +138,16 @@ declare namespace Data {
         description: string,
     }
 
-    export type News = NewsItem[];
+    type News = NewsItem[];
 
-    export interface MethodsAPI {
+    /*--------------------------
+    /          API
+    /-------------------------*/
+
+    interface MethodsAPI {
         [Method: string]: {
             name: string,
             request: string,
         },
     }
-
-    export type ServicesNames = 'monobank' | '3mob' | 'uplata';
-
-    export type Services = { [Service in ServicesNames]: string; };
 }

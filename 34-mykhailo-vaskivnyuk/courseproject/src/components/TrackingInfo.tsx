@@ -6,7 +6,7 @@ interface Props {
     order: string,
 }
 
-function TrackingInfo(props: Props): React.ReactElement {
+function TrackingInfo(props: Props): ReactElement {
     const [order, setOrder] = useState("");
     const [tracking, setTracking] = useState({ data: null, error: null }  as Data.TrackingData);
     const newOrder = props.order;
@@ -37,40 +37,23 @@ function TrackingInfo(props: Props): React.ReactElement {
         );
     }
 
-    const {
-        orderNumber,
-        status,
-        date,
-        time,
-        orderDescription,
-        departmentNumber,
-        departmentAdress,
-    } = data[0];
-
-    const body = [
-        (<tr key="orderNumber">
-            <td>Замовленя №</td><td>{orderNumber}</td>
-        </tr>),
-        (<tr key="status">
-            <td>Статус</td><td>{status}</td>
-        </tr>),
-        (<tr key="date">
-            <td>Дата</td><td>{date}</td>
-        </tr>),
-        (<tr key="time">
-            <td>Час</td><td>{time}</td>
-        </tr>),
-        (<tr key="orderDescription">
-            <td>Додаткові відомості</td><td>{orderDescription}</td>
-        </tr>),
-        (<tr key="departmentNumber">
-            <td>Відділення №</td><td>{departmentNumber}</td>
-        </tr>),
-        (<tr key="departmentAdress">
-            <td>Адреса</td><td>{departmentAdress}</td>
-        </tr>),
+    const trackingInfoMap: Array<[keyof Data.TrackingInfo, string]> = [
+        ['orderNumber', 'Замовленя №'],
+        ['status', 'Статус'],
+        ['date', 'Дата'],
+        ['time', 'Час'],
+        ['orderDescription', 'Додаткові відомості'],
+        ['departmentNumber', 'Відділення №'],
+        ['departmentAdress', 'Адреса'],
     ];
-        
+    
+    
+    const body = trackingInfoMap.map(([key, title]) =>
+        <tr key={key}>
+            <td>{title}</td><td>{data[0][key]}</td>
+        </tr>
+    );
+ 
     return (
         <div className="row justify-content-center">
             <div className="tbl_tracking">

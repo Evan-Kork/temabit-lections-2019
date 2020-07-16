@@ -8,7 +8,7 @@ import request from "../functions/request";
 import RequestInfo from "./RequestInfo";
 
 type Props = RouteComponentProps & {
-    setResponse: (req: string, res: Data.BranchesData) => void,
+    setResponse: (req: string, res: Data.BranchesData<Data.Branch>) => void,
     branches: Data.BranchesData,
     filter?: { city: string },
 }
@@ -65,7 +65,7 @@ function TableData(props: Props): ReactElement {
         const params = "";
         request(
             { method, params },
-            (data: Data.Branches, error: Error) => {
+            (data: Data.Branches<Data.Branch>, error: Error) => {
                 props.setResponse(
                     method,
                     { data, error }
