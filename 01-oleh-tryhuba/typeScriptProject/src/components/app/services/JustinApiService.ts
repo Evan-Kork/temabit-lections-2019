@@ -1,5 +1,3 @@
-import {classToPlain, plainToClass} from 'class-transformer'
-
 //	Масив із публічною інформацією про філіал та навігацією різними мовами
 interface Navigation {
 	navigation_en: string
@@ -44,16 +42,6 @@ export interface ITracking {
 	status: string //	Статус відправлення
 	departmentNumber: string //	Відділення (вказано, якщо відправлення знаходиться на відділенні)
 	departmentAdress: string //	Адреса відділення (вказано, якщо відправлення знаходиться на відділенні)
-}
-
-class Tracking {
-	// orderNumber: number
-	// orderDescription:	string
-	// time:	string
-	// status:	string
-	// departmentNumber:	string
-	// departmentAdress:	string
-	//
 }
 
 export default class JustinApiService {
