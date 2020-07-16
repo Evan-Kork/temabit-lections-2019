@@ -1,19 +1,29 @@
-import React, { ReactElement, useRef, useEffect } from "react";
+import React, {
+    ReactElement, FormEventHandler, FormEvent,
+    useRef, useEffect,
+} from "react";
 
 interface Props {
-    onSubmit: React.FormEventHandler,
+    handleTracking: (order: string) => void,
     order: string,
 }
 
 function FormTracking(props: Props): ReactElement {
-    const { order, onSubmit } = props;
+    const { order, handleTracking } = props;
     const orderRef = useRef(null);
-    const setBranch = (): void => {
-        orderRef.current.order.value = order || "";
-    };
 
-    useEffect(setBranch, [order]);
-        
+    useEffect(() => {
+            orderRef.current.order.value = order || "";
+        },
+        [order],
+    );
+    
+    const onSubmit: FormEventHandler = (event: FormEvent): void => {
+        event.preventDefault();
+        const order = orderRef.current.value;
+        handleTracking(order);
+    }
+
     return (
         <div className="row justify-content-center">
             <div className="tracking">

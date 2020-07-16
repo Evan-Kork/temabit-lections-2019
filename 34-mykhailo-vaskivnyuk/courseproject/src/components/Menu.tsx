@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, ChangeEvent, MouseEvent, useState, EventHandler } from "react";
 import { NavLink, withRouter, RouteComponentProps } from "react-router-dom";
 import { connect } from "react-redux";
 import { setMenu } from "../reducer/actions/actions";
@@ -9,7 +9,8 @@ type Props = RouteComponentProps & {
     setMenu: (path: string) => Reducer.ActionMenu,
 }
 
-type EventData = React.FormEvent & { target: HTMLElement };
+type eData = ChangeEvent<HTMLElement> & MouseEvent;
+type eHandler = EventHandler<eData>;
 
 function Menu(props: Props): ReactElement {
     const [isOpened, setOpened] = useState(false);
@@ -17,8 +18,8 @@ function Menu(props: Props): ReactElement {
     const handleMenu: React.FormEventHandler =
         (event: React.FormEvent) => setOpened(!isOpened);
 
-    const handleMenuLink: React.FormEventHandler =
-        ({ target }: EventData) =>
+    const handleMenuLink: eHandler =
+        ({ target }: eData) =>
             target.tagName === "A" && handleMenu(null);
 
     const { list: menuList, selected, match} = props;

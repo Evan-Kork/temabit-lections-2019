@@ -22,20 +22,18 @@ interface LocalState {
     filter: { city: string },
 }
 
-function handleTable(comment_data: any, branchNumber: number): void {
-    const _this: LocalState = (this as any) as LocalState;
+function handleTable(this: LocalState, comment_data: any, branchNumber: number): void {
     if (branchNumber) {
-        _this.props.history.push("/branch/" + branchNumber);
+        this.props.history.push("/branch/" + branchNumber);
         window.scrollTo(0, 0);
         return;
     }
-    _this.setState({ ..._this, comment_data });
+    this.setState({ ...this, comment_data });
 }
 
-function getDerivedStateFromProps(): void {
-    const _this: LocalState = (this as any) as LocalState;
-    const { filter, branches } = _this.props;
-    if (!filter || filter === _this.filter) return null;
+function getDerivedStateFromProps(this: LocalState): void {
+    const { filter, branches } = this.props;
+    if (!filter || filter === this.filter) return null;
     
     let { data, error } = branches;
     if (!data) return null;
@@ -47,7 +45,7 @@ function getDerivedStateFromProps(): void {
             data = null;
         }
     }
-    _this.setState({ ..._this, data, error, filter });
+    this.setState({ ...this, data, error, filter });
 }
 
 function TableData(props: Props): ReactElement {

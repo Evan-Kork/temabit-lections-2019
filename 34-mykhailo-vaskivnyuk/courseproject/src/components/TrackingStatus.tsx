@@ -5,14 +5,7 @@ interface Props {
     data: Pick<Data.TrackingHistoryInfo, 'date' | 'time'>,
 }
 
-type Statuses = {
-    [Status in Data.StatusesNames]: {
-        img: string,
-        text: string,
-    }
-};
-
-const STATUSES: Statuses = {
+const STATUSES: Data.Statuses = {
     ready: { img: "../src/imgs/road_on.png", text: "ВИРУШАЄ" },
     going: { img: "../src/imgs/start_on.png", text: "В ДОРОЗІ" },
     on_branch: { img: "../src/imgs/road_on.png", text: "НА ВІДДІЛЕННІ" },

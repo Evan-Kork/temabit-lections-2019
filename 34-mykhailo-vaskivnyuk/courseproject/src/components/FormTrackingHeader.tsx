@@ -1,19 +1,21 @@
-import React, { ReactElement, FormEvent } from "react";
+import React, { ReactElement, FormEvent, EventHandler } from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 
 interface Props extends RouteComponentProps { }
 
-type FormEventData = FormEvent & {
+type eData = FormEvent<HTMLFormElement> & {
     target: {
-        order?: HTMLInputElement
+        order: HTMLInputElement
     }
 };
 
-const onSubmit = (history: any) => (event: FormEventData) => {
-    event.preventDefault();
-    const order = event.target.order.value;
-    history.push("/tracking/" + order);
-}
+type eHandler = EventHandler<eData>;
+
+const onSubmit = (history: any): eHandler => (event: eData) => {
+        event.preventDefault();
+        const order = event.target.order.value;
+        history.push("/tracking/" + order);
+};
 
 function FormTrackingHeader(props: Props): ReactElement {
     return (

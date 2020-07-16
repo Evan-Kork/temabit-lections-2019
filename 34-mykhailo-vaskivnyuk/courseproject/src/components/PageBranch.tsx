@@ -17,7 +17,7 @@ type Props = RouteComponentProps & {
     },
     setResponse: (
         req: string,
-        res: Data.BranchesData,
+        res: Data.BranchesData<Data.Branch>,
     ) => void,
 }
 
@@ -32,7 +32,7 @@ function PageBranch(props: Props): ReactElement {
         const params = "";
         request(
             { method, params },
-            (data: Data.Branches, error: Error) => {
+            (data: Data.Branches<Data.Branch>, error: Error) => {
                 props.setResponse(
                     method,
                     { data, error }

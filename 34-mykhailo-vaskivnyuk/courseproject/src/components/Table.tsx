@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, ChangeEvent, FocusEvent, EventHandler, useState } from "react";
 import Pagination from "./Pagination";
 import SERVICES from "../data/services";
 
@@ -14,8 +14,10 @@ interface LocalState {
     pages: number,
 }
 
-type HTMLForm = HTMLElement;
-type FormEventData = React.FormEvent & { relatedTarget?: HTMLElement };
+type eData = ChangeEvent<HTMLElement>
+    & FocusEvent<HTMLElement>
+    & { relatedTarget?: HTMLElement };
+type eHandler = EventHandler<eData>;
 
 function getServices(services: Data.Services): string {
     let array = [];
@@ -27,46 +29,42 @@ function getServices(services: Data.Services): string {
     return array.join("; ");
 }
 
-const handleOnMouseOver: React.FormEventHandler = function(event: React.FormEvent) {
-    const _this: LocalState = (this as any) as LocalState;
-    let elem = event.target as HTMLForm;
+const handleOnMouseOver: eHandler = function(this: LocalState, event: eData) {
+    let elem = event.target;
     elem = elem.closest("TR");
     if (!elem || !elem.closest("TBODY")) return;
     const index = +elem.dataset.index;
-    const branch = _this.props.data[index];
+    const branch = this.props.data[index];
     const position = elem.getBoundingClientRect();
-    _this.props.handler({ branch, position });
+    this.props.handler({ branch, position });
 }
 
-const handleOnMouseOut: React.ReactEventHandler = function(event: FormEventData) {
-    const _this: LocalState = (this as any) as LocalState;
-    let elem = event.target as HTMLElement;
+const handleOnMouseOut: eHandler = function(this: LocalState, event: eData) {
+    let elem = event.target;
     elem = elem.closest("TR");
     let rel_elem =	event.relatedTarget;
     rel_elem = rel_elem ? rel_elem.closest("TR") : null;
     if (elem === rel_elem) return;
-    _this.props.handler(null);
+    this.props.handler(null);
 }
 
-const handleOnClick: React.ReactEventHandler = function(event: React.FormEvent) {
-    const _this: LocalState = (this as any) as LocalState;
-    let elem = event.target as HTMLElement;
+const handleOnClick: eHandler = function(this: LocalState, event: eData) {
+    let elem = event.target;
     elem = elem.closest("TR");
     if (!elem || !elem.closest("TBODY")) return;
     const number = elem.dataset.number;
-    _this.props.handler(null, number);
+    this.props.handler(null, number);
 }
 
-const handlePagination: React.FormEventHandler = function(event: React.FormEvent) {
-    const _this: LocalState = (this as any) as LocalState;
-    const elem = event.target as HTMLElement;
+const handlePagination: eHandler = function(this: LocalState, event: eData) {
+    const elem = event.target;
     const direction = elem.dataset["direction"];
-    const page = _this.page;
-    if (direction == "next" && page < _this.pages) {
-        _this.setState({ ..._this, page: page + 1 });
+    const { page, pages, setState } = this;
+    if (direction === "next" && page < pages) {
+        setState({ ...this, page: page + 1 });
     }
-    if (direction == "prev" && page > 1) {
-        _this.setState({ ..._this, page: page - 1 });
+    if (direction === "prev" && page > 1) {
+        setState({ ...this, page: page - 1 });
     }
 }
 
@@ -96,7 +94,7 @@ function Table(props: Props): ReactElement {
             <tr key={item.delivery_branch_id} data-index={index} data-number={item.number}>
                 <td>{item.number}</td>
                 <td>{item.adress}</td>
-                <td>{item.public.navigation_ua}</td>
+                <td>{item.navigation_ua}</td>
                 <td>Додаткові: {getServices(item.services)}</td>
                 <td>{item.shedule_description}</td>
             </tr>

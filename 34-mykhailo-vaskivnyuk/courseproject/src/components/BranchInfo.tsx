@@ -24,7 +24,7 @@ function BranchInfo(props: Props): ReactElement {
         { key: 'shedule_description', data: branch.shedule_description, title: 'Графік роботи' },
         { key: 'services', data: getServices(branch.services), title: 'Сервіси' },
         { key: 'max_weight', data: branch.max_weight, title: 'Максимальна вага' },
-        { key: 'lat_lng', data: `lat: ${branch.lat}; lng: ${branch.lng}`, title: 'Координати' },
+        { key: 'lat_lng', data: branch.lat_lng, title: 'Координати' },
     ];
 
     const body = rows.map(({ key, data, title }) =>	(

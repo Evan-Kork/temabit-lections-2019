@@ -5,7 +5,7 @@ declare namespace Data {
         responses: Responses;
     }
 
-    //----- MUNU ---------------
+    //----- MENU ---------------
     export interface Menu {
         list: Pages;
         selected: Page;
@@ -60,6 +60,7 @@ declare namespace Data {
 
     export class BranchClass extends Branch {
         readonly navigation_ua: string;
+        readonly lat_lng: string;
     }
 
     export type Localities = Locality[];
@@ -69,7 +70,7 @@ declare namespace Data {
         title_ua: string;
     }
 
-    //----- OTHES -------------
+    //----- OTHERS ------------
     export interface TrackingData {
         data: TrackingInfo[],
         error: Error,
@@ -97,7 +98,14 @@ declare namespace Data {
     }
 
     export type StatusesNames = 'ready' | 'going' | 'on_branch' | 'taken';
-
+    
+    type Statuses = {
+        [Status in Data.StatusesNames]: {
+            img: string,
+            text: string,
+        }
+    };
+    
     export type NewsTypes = 'all' | 'promotion' | 'company_news';
 
     export interface NewsItem {

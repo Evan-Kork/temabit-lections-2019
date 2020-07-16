@@ -1,7 +1,7 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, FormEventHandler } from "react";
 
 interface Props {
-    onClick: React.FormEventHandler,
+    onClick: FormEventHandler,
     type: Data.NewsTypes,
 }
 
@@ -9,7 +9,7 @@ function FormNews(props: Props): ReactElement {
 
     const isActive = (type: Data.NewsTypes) => props.type === type ? "active" : "";
 
-    const filterOption = (type: Data.NewsTypes, caption: string): React.ReactElement =>
+    const filterOption = (type: Data.NewsTypes, caption: string): ReactElement =>
         <span data-type={type} className={isActive(type)}>{caption}</span>;
 
     return (

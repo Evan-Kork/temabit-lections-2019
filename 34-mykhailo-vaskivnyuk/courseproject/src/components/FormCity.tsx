@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect } from "react";
+import React, { ReactElement, FormEventHandler, useEffect } from "react";
 import { connect } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
 import request from "../functions/request";
@@ -6,7 +6,7 @@ import request from "../functions/request";
 interface Props {
     localities: Data.LocalitiesData,
     city: string,
-    onChange: React.FormEventHandler,
+    onChange: FormEventHandler,
     setResponse: (
         req: string,
         res: Data.LocalitiesData,

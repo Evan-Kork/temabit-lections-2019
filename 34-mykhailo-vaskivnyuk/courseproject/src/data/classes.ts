@@ -23,6 +23,10 @@ export class BranchClass extends Branch {
     get navigation_ua() {
         return this.public.navigation_ua;
     }
+
+    get lat_lng() {
+        return `lat: ${this.lat}; lng: ${this.lng}`;
+    }
 }
 
 export class Locality {
