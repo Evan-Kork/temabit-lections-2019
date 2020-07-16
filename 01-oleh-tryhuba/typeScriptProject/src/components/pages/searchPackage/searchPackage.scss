@@ -1,0 +1,19 @@
+.form-control {
+  width: 30%;
+}
+
+.aboutPackage {
+  border: 2px solid;
+  padding: 25px;
+
+  .about_row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  b {
+    color: white;
+    margin-left: 20px;
+  }
+}

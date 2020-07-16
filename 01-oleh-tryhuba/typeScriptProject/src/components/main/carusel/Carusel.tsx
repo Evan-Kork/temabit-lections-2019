@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, ReactElement, useEffect, useState} from 'react';
 import './carusel.scss'
 import JustinApiService, {AllBranches} from '../../app/services/JustinApiService'
 import Spiner from "../../spiner/Spiner";
@@ -15,13 +15,11 @@ const Carusel: FC = () => {
 		setError(false);
 		const count = Math.floor((Math.random() * 300) + 2)
 		new JustinApiService().getOneBranch(count)
-		.then((branch) => onBranchLoaded(branch))
+		.then((branch) => {
+			setBranch(branch)
+			setLoading(false)
+		})
 		.catch(onError)
-	};
-
-	const onBranchLoaded = (res: AllBranches): void => {
-		setBranch(res)
-		setLoading(false)
 	};
 
 	const onError = (): void => {
@@ -38,10 +36,10 @@ const Carusel: FC = () => {
 		updateService();
 	}
 
-	const errorMessage = error ? <ErrorIndicator/> : null;
-	const hasData = !(loading || error);
-	const spinner = loading ? <Spiner/> : null;
-	const content = hasData ? <BranchView  {...branch}/> : null;
+	const errorMessage: ReactElement | null = error ? <ErrorIndicator/> : null;
+	const hasData:boolean = !(loading || error);
+	const spinner: ReactElement | null = loading ? <Spiner/> : null;
+	const content: ReactElement | null = hasData ? <BranchView  {...branch}/> : null;
 
 	return (
 		<div className="carusel jumbotron rounded">

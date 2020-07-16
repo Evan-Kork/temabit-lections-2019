@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './header.scss'
 import Logo from '../../img/logo_new.png'
 import Deliver from '../../img/international_btn.png'
-import HeaderSearch from "./header-search/Header-search";
 import {NavLink} from "react-router-dom";
 
 
@@ -28,7 +27,6 @@ export default function Header() {
 			<div className="header__phone">
 				<a href="tel:08005005500">080055500</a>
 			</div>
-			<HeaderSearch placeholder="Введіть номер відправлення"/>
 			<div className="show_nav" onClick={showNav}>
 				<div className="menu__button">
 					<span/>
@@ -66,6 +64,13 @@ export default function Header() {
 							className="nav-link"
 							to="/tariffs">
 							Тарифи
+						</NavLink>
+					</li>
+					<li className="nav-item">
+						<NavLink
+							className="nav-link"
+							to="/search-package">
+							Пошук Відправлення
 						</NavLink>
 					</li>
 				</ul>

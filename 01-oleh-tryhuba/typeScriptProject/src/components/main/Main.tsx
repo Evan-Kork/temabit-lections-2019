@@ -5,6 +5,7 @@ import About from "../pages/about/About";
 import ListOfBranches from "../pages/listOfBranch/List-of-branches";
 import Tariffs from "../pages/tarrifs/Tarrifs";
 import {Switch, Route} from "react-router-dom";
+import SearchPackage from "../pages/searchPackage/Search-Package";
 
 const Main: FC = () => {
 	return (
@@ -14,6 +15,7 @@ const Main: FC = () => {
 				<Route path={'/about'} component={About}/>
 				<Route path={'/list-of-branches'} component={ListOfBranches}/>
 				<Route path={'/tariffs'} component={Tariffs}/>
+				<Route path={'/search-package'} component={SearchPackage}/>
 			</Switch>
 		</div>
 	)

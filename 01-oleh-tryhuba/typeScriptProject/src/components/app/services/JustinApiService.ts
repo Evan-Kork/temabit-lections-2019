@@ -1,3 +1,5 @@
+import {classToPlain, plainToClass} from 'class-transformer'
+
 //	Масив із публічною інформацією про філіал та навігацією різними мовами
 interface Navigation {
 	navigation_en: string
@@ -28,11 +30,37 @@ interface resultType {
 	status: number
 }
 
+interface resultTypeTrack {
+	msg: string | null,
+	result: ITracking,
+	status: number
+}
+
+export interface ITracking {
+	orderNumber: string //	Номер відправлення
+	orderDescription: string //	Опис відправлення
+	date: string //	Дата
+	time: string //	Час
+	status: string //	Статус відправлення
+	departmentNumber: string //	Відділення (вказано, якщо відправлення знаходиться на відділенні)
+	departmentAdress: string //	Адреса відділення (вказано, якщо відправлення знаходиться на відділенні)
+}
+
+class Tracking {
+	// orderNumber: number
+	// orderDescription:	string
+	// time:	string
+	// status:	string
+	// departmentNumber:	string
+	// departmentAdress:	string
+	//
+}
+
 export default class JustinApiService {
 
 	private _apiBase: string = `http://openapi.justin.ua`;
 
-	getResponce = async (url: string): Promise<resultType> => {
+	getResponce = async (url: string) => {
 		const proxyurl: string = "https://cors-anywhere.herokuapp.com/";
 		const result = await fetch(`${proxyurl}${this._apiBase}/${url}`);
 		if (!result.ok) {
@@ -69,8 +97,8 @@ export default class JustinApiService {
 	};
 
 	//Метод дозволяє отримати інформацію про відправлення
-	getTracking = async (numOrder: number): Promise<resultType> => {
-		return await this.getResponce(`/tracking/${numOrder}`);
+	getTracking = async (numOrder: string): Promise<ITracking>  => {
+		return await this.getResponce(`/tracking/${numOrder}`).then(res => res.result ? res.result[0] : []);
 	};
 
 	//Метод дозволяє отримати історію руху відправлення
