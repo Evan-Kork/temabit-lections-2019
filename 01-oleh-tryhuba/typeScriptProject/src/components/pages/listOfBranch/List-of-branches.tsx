@@ -29,9 +29,9 @@ const ListOfBranches = () => {
 		.catch(onError)
 	};
 
-	const countries: Array<object> = Object.entries(allbranch);
+	const branches: Array<object> = Object.entries(allbranch);
 
-	const listItems: Array<ReactElement> = countries.map((value, index) =>
+	const listItems: Array<ReactElement> = branches.map((value, index) =>
 		<AllBranchess key={index} {...value} />
 	);
 

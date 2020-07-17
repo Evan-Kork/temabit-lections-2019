@@ -3,7 +3,8 @@ import {validate} from "class-validator";
 import './searchPackage.scss'
 import JustinApiService, {ITracking} from "../../app/services/JustinApiService";
 import Spiner from "../../spiner/Spiner";
-import {Invoice} from "../../app/services/classes";
+import {Invoice, Tracking} from "../../app/services/classes";
+import {plainToClass} from "class-transformer";
 
 const SearchPackage: FC = () => {
 
@@ -62,14 +63,16 @@ const SearchPackage: FC = () => {
 };
 
 const PackageView: FC<ITracking> = (packages: ITracking) => {
-	const {orderNumber, date, orderDescription, status, time} = packages;
+
+	let data = plainToClass(Tracking, packages);
+	const {orderNumber, orderDescription, status} = data;
+
 	return (
 		<Fragment>
 			<div className="aboutPackage">
 				<div className="about_row orderNumber">Номер відправлення:<b> {orderNumber}</b></div>
 				<div className="about_row orderDescription">Опис відправлення:<b> {orderDescription}</b></div>
-				<div className="about_row date">Дата: <b>{date}</b></div>
-				<div className="about_row time">Час: <b>{time}</b></div>
+				<div className="about_row date">Дата та час: <b>{data.orderNumber ? data.getDateTime() : null}</b></div>
 				<div className="about_row status">Статус відправлення: <b>{status}</b></div>
 			</div>
 		</Fragment>

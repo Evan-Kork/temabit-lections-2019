@@ -28,12 +28,6 @@ interface resultType {
 	status: number
 }
 
-interface resultTypeTrack {
-	msg: string | null,
-	result: ITracking,
-	status: number
-}
-
 export interface ITracking {
 	orderNumber: string //	Номер відправлення
 	orderDescription: string //	Опис відправлення
