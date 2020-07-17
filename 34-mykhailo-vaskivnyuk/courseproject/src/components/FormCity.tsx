@@ -19,14 +19,9 @@ function FormCity(props: Props): ReactElement{
         if (props.localities.data) return;
         const method = "localities";
         const params = "";
-        request(
-            { method, params },
-            (data: Data.Localities, error: Error) => {
-                props.setResponse(
-                    method,
-                    { data, error }
-                );
-            }
+        request({ method, params })
+        .then((res: Data.LocalitiesData) =>
+            props.setResponse(method, res)
         );
     }, []);
 

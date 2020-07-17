@@ -26,15 +26,17 @@ declare namespace Data {
     /         RESPONSES
     /-------------------------*/
 
-    interface Responses<B extends Branch = BranchClass> {
-        branches: BranchesData<B>,
+    interface Responses {
+        branches: BranchesData,
         localities: LocalitiesData,
     }
 
     // type Response = { [K in keyof Responses]: Responses[K] }[keyof Responses];
-    type Response =
-        | BranchesData<Branch>
-        | LocalitiesData;
+    type Response<B extends Branch = BranchClass> =
+        | BranchesData<B>
+        | LocalitiesData
+        | TrackingHistoryData
+        | TrackingData;
 
     interface BranchesData<B extends Branch = BranchClass> {
         data: Branches<B>,

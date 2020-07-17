@@ -1,21 +1,19 @@
 import { plainToClass } from "class-transformer";
-import { BranchClass, Locality } from '../../data/classes';
+import { Locality } from '../../data/classes';
 
 function responses<R extends Data.Response>(state: Data.Responses, action: Reducer.ActionResponse<R>): Data.Responses | {} {
     if (!state) return {};
 
     switch (action.type) {
         case "SET_BRANCHES":
-            let { data, error } = action.data;
-            const branches = plainToClass(BranchClass, data);
             state = Object.assign(
                 {},
                 state,
-                { branches: { data: branches, error } },
+                { branches: action.data },
             );
             break;
         case "SET_LOCALITIES":
-            ({ data, error } = action.data);
+            const { data, error } = action.data;
             const localities = plainToClass(Locality, data);
             state = Object.assign(
                 {},

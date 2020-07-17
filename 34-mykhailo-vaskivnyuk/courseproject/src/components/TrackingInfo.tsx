@@ -16,13 +16,11 @@ function TrackingInfo(props: Props): ReactElement {
 
         const method = "tracking";
         const params = "/" + newOrder;
-        request(
-            { method, params },
-            (data: Data.TrackingInfo[], error: Error) => {
-                setOrder(newOrder);
-                setTracking({ data, error });
-            }
-        );
+        request({ method, params })
+        .then((res: Data.TrackingData) => {
+            setOrder(newOrder);
+            setTracking(res);
+        });
     }, [newOrder]);
 
     if (order !== newOrder) return null;

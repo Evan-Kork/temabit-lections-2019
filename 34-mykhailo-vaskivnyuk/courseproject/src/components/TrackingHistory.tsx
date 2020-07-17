@@ -46,13 +46,11 @@ function TrackingHistory(props: Props): ReactElement {
 
         const method = "tracking_history";
         const params = "/" + newOrder;
-        request(
-            { method, params },
-            (data: Data.TrackingHistoryInfo[], error: Error) => {
+        request({ method, params })
+        .then((res: Data.TrackingHistoryData) => {
                 setOrder(newOrder);
-                setTrackingHistory({ data, error });
-            }
-        );
+                setTrackingHistory(res);
+        });
     }, [newOrder]);
 
     if (order !== newOrder) return null;

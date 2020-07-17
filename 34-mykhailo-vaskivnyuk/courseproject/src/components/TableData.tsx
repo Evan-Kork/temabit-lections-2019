@@ -6,9 +6,10 @@ import { connect } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
 import request from "../functions/request";
 import RequestInfo from "./RequestInfo";
+import { validateResponse } from "../functions/validate";
 
 type Props = RouteComponentProps & {
-    setResponse: (req: string, res: Data.BranchesData<Data.Branch>) => void,
+    setResponse: (req: string, res: Data.BranchesData) => void,
     branches: Data.BranchesData,
     filter?: { city: string },
 }
@@ -63,14 +64,10 @@ function TableData(props: Props): ReactElement {
         if (props.branches.data) return;
         const method = "branches";
         const params = "";
-        request(
-            { method, params },
-            (data: Data.Branches<Data.Branch>, error: Error) => {
-                props.setResponse(
-                    method,
-                    { data, error }
-                );
-            }
+        request({ method, params })
+        .then(validateResponse)
+        .then((res: Data.BranchesData) =>
+                props.setResponse(method, res),
         );
     }, []);
     

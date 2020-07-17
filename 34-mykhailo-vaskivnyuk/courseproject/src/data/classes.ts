@@ -3,25 +3,22 @@ import {
     Contains, IsInt, Length, IsEmail, IsFQDN, IsDate, Min, Max} from "class-validator";
 
 // https://medium.com/devschacht/a-minimal-guide-to-ecmascript-decorators-c7348f61ba24
-
 function myDecorator(target: any, property: any, descriptor?: any) {
-    console.log(target);
-    console.log(property);
-
-    // if (!descriptor) return descriptor;
-
-    console.log(descriptor);
+    // console.log(target);
+    // console.log(property);
+    if (!descriptor) return null;
+    // console.log(descriptor);
     return {...descriptor};
 }
 
 function myClassDecorator(target: any) {
-    console.log(target);
+    // console.log(target);
 }
 
-// @myClassDecorator
+@myClassDecorator
 export class Branch {
     delivery_branch_id: number;
-    @IsInt()
+    @Length(1, 3)
     number: number;
     @myDecorator
     adress: string;
