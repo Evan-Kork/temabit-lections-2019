@@ -3,6 +3,9 @@ import request from "../functions/request";
 import TrackingStatus from "./TrackingStatus";
 import RequestInfo from "./RequestInfo";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 interface Props {
     order: string,
 }
@@ -35,6 +38,9 @@ function getHistory(data: Data.TrackingHistoryInfo[]): TrackingHistory {
     return history;
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function TrackingHistory(props: Props): ReactElement {
     const [order, setOrder] = useState("");
     const [tracking_history, setTrackingHistory] =

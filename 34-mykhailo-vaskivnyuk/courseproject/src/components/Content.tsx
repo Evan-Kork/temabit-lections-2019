@@ -8,6 +8,9 @@ import PageBranchesInCity from "./PageBranchesInCity";
 import PageTracking from "./PageTracking";
 import PageNews from "./PageNews";
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function Content(): ReactElement {
     return (
         <div className="main wrapper">

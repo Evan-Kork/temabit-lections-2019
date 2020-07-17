@@ -1,5 +1,8 @@
 import React, { ReactElement } from "react";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 interface Props {
     data: {
         img: string;
@@ -9,6 +12,9 @@ interface Props {
     }
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function News(props: Props): ReactElement {
     const { data } = props;
     const { img, title, date, description } = data;

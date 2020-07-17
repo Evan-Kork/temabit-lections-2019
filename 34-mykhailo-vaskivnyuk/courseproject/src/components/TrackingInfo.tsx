@@ -2,10 +2,16 @@ import React, { ReactElement, useState, useEffect } from "react";
 import request from "../functions/request";
 import RequestInfo from "./RequestInfo";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 interface Props {
     order: string,
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function TrackingInfo(props: Props): ReactElement {
     const [order, setOrder] = useState("");
     const [tracking, setTracking] = useState({ data: null, error: null }  as Data.TrackingData);

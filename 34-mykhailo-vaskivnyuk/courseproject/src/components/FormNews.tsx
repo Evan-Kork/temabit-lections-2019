@@ -1,10 +1,16 @@
 import React, { ReactElement, FormEventHandler } from "react";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 interface Props {
     onClick: FormEventHandler,
     type: Data.NewsTypes,
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function FormNews(props: Props): ReactElement {
 
     const isActive = (type: Data.NewsTypes) => props.type === type ? "active" : "";

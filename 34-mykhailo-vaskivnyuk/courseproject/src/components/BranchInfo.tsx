@@ -1,6 +1,9 @@
 import React, { ReactElement } from "react";
 import SERVICES from "../data/services";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 interface Props {
     branch: Data.BranchClass,
 }
@@ -15,6 +18,9 @@ function getServices(services: Data.Services): string {
     return array.join("; ");
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function BranchInfo(props: Props): ReactElement {
     const { branch } = props;
     const rows = [

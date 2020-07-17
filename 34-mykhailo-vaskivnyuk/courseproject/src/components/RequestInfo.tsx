@@ -1,9 +1,15 @@
 import React, { ReactElement } from "react";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 interface Props {
     error: Error,
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function RequestInfo(props: Props): ReactElement {
 
     const { error } = props;

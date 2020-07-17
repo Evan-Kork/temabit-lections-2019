@@ -2,6 +2,9 @@ import React, { ReactElement } from "react";
 import Menu from "./Menu";
 import FormTrackingHeader from "./FormTrackingHeader";
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function Header(): ReactElement {
     return (
         <div className="header wrapper">

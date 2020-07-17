@@ -1,5 +1,8 @@
 import React, { ReactElement } from "react";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 interface Props {
     data: { 
         branch: {
@@ -12,6 +15,9 @@ interface Props {
     };
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function Comment(props: Props): ReactElement {
     const { branch, position } = props.data;
     const { top: _top, left: _left } = position;

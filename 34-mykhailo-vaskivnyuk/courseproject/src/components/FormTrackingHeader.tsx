@@ -1,6 +1,9 @@
 import React, { ReactElement, FormEvent, EventHandler } from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 interface Props extends RouteComponentProps { }
 
 type eData = FormEvent<HTMLFormElement> & {
@@ -17,6 +20,9 @@ const onSubmit = (history: any): eHandler => (event: eData) => {
         history.push("/tracking/" + order);
 };
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function FormTrackingHeader(props: Props): ReactElement {
     return (
         <form

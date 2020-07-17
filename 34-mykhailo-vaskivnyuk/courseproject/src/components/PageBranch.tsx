@@ -9,6 +9,9 @@ import ContentHeader from "./ContentHeader";
 import RequestInfo from "./RequestInfo";
 import { validateResponse } from "../functions/validate";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 type Props = RouteComponentProps & {
     branches: Data.BranchesData,
     match: {
@@ -22,6 +25,9 @@ type Props = RouteComponentProps & {
     ) => void,
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function PageBranch(props: Props): ReactElement {
 
     const handleBranch = (branch: string) =>

@@ -1,13 +1,19 @@
 import React, {
-    ReactElement,
-    FormEventHandler, FormEvent,
-    useRef, useEffect } from "react";
+    ReactElement, FormEventHandler, FormEvent,
+    useRef, useEffect,
+} from "react";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 interface Props {
     handleBranch: (branch: string) => any,
     branch: number,
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function FormBranch(props: Props): ReactElement {
     const { branch, handleBranch } = props;
     const branchRef = useRef(null);

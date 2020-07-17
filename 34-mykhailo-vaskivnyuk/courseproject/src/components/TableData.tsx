@@ -8,6 +8,9 @@ import request from "../functions/request";
 import RequestInfo from "./RequestInfo";
 import { validateResponse } from "../functions/validate";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 type Props = RouteComponentProps & {
     setResponse: (req: string, res: Data.BranchesData) => void,
     branches: Data.BranchesData,
@@ -49,6 +52,9 @@ function getDerivedStateFromProps(this: LocalState): void {
     this.setState({ ...this, data, error, filter });
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function TableData(props: Props): ReactElement {
     const [state, setState] = useState({
         data: null,

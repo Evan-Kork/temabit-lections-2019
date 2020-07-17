@@ -1,5 +1,8 @@
 import React, { ReactElement } from "react";
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function Footer(): ReactElement {
     return (
         <div className="footer wrapper">

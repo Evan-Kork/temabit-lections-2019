@@ -4,6 +4,9 @@ import News from "./News";
 import ContentHeader from "./ContentHeader";
 import FormNews from "./FormNews";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 type EventData = ChangeEvent<HTMLSpanElement> & { 
     target: {
         dataset: {
@@ -12,6 +15,9 @@ type EventData = ChangeEvent<HTMLSpanElement> & {
     }
 };
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function PageNews(): ReactElement {
 
     const [type, setType] = useState("all" as Data.NewsTypes);

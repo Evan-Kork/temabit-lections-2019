@@ -5,9 +5,15 @@ import FormCity from "./FormCity";
 import TableData from "./TableData";
 import ContentHeader from "./ContentHeader";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 type eData = ChangeEvent<HTMLInputElement>;
 type eHandler = EventHandler<eData>;
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function PageBranchesInCity(props: {}): ReactElement {
     const [filter, setFilter] = useState({ city: null });
 

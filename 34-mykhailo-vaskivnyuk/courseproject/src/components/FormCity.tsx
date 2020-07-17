@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
 import request from "../functions/request";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 interface Props {
     localities: Data.LocalitiesData,
     city: string,
@@ -13,6 +16,9 @@ interface Props {
     ) => void,
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function FormCity(props: Props): ReactElement{
 
     useEffect(() => {

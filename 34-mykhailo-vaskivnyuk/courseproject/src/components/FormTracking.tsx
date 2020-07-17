@@ -3,36 +3,45 @@ import React, {
     useRef, useEffect,
 } from "react";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 interface Props {
     handleTracking: (order: string) => void,
     order: string,
 }
 
+/*-----------------------------------------------------------|
+|             COMPONENT                                      |
+|-----------------------------------------------------------*/
 function FormTracking(props: Props): ReactElement {
     const { order, handleTracking } = props;
     const orderRef = useRef(null);
 
     useEffect(() => {
-            orderRef.current.order.value = order || "";
-        },
-        [order],
-    );
+        orderRef.current.value = order || "";
+    }, [order]);
     
     const onSubmit: FormEventHandler = (event: FormEvent): void => {
         event.preventDefault();
-        const order = orderRef.current.value;
+        const { value: order } = orderRef.current;
         handleTracking(order);
     }
 
+/*------------------------------------------------------------|
+|             RESULT                                          |
+|------------------------------------------------------------*/
     return (
         <div className="row justify-content-center">
             <div className="tracking">
-                <form ref={orderRef} onSubmit={onSubmit}>
+                <form onSubmit={onSubmit}>
                     <input name="order"
+                        ref={orderRef}
                         className="order_number"
                         type="number"
                         placeholder="Введіть номер відправлення" />
-                    <i className="far fa-caret-square-right" onClick={onSubmit}></i>
+                    <i className="far fa-caret-square-right"
+                        onClick={onSubmit} />
                 </form>
             </div>
         </div>

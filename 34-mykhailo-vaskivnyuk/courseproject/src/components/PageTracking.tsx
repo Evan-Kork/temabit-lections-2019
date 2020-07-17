@@ -5,6 +5,9 @@ import TrackingInfo from "./TrackingInfo";
 import TrackingHistory from "./TrackingHistory";
 import ContentHeader from "./ContentHeader";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 type Props = RouteComponentProps & {
     match: {
         params: {
@@ -13,6 +16,9 @@ type Props = RouteComponentProps & {
     },
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function PageTracking(props: Props): ReactElement {
 
     const handleTracking = (order: string): void =>

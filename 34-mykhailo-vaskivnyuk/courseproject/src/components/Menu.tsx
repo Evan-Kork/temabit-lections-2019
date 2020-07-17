@@ -3,6 +3,9 @@ import { NavLink, withRouter, RouteComponentProps } from "react-router-dom";
 import { connect } from "react-redux";
 import { setMenu } from "../reducer/actions/actions";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 type Props = RouteComponentProps & {
     list: Data.Pages,
     selected: Data.Page,
@@ -12,6 +15,9 @@ type Props = RouteComponentProps & {
 type eData = ChangeEvent<HTMLElement> & MouseEvent;
 type eHandler = EventHandler<eData>;
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function Menu(props: Props): ReactElement {
     const [isOpened, setOpened] = useState(false);
 

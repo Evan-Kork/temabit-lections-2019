@@ -1,9 +1,15 @@
 import React, { ReactElement } from "react";
 
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
 interface Props {
     title: string,
 }
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function ContentHeader({ title }: Props): ReactElement {
     return (
         <div className="row">

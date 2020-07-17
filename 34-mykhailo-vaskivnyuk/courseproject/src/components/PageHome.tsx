@@ -1,6 +1,9 @@
 import React, { ReactElement } from "react";
 import ContentHeader from "./ContentHeader";
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function PageHome(props: {}): ReactElement {
     return (
         <React.Fragment>

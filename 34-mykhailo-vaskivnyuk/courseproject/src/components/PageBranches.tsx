@@ -2,6 +2,9 @@ import React, { ReactElement } from "react";
 import TableData from "./TableData";
 import ContentHeader from "./ContentHeader";
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
 function PageBranches(props: {}): ReactElement {
     return (
         <React.Fragment>
