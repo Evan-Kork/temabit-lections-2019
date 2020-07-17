@@ -4,15 +4,17 @@ import React, { ReactElement } from "react";
 |             TYPES                                         |
 |----------------------------------------------------------*/
 interface Props {
-    data: { 
-        branch: {
-            photos: string[];
-        };
-        position: {
-            top: number;
-            left: number;
-        } 
+    data: CommentData,
+}
+
+export interface CommentData {
+    branch: {
+        photos: string[];
     };
+    position: {
+        top: number;
+        left: number;
+    }
 }
 
 /*----------------------------------------------------------|

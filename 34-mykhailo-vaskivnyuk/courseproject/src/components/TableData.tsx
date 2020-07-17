@@ -1,12 +1,17 @@
 import React, { ReactElement, useState, useEffect } from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
-import Table from "./Table";
-import Comment from "./Comment";
 import { connect } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
 import request from "../functions/request";
-import RequestInfo from "./RequestInfo";
 import { validateResponse } from "../functions/validate";
+import {
+    handleTable,
+    getDerivedStateFromProps,
+} from "../functions/handlers.table";
+
+import Comment, { CommentData } from "./Comment";
+import Table from "./Table";
+import RequestInfo from "./RequestInfo";
 
 /*----------------------------------------------------------|
 |             TYPES                                         |
@@ -17,39 +22,13 @@ type Props = RouteComponentProps & {
     filter?: { city: string },
 }
 
-interface LocalState {
+export interface LocalState {
     setState: (state: LocalState) => void,
     props: Props,
     data: Data.Branches,
     error: Error,
-    comment_data: any,
+    comment_data: CommentData,
     filter: { city: string },
-}
-
-function handleTable(this: LocalState, comment_data: any, branchNumber: number): void {
-    if (branchNumber) {
-        this.props.history.push("/branch/" + branchNumber);
-        window.scrollTo(0, 0);
-        return;
-    }
-    this.setState({ ...this, comment_data });
-}
-
-function getDerivedStateFromProps(this: LocalState): void {
-    const { filter, branches } = this.props;
-    if (!filter || filter === this.filter) return null;
-    
-    let { data, error } = branches;
-    if (!data) return null;
-
-    if (filter.city) {
-        data = data.filter(({ locality }) => locality === filter.city);
-        if (!data.length) {
-            error = { name: "", message: "Місто не знайдено!"};
-            data = null;
-        }
-    }
-    this.setState({ ...this, data, error, filter });
 }
 
 /*----------------------------------------------------------|
@@ -64,6 +43,7 @@ function TableData(props: Props): ReactElement {
     } as LocalState);
     state.setState = setState;
     state.props = props;
+
     getDerivedStateFromProps.bind(state)();
 
     useEffect(() => {
@@ -73,7 +53,7 @@ function TableData(props: Props): ReactElement {
         request({ method, params })
         .then(validateResponse)
         .then((res: Data.BranchesData) =>
-                props.setResponse(method, res),
+            props.setResponse(method, res),
         );
     }, []);
     
@@ -85,7 +65,7 @@ function TableData(props: Props): ReactElement {
         <div className="row justify-content-center">
             {comment_data ? <Comment data={comment_data} /> : null}
             {data ?
-                <Table data={data} handler={handleTable.bind(state)} />
+                <Table data={data} handleTable={handleTable.bind(state)} />
             : (!filter || (filter && filter.city)) ?
                 <RequestInfo error={error} />
             : null}
@@ -95,7 +75,7 @@ function TableData(props: Props): ReactElement {
 
 function mapStateToProps(state: Data.State): Pick<Data.Responses, 'branches'> {
     return {
-        branches: state.responses.branches
+        branches: state.responses.branches,
     }
 }
 

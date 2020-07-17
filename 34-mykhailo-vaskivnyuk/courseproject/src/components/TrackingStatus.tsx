@@ -8,7 +8,14 @@ interface Props {
     data: Pick<Data.TrackingHistoryInfo, 'date' | 'time'>,
 }
 
-const STATUSES: Data.Statuses = {
+type Statuses = {
+    [Status in Data.StatusesNames]: {
+        img: string,
+        text: string,
+    }
+};
+
+const STATUSES: Statuses = {
     ready: { img: "../src/imgs/road_on.png", text: "ВИРУШАЄ" },
     going: { img: "../src/imgs/start_on.png", text: "В ДОРОЗІ" },
     on_branch: { img: "../src/imgs/road_on.png", text: "НА ВІДДІЛЕННІ" },
@@ -25,7 +32,7 @@ function TrackingStatus(props: Props): ReactElement {
     const active = data ? "active" : "";
 
     return (
-        <div className={"col-12 col-sm-6 col-md-3 tracking_status" + active}>
+        <div className={"col-12 col-sm-6 col-md-3 tracking_status " + active}>
             <div className="tracking_icon">
                 <img src={img} />
             </div>

@@ -1,5 +1,4 @@
 import React, { ReactElement } from "react";
-import SERVICES from "../data/services";
 
 /*----------------------------------------------------------|
 |             TYPES                                         |
@@ -8,35 +7,25 @@ interface Props {
     branch: Data.BranchClass,
 }
 
-function getServices(services: Data.Services): string {
-    let array = [];
-    let service: Data.ServicesNames;
-    for (service in services) {
-        if (services[service] && SERVICES[service])
-            array.push(SERVICES[service]);
-    }
-    return array.join("; ");
-}
-
 /*----------------------------------------------------------|
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
 function BranchInfo(props: Props): ReactElement {
     const { branch } = props;
-    const rows = [
-        { key: 'number', data: branch.number, title: 'Номер' },
-        { key: 'adress', data: branch.adress, title: 'Адреса' },
-        { key: 'navigation', data: branch.navigation_ua, title: 'Навігація' },
-        { key: 'shedule_description', data: branch.shedule_description, title: 'Графік роботи' },
-        { key: 'services', data: getServices(branch.services), title: 'Сервіси' },
-        { key: 'max_weight', data: branch.max_weight, title: 'Максимальна вага' },
-        { key: 'lat_lng', data: branch.lat_lng, title: 'Координати' },
+    const branchMap: Array<[keyof Data.BranchClass, string]> = [
+        ['number', 'Номер'],
+        ['adress', 'Адреса'],
+        ['navigation_ua', 'Навігація'],
+        ['shedule_description', 'Графік роботи'],
+        ['strServices', 'Сервіси'],
+        ['max_weight', 'Максимальна вага'],
+        ['lat_lng', 'Координати'],
     ];
 
-    const body = rows.map(({ key, data, title }) =>	(
+    const body = branchMap.map(([ key, title ]) => (
         <tr key={key}>
             <td>{title}</td>
-            <td>{data}</td>
+            <td>{branch[key]}</td>
         </tr>
     ));
 

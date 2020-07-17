@@ -58,7 +58,7 @@ declare namespace Data {
             navigation_ua: string,
         };
         shedule_description: string;
-        services: Data.Services;
+        services: Services;
         lat: number;
         lng: number;
         max_weight: number;
@@ -69,6 +69,7 @@ declare namespace Data {
     class BranchClass extends Branch {
         readonly navigation_ua: string;
         readonly lat_lng: string;
+        readonly strServices: string;
     }
 
     type ServicesNames = keyof Services;
@@ -117,13 +118,6 @@ declare namespace Data {
     }
 
     type StatusesNames = 'ready' | 'going' | 'on_branch' | 'taken';
-    
-    type Statuses = {
-        [Status in Data.StatusesNames]: {
-            img: string,
-            text: string,
-        }
-    };
     
     /*--------------------------
     /          NEWS

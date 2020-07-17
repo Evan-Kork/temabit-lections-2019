@@ -6,14 +6,13 @@ import {
     handleOnClick,
     handlePagination,
 } from "../functions/handlers.table";
-import { getServices } from "../functions/helpers";
 
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
 export interface Props {
     data: Data.Branches,
-    handler: any,
+    handleTable: (...args: any[]) => void,
 }
 
 export interface LocalState {
@@ -33,6 +32,7 @@ function Table(props: Props): ReactElement {
     } as LocalState);
     state.setState = setState;
     state.props = props;
+
     const { data } = props;
 
     const head = (
@@ -47,16 +47,17 @@ function Table(props: Props): ReactElement {
 
     const index_from = (state.page - 1) * 50;
     const index_to = index_from + 50;
-    const body = data.slice(index_from, index_to).map((item, index) => {
-        return (
+    const body = data
+        .slice(index_from, index_to)
+        .map((item, index) =>
             <tr key={item.delivery_branch_id} data-index={index} data-number={item.number}>
                 <td>{item.number}</td>
                 <td>{item.adress}</td>
                 <td>{item.navigation_ua}</td>
-                <td>Додаткові: {getServices(item.services)}</td>
+                <td>Додаткові: {item.strServices}</td>
                 <td>{item.shedule_description}</td>
             </tr>
-    )});
+    );
 
     return(
         <React.Fragment>
