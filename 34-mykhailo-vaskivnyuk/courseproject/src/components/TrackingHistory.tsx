@@ -63,13 +63,7 @@ function TrackingHistory(props: Props): ReactElement {
 
     const { data, error } = tracking_history;
 
-    if (!data) {
-        return (
-            <div className="row justify-content-center">
-                <RequestInfo error={error}/>
-            </div>
-        );
-    }
+    if (!data) return null;
 
     const history = getHistory(data);
 

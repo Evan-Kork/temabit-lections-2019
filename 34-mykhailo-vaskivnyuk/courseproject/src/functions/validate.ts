@@ -13,7 +13,6 @@ export async function validateResponse(res: Data.BranchesData<Data.Branch>): Pro
             e.length && errors.push(e);
         });
     }
-    console.log(errors.length);
     if (errors.length) {
         branches = null;
         error = new Error("Невідповідні дані!");
