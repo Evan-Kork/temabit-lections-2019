@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.8.4",
+    "@babel/compat-data": "^7.10.5",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.10.4",
     "@babel/preset-env": "^7.8.4",
