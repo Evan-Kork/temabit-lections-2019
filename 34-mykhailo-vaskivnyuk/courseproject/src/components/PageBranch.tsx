@@ -7,6 +7,7 @@ import FormBranch from "./FormBranch";
 import BranchInfo from "./BranchInfo";
 import ContentHeader from "./ContentHeader";
 import RequestInfo from "./RequestInfo";
+import { validateResponse } from "../functions/validate";
 
 type Props = RouteComponentProps & {
     branches: Data.BranchesData,
@@ -31,6 +32,7 @@ function PageBranch(props: Props): ReactElement {
         const method = "branches";
         const params = "";
         request({ method, params })
+        .then(validateResponse)
         .then((res: Data.BranchesData) =>
                 props.setResponse(method, res),
         );
