@@ -147,3 +147,30 @@ declare namespace Data {
         },
     }
 }
+
+    /*--------------------------
+    /          TEST
+    /-------------------------*/
+
+declare namespace Test {
+
+    //
+    type Options = ["one", "two", "three"];
+
+    type UnionFromOptions<T> = T[keyof T extends number ? keyof T : never];
+
+    type OptionsUnion = UnionFromOptions<Options>;
+
+    //
+    interface Part {
+        id: number;
+        name: string;
+        subparts: Part[];
+        updatePart(newName: string): void;
+    }
+
+    type PropsNames<T> = keyof T;
+    type PropsNamesOfTypes<T, PropsTypes> = { [K in PropsNames<T>]: T[K] extends PropsTypes ? K : never }[PropsNames<T>];
+    type test = PropsNamesOfTypes<Part, Function | number>;
+
+}

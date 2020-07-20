@@ -3,7 +3,7 @@ import React, { ReactElement } from "react";
 /*----------------------------------------------------------|
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
-function Footer(): ReactElement {
+function Footer(props: {}): ReactElement {
     return (
         <div className="footer wrapper">
             <footer className="container">
