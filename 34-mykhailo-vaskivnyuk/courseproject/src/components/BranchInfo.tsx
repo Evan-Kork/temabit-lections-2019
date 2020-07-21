@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import { profiler } from "../functions/helpers";
 
 /*----------------------------------------------------------|
 |             TYPES                                         |
@@ -32,11 +33,13 @@ function BranchInfo(props: Props): ReactElement {
     return(
         <div className="row justify-content-center">
             <div className="tbl_branch">
-                <table>
-                    <tbody>
-                        {body}
-                    </tbody>
-                </table>
+                <React.Profiler id="BranchInfo" onRender={profiler}>
+                    <table>
+                        <tbody>
+                            {body}
+                        </tbody>
+                    </table>
+                </React.Profiler>
             </div>
         </div>
     );

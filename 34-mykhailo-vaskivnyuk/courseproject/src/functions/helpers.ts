@@ -1,4 +1,5 @@
 import SERVICES from "../data/services";
+import { ProfilerOnRenderCallback } from "react";
 
 export function getServices(services: Data.Services): string {
     let array = [];
@@ -8,4 +9,18 @@ export function getServices(services: Data.Services): string {
             array.push(SERVICES[service]);
     }
     return array.join("; ");
+}
+
+export const profiler: ProfilerOnRenderCallback = (
+        id: string,
+        phase: "mount" | "update",
+        actualDuration: number,
+        baseDuration: number,
+        startTime: number,
+        commitTime: number,
+        interactions: Set<any>,
+): void => {
+    
+    console.log("ELEMENT: ", id, " => ", phase);
+
 }
