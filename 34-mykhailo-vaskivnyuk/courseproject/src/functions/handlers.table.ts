@@ -32,7 +32,8 @@ export const handleOnMouseOver: eHandler = function(this: LocalState, event: eDa
     if (!elem || !elem.closest("TBODY")) return;
     const index = +elem.dataset.index;
     const branch = this.props.data[index];
-    const position = elem.getBoundingClientRect();
+    const firstTD = elem.firstElementChild;
+    const position = firstTD.getBoundingClientRect();
     this.props.handleTable({ branch, position });
 }
 
@@ -42,7 +43,7 @@ export const handleOnMouseOut: eHandler = function(this: LocalState, event: eDat
     let rel_elem =	event.relatedTarget;
     rel_elem = rel_elem ? rel_elem.closest("TR") : null;
     if (elem === rel_elem) return;
-    this.props.handleTable(null);
+    //this.props.handleTable(null);
 }
 
 export const handleOnClick: eHandler = function(this: LocalState, event: eData) {

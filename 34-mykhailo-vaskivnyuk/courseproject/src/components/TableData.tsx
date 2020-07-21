@@ -63,7 +63,9 @@ function TableData(props: Props): ReactElement {
 
     return (
         <div className="row justify-content-center">
-            {comment_data ? <Comment data={comment_data} /> : null}
+            {comment_data ?
+                <Comment data={comment_data} />
+            : null}
             {data ?
                 <Table data={data} handleTable={handleTable.bind(state)} />
             : (!filter || (filter && filter.city)) ?
