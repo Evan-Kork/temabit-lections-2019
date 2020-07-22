@@ -6,11 +6,11 @@ import { setMenu } from "../reducer/actions/actions";
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
-type Props = RouteComponentProps & {
-    list: Data.Pages,
-    selected: Data.Page,
-    setMenu: (path: string) => void,
-}
+type Props =
+    RouteComponentProps &
+    ReturnType<typeof mapStateToProps> & {
+        setMenu: (path: string) => void,
+    };
 
 type eData = ChangeEvent<HTMLElement> & MouseEvent;
 type eHandler = EventHandler<eData>;

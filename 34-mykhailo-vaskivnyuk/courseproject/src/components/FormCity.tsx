@@ -6,15 +6,15 @@ import request from "../functions/request";
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
-interface Props {
-    localities: Data.LocalitiesData,
-    city: string,
-    onChange: FormEventHandler,
-    setResponse: (
-        req: string,
-        res: Data.LocalitiesData,
-    ) => void,
-}
+type Props =
+    ReturnType<typeof mapStateToProps> & {
+        city: string,
+        onChange: FormEventHandler,
+        setResponse: (
+            req: string,
+            res: Data.LocalitiesData,
+        ) => void,
+    };
 
 /*----------------------------------------------------------|
 |             COMPONENT                                     |
@@ -56,8 +56,10 @@ function FormCity(props: Props): ReactElement{
 
 function mapStateToProps(state: Data.State): Pick<Data.Responses, 'localities'> {
     return {
-        localities: state.responses.localities
-    }
+        localities: state.responses.localities,
+    };
 }
 
-export default connect(mapStateToProps, { setResponse })(FormCity);
+const cntFormCity = connect(mapStateToProps, { setResponse })(FormCity);
+
+export default cntFormCity;

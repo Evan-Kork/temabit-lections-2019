@@ -16,11 +16,12 @@ import RequestInfo from "./RequestInfo";
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
-type Props = RouteComponentProps & {
-    setResponse: (req: string, res: Data.BranchesData) => void,
-    branches: Data.BranchesData,
-    filter?: { city: string },
-}
+type Props =
+    RouteComponentProps &
+    ReturnType<typeof mapStateToProps> & {
+        setResponse: (req: string, res: Data.BranchesData) => void,
+        filter?: { city: string },
+    };
 
 export interface LocalState {
     setState: (state: LocalState) => void,
@@ -78,7 +79,9 @@ function TableData(props: Props): ReactElement {
 function mapStateToProps(state: Data.State): Pick<Data.Responses, 'branches'> {
     return {
         branches: state.responses.branches,
-    }
+    };
 }
 
-export default withRouter(connect(mapStateToProps, { setResponse })(TableData));
+const cntTableData = connect(mapStateToProps, { setResponse })(TableData);
+
+export default withRouter(cntTableData);

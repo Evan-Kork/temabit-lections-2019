@@ -14,4 +14,8 @@ declare namespace Reducer {
     interface ActionResponse<R extends Data.Response> extends Action {
         data: R,
     }
+
+    // interface ActionCreator<A extends Action> {
+    //     (...args: any[]): A;
+    // }
 }

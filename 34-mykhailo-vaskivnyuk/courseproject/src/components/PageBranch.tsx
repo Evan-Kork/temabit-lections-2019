@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect } from "react";
 import { RouteComponentProps } from "react-router-dom";
-import { connect } from "react-redux";
+import { connect, HandleThunkActionCreator } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
 import request from "../functions/request";
 import FormBranch from "./FormBranch";
@@ -12,18 +12,16 @@ import { validateResponse } from "../functions/validate";
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
-type Props = RouteComponentProps & {
-    branches: Data.BranchesData,
-    match: {
-        params: {
-            branch: number,
+type Props =
+    RouteComponentProps &
+    ReturnType<typeof mapStateToProps> & {
+        match: {
+            params: {
+                branch: number,
+            },
         },
-    },
-    setResponse: (
-        req: string,
-        res: Data.BranchesData,
-    ) => void,
-}
+        setResponse: HandleThunkActionCreator<typeof setResponse>,
+    };
 
 /*----------------------------------------------------------|
 |             COMPONENT                                     |
@@ -81,4 +79,6 @@ function mapStateToProps(state: Data.State): Pick<Data.Responses, 'branches'> {
     };
 }
 
-export default connect(mapStateToProps, { setResponse })(PageBranch);
+const cntPageBranch = connect(mapStateToProps, { setResponse })(PageBranch);
+
+export default cntPageBranch;
