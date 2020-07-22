@@ -4,7 +4,7 @@ import DepartmentsMap from './departments-map/departments-map';
 import { useHistory, RouteComponentProps } from 'react-router-dom';
 import { DepartmentsAll, Department } from '../../../interfaces/interfaces';
 import { plainToClass } from 'class-transformer';
-import { validateLog } from '../../funcs';
+import { validate } from 'class-validator';
 
 function getAllDepartments(
   setFullDepartments: React.Dispatch<React.SetStateAction<Department[]>>
@@ -14,16 +14,22 @@ function getAllDepartments(
     .then((result) => {
       if (result.status) {
         let data = plainToClass(DepartmentsAll, result);
-        validateLog(data);
-        setFullDepartments(data.result);
-      } else setFullDepartments([]);
+        validate(data).then((errors) => {
+          if (errors.length > 0) {
+            console.log('validation failed. errors: ', errors);
+            setFullDepartments([]);
+          } else {
+            setFullDepartments(data.result);
+          }
+        });
+      }
     })
     .catch((e) => console.log(e));
 }
 
-export default function Departments(
-  props: RouteComponentProps<{ type: string }>
-): ReactElement {
+export default function Departments({
+  match,
+}: RouteComponentProps<{ type: string }>): ReactElement {
   const [fullDepartments, setFullDepartments] = useState([] as Department[]);
   let history = useHistory();
 
@@ -31,13 +37,13 @@ export default function Departments(
     getAllDepartments(setFullDepartments);
   }, []);
 
-  if (props.match.params.type !== 'list' && props.match.params.type !== 'map') {
+  if (match.params.type !== 'list' && match.params.type !== 'map') {
     history.push('/');
   }
 
   return (
     <>
-      {props.match.params.type == 'list' ? (
+      {match.params.type == 'list' ? (
         <Departmentslist data={fullDepartments} />
       ) : (
         <DepartmentsMap data={fullDepartments} />

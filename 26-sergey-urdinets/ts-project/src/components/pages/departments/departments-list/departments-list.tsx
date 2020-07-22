@@ -3,15 +3,15 @@ import { useHistory } from 'react-router-dom';
 import SearchClosestInput from './search-input/search-input';
 import InfiniteTable from './infinite-table/infinite-table';
 import SearchCheckbox from './search-checkbox/search-checkbox';
-import { useTitle} from 'react-use';
+import { useTitle } from 'react-use';
 import { Department } from '../../../../interfaces/interfaces';
 
 interface Props {
   data: Department[];
 }
 
-export default function DepartmentsList(props: Props) : ReactElement {
-  let history = useHistory();
+export default function DepartmentsList({ data }: Props): ReactElement {
+  const history = useHistory();
   useTitle('Список відділень Justin | Justin');
   const onClick = useCallback(() => history.push('/departments-map'), []);
 
@@ -25,16 +25,13 @@ export default function DepartmentsList(props: Props) : ReactElement {
               <SearchClosestInput />
               <SearchCheckbox />
             </div>
-            <button
-              onClick={onClick}
-              className='btn-primary ml-3 ml-sm-0'
-            >
+            <button onClick={onClick} className='btn-primary ml-3 ml-sm-0'>
               Карта <span className='d-none d-sm-inline'>відділень</span>
             </button>
           </div>
         </div>
         <div className='w-100'></div>
-        <InfiniteTable data={props.data}/>
+        <InfiniteTable data={data} paginationSize={20} />
       </div>
     </div>
   );

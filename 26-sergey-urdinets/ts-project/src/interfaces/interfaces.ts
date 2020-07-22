@@ -1,64 +1,29 @@
-// import { Type } from 'class-transformer';
 import {
   IsInt,
   IsString,
   IsNumber,
   ValidateNested,
-  IsLatitude,
-  IsLongitude,
+  IsEmail,
 } from 'class-validator';
-
-type BankDecriptionOptions =
-  | 'alias'
-  | 'category_service'
-  | 'description_en'
-  | 'description_ru'
-  | 'description_ua'
-  | 'name_en'
-  | 'name_ru'
-  | 'name_ua'
-  | 'self_service'
-  | 'send_service';
-
-type BankNames =
-  | 'monobank'
-  | 'cardpay'
-  | 'vending'
-  | 'remittance'
-  | 'fitting'
-  | '3mob'
-  | 'uplata'
-  | 'joint';
-
-type PublicDecription =
-  | 'public_description_ru'
-  | 'public_description_ua'
-  | 'public_description_en'
-  | 'navigation_ru'
-  | 'navigation_ua'
-  | 'navigation_en';
+import { DELIVERY_STATUS } from '../components/constants';
+import { Type } from 'class-transformer';
 
 type Status = number;
 
-type ServicesPresent = {
-  [key in BankNames]: number;
-};
+
 
 export type Public = {
-  [key in PublicDecription]: string;
-};
-
-export type BankDecription = {
-  [key in BankDecriptionOptions]: string;
-};
-
-export type Bank = {
-  [k in BankNames]?: BankDecription;
+  public_description_ru: string;
+  public_description_ua: string;
+  public_description_en: string;
+  navigation_ru: string;
+  navigation_ua: string;
+  navigation_en: string;
 };
 
 interface ServicesResp {
   status: Status;
-  msg: Msg;
+  msg: Msg | null;
   result: Bank[];
 }
 
@@ -75,7 +40,7 @@ export interface ResultTTN {
   orderDescription: string;
   date: string;
   time: string;
-  status: string;
+  status: DELIVERY_STATUS;
   departmentNumber: string;
   departmentAdress: string;
 }
@@ -125,38 +90,44 @@ export class ResultTTN {
   @IsString()
   time: string;
   @IsString()
-  status: string;
+  status: DELIVERY_STATUS;
   @IsString()
   departmentNumber: string;
   @IsString()
   departmentAdress: string;
 }
+
 export class Tracking {
   @IsInt()
   status: Status;
 
-  @ValidateNested()
+  // @Type(() => Msg)
+  // @ValidateNested()
   msg: Msg | null;
 
+  @Type(() => ResultTTN)
   @ValidateNested()
   result?: ResultTTN[];
+}
+
+export class ResponseDepartmentsTypes {
+  @IsInt()
+  status: Status;
+
+  //   @Type(() => Msg)
+  // @ValidateNested()
+  msg: Msg | null;
+
+  @Type(() => DepartmentTypes)
+  @ValidateNested()
+  result: DepartmentTypes[];
 }
 
 export class DepartmentTypes {
   @IsString()
   short_name: string;
-  @IsString()
+  @IsString()             
   description: string;
-}
-export class ResponseDepartmentsTypes {
-  @IsInt()
-  status: Status;
-
-  @ValidateNested()
-  msg: Msg | null;
-
-  @ValidateNested()
-  result: DepartmentTypes[];
 }
 
 export class Department {
@@ -174,36 +145,70 @@ export class Department {
   delivery_branch_id: string;
   @IsString()
   max_weight: string;
-  @IsLatitude()
+  @IsString()
   lat: string;
-  @IsLongitude()
+  @IsString()
   lng: string;
   @IsString()
   description: string;
   @IsString()
   shedule_description: string;
-  @ValidateNested()
   photos: string[];
 
+  @Type(() => ServicesPresent)
   @ValidateNested()
-  services: ServicesPresent;      //--------------строкой
+  services: ServicesPresent;
 
   @ValidateNested()
-  public: Public;      //--------------строкой
+  public: Public;
+}
+
+class ServicesPresent {
+  @IsInt()
+  monobank: number;
+  @IsInt()
+  cardpay: number;
+  @IsInt()
+  vending: number;
+  @IsInt()
+  remittance: number;
+  @IsInt()
+  fitting: number;
+  @IsInt()
+  '3mob': number;
+  @IsInt()
+  uplata: number;
+  @IsInt()
+  joint: number;
 }
 
 export class DepartmentsAll {
   @IsInt()
   status: Status;
 
-  @ValidateNested()
-  msg: Msg;
+  // @Type(() => Msg)
+  // @ValidateNested()
+  msg: Msg | null;
 
+  @Type(() => Department)
   @ValidateNested()
   result: Department[];
 }
 
-export class ClosestDepartments extends DepartmentsAll {
+export class ClosestDepartments {
+  @IsInt()
+  status: Status;
+
+  // @Type(() => Msg)
+  // @ValidateNested()
+  msg: Msg | null;
+
+  @Type(() => Department)
+  @ValidateNested()
+  result: CloseDepartment[];
+
+}
+class CloseDepartment extends Department {
   @IsNumber()
   distance: number;
 }
@@ -212,17 +217,53 @@ export class ServicesResponse implements ServicesResp {
   @IsInt()
   status: Status;
 
-  @ValidateNested()
-  msg: Msg;
+  // @Type(() => Msg)
+  // @ValidateNested()
+  msg: Msg | null;
 
+  @Type(() => Bank)
   @ValidateNested()
-  result: Bank[];      //--------------строкой
+  result: Bank[];
 }
 
+export class Bank {
+  @ValidateNested()
+  monobank?: BankDecription;
+  @ValidateNested()
+  cardpay?: BankDecription;
+  @ValidateNested()
+  vending?: BankDecription;
+  @ValidateNested()
+  remittance?: BankDecription;
+  @ValidateNested()
+  fitting?: BankDecription;
+  @ValidateNested()
+  '3mob'?: BankDecription;
+  @ValidateNested()
+  uplata?: BankDecription;
+  @ValidateNested()
+  joint?: BankDecription;
+}
 
-
-
-
-
-
-
+export class BankDecription {
+  @IsString()
+  alias: string;
+  @IsString()
+  category_service: string;
+  @IsString()
+  description_en: string;
+  @IsString()
+  description_ru: string;
+  @IsString()
+  description_ua: string;
+  @IsString()
+  name_en: string;
+  @IsString()
+  name_ru: string;
+  @IsString()
+  name_ua: string;
+  @IsString()
+  self_service: string;
+  @IsString()
+  send_service: string;
+}

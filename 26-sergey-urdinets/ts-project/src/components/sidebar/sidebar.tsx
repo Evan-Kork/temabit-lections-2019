@@ -1,6 +1,6 @@
 import React, { ReactElement, useCallback } from 'react';
-import NavBar from './nav-bar/nav-bar';
-import SocialNetworks from './social-networks/social-networks';
+import NavBar from '../footer/nav-bar/nav-bar';
+import SocialNetworks from '../footer/social-networks/social-networks';
 import { useDispatch } from 'react-redux';
 import { toogleSidebar } from '../../actions/actions';
 

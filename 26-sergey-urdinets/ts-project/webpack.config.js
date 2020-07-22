@@ -2,11 +2,7 @@ const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
-
-// const webpack = require('webpack'); // to access built-in plugins
-
-
+const Dotenv = require('dotenv-webpack');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -29,6 +25,7 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: resolve(__dirname, 'index.html'),
       title: 'index.html'
@@ -36,9 +33,7 @@ module.exports = {
   ],
 
 
-  node: {
-    fs: 'empty'
-  },
+
   module: {
     rules: [
       {

@@ -1,18 +1,20 @@
 import React, { ReactElement } from 'react';
-import {Bank} from '../../../../interfaces/interfaces';
+import { Bank } from '../../../../interfaces/interfaces';
 
-interface Props{
-  value: Bank
+interface Props {
+  value: Bank;
 }
 
-export default function Paragraph(props: Props) : ReactElement<Props> {
-  let x = Object.keys(props.value)[0];
+let bankCounter = 0;
 
+export default function Paragraph({ value }: Props): ReactElement<Props> {
+  const index = Object.keys(value)[bankCounter++];
   return (
     <>
       <div className='col col-md-10 col-xl-8'>
-        <b>{(props.value as any)[x].name_ua}</b>
-        <p>{(props.value as any)[x].description_ua}</p>
+        {}
+        <b>{(value as any)[index]?.name_ua}</b>
+        <p>{(value as any)[index]?.description_ua}</p>
       </div>
       <div className='w-100 d-md-none'></div>
     </>

@@ -8,8 +8,8 @@ interface Props {
   data: Department[];
 }
 
-export default function DepartmentsMap(props: Props) {
-  let history = useHistory();
+export default function DepartmentsMap({ data }: Props) {
+  const history = useHistory();
   useTitle('Карта поштомаркетів Justin | Justin');
   const onClick = useCallback(() => history.push('/departments-list'), []);
 
@@ -26,7 +26,7 @@ export default function DepartmentsMap(props: Props) {
           </div>
         </div>
         <div className='w-100'></div>
-        <SimpleMap data={props.data} />
+        <SimpleMap data={data} />
         <div className='w-100 mb-5'></div>
       </div>
     </div>

@@ -10,26 +10,31 @@ interface Props {
   hint: string;
 }
 
-export default function MarkerWithInfo(props: Props): ReactElement {
+export default function MarkerWithInfo({
+  position,
+  clusterer,
+  description,
+  hint,
+}: Props): ReactElement {
   const [isShow, setShow] = useState(false);
 
   const onMarkerClick = useCallback(() => {
     setShow(!isShow);
-  }, []);
+  }, [isShow]);
 
   return (
     <Marker
-      position={props.position}
-      clusterer={props.clusterer}
-      title={`${props.description}\nЯк знайти:${props.hint}`}
+      position={position}
+      clusterer={clusterer}
+      title={`${description}\nЯк знайти:${hint}`}
       onClick={onMarkerClick}
     >
       {isShow ? (
-        <InfoWindow position={props.position} onCloseClick={onMarkerClick}>
+        <InfoWindow position={position} onCloseClick={onMarkerClick}>
           <span>
-            {props.description}
+            {description}
             <br />
-            {props.hint !== '' ? `Як знайти:${props.hint}` : null}
+            {hint !== '' ? `Як знайти:${hint}` : null}
           </span>
         </InfoWindow>
       ) : null}

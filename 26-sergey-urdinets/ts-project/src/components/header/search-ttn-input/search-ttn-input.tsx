@@ -1,18 +1,28 @@
 import React, { useState, ReactElement, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
+const regex = /[0-9]/;
+
 export default function SearchTtnInput(): ReactElement {
-  let history = useHistory();
-  let [input, setInput] = useState<string>('');
+  const history = useHistory();
+  const [input, setInput] = useState<string>('');
 
-  const onKeyPress = useCallback((event: React.KeyboardEvent) => {
-    if (event.key == 'Enter') {
-      history.push(`/search-ttn/${input}`);
-      setInput('');
-    }
-  }, [input]);
+  const onKeyPress = useCallback(
+    (event: React.KeyboardEvent) => {
+      if (event.key == 'Enter') {
+        history.push(`/search-ttn/${input}`);
+        setInput('');
+      }
+      if (!regex.test(event.key)) {
+        event.preventDefault();
+      }
+    },
+    [input]
+  );
 
-  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value), []);
+  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  }, []);
 
   return (
     <input

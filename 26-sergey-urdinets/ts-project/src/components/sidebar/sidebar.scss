@@ -8,5 +8,16 @@
   width: 300px;
   background-color: $brand-color;
   z-index: 2000;
-  @import './social-networks/social-networks.scss';
+  .social-networks {
+    @extend .mt-auto;
+    text-align: center;
+    display: inline-block;
+    i {
+      color: white;
+      margin: 5px;
+    }
+  }
+  .nav-list-column {
+    @extend .mt-4;
+  }
 }

@@ -24,8 +24,8 @@ interface Props {
   data: Department[]
 }
 
-export default function SimpleMap(props: Props) : ReactElement {
-  const locations : Locations[] = props.data.map(item => {
+export default function SimpleMap({ data }: Props) : ReactElement {
+  const locations : Locations[] = data.map(item => {
     return {
       lat: +item.lat,
       lng: +item.lng,

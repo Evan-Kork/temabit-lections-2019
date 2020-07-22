@@ -6,4 +6,9 @@ footer {
     color: inherit;
   }
   @import './social-networks/social-networks.scss';
+  .nav-list-column {
+    @extend .col-8;
+    @extend .col-md-4;
+    @extend .col-lg-3;
+  }
 }

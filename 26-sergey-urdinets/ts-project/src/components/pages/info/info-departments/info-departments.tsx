@@ -5,7 +5,7 @@ import {
   DepartmentTypes,
 } from '../../../../interfaces/interfaces';
 import { plainToClass } from 'class-transformer';
-import { validateLog } from '../../../funcs';
+import { validate } from 'class-validator';
 
 function getData(
   setState: React.Dispatch<React.SetStateAction<DepartmentTypes[]>>
@@ -13,11 +13,14 @@ function getData(
   fetch('http://localhost:3000/openapi.justin.ua/branch_types')
     .then((response) => response.json())
     .then((result) => {
-      let data = plainToClass(ResponseDepartmentsTypes, result);
-      validateLog(data);
-      if (data.status) {
-        setState(data.result);
-      }
+      const data = plainToClass(ResponseDepartmentsTypes, result);
+      validate(data).then((errors) => {
+        if (errors.length > 0) {
+          console.log('validation failed. errors: ', errors);
+        } else {
+          setState(data.result);
+        }
+      });
     })
     .catch((e) => console.log(e));
 }

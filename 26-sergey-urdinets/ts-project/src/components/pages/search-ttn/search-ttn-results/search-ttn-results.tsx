@@ -4,46 +4,54 @@ import SwitchToHistoryBtn from '../switch-to-history-btn/switch-to-history-btn';
 import ResultOutput from '../result-output/result-output';
 import { plainToClass } from 'class-transformer';
 import { Tracking } from '../../../../interfaces/interfaces';
-import { validateLog } from '../../../funcs';
 import { RootState } from '../../../../reducers/index';
+import { validate } from 'class-validator';
 
 interface Props {
   ttn: string;
 }
 
-function getUrl(boolean: boolean, tracking: string): string {
+function getUrl(isHistory: boolean, tracking: string): string {
   const url = `http://localhost:3000/openapi.justin.ua/${
-    boolean ? 'tracking_history' : 'tracking'
+    isHistory ? 'tracking_history' : 'tracking'
   }/${tracking}`;
   return url;
 }
 
 function getTtnData(
   ttn: string,
-  boolean: boolean,
+  isHistory: boolean,
   setSearchResult: React.Dispatch<React.SetStateAction<Tracking>>
 ) {
-  fetch(getUrl(boolean, ttn))
+  fetch(getUrl(isHistory, ttn))
     .then((response) => response.json())
     .then((result) => {
       let data = plainToClass(Tracking, result);
-      validateLog(data);
-      setSearchResult(data);
+      validate(data).then((errors) => {
+        if (errors.length > 0) {
+          console.log('validation failed. errors: ', errors);
+        } else {
+          setSearchResult(data);
+        }
+      });
     })
     .catch((e) => console.log(e));
 }
 
-export default function SearchTtnResults(props: Props): ReactElement<Props> {
-  const isHistory = useSelector((state: RootState) => state.isShowHistory);
-
-  const [searchResult, setSearchResult] = useState({
+function getInitialState() {
+  return {
     status: 0,
     msg: { ua: '' },
-  } as Tracking);
+  };
+}
+
+export default function SearchTtnResults({ ttn }: Props): ReactElement<Props> {
+  const isHistory = useSelector((state: RootState) => state.isShowHistory);
+  const [searchResult, setSearchResult] = useState(getInitialState() as Tracking);
 
   useEffect(() => {
-    getTtnData(props.ttn, isHistory, setSearchResult);
-  }, [props.ttn, isHistory]);
+    getTtnData(ttn, isHistory, setSearchResult);
+  }, [ttn, isHistory]);
 
   return (
     <>

@@ -1,4 +1,3 @@
-require('dotenv').config();
 import "reflect-metadata";
 import "es6-shim";
 import './index.scss';

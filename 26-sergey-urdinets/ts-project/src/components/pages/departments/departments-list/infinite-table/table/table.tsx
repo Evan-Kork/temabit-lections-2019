@@ -1,11 +1,11 @@
 import React from 'react';
-import {Department} from '../../../../../../interfaces/interfaces'
+import { Department } from '../../../../../../interfaces/interfaces'
 
 interface Props {
   data: Department[]
 }
 
-export default function Table(props: Props) {
+export default function Table({ data }: Props) {
   return (
     <table className='w-100'>
       <thead className='text-center bg-white'>
@@ -28,7 +28,7 @@ export default function Table(props: Props) {
         </tr>
       </thead>
       <tbody>
-        {props.data.map((i, index) => (
+        {data.map((i, index) => (
           <tr key={index} className={index % 2 ? 'bg-white' : 'bg-light'}>
             <td>{i.number}</td>
             <td>{`${i.adress}. ${i.format} (до ${i.max_weight} кг)`}</td>
