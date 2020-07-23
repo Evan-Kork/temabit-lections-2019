@@ -1,6 +1,6 @@
 import React, {
-    ReactElement, FormEventHandler, FormEvent,
-    useRef, useEffect, useCallback,
+    ReactElement, FormEventHandler, FormEvent, RefObject,
+    useState, useRef, useEffect, useCallback,
 } from "react";
 
 /*----------------------------------------------------------|
@@ -11,20 +11,34 @@ interface Props {
     branch: number,
 }
 
+const getOnSubmit = (
+    branchRef: RefObject<HTMLInputElement>,
+    handleBranch: Props['handleBranch'],
+): FormEventHandler =>
+    (event: FormEvent): void => {
+        event.preventDefault();
+        const branch = branchRef.current.value;
+        handleBranch(branch);
+};
+
+
 /*----------------------------------------------------------|
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
 function FormBranch(props: Props): ReactElement {
-    const { branch } = props;
+    const { branch, handleBranch } = props;
     const branchRef = useRef(null);
+    const [onSubmit] = useState(
+        () => getOnSubmit(branchRef, handleBranch),
+    );
 
-    const onSubmit: FormEventHandler = useCallback(
-        (event: FormEvent): void => {
-            event.preventDefault();
-            const branch = branchRef.current.value;
-            const { handleBranch } = props;
-            handleBranch(branch);
-    }, []);
+    // const onSubmit: FormEventHandler = useCallback(
+    //     (event: FormEvent): void => {
+    //         event.preventDefault();
+    //         const branch = branchRef.current.value;
+    //         const { handleBranch } = props;
+    //         handleBranch(branch);
+    // }, []);
 
     useEffect(
         () => { branchRef.current.value = branch || ""; },

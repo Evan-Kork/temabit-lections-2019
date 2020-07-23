@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useMemo } from "react";
 import { profiler } from "../functions/helpers";
 
 /*----------------------------------------------------------|
@@ -9,26 +9,37 @@ interface Props {
 }
 
 /*----------------------------------------------------------|
-|             COMPONENT                                     |
+|             FUNCTIONS                                     |
 |----------------------------------------------------------*/
-function BranchInfo(props: Props): ReactElement {
-    const { branch } = props;
-    const branchMap: Array<[keyof Data.BranchClass, string]> = [
-        ['number', 'Номер'],
-        ['adress', 'Адреса'],
-        ['navigation_ua', 'Навігація'],
-        ['shedule_description', 'Графік роботи'],
-        ['strServices', 'Сервіси'],
-        ['max_weight', 'Максимальна вага'],
-        ['lat_lng', 'Координати'],
-    ];
+const BRANCH_MAP: Array<[keyof Data.BranchClass, string]> = [
+    ['number', 'Номер'],
+    ['adress', 'Адреса'],
+    ['navigation_ua', 'Навігація'],
+    ['shedule_description', 'Графік роботи'],
+    ['strServices', 'Сервіси'],
+    ['max_weight', 'Максимальна вага'],
+    ['lat_lng', 'Координати'],
+];
 
-    const body = branchMap.map(([ key, title ]) => (
+const getBody = (branch: NonNullable<Data.BranchClass>): ReactElement[] => (
+    BRANCH_MAP.map(([ key, title ]) => (
         <tr key={key}>
             <td>{title}</td>
             <td>{branch[key]}</td>
         </tr>
-    ));
+)));
+
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
+function BranchInfo({ branch }: Props): ReactElement {
+    
+    if (!branch) return null;
+    
+    const body = useMemo(
+        () => getBody(branch),
+        [branch],
+    );
 
     return(
         <div className="row justify-content-center">
