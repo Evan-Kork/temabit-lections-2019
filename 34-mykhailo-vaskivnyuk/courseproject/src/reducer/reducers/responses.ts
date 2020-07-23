@@ -1,7 +1,7 @@
 import { plainToClass } from "class-transformer";
 import { Locality } from '../../data/classes';
 
-function responses<R extends Data.Response>(state: Data.Responses, action: Reducer.ActionResponse<R>): Data.Responses | {} {
+function responses(state: Data.Responses, action: Reducer.ActionResponse): Data.Responses | {} {
     if (!state) return {};
 
     switch (action.type) {

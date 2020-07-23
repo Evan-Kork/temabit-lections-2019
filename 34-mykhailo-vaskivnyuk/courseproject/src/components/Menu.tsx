@@ -1,6 +1,6 @@
 import React, { ReactElement, ChangeEvent, MouseEvent, useState, EventHandler } from "react";
 import { NavLink, withRouter, RouteComponentProps } from "react-router-dom";
-import { connect } from "react-redux";
+import { connect, HandleThunkActionCreator } from "react-redux";
 import { setMenu } from "../reducer/actions/actions";
 
 /*----------------------------------------------------------|
@@ -8,9 +8,13 @@ import { setMenu } from "../reducer/actions/actions";
 |----------------------------------------------------------*/
 type Props =
     RouteComponentProps &
-    ReturnType<typeof mapStateToProps> & {
-        setMenu: (path: string) => void,
+    Data.Menu & {
+        setMenu: DispatchSetMenu,
     };
+
+type DispatchSetMenu = HandleThunkActionCreator<
+    Reducer.SetMenu
+>;
 
 type eData = ChangeEvent<HTMLElement> & MouseEvent;
 type eHandler = EventHandler<eData>;
@@ -69,5 +73,5 @@ function Menu(props: Props): ReactElement {
 function mapStateToProps (state: Data.State): Data.Menu {
     return state.menu;
 }
-  
+
 export default withRouter(connect(mapStateToProps, { setMenu })(Menu));

@@ -1,6 +1,6 @@
 import React, { ReactElement, useState, useEffect } from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
-import { connect } from "react-redux";
+import { connect, HandleThunkActionCreator } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
 import request from "../functions/request";
 import { validateResponse } from "../functions/validate";
@@ -17,11 +17,15 @@ import RequestInfo from "./RequestInfo";
 |             TYPES                                         |
 |----------------------------------------------------------*/
 type Props =
-    RouteComponentProps &
-    ReturnType<typeof mapStateToProps> & {
-        setResponse: (req: string, res: Data.BranchesData) => void,
+    RouteComponentProps & {
+        branches: Data.BranchesData,
+        setResponse: DispatchSetResponse,
         filter?: { city: string },
     };
+
+type DispatchSetResponse = HandleThunkActionCreator<
+    Reducer.SetResponse<Data.BranchesData>
+>;
 
 export interface LocalState {
     setState: (state: LocalState) => void,
@@ -76,7 +80,7 @@ function TableData(props: Props): ReactElement {
     );
 }
 
-function mapStateToProps(state: Data.State): Pick<Data.Responses, 'branches'> {
+function mapStateToProps(state: Data.State): Pick<Props, 'branches'> {
     return {
         branches: state.responses.branches,
     };

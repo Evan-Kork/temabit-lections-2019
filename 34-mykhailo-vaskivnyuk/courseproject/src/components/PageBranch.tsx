@@ -12,16 +12,19 @@ import { validateResponse } from "../functions/validate";
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
-type Props =
-    RouteComponentProps &
-    ReturnType<typeof mapStateToProps> & {
-        match: {
-            params: {
-                branch: number,
-            },
+type Props = RouteComponentProps & {
+    branches: Data.BranchesData,
+    match: {
+        params: {
+            branch: number,
         },
-        setResponse: HandleThunkActionCreator<typeof setResponse>,
-    };
+    },
+    setResponse: DispatchSetResponse,
+};
+
+type DispatchSetResponse = HandleThunkActionCreator<
+    Reducer.SetResponse<Data.BranchesData>
+>;
 
 /*----------------------------------------------------------|
 |             COMPONENT                                     |
@@ -38,7 +41,7 @@ function PageBranch(props: Props): ReactElement {
         request({ method, params })
         .then(validateResponse)
         .then((res: Data.BranchesData) =>
-                props.setResponse(method, res),
+            props.setResponse(method, res),
         );
     }, []);
 
@@ -73,7 +76,7 @@ function PageBranch(props: Props): ReactElement {
     );
 }
 
-function mapStateToProps(state: Data.State): Pick<Data.Responses, 'branches'> {
+function mapStateToProps(state: Data.State): Pick<Props, 'branches'> {
     return {
         branches: state.responses.branches,
     };

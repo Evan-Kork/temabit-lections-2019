@@ -1,20 +1,14 @@
-export function setTest(test: string): Reducer.ActionTest {
-    return {
-        type: "SET_TEST",
-        data: test,
-    }
-}
+export const setTest: Reducer.SetTest = (test) => ({
+    type: "SET_TEST",
+    data: test,
+});
 
-export function setMenu(path: string): Reducer.ActionMenu {
-    return {
-        type: "SET_SELECTED_MENU",
-        data: path,
-    }
-}
+export const setMenu: Reducer.SetMenu = (path) => ({
+    type: "SET_SELECTED_MENU",
+    data: path,
+});
 
-export function setResponse<R extends Data.Response>(req: string, res: R): Reducer.ActionResponse<R> {
-    return {
-        type: "SET_" + req.toUpperCase(),
-        data: res,
-    }
-}
+export const setResponse: Reducer.SetResponse = (req, res) => ({
+    type: "SET_" + req.toUpperCase(),
+    data: res,
+});

@@ -1,20 +1,21 @@
 import React, { ReactElement, FormEventHandler, useEffect } from "react";
-import { connect } from "react-redux";
+import { connect, HandleThunkActionCreator } from "react-redux";
 import { setResponse } from "../reducer/actions/actions";
 import request from "../functions/request";
 
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
-type Props =
-    ReturnType<typeof mapStateToProps> & {
-        city: string,
-        onChange: FormEventHandler,
-        setResponse: (
-            req: string,
-            res: Data.LocalitiesData,
-        ) => void,
-    };
+interface Props {
+    localities: Data.LocalitiesData,
+    city: string,
+    onChange: FormEventHandler,
+    setResponse: DispatchSetResponse,
+};
+
+type DispatchSetResponse = HandleThunkActionCreator<
+    Reducer.SetResponse<Data.LocalitiesData>
+>;
 
 /*----------------------------------------------------------|
 |             COMPONENT                                     |
@@ -54,7 +55,7 @@ function FormCity(props: Props): ReactElement{
     );
 }
 
-function mapStateToProps(state: Data.State): Pick<Data.Responses, 'localities'> {
+function mapStateToProps(state: Data.State): Pick<Props, 'localities'> {
     return {
         localities: state.responses.localities,
     };
