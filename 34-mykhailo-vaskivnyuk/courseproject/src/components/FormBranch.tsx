@@ -1,13 +1,13 @@
 import React, {
     ReactElement, FormEventHandler, FormEvent,
-    useRef, useEffect,
+    useRef, useEffect, useCallback,
 } from "react";
 
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
 interface Props {
-    handleBranch: (branch: string) => any,
+    handleBranch: (branch: string) => void,
     branch: number,
 }
 
@@ -15,31 +15,35 @@ interface Props {
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
 function FormBranch(props: Props): ReactElement {
-    const { branch, handleBranch } = props;
+    const { branch } = props;
     const branchRef = useRef(null);
+
+    const onSubmit: FormEventHandler = useCallback(
+        (event: FormEvent): void => {
+            event.preventDefault();
+            const branch = branchRef.current.value;
+            const { handleBranch } = props;
+            handleBranch(branch);
+    }, []);
 
     useEffect(
         () => { branchRef.current.value = branch || ""; },
         [branch],
     );
 
-    const onSubmit: FormEventHandler = (event: FormEvent): void => {
-        event.preventDefault();
-        const branch = branchRef.current.value;
-        handleBranch(branch);
-    }
-
     return (
         <div className="row justify-content-center">
             <div className="branch">
                 <form onSubmit={onSubmit}>
                     <input
-                        ref={branchRef}
                         name="branch"
+                        ref={branchRef}
                         className="branch_number"
                         type="number"
                         placeholder="Введіть номер відділення" />
-                    <i className="far fa-caret-square-right" onClick={onSubmit}></i>
+                    <i
+                        className="far fa-caret-square-right"
+                        onClick={onSubmit} />
                 </form>
             </div>
         </div>
