@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import SwitchToHistoryBtn from '../switch-to-history-btn/switch-to-history-btn';
 import ResultOutput from '../result-output/result-output';
 import { plainToClass } from 'class-transformer';
-import { Tracking } from '../../../../interfaces/interfaces';
+import { Tracking, Msg } from '../../../../interfaces/interfaces';
 import { RootState } from '../../../../reducers/index';
 import { validate } from 'class-validator';
 
@@ -26,28 +26,40 @@ function getTtnData(
   fetch(getUrl(isHistory, ttn))
     .then((response) => response.json())
     .then((result) => {
-      let data = plainToClass(Tracking, result);
-      validate(data).then((errors) => {
-        if (errors.length > 0) {
-          console.log('validation failed. errors: ', errors);
-        } else {
-          setSearchResult(data);
-        }
-      });
+      if (result.status) {
+        let data = plainToClass(Tracking, result);
+        validate(data).then((errors) => {
+          if (errors.length > 0) {
+            console.log('validation failed. errors: ', errors);
+            setSearchResult({...getInitialState('Отримано не корректні дані, спробуйте пізніше'),} as Tracking);
+          } else {
+            setSearchResult(data);
+          }
+        });
+      } else {
+        setSearchResult(result);
+      }
     })
-    .catch((e) => console.log(e));
+    .catch((e) => {
+      setSearchResult({
+        ...getInitialState('Помилка отримання данних, спробуйте пізніше'),
+      } as Tracking);
+      console.log(e);
+    });
 }
 
-function getInitialState() {
+function getInitialState(msg: string = 'Введіть номер відправлення') {
   return {
     status: 0,
-    msg: { ua: '' },
+    msg: { ua: msg },
   };
 }
 
 export default function SearchTtnResults({ ttn }: Props): ReactElement<Props> {
   const isHistory = useSelector((state: RootState) => state.isShowHistory);
-  const [searchResult, setSearchResult] = useState(getInitialState() as Tracking);
+  const [searchResult, setSearchResult] = useState(
+    getInitialState() as Tracking
+  );
 
   useEffect(() => {
     getTtnData(ttn, isHistory, setSearchResult);

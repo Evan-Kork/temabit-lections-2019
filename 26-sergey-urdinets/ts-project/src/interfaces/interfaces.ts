@@ -3,7 +3,8 @@ import {
   IsString,
   IsNumber,
   ValidateNested,
-  IsEmail,
+  IsLongitude,
+  IsLatitude
 } from 'class-validator';
 import { DELIVERY_STATUS } from '../components/constants';
 import { Type } from 'class-transformer';
@@ -27,7 +28,7 @@ interface ServicesResp {
   result: Bank[];
 }
 
-interface Msg {
+export interface Msg {
   code: number;
   ru: string;
   ua: string;
@@ -68,7 +69,7 @@ export interface Department {
 }
 
 //-------------- export classes -------------------------------------------------------------------------------------
-class Msg {
+export class Msg {
   @IsNumber()
   code: number;
   @IsString()
@@ -145,9 +146,9 @@ export class Department {
   delivery_branch_id: string;
   @IsString()
   max_weight: string;
-  @IsString()
+  @IsLatitude()
   lat: string;
-  @IsString()
+  @IsLongitude()
   lng: string;
   @IsString()
   description: string;

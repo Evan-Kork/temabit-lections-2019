@@ -7,16 +7,24 @@ import { validate } from 'class-validator';
 function getData(setState: React.Dispatch<React.SetStateAction<Bank[]>>) {
   fetch('http://localhost:3000/openapi.justin.ua/services')
     .then((response) => response.json())
-    .then((result) => {
+    .then(async (result) => {
+      if (result.status) {
       const data = plainToClass(ServicesResponse, result);
-      validate(data).then((errors) => {
-        if (errors.length > 0) {
-          console.log('validation failed. errors: ', errors);
-        } else {
-          setState(data.result);
-        }
-      });
-    })
+      const errors = await validate(data);
+      if (errors.length > 0) {
+        console.log('validation failed, some data is lost. errors: ', errors);
+        let invalidData = new Set();
+        errors[0].children.map((item) => {
+          invalidData.add(item.property);
+        });
+        const validData = data.result.filter(
+          (index) => !invalidData.has(index)
+        );
+        setState(validData);
+      } else {
+        setState(data.result);
+      }
+    }})
     .catch((e) => console.log(e));
 }
 

@@ -21,8 +21,8 @@ interface Props {
 
 function validateSearch(value: string) {
   const validValue = value.replace(regex, '');
-  console.log('validValue', validValue); 
-  return new RegExp(validValue, 'i');  //запускается 500+ раз
+  const validRegex = new RegExp(validValue, 'i');
+  return validRegex;
 }
 
 function getDepartment(
@@ -46,27 +46,38 @@ function getDepartment(
           const data = plainToClass(ClosestDepartments, results);
           validate(data).then((errors) => {
             if (errors.length > 0) {
-              console.log('validation failed. errors: ', errors);
-              setTableState([]);
+              console.log(
+                'validation failed, some data is lost. errors: ',
+                errors
+              );
+              let invalidData = new Set();
+              errors[0].children.map((item) => {
+                invalidData.add(item.property);
+              });
+              const validData = data.result.filter(
+                (index) => !invalidData.has(index)
+              );
+              setSearchResults(validData);
             } else {
               setSearchResults(data.result);
             }
           });
         }
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        setTableState([]);
+        console.log(e);
+      });
   } else if (Number.isInteger(+searchValue)) {
     //searchValue !=="" && searchValue == number && searchValue != 0
     const arr = searchInData.filter((item) => ~item.number.search(searchValue));
     setSearchResults(arr);
-    // setTableState(arr.slice(0, paginationSize));
   } else {
     //searchValue !=="" && searchValue == string || 0
     const arr = searchInData.filter(
       (item) => ~item.adress.search(validateSearch(searchValue))
     );
     setSearchResults(arr);
-    // setTableState(arr.slice(0, paginationSize));
   }
 }
 

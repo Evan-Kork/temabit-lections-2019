@@ -16,15 +16,28 @@ function getAllDepartments(
         let data = plainToClass(DepartmentsAll, result);
         validate(data).then((errors) => {
           if (errors.length > 0) {
-            console.log('validation failed. errors: ', errors);
-            setFullDepartments([]);
+            console.log(
+              'validation failed, some data is lost. errors: ',
+              errors
+            );
+            let invalidData = new Set();
+            errors[0].children.map((item) => {
+              invalidData.add(item.property);
+            });
+            const validData = data.result.filter(
+              (index) => !invalidData.has(index)
+            );
+            setFullDepartments(validData);
           } else {
             setFullDepartments(data.result);
           }
         });
       }
     })
-    .catch((e) => console.log(e));
+    .catch((e) => {
+      setFullDepartments([]);
+      console.log(e);
+    });
 }
 
 export default function Departments({
