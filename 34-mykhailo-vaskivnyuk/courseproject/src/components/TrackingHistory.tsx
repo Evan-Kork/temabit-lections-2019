@@ -60,7 +60,7 @@ function TrackingHistory(props: Props): ReactElement {
 
     if (order !== newOrder) return null;
 
-    const { data, error } = tracking_history;
+    const { data } = tracking_history;
 
     if (!data) return null;
 

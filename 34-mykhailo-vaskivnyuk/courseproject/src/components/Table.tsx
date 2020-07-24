@@ -23,15 +23,15 @@ export interface Props {
 
 export interface LocalState {
     props: Props,
-    setState: Dispatch<stateData>;
+    stateData: StateData;
+    setState: Dispatch<StateData>;
     handlePagination: eHandler;
     handleOnMouseOver: MouseEventHandler;
     handleOnMouseOut: MouseEventHandler;
     handleOnClick: MouseEventHandler;
-    stateData: stateData,
 }
 
-interface stateData{
+interface StateData{
     page: number,
     pages: number,
 }
@@ -44,8 +44,6 @@ function useLocalState(props: Props) {
     const [state] = useState((): LocalState => {
         const state = {} as LocalState;
         Object.assign(state, {
-            props,
-            setState() {},
             handlePagination: handlePagination.bind(state),
             handleOnMouseOver: handleOnMouseOver.bind(state),
             handleOnMouseOut: handleOnMouseOut.bind(state),
@@ -58,9 +56,9 @@ function useLocalState(props: Props) {
         page: 1,
         pages: Math.floor(props.data.length / 50) + 1,
     });
-    
-    state.props = props;
 
+    state.props = props;
+    
     return state;
 }
 

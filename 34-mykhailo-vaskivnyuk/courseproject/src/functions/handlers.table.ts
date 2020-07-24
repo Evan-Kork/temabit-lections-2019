@@ -16,15 +16,15 @@ export type eHandler = EventHandler<eData>;
 /*----------------------------------------------------------|
 |             HANDLERS                                      |
 |----------------------------------------------------------*/
-export function handleTable(this: TableState, comment_data: CommentData, branchNumber: number): void {
+export const handleTable = (state: TableState) => (comment_data: CommentData, branchNumber: number): void => {
 
     if (branchNumber) {
-        this.props.history.push("/branch/" + branchNumber);
+        state.props.history.push("/branch/" + branchNumber);
         window.scrollTo(0, 0);
         return;
     }
 
-    this.setState({ ...this, comment_data });
+    state.setState({ ...state, comment_data });
 }
 
 export const handleOnMouseOver: eHandler = function(this: LocalState, event: eData) {

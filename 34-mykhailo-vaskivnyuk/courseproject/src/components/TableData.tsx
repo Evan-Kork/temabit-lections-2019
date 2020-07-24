@@ -48,6 +48,7 @@ function TableData(props: Props): ReactElement {
     } as LocalState);
     state.setState = setState;
     state.props = props;
+    const [_handleTable] = useState(() => handleTable(state));
 
     getDerivedStateFromProps.bind(state)();
 
@@ -72,7 +73,7 @@ function TableData(props: Props): ReactElement {
                 <Comment data={comment_data} />
             : null}
             {data ?
-                <Table data={data} handleTable={handleTable.bind(state)} />
+                <Table data={data} handleTable={_handleTable} />
             : (!filter || (filter && filter.city)) ?
                 <RequestInfo error={error} />
             : null}

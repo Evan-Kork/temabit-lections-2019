@@ -25,7 +25,7 @@ function getRenderData(props: Props): Omit<RenderData, 'handleBranch'> {
     let { data, error } = props;
     let branchInfo, photo;
     if (!error && branch && data) {
-        branchInfo = data.find(({ number }) => number === branch);
+        branchInfo = data.find(({ number }) => number === +branch);
         if (branchInfo) {
             photo = branchInfo.photos && branchInfo.photos[0];
         } else {    

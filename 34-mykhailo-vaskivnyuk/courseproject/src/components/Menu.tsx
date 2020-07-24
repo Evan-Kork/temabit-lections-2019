@@ -1,6 +1,6 @@
 import React, {
     useState, useCallback, useEffect,
-    ReactElement, ChangeEvent, MouseEvent, EventHandler } from "react";
+    ReactElement, ChangeEvent, MouseEvent, EventHandler, MouseEventHandler } from "react";
 import { NavLink, withRouter, RouteComponentProps } from "react-router-dom";
 import { connect, HandleThunkActionCreator } from "react-redux";
 import { setMenu } from "../reducer/actions/actions";
@@ -22,28 +22,11 @@ type eData = ChangeEvent<HTMLElement> & MouseEvent;
 type eHandler = EventHandler<eData>;
 
 /*----------------------------------------------------------|
-|             COMPONENT                                     |
+|             FUNCTIONS                                     |
 |----------------------------------------------------------*/
-function Menu(props: Props): ReactElement {
-    const [isOpened, setOpened] = useState(false);
-
-    const handleMenu: React.FormEventHandler = useCallback(
-        (event: React.FormEvent) => setOpened(isOpened => !isOpened), []);
-
-    const handleMenuLink: eHandler = useCallback(
-        ({ target }: eData) =>
-            target.tagName === "A" && handleMenu(null), []);
-
-    const { list: menuList, selected, match} = props;
-    const { url } = match;
-
-    useEffect(() => {
-        if ( !selected || ("/" + selected.link) !== url ) {
-            props.setMenu(url);
-        }
-    }, [url]);
-
-    const lis = menuList.map(({ link, id, text }) => (
+function getLis(menu: Data.Menu): ReactElement[] {
+    const { list, selected } = menu;
+    return list.map(({ link, id, text }) => (
         <li key={id}>
             <NavLink
                 to={"/" + link}
@@ -53,7 +36,31 @@ function Menu(props: Props): ReactElement {
             </NavLink>
         </li>
     ));
+}
 
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
+function Menu(props: Props): ReactElement {
+    const [isOpened, setOpened] = useState(false);
+
+    const handleMenu: MouseEventHandler = useCallback(
+        (event: MouseEvent) => setOpened(isOpened => !isOpened), []);
+
+    const handleMenuLink: eHandler = useCallback(
+        ({ target }: eData) =>
+            target.tagName === "A" && handleMenu(null), []);
+
+    const { list, selected } = props;
+    const { url } = props.match;
+
+    useEffect(() => {
+        if ( !selected || ("/" + selected.link) !== url ) {
+            props.setMenu(url);
+        }
+    }, [url]);
+
+    const lis = isOpened ? getLis({ list, selected }) : null;
     const showSidebar = isOpened ? "show" : "";
 
     return (

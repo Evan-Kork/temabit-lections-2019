@@ -8,7 +8,7 @@ function TablePage(data: Data.Branches, page: number): ReactElement[] {
     return data
         .slice(index_from, index_to)
         .map((item, index) =>
-            <tr key={item.delivery_branch_id} data-index={index} data-number={item.number}>
+            <tr key={item.delivery_branch_id} data-index={index + index_from} data-number={item.number}>
                 <td>{item.number}</td>
                 <td>{item.adress}</td>
                 <td>{item.navigation_ua}</td>

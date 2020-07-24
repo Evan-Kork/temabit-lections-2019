@@ -1,6 +1,5 @@
 function menu(state: Data.Menu, action: Reducer.ActionMenu): Data.Menu | {} {
     if (!state) return {};
-    console.log("MENU");
     switch (action.type) {
         case "SET_SELECTED_MENU":
             if (!state.list) break;
