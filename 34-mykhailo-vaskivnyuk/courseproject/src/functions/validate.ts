@@ -10,7 +10,6 @@ export async function validateResponse(res: Data.BranchesData<Data.Branch>): Pro
         excludeExtraneousValues: true,
         enableImplicitConversion: false,
     });
-    console.log(branches);
     for await(const branch of branches) {
         validate(branch)
         .then(e => {

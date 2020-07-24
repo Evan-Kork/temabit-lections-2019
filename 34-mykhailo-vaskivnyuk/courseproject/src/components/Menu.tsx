@@ -35,12 +35,13 @@ function Menu(props: Props): ReactElement {
             target.tagName === "A" && handleMenu(null), []);
 
     const { list: menuList, selected, match} = props;
-    const { path } = match;
+    const { url } = match;
 
     useEffect(() => {
-        if ( !selected || ("/" + selected.link) !== path )
-            props.setMenu(path);
-    }, [selected, path]);
+        if ( !selected || ("/" + selected.link) !== url ) {
+            props.setMenu(url);
+        }
+    }, [url]);
 
     const lis = menuList.map(({ link, id, text }) => (
         <li key={id}>
@@ -65,7 +66,7 @@ function Menu(props: Props): ReactElement {
                     <i className="fas fa-times"></i>
                 </div>
                 <ul>
-                    {lis}																		
+                    {lis}
                 </ul>
             </nav>
         </div>

@@ -1,14 +1,17 @@
 import React, {
     useState,
-    ReactElement, ChangeEventHandler, MouseEventHandler
+    ReactElement, MouseEventHandler, Dispatch,
 } from "react";
 import Pagination from "./Pagination";
 import {
+    eHandler,
     handleOnMouseOver,
     handleOnMouseOut,
     handleOnClick,
     handlePagination,
 } from "../functions/handlers.table";
+
+import TablePage from "./TablePage";
 
 /*----------------------------------------------------------|
 |             TYPES                                         |
@@ -20,12 +23,12 @@ export interface Props {
 
 export interface LocalState {
     props: Props,
-    setState: React.Dispatch<stateData>;
-    handlePagination: ChangeEventHandler;
+    setState: Dispatch<stateData>;
+    handlePagination: eHandler;
     handleOnMouseOver: MouseEventHandler;
     handleOnMouseOut: MouseEventHandler;
     handleOnClick: MouseEventHandler;
-    stateData?: stateData,
+    stateData: stateData,
 }
 
 interface stateData{
@@ -34,32 +37,42 @@ interface stateData{
 }
 
 /*----------------------------------------------------------|
-|             COMPONENT                                     |
+|             HOOKS                                         |
 |----------------------------------------------------------*/
-function Table(props: Props): ReactElement {
+function useLocalState(props: Props) {
+
     const [state] = useState((): LocalState => {
-        const state: LocalState = {
-            props: null,
+        const state = {} as LocalState;
+        Object.assign(state, {
+            props,
             setState() {},
-            handlePagination() {},
-            handleOnMouseOver() {},
-            handleOnMouseOut() {},
-            handleOnClick() {},
-        };
-        state.handleOnMouseOver = handleOnMouseOver.bind(state) as MouseEventHandler;
-        state.handlePagination = handlePagination.bind(state);
-        state.handleOnMouseOut = handleOnMouseOut.bind(state);
-        state.handleOnClick = handleOnClick.bind(state) as MouseEventHandler;
+            handlePagination: handlePagination.bind(state),
+            handleOnMouseOver: handleOnMouseOver.bind(state),
+            handleOnMouseOut: handleOnMouseOut.bind(state),
+            handleOnClick: handleOnClick.bind(state),
+        });
         return state;
     });
+
     [state.stateData, state.setState] = useState({
         page: 1,
         pages: Math.floor(props.data.length / 50) + 1,
     });
-
+    
     state.props = props;
 
-    const { data } = props;
+    return state;
+}
+
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
+function Table(props: Props): ReactElement {
+
+    const state = useLocalState(props);
+
+    const { data } = state.props;
+    const { page, pages } = state.stateData;
 
     const head = (
         <tr>
@@ -71,25 +84,11 @@ function Table(props: Props): ReactElement {
         </tr>
     );
 
-    const index_from = (state.stateData.page - 1) * 50;
-    const index_to = index_from + 50;
-    const body = data
-        .slice(index_from, index_to)
-        .map((item, index) =>
-            <tr key={item.delivery_branch_id} data-index={index} data-number={item.number}>
-                <td>{item.number}</td>
-                <td>{item.adress}</td>
-                <td>{item.navigation_ua}</td>
-                <td>Додаткові: {item.strServices}</td>
-                <td>{item.shedule_description}</td>
-            </tr>
-    );
-
     return(
         <React.Fragment>
             <Pagination
-                page={state.stateData.page}
-                pages={state.stateData.pages}
+                page={page}
+                pages={pages}
                 onClick={state.handlePagination} />
             <div className="tbl_branches">
                 <table
@@ -100,7 +99,7 @@ function Table(props: Props): ReactElement {
                         {head}
                     </thead>
                     <tbody>
-                        {body}
+                        {TablePage(data, page)}
                     </tbody>
                 </table>
             </div>

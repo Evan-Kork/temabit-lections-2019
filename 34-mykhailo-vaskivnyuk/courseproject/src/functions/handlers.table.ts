@@ -1,16 +1,17 @@
 import { LocalState as TableState } from "../components/TableData";
 import { LocalState } from "../components/Table";
-import { ChangeEvent, FocusEvent, EventHandler } from "react";
+import { ChangeEvent, FocusEvent, EventHandler, MouseEventHandler, MouseEvent } from "react";
 import { CommentData } from "../components/Comment";
 
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
-type eData = ChangeEvent<HTMLElement>
-    & FocusEvent<HTMLElement>
-    & { relatedTarget?: HTMLElement };
+type eData =
+    ChangeEvent<HTMLElement> &
+    MouseEvent<HTMLElement> &
+    { relatedTarget?: HTMLElement };
 
-type eHandler = EventHandler<eData>;
+export type eHandler = EventHandler<eData>;
 
 /*----------------------------------------------------------|
 |             HANDLERS                                      |

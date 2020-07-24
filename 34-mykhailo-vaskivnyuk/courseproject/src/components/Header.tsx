@@ -1,4 +1,5 @@
 import React, { ReactElement, FunctionComponent } from "react";
+import { Route } from "react-router-dom";
 import Menu from "./Menu";
 import FormTrackingHeader from "./FormTrackingHeader";
 
@@ -26,7 +27,9 @@ const Controls: FunctionComponent = () => (
         <a href="#"><i className="fa fa-search d-md-none"></i></a>
         <span className="phone d-none d-md-inline">0-800-301-661</span>
         <FormTrackingHeader />
-        <Menu />
+        <Route path={["/:path/:path", "/:path", "/"]}>
+            <Menu />
+        </Route>
     </div>
 );
 
