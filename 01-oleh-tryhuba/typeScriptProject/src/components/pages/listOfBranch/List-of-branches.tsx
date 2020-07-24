@@ -5,8 +5,8 @@ import ErrorIndicator from "../../errorIndicator/ErrorIndicator";
 import Spiner from "../../spiner/Spiner";
 
 const ListOfBranches = () => {
-	const [loading, setLoading] = useState(true)
-	const [error, setError] = useState(false);
+	const [loading, setLoading] = useState<boolean>(true)
+	const [error, setError] = useState<boolean>(false);
 	const [allbranch, setAllBranch] = useState({});
 
 	useEffect((): void => {
@@ -31,15 +31,12 @@ const ListOfBranches = () => {
 
 	const branches: Array<object> = Object.entries(allbranch);
 
-	const listItems: Array<ReactElement> = branches.map((value, index) =>
-		<AllBranchess key={index} {...value} />
-	);
+	const listItems: Array<ReactElement> = branches.map((value, index) => <AllBranchess key={index} {...value}/>);
 
 	const errorMessage: ReactElement | null = error ? <ErrorIndicator/> : null;
 	const hasData: boolean = !(loading || error);
 	const spinner: ReactElement | null = loading ? <Spiner/> : null;
 	let content: Array<ReactElement> | null = hasData ? listItems : null;
-
 	return (
 		<Fragment>
 			<h1>Список віддiлень</h1>
@@ -56,6 +53,7 @@ const ListOfBranches = () => {
 		</Fragment>
 	)
 };
+
 
 const AllBranchess: FC<any> = (props: Array<AllBranches>) => {
 

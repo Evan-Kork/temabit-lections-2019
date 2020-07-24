@@ -1,4 +1,4 @@
-import React, {FC, Fragment, useState} from 'react';
+import React, {ChangeEvent, FC, Fragment, useState} from 'react';
 import {validate} from "class-validator";
 import './searchPackage.scss'
 import JustinApiService, {ITracking} from "../../app/services/JustinApiService";
@@ -45,13 +45,18 @@ const SearchPackage: FC = () => {
 		}
 	};
 
+	const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+		setNumberPackage(e.target.value)
+	}
+
+
 	return (
 		<Fragment>
 			<h1>Пошук Відправлення</h1>
 			<input className="form-control mr-sm-2"
 			       type="number"
 			       value={numberPackage}
-			       onChange={e => setNumberPackage(e.target.value)}
+			       onChange={changeHandler}
 			       placeholder='введіть номер відправлення'
 			       onKeyPress={showPackage}
 			       aria-label="Search"/>
