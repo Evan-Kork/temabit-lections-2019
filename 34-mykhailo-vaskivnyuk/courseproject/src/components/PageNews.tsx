@@ -1,4 +1,7 @@
-import React, { ReactElement, ChangeEvent, EventHandler, useState } from "react";
+import React, {
+    useCallback, useState,
+    ReactElement, ChangeEvent, EventHandler,
+} from "react";
 import news from "../data/news";
 import News from "./News";
 import ContentHeader from "./ContentHeader";
@@ -22,12 +25,13 @@ function PageNews(): ReactElement {
 
     const [type, setType] = useState("all" as Data.NewsTypes);
 
-    const handlerNews: EventHandler<EventData> = (event: EventData) => {
-        const { tagName, dataset } = event.target;
-        tagName === "SPAN"
-            && type !== dataset.type
-            && setType(dataset.type);
-    }
+    const handlerNews: EventHandler<EventData> = useCallback(
+        (event: EventData) => {
+            const { tagName, dataset } = event.target;
+            tagName === "SPAN"
+                // && type !== dataset.type
+                && setType(type => type !== dataset.type ? dataset.type : type);
+    }, []);
 
     const divs = news
         .filter(item => type === "all" || item.type === type)
@@ -35,7 +39,7 @@ function PageNews(): ReactElement {
 
     return (
         <React.Fragment>
-            <ContentHeader title="Дані про відділення" />
+            <ContentHeader title="Новини та акції" />
             <FormNews onClick={handlerNews} type={type}/>
             <div className="row news">
                 {divs}

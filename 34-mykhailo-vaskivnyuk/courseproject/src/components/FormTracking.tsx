@@ -1,6 +1,6 @@
 import React, {
     ReactElement, FormEventHandler, FormEvent,
-    useRef, useEffect,
+    useRef, useEffect, useCallback,
 } from "react";
 
 /*----------------------------------------------------------|
@@ -18,15 +18,16 @@ function FormTracking(props: Props): ReactElement {
     const { order, handleTracking } = props;
     const orderRef = useRef(null);
 
-    useEffect(() => {
-        orderRef.current.value = order || "";
-    }, [order]);
+    useEffect(
+        () => { orderRef.current.value = order || ""; },
+        [order],
+    );
     
-    const onSubmit: FormEventHandler = (event: FormEvent): void => {
+    const onSubmit: FormEventHandler = useCallback((event: FormEvent): void => {
         event.preventDefault();
         const { value: order } = orderRef.current;
         handleTracking(order);
-    }
+    }, []);
 
 /*------------------------------------------------------------|
 |             RESULT                                          |

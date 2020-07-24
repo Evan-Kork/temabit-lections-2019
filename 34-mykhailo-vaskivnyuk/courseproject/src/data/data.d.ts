@@ -59,8 +59,8 @@ declare namespace Data {
         };
         shedule_description: string;
         services: Services;
-        lat: number;
-        lng: number;
+        lat: string;
+        lng: string;
         max_weight: number;
         photos: string[];
         locality: string;
@@ -75,9 +75,9 @@ declare namespace Data {
     type ServicesNames = keyof Services;
 
     interface Services {
-        monobank: string,
-        ['3mob']: string,
-        uplata: string,
+        monobank: string | 0 | 1,
+        ['3mob']: string  | 0 | 1,
+        uplata: string  | 0 | 1,
     }
 
     type Localities = Locality[];

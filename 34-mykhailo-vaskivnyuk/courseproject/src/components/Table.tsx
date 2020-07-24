@@ -1,4 +1,7 @@
-import React, { ReactElement, ChangeEvent, FocusEvent, EventHandler, useState } from "react";
+import React, {
+    useState,
+    ReactElement, ChangeEventHandler, MouseEventHandler
+} from "react";
 import Pagination from "./Pagination";
 import {
     handleOnMouseOver,
@@ -16,8 +19,16 @@ export interface Props {
 }
 
 export interface LocalState {
-    setState: (state: LocalState) => void;
     props: Props,
+    setState: React.Dispatch<stateData>;
+    handlePagination: ChangeEventHandler;
+    handleOnMouseOver: MouseEventHandler;
+    handleOnMouseOut: MouseEventHandler;
+    handleOnClick: MouseEventHandler;
+    stateData?: stateData,
+}
+
+interface stateData{
     page: number,
     pages: number,
 }
@@ -26,11 +37,26 @@ export interface LocalState {
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
 function Table(props: Props): ReactElement {
-    const [state, setState] = useState({
+    const [state] = useState((): LocalState => {
+        const state: LocalState = {
+            props: null,
+            setState() {},
+            handlePagination() {},
+            handleOnMouseOver() {},
+            handleOnMouseOut() {},
+            handleOnClick() {},
+        };
+        state.handleOnMouseOver = handleOnMouseOver.bind(state) as MouseEventHandler;
+        state.handlePagination = handlePagination.bind(state);
+        state.handleOnMouseOut = handleOnMouseOut.bind(state);
+        state.handleOnClick = handleOnClick.bind(state) as MouseEventHandler;
+        return state;
+    });
+    [state.stateData, state.setState] = useState({
         page: 1,
         pages: Math.floor(props.data.length / 50) + 1,
-    } as LocalState);
-    state.setState = setState;
+    });
+
     state.props = props;
 
     const { data } = props;
@@ -45,7 +71,7 @@ function Table(props: Props): ReactElement {
         </tr>
     );
 
-    const index_from = (state.page - 1) * 50;
+    const index_from = (state.stateData.page - 1) * 50;
     const index_to = index_from + 50;
     const body = data
         .slice(index_from, index_to)
@@ -62,14 +88,14 @@ function Table(props: Props): ReactElement {
     return(
         <React.Fragment>
             <Pagination
-                page={state.page}
-                pages={state.pages}
-                onClick={handlePagination.bind(state)} />
+                page={state.stateData.page}
+                pages={state.stateData.pages}
+                onClick={state.handlePagination} />
             <div className="tbl_branches">
                 <table
-                    onMouseOver={handleOnMouseOver.bind(state)}
-                    onMouseOut={handleOnMouseOut.bind(state)}
-                    onClick={handleOnClick.bind(state)}>
+                    onMouseOver={state.handleOnMouseOver}
+                    onMouseOut={state.handleOnMouseOut}
+                    onClick={state.handleOnClick}>
                     <thead>
                         {head}
                     </thead>

@@ -29,20 +29,19 @@ type DispatchSetResponse = HandleThunkActionCreator<
 >;
 
 export interface RenderData {
+    branch: number,
     error: Error,
     branchInfo: Data.BranchClass,
     photo: string,
     handleBranch: (branch: string) => void,
-    branch: number,
 }
-
 
 /*----------------------------------------------------------|
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
 function PageBranch(props: Props): ReactElement {
     const {
-        error, branchInfo, photo, handleBranch, branch,
+        branch, error, branchInfo, photo, handleBranch,
     } = useRenderData(props);
 
     return (

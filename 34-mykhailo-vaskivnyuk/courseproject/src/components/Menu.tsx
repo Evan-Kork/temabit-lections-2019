@@ -1,4 +1,6 @@
-import React, { ReactElement, ChangeEvent, MouseEvent, useState, EventHandler } from "react";
+import React, {
+    useState, useCallback, useEffect,
+    ReactElement, ChangeEvent, MouseEvent, EventHandler } from "react";
 import { NavLink, withRouter, RouteComponentProps } from "react-router-dom";
 import { connect, HandleThunkActionCreator } from "react-redux";
 import { setMenu } from "../reducer/actions/actions";
@@ -25,26 +27,26 @@ type eHandler = EventHandler<eData>;
 function Menu(props: Props): ReactElement {
     const [isOpened, setOpened] = useState(false);
 
-    const handleMenu: React.FormEventHandler =
-        (event: React.FormEvent) => setOpened(!isOpened);
+    const handleMenu: React.FormEventHandler = useCallback(
+        (event: React.FormEvent) => setOpened(isOpened => !isOpened), []);
 
-    const handleMenuLink: eHandler =
+    const handleMenuLink: eHandler = useCallback(
         ({ target }: eData) =>
-            target.tagName === "A" && handleMenu(null);
+            target.tagName === "A" && handleMenu(null), []);
 
     const { list: menuList, selected, match} = props;
     const { path } = match;
 
-    if ( !selected || ("/" + selected.link) !== path ) {
-        props.setMenu(path);
-        return null;
-    }
+    useEffect(() => {
+        if ( !selected || ("/" + selected.link) !== path )
+            props.setMenu(path);
+    }, [selected, path]);
 
     const lis = menuList.map(({ link, id, text }) => (
         <li key={id}>
             <NavLink
                 to={"/" + link}
-                activeClassName={id === selected.id ? "active" : ""}
+                activeClassName={selected && id === selected.id ? "active" : ""}
                 data-id={id}>
                 {text}
             </NavLink>

@@ -6,7 +6,11 @@ export async function validateResponse(res: Data.BranchesData<Data.Branch>): Pro
     const errors: Array<ValidationError[]> = [];
     let { data, error } = res;
     if (error) return { data: null, error };
-    let branches = plainToClass(BranchClass, data);
+    let branches = plainToClass(BranchClass, data, {
+        excludeExtraneousValues: true,
+        enableImplicitConversion: false,
+    });
+    console.log(branches);
     for await(const branch of branches) {
         validate(branch)
         .then(e => {

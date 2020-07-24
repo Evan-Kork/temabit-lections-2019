@@ -1,4 +1,7 @@
-import React, { ReactElement, FormEvent, EventHandler } from "react";
+import React, {
+    useState,
+    ReactElement, FormEvent, EventHandler,
+} from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 
 /*----------------------------------------------------------|
@@ -14,7 +17,7 @@ type eData = FormEvent<HTMLFormElement> & {
 
 type eHandler = EventHandler<eData>;
 
-const onSubmit = (history: any): eHandler => (event: eData) => {
+const getOnSubmit = ({ history }: Props): eHandler => (event: eData) => {
         event.preventDefault();
         const order = event.target.order.value;
         history.push("/tracking/" + order);
@@ -24,10 +27,11 @@ const onSubmit = (history: any): eHandler => (event: eData) => {
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
 function FormTrackingHeader(props: Props): ReactElement {
+    const [onSubmit] = useState(() => getOnSubmit(props));
     return (
         <form
             className="tracking d-none d-md-inline"
-            onSubmit={onSubmit(props.history)}>
+            onSubmit={onSubmit}>
             <input
                 className="order_number"					
                 type="text"

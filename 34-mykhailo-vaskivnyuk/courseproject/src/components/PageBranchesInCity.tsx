@@ -1,6 +1,6 @@
 import React, {
     ReactElement, ChangeEvent, EventHandler,
-    useState } from "react";
+    useState, useCallback } from "react";
 import FormCity from "./FormCity";
 import TableData from "./TableData";
 import ContentHeader from "./ContentHeader";
@@ -17,8 +17,10 @@ type eHandler = EventHandler<eData>;
 function PageBranchesInCity(props: {}): ReactElement {
     const [filter, setFilter] = useState({ city: null });
 
-    const handleCity: eHandler = (event: eData) =>
-        setFilter({ city: event.target.value });
+    const handleCity: eHandler = useCallback(
+        (event: eData) => setFilter({ city: event.target.value }),
+        []
+    );
         
     const { city } = filter;
 

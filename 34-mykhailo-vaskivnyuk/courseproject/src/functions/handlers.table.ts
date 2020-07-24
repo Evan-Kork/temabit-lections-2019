@@ -57,12 +57,13 @@ export const handleOnClick: eHandler = function(this: LocalState, event: eData) 
 export const handlePagination: eHandler = function(this: LocalState, event: eData) {
     const elem = event.target;
     const direction = elem.dataset["direction"];
-    const { page, pages, setState } = this;
+    const { setState, stateData } = this;
+    const { page, pages } = stateData;
     if (direction === "next" && page < pages) {
-        setState({ ...this, page: page + 1 });
+        setState({ ...stateData, page: page + 1 });
     }
     if (direction === "prev" && page > 1) {
-        setState({ ...this, page: page - 1 });
+        setState({ ...stateData, page: page - 1 });
     }
 }
 

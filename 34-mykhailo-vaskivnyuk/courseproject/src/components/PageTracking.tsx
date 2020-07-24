@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { useCallback, ReactElement } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import FormTracking from "./FormTracking";
 import TrackingInfo from "./TrackingInfo";
@@ -21,8 +21,9 @@ type Props = RouteComponentProps & {
 |----------------------------------------------------------*/
 function PageTracking(props: Props): ReactElement {
 
-    const handleTracking = (order: string): void =>
-        props.history.push("/tracking/" + order);
+    const handleTracking = useCallback(
+        (order: string): void =>
+            props.history.push("/tracking/" + order), []);
 
     const { order } = props.match.params;
 

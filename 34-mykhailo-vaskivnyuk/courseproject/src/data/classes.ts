@@ -1,31 +1,37 @@
+import { Expose, Transform } from "class-transformer";
 import {
     validate, validateOrReject,
     Contains, IsInt, Length, IsEmail, IsFQDN, IsDate, Min, Max} from "class-validator";
 import { getServices } from "../functions/helpers";
 
+const toNumber = (str: string): number => Number(str);
+
 export class Branch {
-    delivery_branch_id: number;
-    @Length(1, 3)
-    number: number;
-    adress: string;
-    public: {
+    @Transform(toNumber)
+    @Expose() delivery_branch_id: number;
+    @IsInt()
+    @Transform(toNumber)
+    @Expose() number: number;
+    @Expose() adress: string;
+    @Expose() public: {
         navigation_ua: string,
     };
-    shedule_description: string;
-    services: Data.Services;
-    lat: number;
-    lng: number;
-    max_weight: number;
-    photos: string[];
-    locality: string;
+    @Expose() shedule_description: string;
+    @Expose() services: Data.Services;
+    @Expose() lat: string;
+    @Expose() lng: string;
+    @Transform(toNumber)
+    @Expose() max_weight: number;
+    @Expose() photos: string[];
+    @Expose() locality: string;
 }
 
 export class BranchClass extends Branch {
-    get navigation_ua() {
+    get navigation_ua(): string {
         return this.public.navigation_ua;
     }
 
-    get lat_lng() {
+    get lat_lng(): string {
         return `lat: ${this.lat}; lng: ${this.lng}`;
     }
 
