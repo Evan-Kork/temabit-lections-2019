@@ -3,9 +3,14 @@ import { useSelector } from 'react-redux';
 import SwitchToHistoryBtn from '../switch-to-history-btn/switch-to-history-btn';
 import ResultOutput from '../result-output/result-output';
 import { plainToClass } from 'class-transformer';
-import { Tracking, Msg } from '../../../../interfaces/interfaces';
+import {
+  Tracking,
+  ResultTTN,
+  TrackingError,
+} from '../../../../interfaces/interfaces';
 import { RootState } from '../../../../reducers/index';
 import { validate } from 'class-validator';
+import ErrorPage from '../../../error_page/error_page';
 
 interface Props {
   ttn: string;
@@ -21,7 +26,9 @@ function getUrl(isHistory: boolean, tracking: string): string {
 function getTtnData(
   ttn: string,
   isHistory: boolean,
-  setSearchResult: React.Dispatch<React.SetStateAction<Tracking>>
+  setSearchResult: React.Dispatch<React.SetStateAction<ResultTTN[]>>,
+  setSearchError: React.Dispatch<React.SetStateAction<TrackingError>>,
+  setError: React.Dispatch<React.SetStateAction<Error>>
 ) {
   fetch(getUrl(isHistory, ttn))
     .then((response) => response.json())
@@ -31,52 +38,49 @@ function getTtnData(
         validate(data).then((errors) => {
           if (errors.length > 0) {
             console.log('validation failed. errors: ', errors);
-            setSearchResult({...getInitialState('Отримано не корректні дані, спробуйте пізніше'),} as Tracking);
+            setSearchError({
+              msg: { ua: 'Помилка валідації отриманих данних' },
+            } as TrackingError);
+            setSearchResult([]);
           } else {
-            setSearchResult(data);
+            setSearchResult(data.result);
           }
         });
       } else {
-        setSearchResult(result);
+        setSearchError(result);
       }
     })
-    .catch((e) => {
-      setSearchResult({
-        ...getInitialState('Помилка отримання данних, спробуйте пізніше'),
-      } as Tracking);
-      console.log(e);
-    });
-}
-
-function getInitialState(msg: string = 'Введіть номер відправлення') {
-  return {
-    status: 0,
-    msg: { ua: msg },
-  };
+    .catch((e: Error) => setError(e));
 }
 
 export default function SearchTtnResults({ ttn }: Props): ReactElement<Props> {
   const isHistory = useSelector((state: RootState) => state.isShowHistory);
-  const [searchResult, setSearchResult] = useState(
-    getInitialState() as Tracking
-  );
+  const [searchResult, setSearchResult] = useState([] as ResultTTN[]);
+  const [searchError, setSearchError] = useState({} as TrackingError);
+  const [error, setError] = useState({} as Error);
 
   useEffect(() => {
-    getTtnData(ttn, isHistory, setSearchResult);
+    getTtnData(ttn, isHistory, setSearchResult, setSearchError, setError);
   }, [ttn, isHistory]);
 
-  return (
-    <>
-      {searchResult.status ? (
-        <div className='row justify-content-center m-0 mt-5'>
-          {searchResult.result.map((item, index: number) => {
-            return <ResultOutput item={item} key={index} />;
-          })}
-          <SwitchToHistoryBtn />
-        </div>
-      ) : (
-        <p className='mb-5 mt-3 text-center'>{searchResult.msg.ua}</p>
-      )}
-    </>
+  return searchResult.length ? (
+    <div className='row justify-content-center m-0 mt-5'>
+      {searchResult.map((item, index: number) => {
+        return <ResultOutput item={item} key={index} />;
+      })}
+      <SwitchToHistoryBtn />
+    </div>
+  ) : error.name == undefined ? (
+    <p className='mb-5 mt-3 text-center'>
+      {searchError.msg?.ua ?? 'Введіть номер відправлення'}
+    </p>
+  ) : (
+    <ErrorPage
+      title={error.name}
+      message={error.message}
+      callback={() =>
+        getTtnData(ttn, isHistory, setSearchResult, setSearchError, setError)
+      }
+    />
   );
 }

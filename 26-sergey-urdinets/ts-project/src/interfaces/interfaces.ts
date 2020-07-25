@@ -4,14 +4,13 @@ import {
   IsNumber,
   ValidateNested,
   IsLongitude,
-  IsLatitude
+  IsLatitude,
+  IsEmpty,
 } from 'class-validator';
 import { DELIVERY_STATUS } from '../components/constants';
 import { Type } from 'class-transformer';
 
 type Status = number;
-
-
 
 export type Public = {
   public_description_ru: string;
@@ -68,8 +67,7 @@ export interface Department {
   public: Public;
 }
 
-//-------------- export classes -------------------------------------------------------------------------------------
-export class Msg {
+export class Msg implements Msg {
   @IsNumber()
   code: number;
   @IsString()
@@ -101,9 +99,6 @@ export class ResultTTN {
 export class Tracking {
   @IsInt()
   status: Status;
-
-  // @Type(() => Msg)
-  // @ValidateNested()
   msg: Msg | null;
 
   @Type(() => ResultTTN)
@@ -111,13 +106,21 @@ export class Tracking {
   result?: ResultTTN[];
 }
 
+export class TrackingError {
+  @IsInt()
+  status: Status;
+
+  @Type(() => ResultTTN)
+  @ValidateNested()
+  msg: Msg;
+}
+
 export class ResponseDepartmentsTypes {
   @IsInt()
   status: Status;
 
-  //   @Type(() => Msg)
-  // @ValidateNested()
-  msg: Msg | null;
+  @IsEmpty()
+  msg: null;
 
   @Type(() => DepartmentTypes)
   @ValidateNested()
@@ -127,7 +130,7 @@ export class ResponseDepartmentsTypes {
 export class DepartmentTypes {
   @IsString()
   short_name: string;
-  @IsString()             
+  @IsString()
   description: string;
 }
 
@@ -187,9 +190,8 @@ export class DepartmentsAll {
   @IsInt()
   status: Status;
 
-  // @Type(() => Msg)
-  // @ValidateNested()
-  msg: Msg | null;
+  @IsEmpty()
+  msg: null;
 
   @Type(() => Department)
   @ValidateNested()
@@ -200,14 +202,12 @@ export class ClosestDepartments {
   @IsInt()
   status: Status;
 
-  // @Type(() => Msg)
-  // @ValidateNested()
-  msg: Msg | null;
+  @IsEmpty()
+  msg: null;
 
   @Type(() => Department)
   @ValidateNested()
   result: CloseDepartment[];
-
 }
 class CloseDepartment extends Department {
   @IsNumber()
@@ -217,10 +217,9 @@ class CloseDepartment extends Department {
 export class ServicesResponse implements ServicesResp {
   @IsInt()
   status: Status;
-
-  // @Type(() => Msg)
-  // @ValidateNested()
-  msg: Msg | null;
+  
+  @IsEmpty()
+  msg: null;
 
   @Type(() => Bank)
   @ValidateNested()
