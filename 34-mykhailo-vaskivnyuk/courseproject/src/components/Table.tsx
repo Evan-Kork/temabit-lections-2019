@@ -1,34 +1,38 @@
 import React, {
     useState,
-    ReactElement, MouseEventHandler, Dispatch,
+    ReactElement, MouseEventHandler, Dispatch, RefObject,
 } from "react";
-import Pagination from "./Pagination";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 import {
     eHandler,
+    handleTable,
     handleOnMouseOver,
     handleOnMouseOut,
     handleOnClick,
     handlePagination,
 } from "../functions/handlers.table";
 
+import Pagination from "./Pagination";
+import Comment, { RefComment } from "./Comment";
 import TablePage from "./TablePage";
 
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
-export interface Props {
+export interface Props extends RouteComponentProps {
     data: Data.Branches,
-    handleTable: (...args: any[]) => void,
 }
 
 export interface LocalState {
     props: Props,
     stateData: StateData;
+    refComment: RefObject<RefComment>;
     setState: Dispatch<StateData>;
     handlePagination: eHandler;
     handleOnMouseOver: MouseEventHandler;
     handleOnMouseOut: MouseEventHandler;
     handleOnClick: MouseEventHandler;
+    handleTable: (...args: any[]) => void,
 }
 
 interface StateData{
@@ -44,10 +48,12 @@ function useLocalState(props: Props) {
     const [state] = useState((): LocalState => {
         const state = {} as LocalState;
         Object.assign(state, {
+            refComment: React.createRef(),
             handlePagination: handlePagination.bind(state),
             handleOnMouseOver: handleOnMouseOver.bind(state),
             handleOnMouseOut: handleOnMouseOut.bind(state),
             handleOnClick: handleOnClick.bind(state),
+            handleTable: handleTable.bind(state),
         });
         return state;
     });
@@ -88,6 +94,7 @@ function Table(props: Props): ReactElement {
                 page={page}
                 pages={pages}
                 onClick={state.handlePagination} />
+            <Comment ref={state.refComment} />
             <div className="tbl_branches">
                 <table
                     onMouseOver={state.handleOnMouseOver}
@@ -105,4 +112,4 @@ function Table(props: Props): ReactElement {
     );
 }
 
-export default Table;
+export default withRouter(Table);

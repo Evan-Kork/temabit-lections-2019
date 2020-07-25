@@ -1,28 +1,30 @@
-import React, { ReactElement } from "react";
+import React, {
+    ReactElement, Dispatch, RefObject,
+    useState, useImperativeHandle,
+} from "react";
 
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
-interface Props {
-    data: CommentData,
+export interface CommentData {
+    branch: Data.BranchClass,
+    position: DOMRect,
 }
 
-export interface CommentData {
-    branch: {
-        photos: string[];
-    };
-    position: {
-        top: number;
-        left: number;
-        width: number;
-    }
+export interface RefComment {
+    setState: Dispatch<CommentData>;
 }
 
 /*----------------------------------------------------------|
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
-function Comment(props: Props): ReactElement {
-    const { branch, position } = props.data;
+function Comment(props: {}, ref: RefObject<RefComment>): ReactElement {
+    const [state, setState] = useState(null as CommentData);
+    useImperativeHandle(ref, () => ({ setState }), []);
+
+    if (!state) return null;
+
+    const { branch, position } = state;
     const { top: _top, left: _left, width } = position;
     const top = _top - 232 + pageYOffset + "px";
     const left = _left + width + 10 + "px";
@@ -38,4 +40,4 @@ function Comment(props: Props): ReactElement {
     );
 }
 
-export default Comment;
+export default React.forwardRef(Comment);

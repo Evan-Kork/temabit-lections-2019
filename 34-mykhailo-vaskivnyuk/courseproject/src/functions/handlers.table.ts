@@ -1,6 +1,6 @@
-import { LocalState as TableState } from "../components/TableData";
-import { LocalState } from "../components/Table";
-import { ChangeEvent, FocusEvent, EventHandler, MouseEventHandler, MouseEvent } from "react";
+import { LocalState as TableDataState } from "../components/TableData";
+import { LocalState as TableState } from "../components/Table";
+import { ChangeEvent, EventHandler, MouseEvent } from "react";
 import { CommentData } from "../components/Comment";
 
 /*----------------------------------------------------------|
@@ -16,18 +16,18 @@ export type eHandler = EventHandler<eData>;
 /*----------------------------------------------------------|
 |             HANDLERS                                      |
 |----------------------------------------------------------*/
-export const handleTable = (state: TableState) => (comment_data: CommentData, branchNumber: number): void => {
+export function handleTable (this: TableState, comment_data: CommentData, branchNumber: number): void {
 
     if (branchNumber) {
-        state.props.history.push("/branch/" + branchNumber);
+        this.props.history.push("/branch/" + branchNumber);
         window.scrollTo(0, 0);
         return;
     }
 
-    state.setState({ ...state, comment_data });
+    this.refComment.current.setState(comment_data);
 }
 
-export const handleOnMouseOver: eHandler = function(this: LocalState, event: eData) {
+export const handleOnMouseOver: eHandler = function(this: TableState, event: eData) {
     let elem = event.target;
     elem = elem.closest("TR");
     if (!elem || !elem.closest("TBODY")) return;
@@ -35,27 +35,27 @@ export const handleOnMouseOver: eHandler = function(this: LocalState, event: eDa
     const branch = this.props.data[index];
     const firstTD = elem.firstElementChild;
     const position = firstTD.getBoundingClientRect();
-    this.props.handleTable({ branch, position });
+    this.handleTable({ branch, position });
 }
 
-export const handleOnMouseOut: eHandler = function(this: LocalState, event: eData) {
+export const handleOnMouseOut: eHandler = function(this: TableState, event: eData) {
     let elem = event.target;
     elem = elem.closest("TR");
     let rel_elem =	event.relatedTarget;
     rel_elem = rel_elem ? rel_elem.closest("TR") : null;
     if (elem === rel_elem) return;
-    this.props.handleTable(null);
+    this.handleTable(null);
 }
 
-export const handleOnClick: eHandler = function(this: LocalState, event: eData) {
+export const handleOnClick: eHandler = function(this: TableState, event: eData) {
     let elem = event.target;
     elem = elem.closest("TR");
     if (!elem || !elem.closest("TBODY")) return;
     const number = elem.dataset.number;
-    this.props.handleTable(null, number);
+    this.handleTable(null, number);
 }
 
-export const handlePagination: eHandler = function(this: LocalState, event: eData) {
+export const handlePagination: eHandler = function(this: TableState, event: eData) {
     const elem = event.target;
     const direction = elem.dataset["direction"];
     const { setState, stateData } = this;
@@ -71,7 +71,7 @@ export const handlePagination: eHandler = function(this: LocalState, event: eDat
 /*----------------------------------------------------------|
 |             FUNCTIONS                                     |
 |----------------------------------------------------------*/
-export function getDerivedStateFromProps(this: TableState): void {
+export function getDerivedStateFromProps(this: TableDataState): void {
     const { filter, branches } = this.props;
     if (!filter || filter === this.filter) return null;
     
