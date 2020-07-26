@@ -29,7 +29,7 @@ import { validateResponse } from "../functions/validate";
 import { RequestProps } from "../components/TableData";
 
 export function getBranches(props: RequestProps): void {
-    if (props.branches.data) return;
+    if (props.data) return;
     const method = "branches";
     const params = "";
     request({ method, params })

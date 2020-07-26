@@ -4,23 +4,22 @@ import { setResponse } from "../reducer/actions/actions";
 import { getBranches } from "../functions/helpers";
 import { getDerivedStateFromProps } from "../functions/handlers.table";
 
-import Table from "./Table";
+import TableComponents from "./TableComponents";
 import RequestInfo from "./RequestInfo";
 
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
-interface Props {
-    branches: Data.BranchesData,
-    setResponse: DispatchSetResponse,
+type Props = Data.BranchesData & {
     filter?: { city: string },
+    setResponse: DispatchSetResponse,
 }
 
 type DispatchSetResponse = HandleThunkActionCreator<
     Reducer.SetResponse<Data.BranchesData>
 >;
 
-export type RequestProps = Pick<Props, 'branches' | 'setResponse'>;
+export type RequestProps = Pick<Props, 'data' | 'setResponse'>;
 
 export interface LocalState {
     setState: (state: LocalState) => void,
@@ -37,7 +36,7 @@ function TableData(props: Props): ReactElement {
     const [state, setState] = useState({
         data: null,
         error: null,
-        filter: props.filter,
+        filter: {city: null},
     } as LocalState);
     state.setState = setState;
     state.props = props;
@@ -46,25 +45,22 @@ function TableData(props: Props): ReactElement {
 
     useEffect(() => getBranches(props), []);
     
-    const { filter, branches } = props;
-    const { data, error } = filter ? state : branches;
+    const { filter } = props;
+    const { data, error } = filter ? state : props;
 
     return (
         <div className="row justify-content-center">
             {error ?
                 <RequestInfo error={error} />
             :data ?
-                <Table data={data} />
+                <TableComponents data={data} />
             :null}
         </div>
     );
 }
 
-function mapStateToProps(state: Data.State): Pick<Props, 'branches'> {
-    return {
-        branches: state.responses.branches,
-    };
-}
+const mapStateToProps = (state: Data.State): Data.BranchesData => 
+    state.responses.branches;
 
 const cntTableData = connect(mapStateToProps, { setResponse })(TableData);
 

@@ -1,43 +1,27 @@
-import React, {
-    useState,
-    ReactElement, MouseEventHandler, Dispatch, RefObject,
-} from "react";
-import { withRouter, RouteComponentProps } from "react-router-dom";
+import React, { useState, ReactElement, MouseEventHandler } from "react";
+import { TableHead, TableBody } from "./TableParts";
 import {
-    eHandler,
-    handleTable,
     handleOnMouseOver,
     handleOnMouseOut,
     handleOnClick,
-    handlePagination,
+    HandleTable,
 } from "../functions/handlers.table";
-
-import Pagination from "./Pagination";
-import Comment, { RefComment } from "./Comment";
-import TablePage from "./TablePage";
 
 /*----------------------------------------------------------|
 |             TYPES                                         |
 |----------------------------------------------------------*/
-export interface Props extends RouteComponentProps {
+export interface Props {
     data: Data.Branches,
+    from: number,
+    to: number,
+    handleTable: HandleTable,
 }
 
 export interface LocalState {
     props: Props,
-    stateData: StateData;
-    refComment: RefObject<RefComment>;
-    setState: Dispatch<StateData>;
-    handlePagination: eHandler;
-    handleOnMouseOver: MouseEventHandler;
-    handleOnMouseOut: MouseEventHandler;
-    handleOnClick: MouseEventHandler;
-    handleTable: (...args: any[]) => void,
-}
-
-interface StateData{
-    page: number,
-    pages: number,
+    onMouseOver: MouseEventHandler,
+    onMouseOut: MouseEventHandler,
+    onClick: MouseEventHandler,
 }
 
 /*----------------------------------------------------------|
@@ -48,19 +32,11 @@ function useLocalState(props: Props) {
     const [state] = useState((): LocalState => {
         const state = {} as LocalState;
         Object.assign(state, {
-            refComment: React.createRef(),
-            handlePagination: handlePagination.bind(state),
-            handleOnMouseOver: handleOnMouseOver.bind(state),
-            handleOnMouseOut: handleOnMouseOut.bind(state),
-            handleOnClick: handleOnClick.bind(state),
-            handleTable: handleTable.bind(state),
+            onMouseOver: handleOnMouseOver.bind(state),
+            onMouseOut: handleOnMouseOut.bind(state),
+            onClick: handleOnClick.bind(state),
         });
         return state;
-    });
-
-    [state.stateData, state.setState] = useState({
-        page: 1,
-        pages: Math.floor(props.data.length / 50) + 1,
     });
 
     state.props = props;
@@ -75,41 +51,23 @@ function Table(props: Props): ReactElement {
 
     const state = useLocalState(props);
 
-    const { data } = state.props;
-    const { page, pages } = state.stateData;
-
-    const head = (
-        <tr>
-            <th>N</th>
-            <th>Адреса</th>
-            <th>Навігація</th>
-            <th>Сервіси</th>
-            <th>Графік роботи</th>
-        </tr>
-    );
+    const { data, from, to } = state.props;
 
     return(
-        <React.Fragment>
-            <Pagination
-                page={page}
-                pages={pages}
-                onClick={state.handlePagination} />
-            <Comment ref={state.refComment} />
-            <div className="tbl_branches">
-                <table
-                    onMouseOver={state.handleOnMouseOver}
-                    onMouseOut={state.handleOnMouseOut}
-                    onClick={state.handleOnClick}>
-                    <thead>
-                        {head}
-                    </thead>
-                    <tbody>
-                        {TablePage(data, page)}
-                    </tbody>
-                </table>
-            </div>
-        </React.Fragment>
+        <div className="tbl_branches">
+            <table
+                onMouseOver={state.onMouseOver}
+                onMouseOut={state.onMouseOut}
+                onClick={state.onClick}>
+                <thead>
+                    <TableHead />
+                </thead>
+                <tbody>
+                    {TableBody(data, from, to)}
+                </tbody>
+            </table>
+        </div>
     );
 }
 
-export default withRouter(Table);
+export default Table;

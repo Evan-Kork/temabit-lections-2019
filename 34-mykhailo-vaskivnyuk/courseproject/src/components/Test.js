@@ -1,3 +1,15 @@
+//node src/components/Test
+const fn = () => this.prop;
+
+class Test {
+    prop = 100;
+    method = () => this.prop;
+}
+
+const test = new Test;
+console.log(test.method());
+
+/*
 import React from "react";
 import { setTest, setMenu } from "../reducer/actions/actions";
 import { connect } from "react-redux";
@@ -62,3 +74,4 @@ function mapStateToProps2(state) {
 export const Test2Connected = connect(mapStateToProps2, { setTest })(Test2);
 
 //--------------------------------------------------
+*/
