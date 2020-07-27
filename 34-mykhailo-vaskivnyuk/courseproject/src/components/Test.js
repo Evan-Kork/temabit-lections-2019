@@ -1,13 +1,41 @@
 //node src/components/Test
-const fn = () => this.prop;
+//const fn = () => this.prop;
 
 class Test {
     prop = 100;
-    method = () => this.prop;
+    // get method() {
+    //     return () => this._method();
+    // }
+
+    // set method(value) {
+    //     this._method = value;
+    // }
+
+    //method = fn; //() => this.prop;
+    method() { return this.prop; }
+    bind(method) {
+        if (!this.method || typeof this.method !== 'function')
+            return undefined
+        const bindMethod = '_' + method;
+        if (!this[bindMethod] || typeof this[bindMethod] !== 'function')
+            this[bindMethod] = () => this[method](); 
+        return this[bindMethod];
+    }
 }
 
 const test = new Test;
-console.log(test.method());
+// Object.defineProperty(Test.prototype, 'bindMethod', {
+//     get() {
+//         return () => this.method();
+//     }
+// });
+//test.method = function() { return this.prop; }
+const f = test.bind('method');
+const f1 = test.bind('method');
+console.log(f());
+console.log(f1());
+console.log(f === f1);
+//console.log(fn());
 
 /*
 import React from "react";

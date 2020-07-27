@@ -16,7 +16,7 @@ interface Props {
 function Pagination(props: Props): ReactElement {
     const { callback, page, pages } = props;
     const [onClick] = useState(
-        () => handlePagination(callback) as React.MouseEventHandler
+        () => handlePagination(callback) as React.MouseEventHandler,
     );
 
     return (

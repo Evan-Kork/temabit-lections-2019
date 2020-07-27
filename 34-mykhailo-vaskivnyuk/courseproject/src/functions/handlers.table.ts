@@ -24,27 +24,29 @@ export type HandleTable = (
 export type HandleTablePars = Parameters<HandleTable>;
 
 export function handleTable (
-    state: TableComponentsState,
+    this: TableComponentsState,
     action: { comment_data?: CommentData, branchNumber?: string, direction?: string }): void {
 
     if (action.branchNumber) {
-        state.props.history.push("/branch/" + action.branchNumber);
+        this.props.history.push("/branch/" + action.branchNumber);
         window.scrollTo(0, 0);
         return;
     }
 
     if (action.direction) {
-        const { setState, stateData } = state;
+        const { setStateData, stateData } = this;
         const { page, pages } = stateData;
         if (action.direction === "next" && page < pages) {
-            setState({ ...stateData, page: page + 1 });
+            setStateData({ ...stateData, page: page + 1 });
         }
         if (action.direction === "prev" && page > 1) {
-            setState({ ...stateData, page: page - 1 });
+            setStateData({ ...stateData, page: page - 1 });
         }
+        return;
     }
 
-    state.refComment.current.setState(action.comment_data);
+
+    this.refComment.current.setState(action.comment_data);
 }
 
 export const handleOnMouseOver: eHandler = function(this: TableState, event: eData) {

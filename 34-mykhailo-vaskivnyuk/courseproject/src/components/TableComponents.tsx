@@ -1,12 +1,7 @@
-import React, {
-    useState, ReactElement, Dispatch, RefObject,
-} from "react";
+import React, { ReactElement, RefObject, createRef } from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
-import {
-    handleTable,
-    HandleTable,
-    HandleTablePars,
-} from "../functions/handlers.table";
+import { handleTable, HandleTable } from "../functions/handlers.table";
+import { useLocalState, BaseLocalState } from "../functions/useLocalState";
 
 import Pagination from "./Pagination";
 import Comment, { RefComment } from "./Comment";
@@ -21,53 +16,43 @@ export interface Props extends RouteComponentProps {
     data: Data.Branches,
 }
 
-export interface LocalState {
-    props: Props,
-    stateData: StateData;
-    refComment: RefObject<RefComment>;
-    setState: Dispatch<StateData>;
-    handlePagination: (direction: string) => void;
-    handleTable: HandleTable;
-}
-
 interface StateData{
     page: number,
     pages: number,
 }
 
 /*----------------------------------------------------------|
-|             HOOKS                                         |
+|             STATE                                         |
 |----------------------------------------------------------*/
-function useLocalState(props: Props) {
+export class LocalState extends BaseLocalState<Props, StateData> {
 
-    const [state] = useState((): LocalState => {
-        const state = {} as LocalState;
-        Object.assign(state, {
-            refComment: React.createRef(),
-            handleTable: (...args: HandleTablePars) => handleTable(state, ...args),
-            handlePagination: (direction: string) => state.handleTable({ direction }),
-        });
-        return state;
-    });
+    refComment: RefObject<RefComment>;
+    handlePagination: (direction: string) => void;
+    handleTable: HandleTable;
 
-    [state.stateData, state.setState] = useState({
-        page: 1,
-        pages: Math.floor(props.data.length / PAGINATION) + 1,
-    });
-
-    state.props = props;
-    
-    return state;
+    constructor(props: Props) {
+        super(props);
+        this.refComment = createRef(),
+        this.handleTable = handleTable;
+        this.handlePagination = (direction: string) => this.handleTable({ direction });
+        this.stateData = {
+            page: 1,
+            pages: Math.floor(props.data.length / PAGINATION) + 1,
+        };
+    }
 }
+
+const initLocalState = (props: Props): LocalState => new LocalState(props);
 
 /*----------------------------------------------------------|
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
 function TableComponents(props: Props): ReactElement {
 
-    const state = useLocalState(props);
+    const state = useLocalState(props, initLocalState);
 
     const { data } = state.props;
+    const { handlePagination, refComment } = state;
     const { page, pages } = state.stateData;
     const from = (page - 1) * PAGINATION;
     const to = from + PAGINATION;
@@ -77,10 +62,10 @@ function TableComponents(props: Props): ReactElement {
             <Pagination
                 page={page}
                 pages={pages}
-                callback={state.handlePagination} />
-            <Comment ref={state.refComment} />
+                callback={handlePagination} />
+            <Comment ref={refComment} />
             <Table
-                handleTable={state.handleTable}
+                handleTable={state.bind('handleTable')}
                 data={data}
                 from={from}
                 to={to} />
