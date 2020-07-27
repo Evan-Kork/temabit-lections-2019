@@ -33,7 +33,7 @@ export class LocalState extends BaseLocalState<Props, StateData> {
     constructor(props: Props) {
         super(props);
         this.refComment = createRef(),
-        this.handleTable = handleTable;
+        this.bind('handleTable', handleTable);
         this.handlePagination = (direction: string) => this.handleTable({ direction });
         this.stateData = {
             page: 1,
@@ -52,7 +52,7 @@ function TableComponents(props: Props): ReactElement {
     const state = useLocalState(props, initLocalState);
 
     const { data } = state.props;
-    const { handlePagination, refComment } = state;
+    const { handlePagination, refComment, handleTable } = state;
     const { page, pages } = state.stateData;
     const from = (page - 1) * PAGINATION;
     const to = from + PAGINATION;
@@ -65,7 +65,7 @@ function TableComponents(props: Props): ReactElement {
                 callback={handlePagination} />
             <Comment ref={refComment} />
             <Table
-                handleTable={state.bind('handleTable')}
+                handleTable={handleTable}
                 data={data}
                 from={from}
                 to={to} />

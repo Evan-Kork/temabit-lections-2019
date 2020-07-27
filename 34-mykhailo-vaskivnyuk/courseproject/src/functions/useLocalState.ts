@@ -20,15 +20,30 @@ export class BaseLocalState<TProps extends {} = {}, TStateData extends {} = {}> 
         this.setStateData = setStateData;
     }
 
-    bind(method: keyof BaseLocalState): BaseLocalState[keyof BaseLocalState] | undefined {
-        if (!this[method] || typeof this[method] !== 'function')
-            return undefined;
-        const bindMethod = ('_' + method);
-        if (!this[bindMethod] || typeof this[bindMethod] !== 'function') {
-            this[bindMethod] = (...args: any[]) => (this[method] as Function)(...args);
-        }
-        return this[bindMethod];
+    bind(methodName: string, method: Function): void {
+        const hiddenName = '_' + methodName;
+        this[hiddenName] = method;
+        this[methodName] = (...args: any[]) => this[hiddenName](...args);
     }
+
+    // bind(methodName: string, method: Function): void;
+    // bind(methodName: keyof BaseLocalState): BaseLocalState[keyof BaseLocalState] | undefined 
+    // bind(methodName: keyof BaseLocalState | string, method?: Function): BaseLocalState[keyof BaseLocalState] | undefined {
+
+    //     if (!this[methodName] && method) {
+    //         const hiddenName = '_' + methodName;
+    //         this[hiddenName] = method;
+    //         this[methodName] = () => this[hiddenName]();     
+    //     }
+
+    //     if (!this[methodName] || typeof this[methodName] !== 'function')
+    //         return undefined;
+    //     const bindMethod = ('_' + methodName);
+    //     if (!this[bindMethod] || typeof this[bindMethod] !== 'function') {
+    //         this[bindMethod] = (...args: any[]) => (this[methodName] as Function)(...args);
+    //     }
+    //     return this[bindMethod];
+    // }
 }
 
 //-----------------------------------------------------------
