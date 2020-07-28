@@ -1,0 +1,23 @@
+.sidebar {
+  overflow: auto;
+  text-align: left;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  background-color: $brand-color;
+  z-index: 2000;
+  .social-networks {
+    @extend .mt-auto;
+    text-align: center;
+    display: inline-block;
+    i {
+      color: white;
+      margin: 5px;
+    }
+  }
+  .nav-list-column {
+    @extend .mt-4;
+  }
+}
