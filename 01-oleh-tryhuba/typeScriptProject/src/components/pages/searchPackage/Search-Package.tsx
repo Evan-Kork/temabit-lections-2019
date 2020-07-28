@@ -8,7 +8,6 @@ import {plainToClass} from "class-transformer";
 
 const currentState = () => ({} as Tracking)
 
-
 const SearchPackage: FC = () => {
 
 	const [loading, setLoading] = useState<boolean>(false)
@@ -22,7 +21,7 @@ const SearchPackage: FC = () => {
 		.then((packag) => {
 			setLoading(false);
 			const ttn = new Invoice();
-			ttn.package = numberPackage;
+			ttn.package = numberPackage.trim();
 			validate(ttn).then(errors => {
 				if (errors.length > 0) {
 					errors.map(({constraints}) => {
@@ -76,12 +75,24 @@ const PackageView: FC<Tracking> = (packages: Tracking) => {
 
 	return (
 		<Fragment>
-			<div className="aboutPackage">
-				<div className="about_row orderNumber">Номер відправлення:<b> {orderNumber}</b></div>
-				<div className="about_row orderDescription">Опис відправлення:<b> {orderDescription}</b></div>
-				<div className="about_row date">Дата та час: <b>{data.orderNumber ? data.getDateTime() : null}</b></div>
-				<div className="about_row status">Статус відправлення: <b>{status}</b></div>
-			</div>
+			<table className="table table-striped table-dark w-75">
+				<thead>
+				<tr>
+					<th scope="col">Номер відправлення</th>
+					<th scope="col">Опис відправлення</th>
+					<th scope="col">Дата та час</th>
+					<th scope="col">Статус відправлення</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th scope="row">{orderNumber}</th>
+					<td>{orderDescription}</td>
+					<td>{data.orderNumber ? data.getDateTime() : null}</td>
+					<td>{status}</td>
+				</tr>
+				</tbody>
+			</table>
 		</Fragment>
 	)
 };

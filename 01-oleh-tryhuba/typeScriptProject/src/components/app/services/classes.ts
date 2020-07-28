@@ -1,13 +1,13 @@
 import {Expose} from "class-transformer";
 import {IsInt, IsString, MaxLength, MinLength} from "class-validator";
 
-
 //	Масив із публічною інформацією про філіал та навігацією різними мовами
 interface INavigation {
 	navigation_en: string
 	navigation_ru: string
 	navigation_ua: string
 }
+
 interface IBranches {
 	number: string //	Номер відділення
 	adress: string //	Адреса відділення
@@ -24,6 +24,7 @@ interface IBranches {
 	services: Array<number> //	Масив із відміткою про доступні сервіси на філіалі (1 - доступний, 0 - недоступний). Детальніше в пункті "Інформація про доступні сервіси"
 	public: Navigation
 }
+
 interface IResultType {
 	msg: string | null,
 	result: Array<AllBranches>,
@@ -40,7 +41,7 @@ interface ITracking {
 	departmentAdress: string //	Адреса відділення (вказано, якщо відправлення знаходиться на відділенні)
 }
 
-export class Navigation implements INavigation{
+export class Navigation implements INavigation {
 	@IsString()
 	navigation_en: string
 	@IsString()
