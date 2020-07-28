@@ -1,17 +1,16 @@
-import React, {FC, ReactElement, useEffect, useState} from 'react';
+import React, {FC, ReactElement, useCallback, useEffect, useState} from 'react';
 import './carusel.scss'
 import JustinApiService, {AllBranches} from '../../app/services/JustinApiService'
 import Spiner from "../../spiner/Spiner";
 import ErrorIndicator from "../../errorIndicator/ErrorIndicator";
 import no from '../../../img/no-img.png'
 
-const Carusel: FC = () => {
+const Carusel: FC = (): ReactElement => {
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(false);
-
 	const [branch, setBranch] = useState({} as AllBranches);
 
-	const updateService = (): void => {
+	const updateService = useCallback(() => {
 		setError(false);
 		const count = Math.floor((Math.random() * 300) + 2)
 		new JustinApiService().getOneBranch(count)
@@ -20,21 +19,21 @@ const Carusel: FC = () => {
 			setLoading(false)
 		})
 		.catch(onError)
-	};
+	}, []);
 
-	const onError = (): void => {
+	const onError = useCallback(() => {
 		setError(true)
 		setLoading(false)
-	};
+	}, []);
 
 	useEffect(() => {
 		updateService();
 	}, [])
 
-	const nextBrunch = (e: React.MouseEvent<HTMLButtonElement>) => {
+	const nextBrunch = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
 		setLoading(true);
 		updateService();
-	}
+	}, []);
 
 	const errorMessage: ReactElement | null = error ? <ErrorIndicator/> : null;
 	const hasData:boolean = !(loading || error);
