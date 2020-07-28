@@ -5,26 +5,34 @@ import Spiner from "../../spiner/Spiner";
 import ErrorIndicator from "../../errorIndicator/ErrorIndicator";
 import no from '../../../img/no-img.png'
 
+const currentState = () => ({} as AllBranches)
+const justinApiService = new JustinApiService();
+
 const Carusel: FC = (): ReactElement => {
+
 	const [loading, setLoading] = useState(true)
-	const [error, setError] = useState(false);
-	const [branch, setBranch] = useState({} as AllBranches);
+	const [error, setError] = useState(false)
+	const [branch, setBranch] = useState(currentState)
 
 	const updateService = useCallback(() => {
-		setError(false);
-		const count = Math.floor((Math.random() * 300) + 2)
-		new JustinApiService().getOneBranch(count)
-		.then((branch) => {
-			setBranch(branch)
-			setLoading(false)
+		setError(false)
+		justinApiService.getAllBranches()
+		.then(res => Math.floor((Math.random() * res.length) + 1))
+		.then(count => {
+			justinApiService.getOneBranch(count)
+			.then((branch) => {
+				setBranch(branch)
+				setLoading(false)
+			})
+			.catch(onError)
 		})
-		.catch(onError)
 	}, []);
 
 	const onError = useCallback(() => {
 		setError(true)
 		setLoading(false)
 	}, []);
+
 
 	useEffect(() => {
 		updateService();
@@ -36,7 +44,7 @@ const Carusel: FC = (): ReactElement => {
 	}, []);
 
 	const errorMessage: ReactElement | null = error ? <ErrorIndicator/> : null;
-	const hasData:boolean = !(loading || error);
+	const hasData: boolean = !(loading || error);
 	const spinner: ReactElement | null = loading ? <Spiner/> : null;
 	const content: ReactElement | null = hasData ? <BranchView  {...branch}/> : null;
 
