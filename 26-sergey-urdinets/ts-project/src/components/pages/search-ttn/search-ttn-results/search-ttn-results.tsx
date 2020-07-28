@@ -7,6 +7,7 @@ import {
   Tracking,
   ResultTTN,
   TrackingError,
+  Msg,
 } from '../../../../interfaces/interfaces';
 import { RootState } from '../../../../reducers/index';
 import { validate } from 'class-validator';
@@ -23,6 +24,15 @@ function getUrl(isHistory: boolean, tracking: string): string {
   return url;
 }
 
+function getSearchErrorState(): TrackingError {
+  return {
+    msg: { ua: 'Помилка валідації отриманих данних' } as Msg,
+  } as TrackingError;
+}
+function getState<T>() : T {
+    return {} as T
+  }
+
 function getTtnData(
   ttn: string,
   isHistory: boolean,
@@ -38,9 +48,7 @@ function getTtnData(
         validate(data).then((errors) => {
           if (errors.length > 0) {
             console.log('validation failed. errors: ', errors);
-            setSearchError({
-              msg: { ua: 'Помилка валідації отриманих данних' },
-            } as TrackingError);
+            setSearchError(getSearchErrorState());
             setSearchResult([]);
           } else {
             setSearchResult(data.result);
@@ -51,9 +59,7 @@ function getTtnData(
         validate(data).then((errors) => {
           if (errors.length > 0) {
             console.log('validation failed. errors: ', errors);
-            setSearchError({
-              msg: { ua: 'Помилка валідації отриманих данних' },
-            } as TrackingError);
+            setSearchError(getSearchErrorState());
           } else {
             setSearchError(result);
           }
@@ -66,8 +72,8 @@ function getTtnData(
 export default function SearchTtnResults({ ttn }: Props): ReactElement<Props> {
   const isHistory = useSelector((state: RootState) => state.isShowHistory);
   const [searchResult, setSearchResult] = useState([] as ResultTTN[]);
-  const [searchError, setSearchError] = useState({} as TrackingError);
-  const [error, setError] = useState({} as Error);
+  const [searchError, setSearchError] = useState(getState<TrackingError>());
+  const [error, setError] = useState(getState<Error>());
 
   useEffect(() => {
     getTtnData(ttn, isHistory, setSearchResult, setSearchError, setError);
