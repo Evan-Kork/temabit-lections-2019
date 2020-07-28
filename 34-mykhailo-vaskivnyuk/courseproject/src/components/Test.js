@@ -1,3 +1,69 @@
+const React = require("react");
+
+let a;
+
+class Test {
+    method() {
+        console.log("METHOD CALLED");
+    }
+}
+
+function useState(val) {
+    a.method();
+    if (a.state) return [...a.state];
+
+    if (typeof val === 'function')
+        a.state = [val()];
+    else
+        a.state = [val];
+
+    const _this = a.state;
+
+    function setState(cb) {
+        console.log('set');
+        if (typeof cb === 'function') {
+            _this[0] = cb(_this[0]);
+        }
+        else
+            _this[0] = cb;
+    };
+
+    _this[1] = setState;
+
+    return [...a.state];
+};
+
+//------ Functional Component ----//
+
+const test = () => {
+    const [state, setState] = useState(100);
+    console.log(state);
+    setState(state => state + 100);
+    return React.createElement('div').type;
+};
+
+//--------------------------------//
+
+const component = new Test();
+
+component.render = function() {
+    a = this;
+    result = test();
+    a = null;
+    return result;
+};
+
+let elem;
+elem = component.render();
+elem = component.render();
+elem = component.render();
+console.log(elem);
+
+//--------------------------------//
+
+
+
+/*
 //node src/components/Test
 //const fn = () => this.prop;
 
