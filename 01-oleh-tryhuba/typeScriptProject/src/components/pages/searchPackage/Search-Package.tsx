@@ -1,19 +1,21 @@
 import React, {ChangeEvent, FC, Fragment, useState} from 'react';
 import {validate} from "class-validator";
 import './searchPackage.scss'
-import JustinApiService, {ITracking} from "../../app/services/JustinApiService";
+import JustinApiService from "../../app/services/JustinApiService";
 import Spiner from "../../spiner/Spiner";
 import {Invoice, Tracking} from "../../app/services/classes";
 import {plainToClass} from "class-transformer";
+
+const currentState = () => ({} as Tracking)
+
 
 const SearchPackage: FC = () => {
 
 	const [loading, setLoading] = useState<boolean>(false)
 	const [numberPackage, setNumberPackage] = useState<string>('')
 	const [errorValid, setErrorValid] = useState<string>('')
-	const [packages, setPackages] = useState<ITracking>({} as ITracking)
-
-	// number 409781695
+	const [packages, setPackages] = useState<Tracking>(currentState)
+	// test  ttn 409781695
 
 	const updateService = (num: string): void => {
 		new JustinApiService().getTracking(num)
@@ -67,7 +69,7 @@ const SearchPackage: FC = () => {
 	)
 };
 
-const PackageView: FC<ITracking> = (packages: ITracking) => {
+const PackageView: FC<Tracking> = (packages: Tracking) => {
 
 	let data = plainToClass(Tracking, packages);
 	const {orderNumber, orderDescription, status} = data;

@@ -1,8 +1,9 @@
 import React, {FC, Fragment, ReactElement, useCallback, useEffect, useState} from 'react';
 import './ListOfBranch.scss'
-import JustinApiService, {AllBranches} from "../../app/services/JustinApiService";
+import JustinApiService from "../../app/services/JustinApiService";
 import ErrorIndicator from "../../errorIndicator/ErrorIndicator";
 import Spiner from "../../spiner/Spiner";
+import {AllBranches} from "../../app/services/classes";
 
 const justinApiService = new JustinApiService();
 

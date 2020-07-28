@@ -1,9 +1,10 @@
 import React, {FC, ReactElement, useCallback, useEffect, useState} from 'react';
 import './carusel.scss'
-import JustinApiService, {AllBranches} from '../../app/services/JustinApiService'
+import JustinApiService from '../../app/services/JustinApiService'
 import Spiner from "../../spiner/Spiner";
 import ErrorIndicator from "../../errorIndicator/ErrorIndicator";
 import no from '../../../img/no-img.png'
+import {AllBranches} from "../../app/services/classes";
 
 const currentState = () => ({} as AllBranches)
 const justinApiService = new JustinApiService();

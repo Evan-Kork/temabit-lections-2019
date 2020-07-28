@@ -1,42 +1,4 @@
-//	Масив із публічною інформацією про філіал та навігацією різними мовами
-interface Navigation {
-	navigation_en: string
-	navigation_ru: string
-	navigation_ua: string
-}
-
-export interface AllBranches {
-	number: string //	Номер відділення
-	adress: string //	Адреса відділення
-	locality: string //	Місто
-	type: string //	Тип філіалу
-	format: string //	Тип відділення
-	delivery_branch_id: string //	Ідентифікатор відділення (може бути використано для API JustIn)
-	max_weight: string //	Максимальна вага одного відправлення на відділенні (кг)
-	lat: string //	Широта
-	lng: string //	Довгота
-	description: string //	Опис відділення
-	shedule_description: string //	Опис розкладу роботи
-	photos: Array<string> //	Масив із посиланням на публічні зображення філіалу
-	services: Array<number> //	Масив із відміткою про доступні сервіси на філіалі (1 - доступний, 0 - недоступний). Детальніше в пункті "Інформація про доступні сервіси"
-	public: Navigation
-}
-
-interface resultType {
-	msg: string | null,
-	result: Array<AllBranches>,
-	status: number
-}
-
-export interface ITracking {
-	orderNumber: string //	Номер відправлення
-	orderDescription: string //	Опис відправлення
-	date: string //	Дата
-	time: string //	Час
-	status: string //	Статус відправлення
-	departmentNumber: string //	Відділення (вказано, якщо відправлення знаходиться на відділенні)
-	departmentAdress: string //	Адреса відділення (вказано, якщо відправлення знаходиться на відділенні)
-}
+import {AllBranches, ResultType, Tracking} from "./classes";
 
 export default class JustinApiService {
 
@@ -58,7 +20,7 @@ export default class JustinApiService {
 	};
 
 	//Запит для отримання інформації про відділення в населеному пункті (підтримує багатомовність):
-	getAllBranchLocality = async (city: string): Promise<resultType> => {
+	getAllBranchLocality = async (city: string): Promise<ResultType> => {
 		return await this.getResponce(`/branches/?locality=${city}`);
 	};
 
@@ -69,36 +31,36 @@ export default class JustinApiService {
 	};
 
 	//Метод дозволяє отримати інформацію про типи відділень
-	getTypesInfo = async (): Promise<resultType> => {
+	getTypesInfo = async (): Promise<ResultType> => {
 		return await this.getResponce(`/branch_types`)
 	};
 
 	//Метод дозволяє отримати інформацію про найближчі відділення до вказаної адреси
-	getOneNearestBranch = async (id: number): Promise<resultType> => {
+	getOneNearestBranch = async (id: number): Promise<ResultType> => {
 		return await this.getResponce(`/branches_locator/${id}`);
 	};
 
 	//Метод дозволяє отримати інформацію про відправлення
-	getTracking = async (numOrder: string): Promise<ITracking>  => {
+	getTracking = async (numOrder: string): Promise<Tracking> => {
 		return await this.getResponce(`/tracking/${numOrder}`).then(res => res.result ? res.result[0] : []);
 	};
 
 	//Метод дозволяє отримати історію руху відправлення
-	getTrackingHistory = async (numOrder: number): Promise<resultType> => {
+	getTrackingHistory = async (numOrder: number): Promise<ResultType> => {
 		return await this.getResponce(`/tracking_history/${numOrder}`);
 	};
 
 	//Метод дозволяє отримати інформацію про населені пункти
-	getInfoLocation = async (): Promise<resultType> => {
+	getInfoLocation = async (): Promise<ResultType> => {
 		return await this.getResponce(`/localities`);
 	};
 
 	//Запит на отримання інформації про населені пункти в яких на даний момент працюють відділення
-	getInfoLocationActive = async (): Promise<resultType> => {
+	getInfoLocationActive = async (): Promise<ResultType> => {
 		return await this.getResponce(`/localities/activity`);
 	};
 
-	getServices = async (): Promise<resultType> => {
+	getServices = async (): Promise<ResultType> => {
 		return await this.getResponce(`/services`);
 	};
 
