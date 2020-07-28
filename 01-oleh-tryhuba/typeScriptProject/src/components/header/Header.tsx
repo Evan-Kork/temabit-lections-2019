@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import './header.scss'
 import Logo from '../../img/logo_new.png'
 import Deliver from '../../img/international_btn.png'
@@ -9,12 +9,13 @@ export default function Header() {
 
 	const [showNavMenu, setShowNavMenu] = useState(false)
 
-	const showNav = (e: React.MouseEvent<HTMLDivElement>) => {
+	const showNav = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
 		setShowNavMenu(true);
-	};
-	const closeNav = (e: React.MouseEvent<HTMLButtonElement>) => {
+	}, []);
+
+	const closeNav = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
 		setShowNavMenu(false);
-	};
+	}, []);
 
 	return (
 		<div className="header">
