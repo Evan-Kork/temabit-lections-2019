@@ -25,25 +25,6 @@ export class BaseLocalState<TProps extends {} = {}, TStateData extends {} = {}> 
         this[hiddenName] = method;
         this[methodName] = (...args: any[]) => this[hiddenName](...args);
     }
-
-    // bind(methodName: string, method: Function): void;
-    // bind(methodName: keyof BaseLocalState): BaseLocalState[keyof BaseLocalState] | undefined 
-    // bind(methodName: keyof BaseLocalState | string, method?: Function): BaseLocalState[keyof BaseLocalState] | undefined {
-
-    //     if (!this[methodName] && method) {
-    //         const hiddenName = '_' + methodName;
-    //         this[hiddenName] = method;
-    //         this[methodName] = () => this[hiddenName]();     
-    //     }
-
-    //     if (!this[methodName] || typeof this[methodName] !== 'function')
-    //         return undefined;
-    //     const bindMethod = ('_' + methodName);
-    //     if (!this[bindMethod] || typeof this[bindMethod] !== 'function') {
-    //         this[bindMethod] = (...args: any[]) => (this[methodName] as Function)(...args);
-    //     }
-    //     return this[bindMethod];
-    // }
 }
 
 //-----------------------------------------------------------
@@ -106,39 +87,4 @@ function useLocalState(props: Props) {
     
     return state;
 }
-*/
-
-/*
-type FunctionPropertyNames<T> = {
-    [K in keyof T]: T[K] extends Function ? K : never;
-}[keyof T];
-
-type HandlersNames = FunctionPropertyNames<Handlers>;
-
-type FunctionProperties<T> = Pick<T, FunctionPropertyNames<T>>;
-*/
-
-/*
-interface Props {
-    [key: string]: string;
-}
-
-class CreateProps {
-    [key: string]: any;
-    method: number = 10;
-
-    constructor(props: Props) {
-        this.method = 5;
-        for (const prop in props)
-            this[prop] = props[prop];
-    }
-}
-*/
-
-/*
-interface Handlers {
-    [key: string]: Function;
-}
-
-type HandlersNames = keyof Handlers;
 */

@@ -1,8 +1,8 @@
-import { validate, ValidationError } from "class-validator";
+import { validateSync, ValidationError } from "class-validator";
 import { plainToClass } from "class-transformer";
 import { BranchClass } from '../data/classes';
 
-export async function validateResponse(res: Data.BranchesData<Data.Branch>): Promise<Data.BranchesData> {
+export function validateResponse(res: Data.BranchesData<Data.Branch>): Data.BranchesData {
     const errors: Array<ValidationError[]> = [];
     let { data, error } = res;
     if (error) return { data: null, error };
@@ -10,15 +10,17 @@ export async function validateResponse(res: Data.BranchesData<Data.Branch>): Pro
         excludeExtraneousValues: true,
         enableImplicitConversion: false,
     });
-    for await(const branch of branches) {
-        validate(branch)
-        .then(e => {
-            e.length && errors.push(e);
-        });
+    for (const branch of branches) {
+        const e = validateSync(branch);
+        if(e.length) {
+            errors.push(e);
+            console.log(e);
+            break;
+        }
     }
     if (errors.length) {
         branches = null;
-        error = new Error("Невідповідні дані!");
+        error = new Error("Невідповідні дані:\n" + JSON.stringify(errors[0]));
     }
     return { data: branches, error };
 }

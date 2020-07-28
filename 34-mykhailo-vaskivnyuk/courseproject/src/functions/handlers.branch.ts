@@ -1,5 +1,5 @@
+import { useEffect, useCallback } from "react";
 import { Props, RenderData } from "../components/PageBranch";
-import { useMemo, useEffect } from "react";
 import request from "../functions/request";
 import { validateResponse } from "../functions/validate";
 
@@ -17,15 +17,15 @@ function reqBranches (props: Props): void {
     );
 }
 
-const getHandleBranch = (props: Props) => (branch: string): void =>
-        props.history.push("/branch/" + branch);
+const _handleBranch = (branch: string, history: Props['history']): void =>
+        history.push("/branch/" + branch);
 
 function getRenderData(props: Props): Omit<RenderData, 'handleBranch'> {
     const { branch } = props.match.params;
     let { data, error } = props;
     let branchInfo, photo;
     if (!error && branch && data) {
-        branchInfo = data.find(({ number }) => number === +branch);
+        branchInfo = data.find(({ number }) => number === branch);
         if (branchInfo) {
             photo = branchInfo.photos && branchInfo.photos[0];
         } else {    
@@ -40,7 +40,8 @@ function getRenderData(props: Props): Omit<RenderData, 'handleBranch'> {
 |----------------------------------------------------------*/
 export function useRenderData(props: Props): RenderData {
     useEffect(() => reqBranches(props), []);
-    const handleBranch = useMemo(() => getHandleBranch(props), []);
+    const { history } = props;
+    const handleBranch = useCallback((branch: string) => _handleBranch(branch, history), [history]);
 
     return {
         ...getRenderData(props),

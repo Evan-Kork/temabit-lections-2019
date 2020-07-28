@@ -41,7 +41,7 @@ function TableData(props: Props): ReactElement {
     state.setState = setState;
     state.props = props;
 
-    getDerivedStateFromProps.bind(state)();
+    getDerivedStateFromProps.call(state);
 
     useEffect(() => getBranches(props), []);
     

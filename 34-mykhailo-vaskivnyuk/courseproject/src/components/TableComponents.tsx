@@ -6,6 +6,7 @@ import { useLocalState, BaseLocalState } from "../functions/useLocalState";
 import Pagination from "./Pagination";
 import Comment, { RefComment } from "./Comment";
 import Table from "./Table";
+import { DIRECTION } from "./Pagination";
 
 const PAGINATION = 25;
 
@@ -27,14 +28,14 @@ interface StateData{
 export class LocalState extends BaseLocalState<Props, StateData> {
 
     refComment: RefObject<RefComment>;
-    handlePagination: (direction: string) => void;
+    handlePagination: (direction: DIRECTION) => void;
     handleTable: HandleTable;
 
     constructor(props: Props) {
         super(props);
         this.refComment = createRef(),
         this.bind('handleTable', handleTable);
-        this.handlePagination = (direction: string) => this.handleTable({ direction });
+        this.handlePagination = (direction: DIRECTION) => this.handleTable({ direction });
         this.stateData = {
             page: 1,
             pages: Math.floor(props.data.length / PAGINATION) + 1,

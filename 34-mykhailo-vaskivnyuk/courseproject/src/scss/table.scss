@@ -108,6 +108,8 @@ table {
     max-width: 600px;
     table {
         td {
+            max-width: 600px;
+            overflow: hidden;
             font-weight: 600;
             &:nth-child(1) {
                 width: 600px;

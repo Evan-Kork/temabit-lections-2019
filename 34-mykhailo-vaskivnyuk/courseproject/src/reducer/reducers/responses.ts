@@ -5,14 +5,14 @@ function responses(state: Data.Responses, action: Reducer.ActionResponse): Data.
     if (!state) return {};
 
     switch (action.type) {
-        case "SET_BRANCHES":
+        case ACTION.SET_BRANCHES:
             state = Object.assign(
                 {},
                 state,
                 { branches: action.data },
             );
             break;
-        case "SET_LOCALITIES":
+        case ACTION.SET_LOCALITIES:
             const { data, error } = action.data;
             const localities = plainToClass(Locality, data);
             state = Object.assign(

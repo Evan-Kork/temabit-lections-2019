@@ -1,17 +1,18 @@
 import { Expose, Transform } from "class-transformer";
-import {
-    validate, validateOrReject,
-    Contains, IsInt, Length, IsEmail, IsFQDN, IsDate, Min, Max} from "class-validator";
+import { IsNumberString, Matches } from "class-validator";
 import { getServices } from "../functions/helpers";
 
-const toNumber = (str: string): number => Number(str);
+const toNumber = (value: any): number => parseInt(value);
+const regExp = /^[1-9]\d*$/;
 
 export class Branch {
     @Transform(toNumber)
     @Expose() delivery_branch_id: number;
-    @IsInt()
-    @Transform(toNumber)
+
+    @IsNumberString({ no_symbols: true })
+    @Matches(regExp)
     @Expose() number: number;
+
     @Expose() adress: string;
     @Expose() public: {
         navigation_ua: string,
@@ -20,8 +21,10 @@ export class Branch {
     @Expose() services: Data.Services;
     @Expose() lat: string;
     @Expose() lng: string;
+
     @Transform(toNumber)
     @Expose() max_weight: number;
+
     @Expose() photos: string[];
     @Expose() locality: string;
 }

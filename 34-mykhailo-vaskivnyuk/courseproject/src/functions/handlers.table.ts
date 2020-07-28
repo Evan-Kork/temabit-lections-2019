@@ -1,6 +1,7 @@
 import { LocalState as TableDataState } from "../components/TableData";
 import { LocalState as TableComponentsState } from "../components/TableComponents";
 import { LocalState as TableState } from "../components/Table";
+import { DIRECTION } from "../components/Pagination";
 import { ChangeEvent, EventHandler, MouseEvent } from "react";
 import { CommentData } from "../components/Comment";
 
@@ -19,13 +20,13 @@ export type eHandler = EventHandler<eData>;
 |----------------------------------------------------------*/
 
 export type HandleTable = (
-    action: { comment_data?: CommentData, branchNumber?: string, direction?: string }) => void;
+    action: { comment_data?: CommentData, branchNumber?: string, direction?: DIRECTION }) => void;
 
 export type HandleTablePars = Parameters<HandleTable>;
 
 export function handleTable (
     this: TableComponentsState,
-    action: { comment_data?: CommentData, branchNumber?: string, direction?: string }): void {
+    action: { comment_data?: CommentData, branchNumber?: string, direction?: DIRECTION }): void {
 
     if (action.branchNumber) {
         this.props.history.push("/branch/" + action.branchNumber);
@@ -36,10 +37,10 @@ export function handleTable (
     if (action.direction) {
         const { setStateData, stateData } = this;
         const { page, pages } = stateData;
-        if (action.direction === "next" && page < pages) {
+        if (action.direction === DIRECTION.NEXT && page < pages) {
             setStateData({ ...stateData, page: page + 1 });
         }
-        if (action.direction === "prev" && page > 1) {
+        if (action.direction === DIRECTION.PREV && page > 1) {
             setStateData({ ...stateData, page: page - 1 });
         }
         return;
@@ -77,10 +78,10 @@ export const handleOnClick: eHandler = function(this: TableState, event: eData) 
     this.props.handleTable({ branchNumber: number });
 }
 
-export const handlePagination = (callback: (direction: string) => void): eHandler =>
+export const handlePagination = (callback: (direction: DIRECTION) => void): eHandler =>
     (event: eData): void => {
         const elem = event.target;
-        const direction = elem.dataset && elem.dataset["direction"];
+        const direction: DIRECTION = elem.dataset && +elem.dataset["direction"];
         direction && callback(direction);
 };
 

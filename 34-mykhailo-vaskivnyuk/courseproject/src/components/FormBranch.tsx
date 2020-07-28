@@ -21,7 +21,6 @@ const getOnSubmit = (
         handleBranch(branch);
 };
 
-
 /*----------------------------------------------------------|
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
@@ -32,32 +31,27 @@ function FormBranch(props: Props): ReactElement {
         () => getOnSubmit(branchRef, handleBranch),
     );
 
-    // const onSubmit: FormEventHandler = useCallback(
-    //     (event: FormEvent): void => {
-    //         event.preventDefault();
-    //         const branch = branchRef.current.value;
-    //         const { handleBranch } = props;
-    //         handleBranch(branch);
-    // }, []);
-
-    useEffect(
-        () => { branchRef.current.value = branch || ""; },
-        [branch],
-    );
+    // useEffect(
+    //     () => { branchRef.current.value = branch || ""; },
+    //     [branch],
+    // );
 
     return (
         <div className="row justify-content-center">
             <div className="branch">
-                <form onSubmit={onSubmit}>
+                {/* <form onSubmit={onSubmit}> */}
+                <form>
                     <input
+                        onChange={onSubmit}
+                        value={branch}
                         name="branch"
                         ref={branchRef}
                         className="branch_number"
                         type="number"
                         placeholder="Введіть номер відділення" />
-                    <i
+                    {/* <i
                         className="far fa-caret-square-right"
-                        onClick={onSubmit} />
+                        onClick={onSubmit} /> */}
                 </form>
             </div>
         </div>
