@@ -47,7 +47,17 @@ function getTtnData(
           }
         });
       } else {
-        setSearchError(result);
+        let data = plainToClass(TrackingError, result);
+        validate(data).then((errors) => {
+          if (errors.length > 0) {
+            console.log('validation failed. errors: ', errors);
+            setSearchError({
+              msg: { ua: 'Помилка валідації отриманих данних' },
+            } as TrackingError);
+          } else {
+            setSearchError(result);
+          }
+        });
       }
     })
     .catch((e: Error) => setError(e));
