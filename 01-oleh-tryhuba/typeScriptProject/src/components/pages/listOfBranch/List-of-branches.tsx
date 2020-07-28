@@ -1,8 +1,10 @@
-import React, {FC, Fragment, ReactElement, useEffect, useState} from 'react';
+import React, {FC, Fragment, ReactElement, useCallback, useEffect, useState} from 'react';
 import './ListOfBranch.scss'
 import JustinApiService, {AllBranches} from "../../app/services/JustinApiService";
 import ErrorIndicator from "../../errorIndicator/ErrorIndicator";
 import Spiner from "../../spiner/Spiner";
+
+const justinApiService = new JustinApiService();
 
 const ListOfBranches = () => {
 	const [loading, setLoading] = useState<boolean>(true)
@@ -13,24 +15,23 @@ const ListOfBranches = () => {
 		updateService();
 	}, [])
 
-	const onBranchLoaded = (res: Array<AllBranches>): void => {
+	const onBranchLoaded = useCallback((res: Array<AllBranches>) => {
 		setAllBranch({...res})
 		setLoading(false)
-	};
+	}, []);
 
-	const onError = (): void => {
+	const onError = useCallback(() => {
 		setError(true)
 		setLoading(false)
-	};
+	}, []);
 
-	const updateService = (): void => {
-		new JustinApiService().getAllBranches()
+	const updateService = useCallback(() => {
+		justinApiService.getAllBranches()
 		.then((branch) => onBranchLoaded(branch))
 		.catch(onError)
-	};
+	}, []);
 
-	const branches: Array<object> = Object.entries(allbranch);
-
+	const branches: Array<[string, typeof AllBranchess]> = Object.entries(allbranch);
 	const listItems: Array<ReactElement> = branches.map((value, index) => <AllBranchess key={index} {...value}/>);
 
 	const errorMessage: ReactElement | null = error ? <ErrorIndicator/> : null;
@@ -54,9 +55,7 @@ const ListOfBranches = () => {
 	)
 };
 
-
 const AllBranchess: FC<any> = (props: Array<AllBranches>) => {
-
 	const {services, adress, shedule_description, number} = props[1];
 	const navigation: string | null = props[1].public.navigation_ua;
 	const servicesArray: Array<string> = [];
