@@ -10,6 +10,7 @@ import {
 import { plainToClass } from 'class-transformer';
 import { validate } from 'class-validator';
 import { useDebounce } from 'react-use';
+import { getInitialStateArr } from '../../../../constants'
 
 const debounceTime: number = 500;
 const regex = /[^A-Za-z0-9А-Яа-яІіЇї,.\s]/g;
@@ -65,7 +66,7 @@ function getDepartment(
         }
       })
       .catch((e) => {
-        setTableState([]);
+        setTableState(getInitialStateArr<Department>());
         console.log(e);
       });
   } else if (Number.isInteger(+searchValue)) {
@@ -111,8 +112,8 @@ export default function InfiniteTable({
   data,
   paginationSize = 20,
 }: Props): ReactElement {
-  const [tableState, setTableState] = useState([] as Department[]);
-  const [searchResults, setSearchResults] = useState([] as Department[]);
+  const [tableState, setTableState] = useState(getInitialStateArr<Department>());
+  const [searchResults, setSearchResults] = useState(getInitialStateArr<Department>());
   const value = useSelector((state: RootState) => state.searchDepartment);
   const isChecked = useSelector((state: RootState) => state.isOnlyClosest);
 

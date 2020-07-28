@@ -5,6 +5,7 @@ import { useHistory, RouteComponentProps } from 'react-router-dom';
 import { DepartmentsAll, Department } from '../../../interfaces/interfaces';
 import { plainToClass } from 'class-transformer';
 import { validate } from 'class-validator';
+import { getInitialStateArr } from '../../constants'
 
 function getAllDepartments(
   setFullDepartments: React.Dispatch<React.SetStateAction<Department[]>>
@@ -35,7 +36,7 @@ function getAllDepartments(
       }
     })
     .catch((e) => {
-      setFullDepartments([]);
+      setFullDepartments(getInitialStateArr<Department>());
       console.log(e);
     });
 }
@@ -43,7 +44,7 @@ function getAllDepartments(
 export default function Departments({
   match,
 }: RouteComponentProps<{ type: string }>): ReactElement {
-  const [fullDepartments, setFullDepartments] = useState([] as Department[]);
+  const [fullDepartments, setFullDepartments] = useState(getInitialStateArr<Department>());
   let history = useHistory();
 
   useEffect(() => {

@@ -7,6 +7,7 @@ import {
 import { plainToClass } from 'class-transformer';
 import { validate } from 'class-validator';
 import ErrorPage from '../../../error_page/error_page';
+import { getInitialStateObj, getInitialStateArr } from '../../../constants'
 
 function getData(
   setState: React.Dispatch<React.SetStateAction<DepartmentTypes[]>>,
@@ -41,8 +42,8 @@ function getData(
 }
 
 export default function InfoDepartments(): ReactElement {
-  const [state, setState] = useState([] as DepartmentTypes[]);
-  const [error, setError] = useState({} as Error);
+  const [state, setState] = useState(getInitialStateArr<DepartmentTypes>());
+  const [error, setError] = useState(getInitialStateObj<Error>());
 
   useEffect(() => {
     getData(setState, setError);

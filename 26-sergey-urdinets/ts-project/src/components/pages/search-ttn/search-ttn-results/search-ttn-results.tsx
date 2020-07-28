@@ -12,6 +12,7 @@ import {
 import { RootState } from '../../../../reducers/index';
 import { validate } from 'class-validator';
 import ErrorPage from '../../../error_page/error_page';
+import { getInitialStateObj, getInitialStateArr } from '../../../constants'
 
 interface Props {
   ttn: string;
@@ -29,9 +30,6 @@ function getSearchErrorState(): TrackingError {
     msg: { ua: 'Помилка валідації отриманих данних' } as Msg,
   } as TrackingError;
 }
-function getState<T>() : T {
-    return {} as T
-  }
 
 function getTtnData(
   ttn: string,
@@ -49,7 +47,7 @@ function getTtnData(
           if (errors.length > 0) {
             console.log('validation failed. errors: ', errors);
             setSearchError(getSearchErrorState());
-            setSearchResult([]);
+            setSearchResult(getInitialStateArr<ResultTTN>());
           } else {
             setSearchResult(data.result);
           }
@@ -71,9 +69,9 @@ function getTtnData(
 
 export default function SearchTtnResults({ ttn }: Props): ReactElement<Props> {
   const isHistory = useSelector((state: RootState) => state.isShowHistory);
-  const [searchResult, setSearchResult] = useState([] as ResultTTN[]);
-  const [searchError, setSearchError] = useState(getState<TrackingError>());
-  const [error, setError] = useState(getState<Error>());
+  const [searchResult, setSearchResult] = useState(getInitialStateArr<ResultTTN>());
+  const [searchError, setSearchError] = useState(getInitialStateObj<TrackingError>());
+  const [error, setError] = useState(getInitialStateObj<Error>());
 
   useEffect(() => {
     getTtnData(ttn, isHistory, setSearchResult, setSearchError, setError);
