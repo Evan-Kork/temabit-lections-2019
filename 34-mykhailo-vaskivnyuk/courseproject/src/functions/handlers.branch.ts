@@ -1,4 +1,5 @@
 import { useEffect, useCallback } from "react";
+import { useHistory } from "react-router-dom";
 import { Props, RenderData } from "../components/PageBranch";
 import request from "../functions/request";
 import { validateResponse } from "../functions/validate";
@@ -40,7 +41,8 @@ function getRenderData(props: Props): Omit<RenderData, 'handleBranch'> {
 |----------------------------------------------------------*/
 export function useRenderData(props: Props): RenderData {
     useEffect(() => reqBranches(props), []);
-    const { history } = props;
+    //const { history } = props;
+    const history = useHistory();
     const handleBranch = useCallback((branch: string) => _handleBranch(branch, history), [history]);
 
     return {

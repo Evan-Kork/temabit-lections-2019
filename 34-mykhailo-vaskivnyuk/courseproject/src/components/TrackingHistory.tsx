@@ -38,12 +38,17 @@ function getHistory(data: Data.TrackingHistoryInfo[]): TrackingHistory {
 }
 
 /*----------------------------------------------------------|
+|             FUNCTIONS                                     |
+|----------------------------------------------------------*/
+const initState = (): Data.TrackingHistoryData => ({ data: null, error: null });
+
+/*----------------------------------------------------------|
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
 function TrackingHistory(props: Props): ReactElement {
     const [order, setOrder] = useState("");
     const [tracking_history, setTrackingHistory] =
-        useState({ data: null, error: null }  as Data.TrackingHistoryData);
+        useState(initState);
     const newOrder = props.order;
 
     useEffect(() => {

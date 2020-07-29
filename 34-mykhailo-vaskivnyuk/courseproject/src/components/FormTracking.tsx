@@ -18,10 +18,10 @@ function FormTracking(props: Props): ReactElement {
     const { order, handleTracking } = props;
     const orderRef = useRef(null);
 
-    useEffect(
-        () => { orderRef.current.value = order || ""; },
-        [order],
-    );
+    // useEffect(
+    //     () => { orderRef.current.value = order || ""; },
+    //     [order],
+    // );
     
     const onSubmit: FormEventHandler = useCallback((event: FormEvent): void => {
         event.preventDefault();
@@ -35,14 +35,17 @@ function FormTracking(props: Props): ReactElement {
     return (
         <div className="row justify-content-center">
             <div className="tracking">
-                <form onSubmit={onSubmit}>
+                {/* <form onSubmit={onSubmit}> */}
+                <form>
                     <input name="order"
+                        value={order || ""}
+                        onChange={onSubmit}
                         ref={orderRef}
                         className="order_number"
                         type="number"
                         placeholder="Введіть номер відправлення" />
-                    <i className="far fa-caret-square-right"
-                        onClick={onSubmit} />
+                    {/* <i className="far fa-caret-square-right"
+                        onClick={onSubmit} /> */}
                 </form>
             </div>
         </div>

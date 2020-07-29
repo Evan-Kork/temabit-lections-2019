@@ -36,10 +36,7 @@ function BranchInfo({ branch }: Props): ReactElement {
     
     if (!branch) return null;
     
-    const body = useMemo(
-        () => getBody(branch),
-        [branch],
-    );
+    const body = getBody(branch);
 
     return(
         <div className="row justify-content-center">

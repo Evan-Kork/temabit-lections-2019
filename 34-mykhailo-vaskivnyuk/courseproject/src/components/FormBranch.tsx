@@ -43,7 +43,7 @@ function FormBranch(props: Props): ReactElement {
                 <form>
                     <input
                         onChange={onSubmit}
-                        value={branch}
+                        value={branch || ""}
                         name="branch"
                         ref={branchRef}
                         className="branch_number"

@@ -19,6 +19,15 @@ type EventData = ChangeEvent<HTMLSpanElement> & {
 };
 
 /*----------------------------------------------------------|
+|             FUNCTIONS                                     |
+|----------------------------------------------------------*/
+const setNewsType = (type: Data.NewsTypes, event: EventData): Data.NewsTypes => {
+    const { tagName, dataset } = event.target;
+    if (tagName === "SPAN") return dataset.type;
+    return type;
+};
+
+/*----------------------------------------------------------|
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
 function PageNews(): ReactElement {
@@ -27,11 +36,11 @@ function PageNews(): ReactElement {
 
     const handlerNews: EventHandler<EventData> = useCallback(
         (event: EventData) => {
-            const { tagName, dataset } = event.target;
-            tagName === "SPAN"
-                // && type !== dataset.type
-                && setType(type => type !== dataset.type ? dataset.type : type);
-    }, []);
+            event.persist();
+            setType((type: Data.NewsTypes) => setNewsType(type, event));
+        },
+        [],
+    );
 
     const divs = news
         .filter(item => type === "all" || item.type === type)
