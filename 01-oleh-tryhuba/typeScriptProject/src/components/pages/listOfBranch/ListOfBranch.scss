@@ -1,0 +1,86 @@
+
+.tabs-holder {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  border-top-left-radius: .85954vw;
+  border-top-right-radius: .85954vw;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 10px 5px;
+}
+
+.department-item {
+  position: relative;
+  display: flex;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid;
+  height: 100%;
+}
+
+.number {
+  width: 5%;
+  padding: 10px 5px;
+  border: 1px solid;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.address {
+  width: 30%;
+  padding: 10px 5px;
+  border: 1px solid;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation {
+  width: 30%;
+  padding: 10px 5px;
+  border: 1px solid;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services {
+  padding: 10px 5px;
+  border: 1px solid;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  flex-direction: column;
+}
+
+.schedule {
+  padding: 10px 5px;
+  border: 1px solid;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  flex-direction: column;
+}
+
+.main {
+  justify-content: flex-start;
+}
+
+.ldio-2zfm77nua0x div > div {
+  background: white;
+}

@@ -1,0 +1,49 @@
+.about-us-banner {
+  padding: 0 1.71908vw;
+  margin-bottom: 2.3442vw;
+}
+
+.about-us-banner-wrapper {
+  position: relative;
+  z-index: 1;
+  padding: 2vw 5vw 8vw 3vw;
+  background-color: #104eff;
+  border-radius: .85954vw;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+}
+
+.banner-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  margin-top: 4.92282vw;
+}
+
+.banner-container > div {
+  width: 50%;
+  flex-shrink: 0;
+}
+
+.left-banner-container {
+  padding-right: 8.75168vw;
+}
+
+.banner-container h1 {
+  font-size: 3.1256vw;
+  line-height: 118.79%;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.banner-container > div {
+  width: 50%;
+  flex-shrink: 0;
+}
+
+.banner-container p {
+  font-size: 1.40652vw;
+  line-height: 118.79%;
+  color: #fff;
+  margin-bottom: 2.18792vw;
+}
