@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<form 
+		action="https://www.google.com/search"
+		method="get" 
+		target="_blank"
+		>
+		<fieldset>
+			<div>
+				<img 
+					src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
+					alt="Image"
+					title="Google icon" 
+ 				/>
+				<div class="search-group">
+					<input 
+						type="search" 
+						name="q"
+					/>
+					<button class="submit-search">Пошук</button>
+				</div>
+			</div>
+			<div>
+				<input 
+					type="radio" 
+					name="tbm"
+					id="all" 
+					value="" 
+				/> 
+				<label for="all">Усi</label>
+				<input 
+					type="radio" 
+					name="tbm"
+					id="picture" 
+					value="isch" 
+				/>
+				<label for="picture">Зображення</label>
+				<input 
+					type="radio" 
+					name="tbm"
+					id="video" 
+					value="vid" 
+				/>
+				<label for="video">Вiдео</label>	
+				<input 
+					type="radio" 
+					name="tbm"
+					id="news" 
+					value="nws" 
+				/>
+				<label for="news">Новини</label>
+				<input 
+					type="radio" 
+					name="tbm"
+					id="books" 
+					value="bks" 
+				/>
+				<label for="books">Книги</label>
+				<input 
+					type="radio" 
+					name="tbm"
+					id="flights" 
+					value="flm" 
+				/>
+				<label for="flights">Авiарейси</label>
+				<input 
+					type="radio" 
+					name="tbm"
+					id="shopping" 
+					value="shop" 
+				/>
+				<label for="shopping">Покупки</label>
+				<input 
+					type="radio" 
+					name="tbm"
+					id="finance" 
+					value="fin" 
+				/>
+				<label for="finance">Фiнанси</label>
+			</div>
+		</fieldset>
+	</form>
+	<div class="form-questionary">
+		<h2>Анкета для роботи в "Сiльпо"</h2>
+		<form 
+			action="#"
+			method="post" 
+		>
+			<fieldset>
+				<legend><h4>Основна iнформацiя</h4></legend>
+				<div class="form-group">
+					<input 
+						id="name" 
+						type="text" 
+						name="name"
+						placeholder="Iм'я" 
+						required 
+					/>
+					<input 
+						id="surname" 
+						type="text" 
+						name="surname"
+						placeholder="Прiзвище" 
+						required 
+					/>
+				</div>
+				<div class="form-group">
+					<input 
+						id="birthday" 
+						type="date" 
+						name="birthday"
+						required
+					/>
+					<input 
+						id="city" 
+						type="text" 
+						name="city"
+						placeholder="Населений пункт" 
+						required 
+					/>
+				</div>
+				<div class="form-group">
+					<input 
+						id="email" 
+						type="email" 
+						name="email"
+						placeholder="Електронна адреса" 
+						required
+					/>
+					<input 
+						id="phone" 
+						type="tel" 
+						name="phone"
+						placeholder="Телефон (формат 000-000-0000)" 
+						pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+						required
+					/>
+				</div>
+				<div class="form-group">
+					<label><h5>Резюме</h5></label><br>
+					<input 
+						id="file" 
+						type="file" 
+						name="file"
+					/>
+				</div>
+				<div class="form-group">
+					<input 
+						id="resume" 
+						type="URL" 
+						name="resume"
+						placeholder="або додайте сюди посилання на резюме"
+					/>
+				</div>
+				<div class="form-group">
+					<h4>Вкажіть більше інформації, щоб отримати справді цікаву вакансію</h4>
+				</div>
+				<div class="form-group">
+					<input 
+						id="wishful city" 
+						type="text" 
+						name="wishful city"
+						placeholder="Оберiть бажаний населений пункт" 
+					/>
+					<input 
+						id="wishful position" 
+						type="text" 
+						name="wishful position"
+						placeholder="Оберiть бажану посаду" 
+					/>
+				</div>
+				<div class="form-group">
+					<input 
+						id="comfortable work place" 
+						type="text" 
+						name="comfortable work place"
+						placeholder="Оберiть зручний супермаркет" 
+					/>
+				</div>
+				<div class="form-group">
+					<input 
+						id="not full day" 
+						type="checkbox" 
+						name="not full day"
+					/>
+					<label for="not-full-day">Хочу працювати неповний робочий день</label>
+				</div>
+				<div class="form-group">
+					<label class="label-spacer"></label>
+					<button class="submit-questionary">Вiдправити</button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
