@@ -6,3 +6,11 @@ export enum DELIVERY_STATUS {
   ON_THE_DEPARTMENT = 'На відділенні в місті одержання',
   COMPLETED = 'Одержано',
 }
+
+export const getInitialStateObj = <T>(): T => {
+  return {} as T;
+}
+
+export const getInitialStateArr = <T>(): T[] => {
+  return [];
+}

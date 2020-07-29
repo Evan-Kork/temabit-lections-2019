@@ -4,6 +4,7 @@ import { ServicesResponse, Bank } from '../../../../interfaces/interfaces';
 import { plainToClass } from 'class-transformer';
 import { validate } from 'class-validator';
 import ErrorPage from '../../../error_page/error_page';
+import { getInitialStateObj, getInitialStateArr } from '../../../constants'
 
 function getData(
   setState: React.Dispatch<React.SetStateAction<Bank[]>>,
@@ -34,8 +35,8 @@ function getData(
 }
 
 export default function InfoServices(): ReactElement {
-  const [state, setState] = useState([] as Bank[]);
-  const [error, setError] = useState({} as Error);
+  const [state, setState] = useState(getInitialStateArr<Bank>());
+  const [error, setError] = useState(getInitialStateObj<Error>());
 
   useEffect(() => {
     getData(setState, setError);
