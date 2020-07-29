@@ -9,7 +9,7 @@ interface Prop {
   items: Array <ItemMenu[]>
 }
 
-function Drawer({ items }:Prop) {
+const Drawer:React.FC<Prop> = ({ items }) => {
   const dispatch = useDispatch()
 
   function closeDrawer() {

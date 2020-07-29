@@ -4,7 +4,7 @@ import '../../../../../scss/pages/tracking-ttn/elements/status-card.scss'
 
 interface CardProp {
   date: string;
-  departmentNumber: number;
+  departmentNumber: string;
   departmentAdress: string;
   id: string;
   alt: string;
@@ -12,7 +12,7 @@ interface CardProp {
   titleState: string;
   text: string;
 }
-const StatusCard = ({date, departmentNumber, departmentAdress, id,alt, imgState, titleState, text}:CardProp) => {
+const StatusCard:React.FC<CardProp> = ({date, departmentNumber, departmentAdress, id,alt, imgState, titleState, text}) => {
   
   const dataParse = (dat:string) => {
     const date = new Date(Date.parse(dat));

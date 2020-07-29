@@ -8,7 +8,7 @@ import * as menuItems from '../../data/menu-items.json';
 import TitlePages from '../title-pages/title-pages';
 import '../../../scss/pages/tracking-ttn/tracking-ttn.scss';
 
-const TrackingTtn = () => (
+const TrackingTtn:React.FC = () => (
   <div className="ttn-page d-flex flex-column flex-grow-1">
     <Header />
     <Drawer items={menuItems} />

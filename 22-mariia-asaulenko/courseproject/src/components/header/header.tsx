@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faPhone } from '@fortawesome/free-solid-svg-icons'
 import '../../scss/header.scss';
 
-const Header = () => {
+const Header:React.FC = () => {
   const dispatch = useDispatch();
   function openDrawer() {
     dispatch({ type: 'OPEN_DRAWER' });

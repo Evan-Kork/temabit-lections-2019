@@ -1,11 +1,7 @@
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 
-export interface ChildrenProps {
-    children: React.ReactNode
-}
-
 export interface State {
-    isDrawerOpened: boolean
+    isDrawerOpened: boolean,
 }
 
 export interface ItemMenu {
@@ -26,5 +22,6 @@ export interface CardProp {
 }
 
 export interface ResultData {
-    result:Object[]
+    result:Object[],
+    status?:number
   }

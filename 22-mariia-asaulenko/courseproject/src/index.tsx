@@ -7,8 +7,9 @@ import rootReducer from './reducer';
 import "reflect-metadata";
 import "es6-shim";
 
-const store = createStore(rootReducer, {isDrawerOpened: false});
+const store = createStore(rootReducer, { isDrawerOpened: false});
 ReactDOM.render(
 	<Provider store={store}>
 		<App />
-	</Provider>, document.getElementById('root'));
+	</Provider>, document.getElementById('root')
+);

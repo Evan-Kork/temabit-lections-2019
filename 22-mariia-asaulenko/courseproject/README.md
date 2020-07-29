@@ -1,6 +1,5 @@
-To install dependency run: 
-ul - npm install
-ul - npm install  (in folder server)
+To install dependency run (onli in the courseproject folder): 
+ul - npm run installAll
 
 To run prodject use: 
-ul - npm run dev
+ul - npm run dev 

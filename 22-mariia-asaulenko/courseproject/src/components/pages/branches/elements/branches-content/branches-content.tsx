@@ -3,7 +3,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../../../../../scss/pages/branches/elements/branches-content/branches-content.scss'
 
-const BranchesContent = () => (
+const BranchesContent:React.FC = () => (
   <Container className="branches-content">
     <Row className="text-center">
       <Col className="d-none d-md-flex"></Col>

@@ -8,7 +8,7 @@ import ImgCard from './elements/img-card/img-card'
 import Footer from '../../footer/footer';
 import * as menuItems from '../../data/menu-items.json';
 
-const Home = () =>
+const Home:React.FC = () =>
   (
     <>
       <Header />

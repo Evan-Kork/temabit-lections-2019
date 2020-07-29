@@ -1,26 +1,32 @@
-import {Exclude, Expose, Type} from "class-transformer";
-import "reflect-metadata";
-import "es6-shim";
-
+import { Exclude, Expose, Type } from 'class-transformer';
+import { IsString, IsNumberString, ValidateNested} from 'class-validator';
 
 @Exclude()
 export class GeoLocMarket {
   @Expose()
+  @IsNumberString()
   number: number;
   @Expose()
-  lat: number;
+  @IsString()
+  lat: string;
   @Expose()
-  lng: number;
+  @IsString()
+  lng: string;
   @Expose()
+  @IsString()
   format?: string;
   @Expose()
+  @IsString()
   description?: string;
   @Expose()
+  @IsString()
   adress?: string;
   @Expose()
+  @IsString()
   shedule_description?: string;
   
   @Expose ()
+  @ValidateNested()
   @Type(() => Navigation)
   public: Navigation;
 
@@ -31,5 +37,12 @@ export class GeoLocMarket {
 @Exclude()
 class Navigation {
   @Expose ()
+  @IsString()
   navigation_ua?: string;
 };
+
+export class geoLocation {
+  @ValidateNested()
+  @Type(()=>GeoLocMarket)
+  result: GeoLocMarket[];
+}

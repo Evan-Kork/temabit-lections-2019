@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { CardProp, Icon } from "../../../../../../../interface";
 
 const icons: Icon = { faMapMarkerAlt, faCalculator };
-const CardItem = ({ image, title, path, buttonName }:CardProp) => (
+const CardItem:React.FC<CardProp> = ({ image, title, path, buttonName }) => (
   <Card  className="card-item align-items-center col-5">
     <FontAwesomeIcon icon={icons[image]} />
     <Card.Body>

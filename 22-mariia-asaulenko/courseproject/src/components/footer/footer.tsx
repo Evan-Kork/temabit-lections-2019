@@ -9,7 +9,7 @@ interface ItemsProps {
   items: Array<ItemMenu[]>
 }
 
-const Footer = ({ items }: ItemsProps) => (
+const Footer: React.FC<ItemsProps> = ({ items }) => (
   <footer>
     <Container>
       <Row>

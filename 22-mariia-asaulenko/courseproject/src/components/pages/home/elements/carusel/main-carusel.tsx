@@ -8,7 +8,7 @@ type imge = {
   alt?:string
 }
 
-const MainCarousel = () => (
+const MainCarousel:React.FC = () => (
   <Carousel className="carusel" indicators={false}>
     {
       imges.map(({ src, alt }:imge) => (

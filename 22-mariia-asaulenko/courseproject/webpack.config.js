@@ -83,16 +83,11 @@ module.exports = {
       }
     ]
   },
-
   devServer: {
     contentBase: resolve(__dirname, "dist"),
     hot: true,
     port: 9001,
   },
-  // externals: {
-    // "react": "React",
-    // "react-dom": "ReactDOM"
-  // },
   resolve: {
     extensions: [".jsx", ".js", ".json", ".ts", ".tsx"]
 },

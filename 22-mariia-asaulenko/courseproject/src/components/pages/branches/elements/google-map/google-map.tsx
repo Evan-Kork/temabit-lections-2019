@@ -3,16 +3,16 @@ import GoogleMapReact from 'google-map-react';
 import { Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import {plainToClass } from "class-transformer";
-import {GeoLocMarket} from './class-google-trans'
+import { plainToClass } from "class-transformer";
+import { GeoLocMarket, geoLocation } from './class-google-map'
+import { validate } from 'class-validator';
+import {ResultData} from '../../../../../../interface'
 import '../../../../../scss/pages/branches/elements/google-map/google-map.scss';
 
 interface Markers {
   text: string,
-  lat: number,
-  lng: number
-}
-interface GeoLoc extends GeoLocMarket{
+  lat: string,
+  lng: string
 }
 interface Prop {
   center: {
@@ -21,21 +21,25 @@ interface Prop {
   },
   zoom: number
 };
-interface ResultData {
-  result:Object[]
-}
 
-const Marker = ({ text }: Markers) => <FontAwesomeIcon className="geotag" title={text} icon={faMapMarkerAlt} />;
-
+const Marker: React.FC<Markers> = ({ text }) => <FontAwesomeIcon className="geotag" title={text} icon={faMapMarkerAlt} />;
 
 const MyGoogleMap = (props: Prop) => {
-  const [data, setData]: [Array<GeoLoc>, Function] = React.useState([])
+  const [data, setData]: [Array<GeoLocMarket>, Function] = React.useState([])
   React.useEffect(() => {
     fetch('http://localhost:9000/branches').
-      then((res) => res.json() as Object).
-      then(({result}: ResultData) => {
-        const geoTag = plainToClass(GeoLocMarket, result)
-        setData(geoTag)
+      then((res) => res.json()).
+      then((result: ResultData) => {
+        if (result.status) {
+          const geoTag = plainToClass(geoLocation, result)
+          validate(geoTag).then(res => {
+            if (res.length > 0) {
+              console.log('Error!!!! Poop data! Look=>', res)
+            } else {
+              setData(geoTag.result)
+            }
+          })
+        }
       })
   }, [])
 

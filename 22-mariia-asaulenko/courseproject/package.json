@@ -5,6 +5,7 @@
   "scripts": {
     "build": "rm -rf dist && NODE_ENV=production webpack",
     "dev": "NODE_ENV=development node server/index.js & webpack-dev-server",
+    "installAll": "npm i & (cd server && npm i)",
     "proxy": "node server/index.js"
   },
   "devDependencies": {

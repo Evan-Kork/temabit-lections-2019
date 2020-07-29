@@ -3,32 +3,42 @@ import { Container, Row, Col, Table } from 'react-bootstrap';
 import '../../../../../scss/pages/branches-list/branches-list-content.scss'
 import { Link } from 'react-router-dom';
 import { plainToClass } from "class-transformer";
-import {ResultData} from '../../../../../../interface'
-import  {dataBranch} from './class-trans-branch'
+import { ResultData } from '../../../../../../interface'
+import { dataBranch, dataArr } from './class-branch'
+import { validate } from 'class-validator'
 import "reflect-metadata";
 import "es6-shim";
 
-interface Data extends dataBranch {}
-
-const BranchesListContent = () => {
-  const [data, setData] : [Array<Data>, Function] = React.useState([]);
-  const [pagination, setPagination] = React.useState({ begin: 0, end: 19 });
+interface Prop {
+  itemsOnPage?: number;
+}
+const BranchesListContent: React.FC<Prop> = ({ itemsOnPage = 20 }) => {
+  const [data, setData]: [Array<dataBranch>, Function] = React.useState([]);
+  const [pagination, setPagination] = React.useState({ begin: 0, end: itemsOnPage });
   React.useEffect(() => {
     fetch('http://localhost:9000/branches').
       then((res) => res.json()).
-      then(({ result }:ResultData) => {
-        const branchesInfo = plainToClass (dataBranch, result);
-        setData(branchesInfo)
+      then((result: ResultData) => {
+        if (result.status) {
+          const branchesInfo = plainToClass(dataArr, result);
+          validate(branchesInfo).then(res => {
+            if (res.length > 0) {
+              console.log('Error!!!! Poop data!Look=>', res)
+            } else {
+              setData(branchesInfo.result)
+            }
+          })
+        }
       })
   }, [])
 
   const paginationNext = () => {
     window.scrollTo(0, 0);
-    setPagination({ begin: pagination.end + 1, end: pagination.end + 20 });
+    setPagination({ begin: pagination.end, end: pagination.end + itemsOnPage });
   }
   const paginationPrev = () => {
     window.scrollTo(0, 0);
-    setPagination({ begin: pagination.begin - 20, end: pagination.end - 20 });
+    setPagination({ begin: pagination.begin - itemsOnPage, end: pagination.end - itemsOnPage });
   }
 
   return (
@@ -53,7 +63,7 @@ const BranchesListContent = () => {
           <tbody>
             {
               data.slice(pagination.begin, pagination.end).
-                map(({ number, shedule_description, services,  getAdress, getServices,  getNavigation }) => {
+                map(({ number, shedule_description, services, getAdress, getServices, getNavigation }) => {
                   const shouldDisplay = Object.values(services).includes(1);
                   return (
                     <tr key={number}>

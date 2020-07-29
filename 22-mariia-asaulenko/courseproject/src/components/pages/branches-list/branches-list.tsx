@@ -7,7 +7,7 @@ import BranchesListContent from './elements/branches-list-content/branches-list-
 import * as menuItems from '../../data/menu-items.json';
 import TitlePages from '../title-pages/title-pages';
 
-const BranchesList = () => (
+const BranchesList:React.FC = () => (
   <div className="d-flex flex-column flex-grow-1">
     <Header />
     <Drawer items={menuItems} />

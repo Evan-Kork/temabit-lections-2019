@@ -10,7 +10,7 @@ interface DicableCardProp {
   text?: string;
 }
 
-const DisabledCard = ({ id, alt, imgState }:DicableCardProp) => (
+const DisabledCard:React.FC<DicableCardProp> = ({ id, alt, imgState }) => (
   <Col className="item-status col-12 col-sm-6 col-md-3 d-flex flex-column align-items-center disable" key={id}>
     <div className="img-container">
       <img alt={alt} src={imgState} />

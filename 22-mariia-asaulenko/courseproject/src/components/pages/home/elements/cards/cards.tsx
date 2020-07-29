@@ -4,7 +4,7 @@ import * as cards from '../../../../data/card-info.json';
 import CardItem from './card-item/card-item';
 import { CardProp } from "../../../../../../interface";
 
-const Cards = () => (
+const Cards:React.FC = () => (
   <div className="cards-row d-flex flex-row justify-content-around w-100">
     {
       cards.map((item:CardProp, index:number) => (
