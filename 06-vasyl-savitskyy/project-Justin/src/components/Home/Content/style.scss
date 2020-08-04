@@ -1,0 +1,37 @@
+#root {
+    .home {
+        .home_content {
+            background-repeat: no-repeat;
+            background-color: #f4f9ff !important;
+            background-size: cover;
+            background-image: url("../../../img/fon_new_28_02_2019.jpg");
+
+            .nav_row {
+                @media screen and (min-width: 768px) {
+                    margin-top: -50px;
+                }
+                
+                .btn-justin {
+                    color: #164ce2;
+                    background-color: #6afffd;
+    
+                    &:hover {
+                        background-color: #d5e6fa;
+                    }
+                }
+            }
+        
+            .carousel {
+                .slider_button {
+                    width: 17px;
+                    height: 14px;
+                    background-color: rgba(255,255,255,.5);
+                    
+                    &.active {
+                        background-color: rgb(255,255,255);
+                    }
+                }
+            }
+        }
+    }
+}

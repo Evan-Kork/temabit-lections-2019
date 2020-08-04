@@ -1,0 +1,14 @@
+#root {
+    .branches_locator {
+        .btn-justin {
+            color: #164ce2;
+            background-color: #4effff;
+            border-color: #4effff;
+
+            &:hover {
+                background-color: #17a2b8;
+                border-color: #17a2b8;
+            }
+        }
+    }
+}

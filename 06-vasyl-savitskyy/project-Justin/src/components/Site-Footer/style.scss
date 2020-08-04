@@ -1,0 +1,43 @@
+#root {
+    .site_footer {
+        background-color: #164ce2;
+        padding: 20px 0 10px;
+        color: #fff;
+        font-size: 16px;
+
+        .polityka_konfidentsijnosti {
+            font-size: 16px;
+        }
+
+        .footer_aside {
+            @media screen and (min-width: 768px) {
+                display: flex;
+                justify-content: center;
+            }
+
+            &_item {
+                @media screen and (min-width: 768px) {
+                    width: max-content;
+                }
+            }
+
+            &__borders {
+                border-left: 1px solid #d6e7fb;
+                border-right: 1px solid #d6e7fb;
+
+                @media screen and (max-width: 768px) {
+                    border-left: none;
+                    border-right: none;
+                }
+            }
+        }
+
+        .social_icons {
+            text-align: center;
+
+            i {
+                font-size: 25px;
+            }
+        }
+    }
+}
