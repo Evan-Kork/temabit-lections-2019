@@ -3,26 +3,27 @@ import { ReactiveStorage } from './reactive/reactive.storage';
 import { Timer } from './reactive/ticker';
 import { TrackedProperty } from './reactive/tracked.property';
 
-// class x extends Object {
+class x extends Object {
 
-//     method() {
-//         return 100;
-//     }
+    method() {
+        return 100;
+    }
 
-//     constructor() {
-//         super();
-//     }
-// }
+    constructor() {
+        super();
+    }
+}
 
-// const y = new x();
+const y = new x();
 
-// console.log(x.prototype);
-// console.log(Object.getPrototypeOf(y) === x.prototype);
-// console.log(Object.getPrototypeOf(y) === Object.prototype);
-// console.log(y);
+console.log(x.prototype);
+console.log(Object.getPrototypeOf(y) === x.prototype);
+console.log(Object.getPrototypeOf(y) === Object.prototype);
+console.log(y);
 
 export type ServiceProps = 'firstName' | 'lastName' | 'email';
-export class TestService {
+
+export class TestService extends Object {
 
   @TrackedProperty({
     initial(): string {
@@ -46,7 +47,7 @@ export class TestService {
   public email: string;
 
   public constructor() {
-    //super();
+    super();
   }
 }
 
@@ -59,7 +60,7 @@ export const instance = new TestService();
 
 console.log(TestService.prototype === Object.getPrototypeOf(instance));
 console.log('AFTER INSTANCE CREATE');
-console.log({ ...Reflect.getMetadata(META_KEY, Object.getPrototypeOf(instance)).properties });
+console.log({ ...Reflect.getMetadata(META_KEY, instance).properties });
 
 const storage = ReactiveStorage.persist(instance);
 console.log(storage.properties);

@@ -10,6 +10,7 @@ function ReactiveView(): React.ReactElement {
     )
     
     const { firstName, lastName, email } = state;
+    
     return (
         <div className="container">
                 <div className="row">
