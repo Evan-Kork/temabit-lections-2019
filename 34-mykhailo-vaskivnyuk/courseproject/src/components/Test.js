@@ -1,3 +1,30 @@
+//"use strict";
+
+console.log(x);
+const f  = () => this;
+console.log(this);
+
+//-----------------------------------------
+function b(_this) {
+    const obj = Object.create(_this);
+    obj.f = this;
+    return () => obj.f();
+}
+
+function fn() {
+    return this.name;
+}
+fn.b = b;
+
+const obj = {
+    name: 'test',
+};
+fn = fn.b(obj);
+
+
+console.log(fn());
+
+/*
 const React = require("react");
 
 let a;

@@ -8,6 +8,9 @@ import PageBranchesInCity from "./PageBranchesInCity";
 import PageTracking from "./PageTracking";
 import PageNews from "./PageNews";
 
+import ReactiveForm from "./ReactiveForm";
+import ReactiveView from "./ReactiveView";
+
 /*----------------------------------------------------------|
 |             COMPONENT                                     |
 |----------------------------------------------------------*/
@@ -15,7 +18,9 @@ function Content(): ReactElement {
     return (
         <div className="main wrapper">
             <main className="container">
-                <Switch>
+                <ReactiveForm />
+                <ReactiveView />
+                {/* <Switch>
                     <Route	path="/branches/locality"
                             component={PageBranchesInCity} />
                     <Route	path="/branches"
@@ -28,7 +33,7 @@ function Content(): ReactElement {
                             component={PageNews} />
                     <Route	path="/"
                             component={PageHome} />
-                </Switch>
+                </Switch> */}
             </main>
         </div>
     );
