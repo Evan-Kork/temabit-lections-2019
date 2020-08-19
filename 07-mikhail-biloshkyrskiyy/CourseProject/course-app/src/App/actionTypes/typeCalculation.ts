@@ -1,0 +1,18 @@
+import { iCalculationWeight, iCalculationLength } from '@/interfaces/iCalculation'
+
+export const ACTION_CALCULATION_LENGTH_START   = 'ACTION_CALCULATION_LENGTH_START'
+export const ACTION_CALCULATION_LENGTH_SUCCESS = 'ACTION_CALCULATION_LENGTH_SUCCESS'
+export const ACTION_CALCULATION_LENGTH_FAILURE = 'ACTION_CALCULATION_LENGTH_FAILURE'
+export const ACTION_CALCULATION_WEIGHT_START   = 'ACTION_CALCULATION_WEIGHT_START'
+export const ACTION_CALCULATION_WEIGHT_SUCCESS = 'ACTION_CALCULATION_WEIGHT_SUCCESS'
+export const ACTION_CALCULATION_WEIGHT_FAILURE = 'ACTION_CALCULATION_WEIGHT_FAILURE'
+
+export interface iCalculationLengthAction {
+    type: typeof ACTION_CALCULATION_LENGTH_SUCCESS
+    payload: iCalculationLength[]
+}
+
+export interface iCalculationWeigthAction {
+    type: typeof ACTION_CALCULATION_WEIGHT_SUCCESS
+    payload: iCalculationWeight[]
+}

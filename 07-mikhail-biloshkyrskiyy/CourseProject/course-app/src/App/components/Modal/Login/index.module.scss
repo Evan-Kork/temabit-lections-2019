@@ -1,0 +1,32 @@
+.title {
+    color: #3f51b5;
+    text-shadow: 1px 1px 2px white;
+
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.forgotPassword {
+    color: #3f51b5;
+    text-align: right;
+
+    display: block;
+
+    &:hover {
+        text-decoration:none;
+        color: #007bff;
+    }
+}
+
+.img {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.alert {
+    margin-bottom: .2rem;
+    animation: opacity .4s ease-in-out;
+}

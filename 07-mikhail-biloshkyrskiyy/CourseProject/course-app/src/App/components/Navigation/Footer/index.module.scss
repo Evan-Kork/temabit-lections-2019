@@ -1,0 +1,136 @@
+.footer {
+    background-color: #3f51b5;
+
+    & li {
+        color: white;
+    }
+}
+
+.logotype {
+    & img {
+        max-width: 140px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.shortInfo {
+    color: white;
+    font-size: .9rem;
+    text-align: justify;
+}
+
+.contackInfo {
+    color: white;
+    font-size: .9rem;
+    text-align: justify;
+
+    .items {
+        display: inline;
+        margin-left: 1rem;
+
+        font-weight: 500;
+        font-size: .9rem;
+    }
+}
+
+.contackInfoSM {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.socialNetworks {
+    & i {
+        color: white;
+        font-size: 1.1rem;
+
+        margin: 0 .5rem;
+
+        padding: .4rem;
+        border-radius: 5px;
+        border: 1px solid white;
+
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            color: #A0ACEB;
+            border: 1px solid #A0ACEB;
+        }
+    }
+}
+
+.socialNetworkSM {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+
+    margin-left: .3rem;
+}
+
+.navLink {
+    color: white;
+    display: block;
+
+    font-weight: 500;
+    font-size: 13px;
+    margin: .2rem 0;
+
+    position: relative;
+
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        color: #A0ACEB;
+    }
+}
+
+.inputEmail {
+    width: 100%;
+
+    & label {
+        color: #A0ACEB;
+    }
+
+    & input {
+        color: white!important;
+        background-color: #5767c2;
+    }
+}
+
+.inputTextArea {
+    width: 100%;
+
+    & label {
+        color: #A0ACEB;
+    }
+
+    & textarea {
+        color: white!important;
+        background-color: #5767c2;
+    }
+
+    & div {
+        background-color: #5767c2!important;
+    }
+}
+
+.codingPoets {
+    border-top: 1px solid #a0aceb;
+    background-color: #303f93;
+
+    .text {
+        color: #90aceb;
+        text-align: center;
+        font-size: .9rem;
+        font-weight: 500;
+        font-style: italic;
+
+        padding: .2rem 0;
+    }
+}

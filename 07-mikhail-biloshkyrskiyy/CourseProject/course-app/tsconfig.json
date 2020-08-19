@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+
+        "target": "es5",
+        "module": "commonjs",
+
+        "jsx": "react",
+        "strict": true,
+        "allowJs": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true,
+        "experimentalDecorators": true,
+
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": false,
+        "forceConsistentCasingInFileNames": true,
+
+        "baseUrl": "./src",
+        "paths": {
+            "@/*": ["App/*"],
+            "~bootstrap/*": ["../node_modules/bootstrap/*"]
+        },
+
+        "plugins": [{
+            "name": "typescript-plugin-css-modules"
+        }]
+    }
+}

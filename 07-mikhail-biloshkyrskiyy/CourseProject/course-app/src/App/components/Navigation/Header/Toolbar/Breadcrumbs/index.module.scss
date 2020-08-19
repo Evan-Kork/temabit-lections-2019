@@ -1,0 +1,16 @@
+.breadcrumbs {
+    li {
+        color: white;
+    }
+}
+
+.breadcrumbs_link {
+    color: white;
+    font-size: .9rem;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        text-decoration: none;
+        color: #A0ACEB;
+    }
+}

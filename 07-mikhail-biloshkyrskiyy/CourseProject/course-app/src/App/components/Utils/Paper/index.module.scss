@@ -1,0 +1,32 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+.root {
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 1rem;
+
+    img {
+        display: block;
+        margin: 0 auto;
+
+        max-height: 150px;
+    }
+}
+
+.title {
+    color: #667b84;
+    font-size: 2rem;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+.supTitle {
+    color: #667b84;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    text-align: center;
+}

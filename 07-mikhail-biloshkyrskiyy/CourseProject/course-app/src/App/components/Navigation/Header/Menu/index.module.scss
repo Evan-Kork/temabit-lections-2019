@@ -1,0 +1,26 @@
+.listItem {
+    position: relative;
+
+    i {
+        top: 50%;
+        left: 12px;
+        position: absolute;
+
+        transform: translateY(-50%);
+    }
+
+    a {
+        color: #324192;
+
+        transition: color .3s ease-in-out;
+
+        &:hover {
+            color: 4856a8;
+            text-decoration: none;
+        }
+    }
+
+    div {
+        margin-left: 24px;
+    }
+}
