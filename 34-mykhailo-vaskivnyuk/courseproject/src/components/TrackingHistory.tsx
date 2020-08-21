@@ -1,0 +1,84 @@
+import React, { ReactElement, useState, useEffect } from "react";
+import request from "../functions/request";
+import TrackingStatus from "./TrackingStatus";
+
+/*----------------------------------------------------------|
+|             TYPES                                         |
+|----------------------------------------------------------*/
+interface Props {
+    order: string,
+}
+
+type TrackingHistory = {
+    [Status in Data.StatusesNames]?:
+        Pick<Data.TrackingHistoryInfo, 'date' | 'time'>
+};
+
+function getHistory(data: Data.TrackingHistoryInfo[]): TrackingHistory {
+    const history: TrackingHistory = {};
+    data.forEach(item => {
+        let status: Data.StatusesNames;
+        switch(item.status) {
+            case "Запланована до відправки":
+                status = "ready";
+                break;
+            case "Прямує в місто одержання":
+                status = "going";
+                break;
+            case "На відділенні в місті одержання":
+                status = "on_branch";
+                break;
+            case "Одержано":
+                status = "taken";
+                break;
+        }               
+        status ? history[status] = {date: item.date, time: item.time} : null;
+    });
+    return history;
+}
+
+/*----------------------------------------------------------|
+|             FUNCTIONS                                     |
+|----------------------------------------------------------*/
+const initState = (): Data.TrackingHistoryData => ({ data: null, error: null });
+
+/*----------------------------------------------------------|
+|             COMPONENT                                     |
+|----------------------------------------------------------*/
+function TrackingHistory(props: Props): ReactElement {
+    const [order, setOrder] = useState("");
+    const [tracking_history, setTrackingHistory] =
+        useState(initState);
+    const newOrder = props.order;
+
+    useEffect(() => {
+        if (order && order === newOrder) return;
+
+        const method = "tracking_history";
+        const params = "/" + newOrder;
+        request({ method, params })
+        .then((res: Data.TrackingHistoryData) => {
+                setOrder(newOrder);
+                setTrackingHistory(res);
+        });
+    }, [newOrder]);
+
+    if (order !== newOrder) return null;
+
+    const { data } = tracking_history;
+
+    if (!data) return null;
+
+    const history = getHistory(data);
+
+    return (
+        <div className="row tracking_history">
+            <TrackingStatus status="ready" data={history.ready} />
+            <TrackingStatus status="going" data={history.going} />
+            <TrackingStatus status="on_branch" data={history.on_branch} />
+            <TrackingStatus status="taken" data={history.taken} />
+        </div>
+    );
+}
+
+export default TrackingHistory;
