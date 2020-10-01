@@ -1,0 +1,13 @@
+input {
+  border: white 1px solid;
+  padding: 10px;
+  color: white;
+  background-color: $brand-color;
+  border-radius: 0px;
+  margin: 10px;
+}
+input::placeholder {
+  color: white;
+  font-size: 12px;
+  font-style: italic;
+}

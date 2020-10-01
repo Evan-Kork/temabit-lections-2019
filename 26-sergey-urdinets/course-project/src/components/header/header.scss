@@ -1,0 +1,20 @@
+header {
+  background-color: $brand-color;
+  padding: 10px;
+  text-align: center;
+  @media screen and (min-width: 1200px) {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  a {
+    color: white;
+    margin: 10px;
+  }
+  .tel {
+    font-weight: bold;
+    display: inline-block;
+  }
+  @import './search-ttn-input/search-ttn-input.scss';
+  @import './sidebar-btn/sidebar-btn.scss';
+}
