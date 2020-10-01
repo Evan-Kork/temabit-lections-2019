@@ -1,0 +1,10 @@
+[
+	{
+		"src": "http://localhost:9000/img/carousel-1.jpg",
+		"alt": "tel"
+	},
+	{
+		"src": "http://localhost:9000/img/carousel-3.png",
+		"alt": "ringo"
+	}
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "faFacebookF",
+        "src": "https://www.facebook.com/justinpostservice"
+    },
+    {
+        "icon": "faInstagram",
+        "src": "https://instagram.com/justinpostservice"
+    },
+    {
+        "icon": "faTelegram",
+        "src": "https://t.me/justinpostservice_bot"
+    },
+    {
+        "icon": "faFacebookMessenger",
+        "src": "https://m.me/justinpostservice"
+    },
+    {
+        "icon": "faViber",
+        "src": "https://tinyurl.com/justinpostservice"
+    } 
+]

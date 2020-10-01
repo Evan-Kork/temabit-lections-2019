@@ -1,0 +1,12 @@
+.disable {
+    .line-bottom {
+        border-bottom: 5px solid #222222;
+        margin-bottom: 10px;
+    }
+    .img-container {
+        height: 110px;
+    }
+    img {
+        filter: grayscale(100%);
+    }    
+}
