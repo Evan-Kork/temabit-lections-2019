@@ -1,0 +1,27 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.6",
+    "nodemon": "^1.19.4",
+    "regedit": "^3.0.3",
+    "registry-js": "^1.9.0",
+    "request": "^2.88.2",
+    "winreg": "^1.2.4",
+    "xhr": "^2.5.0",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "electron": "^7.1.0"
+  }
+}
