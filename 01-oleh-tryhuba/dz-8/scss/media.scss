@@ -1,0 +1,22 @@
+@media screen and (max-width: 1200px) {
+  .in-stock {
+    .dropdown-menu.show {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .news-subscription {
+    input[type="email"] {
+      width: 280px;
+    }
+  }
+  .footer {
+    .line-2 {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}
+
