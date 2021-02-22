@@ -1,0 +1,71 @@
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+
+$white:#ffffff;
+$blue:#164ce2;
+$blueLight:#4effff;
+$blueLight2:#d5e6fa;
+
+
+.box-form-track{
+    margin: 35px 0;
+    padding: 20px 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.5);
+    @media screen and(max-width:767px){
+        margin: 0;
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+    .title-traking-form{
+        position: relative;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 25px;
+        text-align: center;
+        padding-bottom: 25px;
+        &:before{
+            content:'';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 4px;
+            display: block;
+            max-width: 150px;
+            width: 100%;
+            background-color: #b8d8fe;
+        }
+    }
+    .search-package{
+        display: flex;
+        justify-content: center;
+        input{
+            padding: 10px 15px;
+            outline: none;
+            transition: all ease-in-out 0.3s;
+            border:1px solid $blueLight2;
+            border-right: 0;
+            max-width: 250px;
+            width: 100%;
+            &:focus{
+                border-color: $blue;
+            }
+        }
+        .track-package{
+            border: none;
+            outline: none;
+            background-color: $blue;
+            padding: 4px 25px;
+            transition: all ease-in-out 0.3s;
+            &:hover{
+                background-color: darken($blue, 10%);
+            }
+            svg{
+                path{
+                    fill: $white;
+                }
+                
+            }
+        }
+    }
+}

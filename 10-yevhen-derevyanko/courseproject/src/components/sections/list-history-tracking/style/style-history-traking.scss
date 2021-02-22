@@ -1,0 +1,122 @@
+$white:#ffffff;
+$blue:#164ce2;
+$blueLight:#4effff;
+$blueLight2:#d5e6fa;
+
+.box-error{
+    margin: 35px 0;
+    padding: 20px 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px -10px rgba(228, 103, 103, 0.5);
+    font-size: 18px;
+    color: #f14747;
+    background: #ffe7e7;
+    text-align: center;
+}
+
+.box-history-traking{
+    margin: 35px 0;
+    padding: 20px 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.5);
+    .title-box{
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        p{
+            font-size: 18px;
+            font-weight: 300;
+        }
+    }
+    ul{
+        list-style: none;
+        margin-bottom: 0;
+        padding-left: 0;
+        position: relative;
+        
+        li{
+            position: relative;
+            padding-left: 30px;
+            padding-bottom: 10px;
+            &:before{
+                content:'';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 8px;
+                display: block;
+                width: 4px;
+                background-color: $blue;
+            }
+            &:after{
+                content:'';
+                position: absolute;
+                display: block;
+                left: 4.2px;
+                top: 5px;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                border:3px solid $blue;
+                background-color: $white;
+                z-index: 1;
+                box-shadow: 0px 1px 0px 0.5px rgba(255, 255, 255, 1);
+            }
+            &.last-point{
+                &:after{
+                    width: 20px;
+                    height: 20px;
+                    left: 0;
+                    top: 0;
+                    border:2px solid $blue;
+                    background-color: $blue;
+                    box-shadow: inset 0px 0px 0px 3.5px rgba(255, 255, 255, 1);
+                }
+                &:before{
+                    display: none;
+                }
+            }
+            &:first-child{
+                &:after{
+                    width: 20px;
+                    height: 20px;
+                    left: 0;
+                    top: 0;
+                    border:2px solid $blue;
+                    box-shadow: none
+                }
+            }
+            &:last-child{
+               padding-bottom: 0;
+               &:before{
+                    display: none;
+                }
+                &:after{
+                    top: 0;
+                }
+            }
+            .title-point{
+                font-size: 18px;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+            .data-point{
+                display: flex;
+                justify-content: space-between;
+                font-size: 14px;
+                color: #5e7188;
+                .info,.date{
+                    p{
+                        margin: 0;
+                    }
+                }
+                .info{
+
+                }
+                .date{
+
+                }
+            }
+        }
+    }
+}

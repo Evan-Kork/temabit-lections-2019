@@ -1,0 +1,99 @@
+$white:#ffffff;
+$black:#000;
+$blue:#164ce2;
+$blueLight:#4effff;
+
+
+
+
+footer{
+    background-color: $blue;
+    padding: 25px 0 10px;
+}
+
+.line-footer-nav{
+    justify-content: space-between;
+    margin-bottom: 30px;
+    @media screen and(max-width:767px){
+        flex-wrap: wrap;
+    }
+    .foot-nav{
+        padding: 0 20px;
+        flex-basis: 33%;
+        display: flex;
+        justify-content: center;
+        @media screen and(max-width:767px){
+            flex-basis: 100%;
+            padding: 0;
+        }
+        &:nth-child(2){
+            border-left: 1px solid $white;
+            border-right: 1px solid $white;
+            @media screen and(max-width:767px){
+                border-left: 0;
+                border-right: 0;
+                padding: 10px 0;
+                margin: 10px 0;
+                border-top: 1px solid $white;
+                border-bottom: 1px solid $white;
+            }
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li{
+                margin-bottom: 4px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                a{
+                    font-size: 18px;
+                    font-weight: 400;
+                    letter-spacing: .05em;
+                    color: $white;
+                    transition: all ease-in-out 0.3s;
+                    &:hover{
+                        color: $blueLight;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.second-line-footer{
+    color: $white;
+    font-size: 16px;
+    justify-content: space-between;
+    @media screen and(max-width:767px){
+        flex-wrap: wrap;
+    }
+    @media screen and(max-width:576px){
+        flex-direction: column;
+        &>*{
+            margin-bottom: 10px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+    a{
+        color: $white;
+        transition: all ease-in-out 0.3s;
+        &:hover{
+            text-decoration: none;
+            color: $blueLight;
+        }
+    }
+    .copyright{
+        margin-bottom: 0;
+        @media screen and(max-width:576px){
+            margin-bottom: 10px;
+        }
+    }
+    .policy{
+
+    }
+}

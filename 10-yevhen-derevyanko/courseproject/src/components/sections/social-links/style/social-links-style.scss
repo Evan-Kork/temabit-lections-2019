@@ -1,0 +1,44 @@
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+$blue:#164ce2;
+$blueLight:#4effff;
+$white:#ffffff;
+
+.social-list{
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        li{
+            margin-right: 15px;
+            &:last-child{
+                margin-right: 0;
+            }
+            a{
+                transition: all ease-in-out 0.3s;
+                font-size: 18px;
+            }
+        }
+    }
+    &.type-social-list-sm{
+        li{
+            a{
+                color: $blue;
+                &:hover{
+                    color: $blueLight;
+                }
+            }
+        }
+    }
+    &.type-social-list-lg{
+        li{
+            a{
+                font-size: 24px;
+                color: $white;
+                &:hover{
+                    color: $blueLight;
+                }
+            }
+        }
+    }
+}

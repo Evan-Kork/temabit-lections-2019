@@ -1,0 +1,28 @@
+.title-page{
+    text-align: center;
+    position: relative;
+    margin-top: 45px;
+    padding-top: 20px;
+    font-size: 36px;
+    @media screen and(max-width:767px){
+        margin-top: 25px;
+        padding-top: 10px;
+        font-size: 28px;
+    }
+    &:before{
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        height: 3px;
+        background-color: #b8d8fe;
+        max-width: 200px;
+        width: 100%;
+        @media screen and(max-width:767px){
+            height: 2px;
+            max-width: 150px;
+        }
+    }
+}
