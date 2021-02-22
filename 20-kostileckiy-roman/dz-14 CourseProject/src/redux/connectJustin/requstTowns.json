@@ -1,0 +1,16 @@
+{
+  "keyAccount": "Go317",
+  "sign": "123654789",
+  "request": "getData",
+  "type": "catalog",
+  "name": "cat_Cities",
+  "language": "RU",
+  "TOP": 10,
+  "filter": [
+    {
+      "name": "descr",
+      "comparison": "equal",
+      "leftValue": "Гостомель"
+    }
+  ]
+}
