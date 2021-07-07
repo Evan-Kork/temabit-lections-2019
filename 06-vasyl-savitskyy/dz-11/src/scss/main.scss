@@ -1,0 +1,30 @@
+body {
+    #root {
+        .item {
+            .input-group-prepend__width {
+                width: 40%;
+                @media screen and (min-width: 720px) {
+                    width: 25%;
+                }
+            }
+
+            .item-header {
+                cursor: pointer;
+            }
+            .item-body {
+                label {
+                    display: flex;
+                    span {
+                        width: 70px;
+                    }
+                }
+            }
+
+            .item-footer {
+                .result-block {
+                    min-height: 25px;
+                }
+            }
+        }
+    }
+}
