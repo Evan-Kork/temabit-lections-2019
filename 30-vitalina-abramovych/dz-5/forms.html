@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Forms</title>
+	<link rel="stylesheet" href="index.css">
+<title>Forms</title>
+</head>
+<body>
+	<form action="https://www.google.com/search" method="get" target="_blank">
+		<legend class="google"><b>Пошук в Google</b></legend>
+		<div class="google">
+			<input
+				id="q"
+				type="text"
+				name="q"
+				placeholder="Google"
+			/>
+		</div>
+        <div>
+            <button type="submit" name="tbm" value="isch">Картинки</button>
+            <button type="submit" name="tbm" value="bks">Книги</button>
+            <button type="submit" name="tbm" value="nws">Новини</button>
+        </div>
+	</form>
+
+	<p class="headline"><b>Анкета для роботи в «Сільпо»</b></p>
+
+	<form action="#" method="post">
+		<fieldset>
+			<legend><b>Основна інформація</b></legend>
+			<div class="form-group">
+				<label for="name">Ім'я</label>
+				<input
+					id="name"
+					type="text"
+					name="name"
+					placeholder="Ім'я"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="Surname">Прізвище</label>
+				<input
+					id="name"
+					type="text"
+					name="surname"
+					placeholder="Прізвище"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="age">Вік</label>
+				<input
+					id="age"
+					type="number"
+					name="age"
+					min="0"
+					max="99"
+					step="2"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="town">Населений пункт</label>
+				<input
+					id="town"
+					type="text"
+					name="town"
+					placeholder="Населений пункт"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input
+					id="email"
+					type="email"
+					name="email"
+					placeholder="Email"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="telephone number">Номер телефону</label>
+				<input
+					id="telephone number"
+					type="telephone number"
+					name="telephone number"
+					placeholder="Номер телефону"
+				/>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend><b>Вкажіть більше інформації, щоб отримати справді цікаву вакансію</b></legend>
+			<div class="form-group">
+				<label for="town">Вкажіть бажаний населений пункт</label>
+				<input
+					id="town"
+					type="text"
+					name="town"
+					placeholder="Населений пункт"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="position">Вкажіть бажану вакансію</label>
+				<select
+					name="position"
+					id="position"
+				>
+					<optgroup>
+						<option value="">Виберіть вакансію</option>
+						<option value="1">Адміністратор ресторану</option>
+						<option value="2">Вантажник</option>
+						<option value="3">Завідуючий вииробництвом</option>
+						<option value="4">Завідуючий відділом</option>
+						<option value="5">Завідуючий відділом "каса"</option>
+						<option value="6">Завідуючий відділом товарного обліку</option>
+						<option value="7">Завідуючий господарством</option>
+						<option value="8">Заступник керуючого</option>
+						<option value="9">Касир</option>
+						<option value="10">Керуючий рестораном</option>
+						<option value="11">Керуючий супермаркетом</option>
+						<option value="12">Кондитер</option>
+						<option value="13">Кухар-оформлювач</option>
+						<option value="14">Кухар (супермаркет)</option>
+						<option value="15">Начальник відділу "Охорона"</option>
+						<option value="16">Обвалювальник м'яса</option>
+						<option value="17">Оброблювач риби</option>
+						<option value="18">Охоронець</option>
+						<option value="19">Пекар</option>
+						<option value="20">Прибиральниця</option>
+						<option value="21">Продавець</option>
+						<option value="22">Робота в офісі</option>
+						<option value="23">Старший кондитер</option>
+						<option value="24">Старший кухар (супермаркет)</option>
+						<option value="25">Старший пекар</option>
+						<option value="26">Су-шеф</option>
+						<option value="27">Фахівець з приймання та обліку товарів</option>
+						<option value="28">Шеф-кухар</option>
+					</optgroup>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="supermarket">Оберіть зручний супермаркет</label>
+				<select
+					name="supermarket"
+					id="supermarket"
+				>
+					<optgroup>
+						<option value="">Виберіть супермаркет</option>
+						<option value="1">вул. 600-річчя</option>
+						<option value="2">пл. Гагаріна, 2</option>
+						<option value="3">вул. Зодчих, 2</option>
+						<option value="4">вул. Келицька, 105</option>
+						<option value="5">вул. М. Оводова, 51</option>
+					</optgroup>
+				</select>
+			</div>
+			<div class="form-group">
+				<input
+					id="part-time"
+					type="radio"
+					name="part-time"
+					value="part-time"
+				>
+				<label for="part-time">Я хочу працювати неповний робочий день</label>
+			</div>
+		</fieldset>
+	</form>
+</body>
+
