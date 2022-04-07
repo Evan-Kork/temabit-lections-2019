@@ -1,0 +1,438 @@
+@charset "UTF-8";
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  padding-right: 0;
+  overflow-x: hidden;
+}
+
+header .img-logo img {
+  padding: 15px 50px;
+  height: 75px;
+}
+header .burger-fix {
+  background-color: #262724;
+  height: 65px;
+}
+header .hamburger {
+  display: block;
+  position: fixed;
+  list-style: none;
+  margin: 0;
+  box-sizing: border-box;
+  width: 270px;
+  background-color: #fff;
+  height: 100%;
+  top: 0;
+  left: -270px;
+  transition: left 0.2s;
+  z-index: 16;
+}
+header .hamburger ul {
+  line-height: 35px;
+  padding-left: 10.5px;
+}
+header .hamburger li {
+  text-decoration: none;
+  list-style-type: none;
+}
+header .hamburger a {
+  color: #262724;
+  text-decoration: none;
+}
+header .hamburger a:hover {
+  text-decoration: none;
+}
+header .flex-conteiner {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+header .nav-menu {
+  top: 12px;
+  position: absolute;
+  left: 290px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 1;
+  z-index: 3;
+}
+header .nav-menu:after {
+  content: "☰";
+  text-decoration: none;
+}
+header .nav-menu:hover {
+  color: #fff;
+}
+header .check-menu {
+  position: absolute;
+  display: none;
+}
+header .check-menu:checked ~ .hamburger > .nav-menu {
+  left: auto;
+  right: 2px;
+}
+header .check-menu:checked ~ .hamburger {
+  left: 0;
+  overflow-y: auto;
+}
+header .check-menu:checked ~ .hamburger > .nav-menu:after {
+  content: "✕";
+  font-size: 15px;
+}
+header .scroll-hiden {
+  width: 250px;
+  overflow-x: hidden;
+}
+header .hamburger-content {
+  background-color: #fff;
+}
+header .hamburger-contact {
+  background-color: #98C93C;
+}
+header .hamburger-contact i {
+  color: #262724;
+}
+header .hamburger-img {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  background-color: #262724;
+  height: 70px;
+}
+header .hamburger-img img {
+  height: 40px;
+}
+header .hamburger-item li {
+  padding: 0;
+  display: flex;
+  align-self: center;
+  align-items: center;
+}
+header .hamburger-item li {
+  display: flex;
+  color: #262724;
+}
+header .hamburger-item li i {
+  padding-right: 15px;
+}
+header .accordion {
+  border-top: 1px solid #6c757d;
+  border-bottom: 1px solid #6c757d;
+}
+header .accordion .card {
+  border: 0;
+}
+header .accordion .card-header {
+  background-color: #fff;
+  border: 0;
+  padding: 0;
+}
+header .accordion .card-header button {
+  color: #262724;
+  text-decoration: none;
+}
+header .accordion .card-header button span {
+  color: #98C93C;
+}
+header .top-menu {
+  background-color: #98C93C;
+  height: 25px;
+  padding: 0;
+}
+header .top-item {
+  padding: 0 3rem !important;
+  color: #262724;
+}
+header .lists {
+  padding: 0;
+}
+header .lists a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0.65rem;
+}
+header .nav-site {
+  height: 100px;
+  background-color: #262724;
+}
+header .nav-site img {
+  width: 150px;
+}
+header .main-text {
+  color: #98C93C;
+  font-size: 16px;
+}
+header form {
+  border: 1px solid #6c757d;
+  border-radius: 30px;
+  background-color: #424242;
+  color: #6c757d;
+}
+header .search-form {
+  padding: 0;
+  padding-left: 15px;
+}
+header .search-form input {
+  border: none;
+  border-radius: 30px;
+  height: 25px;
+  font-size: 14px;
+  background-color: #424242;
+}
+header .righ-head {
+  color: white;
+  padding: 0;
+}
+header .trash-btn {
+  font-size: 13px;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: #f6851f;
+  align-content: center;
+  color: white;
+}
+header .menu {
+  z-index: 999;
+  position: absolute;
+  top: 54px;
+}
+header .menu .nav-tabs {
+  border-bottom: 0;
+}
+header .menu li {
+  border-right: 1px solid #dee2e6;
+}
+header .menu a {
+  color: #fff;
+}
+header .menu .tab-stocks {
+  background-color: #ff0000;
+  border-radius: 0;
+}
+header .nav-link.active {
+  color: #98C93C;
+  background-color: #fff;
+  border-radius: 0;
+}
+header .menu li :hover {
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #98C93C;
+  border-radius: 0;
+}
+header .tab-content .tab-pane {
+  background-color: #fff;
+  justify-content: space-around;
+}
+header .tab-content .tab-pane ul {
+  margin-left: 0;
+  padding-left: 0;
+  padding-top: 15px;
+}
+header .tab-content .tab-pane h6 {
+  font-weight: bold;
+}
+header .tab-content .tab-pane li {
+  list-style-type: none;
+  border: 0;
+}
+header .tab-content .tab-pane a:hover {
+  color: #98C93C;
+}
+header .tab-content .tab-pane a {
+  color: #262724;
+  text-decoration: none;
+}
+header .tab-content > .active {
+  display: flex;
+}
+
+.main .custom-radios {
+  display: flex;
+  justify-content: center;
+}
+.main .custom-radios input[type=radio] {
+  display: none;
+}
+.main .custom-radios input + label span {
+  display: flex;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 5px solid #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  line-height: 44px;
+}
+.main .color-picker-green + label span {
+  background-color: #32cd32;
+}
+.main .color-picker-black + label span {
+  background-color: #000000;
+}
+.main .color-picker-white + label span {
+  background-color: #ffffff;
+  border: 1px solid #6c757d;
+}
+.main .color-picker-blue + label span {
+  background-color: #0000ff;
+}
+.main .custom-radios input[type=radio]:checked + label span {
+  box-shadow: 0 0 1px 2px #98C93C;
+}
+.main .in-town {
+  padding: 35px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #e8eded;
+}
+.main .in-town .btn-select-town {
+  font-size: 28px;
+  background-color: transparent;
+  border: none;
+  color: #98C93C;
+  text-decoration: underline;
+  margin: 0 0 14px;
+}
+.main .advantages .mailing {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 280px;
+  background-color: #98C93C;
+  color: #fff;
+}
+.main .advantages .mailing h3 {
+  display: flex;
+  justify-content: center;
+}
+.main .advantages .mailing p {
+  font-size: 16px;
+  text-align: center;
+}
+.main .advantages .mailing .form-email div {
+  display: flex;
+  justify-content: center;
+}
+.main .advantages .mailing .form-email input {
+  width: 30%;
+  border-radius: 0;
+}
+.main .advantages .mailing .form-email button {
+  font-size: 16px;
+  border: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: #262724;
+  align-content: center;
+}
+.main .breadcrumbs {
+  width: 100%;
+  background-color: #40423e;
+  color: #fff;
+  padding-left: 30px;
+  font-size: 12px;
+}
+.main .breadcrumbs a {
+  color: #98C93C;
+  padding: 0 10px;
+}
+.main .breadcrumbs div {
+  padding-left: 10px;
+}
+
+footer .footer {
+  background-color: #262724;
+  height: 340px;
+  color: #fff;
+}
+footer h6 {
+  color: #98C93C;
+}
+footer ul {
+  padding: 0;
+}
+footer li {
+  list-style-type: none;
+  padding: 0;
+}
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+footer a:hover {
+  text-decoration: none;
+  color: #98C93C;
+}
+footer .phone-card {
+  max-width: 250px;
+}
+footer .main-phone {
+  display: flex;
+  align-items: center;
+}
+footer .main-phone i {
+  font-size: 25px;
+  color: #98C93C;
+}
+footer .main-phone p {
+  font-size: 30px;
+}
+footer .text-phone {
+  color: #71736e;
+}
+footer .more-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+footer .social-icons {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  flex-grow: 1;
+}
+footer .social-icons div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+footer .social-icons i {
+  text-align: center;
+  color: #262724;
+  font-size: 22px;
+}
+footer .social-icons div:hover {
+  background-color: #98C93C;
+}
+footer .social-icons div:hover i {
+  color: #fff;
+}
+footer img {
+  width: 94px;
+}
+footer p {
+  margin: 0;
+}
+footer .copyrigh {
+  background-color: #1b1c19;
+  padding: 0;
+  color: #fff;
+}
+
+/*# sourceMappingURL=common.css.map */
