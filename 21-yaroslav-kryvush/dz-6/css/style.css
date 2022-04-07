@@ -1,0 +1,159 @@
+* {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden; 
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+header img {
+	width: 100%;
+}
+.main {
+	display: flex;
+}
+
+.menu {
+	width: 25%;
+	background: #cdfffe;
+	margin-top: -4px;
+	padding: 10px 0 20px 30px;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo-text {
+	color: red;
+	padding-left: 20px;
+}
+
+.logo-text p {
+	font-size: 13px;
+}
+
+.order-project {
+	padding-left: 10px;
+	color: blue;
+	font-size: 20px;
+	font-weight: 700;
+	margin: 15px 0;
+}
+
+.categories ol, ul{
+	margin-bottom: 15px;
+}
+
+.categories p {
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.cottages {
+	width: 75%;
+	padding-bottom: 20px;
+}
+
+.title {
+	padding-left: 20px;
+	color: darkblue;
+}
+
+.title p {
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+.houses {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.house-d152-h173-v208-r280 {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: 45%;
+	padding-top: 20px;
+}
+
+.options {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10px;
+	background: #e8e6fb;
+}
+
+.area__walls {
+	display: flex;
+	padding-bottom: 5px;
+}
+
+.square {
+	margin: 3.5px 5px 0 0
+}
+
+.walls {
+	margin-right: 5px;
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+@media screen and (max-width: 768px) {
+	.houses {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.logo {
+		display: block;
+		text-align: center;
+	}
+
+	.logo-text {
+		padding-left: 0;
+	}
+
+	.menu {
+		padding-left: 5px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+	}
+		
+	.main {
+		flex-direction: column;
+		margin-top: -4px;
+	}
+
+	.menu {
+		width: 100%;
+	}
+
+	.cottages {
+		width: 100%;
+	}
+
+	.house-d152-h173-v208-r280{
+		width: 80%;
+	}
+}
