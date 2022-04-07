@@ -1,0 +1,62 @@
+html, body{
+  margin: 0;
+}
+
+.container{
+display: flex;
+flex-direction: row;
+height: 100%;
+font-family: 'Times New Roman';
+}
+
+.main{
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  background-color: grey;
+
+}
+.menu{
+  /*width: 20%;*/
+  margin-left: 20px;
+}
+
+.menu p{
+  padding-bottom: 20px;
+  font-weight: normal;
+}
+.menu h4{
+  color: white;
+  font-weight: normal;
+}
+
+.main_1{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.article{
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  color: grey;
+  margin-left: 20px;
+}
+.article h1, h2{
+  font-weight: normal;
+}
+.article_1{
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  height: 100px;
+  justify-content: center;
+  text-align: center;
+  border-top: 2px solid grey;
+}
+.article_1 a{
+  padding-left: 150px;
+  padding-right: 50px;
+  margin-top: 20px;
+  color: grey;
+}
