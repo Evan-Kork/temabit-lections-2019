@@ -1,0 +1,14 @@
+[
+    {
+        "image": "faMapMarkerAlt",
+        "title": "Наші відділеня",
+        "buttonName": "ЗНАЙТИ",
+        "path": "/viddilennya"
+    },
+    {
+        "image": "faCalculator",
+        "title": "Калькулятор",
+        "buttonName": "РОЗРАХУВАТИ ВАРТІСТЬ ВІДПРАВЛЕННЯ",
+        "path": "/"
+    }
+]
