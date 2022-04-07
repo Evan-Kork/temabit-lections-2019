@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dz-10</title>
+</head>
+<body>
+	<script src="index.js"></script>
+	<p>
+		TASK 1. Функция removeElement(array, item) для удаления элемента item из
+		массива array.
+	</p>
+	<pre>
+	function removeElement(array, value) {
+		for (let i = array.length - 1; i >= 0; i--) {
+			if (~array.indexOf(value)) {
+				array.splice(array.indexOf(value), 1);
+			}
+		}
+	}
+	</pre>
+	<p>
+		TASK 2. Улучшенная функция из предыдущего задания для удаления нескольких
+		элементов из массива removeElements(array, item1, ... itemN).
+	</p>
+	<pre>
+		function removeElements(array) {
+			for (let i = 1; i < arguments.length; i++) {
+				for (let j = array.length - 1; j >= 0; j--) {
+					if (~array.indexOf(arguments[i])) {
+						array.splice(array.indexOf(arguments[i]), 1);
+					}
+				}
+			}
+		}
+	</pre>
+	<p>
+		TASK 3. Функция unique(array) возвращает новый массив, не содержащий
+		дубликатов.
+	</p>
+	<pre>
+		function unique(array){
+			return array.filter((item, index) => array.indexOf(item) === index)
+		}
+	</pre>
+	<p>
+		TASK 4. Функция difference(array1, array2) находит разницу между
+		массивами, т.е. возвращать новый массив, содержащий значения, которые
+		содержались в array1, но не содержались в array2.
+	</p>
+	<pre>
+		function difference(array1, array2) {
+			return array1.filter(item => ! array2.includes(item, 0));
+		}
+	</pre>
+</body>
+</html>
