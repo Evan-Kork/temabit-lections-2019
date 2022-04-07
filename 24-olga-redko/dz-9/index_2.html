@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS - task 2</title>
+    <style type="text/css">
+    .table-math {
+        border-collapse: collapse;
+    }
+    .table-math tr {
+        border: 1px solid #d6d6d6
+    }
+    </style>
+</head>
+
+<body>
+    <script>
+    document.write("<table class='table-math'>");
+    for (let i = 1; i <= 10; i++) {
+
+        for (let j = 1; j <= 10; j++) {
+
+            document.write("<tr><td>" + i + "</td><td>" + "*" + "</td><td>" + j + "</td><td>" + "=" + "</td><td>" + (i * j) + "</td></tr>");
+        }
+    };
+    document.write("</table>");
+
+
+    let i = 1;
+    document.write("<table class='table-math'>");
+    while (i <= 10) {
+        let j = 1;
+        while (j <= 10) {
+
+            document.write("<tr><td>" + i + "</td><td>" + "*" + "</td><td>" + j + "</td><td>" + "=" + "</td><td>" + (i * j) + "</td></tr>");
+            j++;
+
+        };
+        i++;
+    };
+    document.write("</table>");
+    </script>
+</body>
+
+</html>
