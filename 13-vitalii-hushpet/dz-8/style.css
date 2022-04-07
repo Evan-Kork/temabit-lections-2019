@@ -1,0 +1,421 @@
+body {
+  overflow-x: hidden;
+}
+
+.header {
+  background-color: #98C93C;
+  padding: 0;
+}
+.header .linkheader {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  margin-left: 70px;
+}
+.header .menudrop {
+  background-color: #98C93C;
+  border: 0px;
+  color: black;
+  height: 21px;
+  padding: 0;
+}
+.header .menudrop:focus {
+  background-color: #98C93C;
+}
+
+.menu {
+  background-color: #262724;
+}
+.menu .img-ringoo {
+  height: 70px;
+}
+.menu button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+}
+.menu .num {
+  color: #FFFFFF;
+}
+.menu .korzuna {
+  width: 150px;
+  height: 30px;
+  background-color: #F6851F;
+  padding-bottom: 10px;
+}
+.menu .korzuna .icon {
+  background-image: url(https://ringoo.ua/wp-content/themes/ringoo/img/basket_empty.png);
+  background-repeat: no-repeat;
+  border-top: 3px solid #F6851F;
+  border-left: 3px solid #F6851F;
+  padding-left: 7px;
+}
+
+.brends {
+  text-align: center;
+  margin: 50px;
+}
+
+.link {
+  background-color: #722B6F;
+}
+
+.acsii {
+  text-align: center;
+  margin: 50px;
+}
+.acsii .one {
+  background-image: url("https://ringoo.ua/wp-content/uploads/2019/04/Site_265h220_24.04.2019.png");
+  height: 220px;
+  width: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 160px;
+}
+.acsii .one a {
+  background-color: #722B6F;
+}
+.acsii .two {
+  background-image: url("https://ringoo.ua/wp-content/uploads/2019/10/Site_NeffosC9X9_265h220_11.10.2019.png");
+  height: 220px;
+  width: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 160px;
+}
+.acsii .two a {
+  background-color: #722B6F;
+}
+.acsii .three {
+  background-image: url("https://ringoo.ua/wp-content/uploads/2019/10/GglAdwords_KOSS_ALL_265h220_17.10.2019_v2.png");
+  height: 220px;
+  width: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 160px;
+}
+.acsii .three a {
+  background-color: #722B6F;
+}
+.acsii .four {
+  background-image: url("https://ringoo.ua/wp-content/uploads/2019/10/7-11-265-x-220-1.png");
+  height: 220px;
+  width: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 160px;
+}
+.acsii .four a {
+  background-color: #722B6F;
+}
+
+input.search-query {
+  padding-left: 26px;
+  width: 500px;
+  border-radius: 50px 50px 50px 50px;
+  color: #FFFFFF;
+  background-color: #424242;
+}
+
+form.form-search {
+  position: relative;
+}
+
+.con-fuul {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+form.form-search:before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-image: url(http://getbootstrap.com/2.3.2/assets/img/glyphicons-halflings.png);
+  background-position: -48px 0;
+  position: absolute;
+  left: 25px;
+  opacity: 0.5;
+  z-index: 1000;
+}
+
+.dropmenu {
+  background-color: #262724;
+  color: #FFFFFF;
+}
+.dropmenu .btnmy {
+  font-size: 13px;
+  width: 200px;
+  background-color: #262724;
+  border-right: 1px solid #FFFFFF;
+}
+
+.dropdown-w-100 {
+  width: 500%;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.btn-menu {
+  background-color: #282923;
+}
+
+.hot-prop {
+  text-align: center;
+  background-color: #FFFFFF;
+}
+.hot-prop h3 {
+  margin-top: 90px;
+  margin-bottom: 50px;
+}
+
+h6 {
+  color: green;
+}
+
+.zagolovock {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 90px;
+}
+
+.zavozc {
+  background-color: #BECBCB;
+}
+
+.img-zavoz {
+  width: 100%;
+  text-align: right;
+}
+
+.tell {
+  background-color: #FFFFFF;
+  width: 700px;
+  margin-left: 7%;
+  margin-bottom: 5%;
+}
+
+.kuiv {
+  background: #E8EDED;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.big-tell {
+  flex-wrap: nowrap;
+  width: 200%;
+  background: #FFFFFF;
+}
+
+.img-big-block {
+  width: 100%;
+  height: 90%;
+}
+
+.text-big-block {
+  font-size: 120%;
+}
+
+.sm-tell {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 55%;
+  background: #FFFFFF;
+  margin: 15px;
+}
+
+.sm-img-tell {
+  width: 65%;
+  margin-top: 10px;
+}
+
+.text-h4-sm-tell {
+  font-size: 10px;
+}
+
+.btn-sm-tell {
+  width: 120%;
+  font-size: 70%;
+}
+
+.sm-tell-block {
+  padding-bottom: 100px;
+}
+
+.type_h2 {
+  margin: 80px;
+}
+
+.advantages {
+  text-align: center;
+}
+.advantages advantages_block {
+  text-align: center;
+}
+.advantages advantages_block .advantages_img {
+  width: 100px;
+}
+.advantages advantages_block .text-center-h4 {
+  display: flex;
+  justify-content: center;
+}
+
+.contact_form {
+  background-color: #98C93C;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.bred {
+  background-color: #40423E;
+}
+
+.input-group {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.link_footer {
+  width: 100%;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.link_footer:hover {
+  text-decoration: none;
+  color: green;
+}
+
+.footer_contact {
+  font-size: 10px;
+}
+
+footer {
+  color: #FFFFFF;
+  background-color: #262724;
+}
+
+.footer_contact_one {
+  font-size: 14px;
+}
+
+.visa {
+  width: 100%;
+}
+
+.facebook {
+  width: 100%;
+}
+
+.tell-name {
+  margin: 1px;
+  padding: 1px;
+}
+
+.text-12 {
+  font-size: 12px;
+}
+
+.parametrs {
+  height: 100%;
+  padding-top: 30px;
+}
+
+.money {
+  border-top: 2px solid #D4D9D9;
+  margin: 10px;
+}
+
+.box-bay {
+  border: 5px solid #D4D9D9;
+  margin: 40px;
+}
+
+.nav-item {
+  text-align: center;
+  background-color: #D4D9D9;
+}
+
+.tab-bars {
+  padding-left: 60px;
+}
+
+tr {
+  border: 20px solid #ffffff;
+  background-color: #ffffff;
+}
+
+th {
+  width: 30%;
+}
+
+.tab-video {
+  display: flex;
+  justify-content: center;
+}
+
+.text-18 {
+  font-size: 18px;
+}
+
+.video {
+  margin: 60px;
+  margin-left: 25%;
+  height: 600px;
+  width: 900px;
+}
+
+.dostavka {
+  background-color: #F5F7F7;
+}
+
+.drop-city {
+  background-color: #ffffff;
+  color: #7DB030;
+}
+
+.margins {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.pading-top-40 {
+  padding: 40px;
+}
+
+.ad-block {
+  background-color: #E8EDED;
+  height: 100%;
+}
+
+.sm-img {
+  width: 100%;
+  width: auto;
+}
+
+.mb-3 {
+  margin: 0;
+}
+
+a {
+  color: green;
+}
+
+.form-res {
+  background-color: #ffffff;
+}
+
+.nuber {
+  border-top: 2px solid black;
+}
+
+.btn-outline-secondary {
+  background-color: green;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=style.css.map */
