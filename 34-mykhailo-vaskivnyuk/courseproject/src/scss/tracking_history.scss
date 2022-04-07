@@ -1,0 +1,83 @@
+.branch {
+	form {
+		display: flex;
+		align-items: center;
+	}
+	.branch_number {
+		padding: 10px 15px;
+		border: 2px solid $color_dark;
+		background-color: transparent;
+		font-style: italic;
+		color: $color_dark;
+		margin-right: 0;
+		margin-bottom: 0px;
+		width: 246px;
+		outline: none;
+		&::placeholder {
+			color: $color_dark;
+		}
+	}
+	i {
+		font-size: 40px;
+		margin: 0 5px;
+		cursor: pointer;
+	}
+}
+
+.locality {
+	select {
+		padding: 10px 15px;
+		border: 2px solid $color_dark;
+		background-color: transparent;
+		font-style: italic;
+		color: $color_dark;
+		margin-right: 0;
+		margin-bottom: 0px;
+		width: 246px;
+		outline: none;
+		&::placeholder {
+			color: $color_dark;
+		}
+	}
+}
+
+.tracking {
+	form {
+		display: flex;
+		align-items: center;
+	}
+	.order_number {
+		padding: 10px 15px;
+		border: 2px solid $color_dark;
+		background-color: transparent;
+		font-style: italic;
+		color: $color_dark;
+		margin-right: 0;
+		margin-bottom: 0px;
+		width: 246px;
+		outline: none;
+		&::placeholder {
+			color: $color_dark;
+		}
+	}
+	i {
+		font-size: 40px;
+		margin: 0 5px;
+		cursor: pointer;
+	}
+}
+
+.tracking_history {
+	.tracking_status {
+		opacity: 20%;
+		&.active {
+			opacity: 100%;
+		}       
+	}
+	.tracking_icon {
+		min-height: 110px;
+	}
+	.tracking_line {
+		width: 100%;
+	}
+}

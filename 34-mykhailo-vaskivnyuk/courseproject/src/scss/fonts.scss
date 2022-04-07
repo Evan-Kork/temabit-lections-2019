@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@font-face {
+	font-family: "ProximaNova";
+	src:
+		url("fonts/ProximaNova-Regular.ttf")
+			format("truetype");
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css");
+
+%font {
+	font-family: "ProximaNova", sans-serif !important;
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: .05em;
+	line-height: 1.5em;
+	color: $color_white;
+}
