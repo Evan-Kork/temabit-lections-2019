@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DZ-9 TASK 1</title>
+	<meta charset="UTF-8">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		table {
+			border-collapse: collapse;
+		}
+
+		td {
+			border: 2px solid blue;
+			font-size: 1.5rem;
+			padding: 10px;
+			text-align: right;
+			font-family: "Century Gothic";
+			color: purple;
+			width: 50px;
+		}
+
+		td:nth-child(2n){
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+	<script id = "script">
+
+		let tbl = document.createElement("table");
+		document.body.append(tbl);
+
+		let i = 0;
+		while (++i < 10) {
+
+			let j = 0;
+			while (++j < 10) {
+				let row = document.createElement("tr");
+				tbl.append(row);
+				row.innerHTML += ("<td>" +   i   + "</td>");
+				row.innerHTML += ("<td>" +  "X"  + "</td>");
+				row.innerHTML += ("<td>" +   j   + "</td>");
+				row.innerHTML += ("<td>" +  "="  + "</td>");
+				row.innerHTML += ("<td>" + i * j + "</td>");
+			}
+		}
+
+	</script>
+
+	<script>
+		let code = document.createElement("pre");
+		code.innerHTML = "<code class='javascript'></code>"
+		code.children[0].append(document.querySelector("#script").innerHTML);
+		document.body.prepend(code);	
+	</script>
+
+</body>
+</html>
