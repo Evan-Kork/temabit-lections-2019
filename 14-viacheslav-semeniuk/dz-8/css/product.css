@@ -1,0 +1,259 @@
+@charset "UTF-8";
+.btn {
+  border-radius: 0;
+}
+
+.drop-down-container {
+  display: flex;
+}
+
+.btn-danger {
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn-danger:focus {
+  box-shadow: none;
+}
+.btn-danger:hover, .btn-danger:not(:disabled):not(.disabled).active:focus, .btn-danger:not(:disabled):not(.disabled):active:focus, .show > .btn-danger.dropdown-toggle:focus, .show > .btn-danger.dropdown-toggle {
+  background-color: #fff;
+  border-color: #fff;
+  color: green;
+  box-shadow: none;
+  outline: none;
+  border-radius: 0;
+}
+
+.second-dd-button::after {
+  content: none;
+}
+
+.dropdown-menu.menu-1 {
+  min-width: 37rem;
+}
+
+.dropdown-menu.menu-2 {
+  min-width: 37rem;
+  left: -6.352rem;
+}
+
+.dropdown-menu.menu-3 {
+  min-width: 37rem;
+  left: -13.6rem;
+}
+
+.dropdown-menu.menu-4 {
+  min-width: 37rem;
+  left: -19.05rem;
+}
+
+.dropdown-menu.menu-5 {
+  min-width: 37rem;
+  left: -25.5rem;
+}
+
+.dropdown-menu.menu-6 {
+  min-width: 37rem;
+  left: -29.7rem;
+}
+
+.phone {
+  color: #fff;
+}
+.phone .icon {
+  width: 19px;
+  vertical-align: middle;
+  margin-right: 5px;
+  display: inline-block;
+}
+.phone .icon img {
+  max-width: 100%;
+}
+
+#basket-button {
+  color: #fff;
+}
+
+.product-main-container {
+  padding: 1.5em 0;
+}
+.product-main-container .main-wrapper .left-part {
+  background-color: #fff;
+  background-color: #fff;
+  margin-bottom: 30px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.product-main-container .main-wrapper .left-part:hover .products__image img {
+  transform: scale(1.1);
+}
+.product-main-container .main-wrapper .left-part a {
+  color: #7db030;
+}
+.product-main-container .main-wrapper .left-part a h5 {
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  font-size: 22px;
+  margin: 0;
+}
+.product-main-container .main-wrapper .left-part .products__image img {
+  transition: all ease 0.3s;
+}
+.product-main-container .main-wrapper .left-part .products__colors {
+  text-align: center;
+  margin: 15px 0;
+}
+.product-main-container .main-wrapper .left-part .products__colors .products__color {
+  width: 20px;
+  height: 20px;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.product-main-container .main-wrapper .left-part .products__colors .products__color:hover:before, .product-main-container .main-wrapper .left-part .products__colors .products__color.active:before {
+  opacity: 1;
+}
+.product-main-container .main-wrapper .left-part .products__colors .products__color:before {
+  content: "";
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  border: 2px solid #98c93c;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.product-main-container .main-wrapper .center-part ul {
+  list-style: none;
+}
+.product-main-container .main-wrapper .center-part ul li::before {
+  content: "•";
+  color: green;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+.product-main-container .main-wrapper .center-part .center_payment_block .delivery1_block .delivery1_text {
+  font-size: 14px;
+}
+.product-main-container .main-wrapper .right-part .add-to-compare .compare_img {
+  width: 32px;
+}
+.product-main-container .main-wrapper .right-part .main-info-wrapper .main_info .old_price_item .text-secondary {
+  position: relative;
+}
+.product-main-container .main-wrapper .right-part .main-info-wrapper .main_info .old_price_item .text-secondary:before {
+  content: " ";
+  display: block;
+  width: 65px;
+  border-top: 2px solid #929291;
+  height: 12px;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  transform: rotate(15deg);
+}
+.product-main-container .main-wrapper .right-part .main-info-wrapper .main_info .buy-click {
+  font-size: 16px;
+}
+.product-main-container .main-wrapper .right-part .delivery-wrapper .delivery-item .delivery_text {
+  font-size: 14px;
+}
+
+.pills-container ul#myTab {
+  background-color: #f5f7f7;
+  padding: 20px;
+  border-bottom: 3px solid #98c93c;
+}
+.pills-container ul#myTab .nav-item {
+  width: 150px;
+}
+.pills-container ul#myTab .nav-item a {
+  background-color: #e6ebeb;
+  border-radius: 100px;
+  color: #000;
+}
+.pills-container ul#myTab .nav-item .active {
+  background-color: #98c93c;
+  color: #fff;
+}
+
+.available-container a {
+  color: #000;
+  text-decoration: none;
+}
+.available-container a:hover {
+  color: #98c93c;
+}
+.available-container a:hover img {
+  transform: scale(1.1);
+}
+.available-container .available-header .dropdown a {
+  font-size: 28px;
+}
+.available-container .available-wrapper .available-left .available-item {
+  max-height: 200px;
+  max-width: 49%;
+  background-color: #fff;
+}
+.available-container .available-wrapper .available-left .available-item .image-wrapper {
+  height: 120px;
+}
+.available-container .available-wrapper .available-left .available-item .image-wrapper a img {
+  height: 120px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.available-container .available-wrapper .available-right {
+  background-color: #fff;
+}
+.available-container .available-wrapper .available-right .image-wrapper {
+  height: 260px;
+}
+.available-container .available-wrapper .available-right .image-wrapper a img {
+  height: 260px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.question-container {
+  background-color: #e8eded;
+}
+.question-container .advertising-wrapper .question-block img {
+  max-height: 200px;
+}
+
+.breadcrumbs-container {
+  background-color: #40423e;
+}
+
+.footer-container {
+  background-color: #262724;
+}
+.footer-container .footer-column a {
+  text-decoration: none;
+  color: #fff;
+}
+.footer-container .footer-column a:hover {
+  color: green;
+}
+
+.rights-container {
+  background-color: #1b1c19;
+}
+
+/*# sourceMappingURL=product.css.map */
