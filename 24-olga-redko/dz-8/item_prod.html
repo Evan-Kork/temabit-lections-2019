@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Bootstrap adaptive site</title>
+</head>
+<body>
+    <div class="container-fluid m-0 p-0">
+        <header class="row d-none d-lg-block m-0">
+            <div class="col-md-12 top-nav">
+                <ul class="list-unstyled list-inline">
+                    <li class="list-inline-item"><a href="#">Графік роботи</a></li>
+                    <li class="list-inline-item"><a href="#">Магазини</a></li>
+                    <li class="list-inline-item"><a href="#">Допомога</a></li>
+                    <li class="list-inline-item"><a href="#">Корпоративний сайт</a></li>
+                </ul>
+            </div>
+            <div class="d-none d-sm-block col-sm-12 header-content">
+                <div class="row">
+                    <div class="col-md-1 col-lg-2">
+                        <a class="logo d-block" href="#"><img class="d-block float-left img-fluid" src="https://ringoo.ua/wp-content/themes/ringoo/img/logo.svg" alt="Logo"></a>
+                    </div>
+                    <div class="col-md-9 col-lg-8">
+                        <form action="" class="search">
+                            <input class="form-control" type="text" placeholder="Пошук" name="q">
+                        </form>
+                        <nav>
+                            <ul class="nav d-flex justify-content-center">
+                                <li class="nav-item"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Телефони</a>
+                                    <div class="dropdown-menu">
+                                        <div class="wrap d-flex flex-wrap flex-column">
+                                            <span class="dropdown-item">Усі смартфони</span>
+                                            <a class="dropdown-item" href="#">iPhone</a>
+                                            <a class="dropdown-item" href="#">Samsung</a>
+                                            <a class="dropdown-item" href="#">Xiaomi</a>
+                                            <a class="dropdown-item" href="#">Huawei</a>
+                                            <a class="dropdown-item" href="#">TP-Link Neffos</a>
+                                            <a class="dropdown-item" href="#">Bravis</a>
+                                            <a class="dropdown-item" href="#">Ergo</a>
+                                            <a class="dropdown-item" href="#">OnePlus</a>
+                                            <a class="dropdown-item" href="#">Motorola</a>
+                                            <a class="dropdown-item" href="#">Nokia</a>
+                                            <a class="dropdown-item" href="#">Vivo</a>
+                                            <a class="dropdown-item" href="#">Sony</a>
+                                            <span class="dropdown-item">Мобільні телефони</span>
+                                            <a class="dropdown-item" href="#">Astro</a>
+                                            <a class="dropdown-item" href="#">Bravis</a>
+                                            <a class="dropdown-item" href="#">Ergo</a>
+                                            <a class="dropdown-item" href="#">Nokia</a>
+                                            <a class="dropdown-item" href="#">2E</a>
+                                            <a class="dropdown-item" href="#">Prestigio</a>
+                                            <a class="dropdown-item" href="#">Viaan</a>
+                                            <span class="dropdown-item">Сервіси та послуги</span>
+                                            <a class="dropdown-item" href="#">Подарункові сертифікати</a>
+                                            <a class="dropdown-item" href="#">Стартові пакети</a>
+                                            <span class="dropdown-item">Уцінка</span>
+                                            <a class="dropdown-item" href="#">Смартфони</a>
+                                            <a class="dropdown-item" href="#">ПК та ноутбуки</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Електроніка</a>
+                                    <div class="dropdown-menu">
+                                        <div class="wrap d-flex flex-wrap flex-column">
+                                            <span class="dropdown-item">Планшети</span>
+                                            <a class="dropdown-item" href="#">Samsung</a>
+                                            <a class="dropdown-item" href="#">Huawei</a>
+                                            <a class="dropdown-item" href="#">Lenovo</a>
+                                            <span class="dropdown-item">Аксесуари</span>
+                                            <a class="dropdown-item" href="#">Чохли для планшетів</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Гаджети</a>
+                                    <div class="dropdown-menu">
+                                        <div class="wrap d-flex flex-wrap flex-column">
+                                            <span class="dropdown-item">Планшети</span>
+                                            <a class="dropdown-item" href="#">Samsung</a>
+                                            <a class="dropdown-item" href="#">Huawei</a>
+                                            <a class="dropdown-item" href="#">Lenovo</a>
+                                            <span class="dropdown-item">Аксесуари</span>
+                                            <a class="dropdown-item" href="#">Чохли для планшетів</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#">Аксесуари</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Apple</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Tp-Link Neffos</a></li>
+                                <li class="nav-item"><a class="nav-link bg-danger" aria-expanded="false" href="#">Акції</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="d-none d-md-block col-lg-2">
+                        <div class="tel">
+                            <span class="d-block mt-1">(097) 090-87-07</span>
+                            <span class="d-block mb-1">(073) 090-87-07</span>
+                            <a href="" class="btn btn-warning" role="button"><i class="fas fa-shopping-cart"></i>КОШИК</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Головна</a></li>
+                    <li class="breadcrumb-item"><a href="#">Смартфони</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Samsung G975F Galaxy S10+ 2019 Green (SM-G975FZGDSEK)</li>
+                </ol>
+            </nav>
+            <section class="row m-0 pt-0">
+                <div class="w-100"><a href="#" class="pl-3"><i class="fas fa-long-arrow-alt-left"></i> До каталогу</a></div>
+                <div class="col-md-5 col-lg-4 text-center">
+                    <img class="card-img" src="img/tp_link_neffos_x20_pro_green_images_13418125970.jpg" alt="">
+                    <div class="text-center btn-group-toggle mb-3 img-select" data-toggle="buttons">
+                        <label class="btn active">
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked><span class="check-point bg-success"></span>
+                        </label>
+                        <label class="btn">
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked><span class="check-point bg-dark"></span>
+                        </label>
+                        <label class="btn">
+                            <input type="radio" name="options" id="option2" autocomplete="off"><span class="check-point bg-primary"></span>
+                        </label>
+                    </div>
+                    <a href="#"><i class="fab fa-youtube text-danger"></i> Переглянути відео 1</a>
+                    <div class="subscribe">
+                        <p class="h5">Підпишись на наші сторінки</p>
+                        <div class="social-btn">
+                            <a target="_blank" href="http://facebook.com/ringoo.ua" class="social__link social__fb"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/ringoo.ua/" class="social__link social__instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a target="_blank" href="https://www.youtube.com/channel/UCPNtV7_xakzNijxIwgAp8Yw?sub_confirmation=1" class="social__link social__yt"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-lg-4">
+                    <div class="item_prod">
+                        <div class="card-body main-info">
+                            <h1 class="card-title">Samsung G975F Galaxy S10+ 2019 Green (SM-G975FZGDSEK)</h1>
+                            <p class="card-text item-id">Код товару: f464531</p>
+                            <ul class="list-group mb-2">
+                                <li>Роздільна здатність основної камери, Мп: 16</li>
+                                <li>Діагональ екрану, дюйм: 6,4</li>
+                                <li>Ємність акумулятора, мА·г: 4000</li>
+                                <li>б'єм оперативної пам'яті, ГБ: 4 Gb</li>
+                                <li>Об'єм вбудованої пам'яті, ГБ: 64 Gb</li>
+                            </ul>
+                            <p class="desc">Galaxy A30 – це надзвичайно ергономічний смартфон, що добре лежить в руці, оснащений якісним дисплеєм, камерою та функціонально в ньому є все, що потрібно.</p>
+                        </div>
+                        <div class="card-body block-payment">
+                            <div class="block-title h5">
+                                ЯК ОПЛАТИТИ ЧИ ПОВЕРНУТИ ТОВАР
+                            </div>
+                            <dl class="row">
+                                <dt class="col-sm-3"><img src="img/Oplata-1.png" alt=""></dt>
+                                <dd class="col-sm-9">Оплата готівкою, Картою через LiqPay, Безготівковий розрахунок, Кредит, Оплата частинами.</dd>
+                                <dt class="col-sm-3"><img src="img/Obmin-ta-Povernennya-1.png" alt=""></dt>
+                                <dd class="col-sm-9">
+                                    Обмін та повернення здійснюється протягом 14 днів після покупки, відповідно до закону України"Про захист прав споживачів України"</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <span href="#" class="btn btn-link text-right d-block"><i class="fas fa-balance-scale"></i> Додати до порівняння</span>
+                    <div class="block-price card text-center">
+                        <div class="card-body">
+                            <div class="old-price h4 text-secondary"><s>6999</s> грн</div>
+                            <div class="new-price h2 text-danger"><span>6599</span> грн</div>
+                            <div class="btn-group d-flex flex-column p-4">
+                                <button class="btn btn-warning btn-lg mb-3">Купити</button>
+                                <button class="btn btn-main btn-lg">Купити в один клік</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-delivery">
+                        <div class="block-title h5">
+                            ЯК ОПЛАТИТИ ЧИ ПОВЕРНУТИ ТОВАР
+                        </div>
+                        <dl class="row">
+                            <dt class="col-sm-3"><img src="img/Ringo_Dostavka.png" alt=""></dt>
+                            <dd class="col-sm-9">Самовивіз з магазинів мережі
+                                вартість доставки: БЕЗКОШТОВНО</dd>
+                            <dt class="col-sm-3"><img src="img/Justin_Dostavka.png" alt=""></dt>
+                            <dd class="col-sm-9">Самовивіз з відділення
+                                вартість доставки: БЕЗКОШТОВНО</dd>
+                            <dt class="col-sm-3"><img src="img/NP_Dostavka.png" alt=""></dt>
+                            <dd class="col-sm-9">Самовивіз з відділення
+                                вартість доставки: БЕЗКОШТОВНО</dd>
+                            <dt class="col-sm-3"><img src="img/UkrPochta_Dostavka.png" alt=""></dt>
+                            <dd class="col-sm-9">Самовивіз з відділення
+                                вартість доставки: Точну вартість доставки скаже наш фахівець</dd>
+                            <dt class="col-sm-3"><img src="img/NP_Samovyvoz.png" alt=""></dt>
+                            <dd class="col-sm-9">Кур'єром "Нова пошта"
+                                вартість доставки: Точну вартість доставки скаже наш фахівець</dd>
+                        </dl>
+                        <a href="#" class="btn btn-link">Більше інформації</a>
+                    </div>
+                </div>
+            </section>
+            <section class="item-tabs d-none d-sm-block">
+                <ul class="nav nav-pills mb-3 d-flex flex-row  justify-content-between" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-info-circle"></i> Характеристики</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fas fa-list-alt"></i> Огляд</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fas fa-play-circle"></i> Відео <sup class="badge badge-pill badge-warning">4</sup></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fas fa-image"></i> Фото</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fas fa-comment-alt"></i> Відгуки</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active d-flex flex-column flex-wrap charackter" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" style="height: 900px">
+                        <dl class="row">
+                            <dt class="col-sm-4">Виробник:</dt>
+                            <dd class="col-sm-6">Samsung</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Тип телефону:</dt>
+                            <dd class="col-sm-6">
+                                смартфон</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Кількість SIM-карт:</dt>
+                            <dd class="col-sm-3">
+                                2</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Тип SIM-карти:</dt>
+                            <dd class="col-sm-3">
+                                Nano-Sim</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Форм-фактор:</dt>
+                            <dd class="col-sm-3">
+                                моноблок</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Операційна система:</dt>
+                            <dd class="col-sm-3">
+                                Android</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Діагональ екрану, дюйм:</dt>
+                            <dd class="col-sm-3">
+                                6,4</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Тип матриці:</dt>
+                            <dd class="col-sm-6">
+                                Super AMOLED</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Розподільна здатність екрану, пікселів:</dt>
+                            <dd class="col-sm-6">
+                                2340x1080</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Щільність пікселів, ppi:</dt>
+                            <dd class="col-sm-6">
+                                403</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Роздільна здатність основної камери, Мп:</dt>
+                            <dd class="col-sm-6">
+                                16</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Допоміжні модулі основної камери, Мп:</dt>
+                            <dd class="col-sm-6">
+                                5</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Фронтальна камера, Мп:</dt>
+                            <dd class="col-sm-6">
+                                16</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Допоміжні модулі фронтальної камери, Мп:</dt>
+                            <dd class="col-sm-6">
+                                f/2.0</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Максимальна роздільна здатність відео, яке записується:</dt>
+                            <dd class="col-sm-6">
+                                1080p@30fps</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Додаткові функції камери:</dt>
+                            <dd class="col-sm-6">
+                                HDR, подвійна основна камера</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Об'єм оперативної пам'яті, ГБ:</dt>
+                            <dd class="col-sm-6">
+                                4 Gb</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Об'єм вбудованої пам'яті, ГБ:</dt>
+                            <dd class="col-sm-6">
+                                64 Gb</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Пітримка карт пам'яті:</dt>
+                            <dd class="col-sm-6">
+                                Так</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Слот для карти пам'яті:</dt>
+                            <dd class="col-sm-6">
+                                окремий</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Процесор + відеочіп:</dt>
+                            <dd class="col-sm-6">
+                                Exynos 9810 Octa + Mali-G72MP18</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Кількість ядер процесора:</dt>
+                            <dd class="col-sm-6">
+                                8</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Максимальна частота процесора, МГц:</dt>
+                            <dd class="col-sm-6">
+                                1600, 1800</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Ємність акумулятора, мА·г:</dt>
+                            <dd class="col-sm-6">
+                                4000</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Інтернет:</dt>
+                            <dd class="col-sm-6">
+                                3G, 4G (LTE)</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Інтерфейси:</dt>
+                            <dd class="col-sm-6">
+                                Bluetooth, GPS, GSM/3G/4G(LTE), NFC</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Навігація:</dt>
+                            <dd class="col-sm-6">
+                                A-GPS, GPS</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Особливості смартфону:</dt>
+                            <dd class="col-sm-6">
+                                розпізнавання обличчя, сканер відбитків пальців, швидка зарядка</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Датчики:</dt>
+                            <dd class="col-sm-6">
+                                датчик наближення, датчик освітлення</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Матеріал задньої кришки:</dt>
+                            <dd class="col-sm-6">
+                                пластик</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Висота, мм:</dt>
+                            <dd class="col-sm-6">
+                                158.5</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Ширина, мм:</dt>
+                            <dd class="col-sm-6">
+                                74.5</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Товщина, мм:</dt>
+                            <dd class="col-sm-6">
+                                7.7</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Вага, г:</dt>
+                            <dd class="col-sm-6">
+                                158.5</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-4">Колір:</dt>
+                            <dd class="col-sm-6">
+                                білий, синій, чорний</dd>
+                        </dl>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+                </div>
+            </section>
+        </div>
+        <section class="row m-0 bg-light-gray sides">
+            <div class="col-6 col-md-4">
+                <p>Доставка по Києву</p>
+                <ul class="pl-3">
+                    <li><a href="#">Безкоштовний самовивіз з</a></li>
+                    <li><a href="#">магазинів ringoo</a></li>
+                    <li><a href="#">Кур’єром за адресою</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-4">
+                <p>Доставка по Україні</p>
+                <ul class="pl-3">
+                    <li><a href="#">Доставка в регіони</a></li>
+                    <li><a href="#">До пункту служби доставки</a></li>
+                    <li><a href="#">Кур’єром за адресою</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4">
+                Оплата
+                <ul class="pl-3">
+                    <li><a href="#">Готівкою</a></li>
+                    <li><a href="#">У кредит</a></li>
+                    <li><a href="#">Visa/MasterCard, безготівковим розрахунком</a></li>
+                </ul>
+            </div>
+            <div class="d-flex flex-column mt-5 w-100">
+                <div class="h5 text-center dropdown">
+                    <p>У наявності зараз в <a class="btn-link dropdown-toggle" href="#" type="link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">м. Київ</a></p>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <div class="cities">
+                            <a class="dropdown-item" href="#">Вінницька область</a>
+                            <a class="dropdown-item" href="#">Житомирська область</a>
+                            <a class="dropdown-item" href="#">Івано-Франківська область</a>
+                            <a class="dropdown-item" href="#">Луганська область</a>
+                            <a class="dropdown-item" href="#">Одеська область</a>
+                            <a class="dropdown-item" href="#">Сумська область</a>
+                            <a class="dropdown-item" href="#">Черкаська область</a>
+                            <a class="dropdown-item" href="#">Волинська область</a>
+                            <a class="dropdown-item" href="#">Закарпатська область</a>
+                            <a class="dropdown-item" href="#">Київська область</a>
+                            <a class="dropdown-item" href="#">Львівська область</a>
+                            <a class="dropdown-item" href="#">Полтавська область</a>
+                            <a class="dropdown-item" href="#">Тернопільська область</a>
+                            <a class="dropdown-item" href="#">Чернігівська область</a>
+                            <a class="dropdown-item" href="#">Донецька область</a>
+                            <a class="dropdown-item" href="#">Запоріжська область</a>
+                            <a class="dropdown-item" href="#">Кіровоградська область</a>
+                            <a class="dropdown-item" href="#">Миколаївська область</a>
+                            <a class="dropdown-item" href="#">Рівненська область</a>
+                            <a class="dropdown-item" href="#">Хмельницька область</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p class="h6 p-4">У магазинах вашого міста, на жаль, зараз товару немає. Відкрийте мапу й виберіть інший населений пункт.</p>
+                    <button class="btn btn-main">ПОДИВИТИСЯ НА МАПІ</button>
+                </div>
+            </div>
+        </section>
+        <section class="row m-0 bg-gray sides">
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <img src="img/iphone_11_pro_max_mg_2_1.jpg" class="card-img" alt="...">
+                            <a href="#">Дивитися всі характеристики</a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <p class="card-title h3">
+                                    APPLE iPhone 11 Pro 64 GB Midnight Green</p>
+                                <div class="card-text">
+                                    <ul class="list-group mb-2">
+                                        <li>Роздільна здатність основної камери, Мп: 16</li>
+                                        <li>Діагональ екрану, дюйм: 6,4</li>
+                                        <li>Ємність акумулятора, мА·г: 4000</li>
+                                        <li>б'єм оперативної пам'яті, ГБ: 4 Gb</li>
+                                        <li>Об'єм вбудованої пам'яті, ГБ: 64 Gb</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        <span class="price h6">41999 грн </span> <a href="#" class="btn btn-warning" role="button">КУПИТИ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="img/consultant.jpg" class="card-img img-fluid p-4" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <p class="card-text h3">Якщо маєте питання,
+                                    <span class="h6">поговоріть із нашим консультантом</span><br>
+                                    0 800 308 480</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <form action="#">
+                            <legend class="h5 mb-3">Або залиште свій номер</legend>
+                            <div class="form-group row">
+                                <div class="col"><input class="form-control" type="text" placeholder="+380"></div>
+                                <div class="col"><button class="btn btn-main">ЗАТЕЛЕФОНУЙТЕ МЕНІ</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--FOOTER-->
+        <footer>
+            <section class="subscribe-form">
+                <form action="#" class="text-center">
+                    <legend class="h5">Підписуйтесь на розсилку</legend>
+                    <p>Залиште свій імейл, щоб отримувати актуальні новини, акції та знижки. Жодного спаму, надсилаємо лише корисне!</p>
+                    <input class="form-control" type="text" placeholder="E-mail">
+                    <button class="btn btn-dark">ПІДПИСАТИСЯ НА РОЗСИЛКУ</button>
+                </form>
+            </section>
+            <nav class="breadcrumbs-btm" aria-label="breadcrumb">
+                <ol class="breadcrumb pl-3">
+                    <li class="breadcrumb-item"><a href="#">Головна</a></li>
+                    <li class="breadcrumb-item"><a href="#">Смартфони</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Samsung G975F Galaxy S10+ 2019 Green (SM-G975FZGDSEK)</li>
+                </ol>
+            </nav>
+            <section class="row no-gutter footer-content m-0">
+                <div class="d-none d-sm-block col-sm-6 col-lg-3">
+                    <p class="title h6 pb-3">Каталог</p>
+                    <ul>
+                        <li><a href="#">Смартфони</a></li>
+                        <li><a href="#">Електроніка</a></li>
+                        <li><a href="#">Телефони</a></li>
+                        <li><a href="#">Аксессуари</a></li>
+                        <li><a href="#">Гаджети</a></li>
+                        <li><a href="#">Акції</a></li>
+                    </ul>
+                </div>
+                <div class="d-none d-sm-block col-sm-6 col-lg-3">
+                    <p class="h6 title pb-3">Допомога в покупці</p>
+                    <ul>
+                        <li><a href="#">Оплата</a></li>
+                        <li><a href="#">Доставка</a></li>
+                        <li><a href="#">На виплат та кредити</a></li>
+                        <li><a href="#">Гарантія, повернення, обмін</a></li>
+                        <li><a href="#">Адреси сервісних центрів</a></li>
+                        <li><a href="#">Як скористатись промокодом</a></li>
+                        <li><a href="#">Публічна оферта</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <p class="h6 title pb-3">Про нас</p>
+                    <ul>
+                        <li><a href="#">Магазини</a></li>
+                        <li><a href="#">Про компанію</a></li>
+                        <li><a href="#">«Власний Рахунок»</a></li>
+                        <li><a href="#">Комісійна торгівля</a></li>
+                        <li><a href="#">Робота в компанії</a></li>
+                        <li><a href="#">Орендодавцям</a></li>
+                        <li><a href="#">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <p class="title h6 pb-3">Зв'язатися з нами</p>
+                    <div class="tel text-white h3"><i class="fas fa-phone"></i> 0 800 308 480</div>
+                    <p class="text-muted">Безкоштовні дзвінки для абонентів усіх українських операторів зв’язку. Дзвінки з питань сервісу та обслуговування.</p>
+                    <p class="text-muted">Оформлення замовлення за номерами:
+                        <span class="d-block text-white">(097) 090-87-07</span>
+                        <span class="d-block text-white">(073) 090-87-07</span>
+                    </p>
+                    <div class="row no-gutters">
+                        <div class="social-btn col-5">
+                            <a target="_blank" href="http://facebook.com/ringoo.ua" class="social__link social__fb"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/ringoo.ua/" class="social__link social__instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a target="_blank" href="https://www.youtube.com/channel/UCPNtV7_xakzNijxIwgAp8Yw?sub_confirmation=1" class="social__link social__yt"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="col-7"><img src="img/pay_sys_icons.png" width="90px"></div>
+                    </div>
+                </div>
+            </section>
+            <div class="copyrights w-100">
+                <p class="text-center">Усі права захищені</p>
+            </div>
+        </footer>
+        <!--FOOTER END-->
+        <!--MOBILE MENU-->
+        <div class="mobile-user-menu">
+            <input type="checkbox" id="mobile-menu" class="d-none">
+            <label for="mobile-menu">
+                <div class="top-block d-flex flex-row justify-content-around">
+                    <i class="menu-icon fas fa-bars"></i>
+                    <form action="" class="search">
+                        <input class="form-control" type="text" placeholder="Пошук" name="q">
+                    </form>
+                    <i class="menu-icon fas fa-shopping-cart"></i>
+                </div>
+                <nav class="mobile-nav accordion">
+                    <div class="top-block">
+                        <a class="mobile-logo d-block" href="#"><img src="https://ringoo.ua/wp-content/themes/ringoo/img/logo.svg" alt="Logo"></a></div>
+                    <ul class="nav text-left" id="accordionExample">
+                        <li class="nav-item collapsed"><a class="nav-link" data-toggle="collapse" role="button" href="#nav-smartphones" aria-expanded="false" aria-controls="nav-smartphones">Смартфони <i class="fas fa-caret-down"></i></a>
+                            <ul class="collapse" id="nav-smartphones" data-parent="#accordionExample">
+                                <li><a href="#">iPhone</a></li>
+                                <li><a href="#">Samsung</a></li>
+                                <li><a href="#">Xiaomi</a></li>
+                                <li><a href="#">Huawei</a></li>
+                                <li><a href="#">TP-Link Neffos</a></li>
+                                <li><a href="#">Bravis</a></li>
+                                <li><a href="#">Ergo</a></li>
+                                <li><a href="#">OnePlus</a></li>
+                                <li><a href="#">Motorola</a></li>
+                                <li><a href="#">Nokia</a></li>
+                                <li><a href="#">Vivo</a></li>
+                                <li><a href="#">Sony</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item collapsed"><a class="nav-link" data-toggle="collapse" role="button" href="#nav-phones" aria-expanded="false" aria-controls="nav-phones">Телефони <i class="fas fa-caret-down"></i></a>
+                            <ul class="collapse" id="nav-phones" data-parent="#accordionExample">
+                                <li><a href="#">Astro</a></li>
+                                <li><a href="#">Bravis</a></li>
+                                <li><a href="#">Ergo</a></li>
+                                <li><a href="#">Nokia</a></li>
+                                <li><a href="#">2E</a></li>
+                                <li><a href="#">Prestigio</a></li>
+                                <li><a href="#">Viaan</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item collapsed"><a class="nav-link" data-toggle="collapse" role="button" href="#nav-electronika" aria-expanded="false" aria-controls="nav-electronika">Електроніка <i class="fas fa-caret-down"></i></a>
+                            <ul class="collapse" id="nav-electronika" data-parent="#accordionExample">
+                                <li><a href="#">Планшети</a></li>
+                                <li><a href="#">Аксесуари</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="collapse" role="button" href="#nav-acsessuar" aria-expanded="false" aria-controls="nav-acsessuar">Аксесуари <i class="fas fa-caret-down"></i></a>
+                            <ul class="collapse" id="nav-acsessuar" data-parent="#accordionExample">
+                                <li><a href="#">Чохли для смартфонів</a></li>
+                                <li><a href="#">Захисне скло та плівки</a></li>
+                                <li><a href="#">Карти пам'яті</a></li>
+                                <li><a href="#">Портативні батареї</a></li>
+                                <li><a href="#">Зарядні пристрої</a></li>
+                                <li><a href="#">Навушники та гарнітури</a></li>
+                                <li><a href="#">Елементи живлення</a></li>
+                                <li><a href="#">Портативна акустика</a></li>
+                                <li><a href="#">Кабелі та адаптери</a></li>
+                                <li><a href="#">Автотримачі</a></li>
+                                <li><a href="#">Селфі-моноподи</a></li>
+                                <li><a href="#">USB-флешки</a></li>
+                                <li><a href="#">Wi-Fi роутери</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="collapse" href="#nav-gadget" role="button" aria-expanded="false" aria-controls="nav-gadget">Електроніка <i class="fas fa-caret-down"></i></a>
+                            <ul class="collapse" id="nav-gadget" data-parent="#accordionExample">
+                                <li><a href="#">Гіроборди</a></li>
+                                <li><a href="#">Іграшки</a></li>
+                                <li><a href="#">Камери</a></li>
+                                <li><a href="#">Квадрокоптери</a></li>
+                                <li><a href="#">Комп'ютерні миші</a></li>
+                                <li><a href="#">Смарт-годинники</a></li>
+                                <li><a href="#">Фітнес-браслети</a></li>
+                                <li><a href="#">VR-окуляри</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-border-top"><a class="nav-link" href="#">Акції</a></li>
+                        <li class="nav-item nav-border-top"><a class="nav-link" href="#">Оплата</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Доставка</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Гарантія</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Кредит</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Контакти</a></li>
+                    </ul>
+                    <span class="close"><i class="fas fa-times"></i></span>
+                </nav>
+            </label>
+        </div>
+        <!--END MOBILE MENU-->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
