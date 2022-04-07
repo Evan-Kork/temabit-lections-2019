@@ -1,0 +1,110 @@
+/* Navbar */
+@mixin border {
+  content: "";
+
+  display: block;
+  width: 1px;
+  height: 30px;
+  background-color: $gray-light;
+
+  position: absolute;
+  top: 50%;
+  z-index: 900;
+
+  transform: translateY(-50%);
+}
+
+@mixin icon {
+  content: "";
+
+  display: block;
+  width: 100%;
+  height: 2px;
+
+  background-color: $white;
+
+  position: absolute;
+  left: 0;
+  z-index: 700;
+}
+
+.before {
+  &::before {
+    @include border;
+    left: 0;
+  }
+
+  &:hover::before {
+    background-color: transparent;
+  }
+}
+
+
+.action {
+  background-color: $red;
+}
+
+.navbar__toggler {
+  position: relative;
+
+  padding: 0;
+  width: 24px;
+  height: 18px;
+
+  background-color: transparent;
+  border: none;
+}
+
+.toggler__icon {
+  width: 24px;
+  height: 2px;
+
+  background-color: $white;
+
+  display: block;
+
+  &::after {
+    @include icon;
+    bottom: 0;
+  }
+
+  &::before {
+    @include icon;
+    top: 0;
+  }
+}
+
+#navbarLeft {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  
+
+  width: 0px;
+
+  transition: width 0.7s ease-in-out;
+
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  .arrow {
+    right: -2.7rem;
+  }
+
+  .close {
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+.dropdown__menu {
+  height: 0;
+  display: none;
+}
