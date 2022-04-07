@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Числа Фибоначчи</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //Числа Фибоначчи
+      function fibonacciS(num){
+        let a = 1, b = 1;
+        for (let i=3; i<=num; i++){
+          let c = a+b;
+          a = b;
+          b = c;
+        }
+        return b;
+      }
+      document.write(fibonacciS(12));
+
+    </script>
+  </body>
+</html>
