@@ -1,0 +1,150 @@
+/* пк и ноутбуки */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: 'Open Sans', sans-serif;
+	box-sizing: border-box;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+.flex-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.header {
+	width: 100%;
+	height: 7%;
+	min-height: 70px;
+	background: linear-gradient(90deg, rgba(44,84,83,1) 0%, rgba(9,121,99,1) 32%, rgba(9,121,99,1) 67%, rgba(52,145,65,1) 100%);
+	text-align: center;
+}
+.header h2 {
+	margin: 20px;
+}
+h2 span {
+	font-weight: normal;
+	font-size: 18px;
+}
+.wrapper {
+	height: 100%;
+	display: flex;
+	align-items: stretch;
+	flex-direction: row;
+}
+.sidebar {
+	width: 20%;
+	min-width: 250px;
+	height: 100%;
+	background-color: #9cf5dc;
+	padding-left: 50px;
+	box-sizing: border-box;
+	overflow: auto;
+}
+.sidebar a {
+	text-decoration: none;
+	color: black;
+	font-size: 18px;
+}
+.sidebar h2 {
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
+.sidebar h4 {
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+}
+.body {
+	width: 80%;
+	height: 100%;
+	background-color: #eef1ff;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	overflow: auto;
+}
+.text-block {
+	width: 100%;
+}
+.text-block h2 {
+	margin: 30px;
+}
+.text-block p {
+	margin: 15px;
+}
+.body-content-element {
+	min-width: 350px;
+	min-height: 330px;
+	margin: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+}
+.item-image {
+	margin-bottom: 10px;
+}
+img {
+	width: 250px;
+}
+.body-content-element a {
+	text-decoration: none;
+	color: #000;
+}
+.stats {
+	background-color: #dbebdd;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	margin-top: 10px;
+}
+
+/* планшет вертикально */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+	.body {
+		flex-wrap: nowrap;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.body-content-element {
+		margin-bottom: 20px;
+	}
+}
+
+/* мобильные*/
+@media screen and (max-width: 767px) {
+	.header h2 {
+		margin: 7px;
+	}
+	.wrapper {
+		flex-direction: column;
+	}
+	.sidebar {
+		width: 100%;
+		overflow: inherit;
+	}
+	.sidebar h2 {
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
+	.sidebar h4 {
+		margin-top: 1em;
+		margin-bottom: 0;
+	}
+	.body {
+		width: 100%;
+		height: auto;
+		overflow: inherit;
+		flex-direction: column;
+	}
+	.body-content-element {
+		margin-bottom: 15px;
+	}
+}
