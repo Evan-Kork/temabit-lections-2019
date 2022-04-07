@@ -1,0 +1,29 @@
+.item {
+    border: 1px solid black;
+}
+.item-title {
+    background: lightgray;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+}
+.item-body {
+    padding: 0 15px;
+    height: 0;
+    overflow: hidden;
+    transition: all 1s;
+    text-align: center;
+}
+.item-body>form {
+    text-align: center;
+}
+.button {
+    padding: 0px 80px;
+    display: block;
+    margin: 12px auto;
+}
+.active .item-body {
+    display: block;
+    height: auto;
+    padding: 15px;
+}
