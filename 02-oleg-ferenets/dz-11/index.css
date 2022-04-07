@@ -1,0 +1,44 @@
+#accordeon {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.accordeon-title {
+    background-color: #bbb;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+.accordeon-content {
+    display: none;
+    background-color: #ddd;
+    padding: 10px;
+}
+
+.accordeon-title.active+.accordeon-content {
+    display: block;
+    min-height: 100px;
+}
+
+.array1 {
+    min-width: 250px;
+}
+
+.result {
+    min-width: 400px;
+}
+
+#slice-start {
+    width: 110px;
+}
+
+#slice-itemN {
+    width: 100px;
+}
+
+#slice-deleteCount {
+    width: 62px;
+}
