@@ -1,0 +1,11 @@
+.Loops{
+  display: flex;
+  justify-content: space-around;
+}
+table{
+  margin: auto;
+  border-collapse: collapse;
+}
+th, td{
+  border: 1px solid black;
+} 
