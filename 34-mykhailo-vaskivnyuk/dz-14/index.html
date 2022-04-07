@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>XmlHttpRequest</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+	<form id="requests_form">
+
+		<fieldset>
+			<button type="button" name="add_btn">add url</button>
+			<button type="submit">send</button>
+		</fieldset>
+		
+		<fieldset name="input_fields">
+		<!-- input fields -->
+			<template>
+				<div class="request">
+					<input type="url" placeholder="http://somesite.com">
+					<button name="delete_btn">del</button>
+					<div class="response" data-response-status>
+						<div data-response-url></div>
+						<div data-response-code></div>
+					</div>
+				</div>
+			</template>
+		<!-- input fields -->
+		</fieldset>
+
+	</form>
+
+	<script type="text/javascript">
+		new MyRequestsForm(requests_form);
+	</script>
+
+</body>
+</html>
+
+<!--
+//https://jsonplaceholder.typicode.com/users
+-->
